@@ -62,12 +62,30 @@ function initHeroButtons() {
 
 function initTestimonialsSlider() {
   const slider = document.querySelector('.testimonial-slider');
+codex/resolve-conflicts-in-codex/integrate-full-website-features-a
   if (!slider) return;
   const blocks = Array.from(slider.querySelectorAll('blockquote'));
   const prev = document.querySelector('.testimonial-prev');
   const next = document.querySelector('.testimonial-next');
   const dotsContainer = document.querySelector('.testimonial-dots');
   let current = 0;
+  if (slider) {
+    const blocks = Array.from(slider.querySelectorAll('blockquote'));
+    const prev = document.querySelector('.testimonial-prev');
+    const next = document.querySelector('.testimonial-next');
+    const dotsContainer = document.querySelector('.testimonial-dots');
+    let current = 0;
+
+    const showSlide = idx => {
+      blocks.forEach((b, i) => b.classList.toggle('active', i === idx));
+      if (dotsContainer) {
+        dotsContainer.querySelectorAll('button').forEach((dot, i) => {
+          dot.classList.toggle('active', i === idx);
+        });
+      }
+      current = idx;
+  };
+main
 
   const showSlide = idx => {
     blocks.forEach((b, i) => b.classList.toggle('active', i === idx));
@@ -114,10 +132,41 @@ function exposeMembershipModal() {
       window.membershipManager.showEmailCaptureModal('Essential');
     }
   };
+codex/resolve-conflicts-in-codex/integrate-full-website-features-a
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   if (typeof initializeApp === 'function') {
     initializeApp();
   }
+
+  /* Scroll progress indicator */
+  const indicator = document.getElementById('scrollIndicator');
+  if (indicator) {
+    window.addEventListener('scroll', () => {
+      const total = document.body.scrollHeight - window.innerHeight;
+      const progress = (window.scrollY / total) * 100;
+      indicator.style.width = progress + '%';
+    });
+  }
+
+  /* Newsletter form submission */
+  const newsletterForm = document.getElementById('newsletterForm');
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const email = newsletterForm.email.value;
+      if (window.gtag) {
+        gtag('event', 'newsletter_signup', { email });
+      }
+      newsletterForm.reset();
+      alert('Thanks for subscribing!');
+    });
+  }
+});
+    if (window.membershipManager) {
+      window.membershipManager.showEmailCaptureModal('Essential');
+    }
+  };
+main
 });
