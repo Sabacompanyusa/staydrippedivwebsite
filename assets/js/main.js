@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
       current = idx;
-    };
+  };
 
     if (dotsContainer) {
       blocks.forEach((_, i) => {
@@ -72,6 +72,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* Expose membership modal helper */
   window.showMembershipModal = function () {
+    if (window.membershipManager) {
+      window.membershipManager.showEmailCaptureModal('Essential');
+    }
+  };
+
+  /* Scroll progress indicator */
+  const indicator = document.getElementById('scrollIndicator');
+  if (indicator) {
+    window.addEventListener('scroll', () => {
+      const total = document.body.scrollHeight - window.innerHeight;
+      const progress = (window.scrollY / total) * 100;
+      indicator.style.width = progress + '%';
+    });
+  }
+
+  /* Newsletter form submission */
+  const newsletterForm = document.getElementById('newsletterForm');
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const email = newsletterForm.email.value;
+      if (window.gtag) {
+        gtag('event', 'newsletter_signup', { email });
+      }
+      newsletterForm.reset();
+      alert('Thanks for subscribing!');
+    });
+  }
+});
     if (window.membershipManager) {
       window.membershipManager.showEmailCaptureModal('Essential');
     }
