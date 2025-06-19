@@ -820,3 +820,25 @@ margin-top: 2rem;
 .testimonial-dots button.active {
   background: var(--secondary);
 }
+
+/* FAQ accordion */
+.faq-item .faq-answer {
+  display: none;
+  padding: 0.5rem 0 1rem;
+}
+
+.faq-item.open .faq-answer {
+  display: block;
+}
+
+.faq-question {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  padding: 0.75rem 0;
+}
