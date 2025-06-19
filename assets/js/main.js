@@ -28,6 +28,7 @@ function initMobileMenu() {
   if (!toggle || !nav) return;
   toggle.addEventListener('click', () => {
     toggle.classList.toggle('active');
+    nav.classList.toggle('active');
     nav.classList.toggle('open');
     const expanded = toggle.classList.contains('active');
     toggle.setAttribute('aria-expanded', expanded);
@@ -37,6 +38,7 @@ function initMobileMenu() {
 function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', e => {
+      const target = document.querySelector(link.getAttribute('href'));
       const targetId = link.getAttribute('href').substring(1);
       const target = document.getElementById(targetId) || document.querySelector(link.getAttribute('href'));
       if (target) {
@@ -61,6 +63,45 @@ function initHeroButtons() {
 }
 
 function initTestimonialsSlider() {
+  const quotes = document.querySelectorAll('.testimonial-slider blockquote');
+  const dotsContainer = document.querySelector('.testimonial-dots');
+  if (!quotes.length) return;
+  let current = 0;
+
+  // build dots
+  if (dotsContainer) {
+    quotes.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'dot';
+      dot.setAttribute('aria-label', 'Show testimonial ' + (i + 1));
+      dot.addEventListener('click', () => showQuote(i));
+      dotsContainer.appendChild(dot);
+    });
+  }
+
+  function showQuote(idx) {
+    quotes.forEach((q, i) => {
+      q.classList.toggle('active', i === idx);
+      if (dotsContainer) {
+        const dots = dotsContainer.querySelectorAll('.dot');
+        if (dots[i]) {
+          dots[i].classList.add('active');
+        }
+        if (dots[current]) {
+          dots[current].classList.remove('active');
+        }
+      }
+    });
+    current = idx;
+  }
+
+  function cycle() {
+    const next = (current + 1) % quotes.length;
+    showQuote(next);
+  }
+
+  showQuote(0);
+  setInterval(cycle, 5000);
   const slider = document.querySelector('.testimonial-slider');
 codex/resolve-conflicts-in-codex/integrate-full-website-features-a
   if (!slider) return;
@@ -75,7 +116,6 @@ codex/resolve-conflicts-in-codex/integrate-full-website-features-a
     const next = document.querySelector('.testimonial-next');
     const dotsContainer = document.querySelector('.testimonial-dots');
     let current = 0;
-
     const showSlide = idx => {
       blocks.forEach((b, i) => b.classList.toggle('active', i === idx));
       if (dotsContainer) {
@@ -85,7 +125,6 @@ codex/resolve-conflicts-in-codex/integrate-full-website-features-a
       }
       current = idx;
   };
-main
 
   const showSlide = idx => {
     blocks.forEach((b, i) => b.classList.toggle('active', i === idx));
@@ -132,9 +171,7 @@ function exposeMembershipModal() {
       window.membershipManager.showEmailCaptureModal('Essential');
     }
   };
-codex/resolve-conflicts-in-codex/integrate-full-website-features-a
 }
-
 document.addEventListener('DOMContentLoaded', () => {
   if (typeof initializeApp === 'function') {
     initializeApp();
@@ -168,5 +205,4 @@ document.addEventListener('DOMContentLoaded', () => {
       window.membershipManager.showEmailCaptureModal('Essential');
     }
   };
-main
 });
