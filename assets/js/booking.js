@@ -274,7 +274,7 @@ if (this.currentStep < this.steps.length - 1) {
 
 prevStep() {
 if (this.currentStep > 0) {
-this.currentStep–;
+this.currentStep--;
 this.showStep(this.currentStep);
 }
 }
@@ -590,7 +590,7 @@ modal.querySelector('.modal-close').addEventListener('click', () => {
 
 modal.querySelector('.modal-membership-form').addEventListener('submit', (e) => {
   e.preventDefault();
-  const email = modal.querySelector('input[email]').value;
+  const email = modal.querySelector('input[type="email"]').value;
   this.forwardToBooking(email, membershipType);
   modal.remove();
 });
