@@ -1,0 +1,324 @@
+<section class="quiz-section section-light">
+  <div class="container">
+    <h2 class="section-title">Find Your Perfect Treatment</h2>
+    <p class="section-subtitle">
+      Take our personalized quiz to discover which IV therapy is best suited for your wellness goals and current needs.
+    </p>
+
+```
+<div class="quiz-container">
+  <div class="quiz-header">
+    <h3>Wellness Assessment Quiz</h3>
+    <p>Answer a few quick questions to get personalized treatment recommendations</p>
+    <div class="quiz-progress">
+      <div class="quiz-progress-bar" id="quizProgressBar"></div>
+      <span class="quiz-progress-text" id="quizProgressText">Question 1 of 5</span>
+    </div>
+  </div>
+
+  <form id="wellness-quiz" class="wellness-quiz">
+    <!-- Question 1: Current Feeling -->
+    <div class="quiz-question active" data-question="1">
+      <h4>How are you feeling right now?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option">
+          <input type="radio" name="feeling" value="energetic">
+          <span class="option-content">
+            <i class="fas fa-bolt"></i>
+            <strong>Energetic</strong>
+            <p>Feeling good and want to optimize</p>
+          </span>
+        </label>
+        
+        <label class="quiz-option">
+          <input type="radio" name="feeling" value="tired">
+          <span class="option-content">
+            <i class="fas fa-battery-quarter"></i>
+            <strong>Tired & Drained</strong>
+            <p>Low energy, need a boost</p>
+          </span>
+        </label>
+        
+        <label class="quiz-option">
+          <input type="radio" name="feeling" value="hungover">
+          <span class="option-content">
+            <i class="fas fa-dizzy"></i>
+            <strong>Hungover</strong>
+            <p>Need rapid recovery from last night</p>
+          </span>
+        </label>
+        
+        <label class="quiz-option">
+          <input type="radio" name="feeling" value="sick">
+          <span class="option-content">
+            <i class="fas fa-thermometer-half"></i>
+            <strong>Under the Weather</strong>
+            <p>Fighting off illness or feeling run down</p>
+          </span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Question 2: Primary Goal -->
+    <div class="quiz-question" data-question="2">
+      <h4>What's your primary wellness goal?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option">
+          <input type="radio" name="goal" value="hydration">
+          <span class="option-content">
+            <i class="fas fa-tint"></i>
+            <strong>Hydration</strong>
+            <p>Rehydrate and replenish electrolytes</p>
+          </span>
+        </label>
+        
+        <label class="quiz-option">
+          <input type="radio" name="goal" value="energy">
+          <span class="option-content">
+            <i class="fas fa-lightning-bolt"></i>
+            <strong>Energy Boost</strong>
+            <p>Increase energy and mental clarity</p>
+          </span>
+        </label>
+        
+        <label class="quiz-option">
+          <input type="radio" name="goal" value="immunity">
+          <span class="option-content">
+            <i class="fas fa-shield-virus"></i>
+            <strong>Immune Support</strong>
+            <p>Strengthen immune system</p>
+          </span>
+        </label>
+        
+        <label class="quiz-option">
+          <input type="radio" name="goal" value="beauty">
+          <span class="option-content">
+            <i class="fas fa-gem"></i>
+            <strong>Beauty & Anti-Aging</strong>
+            <p>Improve skin and overall appearance</p>
+          </span>
+        </label>
+        
+        <label class="quiz-option">
+          <input type="radio" name="goal" value="recovery">
+          <span class="option-content">
+            <i class="fas fa-running"></i>
+            <strong>Athletic Recovery</strong>
+            <p>Muscle recovery and performance</p>
+          </span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Question 3: Lifestyle -->
+    <div class="quiz-question" data-question="3">
+      <h4>Which best describes your lifestyle?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option">
+          <input type="radio" name="lifestyle" value="busy">
+          <span class="option-content">
+            <i class="fas fa-briefcase"></i>
+            <strong>Busy Professional</strong>
+            <p>High stress, long hours, travel often</p>
+          </span>
+        </label>
+        
+        <label class="quiz-option">
+          <input type="radio" name="lifestyle" value="active">
+          <span class="option-content">
+            <i class="fas fa-dumbbell"></i>
+            <strong>Very Active</strong>
+            <p>Regular exercise, athletic pursuits</p>
+          </span>
+        </label>
+        
+        <label class="quiz-option">
+          <input type="radio" name="lifestyle" value="social">
+          <span class="option-content">
+            <i class="fas fa-users"></i>
+            <strong>Social Lifestyle</strong>
+            <p>Frequent events, social drinking</p>
+          </span>
+        </label>
+        
+        <label class="quiz-option">
+          <input type="radio" name="lifestyle" value="wellness">
+          <span class="option-content">
+            <i class="fas fa-leaf"></i>
+            <strong>Wellness Focused</strong>
+            <p>Health-conscious, preventive care</p>
+          </span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Question 4: Experience Level -->
+    <div class="quiz-question" data-question="4">
+      <h4>What's your experience with IV therapy?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option">
+          <input type="radio" name="experience" value="first-time">
+          <span class="option-content">
+            <i class="fas fa-seedling"></i>
+            <strong>First Time</strong>
+            <p>New to IV therapy, want to try it</p>
+          </span>
+        </label>
+        
+        <label class="quiz-option">
+          <input type="radio" name="experience" value="occasional">
+          <span class="option-content">
+            <i class="fas fa-calendar-alt"></i>
+            <strong>Occasional User</strong>
+            <p>Have tried IV therapy a few times</p>
+          </span>
+        </label>
+        
+        <label class="quiz-option">
+          <input type="radio" name="experience" value="regular">
+          <span class="option-content">
+            <i class="fas fa-star"></i>
+            <strong>Regular User</strong>
+            <p>Use IV therapy monthly or more</p>
+          </span>
+        </label>
+        
+        <label class="quiz-option">
+          <input type="radio" name="experience" value="enthusiast">
+          <span class="option-content">
+            <i class="fas fa-crown"></i>
+            <strong>Wellness Enthusiast</strong>
+            <p>Advanced treatments like NAD+</p>
+          </span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Question 5: Budget -->
+    <div class="quiz-question" data-question="5">
+      <h4>What's your preferred investment level?</h4>
+      <div class="quiz-options">
+        <label class="quiz-option">
+          <input type="radio" name="budget" value="basic">
+          <span class="option-content">
+            <i class="fas fa-dollar-sign"></i>
+            <strong>Basic ($149-199)</strong>
+            <p>Essential hydration and vitamins</p>
+          </span>
+        </label>
+        
+        <label class="quiz-option">
+          <input type="radio" name="budget" value="standard">
+          <span class="option-content">
+            <i class="fas fa-coins"></i>
+            <strong>Standard ($199-299)</strong>
+            <p>Enhanced formulas with premium add-ons</p>
+          </span>
+        </label>
+        
+        <label class="quiz-option">
+          <input type="radio" name="budget" value="premium">
+          <span class="option-content">
+            <i class="fas fa-gem"></i>
+            <strong>Premium ($299-499)</strong>
+            <p>Advanced treatments and specialty formulas</p>
+          </span>
+        </label>
+        
+        <label class="quiz-option">
+          <input type="radio" name="budget" value="luxury">
+          <span class="option-content">
+            <i class="fas fa-crown"></i>
+            <strong>Luxury ($499+)</strong>
+            <p>NAD+ therapy and cutting-edge treatments</p>
+          </span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Quiz Navigation -->
+    <div class="quiz-navigation">
+      <button type="button" id="prevQuestionBtn" class="quiz-nav-btn secondary" style="display: none;">
+        <i class="fas fa-arrow-left"></i>
+        Previous
+      </button>
+      
+      <button type="button" id="nextQuestionBtn" class="quiz-nav-btn primary">
+        Next
+        <i class="fas fa-arrow-right"></i>
+      </button>
+      
+      <button type="submit" id="submitQuizBtn" class="quiz-nav-btn primary" style="display: none;">
+        Get My Recommendation
+        <i class="fas fa-magic"></i>
+      </button>
+    </div>
+  </form>
+
+  <!-- Quiz Results -->
+  <div id="quiz-results" class="quiz-results" style="display: none;">
+    <div class="results-header">
+      <i class="fas fa-check-circle"></i>
+      <h3>Your Personalized Recommendation</h3>
+    </div>
+    
+    <div class="recommended-treatment">
+      <div class="treatment-image">
+        <img id="recommendedTreatmentImage" src="" alt="Recommended Treatment">
+      </div>
+      <div class="treatment-details">
+        <h4 id="recommendedTreatmentName"></h4>
+        <p id="recommendedTreatmentDescription"></p>
+        <div class="treatment-benefits" id="recommendedTreatmentBenefits"></div>
+        <div class="treatment-price" id="recommendedTreatmentPrice"></div>
+      </div>
+    </div>
+    
+    <div class="results-actions">
+      <a id="bookRecommendedTreatment" href="#" class="cta primary" target="_blank">
+        <i class="fas fa-calendar-plus"></i>
+        Book This Treatment
+      </a>
+      <button id="retakeQuizBtn" class="cta secondary">
+        <i class="fas fa-redo"></i>
+        Retake Quiz
+      </button>
+    </div>
+    
+    <div class="alternative-treatments">
+      <h5>Other treatments you might like:</h5>
+      <div id="alternativeTreatments" class="alternative-list"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Quiz Benefits -->
+<div class="quiz-benefits">
+  <h3>Why Take Our Quiz?</h3>
+  <div class="benefits-grid">
+    <div class="benefit-item">
+      <i class="fas fa-bullseye"></i>
+      <h4>Personalized Recommendations</h4>
+      <p>Get treatment suggestions tailored to your specific needs and wellness goals</p>
+    </div>
+    <div class="benefit-item">
+      <i class="fas fa-clock"></i>
+      <h4>Save Time</h4>
+      <p>Skip the guesswork and go straight to the treatment that's right for you</p>
+    </div>
+    <div class="benefit-item">
+      <i class="fas fa-dollar-sign"></i>
+      <h4>Optimize Value</h4>
+      <p>Find treatments that fit your budget and provide maximum wellness benefits</p>
+    </div>
+    <div class="benefit-item">
+      <i class="fas fa-user-md"></i>
+      <h4>Expert Guidance</h4>
+      <p>Recommendations based on medical expertise and thousands of successful treatments</p>
+    </div>
+  </div>
+</div>
+```
+
+  </div>
+</section>
