@@ -66,7 +66,7 @@ serviceId: 'goldUltimateHydration',
 description: 'Premium hydration therapy with electrolytes and essential vitamins.'
 },
 immunity: {
-name: 'Myers' Cocktail',
+name: "Myers' Cocktail",
 serviceId: 'myersCocktail',
 description: 'Classic vitamin cocktail to strengthen immune system and overall wellness.'
 },
