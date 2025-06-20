@@ -13,3 +13,5 @@
   gtag('config', 'G-XXXXXXXX');
   window.gtag = gtag;
 })();
+
+})();

@@ -269,7 +269,6 @@ if (this.currentStep < this.steps.length - 1) {
 prevStep() {
 if (this.currentStep > 0) {
   this.currentStep--;
-  this.currentStep--;
   this.showStep(this.currentStep);
 }
 }
