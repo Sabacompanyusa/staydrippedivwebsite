@@ -7,6 +7,7 @@ function initializeApp() {
   initSmoothScroll();
   initHeroButtons();
   initFadeIn();
+  initFaqAccordion();
   initTestimonialsSlider();
   exposeMembershipModal();
 }
@@ -114,6 +115,17 @@ function initFadeIn() {
     });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+}
+
+function initFaqAccordion() {
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const expanded = q.getAttribute('aria-expanded') === 'true';
+      q.setAttribute('aria-expanded', !expanded);
+      item.classList.toggle('open', !expanded);
+    });
+  });
 }
 
 function exposeMembershipModal() {

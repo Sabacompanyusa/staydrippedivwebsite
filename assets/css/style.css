@@ -820,3 +820,68 @@ margin-top: 2rem;
 .testimonial-dots button.active {
   background: var(--secondary);
 }
+
+/* FAQ accordion */
+.faq-item .faq-answer {
+  display: none;
+  padding: 0.5rem 0 1rem;
+}
+
+.faq-item.open .faq-answer {
+  display: block;
+}
+
+.faq-question {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  padding: 0.75rem 0;
+}
+
+/* Service pages */
+.treatment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.treatment-card {
+  background: #fff;
+  border: 1px solid rgba(0, 188, 212, 0.1);
+  border-radius: var(--br-lg);
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.treatment-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.treatment-card img {
+  max-width: 160px;
+  margin-bottom: 1rem;
+}
+
+.service-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.25rem;
+  background: var(--secondary);
+  color: #fff;
+  border-radius: var(--br);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.service-btn:hover {
+  background: var(--accent);
+}
