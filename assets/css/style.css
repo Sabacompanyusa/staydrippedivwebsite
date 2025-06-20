@@ -1,0 +1,100 @@
+/* Base styles and variable definitions */
+:root {
+  --primary: #6a60ff;
+  --secondary: #0a005b;
+  --text-color: #333;
+  --background: #fff;
+  --section-padding: 4rem 1rem;
+  --section-padding-mobile: 2rem 1rem;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-color);
+  background: var(--background);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section {
+  padding: var(--section-padding);
+}
+
+.cta,
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.cta.primary,
+.cta-button.primary {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+}
+
+.cta.secondary,
+.cta-button.secondary {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.scroll-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: var(--primary);
+  width: 0;
+  z-index: 1000;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  width: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.mobile-menu-toggle span {
+  height: 3px;
+  margin: 4px 0;
+  background: var(--text-color);
+  border-radius: 2px;
+}
+
+nav.nav-menu {
+  display: flex;
+  gap: 1rem;
+}
+
+nav.nav-menu.active {
+  display: flex;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
