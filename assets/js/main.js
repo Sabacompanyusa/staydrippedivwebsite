@@ -1,7 +1,8 @@
 // Main site initialization and interactive behaviors
 // Copyright © 2025 Stay Dripped Mobile IV
 
-function initializeApp() {
+// Export initialization to allow calling after components load
+window.initializeApp = function initializeApp() {
   initScrollIndicator();
   initMobileMenu();
   initSmoothScroll();
@@ -9,7 +10,7 @@ function initializeApp() {
   initFadeIn();
   initTestimonialsSlider();
   exposeMembershipModal();
-}
+};
 
 function initScrollIndicator() {
   const indicator = document.getElementById('scrollIndicator');
@@ -116,8 +117,3 @@ function exposeMembershipModal() {
   };
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  if (typeof initializeApp === 'function') {
-    initializeApp();
-  }
-});
