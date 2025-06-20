@@ -1,1 +1,27 @@
-
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: flex;
+  }
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--primary);
+    padding: 1rem 2rem;
+    display: none;
+  }
+  .nav-menu.active {
+    display: flex;
+  }
+  .header-buttons {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .section {
+    padding: var(--section-padding-mobile);
+  }
+}

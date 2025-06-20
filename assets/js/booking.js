@@ -66,7 +66,7 @@ serviceId: 'goldUltimateHydration',
 description: 'Premium hydration therapy with electrolytes and essential vitamins.'
 },
 immunity: {
-  name: "Myers' Cocktail",
+name: "Myers' Cocktail",
 serviceId: 'myersCocktail',
 description: 'Classic vitamin cocktail to strengthen immune system and overall wellness.'
 },
@@ -93,9 +93,7 @@ description: 'Advanced anti-aging therapy with NAD+ precursors and cellular supp
 }
 };
 
-// =============================================
-// BOOKING TAB SYSTEM
-// =============================================
+// BOOKING TAB SYSTEM // 
 
 class BookingTabManager {
 constructor() {
@@ -191,9 +189,7 @@ event_label: 'default_tab_basic'
 }
 }
 
-// =============================================
-// SMART QUIZ RECOMMENDATION SYSTEM
-// =============================================
+// SMART QUIZ RECOMMENDATION SYSTEM // 
 
 class SmartQuizManager {
 constructor() {
@@ -471,9 +467,7 @@ recommended_service: recommendation.serviceId
 }
 }
 
-// =============================================
-// MEMBERSHIP & EMAIL CAPTURE SYSTEM
-// =============================================
+// MEMBERSHIP & EMAIL CAPTURE SYSTEM //
 
 class MembershipManager {
 constructor() {
@@ -590,7 +584,7 @@ modal.querySelector('.modal-close').addEventListener('click', () => {
 
 modal.querySelector('.modal-membership-form').addEventListener('submit', (e) => {
   e.preventDefault();
-  const email = modal.querySelector('input[email]').value;
+  const email = modal.querySelector('input[type="email"]').value;
   this.forwardToBooking(email, membershipType);
   modal.remove();
 });
@@ -669,9 +663,7 @@ try {
 }
 }
 
-// =============================================
-// BOOKING UTILITIES & HELPERS
-// =============================================
+// BOOKING UTILITIES & HELPERS // 
 
 class BookingUtils {
 static createBookingUrl(serviceId, email = null, additionalParams = {}) {
@@ -750,9 +742,7 @@ delete e.target._tooltip;
 }
 }
 
-// =============================================
-// INITIALIZATION
-// =============================================
+// INITIALIZATION // 
 
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
