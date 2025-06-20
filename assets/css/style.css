@@ -758,6 +758,21 @@ margin-top: 2rem;
   box-shadow: var(--shadow-hover);
 }
 
+/* Testimonial Slider */
+.testimonial-slider blockquote {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.testimonial-slider blockquote.active {
+  opacity: 1;
+}
+.testimonial-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
 /* Mobile navigation */
 @media (max-width: 768px) {
   .nav-menu {
