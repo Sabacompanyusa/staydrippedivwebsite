@@ -75,7 +75,7 @@ overflow-x: hidden;
 
 img, iframe, svg {
 max-width: 100%;
-height: auto;
+max-height: 100%;
 }
 
 a {
@@ -138,8 +138,8 @@ position: absolute;
 bottom: -10px;
 left: 50%;
 transform: translateX(-50%);
-width: 80px;
-height: 4px;
+width: 60px;
+height: 2px;
 background: var(--secondary);
 border-radius: 2px;
 }
@@ -177,7 +177,7 @@ align-items: center;
 .logo-section {
 display: flex;
 align-items: center;
-gap: 0.5rem;
+gap: 1rem;
 transition: var(--transition);
 }
 
@@ -186,7 +186,7 @@ transform: scale(1.05);
 }
 
 .logo-image {
-height: 40px;
+height: 100px;
 width: auto;
 }
 
