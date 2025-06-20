@@ -531,6 +531,17 @@
   }
 }
 
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .exam-btn {
+    border: 2px solid currentColor;
+  }
+  
+  .exam-modal {
+    border: 2px solid #000;
+  }
+}
+
 /* Landscape Orientation on Mobile */
 @media (max-width: 768px) and (orientation: landscape) {
   .hero {
@@ -607,6 +618,22 @@
   }
   
   .membership-cta::before {
+    animation: none;
+  }
+  
+  /* Exam Button Reduced Motion */
+  .exam-btn,
+  .exam-modal,
+  .exam-modal-overlay,
+  .benefit-point {
+    transition: none;
+  }
+  
+  .exam-btn::before {
+    display: none;
+  }
+  
+  .exam-btn.loading::after {
     animation: none;
   }
 }
