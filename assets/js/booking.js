@@ -93,9 +93,7 @@ description: 'Advanced anti-aging therapy with NAD+ precursors and cellular supp
 }
 };
 
-// =============================================
-// BOOKING TAB SYSTEM
-// =============================================
+// BOOKING TAB SYSTEM // 
 
 class BookingTabManager {
 constructor() {
@@ -191,9 +189,7 @@ event_label: 'default_tab_basic'
 }
 }
 
-// =============================================
-// SMART QUIZ RECOMMENDATION SYSTEM
-// =============================================
+// SMART QUIZ RECOMMENDATION SYSTEM // 
 
 class SmartQuizManager {
 constructor() {
@@ -274,7 +270,7 @@ if (this.currentStep < this.steps.length - 1) {
 
 prevStep() {
 if (this.currentStep > 0) {
-this.currentStep--;
+  this.currentStep--;
 this.showStep(this.currentStep);
 }
 }
@@ -471,9 +467,7 @@ recommended_service: recommendation.serviceId
 }
 }
 
-// =============================================
-// MEMBERSHIP & EMAIL CAPTURE SYSTEM
-// =============================================
+// MEMBERSHIP & EMAIL CAPTURE SYSTEM //
 
 class MembershipManager {
 constructor() {
@@ -669,9 +663,7 @@ try {
 }
 }
 
-// =============================================
-// BOOKING UTILITIES & HELPERS
-// =============================================
+// BOOKING UTILITIES & HELPERS // 
 
 class BookingUtils {
 static createBookingUrl(serviceId, email = null, additionalParams = {}) {
@@ -750,9 +742,7 @@ delete e.target._tooltip;
 }
 }
 
-// =============================================
-// INITIALIZATION
-// =============================================
+// INITIALIZATION // 
 
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
