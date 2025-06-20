@@ -6,9 +6,7 @@
 - Copyright © 2025 Stay Dripped Mobile IV LLC
   */
 
-// =============================================
-// CONFIGURATION & CONSTANTS
-// =============================================
+// CONFIGURATION & CONSTANTS // 
 
 const BOOKING_CONFIG = {
 // IntakeQ Base URL
@@ -271,7 +269,8 @@ if (this.currentStep < this.steps.length - 1) {
 prevStep() {
 if (this.currentStep > 0) {
   this.currentStep--;
-this.showStep(this.currentStep);
+  this.currentStep--;
+  this.showStep(this.currentStep);
 }
 }
 
@@ -600,7 +599,7 @@ return modal;
 }
 
 isValidEmail(email) {
-const emailRegex = /^[^\s@]+@[^\s@]+.[^\s@]+$/;
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 return emailRegex.test(email);
 }
 
