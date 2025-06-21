@@ -1,1 +1,26 @@
+/* Basic animation helpers */
 
+.fade-in {
+  opacity: 0;
+}
+
+.fade-in.animate {
+  animation: fadeIn 1s forwards ease-in;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+.slide-up {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.slide-up.animate {
+  animation: slideUp 0.6s forwards ease-out;
+}
+
+@keyframes slideUp {
+  to { opacity: 1; transform: none; }
+}

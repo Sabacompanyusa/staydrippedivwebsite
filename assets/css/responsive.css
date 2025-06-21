@@ -1,1 +1,28 @@
+/* Responsive utilities */
 
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+  .hero-buttons {
+    flex-direction: column;
+  }
+  .header-buttons {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta, .cta-button {
+    padding: 0.75rem 1.25rem;
+  }
+  .hero-features {
+    gap: 1rem;
+  }
+}

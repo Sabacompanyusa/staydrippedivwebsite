@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memberships - Stay Dripped Mobile IV</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="canonical" href="https://www.staydrippediv.com/memberships.html">
+  <meta name="theme-color" content="#0a2a43">
+</head>
+<body>
+  <div class="scroll-indicator" id="scrollIndicator"></div>
+  <div id="header-container"></div>
+  <main>
+    <div id="memberships-container"></div>
+  </main>
+  <div id="footer-container"></div>
+  <script src="assets/js/main.js"></script>
+  <script>
+    async function loadComponent(id, path) {
+      const resp = await fetch(path);
+      document.getElementById(id).innerHTML = await resp.text();
+    }
+    document.addEventListener('DOMContentLoaded', async () => {
+      await Promise.all([
+        loadComponent('header-container', 'components/header.html'),
+        loadComponent('memberships-container', 'components/memberships.html'),
+        loadComponent('footer-container', 'components/footer.html')
+      ]);
+    });
+  </script>
+</body>
+</html>

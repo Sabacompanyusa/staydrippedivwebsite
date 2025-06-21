@@ -76,4 +76,43 @@ document.addEventListener('DOMContentLoaded', () => {
       window.membershipManager.showEmailCaptureModal('Essential');
     }
   };
+
+  /* Scroll progress indicator */
+  const indicator = document.getElementById('scrollIndicator');
+  if (indicator) {
+    window.addEventListener('scroll', () => {
+      const total = document.body.scrollHeight - window.innerHeight;
+      const progress = (window.scrollY / total) * 100;
+      indicator.style.width = progress + '%';
+    });
+  }
+
+  /* Newsletter form submission */
+  const newsletterForm = document.getElementById('newsletterForm');
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const email = newsletterForm.email.value;
+      if (window.gtag) {
+        gtag('event', 'newsletter_signup', { email });
+      }
+      newsletterForm.reset();
+      alert('Thanks for subscribing!');
+    });
+  }
+
+  /* Animate elements on scroll */
+  const animated = document.querySelectorAll('[data-animate]');
+  if (animated.length) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    animated.forEach(el => observer.observe(el));
+  }
 });
