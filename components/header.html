@@ -9,7 +9,7 @@
   <a href="#home" class="nav-link">Home</a>
   <a href="#services" class="nav-link">Services</a>
   <a href="#testimonials" class="nav-link">Testimonials</a>
-  <a href="#booking" class="nav-link">Book Now</a>
+  <a href="#booking-section" class="nav-link">Book Now</a>
   <a href="#contact" class="nav-link">Contact</a>
 </nav>
 
@@ -19,6 +19,16 @@
     <span class="btn-text">Emergency</span>
   </a>
   <button class="header-book-btn" id="headerBookBtn">Book Now</button>
+  <div id="main-qualiphy-widget" style="margin-left:0.5rem;">
+    <div id="loadFormButton"
+         style="width:150px;height:40px;cursor:pointer;background-color:#cfc9ff;color:#0a005b;border:none;border-radius:5px;font-weight:600;display:flex;justify-content:center;align-items:center;"
+         onmouseover="this.style.backgroundColor='#8058fa'; this.style.color='white'"
+         onmouseout="this.style.backgroundColor='#cfc9ff'; this.style.color='#0a005b'"
+         onclick="showDisclosureModal()">
+      First Time Patient Exam
+    </div>
+    <p id="not-available" style="display:none">Not available!</p>
+  </div>
 </div>
 
 <button class="mobile-menu-toggle" id="mobileMenuToggle">

@@ -5,6 +5,9 @@ function initializeApp() {
   initScrollIndicator();
   initMobileMenu();
   initSmoothScroll();
+  initScrollSpy();
+  initHeaderScrollEffect();
+  initBookingModal();
   initHeroButtons();
   initFadeIn();
   initTestimonialsSlider();
@@ -38,14 +41,63 @@ function initMobileMenu() {
 function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', e => {
-      const target = document.querySelector(link.getAttribute('href'));
-      const targetId = link.getAttribute('href').substring(1);
-      const target = document.getElementById(targetId) || document.querySelector(link.getAttribute('href'));
+      const targetSelector = link.getAttribute('href');
+      const target = document.querySelector(targetSelector);
       if (target) {
         e.preventDefault();
         target.scrollIntoView({ behavior: 'smooth' });
       }
     });
+  });
+}
+
+function initScrollSpy() {
+  const sections = document.querySelectorAll('main section[id]');
+  const links = document.querySelectorAll('.nav-link[href^="#"]');
+  if (!sections.length || !links.length) return;
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        links.forEach(l => {
+          l.classList.toggle('active', l.getAttribute('href') === `#${id}`);
+        });
+      }
+    });
+  }, { rootMargin: '-50% 0px -50% 0px' });
+
+  sections.forEach(sec => observer.observe(sec));
+}
+
+function initHeaderScrollEffect() {
+  const header = document.querySelector('.header');
+  if (!header) return;
+  const onScroll = () => {
+    header.classList.toggle('scrolled', window.scrollY > 50);
+  };
+  window.addEventListener('scroll', onScroll);
+  onScroll();
+}
+
+function initBookingModal() {
+  const modal = document.getElementById('bookingModal');
+  const openBtn = document.getElementById('openBooking');
+  const closeBtn = modal ? modal.querySelector('.close') : null;
+  if (!modal || !openBtn || !closeBtn) return;
+
+  openBtn.addEventListener('click', () => {
+    modal.style.display = 'block';
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  window.addEventListener('click', e => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
   });
 }
 
@@ -63,68 +115,14 @@ function initHeroButtons() {
 }
 
 function initTestimonialsSlider() {
-  const quotes = document.querySelectorAll('.testimonial-slider blockquote');
-  const dotsContainer = document.querySelector('.testimonial-dots');
-  if (!quotes.length) return;
-  let current = 0;
-
-  // build dots
-  if (dotsContainer) {
-    quotes.forEach((_, i) => {
-      const dot = document.createElement('button');
-      dot.className = 'dot';
-      dot.setAttribute('aria-label', 'Show testimonial ' + (i + 1));
-      dot.addEventListener('click', () => showQuote(i));
-      dotsContainer.appendChild(dot);
-    });
-  }
-
-  function showQuote(idx) {
-    quotes.forEach((q, i) => {
-      q.classList.toggle('active', i === idx);
-      if (dotsContainer) {
-        const dots = dotsContainer.querySelectorAll('.dot');
-        if (dots[i]) {
-          dots[i].classList.add('active');
-        }
-        if (dots[current]) {
-          dots[current].classList.remove('active');
-        }
-      }
-    });
-    current = idx;
-  }
-
-  function cycle() {
-    const next = (current + 1) % quotes.length;
-    showQuote(next);
-  }
-
-  showQuote(0);
-  setInterval(cycle, 5000);
   const slider = document.querySelector('.testimonial-slider');
-codex/resolve-conflicts-in-codex/integrate-full-website-features-a
   if (!slider) return;
+
   const blocks = Array.from(slider.querySelectorAll('blockquote'));
-  const prev = document.querySelector('.testimonial-prev');
-  const next = document.querySelector('.testimonial-next');
-  const dotsContainer = document.querySelector('.testimonial-dots');
+  const prev = slider.querySelector('.testimonial-prev');
+  const next = slider.querySelector('.testimonial-next');
+  const dotsContainer = slider.querySelector('.testimonial-dots');
   let current = 0;
-  if (slider) {
-    const blocks = Array.from(slider.querySelectorAll('blockquote'));
-    const prev = document.querySelector('.testimonial-prev');
-    const next = document.querySelector('.testimonial-next');
-    const dotsContainer = document.querySelector('.testimonial-dots');
-    let current = 0;
-    const showSlide = idx => {
-      blocks.forEach((b, i) => b.classList.toggle('active', i === idx));
-      if (dotsContainer) {
-        dotsContainer.querySelectorAll('button').forEach((dot, i) => {
-          dot.classList.toggle('active', i === idx);
-        });
-      }
-      current = idx;
-  };
 
   const showSlide = idx => {
     blocks.forEach((b, i) => b.classList.toggle('active', i === idx));
@@ -138,18 +136,24 @@ codex/resolve-conflicts-in-codex/integrate-full-website-features-a
 
   if (dotsContainer) {
     blocks.forEach((_, i) => {
-      const d = document.createElement('button');
-      if (i === 0) d.classList.add('active');
-      d.addEventListener('click', () => showSlide(i));
-      dotsContainer.appendChild(d);
+      const dot = document.createElement('button');
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => showSlide(i));
+      dotsContainer.appendChild(dot);
     });
   }
 
-  prev && prev.addEventListener('click', () =>
+  prev?.addEventListener('click', () =>
     showSlide((current - 1 + blocks.length) % blocks.length)
   );
-  next && next.addEventListener('click', () =>
+  next?.addEventListener('click', () =>
     showSlide((current + 1) % blocks.length)
+  );
+
+  showSlide(0);
+  setInterval(() =>
+    showSlide((current + 1) % blocks.length),
+    5000
   );
 }
 
@@ -200,9 +204,4 @@ document.addEventListener('DOMContentLoaded', () => {
       alert('Thanks for subscribing!');
     });
   }
-});
-    if (window.membershipManager) {
-      window.membershipManager.showEmailCaptureModal('Essential');
-    }
-  };
 });

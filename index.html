@@ -47,6 +47,8 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
   <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="https://firebasestorage.googleapis.com/v0/b/qualiphy-web-d918b.appspot.com/o/style-v4.css?alt=media&token=34735782-16e8-4a2f-9eaa-426d65af48b2">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 
   <!-- Preload critical resources -->
 
@@ -98,6 +100,7 @@
 </head>
 
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <!-- Scroll Progress Indicator -->
   <div class="scroll-indicator" id="scrollIndicator"></div>
 
@@ -107,7 +110,7 @@
 
   <!-- Main Content -->
 
-  <main>
+  <main id="main-content">
     <!-- Hero Component -->
     <div id="hero-container"></div>
 
@@ -116,6 +119,7 @@
 
 <!-- Booking Component -->
 <div id="booking-container"></div>
+<div id="booking-modal-container"></div>
 
 <!-- How It Works Component -->
 <div id="how-it-works-container"></div>
@@ -142,13 +146,20 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
 
-  <script id="qualiphy-script" src="https://www.app.qualiphy.me/scripts/quidget_disclosure.js" data-disclosure-widget-id="your-widget-id"></script>
+  <script id="qualiphy-script" src="https://www.app.qualiphy.me/scripts/quidget_disclosure.js"
+    data-formsrc='https://www.app.qualiphy.me/qualiphy-widget?clinic=Stay Dripped Mobile IV LLC&amp;clinicId=3454&amp;first_name=&amp;last_name=&amp;email=&amp;phone_number=&amp;gender=&amp;exams=selectable&amp;tele_state_required=true&amp;token=25f1c2618e146d725e934313417e918418a5068e'
+    data-timezone='-6'
+    data-examhours='[{"SUN":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"MON":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"TUE":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"WED":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"THU":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"FRI":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"SAT":{"FROM":"00:00","TO":"23:59","isDaySelected":true}}]'></script>
 
   <script src="assets/js/main.js"></script>
 
   <script src="assets/js/booking.js"></script>
 
   <script src="assets/js/analytics.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
 
   <!-- Component Loader Script -->
 
@@ -171,6 +182,7 @@
         loadComponent('hero-container', 'components/hero.html'),
         loadComponent('services-container', 'components/services.html'),
         loadComponent('booking-container', 'components/booking.html'),
+        loadComponent('booking-modal-container', 'components/booking-modal.html'),
         loadComponent('how-it-works-container', 'components/how-it-works.html'),
         loadComponent('testimonials-container', 'components/testimonials.html'),
         loadComponent('memberships-container', 'components/memberships.html'),
