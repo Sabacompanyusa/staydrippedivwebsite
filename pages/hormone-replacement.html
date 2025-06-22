@@ -1,1 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hormone Replacement Therapy - Optimize Your Hormones | Qualiphy</title>
+    <meta name="description" content="Personalized hormone replacement therapy for men and women. Restore energy, mood, and vitality with bioidentical hormone optimization.">
+    
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="../../assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon-16x16.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/qualiphy-style.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a href="../../index.html">
+                        <img src="../../assets/images/logo.png" alt="Qualiphy" class="logo">
+                    </a>
+                </div>
+                <div class="navbar-menu">
+                    <ul class="navbar-nav">
+                        <li><a href="../../index.html" class="nav-link">Home</a></li>
+                        <li><a href="../services.html" class="nav-link active">Services</a></li>
+                        <li><a href="../membership.html" class="nav-link">Membership</a></li>
+                        <li><a href="../testimonials.html" class="nav-link">Testimonials</a></li>
+                        <li><a href="../../index.html#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="openBookingModal()">Book Now</button>
+                </div>
+            </div>
+        </nav>
+    </header>
 
+    <!-- Service Hero -->
+    <section class="service-hero">
+        <div class="container">
+            <div class="service-hero-content">
+                <div class="service-hero-text">
+                    <div class="breadcrumbs">
+                        <a href="../services.html">Services</a> > <span>Hormone Replacement Therapy</span>
+                    </div>
+                    <h1>Hormone Replacement Therapy</h1>
+                    <p class="service-subtitle">Restore optimal hormone levels and reclaim your energy, mood, and vitality with personalized bioidentical hormone replacement therapy.</p>
+                    <div class="service-highlights">
+                        <div class="highlight-item">
+                            <span class="highlight-icon">⚡</span>
+                            <span>Increased Energy</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">😊</span>
+                            <span>Improved Mood</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">💪</span>
+                            <span>Enhanced Vitality</span>
+                        </div>
+                    </div>
+                    <div class="service-cta">
+                        <button class="btn btn-primary btn-lg" onclick="openBookingModal()">Schedule Consultation</button>
+                        <div class="pricing-info">Consultation Required | Personalized Treatment Plans</div>
+                    </div>
+                </div>
+                <div class="service-hero-image">
+                    <img src="../../assets/images/placeholder.png" alt="Hormone Replacement Therapy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hormone Services -->
+    <section class="hormone-services">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Comprehensive Hormone Optimization</h2>
+                <p>Tailored hormone therapy solutions for men and women</p>
+            </div>
+
+            <div class="services-tabs">
+                <div class="tab-navigation">
+                    <button class="tab-btn active" data-tab="men">For Men</button>
+                    <button class="tab-btn" data-tab="women">For Women</button>
+                    <button class="tab-btn" data-tab="both">All Patients</button>
+                </div>
+
+                <!-- Men's Hormone Therapy -->
+                <div class="tab-content active" id="men-tab">
+                    <div class="hormone-programs">
+                        <div class="program-card">
+                            <h3>Testosterone Replacement Therapy (TRT)</h3>
+                            <p>Restore optimal testosterone levels to combat low T symptoms and improve overall male health.</p>
+                            <div class="program-benefits">
+                                <h4>Benefits Include:</h4>
+                                <ul>
+                                    <li>Increased energy and stamina</li>
+                                    <li>Improved muscle mass and strength</li>
+                                    <li>Enhanced libido and sexual function</li>
+                                    <li>Better mood and mental clarity</li>
+                                    <li>Reduced body fat</li>
+                                    <li>Improved bone density</li>
+                                </ul>
+                            </div>
+                            <div class="program-symptoms">
+                                <h4>Addresses Symptoms Like:</h4>
+                                <ul>
+                                    <li>Chronic fatigue</li>
+                                    <li>Low libido</li>
+                                    <li>Difficulty building muscle</li>
+                                    <li>Mood swings or depression</li>
+                                    <li>Weight gain</li>
+                                    <li>Sleep disturbances</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Women's Hormone Therapy -->
+                <div class="tab-content" id="women-tab">
+                    <div class="hormone-programs">
+                        <div class="program-card">
+                            <h3>Bioidentical Hormone Replacement Therapy (BHRT)</h3>
+                            <p>Comprehensive hormone optimization for women addressing estrogen, progesterone, and testosterone imbalances.</p>
+                            <div class="program-benefits">
+                                <h4>Benefits Include:</h4>
+                                <ul>
+                                    <li>Relief from menopausal symptoms</li>
+                                    <li>Improved energy and vitality</li>
+                                    <li>Better sleep quality</li>
+                                    <li>Enhanced mood stability</li>
+                                    <li>Increased libido</li>
+                                    <li>Stronger bones</li>
+                                    <li>Improved skin health</li>
+                                </ul>
+                            </div>
+                            <div class="program-symptoms">
+                                <h4>Addresses Symptoms Like:</h4>
+                                <ul>
+                                    <li>Hot flashes and night sweats</li>
+                                    <li>Irregular periods</li>
+                                    <li>Mood swings and irritability</li>
+                                    <li>Low energy and fatigue</li>
+                                    <li>Weight gain</li>
+                                    <li>Sleep disturbances</li>
+                                    <li>Decreased libido</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- All Patients -->
+                <div class="tab-content" id="both-tab">
+                    <div class="hormone-programs">
+                        <div class="program-card">
+                            <h3>Thyroid Optimization</h3>
+                            <p>Comprehensive thyroid hormone management for optimal metabolic function.</p>
+                            <div class="program-details">
+                                <ul>
+                                    <li>T3 and T4 optimization</li>
+                                    <li>Reverse T3 monitoring</li>
+                                    <li>Thyroid antibody testing</li>
+                                    <li>Metabolic enhancement</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="program-card">
+                            <h3>Growth Hormone Therapy</h3>
+                            <p>Anti-aging and recovery-focused growth hormone optimization.</p>
+                            <div class="program-details">
+                                <ul>
+                                    <li>HGH peptide therapy</li>
+                                    <li>Anti-aging benefits</li>
+                                    <li>Improved recovery</li>
+                                    <li>Enhanced body composition</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="program-card">
+                            <h3>Adrenal Support</h3>
+                            <p>Cortisol and stress hormone optimization for better stress management.</p>
+                            <div class="program-details">
+                                <ul>
+                                    <li>Cortisol rhythm restoration</li>
+                                    <li>Stress response optimization</li>
+                                    <li>Energy level improvement</li>
+                                    <li>Sleep quality enhancement</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="hormone-process">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Your Hormone Optimization Journey</h2>
+                <p>A comprehensive, personalized approach to hormone replacement therapy</p>
+            </div>
+
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Comprehensive Consultation</h3>
+                        <p>Detailed health history, symptom assessment, and goal discussion with our hormone specialists.</p>
+                        <div class="step-duration">45-60 minutes</div>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Advanced Laboratory Testing</h3>
+                        <p>Comprehensive hormone panel including free and total hormones, metabolites, and related biomarkers.</p>
+                        <div class="step-duration">24-48 hour results</div>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Personalized Treatment Plan</h3>
+                        <p>Custom hormone protocol designed specifically for your unique needs and goals.</p>
+                        <div class="step-duration">Detailed plan creation</div>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Treatment Implementation</h3>
+                        <p>Begin your hormone therapy with your choice of delivery methods and ongoing support.</p>
+                        <div class="step-duration">Immediate start</div>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Ongoing Monitoring</h3>
+                        <p>Regular follow-ups, lab monitoring, and protocol adjustments to optimize your results.</p>
+                        <div class="step-duration">Continuous care</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Treatment Options -->
+    <section class="treatment-options">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Treatment Delivery Methods</h2>
+                <p>Choose the method that works best for your lifestyle</p>
+            </div>
+
+            <div class="delivery-methods">
+                <div class="method-card">
+                    <div class="method-icon">💉</div>
+                    <h3>Injections</h3>
+                    <p>Precise dosing with excellent absorption and consistent levels.</p>
+                    <ul>
+                        <li>Most effective absorption</li>
+                        <li>Precise dosing control</li>
+                        <li>Weekly or bi-weekly</li>
+                        <li>Cost-effective</li>
+                    </ul>
+                </div>
+
+                <div class="method-card">
+                    <div class="method-icon">🩹</div>
+                    <h3>Pellets</h3>
+                    <p>Long-lasting hormone delivery with consistent levels for 3-6 months.</p>
+                    <ul>
+                        <li>Consistent hormone levels</li>
+                        <li>Convenient long-term option</li>
+                        <li>Minimal maintenance</li>
+                        <li>3-6 month duration</li>
+                    </ul>
+                </div>
+
+                <div class="method-card">
+                    <div class="method-icon">🧴</div>
+                    <h3>Topical Gels/Creams</h3>
+                    <p>Easy daily application with good absorption and flexibility.</p>
+                    <ul>
+                        <li>Easy daily application</li>
+                        <li>Adjustable dosing</li>
+                        <li>Non-invasive</li>
+                        <li>Good patient compliance</li>
+                    </ul>
+                </div>
+
+                <div class="method-card">
+                    <div class="method-icon">💊</div>
+                    <h3>Sublingual/Oral</h3>
+                    <p>Convenient oral administration for certain hormone types.</p>
+                    <ul>
+                        <li>Convenient administration</li>
+                        <li>Good for specific hormones</li>
+                        <li>Easy to adjust</li>
+                        <li>Travel-friendly</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="hormone-benefits">
+        <div class="container">
+            <div class="benefits-content">
+                <div class="benefits-text">
+                    <h2>Why Choose Hormone Replacement Therapy?</h2>
+                    <p>Hormones are your body's chemical messengers, controlling everything from energy and mood to metabolism and sexual function. As we age, hormone levels naturally decline, leading to various symptoms that can significantly impact quality of life.</p>
+                    
+                    <div class="benefit-grid">
+                        <div class="benefit-item">
+                            <h3>🔋 Energy & Vitality</h3>
+                            <p>Restore youthful energy levels and combat chronic fatigue</p>
+                        </div>
+                        <div class="benefit-item">
+                            <h3>💪 Strength & Muscle</h3>
+                            <p>Maintain muscle mass and physical strength as you age</p>
+                        </div>
+                        <div class="benefit-item">
+                            <h3>🧠 Mental Clarity</h3>
+                            <p>Improve focus, memory, and cognitive function</p>
+                        </div>
+                        <div class="benefit-item">
+                            <h3>😴 Better Sleep</h3>
+                            <p>Achieve deeper, more restorative sleep patterns</p>
+                        </div>
+                        <div class="benefit-item">
+                            <h3>❤️ Heart Health</h3>
+                            <p>Support cardiovascular health and circulation</p>
+                        </div>
+                        <div class="benefit-item">
+                            <h3>🦴 Bone Density</h3>
+                            <p>Maintain strong bones and prevent osteoporosis</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="benefits-visual">
+                    <img src="../../assets/images/placeholder.png" alt="Hormone Therapy Benefits">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lab Testing -->
+    <section class="lab-testing">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Comprehensive Hormone Testing</h2>
+                <p>Advanced laboratory analysis for precise hormone optimization</p>
+            </div>
+
+            <div class="testing-panels">
+                <div class="panel-card">
+                    <h3>Men's Hormone Panel</h3>
+                    <ul>
+                        <li>Total & Free Testosterone</li>
+                        <li>Estradiol (E2)</li>
+                        <li>DHT (Dihydrotestosterone)</li>
+                        <li>SHBG (Sex Hormone Binding Globulin)</li>
+                        <li>LH & FSH</li>
+                        <li>Prolactin</li>
+                        <li>Thyroid Function (TSH, T3, T4)</li>
+                        <li>Cortisol</li>
+                        <li>PSA (Prostate Specific Antigen)</li>
+                    </ul>
+                </div>
+
+                <div class="panel-card">
+                    <h3>Women's Hormone Panel</h3>
+                    <ul>
+                        <li>Estradiol (E2)</li>
+                        <li>Progesterone</li>
+                        <li>Total & Free Testosterone</li>
+                        <li>DHEA-S</li>
+                        <li>SHBG</li>
+                        <li>LH & FSH</li>
+                        <li>Thyroid Function (TSH, T3, T4)</li>
+                        <li>Cortisol</li>
+                        <li>Vitamin D</li>
+                    </ul>
+                </div>
+
+                <div class="panel-card">
+                    <h3>Advanced Testing Options</h3>
+                    <ul>
+                        <li>24-Hour Cortisol Rhythm</li>
+                        <li>Comprehensive Metabolic Panel</li>
+                        <li>Lipid Profile</li>
+                        <li>Inflammatory Markers</li>
+                        <li>Insulin & Glucose</li>
+                        <li>Vitamin & Mineral Analysis</li>
+                        <li>Food Sensitivity Testing</li>
+                        <li>Genetic Testing (optional)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety -->
+    <section class="safety-monitoring">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Safety & Monitoring</h2>
+                <p>Your safety is our priority with comprehensive monitoring protocols</p>
+            </div>
+
+            <div class="safety-features">
+                <div class="safety-item">
+                    <h3>🔬 Regular Lab Monitoring</h3>
+                    <p>Ongoing laboratory testing to ensure optimal and safe hormone levels</p>
+                </div>
+                <div class="safety-item">
+                    <h3>👨‍⚕️ Medical Supervision</h3>
+                    <p>All treatments supervised by experienced hormone therapy specialists</p>
+                </div>
+                <div class="safety-item">
+                    <h3>📊 Bioidentical Hormones</h3>
+                    <p>Use of bioidentical hormones that match your body's natural hormones</p>
+                </div>
+                <div class="safety-item">
+                    <h3>⚖️ Personalized Dosing</h3>
+                    <p>Individualized dosing based on your unique physiology and response</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="hormone-faq">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Frequently Asked Questions</h2>
+                <p>Common questions about hormone replacement therapy</p>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>How do I know if I need hormone replacement therapy?</h3>
+                    <p>Common signs include fatigue, mood changes, low libido, weight gain, sleep issues, and decreased mental clarity. A comprehensive consultation and lab testing can determine if HRT is right for you.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How long does it take to see results?</h3>
+                    <p>Many patients notice improvements within 2-4 weeks, with optimal results typically achieved within 3-6 months as hormone levels stabilize.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Are bioidentical hormones safe?</h3>
+                    <p>When properly prescribed and monitored, bioidentical hormones are generally very safe. We use comprehensive monitoring to ensure optimal safety and effectiveness.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What's the difference between bioidentical and synthetic hormones?</h3>
+                    <p>Bioidentical hormones have the same molecular structure as hormones naturally produced by your body, while synthetic hormones have different structures and may cause more side effects.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How often will I need follow-up appointments?</h3>
+                    <p>Initially, follow-ups are more frequent (every 4-6 weeks), then typically every 3-6 months once levels are optimized, with annual comprehensive evaluations.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Does insurance cover hormone replacement therapy?</h3>
+                    <p>Coverage varies by insurance plan and medical necessity. We provide detailed receipts for insurance submission and offer flexible payment options.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="hormone-cta">
+        <div class="container">
+            <div class="cta-content text-center">
+                <h2>Take Control of Your Hormones Today</h2>
+                <p>Schedule your comprehensive hormone evaluation and discover how optimization can transform your health and vitality.</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary btn-lg" onclick="openBookingModal()">Schedule Consultation</button>
+                    <a href="../membership.html" class="btn btn-secondary btn-lg">View Membership Benefits</a>
+                </div>
+                <p class="cta-note">Comprehensive consultation includes symptom assessment and treatment planning</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="../../assets/images/logo.png" alt="Qualiphy">
+                    </div>
+                    <p>Transforming lives through premium wellness and personalized healthcare solutions.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="iv-therapy.html">IV Therapy</a></li>
+                        <li><a href="hormone-replacement.html">Hormone Replacement</a></li>
+                        <li><a href="aesthetic.html">Aesthetic Treatments</a></li>
+                        <li><a href="weight-management.html">Weight Management</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="../membership.html">Membership</a></li>
+                        <li><a href="../corporate-events.html">Corporate Events</a></li>
+                        <li><a href="../franchise.html">Franchise</a></li>
+                        <li><a href="../partnerships.html">Partnerships</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../../privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../../terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="../../medical-disclaimer.html">Medical Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Qualiphy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script>
+        function openBookingModal() {
+            window.location.href = '../../index.html#contact';
+        }
+
+        // Tab functionality
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const targetTab = this.dataset.tab;
+                
+                // Update active button
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Show target tab content
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                document.getElementById(targetTab + '-tab').classList.add('active');
+            });
+        });
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-item h3').forEach(header => {
+            header.addEventListener('click', function() {
+                const item = this.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(faq => faq.classList.remove('active'));
+                
+                // Toggle current item
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
