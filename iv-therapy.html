@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IV Therapy Treatments - Stay Dripped Mobile IV</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+  <div class="scroll-indicator" id="scrollIndicator"></div>
+  <div id="header-container"></div>
+  <main class="static-page">
+    <div class="container">
+      <h1>IV Therapy Treatments</h1>
+      <p>Explore our range of IV drips designed for hydration, recovery and overall wellness.</p>
+
+      <div class="treatment-grid">
+        <div class="treatment-card">
+          <img src="assets/images/iv-treatment-basic.png" alt="Rehydrate IV Drip">
+          <h3>Rehydrate IV Drip</h3>
+          <p>Essential fluids and electrolytes to quickly restore hydration.</p>
+          <a href="https://Staydripped.intakeq.com/booking?serviceId=73e00621-4069-486a-9fa8-a5a94a089618" class="service-btn" target="_blank">Book Now</a>
+        </div>
+
+        <div class="treatment-card">
+          <img src="assets/images/iv-treatment-standard.png" alt="Rehydrate Plus IV Drip">
+          <h3>Rehydrate Plus IV Drip</h3>
+          <p>Hydration therapy with added vitamins for energy and immunity.</p>
+          <a href="https://Staydripped.intakeq.com/booking?serviceId=ae66ce7c-fa68-408c-9ab0-a04b287f6b31" class="service-btn" target="_blank">Book Now</a>
+        </div>
+
+        <div class="treatment-card">
+          <img src="assets/images/iv-treatment-specialty.png" alt="Myers' Cocktail IV Drip">
+          <h3>Myers' Cocktail IV Drip</h3>
+          <p>Classic blend of vitamins to boost immune function and vitality.</p>
+          <a href="https://Staydripped.intakeq.com/booking?serviceId=c13f904a-a8d0-43b1-bd5f-570387ee77d6" class="service-btn" target="_blank">Book Now</a>
+        </div>
+
+        <div class="treatment-card">
+          <img src="assets/images/iv-treatment-premium.png" alt="Mega Myers' Cocktail">
+          <h3>Mega Myers' Cocktail</h3>
+          <p>High dose vitamin infusion for powerful energy and recovery.</p>
+          <a href="https://Staydripped.intakeq.com/booking?serviceId=e14cdb17-a9d1-47cb-90e1-d3050059bcf3" class="service-btn" target="_blank">Book Now</a>
+        </div>
+
+        <div class="treatment-card">
+          <img src="assets/images/iv-treatment-premium.png" alt="Hangover Relief IV Drip">
+          <h3>The Day After Scottsdale Hangover Relief</h3>
+          <p>Targeted blend to ease nausea and headache after a big night out.</p>
+          <a href="https://Staydripped.intakeq.com/booking?serviceId=a7d83ea1-cf5e-4865-923e-bfe2232de898" class="service-btn" target="_blank">Book Now</a>
+        </div>
+
+        <div class="treatment-card">
+          <img src="assets/images/iv-treatment-premium.png" alt="Gold Ultimate Hydration">
+          <h3>The "Gold" Ultimate Hydration</h3>
+          <p>Premium hydration therapy with electrolytes and antioxidants.</p>
+          <a href="https://Staydripped.intakeq.com/booking?serviceId=3519d39a-31ac-4944-80c9-4eb667a13df4" class="service-btn" target="_blank">Book Now</a>
+        </div>
+
+        <div class="treatment-card">
+          <img src="assets/images/iv-treatment-premium.png" alt="Platinum Ultimate Hydration">
+          <h3>The "Platinum" Ultimate Hydration</h3>
+          <p>Our most comprehensive formula for total wellness and recovery.</p>
+          <a href="https://Staydripped.intakeq.com/booking?serviceId=0c0c56b7-85a4-4e01-9b9c-180bc714fa94" class="service-btn" target="_blank">Book Now</a>
+        </div>
+
+      </div>
+    </div>
+  </main>
+  <div id="footer-container"></div>
+  <script src="assets/js/main.js"></script>
+  <script>
+    async function loadComponent(id, path) {
+      const resp = await fetch(path);
+      document.getElementById(id).innerHTML = await resp.text();
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      loadComponent('header-container', 'components/header.html');
+      loadComponent('footer-container', 'components/footer.html');
+    });
+  </script>
+</body>
+</html>
