@@ -1,1 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peptide Therapy - Advanced Recovery & Performance | Qualiphy</title>
+    <meta name="description" content="Enhance recovery, performance, and longevity with advanced peptide therapy. Targeted treatments for muscle growth, fat loss, healing, and anti-aging.">
+    
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="../../assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon-16x16.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/qualiphy-style.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a href="../../index.html">
+                        <img src="../../assets/images/logo.png" alt="Qualiphy" class="logo">
+                    </a>
+                </div>
+                <div class="navbar-menu">
+                    <ul class="navbar-nav">
+                        <li><a href="../../index.html" class="nav-link">Home</a></li>
+                        <li><a href="../services.html" class="nav-link active">Services</a></li>
+                        <li><a href="../membership.html" class="nav-link">Membership</a></li>
+                        <li><a href="../testimonials.html" class="nav-link">Testimonials</a></li>
+                        <li><a href="../../index.html#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="openBookingModal()">Book Now</button>
+                </div>
+            </div>
+        </nav>
+    </header>
 
+    <!-- Service Hero -->
+    <section class="service-hero">
+        <div class="container">
+            <div class="service-hero-content">
+                <div class="service-hero-text">
+                    <div class="breadcrumbs">
+                        <a href="../services.html">Services</a> > <span>Peptide Therapy</span>
+                    </div>
+                    <h1>Advanced Peptide Therapy</h1>
+                    <p class="service-subtitle">Unlock your body's natural healing and performance potential with targeted peptide treatments designed to enhance recovery, optimize performance, and support anti-aging goals.</p>
+                    <div class="service-highlights">
+                        <div class="highlight-item">
+                            <span class="highlight-icon">🚀</span>
+                            <span>Enhanced Performance</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">🔄</span>
+                            <span>Faster Recovery</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">⏱️</span>
+                            <span>Anti-Aging Benefits</span>
+                        </div>
+                    </div>
+                    <div class="service-cta">
+                        <button class="btn btn-primary btn-lg" onclick="openBookingModal()">Start Peptide Therapy</button>
+                        <div class="pricing-info">Starting at $200 | Consultation Required</div>
+                    </div>
+                </div>
+                <div class="service-hero-image">
+                    <img src="../../assets/images/placeholder.png" alt="Peptide Therapy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Are Peptides -->
+    <section class="peptides-explanation">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>What Are Peptides?</h2>
+                <p>Understanding the science behind these powerful therapeutic compounds</p>
+            </div>
+
+            <div class="peptides-content">
+                <div class="peptides-info">
+                    <h3>The Building Blocks of Life</h3>
+                    <p>Peptides are short chains of amino acids that act as signaling molecules in your body. They instruct cells to perform specific functions like healing, growth, fat burning, and anti-aging processes. As we age, our natural peptide production declines, making therapeutic peptides an effective way to restore optimal function.</p>
+                    
+                    <div class="peptide-benefits">
+                        <h4>How Peptides Work:</h4>
+                        <div class="benefits-grid">
+                            <div class="benefit-item">
+                                <div class="benefit-icon">📡</div>
+                                <h5>Cellular Communication</h5>
+                                <p>Act as messengers between cells to coordinate body functions</p>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🎯</div>
+                                <h5>Targeted Action</h5>
+                                <p>Bind to specific receptors for precise therapeutic effects</p>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🔄</div>
+                                <h5>Natural Process</h5>
+                                <p>Work with your body's existing systems and pathways</p>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">⚡</div>
+                                <h5>Rapid Results</h5>
+                                <p>Often provide faster results than traditional therapies</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="peptides-visual">
+                    <img src="../../assets/images/placeholder.png" alt="Peptide Science">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Peptide Categories -->
+    <section class="peptide-categories">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Our Peptide Therapy Menu</h2>
+                <p>Targeted peptides for specific health and performance goals</p>
+            </div>
+
+            <div class="categories-tabs">
+                <div class="tab-navigation">
+                    <button class="tab-btn active" data-tab="performance">Performance & Recovery</button>
+                    <button class="tab-btn" data-tab="anti-aging">Anti-Aging & Longevity</button>
+                    <button class="tab-btn" data-tab="metabolic">Metabolic & Weight Loss</button>
+                    <button class="tab-btn" data-tab="healing">Healing & Repair</button>
+                </div>
+
+                <!-- Performance & Recovery Peptides -->
+                <div class="tab-content active" id="performance-tab">
+                    <div class="peptides-grid">
+                        <div class="peptide-card">
+                            <h3>BPC-157</h3>
+                            <div class="peptide-subtitle">Body Protection Compound</div>
+                            <div class="peptide-info">
+                                <h4>Benefits:</h4>
+                                <ul>
+                                    <li>Accelerated healing of injuries</li>
+                                    <li>Gut health improvement</li>
+                                    <li>Reduced inflammation</li>
+                                    <li>Enhanced recovery</li>
+                                    <li>Joint and tendon repair</li>
+                                </ul>
+                                <h4>Ideal for:</h4>
+                                <p>Athletes, injury recovery, digestive issues, chronic pain</p>
+                            </div>
+                            <div class="peptide-price">$250/month</div>
+                        </div>
+
+                        <div class="peptide-card">
+                            <h3>TB-500</h3>
+                            <div class="peptide-subtitle">Thymosin Beta-4</div>
+                            <div class="peptide-info">
+                                <h4>Benefits:</h4>
+                                <ul>
+                                    <li>Tissue repair and regeneration</li>
+                                    <li>Reduced inflammation</li>
+                                    <li>Improved flexibility</li>
+                                    <li>Enhanced endurance</li>
+                                    <li>Wound healing acceleration</li>
+                                </ul>
+                                <h4>Ideal for:</h4>
+                                <p>Injury recovery, athletic performance, chronic conditions</p>
+                            </div>
+                            <div class="peptide-price">$300/month</div>
+                        </div>
+
+                        <div class="peptide-card">
+                            <h3>IGF-1 LR3</h3>
+                            <div class="peptide-subtitle">Insulin-like Growth Factor</div>
+                            <div class="peptide-info">
+                                <h4>Benefits:</h4>
+                                <ul>
+                                    <li>Muscle growth and repair</li>
+                                    <li>Enhanced recovery</li>
+                                    <li>Improved performance</li>
+                                    <li>Fat metabolism</li>
+                                    <li>Anti-aging effects</li>
+                                </ul>
+                                <h4>Ideal for:</h4>
+                                <p>Muscle building, performance enhancement, anti-aging</p>
+                            </div>
+                            <div class="peptide-price">$400/month</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Anti-Aging & Longevity Peptides -->
+                <div class="tab-content" id="anti-aging-tab">
+                    <div class="peptides-grid">
+                        <div class="peptide-card">
+                            <h3>GHK-Cu</h3>
+                            <div class="peptide-subtitle">Copper Peptide</div>
+                            <div class="peptide-info">
+                                <h4>Benefits:</h4>
+                                <ul>
+                                    <li>Skin regeneration and repair</li>
+                                    <li>Collagen production</li>
+                                    <li>Hair growth stimulation</li>
+                                    <li>Wound healing</li>
+                                    <li>Anti-inflammatory effects</li>
+                                </ul>
+                                <h4>Ideal for:</h4>
+                                <p>Skin health, hair loss, anti-aging, wound healing</p>
+                            </div>
+                            <div class="peptide-price">$200/month</div>
+                        </div>
+
+                        <div class="peptide-card">
+                            <h3>Epitalon</h3>
+                            <div class="peptide-subtitle">Telomerase Activator</div>
+                            <div class="peptide-info">
+                                <h4>Benefits:</h4>
+                                <ul>
+                                    <li>Telomere lengthening</li>
+                                    <li>Cellular regeneration</li>
+                                    <li>Sleep cycle regulation</li>
+                                    <li>Immune system support</li>
+                                    <li>Longevity enhancement</li>
+                                </ul>
+                                <h4>Ideal for:</h4>
+                                <p>Anti-aging, longevity, sleep disorders, immune support</p>
+                            </div>
+                            <div class="peptide-price">$350/month</div>
+                        </div>
+
+                        <div class="peptide-card">
+                            <h3>NAD+ Precursors</h3>
+                            <div class="peptide-subtitle">Cellular Energy Support</div>
+                            <div class="peptide-info">
+                                <h4>Benefits:</h4>
+                                <ul>
+                                    <li>Enhanced cellular energy</li>
+                                    <li>DNA repair support</li>
+                                    <li>Cognitive enhancement</li>
+                                    <li>Metabolic improvement</li>
+                                    <li>Neuroprotection</li>
+                                </ul>
+                                <h4>Ideal for:</h4>
+                                <p>Anti-aging, cognitive health, energy enhancement</p>
+                            </div>
+                            <div class="peptide-price">$300/month</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Metabolic & Weight Loss Peptides -->
+                <div class="tab-content" id="metabolic-tab">
+                    <div class="peptides-grid">
+                        <div class="peptide-card">
+                            <h3>CJC-1295</h3>
+                            <div class="peptide-subtitle">Growth Hormone Releasing Hormone</div>
+                            <div class="peptide-info">
+                                <h4>Benefits:</h4>
+                                <ul>
+                                    <li>Increased growth hormone</li>
+                                    <li>Enhanced muscle growth</li>
+                                    <li>Improved fat burning</li>
+                                    <li>Better sleep quality</li>
+                                    <li>Increased energy</li>
+                                </ul>
+                                <h4>Ideal for:</h4>
+                                <p>Weight loss, muscle building, anti-aging, energy</p>
+                            </div>
+                            <div class="peptide-price">$250/month</div>
+                        </div>
+
+                        <div class="peptide-card">
+                            <h3>Ipamorelin</h3>
+                            <div class="peptide-subtitle">Growth Hormone Secretagogue</div>
+                            <div class="peptide-info">
+                                <h4>Benefits:</h4>
+                                <ul>
+                                    <li>Natural GH production</li>
+                                    <li>Fat loss acceleration</li>
+                                    <li>Muscle preservation</li>
+                                    <li>Improved recovery</li>
+                                    <li>Enhanced sleep</li>
+                                </ul>
+                                <h4>Ideal for:</h4>
+                                <p>Weight management, body composition, recovery</p>
+                            </div>
+                            <div class="peptide-price">$200/month</div>
+                        </div>
+
+                        <div class="peptide-card">
+                            <h3>AOD-9604</h3>
+                            <div class="peptide-subtitle">Anti-Obesity Drug</div>
+                            <div class="peptide-info">
+                                <h4>Benefits:</h4>
+                                <ul>
+                                    <li>Targeted fat burning</li>
+                                    <li>Metabolic enhancement</li>
+                                    <li>Muscle preservation</li>
+                                    <li>Improved body composition</li>
+                                    <li>No side effects on growth</li>
+                                </ul>
+                                <h4>Ideal for:</h4>
+                                <p>Weight loss, body recomposition, metabolic health</p>
+                            </div>
+                            <div class="peptide-price">$275/month</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Healing & Repair Peptides -->
+                <div class="tab-content" id="healing-tab">
+                    <div class="peptides-grid">
+                        <div class="peptide-card">
+                            <h3>PT-141</h3>
+                            <div class="peptide-subtitle">Bremelanotide</div>
+                            <div class="peptide-info">
+                                <h4>Benefits:</h4>
+                                <ul>
+                                    <li>Enhanced libido</li>
+                                    <li>Improved sexual function</li>
+                                    <li>Increased arousal</li>
+                                    <li>Mood enhancement</li>
+                                    <li>Relationship wellness</li>
+                                </ul>
+                                <h4>Ideal for:</h4>
+                                <p>Sexual wellness, libido enhancement, relationship health</p>
+                            </div>
+                            <div class="peptide-price">$200/month</div>
+                        </div>
+
+                        <div class="peptide-card">
+                            <h3>Cerebrolysin</h3>
+                            <div class="peptide-subtitle">Neuroprotective Peptide</div>
+                            <div class="peptide-info">
+                                <h4>Benefits:</h4>
+                                <ul>
+                                    <li>Cognitive enhancement</li>
+                                    <li>Neuroprotection</li>
+                                    <li>Memory improvement</li>
+                                    <li>Focus and clarity</li>
+                                    <li>Brain repair support</li>
+                                </ul>
+                                <h4>Ideal for:</h4>
+                                <p>Cognitive health, memory issues, brain optimization</p>
+                            </div>
+                            <div class="peptide-price">$400/month</div>
+                        </div>
+
+                        <div class="peptide-card">
+                            <h3>Selank</h3>
+                            <div class="peptide-subtitle">Nootropic Peptide</div>
+                            <div class="peptide-info">
+                                <h4>Benefits:</h4>
+                                <ul>
+                                    <li>Anxiety reduction</li>
+                                    <li>Stress management</li>
+                                    <li>Cognitive enhancement</li>
+                                    <li>Mood stabilization</li>
+                                    <li>Immune support</li>
+                                </ul>
+                                <h4>Ideal for:</h4>
+                                <p>Anxiety, stress, cognitive performance, mood</p>
+                            </div>
+                            <div class="peptide-price">$250/month</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Treatment Protocols -->
+    <section class="treatment-protocols">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Personalized Treatment Protocols</h2>
+                <p>Customized peptide combinations for optimal results</p>
+            </div>
+
+            <div class="protocols-grid">
+                <div class="protocol-card">
+                    <h3>🏃‍♂️ Athletic Performance Protocol</h3>
+                    <div class="protocol-combination">
+                        <strong>Recommended Combination:</strong>
+                        <ul>
+                            <li>BPC-157 for recovery</li>
+                            <li>TB-500 for tissue repair</li>
+                            <li>CJC-1295 + Ipamorelin for growth</li>
+                        </ul>
+                    </div>
+                    <div class="protocol-benefits">
+                        <strong>Expected Benefits:</strong>
+                        <p>Enhanced performance, faster recovery, reduced injury risk, improved endurance</p>
+                    </div>
+                    <div class="protocol-duration">12-16 week program</div>
+                    <div class="protocol-price">$600-800/month</div>
+                </div>
+
+                <div class="protocol-card">
+                    <h3>⏰ Anti-Aging & Longevity Protocol</h3>
+                    <div class="protocol-combination">
+                        <strong>Recommended Combination:</strong>
+                        <ul>
+                            <li>Epitalon for cellular regeneration</li>
+                            <li>GHK-Cu for skin health</li>
+                            <li>NAD+ precursors for energy</li>
+                        </ul>
+                    </div>
+                    <div class="protocol-benefits">
+                        <strong>Expected Benefits:</strong>
+                        <p>Cellular renewal, improved skin, enhanced energy, longevity support</p>
+                    </div>
+                    <div class="protocol-duration">6-12 month program</div>
+                    <div class="protocol-price">$500-700/month</div>
+                </div>
+
+                <div class="protocol-card">
+                    <h3>🎯 Weight Loss & Body Composition Protocol</h3>
+                    <div class="protocol-combination">
+                        <strong>Recommended Combination:</strong>
+                        <ul>
+                            <li>AOD-9604 for fat burning</li>
+                            <li>CJC-1295 for muscle preservation</li>
+                            <li>Ipamorelin for recovery</li>
+                        </ul>
+                    </div>
+                    <div class="protocol-benefits">
+                        <strong>Expected Benefits:</strong>
+                        <p>Accelerated fat loss, muscle preservation, improved metabolism</p>
+                    </div>
+                    <div class="protocol-duration">8-12 week program</div>
+                    <div class="protocol-price">$450-650/month</div>
+                </div>
+
+                <div class="protocol-card">
+                    <h3>🔄 Recovery & Healing Protocol</h3>
+                    <div class="protocol-combination">
+                        <strong>Recommended Combination:</strong>
+                        <ul>
+                            <li>BPC-157 for tissue healing</li>
+                            <li>TB-500 for inflammation</li>
+                            <li>IGF-1 LR3 for muscle repair</li>
+                        </ul>
+                    </div>
+                    <div class="protocol-benefits">
+                        <strong>Expected Benefits:</strong>
+                        <p>Accelerated healing, reduced pain, improved mobility</p>
+                    </div>
+                    <div class="protocol-duration">6-10 week program</div>
+                    <div class="protocol-price">$550-750/month</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Administration Methods -->
+    <section class="administration-methods">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Administration Methods</h2>
+                <p>Flexible delivery options for optimal results</p>
+            </div>
+
+            <div class="methods-grid">
+                <div class="method-card">
+                    <div class="method-icon">💉</div>
+                    <h3>Subcutaneous Injection</h3>
+                    <p>Most common method using small insulin-type needles for precise dosing</p>
+                    <ul>
+                        <li>High bioavailability</li>
+                        <li>Precise dosing</li>
+                        <li>Self-administered</li>
+                        <li>Quick and easy</li>
+                    </ul>
+                </div>
+
+                <div class="method-card">
+                    <div class="method-icon">💊</div>
+                    <h3>Oral Capsules</h3>
+                    <p>Convenient oral administration for select peptides</p>
+                    <ul>
+                        <li>Easy to take</li>
+                        <li>No needles required</li>
+                        <li>Travel-friendly</li>
+                        <li>Good compliance</li>
+                    </ul>
+                </div>
+
+                <div class="method-card">
+                    <div class="method-icon">👃</div>
+                    <h3>Nasal Spray</h3>
+                    <p>Rapid absorption through nasal mucosa for specific peptides</p>
+                    <ul>
+                        <li>Fast absorption</li>
+                        <li>Non-invasive</li>
+                        <li>Bypasses digestion</li>
+                        <li>Convenient dosing</li>
+                    </ul>
+                </div>
+
+                <div class="method-card">
+                    <div class="method-icon">🧴</div>
+                    <h3>Topical Creams</h3>
+                    <p>Targeted application for skin and localized treatment</p>
+                    <ul>
+                        <li>Localized treatment</li>
+                        <li>No systemic effects</li>
+                        <li>Easy application</li>
+                        <li>Good for skin peptides</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety & Monitoring -->
+    <section class="peptide-safety">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Safety & Medical Supervision</h2>
+                <p>Comprehensive monitoring and support throughout your treatment</p>
+            </div>
+
+            <div class="safety-features">
+                <div class="safety-item">
+                    <h3>👨‍⚕️ Medical Oversight</h3>
+                    <p>All peptide therapies are prescribed and monitored by licensed medical professionals</p>
+                </div>
+                <div class="safety-item">
+                    <h3>🔬 Quality Peptides</h3>
+                    <p>Pharmaceutical-grade peptides from certified compounding pharmacies</p>
+                </div>
+                <div class="safety-item">
+                    <h3>📊 Regular Monitoring</h3>
+                    <p>Ongoing assessment of progress and side effects with adjustments as needed</p>
+                </div>
+                <div class="safety-item">
+                    <h3>📚 Education & Support</h3>
+                    <p>Comprehensive training on proper administration and what to expect</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="peptide-faq">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Frequently Asked Questions</h2>
+                <p>Common questions about peptide therapy</p>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Are peptides safe?</h3>
+                    <p>When prescribed and monitored by medical professionals, peptides are generally very safe with minimal side effects. We use only pharmaceutical-grade peptides from certified facilities.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How long does it take to see results?</h3>
+                    <p>Results vary by peptide and individual. Some benefits like improved sleep or mood may be noticed within days, while tissue repair and body composition changes typically take 4-8 weeks.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Do I need to inject peptides myself?</h3>
+                    <p>Most peptides require subcutaneous injection, which we thoroughly train you to do safely at home. The needles are very small and most patients find it easier than expected.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Can peptides be combined with other treatments?</h3>
+                    <p>Yes, peptides often complement other therapies like hormone replacement, IV therapy, and weight management programs. We coordinate all treatments for optimal results.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How long do I need to use peptides?</h3>
+                    <p>Treatment duration varies based on goals. Some protocols are 6-12 weeks for specific outcomes, while others may be used longer-term for ongoing benefits.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Are peptides legal?</h3>
+                    <p>Yes, peptides prescribed by licensed physicians for therapeutic purposes are legal. We only use peptides approved for research and therapeutic use.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="peptide-cta">
+        <div class="container">
+            <div class="cta-content text-center">
+                <h2>Unlock Your Body's Potential with Peptide Therapy</h2>
+                <p>Discover how targeted peptide treatments can enhance your performance, recovery, and overall wellness.</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary btn-lg" onclick="openBookingModal()">Schedule Consultation</button>
+                    <a href="../membership.html" class="btn btn-secondary btn-lg">View Member Benefits</a>
+                </div>
+                <p class="cta-note">Comprehensive consultation required for all peptide therapy programs</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="../../assets/images/logo.png" alt="Qualiphy">
+                    </div>
+                    <p>Transforming lives through premium wellness and personalized healthcare solutions.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="iv-therapy.html">IV Therapy</a></li>
+                        <li><a href="hormone-replacement.html">Hormone Replacement</a></li>
+                        <li><a href="aesthetic.html">Aesthetic Treatments</a></li>
+                        <li><a href="weight-management.html">Weight Management</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="../membership.html">Membership</a></li>
+                        <li><a href="../corporate-events.html">Corporate Events</a></li>
+                        <li><a href="../franchise.html">Franchise</a></li>
+                        <li><a href="../partnerships.html">Partnerships</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../../privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../../terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="../../medical-disclaimer.html">Medical Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Qualiphy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script>
+        function openBookingModal() {
+            window.location.href = '../../index.html#contact';
+        }
+
+        // Tab functionality
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const targetTab = this.dataset.tab;
+                
+                // Update active button
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Show target tab content
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                document.getElementById(targetTab + '-tab').classList.add('active');
+            });
+        });
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-item h3').forEach(header => {
+            header.addEventListener('click', function() {
+                const item = this.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(faq => faq.classList.remove('active'));
+                
+                // Toggle current item
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
