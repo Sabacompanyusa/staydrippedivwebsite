@@ -1,0 +1,15 @@
+{
+  "name": "stay-dripped-mobile-iv-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static marketing website for Stay Dripped Mobile IV.",
+  "scripts": {
+    "start": "npx serve .",
+    "lint": "stylelint \"assets/**/*.css\""
+  },
+  "devDependencies": {
+    "serve": "^14.2.0",
+    "stylelint": "^15.10.3",
+    "stylelint-config-standard": "^34.0.0"
+  }
+}
