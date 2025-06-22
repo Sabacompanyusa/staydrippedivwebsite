@@ -48,6 +48,8 @@
   <link rel="stylesheet" href="assets/css/responsive.css">
   <link rel="stylesheet" href="assets/css/animations.css">
   <link rel="stylesheet" href="https://firebasestorage.googleapis.com/v0/b/qualiphy-web-d918b.appspot.com/o/style-v4.css?alt=media&token=34735782-16e8-4a2f-9eaa-426d65af48b2">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
 
   <!-- Preload critical resources -->
 
@@ -101,6 +103,7 @@
 </head>
 
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <!-- Scroll Progress Indicator -->
   <div class="scroll-indicator" id="scrollIndicator"></div>
 
@@ -110,7 +113,7 @@
 
   <!-- Main Content -->
 
-  <main>
+  <main id="main-content">
     <!-- Hero Component -->
     <div id="hero-container"></div>
 
@@ -119,6 +122,7 @@
 
 <!-- Booking Component -->
 <div id="booking-container"></div>
+<div id="booking-modal-container"></div>
 
 <!-- How It Works Component -->
 <div id="how-it-works-container"></div>
@@ -155,6 +159,10 @@
   <script src="assets/js/booking.js"></script>
 
   <script src="assets/js/analytics.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
 
   <!-- Component Loader Script -->
 
@@ -177,6 +185,7 @@
         loadComponent('hero-container', 'components/hero.html'),
         loadComponent('services-container', 'components/services.html'),
         loadComponent('booking-container', 'components/booking.html'),
+        loadComponent('booking-modal-container', 'components/booking-modal.html'),
         loadComponent('how-it-works-container', 'components/how-it-works.html'),
         loadComponent('testimonials-container', 'components/testimonials.html'),
         loadComponent('memberships-container', 'components/memberships.html'),

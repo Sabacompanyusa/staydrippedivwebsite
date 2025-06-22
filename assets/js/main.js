@@ -1,5 +1,19 @@
-// General front-end interactions
-// Handles mobile menu toggle, scroll indicator, animations, and helper actions
+// Main site initialization and interactive behaviors
+// Copyright © 2025 Stay Dripped Mobile IV
+
+function initializeApp() {
+  initScrollIndicator();
+  initMobileMenu();
+  initSmoothScroll();
+  initScrollSpy();
+  initHeaderScrollEffect();
+  initBookingModal();
+  initHeroButtons();
+  initFadeIn();
+  initTestimonialsSlider();
+  exposeMembershipModal();
+ });
+}
 
 function initScrollIndicator() {
   const indicator = document.getElementById('scrollIndicator');
@@ -37,56 +51,120 @@ function initMobileMenu() {
   });
 }
 
-function initBookingButtons() {
-  const bookingSection = document.getElementById('booking-section');
-  if (!bookingSection) return;
-  const scrollToBooking = () => bookingSection.scrollIntoView({ behavior: 'smooth' });
-  document.getElementById('heroBookBtn')?.addEventListener('click', scrollToBooking);
-  document.getElementById('headerBookBtn')?.addEventListener('click', scrollToBooking);
+function initSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+      const targetSelector = link.getAttribute('href');
+      const target = document.querySelector(targetSelector);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
 }
 
-function exposeMembershipModal() {
-  window.showMembershipModal = function(type = 'Essential') {
-    if (window.membershipManager && typeof window.membershipManager.showEmailCaptureModal === 'function') {
-      window.membershipManager.showEmailCaptureModal(type);
+function initScrollSpy() {
+  const sections = document.querySelectorAll('main section[id]');
+  const links = document.querySelectorAll('.nav-link[href^="#"]');
+  if (!sections.length || !links.length) return;
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        links.forEach(l => {
+          l.classList.toggle('active', l.getAttribute('href') === `#${id}`);
+        });
+      }
+    });
+  }, { rootMargin: '-50% 0px -50% 0px' });
+
+  sections.forEach(sec => observer.observe(sec));
+}
+
+function initHeaderScrollEffect() {
+  const header = document.querySelector('.header');
+  if (!header) return;
+  const onScroll = () => {
+    header.classList.toggle('scrolled', window.scrollY > 50);
+  };
+  window.addEventListener('scroll', onScroll);
+  onScroll();
+}
+
+function initBookingModal() {
+  const modal = document.getElementById('bookingModal');
+  const openBtn = document.getElementById('openBooking');
+  const closeBtn = modal ? modal.querySelector('.close') : null;
+  if (!modal || !openBtn || !closeBtn) return;
+
+  openBtn.addEventListener('click', () => {
+    modal.style.display = 'block';
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  window.addEventListener('click', e => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+}
+
+function initHeroButtons() {
+  const heroBtn = document.getElementById('heroBookBtn');
+  const headerBtn = document.getElementById('headerBookBtn');
+  const bookingSection = document.getElementById('booking-section');
+  [heroBtn, headerBtn].forEach(btn => {
+    if (btn && bookingSection) {
+      btn.addEventListener('click', () => {
+        bookingSection.scrollIntoView({ behavior: 'smooth' });
+      });
     }
   };
 }
 
-function initializeApp() {
-  initScrollIndicator();
-  initFadeIn();
-  initMobileMenu();
-  initBookingButtons();
-  exposeMembershipModal();
-}
+function initTestimonialsSlider() {
+  const slider = document.querySelector('.testimonial-slider');
+  if (!slider) return;
 
-document.addEventListener('DOMContentLoaded', initializeApp);
-
-/**
- * Stay Dripped Mobile IV - Main JavaScript
- * Handles core website functionality, animations, and user interactions
- * Copyright © 2025 Stay Dripped Mobile IV LLC
- */
-
+  const blocks = Array.from(slider.querySelectorAll('blockquote'));
+  const prev = slider.querySelector('.testimonial-prev');
+  const next = slider.querySelector('.testimonial-next');
+  const dotsContainer = slider.querySelector('.testimonial-dots');
+  let current = 0;
+   });
+  }
+  
 // 
 // CORE WEBSITE FUNCTIONALITY
 //
 
-class StayDrippedApp {
-  constructor() {
-    this.init();
+  if (dotsContainer) {
+    blocks.forEach((_, i) => {
+      const dot = document.createElement('button');
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => showSlide(i));
+      dotsContainer.appendChild(dot);
+    });
   }
 
-  init() {
-    this.initializeScrollProgress();
-    this.initializeNavigation();
-    this.initializeTestimonialSlider();
-    this.initializeAnimations();
-    this.initializeLazyLoading();
-    this.initializePerformanceOptimizations();
-    this.bindGlobalEvents();
-  }
+  prev?.addEventListener('click', () =>
+    showSlide((current - 1 + blocks.length) % blocks.length)
+  );
+  next?.addEventListener('click', () =>
+    showSlide((current + 1) % blocks.length)
+  );
+
+  showSlide(0);
+  setInterval(() =>
+    showSlide((current + 1) % blocks.length),
+    5000
+  );
+}
 
   //
   // SCROLL PROGRESS INDICATOR
@@ -97,8 +175,24 @@ class StayDrippedApp {
     if (!scrollIndicator) return;
 
     window.addEventListener('scroll', () => {
-      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    }
-     });  
+      const total = document.body.scrollHeight - window.innerHeight;
+      const progress = (window.scrollY / total) * 100;
+      indicator.style.width = progress + '%';
+    });
+  }
+
+  /* Newsletter form submission */
+  const newsletterForm = document.getElementById('newsletterForm');
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const email = newsletterForm.email.value;
+      if (window.gtag) {
+        gtag('event', 'newsletter_signup', { email });
+      }
+      newsletterForm.reset();
+      alert('Thanks for subscribing!');
+    });
+  }
+});
 }

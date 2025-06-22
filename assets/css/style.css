@@ -431,6 +431,26 @@
   outline-offset: -2px;
 }
 
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-link:focus {
+  left: 0;
+  top: 0;
+  width: auto;
+  height: auto;
+  padding: 1rem;
+  background: var(--secondary);
+  color: white;
+  z-index: 10000;
+}
+
 /* CSS Reset */
 *, *::before, *::after {
   margin: 0;
@@ -645,6 +665,10 @@ ul {
 
 .nav-link:hover {
   background: rgba(255, 255, 255, 0.15);
+}
+
+.nav-link.active {
+  background: rgba(255, 255, 255, 0.25);
 }
 
 .header-buttons {
@@ -1137,6 +1161,10 @@ ul {
   font-weight: 600;
   cursor: pointer;
   transition: var(--transition);
+}
+.header.scrolled {
+  background: rgba(10, 42, 67, 0.95);
+  box-shadow: var(--shadow-lg);
 }
 
 .quiz-controls button:hover {
@@ -2626,4 +2654,36 @@ ul {
     box-shadow: none;
     border: 1px solid #ddd;
   }
+}
+
+/* Booking Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  overflow: auto;
+}
+
+.modal-content {
+  background: #fff;
+  margin: 5% auto;
+  padding: 2rem;
+  border-radius: var(--br);
+  max-width: 500px;
+  position: relative;
+}
+
+.modal .close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+ });
 }
