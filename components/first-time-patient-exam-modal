@@ -1,0 +1,225 @@
+<!-- First Time Patient Exam Modal -->
+<div id="examModal" class="exam-modal-overlay" role="dialog" aria-labelledby="examModalTitle" aria-describedby="examModalDesc">
+  <div class="exam-modal">
+    <div class="exam-modal-header">
+      <h3 id="examModalTitle">Good Faith Exam</h3>
+      <button class="exam-modal-close" aria-label="Close modal" onclick="closeExamModal()">
+        &times;
+      </button>
+    </div>
+    
+    <div class="exam-modal-body">
+      <p id="examModalDesc">Welcome to Stay Dripped Mobile IV! Before your first treatment, our licensed medical professional will conduct a brief health assessment to ensure IV therapy is safe and appropriate for you.</p>
+      
+      <div class="exam-process">
+        <h4>What to Expect:</h4>
+        <ul>
+          <li><i class="fas fa-check"></i> Review of medical history</li>
+          <li><i class="fas fa-check"></i> Current health assessment</li>
+          <li><i class="fas fa-check"></i> Vital signs check</li>
+          <li><i class="fas fa-check"></i> Personalized treatment recommendation</li>
+          <li><i class="fas fa-check"></i> Safety protocol review</li>
+        </ul>
+      </div>
+
+      <div class="exam-benefits">
+        <h4>Why This Matters:</h4>
+        <div class="benefits-list">
+          <div class="benefit-point">
+            <i class="fas fa-shield-alt"></i>
+            <span>Ensures your safety and optimal treatment results</span>
+          </div>
+          <div class="benefit-point">
+            <i class="fas fa-user-md"></i>
+            <span>Personalized care from licensed medical professionals</span>
+          </div>
+          <div class="benefit-point">
+            <i class="fas fa-clipboard-check"></i>
+            <span>Meets all medical and regulatory requirements</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="exam-actions">
+        <button class="exam-proceed-btn" onclick="proceedToExamBooking()">
+          <i class="fas fa-calendar-plus"></i>
+          Book Health Assessment
+        </button>
+        <button class="exam-call-btn" onclick="callForExam()">
+          <i class="fas fa-phone"></i>
+          Call to Schedule
+        </button>
+      </div>
+      
+      <div class="exam-disclaimer">
+        <p>
+          <i class="fas fa-info-circle"></i>
+          This brief assessment takes 10-15 minutes and can be done at your location before your first IV treatment.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Exam Modal functionality
+let modalTrigger = null;
+
+window.openExamModal = function() {
+  const examModal = document.getElementById('examModal');
+  const examBtn = document.getElementById('examBtn');
+  
+  if (examModal) {
+    // Store trigger element for focus return
+    modalTrigger = document.activeElement;
+    
+    // Show modal with animation
+    examModal.style.display = 'flex';
+    setTimeout(() => {
+      examModal.classList.add('active');
+    }, 10);
+    
+    // Prevent body scroll
+    document.body.style.overflow = 'hidden';
+    
+    // Focus management
+    const firstFocusable = examModal.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+    if (firstFocusable) {
+      firstFocusable.focus();
+    }
+    
+    // Add loading state to button
+    if (examBtn) {
+      examBtn.classList.add('loading');
+      setTimeout(() => {
+        examBtn.classList.remove('loading');
+      }, 300);
+    }
+    
+    // Add escape key listener
+    document.addEventListener('keydown', handleEscapeKey);
+    
+    // Trap focus within modal
+    trapFocus(examModal);
+    
+    // Analytics tracking
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'modal_open', {
+        event_category: 'engagement',
+        event_label: 'exam_modal',
+        value: 1
+      });
+    }
+  }
+};
+
+window.closeExamModal = function() {
+  const examModal = document.getElementById('examModal');
+  
+  if (examModal) {
+    examModal.classList.remove('active');
+    
+    setTimeout(() => {
+      examModal.style.display = 'none';
+      document.body.style.overflow = '';
+      
+      // Return focus to trigger element
+      if (modalTrigger) {
+        modalTrigger.focus();
+        modalTrigger = null;
+      }
+    }, 300);
+    
+    // Remove escape key listener
+    document.removeEventListener('keydown', handleEscapeKey);
+  }
+};
+
+function handleEscapeKey(event) {
+  if (event.key === 'Escape') {
+    closeExamModal();
+  }
+}
+
+function trapFocus(element) {
+  const focusableElements = element.querySelectorAll(
+    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+  );
+  const firstFocusable = focusableElements[0];
+  const lastFocusable = focusableElements[focusableElements.length - 1];
+  
+  element.addEventListener('keydown', function(e) {
+    if (e.key === 'Tab') {
+      if (e.shiftKey) {
+        if (document.activeElement === firstFocusable) {
+          lastFocusable.focus();
+          e.preventDefault();
+        }
+      } else {
+        if (document.activeElement === lastFocusable) {
+          firstFocusable.focus();
+          e.preventDefault();
+        }
+      }
+    }
+  });
+}
+
+window.proceedToExamBooking = function() {
+  // Track conversion
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'conversion', {
+      event_category: 'booking',
+      event_label: 'exam_booking_started',
+      value: 1
+    });
+  }
+  
+  closeExamModal();
+  
+  // Scroll to booking section
+  const bookingSection = document.getElementById('booking-section');
+  if (bookingSection) {
+    bookingSection.scrollIntoView({ behavior: 'smooth' });
+    
+    // Highlight the booking section
+    bookingSection.style.transition = 'box-shadow 0.3s ease';
+    bookingSection.style.boxShadow = '0 0 20px rgba(0, 188, 212, 0.5)';
+    setTimeout(() => {
+      bookingSection.style.boxShadow = '';
+    }, 2000);
+  } else {
+    // Fallback to external booking
+    window.open('https://staydripped.intakeq.com/booking', '_blank');
+  }
+};
+
+window.callForExam = function() {
+  // Track phone call intent
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'click', {
+      event_category: 'contact',
+      event_label: 'exam_phone_call',
+      value: 1
+    });
+  }
+  
+  closeExamModal();
+  
+  // Open phone dialer
+  window.location.href = 'tel:+16026889825';
+};
+
+// Click outside to close
+document.addEventListener('DOMContentLoaded', function() {
+  const examModal = document.getElementById('examModal');
+  
+  if (examModal) {
+    examModal.addEventListener('click', function(e) {
+      if (e.target === examModal) {
+        closeExamModal();
+      }
+    });
+  }
+});
+</script>
