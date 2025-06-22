@@ -4,9 +4,10 @@ This repository contains the static assets and HTML used to power the Stay Dripp
 
 ## Local Development
 
-1. Serve the repository with any static web server, e.g. `npx serve` or `python3 -m http.server`.
-2. Open `index.html` in your browser. Components are loaded on page load via JavaScript fetch calls.
-3. Edit files inside `components/` to update shared sections like the header, footer, or booking widgets.
+1. Install Node dependencies with `npm install`. This provides a local web server and CSS linting.
+2. Start a development server with `npm run start` and open `http://localhost:3000` in your browser.
+3. Run `npm run lint` to check CSS files with Stylelint.
+4. Edit files inside `components/` to update shared sections like the header, footer, or booking widgets.
 
 ## Additional Pages
 
