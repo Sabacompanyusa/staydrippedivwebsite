@@ -12,29 +12,42 @@ function initializeApp() {
   initFadeIn();
   initTestimonialsSlider();
   exposeMembershipModal();
+ });
 }
 
 function initScrollIndicator() {
   const indicator = document.getElementById('scrollIndicator');
   if (!indicator) return;
-  window.addEventListener('scroll', () => {
-    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-    const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const width = (scrollTop / docHeight) * 100;
-    indicator.style.width = width + '%';
-  });
+  const update = () => {
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
+    indicator.style.width = progress + '%';
+  };
+  window.addEventListener('scroll', update);
+  update();
+}
+
+function initFadeIn() {
+  const elements = document.querySelectorAll('.fade-in');
+  if (elements.length === 0) return;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  elements.forEach(el => observer.observe(el));
 }
 
 function initMobileMenu() {
   const toggle = document.getElementById('mobileMenuToggle');
-  const nav = document.getElementById('navMenu');
-  if (!toggle || !nav) return;
+  const menu = document.getElementById('navMenu');
+  if (!toggle || !menu) return;
   toggle.addEventListener('click', () => {
-    toggle.classList.toggle('active');
-    nav.classList.toggle('active');
-    nav.classList.toggle('open');
-    const expanded = toggle.classList.contains('active');
-    toggle.setAttribute('aria-expanded', expanded);
+    menu.classList.toggle('active');
+    toggle.classList.toggle('open');
   });
 }
 
@@ -111,7 +124,7 @@ function initHeroButtons() {
         bookingSection.scrollIntoView({ behavior: 'smooth' });
       });
     }
-  });
+  };
 }
 
 function initTestimonialsSlider() {
@@ -123,16 +136,12 @@ function initTestimonialsSlider() {
   const next = slider.querySelector('.testimonial-next');
   const dotsContainer = slider.querySelector('.testimonial-dots');
   let current = 0;
-
-  const showSlide = idx => {
-    blocks.forEach((b, i) => b.classList.toggle('active', i === idx));
-    if (dotsContainer) {
-      dotsContainer.querySelectorAll('button').forEach((dot, i) => {
-        dot.classList.toggle('active', i === idx);
-      });
-    }
-    current = idx;
-  };
+   });
+  }
+  
+// 
+// CORE WEBSITE FUNCTIONALITY
+//
 
   if (dotsContainer) {
     blocks.forEach((_, i) => {
@@ -157,33 +166,14 @@ function initTestimonialsSlider() {
   );
 }
 
-function initFadeIn() {
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-}
+  //
+  // SCROLL PROGRESS INDICATOR
+  //
 
-function exposeMembershipModal() {
-  window.showMembershipModal = function () {
-    if (window.membershipManager) {
-      window.membershipManager.showEmailCaptureModal('Essential');
-    }
-  };
-}
-document.addEventListener('DOMContentLoaded', () => {
-  if (typeof initializeApp === 'function') {
-    initializeApp();
-  }
+  initializeScrollProgress() {
+    const scrollIndicator = document.getElementById('scrollIndicator');
+    if (!scrollIndicator) return;
 
-  /* Scroll progress indicator */
-  const indicator = document.getElementById('scrollIndicator');
-  if (indicator) {
     window.addEventListener('scroll', () => {
       const total = document.body.scrollHeight - window.innerHeight;
       const progress = (window.scrollY / total) * 100;
@@ -205,3 +195,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+}
