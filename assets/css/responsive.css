@@ -1,11 +1,8 @@
 /* ==============================================
-   STAY DRIPPED MOBILE IV - RESPONSIVE STYLES
-   Mobile-first responsive design for all devices
+   RESPONSIVE STYLES - STAY DRIPPED MOBILE IV
    ============================================== */
 
-/* Mobile First Approach - Base styles for mobile */
-
-/* Tablet Styles - 768px and up */
+/* Tablet Landscape and below (1024px) */
 @media (max-width: 1024px) {
   :root {
     --section-padding: 4rem 1.5rem;
@@ -15,90 +12,109 @@
     padding: 0 1.5rem;
   }
   
-  .header-container {
-    padding: 1rem 1.5rem;
+  .hero-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
   }
   
+  .section-title {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+  }
+  
+  .membership-grid,
   .service-cards {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
   
-  .steps-container {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-  }
-  
-  .membership-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  }
-  
-  .recommended-treatment {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .treatment-details {
-    text-align: center;
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 2rem;
   }
 }
 
-/* Mobile Styles - 768px and down */
+/* Tablet Portrait and below (768px) */
 @media (max-width: 768px) {
-  :root {
-    --section-padding: 3rem 1rem;
-    --section-padding-mobile: 3rem 1rem;
-  }
-  
-  /* Header Mobile */
+  /* Header Mobile Styles */
   .header-container {
     padding: 1rem;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-  
-  .nav-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: var(--primary);
-    flex-direction: column;
-    padding: 1rem;
-    box-shadow: var(--shadow-lg);
-    z-index: 1000;
-  }
-  
-  .nav-menu.active {
-    display: flex;
   }
   
   .mobile-menu-toggle {
     display: flex;
+    order: 3;
+  }
+  
+  .nav-menu {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: var(--primary);
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    box-shadow: var(--shadow-lg);
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+    z-index: 999;
+  }
+  
+  .nav-menu.active {
+    transform: translateX(0);
+  }
+  
+  body.menu-open {
+    overflow: hidden;
+  }
+  
+  .nav-link {
+    padding: 1rem;
+    text-align: center;
+    border-radius: var(--br);
+    background: rgba(255, 255, 255, 0.05);
+  }
+  
+  .nav-link:hover {
+    background: rgba(255, 255, 255, 0.15);
   }
   
   .header-buttons {
     gap: 0.5rem;
-    order: 3;
-    width: 100%;
-    justify-content: space-between;
+    margin-right: auto;
   }
   
-  .header-buttons .emergency-call-btn,
-  .header-buttons .header-book-btn {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-    flex: 1;
-  }
-  
-  .btn-text {
+  .emergency-call-btn span {
     display: none;
+  }
+  
+  .emergency-call-btn {
+    padding: 0.75rem;
+    min-width: auto;
+  }
+  
+  .header-book-btn {
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+  }
+  
+  .exam-btn {
+    min-width: auto;
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+  }
+  
+  .exam-btn-text {
+    display: none;
+  }
+  
+  .exam-btn-icon {
+    margin: 0;
   }
   
   /* Hero Mobile */
   .hero {
-    min-height: 80vh;
+    min-height: 100vh;
     padding-top: 100px;
   }
   
@@ -108,20 +124,24 @@
   
   .hero-buttons {
     flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 2rem;
+  }
+  
+  .cta,
+  .cta-button {
+    width: 100%;
   }
   
   .hero-features {
     flex-direction: column;
-    align-items: center;
     gap: 1rem;
   }
   
-  .hero-contact {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+  .feature-item {
+    width: 100%;
+    justify-content: center;
   }
   
   /* Services Mobile */
@@ -130,65 +150,50 @@
     gap: 1.5rem;
   }
   
-  .card {
-    padding: 1.5rem;
-  }
-  
   /* Booking Mobile */
   .tab-buttons {
     flex-direction: column;
-    gap: 0.5rem;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 2rem;
   }
   
   .tab-link {
-    padding: 0.75rem 1rem;
-    font-size: 0.9rem;
+    width: 100%;
   }
   
   .tab-content iframe {
-    height: 500px;
+    height: 60vh;
+    min-height: 400px;
   }
   
-  .quiz-wrapper {
-    padding: 2rem 1rem;
-  }
-  
-  .quiz-options {
-    gap: 0.75rem;
-  }
-  
-  .option-content {
-    padding: 1rem;
+  /* Quiz Mobile */
+  .quiz-controls {
     flex-direction: column;
-    text-align: center;
-    gap: 0.5rem;
-  }
-  
-  .quiz-navigation {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .quiz-nav-btn {
     width: 100%;
-    justify-content: center;
   }
   
-  /* Lead Capture Mobile */
+  .quiz-controls button {
+    width: 100%;
+  }
+  
+  /* Membership Mobile */
+  .membership-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .membership-card.featured {
+    transform: none;
+  }
+  
   .lead-capture {
     flex-direction: column;
-    gap: 1rem;
   }
   
   .lead-capture input,
-  .lead-capture select,
-  .lead-capture button {
+  .lead-capture select {
     width: 100%;
-    min-width: auto;
-  }
-  
-  .membership-email-capture {
-    flex-direction: column;
   }
   
   /* How It Works Mobile */
@@ -197,102 +202,29 @@
     gap: 2rem;
   }
   
-  .feature-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
-  .process-feature {
-    padding: 1.5rem;
-  }
-  
   /* Testimonials Mobile */
-  .testimonial-slider blockquote {
-    padding: 1.5rem;
-    font-size: 1rem;
-  }
-  
-  .testimonial-controls {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .social-proof {
-    padding: 1.5rem;
-  }
-  
-  .proof-stats {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-  
-  /* Memberships Mobile */
-  .membership-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
-  .membership-card.featured {
-    transform: none;
-  }
-  
-  .benefits-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
-  .benefit {
-    padding: 1.5rem;
-  }
-  
-  .faq-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  /* FAQ Mobile */
-  .faq-question {
-    padding: 1rem;
-    font-size: 0.9rem;
-  }
-  
-  .faq-answer.active {
-    padding: 1rem;
-  }
-  
-  .faq-contact-options {
-    flex-direction: column;
-  }
-  
-  /* Quiz Mobile */
-  .quiz-container {
-    margin: 0 1rem;
-  }
-  
-  .quiz-header {
-    padding: 1.5rem;
-  }
-  
-  .wellness-quiz {
-    padding: 1.5rem;
-  }
-  
-  .quiz-question h4 {
-    font-size: 1.1rem;
-  }
-  
-  .results-actions {
-    flex-direction: column;
-  }
-  
-  .alternative-list {
-    flex-direction: column;
+  .testimonial-slider {
+    padding: 0 1rem;
   }
   
   /* Footer Mobile */
   .footer-content {
     grid-template-columns: 1fr;
-    text-align: center;
     gap: 2rem;
+    text-align: center;
+  }
+  
+  .footer-social {
+    justify-content: center;
+  }
+  
+  .footer-links {
+    text-align: center;
+  }
+  
+  .contact-info .contact-item {
+    justify-content: center;
+    text-align: center;
   }
   
   .footer-bottom-content {
@@ -303,306 +235,183 @@
   
   .footer-legal {
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.5rem;
   }
   
-  .contact-info .contact-item {
-    justify-content: center;
-    text-align: center;
+  /* Modal Mobile */
+  .exam-modal {
+    margin: 1rem;
+    max-height: calc(100vh - 2rem);
   }
   
-  .newsletter-input-group {
+  .exam-modal-header {
+    padding: 1.5rem 1.5rem 1rem;
+  }
+  
+  .exam-modal-body {
+    padding: 1.5rem;
+  }
+  
+  .exam-actions {
     flex-direction: column;
+  }
+  
+  .exam-proceed-btn,
+  .exam-call-btn {
+    width: 100%;
+  }
+  
+  /* Utility Classes Mobile */
+  .hide-mobile {
+    display: none !important;
+  }
+  
+  .show-mobile {
+    display: block !important;
   }
 }
 
-/* Small Mobile Styles - 480px and down */
+/* Mobile Landscape (640px) */
+@media (max-width: 640px) and (orientation: landscape) {
+  .hero {
+    min-height: auto;
+    padding: 4rem 1rem;
+  }
+  
+  .nav-menu {
+    max-height: calc(100vh - 60px);
+  }
+}
+
+/* Small Mobile (480px) */
 @media (max-width: 480px) {
   :root {
-    --section-padding: 2rem 1rem;
+    --section-padding: 3rem 1rem;
   }
   
-  .container {
-    padding: 0 1rem;
+  .hero-title {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
   }
   
-  /* Header Small Mobile */
-  .logo-section {
-    flex-direction: column;
-    gap: 0.25rem;
+  .section-title {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+  
+  .logo-image {
+    height: 30px;
   }
   
   .brand-name {
     font-size: 1.1rem;
   }
   
-  .header-buttons {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  
-  /* Hero Small Mobile */
-  .hero-content {
-    padding: 0 0.5rem;
-  }
-  
-  .hero-title {
-    font-size: clamp(2rem, 8vw, 3rem);
-  }
-  
   .hero-subtitle {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
   
-  .cta, .cta-button {
-    padding: 0.75rem 1.5rem;
-    font-size: 0.9rem;
-  }
-  
-  .feature-item {
-    font-size: 0.8rem;
-    padding: 0.5rem 0.75rem;
-  }
-  
-  /* Services Small Mobile */
   .card {
-    padding: 1rem;
+    padding: 1.5rem;
   }
   
-  .card h3 {
-    font-size: 1.1rem;
+  .membership-card {
+    padding: 1.5rem;
   }
   
-  .card p {
-    font-size: 0.9rem;
-  }
-  
-  /* Booking Small Mobile */
-  .quiz-wrapper {
-    padding: 1rem;
-  }
-  
-  .quiz-wrapper h3 {
-    font-size: 1.2rem;
-  }
-  
-  .option-content {
-    padding: 0.75rem;
-  }
-  
-  .option-content strong {
-    font-size: 0.9rem;
-  }
-  
-  .option-content p {
-    font-size: 0.8rem;
-  }
-  
-  /* Membership Small Mobile */
-  .membership-cta {
-    padding: 2rem 1rem;
-  }
-  
-  .membership-cta h3 {
-    font-size: 1.4rem;
-  }
-  
-  /* Steps Small Mobile */
-  .step-icon i {
-    font-size: 2.5rem;
-    padding: 1rem;
-  }
-  
-  .step h3 {
-    font-size: 1.1rem;
-  }
-  
-  .step p {
-    font-size: 0.9rem;
-  }
-  
-  /* Process Features Small Mobile */
-  .process-feature {
-    padding: 1rem;
-  }
-  
-  .process-feature i {
+  .membership-price .price {
     font-size: 2rem;
   }
   
-  .process-feature h4 {
-    font-size: 1rem;
-  }
-  
-  .process-feature p {
-    font-size: 0.85rem;
-  }
-  
-  /* Testimonials Small Mobile */
-  .testimonial-slider blockquote {
-    padding: 1rem;
-    font-size: 0.9rem;
-  }
-  
-  .stat-number {
-    font-size: 1.5rem;
-  }
-  
-  .stat-label {
-    font-size: 0.8rem;
-  }
-  
-  /* Footer Small Mobile */
-  .footer-section h3 {
-    font-size: 1rem;
-  }
-  
-  .footer-logo {
-    justify-content: center;
-  }
-  
-  .footer-brand-name {
-    font-size: 1rem;
-  }
-  
-  .social-link {
-    width: 35px;
-    height: 35px;
-  }
-  
-  .contact-info .contact-item {
+  .newsletter-input-group {
     flex-direction: column;
     gap: 0.5rem;
   }
-}
-
-/* Large Screen Styles - 1200px and up */
-@media (min-width: 1200px) {
-  .service-cards {
-    grid-template-columns: repeat(4, 1fr);
+  
+  .newsletter-input-group input {
+    width: 100%;
+    border-radius: var(--br);
+    border: 1px solid #e0e0e0;
   }
   
-  .steps-container {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  
-  .feature-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  
-  .benefits-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  
-  .membership-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  
-  .proof-stats {
-    grid-template-columns: repeat(4, 1fr);
+  .newsletter-btn {
+    width: 100%;
+    border-radius: var(--br);
+    padding: 0.75rem;
   }
 }
 
-/* Extra Large Screen Styles - 1400px and up */
-@media (min-width: 1400px) {
+/* Extra Small Mobile (360px) */
+@media (max-width: 360px) {
   .container {
-    max-width: 1400px;
-  }
-  
-  .hero-content {
-    max-width: 1000px;
-  }
-  
-  .section-title {
-    font-size: 3.5rem;
+    padding: 0 0.75rem;
   }
   
   .hero-title {
-    font-size: 5rem;
+    font-size: 1.5rem;
   }
-}
-
-/* High DPI / Retina Displays */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .hero {
-    background-image: 
-      var(--gradient-hero), 
-      url('https://images.unsplash.com/photo-1588776814546-ec7ddc888d2b?auto=format&fit=crop&w=3200&q=80');
+  
+  .section-title {
+    font-size: 1.3rem;
   }
-}
-
-/* High Contrast Mode Support */
-@media (prefers-contrast: high) {
+  
   .exam-btn {
-    border: 2px solid currentColor;
+    min-width: 40px;
+    padding: 0.75rem;
   }
   
-  .exam-modal {
-    border: 2px solid #000;
+  .header-book-btn {
+    display: none;
   }
 }
 
-/* Landscape Orientation on Mobile */
-@media (max-width: 768px) and (orientation: landscape) {
-  .hero {
-    min-height: 100vh;
-    padding-top: 80px;
+/* Print Styles */
+@media print {
+  /* Hide navigation and interactive elements */
+  .header,
+  .footer,
+  .scroll-indicator,
+  .mobile-menu-toggle,
+  .cta,
+  .cta-button,
+  .exam-btn,
+  .header-book-btn,
+  .emergency-call-btn,
+  .newsletter-form,
+  .social-link,
+  .quiz-wrapper,
+  .booking-tabs {
+    display: none !important;
   }
   
-  .hero-content {
-    max-width: 90%;
+  /* Reset colors for print */
+  body {
+    color: #000;
+    background: #fff;
   }
   
-  .hero-features {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+  .section {
+    page-break-inside: avoid;
   }
   
-  .steps-container {
-    grid-template-columns: repeat(2, 1fr);
+  .card,
+  .membership-card {
+    box-shadow: none;
+    border: 1px solid #ddd;
   }
   
-  .quiz-options {
-    grid-template-columns: repeat(2, 1fr);
+  /* Ensure links are visible */
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+  
+  /* Page margins */
+  @page {
+    margin: 2cm;
   }
 }
 
-/* Touch Device Optimizations */
-@media (hover: none) and (pointer: coarse) {
-  .cta, .cta-button, .tab-link, .quiz-option {
-    min-height: 44px;
-  }
-  
-  .nav-link {
-    padding: 1rem;
-  }
-  
-  .faq-question {
-    min-height: 60px;
-  }
-  
-  .contact-option {
-    min-height: 50px;
-  }
-  
-  /* Remove hover effects on touch devices */
-  .card:hover,
-  .service-card:hover,
-  .process-feature:hover,
-  .membership-card:hover {
-    transform: none;
-    box-shadow: var(--shadow);
-  }
-  
-  .cta:hover,
-  .cta-button:hover,
-  .tab-link:hover {
-    transform: none;
-  }
-}
-
-/* Reduced Motion Preferences */
+/* Accessibility - Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -616,103 +425,57 @@
   .hero-overlay {
     animation: none;
   }
-  
-  .membership-cta::before {
-    animation: none;
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  :root {
+    --primary: #000;
+    --secondary: #0066cc;
+    --text-dark: #000;
+    --text-light: #333;
+    --bg-light: #fff;
   }
   
-  /* Exam Button Reduced Motion */
-  .exam-btn,
-  .exam-modal,
-  .exam-modal-overlay,
-  .benefit-point {
-    transition: none;
+  .card,
+  .membership-card {
+    border: 2px solid #000;
   }
   
-  .exam-btn::before {
-    display: none;
-  }
-  
-  .exam-btn.loading::after {
-    animation: none;
+  .cta,
+  .cta-button {
+    border: 2px solid currentColor;
   }
 }
 
 /* Dark Mode Support */
 @media (prefers-color-scheme: dark) {
   :root {
-    --text-dark: #e0e0e0;
-    --text-light: #b0b0b0;
-    --text-muted: #888;
     --bg-light: #1a1a1a;
-    --white: #2a2a2a;
+    --text-dark: #f0f0f0;
+    --text-light: #ccc;
+    --white: #0a0a0a;
   }
   
   body {
     background: #0a0a0a;
-    color: var(--text-dark);
   }
   
   .card,
-  .tab-content,
-  .quiz-wrapper,
-  .process-feature,
-  .benefit,
-  .faq-item,
-  .quiz-container {
-    background: var(--white);
-    border-color: #333;
-  }
-  
-  .tab-link {
-    background: var(--white);
-    border-color: #333;
-  }
-  
-  .faq-question:hover,
-  .faq-question[aria-expanded="true"] {
-    background: #333;
-  }
-}
-
-/* Print Optimizations */
-@media print {
-  .hero {
-    min-height: auto;
-    padding: 2rem 0;
-    background: none;
-    color: #000;
-  }
-  
-  .section {
-    padding: 1rem 0;
-    page-break-inside: avoid;
-  }
-  
-  .service-cards,
-  .steps-container,
-  .membership-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  
-  .card,
-  .step,
   .membership-card {
-    box-shadow: none;
-    border: 1px solid #ddd;
-    page-break-inside: avoid;
+    background: #1a1a1a;
+    color: #f0f0f0;
   }
   
-  .testimonial-slider blockquote {
-    position: static;
-    opacity: 1;
-    page-break-inside: avoid;
+  .section-light {
+    background: #111;
   }
   
-  .quiz-container,
-  .booking-tabs,
-  .tab-content {
-    display: none;
+  .header {
+    background: rgba(10, 10, 10, 0.95);
+  }
+  
+  .footer {
+    background: #0a0a0a;
   }
 }
