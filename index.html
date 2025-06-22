@@ -53,23 +53,16 @@
 
   <link rel="preload" href="assets/images/hero-bg.png" as="image">
 
-    </script>
-     // Load all components
   <!-- IntakeQ Widget Integration -->
-
-  </script>
-  
-    (function(c){
-      window.intakeq="68460f36bc104b6aa9da43e0";
-      var i=c.createElement("script");
-      i.type="text/javascript";
-      i.async=true;
-      i.src="https://intakeq.com/js/widget.min.js?1";
-      document.head.appendChild(i);
-    })
-    (document)
-      ;
-    
+  <script>
+    (function (c) {
+      window.intakeq = "68460f36bc104b6aa9da43e0";
+      var i = c.createElement("script");
+      i.type = "text/javascript";
+      i.async = true;
+      i.src = "https://intakeq.com/js/widget.min.js?1";
+      c.head.appendChild(i);
+    })(document);
   </script>
 
   <!-- Schema.org structured data -->
@@ -154,11 +147,11 @@
     data-timezone='-6'
     data-examhours='[{"SUN":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"MON":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"TUE":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"WED":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"THU":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"FRI":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"SAT":{"FROM":"00:00","TO":"23:59","isDaySelected":true}}]'></script>
 
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js" defer></script>
 
-  <script src="assets/js/booking.js"></script>
+  <script src="assets/js/booking.js" defer></script>
 
-  <script src="assets/js/analytics.js"></script>
+  <script src="assets/js/analytics.js" defer></script>
 
   <!-- Component Loader Script -->
 
