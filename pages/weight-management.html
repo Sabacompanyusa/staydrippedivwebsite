@@ -1,1 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weight Management Program - Medical Weight Loss | Qualiphy</title>
+    <meta name="description" content="Achieve sustainable weight loss with our comprehensive medical weight management program featuring GLP-1 medications, nutrition coaching, and medical supervision.">
+    
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="../../assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon-16x16.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/qualiphy-style.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a href="../../index.html">
+                        <img src="../../assets/images/logo.png" alt="Qualiphy" class="logo">
+                    </a>
+                </div>
+                <div class="navbar-menu">
+                    <ul class="navbar-nav">
+                        <li><a href="../../index.html" class="nav-link">Home</a></li>
+                        <li><a href="../services.html" class="nav-link active">Services</a></li>
+                        <li><a href="../membership.html" class="nav-link">Membership</a></li>
+                        <li><a href="../testimonials.html" class="nav-link">Testimonials</a></li>
+                        <li><a href="../../index.html#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="openBookingModal()">Book Now</button>
+                </div>
+            </div>
+        </nav>
+    </header>
 
+    <!-- Service Hero -->
+    <section class="service-hero">
+        <div class="container">
+            <div class="service-hero-content">
+                <div class="service-hero-text">
+                    <div class="breadcrumbs">
+                        <a href="../services.html">Services</a> > <span>Weight Management</span>
+                    </div>
+                    <h1>Medical Weight Management Program</h1>
+                    <p class="service-subtitle">Achieve sustainable weight loss with our comprehensive medical approach combining FDA-approved medications, personalized nutrition plans, and ongoing medical supervision.</p>
+                    <div class="service-highlights">
+                        <div class="highlight-item">
+                            <span class="highlight-icon">🎯</span>
+                            <span>Medically Supervised</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">💊</span>
+                            <span>GLP-1 Medications</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">📈</span>
+                            <span>Sustainable Results</span>
+                        </div>
+                    </div>
+                    <div class="service-cta">
+                        <button class="btn btn-primary btn-lg" onclick="openBookingModal()">Start Your Journey</button>
+                        <div class="pricing-info">Starting at $400/month | Comprehensive Program</div>
+                    </div>
+                </div>
+                <div class="service-hero-image">
+                    <img src="../../assets/images/placeholder.png" alt="Weight Management Program">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Overview -->
+    <section class="program-overview">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Comprehensive Weight Loss Solution</h2>
+                <p>A multi-faceted approach to sustainable weight management</p>
+            </div>
+
+            <div class="program-components">
+                <div class="component-card">
+                    <div class="component-icon">💊</div>
+                    <h3>GLP-1 Medications</h3>
+                    <p>FDA-approved medications like Semaglutide and Tirzepatide that help reduce appetite and slow gastric emptying for effective weight loss.</p>
+                    <ul>
+                        <li>Semaglutide (Ozempic/Wegovy)</li>
+                        <li>Tirzepatide (Mounjaro/Zepbound)</li>
+                        <li>Liraglutide (Saxenda)</li>
+                        <li>Personalized dosing protocols</li>
+                    </ul>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-icon">🥗</div>
+                    <h3>Nutrition Coaching</h3>
+                    <p>Personalized meal plans and nutrition education to create sustainable eating habits for long-term success.</p>
+                    <ul>
+                        <li>Custom meal planning</li>
+                        <li>Macronutrient optimization</li>
+                        <li>Portion control guidance</li>
+                        <li>Lifestyle integration</li>
+                    </ul>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-icon">👨‍⚕️</div>
+                    <h3>Medical Supervision</h3>
+                    <p>Regular monitoring and support from our medical team to ensure safe and effective progress throughout your journey.</p>
+                    <ul>
+                        <li>Monthly medical check-ins</li>
+                        <li>Lab monitoring</li>
+                        <li>Side effect management</li>
+                        <li>Progress tracking</li>
+                    </ul>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-icon">💪</div>
+                    <h3>Lifestyle Support</h3>
+                    <p>Comprehensive lifestyle coaching including exercise guidance, behavior modification, and stress management techniques.</p>
+                    <ul>
+                        <li>Exercise planning</li>
+                        <li>Behavioral counseling</li>
+                        <li>Stress management</li>
+                        <li>Sleep optimization</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GLP-1 Medications -->
+    <section class="glp1-medications">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>FDA-Approved Weight Loss Medications</h2>
+                <p>Advanced medications that work with your body's natural systems</p>
+            </div>
+
+            <div class="medications-grid">
+                <div class="medication-card featured">
+                    <h3>Semaglutide</h3>
+                    <div class="medication-subtitle">Weekly Injection</div>
+                    <div class="medication-info">
+                        <h4>How it works:</h4>
+                        <ul>
+                            <li>Slows gastric emptying</li>
+                            <li>Reduces appetite</li>
+                            <li>Improves insulin sensitivity</li>
+                            <li>Promotes satiety</li>
+                        </ul>
+                        <h4>Benefits:</h4>
+                        <ul>
+                            <li>Average 15-20% weight loss</li>
+                            <li>Improved blood sugar control</li>
+                            <li>Cardiovascular benefits</li>
+                            <li>Once-weekly dosing</li>
+                        </ul>
+                    </div>
+                    <div class="medication-price">Starting at $400/month</div>
+                </div>
+
+                <div class="medication-card">
+                    <h3>Tirzepatide</h3>
+                    <div class="medication-subtitle">Weekly Injection</div>
+                    <div class="medication-info">
+                        <h4>How it works:</h4>
+                        <ul>
+                            <li>Dual hormone receptor agonist</li>
+                            <li>Enhanced appetite suppression</li>
+                            <li>Improved glucose metabolism</li>
+                            <li>Increased energy expenditure</li>
+                        </ul>
+                        <h4>Benefits:</h4>
+                        <ul>
+                            <li>Average 20-25% weight loss</li>
+                            <li>Superior efficacy</li>
+                            <li>Metabolic improvements</li>
+                            <li>Once-weekly dosing</li>
+                        </ul>
+                    </div>
+                    <div class="medication-price">Starting at $500/month</div>
+                </div>
+
+                <div class="medication-card">
+                    <h3>Liraglutide</h3>
+                    <div class="medication-subtitle">Daily Injection</div>
+                    <div class="medication-info">
+                        <h4>How it works:</h4>
+                        <ul>
+                            <li>GLP-1 receptor agonist</li>
+                            <li>Appetite regulation</li>
+                            <li>Delayed gastric emptying</li>
+                            <li>Blood sugar stabilization</li>
+                        </ul>
+                        <h4>Benefits:</h4>
+                        <ul>
+                            <li>Average 8-12% weight loss</li>
+                            <li>Daily dosing flexibility</li>
+                            <li>Proven safety profile</li>
+                            <li>Diabetes benefits</li>
+                        </ul>
+                    </div>
+                    <div class="medication-price">Starting at $350/month</div>
+                </div>
+            </div>
+
+            <div class="medication-note">
+                <p><strong>Note:</strong> Medication selection is based on individual medical history, weight loss goals, and response to treatment. Our medical team will determine the best option for you during your consultation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Tiers -->
+    <section class="program-tiers">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Choose Your Program</h2>
+                <p>Flexible options to meet your weight loss needs and budget</p>
+            </div>
+
+            <div class="tiers-grid">
+                <div class="tier-card">
+                    <div class="tier-header">
+                        <h3>Essential Program</h3>
+                        <div class="tier-price">$400<span>/month</span></div>
+                    </div>
+                    <div class="tier-content">
+                        <h4>What's Included:</h4>
+                        <ul>
+                            <li>GLP-1 medication (Liraglutide)</li>
+                            <li>Monthly medical consultations</li>
+                            <li>Basic nutrition guidance</li>
+                            <li>Progress tracking</li>
+                            <li>Email support</li>
+                        </ul>
+                        <div class="tier-ideal">
+                            <strong>Ideal for:</strong> Those seeking basic medical weight loss support
+                        </div>
+                    </div>
+                    <button class="btn btn-outline btn-block">Choose Essential</button>
+                </div>
+
+                <div class="tier-card featured">
+                    <div class="tier-badge">Most Popular</div>
+                    <div class="tier-header">
+                        <h3>Comprehensive Program</h3>
+                        <div class="tier-price">$600<span>/month</span></div>
+                    </div>
+                    <div class="tier-content">
+                        <h4>What's Included:</h4>
+                        <ul>
+                            <li>GLP-1 medication (Semaglutide)</li>
+                            <li>Bi-weekly medical consultations</li>
+                            <li>Personalized meal planning</li>
+                            <li>Exercise programming</li>
+                            <li>Behavioral coaching</li>
+                            <li>Lab monitoring</li>
+                            <li>24/7 support access</li>
+                        </ul>
+                        <div class="tier-ideal">
+                            <strong>Ideal for:</strong> Comprehensive weight loss with full support
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-block">Choose Comprehensive</button>
+                </div>
+
+                <div class="tier-card premium">
+                    <div class="tier-header">
+                        <h3>Premium Program</h3>
+                        <div class="tier-price">$800<span>/month</span></div>
+                    </div>
+                    <div class="tier-content">
+                        <h4>What's Included:</h4>
+                        <ul>
+                            <li>GLP-1 medication (Tirzepatide)</li>
+                            <li>Weekly medical consultations</li>
+                            <li>Personal nutrition coach</li>
+                            <li>Custom fitness planning</li>
+                            <li>Psychological support</li>
+                            <li>Advanced lab panels</li>
+                            <li>VIP support line</li>
+                            <li>Body composition analysis</li>
+                        </ul>
+                        <div class="tier-ideal">
+                            <strong>Ideal for:</strong> Maximum support and fastest results
+                        </div>
+                    </div>
+                    <button class="btn btn-secondary btn-block">Choose Premium</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Timeline -->
+    <section class="success-timeline">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Your Weight Loss Journey</h2>
+                <p>What to expect during your transformation</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">Week 1-2</div>
+                    <div class="timeline-content">
+                        <h3>Program Initiation</h3>
+                        <p>Comprehensive medical evaluation, medication initiation, and initial side effect management.</p>
+                        <ul>
+                            <li>Medical clearance and baseline labs</li>
+                            <li>Medication start with gradual dose increase</li>
+                            <li>Initial nutrition counseling</li>
+                            <li>Side effect monitoring</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">Month 1-3</div>
+                    <div class="timeline-content">
+                        <h3>Early Results</h3>
+                        <p>Appetite suppression begins, eating habits change, and initial weight loss becomes noticeable.</p>
+                        <ul>
+                            <li>5-10% weight loss typical</li>
+                            <li>Reduced cravings and portion sizes</li>
+                            <li>Improved energy levels</li>
+                            <li>Habit formation support</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">Month 3-6</div>
+                    <div class="timeline-content">
+                        <h3>Significant Progress</h3>
+                        <p>Substantial weight loss achieved with established healthy lifestyle patterns.</p>
+                        <ul>
+                            <li>10-15% weight loss achieved</li>
+                            <li>Stable eating patterns</li>
+                            <li>Improved metabolic markers</li>
+                            <li>Enhanced quality of life</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">Month 6-12</div>
+                    <div class="timeline-content">
+                        <h3>Goal Achievement</h3>
+                        <p>Target weight reached with focus shifting to maintenance and long-term success strategies.</p>
+                        <ul>
+                            <li>15-25% weight loss achieved</li>
+                            <li>Maintenance planning</li>
+                            <li>Sustainable lifestyle habits</li>
+                            <li>Long-term health improvements</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="success-stories">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Real Success Stories</h2>
+                <p>Inspiring transformations from our weight management program</p>
+            </div>
+
+            <div class="stories-grid">
+                <div class="story-card">
+                    <div class="story-results">
+                        <div class="weight-loss">Lost 45 lbs</div>
+                        <div class="timeframe">in 8 months</div>
+                    </div>
+                    <div class="story-content">
+                        <h3>Sarah's Transformation</h3>
+                        <p>"The Comprehensive Program changed my life. The medication helped control my appetite while the nutrition coaching taught me how to eat for long-term success. I've not only lost weight but gained confidence and energy."</p>
+                    </div>
+                    <div class="story-program">Comprehensive Program</div>
+                </div>
+
+                <div class="story-card">
+                    <div class="story-results">
+                        <div class="weight-loss">Lost 62 lbs</div>
+                        <div class="timeframe">in 12 months</div>
+                    </div>
+                    <div class="story-content">
+                        <h3>Mike's Journey</h3>
+                        <p>"I struggled with my weight for years. The Premium Program's weekly check-ins and personalized approach made all the difference. The medical supervision gave me confidence that I was losing weight safely."</p>
+                    </div>
+                    <div class="story-program">Premium Program</div>
+                </div>
+
+                <div class="story-card">
+                    <div class="story-results">
+                        <div class="weight-loss">Lost 38 lbs</div>
+                        <div class="timeframe">in 6 months</div>
+                    </div>
+                    <div class="story-content">
+                        <h3>Lisa's Success</h3>
+                        <p>"Starting with the Essential Program was perfect for me. The gradual approach helped me build sustainable habits. Now I'm maintaining my weight loss and feeling better than ever."</p>
+                    </div>
+                    <div class="story-program">Essential Program</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Medical Benefits -->
+    <section class="medical-benefits">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Health Benefits Beyond Weight Loss</h2>
+                <p>Comprehensive health improvements through medical weight management</p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">❤️</div>
+                    <h3>Cardiovascular Health</h3>
+                    <ul>
+                        <li>Lower blood pressure</li>
+                        <li>Improved cholesterol levels</li>
+                        <li>Reduced heart disease risk</li>
+                        <li>Better circulation</li>
+                    </ul>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">🩸</div>
+                    <h3>Metabolic Improvements</h3>
+                    <ul>
+                        <li>Better blood sugar control</li>
+                        <li>Increased insulin sensitivity</li>
+                        <li>Reduced diabetes risk</li>
+                        <li>Improved metabolic rate</li>
+                    </ul>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">🦴</div>
+                    <h3>Joint & Mobility</h3>
+                    <ul>
+                        <li>Reduced joint pain</li>
+                        <li>Improved mobility</li>
+                        <li>Better balance</li>
+                        <li>Increased flexibility</li>
+                    </ul>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">😴</div>
+                    <h3>Sleep & Energy</h3>
+                    <ul>
+                        <li>Better sleep quality</li>
+                        <li>Reduced sleep apnea</li>
+                        <li>Increased energy levels</li>
+                        <li>Improved mood</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="weight-faq">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Frequently Asked Questions</h2>
+                <p>Common questions about our weight management program</p>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Who is a good candidate for GLP-1 medications?</h3>
+                    <p>Good candidates typically have a BMI of 30+ or BMI 27+ with weight-related health conditions. Our medical team will evaluate your individual situation during consultation.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What are the common side effects?</h3>
+                    <p>Common side effects include nausea, vomiting, diarrhea, and constipation, which typically improve as your body adjusts. Our team provides strategies to minimize these effects.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How much weight can I expect to lose?</h3>
+                    <p>Most patients lose 15-25% of their body weight over 12-18 months. Individual results vary based on starting weight, medication response, and adherence to the program.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Is the weight loss permanent?</h3>
+                    <p>Weight loss can be maintained with continued lifestyle changes. Some patients continue medication long-term while others transition to maintenance strategies we develop together.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Does insurance cover the program?</h3>
+                    <p>Coverage varies by insurance plan. We provide detailed receipts for insurance submission and offer flexible payment options for out-of-pocket expenses.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How often will I need appointments?</h3>
+                    <p>Frequency depends on your chosen program, ranging from monthly (Essential) to weekly (Premium) visits, with additional support available as needed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="weight-cta">
+        <div class="container">
+            <div class="cta-content text-center">
+                <h2>Start Your Weight Loss Transformation Today</h2>
+                <p>Take the first step toward sustainable weight loss with our medically supervised program. Your healthiest self is waiting.</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary btn-lg" onclick="openBookingModal()">Schedule Consultation</button>
+                    <a href="../membership.html" class="btn btn-secondary btn-lg">View Membership Discounts</a>
+                </div>
+                <p class="cta-note">Comprehensive medical evaluation included with consultation</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="../../assets/images/logo.png" alt="Qualiphy">
+                    </div>
+                    <p>Transforming lives through premium wellness and personalized healthcare solutions.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="iv-therapy.html">IV Therapy</a></li>
+                        <li><a href="hormone-replacement.html">Hormone Replacement</a></li>
+                        <li><a href="aesthetic.html">Aesthetic Treatments</a></li>
+                        <li><a href="weight-management.html">Weight Management</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="../membership.html">Membership</a></li>
+                        <li><a href="../corporate-events.html">Corporate Events</a></li>
+                        <li><a href="../franchise.html">Franchise</a></li>
+                        <li><a href="../partnerships.html">Partnerships</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../../privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../../terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="../../medical-disclaimer.html">Medical Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Qualiphy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script>
+        function openBookingModal() {
+            window.location.href = '../../index.html#contact';
+        }
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-item h3').forEach(header => {
+            header.addEventListener('click', function() {
+                const item = this.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(faq => faq.classList.remove('active'));
+                
+                // Toggle current item
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
