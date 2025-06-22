@@ -30,7 +30,7 @@
   <!-- Favicon -->
 
   <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon-16x16.png">
 
   <!-- Fonts -->
 
@@ -47,13 +47,22 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
   <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/widget-loop-common-min.css">
+  <link rel="stylesheet" href="assets/css/widget-loop-grid.css">
+  <link rel="stylesheet" href="assets/css/fonts/style.css">
+  <link rel="stylesheet" href="assets/css/fonts/animations.css">
+  <link rel="stylesheet" href="assets/css/fonts/qualiphy-style.css">
+  <link rel="stylesheet" href="assets/css/fonts/rubiks.css">
+  <link rel="stylesheet" href="assets/css/elements/base/typography.css">
+  <link rel="stylesheet" href="assets/css/base/theme/them.min.css">
+  <link rel="stylesheet" href="assets/css/base/theme/shop.min.css">
   <link rel="stylesheet" href="https://firebasestorage.googleapis.com/v0/b/qualiphy-web-d918b.appspot.com/o/style-v4.css?alt=media&token=34735782-16e8-4a2f-9eaa-426d65af48b2">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 
 
   <!-- Preload critical resources -->
 
-  <link rel="preload" href="assets/images/hero-bg.png" as="image">
+  <link rel="preload" href="assets/images/hero-bdg.png" as="image">
 
   <!-- IntakeQ Widget Integration -->
   
@@ -108,6 +117,7 @@
   <!-- Header Component -->
 
   <div id="header-container"></div>
+  <div id="qualiphy-container"></div>
 
   <!-- Main Content -->
 
@@ -158,6 +168,37 @@
 
   <script src="assets/js/analytics.js" defer></script>
 
+  <script src="assets/js/cookie/cookie.min.js" defer></script>
+
+  <script src="assets/js/frontend/add-to-cart.min.js" defer></script>
+
+  <script src="assets/js/frontend/font.js" defer></script>
+
+  <script src="assets/js/frontend/order-attribution" defer></script>
+
+  <script src="assets/js/frontend/woocommerce.min.js" defer></script>
+
+  <script src="assets/js/widgets/header-whoo-search.js" defer></script>
+
+  <script src="assets/js/widgets/analytics.js" defer></script>
+  
+  <script src="assets/js/widgets/booking.js" defer></script>
+
+  <script src="assets/js/widgets/bootstrap.min.js" defer></script>
+
+  <script src="assets/js/widgets/hooks.min.js" defer></script>
+
+  <script src="assets/js/widgets/i18n.min.js" defer></script>
+
+  <script src="assets/js/widgets/intakeq.js" defer></script>
+
+  <script src="assets/js/widgets/moment.js" defer></script>
+
+  <script src="assets/js/widgets/quidget-disclosure.js" defer></script>
+
+  <script src="assets/js/widgets/sourcebuster.js" defer></script>
+  
+
   <!-- Component Loader Script -->
 
   <script>
@@ -184,8 +225,9 @@
         loadComponent('testimonials-container', 'components/testimonials.html'),
         loadComponent('memberships-container', 'components/memberships.html'),
         loadComponent('faq-container', 'components/faq.html'),
-        loadComponent('quiz-container', 'components/quiz.html'),
-        loadComponent('footer-container', 'components/footer.html')
+        loadComponent('qualiphy-container', 'components/qualiphy.html'),
+        loadComponent('footer-container', 'components/footer.html'),
+        loadComponent('quiz-container', 'components/quiz.html')
       ]);
 
       // Initialize components after loading
