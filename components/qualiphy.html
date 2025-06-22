@@ -1,0 +1,65 @@
+#disclosure-modal-container,#modal-container {
+    background-color: rgba(0,0,0,.5)
+}
+
+#loadFormButton {
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    background-color: #cfc9ff;
+    color: #0a005b;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+#inner-model,.responsive-embed {
+    border-radius: 10px
+}
+
+#disclosure-modal-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 9999;
+    display: none;
+    justify-content: center;
+    align-items: center
+}
+
+#inner-model {
+    background-color: #fff;
+    padding: 20px;
+    font-family: "Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"
+}
+
+#qualiphyLink {
+    text-decoration: none!important;
+    color: #9e92ff!important
+}
+
+@media (max-width: 768px) {
+    .responsive-embed {
+        width:90vw;
+        height: 90vh
+    }
+}
+
+@media (min-width: 769px) and (max-width:1024px) {
+    .responsive-embed {
+        width:90vw;
+        height: 70vh
+    }
+}
+
+@media (min-width: 1025px) {
+    .responsive-embed {
+        width:80vw;
+        height: 86vh
+    }
+}
