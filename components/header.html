@@ -15,34 +15,19 @@
   <a href="#contact" class="nav-link">Contact</a>
 </nav>
 
-    <div class="header-buttons">
-      <a href="tel:+12345678900" class="emergency-call-btn">
-        <i class="fas fa-phone"></i>
-        <span class="btn-text">Emergency</span>
-      </a>
-      
-      <!-- Enhanced First Time Patient Exam Button -->
-      <button 
-        id="loadFormButton" 
-        class="exam-btn" 
-        type="button"
-        role="button"
-        aria-label="Start First Time Patient Examination Process"
-        data-action="patient-exam"
-      >
-        <i class="fas fa-user-md exam-btn-icon" aria-hidden="true"></i>
-        <span class="exam-btn-text">First Time Patient Exam</span>
-      </button>
-      
-      <button class="header-book-btn" id="headerBookBtn">Book Now</button>
+<div class="header-buttons">
+  <a href="tel:+16026889825" class="emergency-call-btn">
+    <i class="fas fa-phone"></i>
+    <span class="btn-text">Emergency</span>
+  </a>
+  <button class="header-book-btn" id="headerBookBtn">Book Now</button>
+    <div id="main-qualiphy-widget" class="qualiphy-widget">
+      <div id="loadFormButton" class="qualiphy-button" onclick="showDisclosureModal()">
+        First Time Patient Exam
+      </div>
+      <p id="not-available" style="display:none">Not available!</p>
     </div>
-
-    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </div>
+</div>
 
   <!-- Enhanced Patient Exam Modal -->
   <div id="examModal" class="exam-modal-overlay" style="display: none;" role="dialog" aria-labelledby="examModalTitle" aria-describedby="examModalDesc">
