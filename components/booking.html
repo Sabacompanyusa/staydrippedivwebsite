@@ -31,6 +31,72 @@
 
 <!-- Smart IV Quiz -->
 <div class="quiz-wrapper">
+  <h3>Not sure which IV fits you? Take the quick quiz 👇</h3>
+  <div class="quiz-progress">
+    <div class="quiz-progress-bar"></div>
+    <span class="quiz-progress-text">Step 1 of 3</span>
+  </div>
+  
+  <form id="quiz-form" class="quiz-form">
+    <!-- Step 1 -->
+    <div class="quiz-step active" data-step="1">
+      <label>How are you feeling today?</label>
+      <select name="feeling" required>
+        <option value="">Choose one</option>
+        <option value="dehydrated">Dehydrated</option>
+        <option value="hungover">Hungover</option>
+        <option value="fatigued">Low Energy</option>
+        <option value="immune">Feeling Sick</option>
+        <option value="optimal">Feeling Great - Boost Me</option>
+      </select>
+    </div>
+    
+    <!-- Step 2 -->
+    <div class="quiz-step" data-step="2">
+      <label>What's your main goal?</label>
+      <select name="goal" required>
+        <option value="">Choose one</option>
+        <option value="energy">Energy Boost</option>
+        <option value="hydration">Hydration</option>
+        <option value="immunity">Immunity</option>
+        <option value="hangover">Hangover Relief</option>
+        <option value="beauty">Skin / Beauty</option>
+        <option value="recovery">Athletic Recovery</option>
+        <option value="wellness">General Wellness</option>
+        <option value="antiaging">Anti-Aging</option>
+      </select>
+    </div>
+    
+    <!-- Step 3 -->
+    <div class="quiz-step" data-step="3">
+      <label>How soon do you need treatment?</label>
+      <select name="urgency" required>
+        <option value="">Choose one</option>
+        <option value="now">ASAP</option>
+        <option value="soon">This Week</option>
+        <option value="flex">I'm Flexible</option>
+      </select>
+    </div>
+    
+    <div class="quiz-controls">
+      <button type="button" id="prevBtn" style="display: none;">Previous</button>
+      <button type="button" id="nextBtn">Next</button>
+      <button type="submit" id="submitBtn" style="display:none;">Get Recommendation</button>
+    </div>
+  </form>
+
+  <!-- Quiz Result -->
+  <div id="quiz-result" class="quiz-result" style="display:none;">
+    <div class="result-icon">
+      <i class="fas fa-check-circle"></i>
+    </div>
+    <h4>Your Best Match:</h4>
+    <p id="result-text"></p>
+    <p id="result-description" class="result-description"></p>
+    <a id="book-link" href="#" class="cta-button" target="_blank">Book This Treatment</a>
+    <button id="retakeQuiz" class="cta-button secondary">Take Quiz Again</button>
+  </div>
+
   <h3>Not sure which IV fits you?</h3>
   <a href="quiz.html" class="cta-button">Take the Quick Quiz</a>
 </div>
@@ -48,7 +114,7 @@
       <option value="Essential">Essential Membership - $149/month</option>
       <option value="Shot">Shot Pass - $99/month</option>
     </select>
-    <button type="submit" class="cta-button">Join & Book First Session</button>
+    <button type="submit" class="cta-button">Join &amp; Book First Session</button>
   </form>
   
   <p class="disclaimer">
