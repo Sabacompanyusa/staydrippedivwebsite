@@ -1,150 +1,885 @@
-<section id="testimonials" class="testimonials fade-in" aria-labelledby="testimonials-heading">
-  <div class="container">
-    <h2 id="testimonials-heading">What Our Clients Say</h2>
-    <p class="section-subtitle">
-      Real experiences from real people who've transformed their wellness with Stay Dripped Mobile IV.
-    </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Testimonials & Success Stories | Qualiphy</title>
+    <meta name="description" content="Read real success stories from Qualiphy clients who transformed their health through our premium wellness services including IV therapy, hormone replacement, and more.">
+    
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-16x16.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/qualiphy-style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a href="../index.html">
+                        <img src="../assets/images/logo.png" alt="Qualiphy" class="logo">
+                    </a>
+                </div>
+                <div class="navbar-menu">
+                    <ul class="navbar-nav">
+                        <li><a href="../index.html" class="nav-link">Home</a></li>
+                        <li><a href="services.html" class="nav-link">Services</a></li>
+                        <li><a href="membership.html" class="nav-link">Membership</a></li>
+                        <li><a href="testimonials.html" class="nav-link active">Testimonials</a></li>
+                        <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="openBookingModal()">Book Now</button>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-<div class="testimonial-slider">
-  <blockquote class="active">
-    "Best IV service I have ever had. So simple and convenient. Done from the comfort of your own home. Wouldn't go through any other service!" 
-    — <strong>AlmostEpic</strong>
-    <div class="rating">
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-    </div>
-  </blockquote>
-  
-  <blockquote>
-    "Came to our Airbnb and was a great experience!! Will definitely hire them again for my Scottsdale weekends." 
-    — <strong>Shelby Z.</strong>
-    <div class="rating">
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-    </div>
-  </blockquote>
-  
-  <blockquote>
-    "Stay Dripped IV came highly recommended! Matt and Nurse Dezmond took care of us on time and professionally. We felt amazing after! HIGHLY recommend." 
-    — <strong>Pete S.</strong>
-    <div class="rating">
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-    </div>
-  </blockquote>
-  
-  <blockquote>
-    "Matt and his team are top-notch! Convenient, professional, and incredibly effective. Seamless process and excellent care." 
-    — <strong>Walled H.</strong>
-    <div class="rating">
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-    </div>
-  </blockquote>
-  
-  <blockquote>
-    "I was throwing up all morning. Nurse arrived in under 1 hour with all the good stuff. Saved my day!" 
-    — <strong>Kong L.</strong>
-    <div class="rating">
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-    </div>
-  </blockquote>
-  
-  <blockquote>
-    "Late night help when my fiancé got sick. Nurse Kyla stayed well past duty. Eternally grateful." 
-    — <strong>Athena B.</strong>
-    <div class="rating">
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-    </div>
-  </blockquote>
-  
-  <blockquote>
-    "Professional, friendly, fast, and affordable. I felt refreshed and re-energized afterward." 
-    — <strong>Walled H.</strong>
-    <div class="rating">
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-    </div>
-  </blockquote>
-  
-  <blockquote>
-    "The whole team made the experience fun and easy. Highly recommend!" 
-    — <strong>Caroline H.</strong>
-    <div class="rating">
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-    </div>
-  </blockquote>
-  
-  <blockquote>
-    "Scared of needles but they made me feel safe. Will book again for all future events!" 
-    — <strong>Anneliese D.</strong>
-    <div class="rating">
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-    </div>
-  </blockquote>
-</div>
+    <!-- Page Header -->
+    <section class="page-header testimonials-header">
+        <div class="container">
+            <div class="page-header-content text-center">
+                <h1>Client Success Stories</h1>
+                <p>Real transformations from real people who chose Qualiphy for their wellness journey</p>
+                <div class="success-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Happy Clients</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">95%</span>
+                        <span class="stat-label">Success Rate</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">4.9★</span>
+                        <span class="stat-label">Average Rating</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="testimonial-controls">
-  <button class="testimonial-prev" aria-label="Previous testimonial">
-    <i class="fas fa-chevron-left"></i>
-  </button>
-  <div class="testimonial-dots"></div>
-  <button class="testimonial-next" aria-label="Next testimonial">
-    <i class="fas fa-chevron-right"></i>
-  </button>
-</div>
+    <!-- Main Testimonials Slider -->
+    <section class="testimonials-slider-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>What Our Clients Say</h2>
+                <p class="section-subtitle">Real experiences from real people who've transformed their wellness with Qualiphy.</p>
+            </div>
 
-<div class="social-proof">
-  <div class="proof-stats">
-    <div class="stat">
-      <span class="stat-number">500+</span>
-      <span class="stat-label">Happy Clients</span>
-    </div>
-    <div class="stat">
-      <span class="stat-number">4.9/5</span>
-      <span class="stat-label">Average Rating</span>
-    </div>
-    <div class="stat">
-      <span class="stat-number">24/7</span>
-      <span class="stat-label">Available</span>
-    </div>
-    <div class="stat">
-      <span class="stat-number">Same Day</span>
-      <span class="stat-label">Service</span>
-    </div>
-  </div>
-</div>
+            <div class="testimonial-slider">
+                <blockquote class="active">
+                    "Best IV service I have ever had. So simple and convenient. Done from the comfort of your own home. Wouldn't go through any other service!" 
+                    — <strong>AlmostEpic</strong>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </blockquote>
+                
+                <blockquote>
+                    "Came to our Airbnb and was a great experience!! Will definitely hire them again for my Scottsdale weekends." 
+                    — <strong>Shelby Z.</strong>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </blockquote>
+                
+                <blockquote>
+                    "Stay Dripped IV came highly recommended! Matt and Nurse Dezmond took care of us on time and professionally. We felt amazing after! HIGHLY recommend." 
+                    — <strong>Pete S.</strong>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </blockquote>
+                
+                <blockquote>
+                    "Matt and his team are top-notch! Convenient, professional, and incredibly effective. Seamless process and excellent care." 
+                    — <strong>Walled H.</strong>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </blockquote>
+                
+                <blockquote>
+                    "I was throwing up all morning. Nurse arrived in under 1 hour with all the good stuff. Saved my day!" 
+                    — <strong>Kong L.</strong>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </blockquote>
+                
+                <blockquote>
+                    "Late night help when my fiancé got sick. Nurse Kyla stayed well past duty. Eternally grateful." 
+                    — <strong>Athena B.</strong>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </blockquote>
+                
+                <blockquote>
+                    "Professional, friendly, fast, and affordable. I felt refreshed and re-energized afterward." 
+                    — <strong>Walled H.</strong>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </blockquote>
+                
+                <blockquote>
+                    "The whole team made the experience fun and easy. Highly recommend!" 
+                    — <strong>Caroline H.</strong>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </blockquote>
+                
+                <blockquote>
+                    "Scared of needles but they made me feel safe. Will book again for all future events!" 
+                    — <strong>Anneliese D.</strong>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </blockquote>
+            </div>
 
-  </div>
-</section>
+            <div class="testimonial-controls">
+                <button class="testimonial-prev" aria-label="Previous testimonial">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="testimonial-dots"></div>
+                <button class="testimonial-next" aria-label="Next testimonial">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <div class="social-proof">
+                <div class="proof-stats">
+                    <div class="stat">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Happy Clients</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">4.9/5</span>
+                        <span class="stat-label">Average Rating</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">95%</span>
+                        <span class="stat-label">Success Rate</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">Same Day</span>
+                        <span class="stat-label">Appointments</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service-Specific Testimonials -->
+    <section class="service-testimonials">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Success Stories by Service</h2>
+                <p>Real results across all our wellness services</p>
+            </div>
+
+            <div class="service-tabs">
+                <div class="tab-navigation">
+                    <button class="tab-btn active" data-tab="iv-therapy">IV Therapy</button>
+                    <button class="tab-btn" data-tab="hormone">Hormone Therapy</button>
+                    <button class="tab-btn" data-tab="aesthetic">Aesthetic</button>
+                    <button class="tab-btn" data-tab="weight">Weight Management</button>
+                </div>
+
+                <!-- IV Therapy Testimonials -->
+                <div class="tab-content active" id="iv-therapy-tab">
+                    <div class="testimonials-grid">
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <h4>Jennifer K.</h4>
+                                <span class="service-type">Premium IV Therapy</span>
+                                <div class="rating">★★★★★</div>
+                            </div>
+                            <p>"The NAD+ treatments have been incredible for my mental clarity and energy. I noticed results after just one session, and now it's a regular part of my wellness routine."</p>
+                            <div class="testimonial-results">
+                                <span>Mental Clarity: ↑90%</span>
+                                <span>Energy: ↑85%</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <h4>Michael T.</h4>
+                                <span class="service-type">Energy Boost IV</span>
+                                <div class="rating">★★★★★</div>
+                            </div>
+                            <p>"As an athlete, recovery is crucial. The IV therapy sessions have cut my recovery time in half and improved my performance significantly."</p>
+                            <div class="testimonial-results">
+                                <span>Recovery Time: ↓50%</span>
+                                <span>Performance: ↑40%</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <h4>Lisa P.</h4>
+                                <span class="service-type">Immune Defense IV</span>
+                                <div class="rating">★★★★★</div>
+                            </div>
+                            <p>"I used to get sick constantly. Since starting the immune IV treatments, I haven't been sick once in 8 months. It's been life-changing."</p>
+                            <div class="testimonial-results">
+                                <span>Sick Days: ↓100%</span>
+                                <span>Immunity: Excellent</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hormone Therapy Testimonials -->
+                <div class="tab-content" id="hormone-tab">
+                    <div class="testimonials-grid">
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <h4>Robert S.</h4>
+                                <span class="service-type">Testosterone Replacement</span>
+                                <div class="rating">★★★★★</div>
+                            </div>
+                            <p>"My low testosterone was affecting everything - energy, mood, motivation. The HRT program at Qualiphy brought me back to feeling like my younger self."</p>
+                            <div class="testimonial-results">
+                                <span>Energy: ↑200%</span>
+                                <span>Motivation: Restored</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <h4>Maria L.</h4>
+                                <span class="service-type">Bioidentical HRT</span>
+                                <div class="rating">★★★★★</div>
+                            </div>
+                            <p>"Menopause was making my life miserable with hot flashes and mood swings. The bioidentical hormone therapy has given me my life back."</p>
+                            <div class="testimonial-results">
+                                <span>Hot Flashes: Eliminated</span>
+                                <span>Mood: Stabilized</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <h4>James W.</h4>
+                                <span class="service-type">Comprehensive HRT</span>
+                                <div class="rating">★★★★★</div>
+                            </div>
+                            <p>"The comprehensive approach to hormone optimization has improved not just my energy, but my sleep, mood, and overall quality of life."</p>
+                            <div class="testimonial-results">
+                                <span>Sleep Quality: ↑80%</span>
+                                <span>QoL: Excellent</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Aesthetic Testimonials -->
+                <div class="tab-content" id="aesthetic-tab">
+                    <div class="testimonials-grid">
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <h4>Amanda K.</h4>
+                                <span class="service-type">Botox & Fillers</span>
+                                <div class="rating">★★★★★</div>
+                            </div>
+                            <p>"The aesthetic team at Qualiphy created the most natural-looking results. I look refreshed and youthful without looking 'done.' People ask what my secret is!"</p>
+                            <div class="testimonial-results">
+                                <span>Confidence: ↑100%</span>
+                                <span>Satisfaction: Excellent</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <h4>Rachel M.</h4>
+                                <span class="service-type">Chemical Peels</span>
+                                <div class="rating">★★★★★</div>
+                            </div>
+                            <p>"The chemical peel series transformed my skin texture and tone. I get compliments on my glowing skin all the time now."</p>
+                            <div class="testimonial-results">
+                                <span>Skin Texture: ↑90%</span>
+                                <span>Skin Tone: Even</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <h4>Nicole D.</h4>
+                                <span class="service-type">Body Contouring</span>
+                                <div class="rating">★★★★★</div>
+                            </div>
+                            <p>"CoolSculpting at Qualiphy helped me achieve the body confidence I'd been working toward. The results are exactly what I hoped for."</p>
+                            <div class="testimonial-results">
+                                <span>Body Confidence: ↑150%</span>
+                                <span>Results: Exceeded Goals</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Weight Management Testimonials -->
+                <div class="tab-content" id="weight-tab">
+                    <div class="testimonials-grid">
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <h4>Karen B.</h4>
+                                <span class="service-type">Comprehensive Weight Program</span>
+                                <div class="rating">★★★★★</div>
+                            </div>
+                            <p>"I lost 45 pounds with the comprehensive weight management program. The medical supervision and support made all the difference in my success."</p>
+                            <div class="testimonial-results">
+                                <span>Weight Lost: 45 lbs</span>
+                                <span>Time: 8 months</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <h4>Steve R.</h4>
+                                <span class="service-type">GLP-1 Program</span>
+                                <div class="rating">★★★★★</div>
+                            </div>
+                            <p>"The GLP-1 medication combined with the nutrition coaching helped me lose 60 pounds. I feel healthier and more energetic than I have in years."</p>
+                            <div class="testimonial-results">
+                                <span>Weight Lost: 60 lbs</span>
+                                <span>Health: Dramatically Improved</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <h4>Patricia H.</h4>
+                                <span class="service-type">Premium Weight Program</span>
+                                <div class="rating">★★★★★</div>
+                            </div>
+                            <p>"The premium program's weekly support kept me motivated and on track. I've lost 35 pounds and learned sustainable habits for life."</p>
+                            <div class="testimonial-results">
+                                <span>Weight Lost: 35 lbs</span>
+                                <span>Habits: Sustainable</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Testimonials -->
+    <section class="video-testimonials">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Hear From Our Clients</h2>
+                <p>Watch real client experiences and transformations</p>
+            </div>
+
+            <div class="video-grid">
+                <div class="video-testimonial">
+                    <div class="video-thumbnail">
+                        <img src="../assets/images/placeholder.png" alt="Client Video Testimonial">
+                        <div class="play-button">▶</div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Mark's Weight Loss Journey</h4>
+                        <p>Lost 50 pounds with comprehensive program</p>
+                        <span class="video-duration">3:45</span>
+                    </div>
+                </div>
+
+                <div class="video-testimonial">
+                    <div class="video-thumbnail">
+                        <img src="../assets/images/placeholder.png" alt="Client Video Testimonial">
+                        <div class="play-button">▶</div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Susan's Hormone Therapy Success</h4>
+                        <p>How HRT transformed her quality of life</p>
+                        <span class="video-duration">4:20</span>
+                    </div>
+                </div>
+
+                <div class="video-testimonial">
+                    <div class="video-thumbnail">
+                        <img src="../assets/images/placeholder.png" alt="Client Video Testimonial">
+                        <div class="play-button">▶</div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Alex's Athletic Performance</h4>
+                        <p>IV therapy for enhanced athletic recovery</p>
+                        <span class="video-duration">2:58</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Summary -->
+    <section class="reviews-summary">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>What Our Clients Say</h2>
+                <p>Consistently rated 5 stars across all platforms</p>
+            </div>
+
+            <div class="reviews-platforms">
+                <div class="platform-review">
+                    <div class="platform-logo">Google</div>
+                    <div class="platform-rating">
+                        <div class="stars">★★★★★</div>
+                        <div class="rating-score">4.9/5</div>
+                        <div class="review-count">125 reviews</div>
+                    </div>
+                </div>
+
+                <div class="platform-review">
+                    <div class="platform-logo">Yelp</div>
+                    <div class="platform-rating">
+                        <div class="stars">★★★★★</div>
+                        <div class="rating-score">4.8/5</div>
+                        <div class="review-count">89 reviews</div>
+                    </div>
+                </div>
+
+                <div class="platform-review">
+                    <div class="platform-logo">Facebook</div>
+                    <div class="platform-rating">
+                        <div class="stars">★★★★★</div>
+                        <div class="rating-score">4.9/5</div>
+                        <div class="review-count">67 reviews</div>
+                    </div>
+                </div>
+
+                <div class="platform-review">
+                    <div class="platform-logo">Healthgrades</div>
+                    <div class="platform-rating">
+                        <div class="stars">★★★★★</div>
+                        <div class="rating-score">5.0/5</div>
+                        <div class="review-count">43 reviews</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="overall-satisfaction">
+                <div class="satisfaction-stat">
+                    <div class="stat-circle">
+                        <span class="percentage">98%</span>
+                    </div>
+                    <p>Client Satisfaction Rate</p>
+                </div>
+                <div class="satisfaction-stat">
+                    <div class="stat-circle">
+                        <span class="percentage">95%</span>
+                    </div>
+                    <p>Would Recommend to Friends</p>
+                </div>
+                <div class="satisfaction-stat">
+                    <div class="stat-circle">
+                        <span class="percentage">92%</span>
+                    </div>
+                    <p>Achieved Their Goals</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Write a Review -->
+    <section class="write-review">
+        <div class="container">
+            <div class="review-cta">
+                <div class="review-text">
+                    <h2>Share Your Success Story</h2>
+                    <p>Help others discover the transformative power of Qualiphy's wellness services by sharing your experience.</p>
+                </div>
+                <div class="review-buttons">
+                    <button class="btn btn-primary">Write a Review</button>
+                    <button class="btn btn-outline">Share Your Story</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="testimonials-cta">
+        <div class="container">
+            <div class="cta-content text-center">
+                <h2>Ready to Write Your Own Success Story?</h2>
+                <p>Join hundreds of satisfied clients who have transformed their health and wellness with Qualiphy's premium services.</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary btn-lg" onclick="openBookingModal()">Start Your Journey</button>
+                    <a href="services.html" class="btn btn-secondary btn-lg">Explore Services</a>
+                </div>
+                <p class="cta-note">Schedule your consultation today and take the first step toward your transformation</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="../assets/images/logo.png" alt="Qualiphy">
+                    </div>
+                    <p>Transforming lives through premium wellness and personalized healthcare solutions.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services/iv-therapy.html">IV Therapy</a></li>
+                        <li><a href="services/hormone-replacement.html">Hormone Replacement</a></li>
+                        <li><a href="services/aesthetic.html">Aesthetic Treatments</a></li>
+                        <li><a href="services/weight-management.html">Weight Management</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="membership.html">Membership</a></li>
+                        <li><a href="corporate-events.html">Corporate Events</a></li>
+                        <li><a href="franchise.html">Franchise</a></li>
+                        <li><a href="partnerships.html">Partnerships</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="../medical-disclaimer.html">Medical Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Qualiphy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
+    <script>
+        function openBookingModal() {
+            window.location.href = '../index.html#contact';
+        }
+
+        // Testimonial Slider Functionality
+        class TestimonialSlider {
+            constructor() {
+                this.testimonials = document.querySelectorAll('.testimonial-slider blockquote');
+                this.prevBtn = document.querySelector('.testimonial-prev');
+                this.nextBtn = document.querySelector('.testimonial-next');
+                this.dotsContainer = document.querySelector('.testimonial-dots');
+                this.currentIndex = 0;
+                this.autoPlayInterval = null;
+                
+                this.init();
+            }
+            
+            init() {
+                this.createDots();
+                this.bindEvents();
+                this.startAutoPlay();
+            }
+            
+            createDots() {
+                this.testimonials.forEach((_, index) => {
+                    const dot = document.createElement('button');
+                    dot.classList.add('testimonial-dot');
+                    if (index === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => this.goToSlide(index));
+                    this.dotsContainer.appendChild(dot);
+                });
+            }
+            
+            bindEvents() {
+                this.prevBtn.addEventListener('click', () => this.prevSlide());
+                this.nextBtn.addEventListener('click', () => this.nextSlide());
+                
+                // Pause auto-play on hover
+                const slider = document.querySelector('.testimonial-slider');
+                slider.addEventListener('mouseenter', () => this.stopAutoPlay());
+                slider.addEventListener('mouseleave', () => this.startAutoPlay());
+            }
+            
+            goToSlide(index) {
+                // Remove active class from current slide and dot
+                this.testimonials[this.currentIndex].classList.remove('active');
+                document.querySelectorAll('.testimonial-dot')[this.currentIndex].classList.remove('active');
+                
+                // Set new current index
+                this.currentIndex = index;
+                
+                // Add active class to new slide and dot
+                this.testimonials[this.currentIndex].classList.add('active');
+                document.querySelectorAll('.testimonial-dot')[this.currentIndex].classList.add('active');
+            }
+            
+            nextSlide() {
+                const nextIndex = (this.currentIndex + 1) % this.testimonials.length;
+                this.goToSlide(nextIndex);
+            }
+            
+            prevSlide() {
+                const prevIndex = (this.currentIndex - 1 + this.testimonials.length) % this.testimonials.length;
+                this.goToSlide(prevIndex);
+            }
+            
+            startAutoPlay() {
+                this.autoPlayInterval = setInterval(() => {
+                    this.nextSlide();
+                }, 5000); // Change slide every 5 seconds
+            }
+            
+            stopAutoPlay() {
+                if (this.autoPlayInterval) {
+                    clearInterval(this.autoPlayInterval);
+                    this.autoPlayInterval = null;
+                }
+            }
+        }
+
+        // Tab functionality
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const targetTab = this.dataset.tab;
+                
+                // Update active button
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Show target tab content
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                document.getElementById(targetTab + '-tab').classList.add('active');
+            });
+        });
+
+        // Video testimonial play functionality (placeholder)
+        document.querySelectorAll('.video-testimonial').forEach(video => {
+            video.addEventListener('click', function() {
+                // This would integrate with your video player
+                alert('Video testimonial would play here');
+            });
+        });
+
+        // Initialize testimonial slider when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            new TestimonialSlider();
+        });
+    </script>
+
+    <style>
+        /* Testimonial Slider Styles */
+        .testimonials-slider-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+        }
+
+        .testimonial-slider {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            min-height: 200px;
+        }
+
+        .testimonial-slider blockquote {
+            display: none;
+            text-align: center;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            padding: 40px 20px;
+            margin: 0;
+            border: none;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        .testimonial-slider blockquote.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .testimonial-slider blockquote strong {
+            color: #2c5aa0;
+            font-weight: 600;
+        }
+
+        .rating {
+            margin-top: 15px;
+            color: #ffd700;
+        }
+
+        .rating i {
+            margin: 0 2px;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .testimonial-prev,
+        .testimonial-next {
+            background: #2c5aa0;
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .testimonial-prev:hover,
+        .testimonial-next:hover {
+            background: #1e4080;
+            transform: scale(1.1);
+        }
+
+        .testimonial-dots {
+            display: flex;
+            gap: 10px;
+        }
+
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: none;
+            background: #ddd;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-dot.active {
+            background: #2c5aa0;
+            transform: scale(1.2);
+        }
+
+        .social-proof {
+            margin-top: 60px;
+        }
+
+        .proof-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2c5aa0;
+            line-height: 1;
+        }
+
+        .stat-label {
+            display: block;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 768px) {
+            .testimonial-slider blockquote {
+                font-size: 1rem;
+                padding: 30px 15px;
+            }
+            
+            .testimonial-controls {
+                gap: 20px;
+            }
+            
+            .testimonial-prev,
+            .testimonial-next {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+            
+            .proof-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</body>
+</html>
