@@ -1,1 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vitamin Injection Shots - Quick Wellness Boost | Qualiphy</title>
+    <meta name="description" content="Get instant energy and wellness boosts with our vitamin injection shots. B12, B-Complex, Vitamin D, and specialty blends for immediate results.">
+    
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="../../assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon-16x16.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/qualiphy-style.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a href="../../index.html">
+                        <img src="../../assets/images/logo.png" alt="Qualiphy" class="logo">
+                    </a>
+                </div>
+                <div class="navbar-menu">
+                    <ul class="navbar-nav">
+                        <li><a href="../../index.html" class="nav-link">Home</a></li>
+                        <li><a href="../services.html" class="nav-link active">Services</a></li>
+                        <li><a href="../membership.html" class="nav-link">Membership</a></li>
+                        <li><a href="../testimonials.html" class="nav-link">Testimonials</a></li>
+                        <li><a href="../../index.html#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="openBookingModal()">Book Now</button>
+                </div>
+            </div>
+        </nav>
+    </header>
 
+    <!-- Service Hero -->
+    <section class="service-hero">
+        <div class="container">
+            <div class="service-hero-content">
+                <div class="service-hero-text">
+                    <div class="breadcrumbs">
+                        <a href="../services.html">Services</a> > <span>Injection Shots</span>
+                    </div>
+                    <h1>Vitamin Injection Shots</h1>
+                    <p class="service-subtitle">Quick, effective vitamin and nutrient injections for instant energy, immunity, and wellness boosts. Perfect for busy lifestyles when you need results fast.</p>
+                    <div class="service-highlights">
+                        <div class="highlight-item">
+                            <span class="highlight-icon">⚡</span>
+                            <span>Instant Results</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">🎯</span>
+                            <span>100% Absorption</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">⏱️</span>
+                            <span>Quick & Convenient</span>
+                        </div>
+                    </div>
+                    <div class="service-cta">
+                        <button class="btn btn-primary btn-lg" onclick="openBookingModal()">Book Your Shot</button>
+                        <div class="pricing-info">Starting at $35 | Walk-ins Welcome</div>
+                    </div>
+                </div>
+                <div class="service-hero-image">
+                    <img src="../../assets/images/placeholder.png" alt="Vitamin Injection Shots">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shot Menu -->
+    <section class="shots-menu">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Our Injection Shot Menu</h2>
+                <p>Choose from our selection of targeted vitamin and nutrient injections</p>
+            </div>
+
+            <div class="shots-grid">
+                <!-- Energy Shots -->
+                <div class="shot-category">
+                    <h3>⚡ Energy & Performance</h3>
+                    <div class="shots-list">
+                        <div class="shot-card popular">
+                            <div class="shot-badge">Most Popular</div>
+                            <h4>B12 Energy Shot</h4>
+                            <div class="shot-price">$35</div>
+                            <div class="shot-content">
+                                <p>Pure methylcobalamin B12 for instant energy and mental clarity</p>
+                                <ul class="shot-benefits">
+                                    <li>Immediate energy boost</li>
+                                    <li>Enhanced mental focus</li>
+                                    <li>Supports red blood cell production</li>
+                                    <li>Improves mood and motivation</li>
+                                </ul>
+                                <div class="shot-frequency">Recommended: Weekly to monthly</div>
+                            </div>
+                            <button class="btn btn-primary btn-sm">Book B12 Shot</button>
+                        </div>
+
+                        <div class="shot-card">
+                            <h4>B-Complex Energy</h4>
+                            <div class="shot-price">$45</div>
+                            <div class="shot-content">
+                                <p>Complete B-vitamin complex for sustained energy and stress support</p>
+                                <ul class="shot-benefits">
+                                    <li>All essential B vitamins</li>
+                                    <li>Sustained energy release</li>
+                                    <li>Stress and anxiety support</li>
+                                    <li>Nervous system health</li>
+                                </ul>
+                                <div class="shot-frequency">Recommended: Bi-weekly</div>
+                            </div>
+                            <button class="btn btn-outline btn-sm">Book B-Complex</button>
+                        </div>
+
+                        <div class="shot-card">
+                            <h4>Power Shot</h4>
+                            <div class="shot-price">$55</div>
+                            <div class="shot-content">
+                                <p>B12 + B-Complex + amino acids for maximum energy and performance</p>
+                                <ul class="shot-benefits">
+                                    <li>Maximum energy boost</li>
+                                    <li>Enhanced athletic performance</li>
+                                    <li>Improved recovery</li>
+                                    <li>Mental clarity and focus</li>
+                                </ul>
+                                <div class="shot-frequency">Recommended: Before workouts/events</div>
+                            </div>
+                            <button class="btn btn-outline btn-sm">Book Power Shot</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Immune Support -->
+                <div class="shot-category">
+                    <h3>🛡️ Immune Support</h3>
+                    <div class="shots-list">
+                        <div class="shot-card">
+                            <h4>Immune Boost Shot</h4>
+                            <div class="shot-price">$40</div>
+                            <div class="shot-content">
+                                <p>High-dose Vitamin C + zinc for powerful immune system support</p>
+                                <ul class="shot-benefits">
+                                    <li>Strengthens immune system</li>
+                                    <li>Antioxidant protection</li>
+                                    <li>Faster illness recovery</li>
+                                    <li>Collagen synthesis support</li>
+                                </ul>
+                                <div class="shot-frequency">Recommended: During illness or stress</div>
+                            </div>
+                            <button class="btn btn-outline btn-sm">Book Immune Shot</button>
+                        </div>
+
+                        <div class="shot-card">
+                            <h4>Vitamin D3 Shot</h4>
+                            <div class="shot-price">$50</div>
+                            <div class="shot-content">
+                                <p>High-potency Vitamin D for immune function and mood support</p>
+                                <ul class="shot-benefits">
+                                    <li>Immune system regulation</li>
+                                    <li>Bone health support</li>
+                                    <li>Mood improvement</li>
+                                    <li>Hormone production support</li>
+                                </ul>
+                                <div class="shot-frequency">Recommended: Monthly or quarterly</div>
+                            </div>
+                            <button class="btn btn-outline btn-sm">Book Vitamin D</button>
+                        </div>
+
+                        <div class="shot-card">
+                            <h4>Glutathione Shot</h4>
+                            <div class="shot-price">$65</div>
+                            <div class="shot-content">
+                                <p>Master antioxidant for detoxification and cellular protection</p>
+                                <ul class="shot-benefits">
+                                    <li>Powerful detoxification</li>
+                                    <li>Cellular protection</li>
+                                    <li>Skin health and brightness</li>
+                                    <li>Liver function support</li>
+                                </ul>
+                                <div class="shot-frequency">Recommended: Weekly to bi-weekly</div>
+                            </div>
+                            <button class="btn btn-outline btn-sm">Book Glutathione</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Weight Management -->
+                <div class="shot-category">
+                    <h3>🎯 Weight Management</h3>
+                    <div class="shots-list">
+                        <div class="shot-card">
+                            <h4>Lipotropic (MIC) Shot</h4>
+                            <div class="shot-price">$45</div>
+                            <div class="shot-content">
+                                <p>Methionine, Inositol, Choline for fat metabolism and liver detox</p>
+                                <ul class="shot-benefits">
+                                    <li>Enhanced fat burning</li>
+                                    <li>Liver detoxification</li>
+                                    <li>Improved metabolism</li>
+                                    <li>Energy boost</li>
+                                </ul>
+                                <div class="shot-frequency">Recommended: Weekly</div>
+                            </div>
+                            <button class="btn btn-outline btn-sm">Book MIC Shot</button>
+                        </div>
+
+                        <div class="shot-card">
+                            <h4>Skinny Shot</h4>
+                            <div class="shot-price">$55</div>
+                            <div class="shot-content">
+                                <p>MIC + B12 + amino acids for comprehensive weight management</p>
+                                <ul class="shot-benefits">
+                                    <li>Accelerated fat loss</li>
+                                    <li>Increased energy</li>
+                                    <li>Appetite suppression</li>
+                                    <li>Metabolic enhancement</li>
+                                </ul>
+                                <div class="shot-frequency">Recommended: Weekly during weight loss</div>
+                            </div>
+                            <button class="btn btn-outline btn-sm">Book Skinny Shot</button>
+                        </div>
+
+                        <div class="shot-card">
+                            <h4>L-Carnitine Shot</h4>
+                            <div class="shot-price">$40</div>
+                            <div class="shot-content">
+                                <p>Amino acid that helps convert fat into energy for weight loss</p>
+                                <ul class="shot-benefits">
+                                    <li>Fat to energy conversion</li>
+                                    <li>Enhanced exercise performance</li>
+                                    <li>Improved recovery</li>
+                                    <li>Heart health support</li>
+                                </ul>
+                                <div class="shot-frequency">Recommended: 2-3 times per week</div>
+                            </div>
+                            <button class="btn btn-outline btn-sm">Book L-Carnitine</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Beauty & Anti-Aging -->
+                <div class="shot-category">
+                    <h3>✨ Beauty & Anti-Aging</h3>
+                    <div class="shots-list">
+                        <div class="shot-card">
+                            <h4>Biotin Beauty Shot</h4>
+                            <div class="shot-price">$45</div>
+                            <div class="shot-content">
+                                <p>High-dose biotin for healthy hair, skin, and nails</p>
+                                <ul class="shot-benefits">
+                                    <li>Stronger hair and nails</li>
+                                    <li>Improved skin health</li>
+                                    <li>Enhanced metabolism</li>
+                                    <li>Energy production support</li>
+                                </ul>
+                                <div class="shot-frequency">Recommended: Monthly</div>
+                            </div>
+                            <button class="btn btn-outline btn-sm">Book Biotin Shot</button>
+                        </div>
+
+                        <div class="shot-card">
+                            <h4>Collagen Boost Shot</h4>
+                            <div class="shot-price">$60</div>
+                            <div class="shot-content">
+                                <p>Vitamin C + lysine + proline for collagen production</p>
+                                <ul class="shot-benefits">
+                                    <li>Enhanced collagen synthesis</li>
+                                    <li>Improved skin elasticity</li>
+                                    <li>Reduced fine lines</li>
+                                    <li>Joint health support</li>
+                                </ul>
+                                <div class="shot-frequency">Recommended: Bi-weekly</div>
+                            </div>
+                            <button class="btn btn-outline btn-sm">Book Collagen Shot</button>
+                        </div>
+
+                        <div class="shot-card">
+                            <h4>Youth Shot</h4>
+                            <div class="shot-price">$70</div>
+                            <div class="shot-content">
+                                <p>Anti-aging blend with NAD+ precursors and antioxidants</p>
+                                <ul class="shot-benefits">
+                                    <li>Cellular regeneration</li>
+                                    <li>Anti-aging benefits</li>
+                                    <li>Enhanced energy</li>
+                                    <li>Cognitive support</li>
+                                </ul>
+                                <div class="shot-frequency">Recommended: Weekly to bi-weekly</div>
+                            </div>
+                            <button class="btn btn-outline btn-sm">Book Youth Shot</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shot Packages -->
+    <section class="shot-packages">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Shot Packages & Memberships</h2>
+                <p>Save money with our convenient packages and membership benefits</p>
+            </div>
+
+            <div class="packages-grid">
+                <div class="package-card">
+                    <h3>B12 Power Pack</h3>
+                    <div class="package-price">$120 <span class="original-price">$140</span></div>
+                    <div class="package-content">
+                        <p>4 B12 Energy Shots</p>
+                        <ul>
+                            <li>Save $20 per package</li>
+                            <li>Valid for 3 months</li>
+                            <li>Perfect for regular energy</li>
+                            <li>Flexible scheduling</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-outline">Buy Package</button>
+                </div>
+
+                <div class="package-card featured">
+                    <div class="popular-badge">Best Value</div>
+                    <h3>Wellness Shot Bundle</h3>
+                    <div class="package-price">$180 <span class="original-price">$220</span></div>
+                    <div class="package-content">
+                        <p>Mix & Match 5 Shots</p>
+                        <ul>
+                            <li>Choose any combination</li>
+                            <li>Save $40 per bundle</li>
+                            <li>Valid for 4 months</li>
+                            <li>Great variety</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary">Buy Bundle</button>
+                </div>
+
+                <div class="package-card">
+                    <h3>Monthly Membership</h3>
+                    <div class="package-price">$99 <span>/month</span></div>
+                    <div class="package-content">
+                        <p>4 Shots per Month + Benefits</p>
+                        <ul>
+                            <li>Any shots up to $50 value</li>
+                            <li>20% off additional shots</li>
+                            <li>Priority booking</li>
+                            <li>Member-only specials</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-secondary">Join Membership</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits & Process -->
+    <section class="shots-benefits">
+        <div class="container">
+            <div class="benefits-content">
+                <div class="benefits-text">
+                    <h2>Why Choose Injection Shots?</h2>
+                    <p>Vitamin shots offer superior absorption and faster results compared to oral supplements.</p>
+                    
+                    <div class="comparison-table">
+                        <div class="comparison-header">
+                            <div class="method">Method</div>
+                            <div class="absorption">Absorption Rate</div>
+                            <div class="speed">Speed of Results</div>
+                            <div class="duration">Effect Duration</div>
+                        </div>
+                        <div class="comparison-row">
+                            <div class="method"><strong>Injection Shots</strong></div>
+                            <div class="absorption">100%</div>
+                            <div class="speed">Immediate</div>
+                            <div class="duration">2-4 weeks</div>
+                        </div>
+                        <div class="comparison-row">
+                            <div class="method">Oral Supplements</div>
+                            <div class="absorption">20-30%</div>
+                            <div class="speed">Hours to days</div>
+                            <div class="duration">Varies</div>
+                        </div>
+                        <div class="comparison-row">
+                            <div class="method">IV Therapy</div>
+                            <div class="absorption">100%</div>
+                            <div class="speed">Immediate</div>
+                            <div class="duration">1-3 weeks</div>
+                        </div>
+                    </div>
+
+                    <div class="key-benefits">
+                        <h3>Key Advantages:</h3>
+                        <ul>
+                            <li><strong>Fast & Convenient:</strong> Quick 2-minute procedure</li>
+                            <li><strong>100% Absorption:</strong> Bypasses digestive system</li>
+                            <li><strong>Immediate Results:</strong> Feel effects within minutes</li>
+                            <li><strong>Cost-Effective:</strong> More affordable than IV therapy</li>
+                            <li><strong>No Downtime:</strong> Resume activities immediately</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="benefits-visual">
+                    <img src="../../assets/images/placeholder.png" alt="Vitamin Shot Benefits">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What to Expect -->
+    <section class="shot-process">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>What to Expect</h2>
+                <p>Simple, quick, and comfortable vitamin shot experience</p>
+            </div>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Choose Your Shot</h3>
+                        <p>Select the vitamin shot that best fits your current wellness needs and goals.</p>
+                        <div class="step-duration">1-2 minutes</div>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Quick Consultation</h3>
+                        <p>Brief health screening and discussion of any questions or concerns.</p>
+                        <div class="step-duration">2-3 minutes</div>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Injection Administration</h3>
+                        <p>Quick and comfortable injection typically given in the arm or glute muscle.</p>
+                        <div class="step-duration">30 seconds</div>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Feel the Difference</h3>
+                        <p>Many clients feel increased energy and wellness benefits within minutes to hours.</p>
+                        <div class="step-duration">Immediate to 24 hours</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comfort-features">
+                <h3>Your Comfort is Our Priority</h3>
+                <div class="features-list">
+                    <div class="feature">
+                        <span class="feature-icon">🪑</span>
+                        <span>Comfortable seating area</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">💉</span>
+                        <span>Small, comfortable needles</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">👩‍⚕️</span>
+                        <span>Experienced medical staff</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">🚀</span>
+                        <span>Quick in-and-out service</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who Benefits -->
+    <section class="who-benefits">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Who Benefits from Vitamin Shots?</h2>
+                <p>Vitamin injections are perfect for busy people seeking quick wellness solutions</p>
+            </div>
+
+            <div class="benefits-categories">
+                <div class="benefit-group">
+                    <h3>💼 Busy Professionals</h3>
+                    <ul>
+                        <li>Quick energy boost for long work days</li>
+                        <li>Stress and fatigue management</li>
+                        <li>Immune support during busy seasons</li>
+                        <li>Mental clarity for important meetings</li>
+                    </ul>
+                </div>
+
+                <div class="benefit-group">
+                    <h3>🏃‍♀️ Active Individuals</h3>
+                    <ul>
+                        <li>Pre-workout energy enhancement</li>
+                        <li>Faster recovery after exercise</li>
+                        <li>Improved endurance and performance</li>
+                        <li>Muscle recovery support</li>
+                    </ul>
+                </div>
+
+                <div class="benefit-group">
+                    <h3>🌟 Wellness Enthusiasts</h3>
+                    <ul>
+                        <li>Preventive health maintenance</li>
+                        <li>Beauty and anti-aging support</li>
+                        <li>Nutrient optimization</li>
+                        <li>Overall vitality enhancement</li>
+                    </ul>
+                </div>
+
+                <div class="benefit-group">
+                    <h3>🔋 Energy Seekers</h3>
+                    <ul>
+                        <li>Combat chronic fatigue</li>
+                        <li>Natural energy without caffeine crash</li>
+                        <li>Mood and motivation improvement</li>
+                        <li>Sleep quality enhancement</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="shots-faq">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Frequently Asked Questions</h2>
+                <p>Common questions about vitamin injection shots</p>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Do vitamin shots hurt?</h3>
+                    <p>Most clients experience minimal discomfort. We use small needles and the injection takes only seconds. Any soreness typically subsides within a few hours.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How often should I get vitamin shots?</h3>
+                    <p>Frequency depends on the specific vitamin and your individual needs. B12 shots can be given weekly to monthly, while others may be less frequent. We'll recommend the best schedule for you.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Can I get multiple shots in one visit?</h3>
+                    <p>Yes, many clients combine shots for enhanced benefits. Our medical team will ensure safe combinations and proper spacing if needed.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Are there any side effects?</h3>
+                    <p>Side effects are rare and typically mild, such as temporary soreness at the injection site. Our medical team reviews your health history to ensure safety.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How quickly will I feel results?</h3>
+                    <p>Many people feel increased energy within 30 minutes to a few hours. B12 shots often provide immediate energy, while other benefits may develop over days.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Can I exercise after getting a shot?</h3>
+                    <p>Yes, you can resume normal activities immediately. Some people prefer getting shots before workouts for enhanced energy and performance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="shots-cta">
+        <div class="container">
+            <div class="cta-content text-center">
+                <h2>Ready for an Instant Wellness Boost?</h2>
+                <p>Get the energy and vitality you need with our quick and effective vitamin injection shots.</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary btn-lg" onclick="openBookingModal()">Book Your Shot</button>
+                    <a href="../membership.html" class="btn btn-secondary btn-lg">View Membership Benefits</a>
+                </div>
+                <p class="cta-note">Walk-ins welcome • Most shots administered in under 5 minutes</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="../../assets/images/logo.png" alt="Qualiphy">
+                    </div>
+                    <p>Transforming lives through premium wellness and personalized healthcare solutions.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="iv-therapy.html">IV Therapy</a></li>
+                        <li><a href="hormone-replacement.html">Hormone Replacement</a></li>
+                        <li><a href="aesthetic.html">Aesthetic Treatments</a></li>
+                        <li><a href="weight-management.html">Weight Management</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="../membership.html">Membership</a></li>
+                        <li><a href="../corporate-events.html">Corporate Events</a></li>
+                        <li><a href="../franchise.html">Franchise</a></li>
+                        <li><a href="../partnerships.html">Partnerships</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../../privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../../terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="../../medical-disclaimer.html">Medical Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Qualiphy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script>
+        function openBookingModal() {
+            window.location.href = '../../index.html#contact';
+        }
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-item h3').forEach(header => {
+            header.addEventListener('click', function() {
+                const item = this.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(faq => faq.classList.remove('active'));
+                
+                // Toggle current item
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
