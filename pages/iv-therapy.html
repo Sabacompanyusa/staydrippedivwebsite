@@ -1,1 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IV Therapy - Premium Intravenous Treatments | Qualiphy</title>
+    <meta name="description" content="Experience premium IV therapy for energy, immunity, recovery and wellness optimization. Custom nutrient blends and NAD+ infusions available.">
+    
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="../../assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon-16x16.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/qualiphy-style.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a href="../../index.html">
+                        <img src="../../assets/images/logo.png" alt="Qualiphy" class="logo">
+                    </a>
+                </div>
+                <div class="navbar-menu">
+                    <ul class="navbar-nav">
+                        <li><a href="../../index.html" class="nav-link">Home</a></li>
+                        <li><a href="../services.html" class="nav-link active">Services</a></li>
+                        <li><a href="../membership.html" class="nav-link">Membership</a></li>
+                        <li><a href="../testimonials.html" class="nav-link">Testimonials</a></li>
+                        <li><a href="../../index.html#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="openBookingModal()">Book Now</button>
+                </div>
+            </div>
+        </nav>
+    </header>
 
+    <!-- Service Hero -->
+    <section class="service-hero">
+        <div class="container">
+            <div class="service-hero-content">
+                <div class="service-hero-text">
+                    <div class="breadcrumbs">
+                        <a href="../services.html">Services</a> > <span>IV Therapy</span>
+                    </div>
+                    <h1>Premium IV Therapy</h1>
+                    <p class="service-subtitle">Advanced intravenous treatments designed to boost energy, enhance immunity, accelerate recovery, and optimize your overall wellness.</p>
+                    <div class="service-highlights">
+                        <div class="highlight-item">
+                            <span class="highlight-icon">⚡</span>
+                            <span>Instant Energy Boost</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">🛡️</span>
+                            <span>Immune Support</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">🔄</span>
+                            <span>Rapid Recovery</span>
+                        </div>
+                    </div>
+                    <div class="service-cta">
+                        <button class="btn btn-primary btn-lg" onclick="openBookingModal()">Book IV Therapy</button>
+                        <div class="pricing-info">Starting at $150 | Member pricing from $120</div>
+                    </div>
+                </div>
+                <div class="service-hero-image">
+                    <img src="../../assets/images/iv-treatment-premium.png" alt="IV Therapy Treatment">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IV Therapy Options -->
+    <section class="iv-therapy-options">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Our IV Therapy Treatments</h2>
+                <p>Choose from our comprehensive menu of specialized IV formulations</p>
+            </div>
+
+            <div class="treatments-grid">
+                <div class="treatment-card featured">
+                    <div class="treatment-image">
+                        <img src="../../assets/images/iv-treatment-premium.png" alt="Premium Wellness IV">
+                    </div>
+                    <div class="treatment-content">
+                        <h3>Premium Wellness IV</h3>
+                        <p>Our signature blend combining B-vitamins, Vitamin C, magnesium, and amino acids for comprehensive wellness support.</p>
+                        <ul class="treatment-benefits">
+                            <li>Enhanced energy and mental clarity</li>
+                            <li>Improved immune function</li>
+                            <li>Better sleep quality</li>
+                            <li>Stress reduction</li>
+                        </ul>
+                        <div class="treatment-pricing">
+                            <span class="price">$150</span>
+                            <span class="member-price">Members: $120</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="bookTreatment('premium-wellness')">Book This Treatment</button>
+                    </div>
+                </div>
+
+                <div class="treatment-card">
+                    <div class="treatment-image">
+                        <img src="../../assets/images/iv-treatment-standard.png" alt="Energy Boost IV">
+                    </div>
+                    <div class="treatment-content">
+                        <h3>Energy Boost IV</h3>
+                        <p>High-dose B-vitamin complex with caffeine alternative nutrients for sustained energy without the crash.</p>
+                        <ul class="treatment-benefits">
+                            <li>Immediate energy increase</li>
+                            <li>Mental focus enhancement</li>
+                            <li>Metabolic support</li>
+                            <li>Fatigue reduction</li>
+                        </ul>
+                        <div class="treatment-pricing">
+                            <span class="price">$120</span>
+                            <span class="member-price">Members: $96</span>
+                        </div>
+                        <button class="btn btn-outline" onclick="bookTreatment('energy-boost')">Book This Treatment</button>
+                    </div>
+                </div>
+
+                <div class="treatment-card">
+                    <div class="treatment-image">
+                        <img src="../../assets/images/iv-treatment-basic.png" alt="Hydration Plus IV">
+                    </div>
+                    <div class="treatment-content">
+                        <h3>Hydration Plus IV</h3>
+                        <p>Rapid rehydration with electrolytes and essential minerals, perfect for recovery and performance.</p>
+                        <ul class="treatment-benefits">
+                            <li>Rapid rehydration</li>
+                            <li>Electrolyte balance</li>
+                            <li>Hangover relief</li>
+                            <li>Athletic recovery</li>
+                        </ul>
+                        <div class="treatment-pricing">
+                            <span class="price">$100</span>
+                            <span class="member-price">Members: $80</span>
+                        </div>
+                        <button class="btn btn-outline" onclick="bookTreatment('hydration-plus')">Book This Treatment</button>
+                    </div>
+                </div>
+
+                <div class="treatment-card">
+                    <div class="treatment-image">
+                        <img src="../../assets/images/iv-treatment-specialty.png" alt="Immune Defense IV">
+                    </div>
+                    <div class="treatment-content">
+                        <h3>Immune Defense IV</h3>
+                        <p>High-dose Vitamin C, zinc, and immune-supporting nutrients to strengthen your body's natural defenses.</p>
+                        <ul class="treatment-benefits">
+                            <li>Immune system boost</li>
+                            <li>Antioxidant protection</li>
+                            <li>Illness prevention</li>
+                            <li>Faster recovery</li>
+                        </ul>
+                        <div class="treatment-pricing">
+                            <span class="price">$130</span>
+                            <span class="member-price">Members: $104</span>
+                        </div>
+                        <button class="btn btn-outline" onclick="bookTreatment('immune-defense')">Book This Treatment</button>
+                    </div>
+                </div>
+
+                <div class="treatment-card premium">
+                    <div class="treatment-image">
+                        <img src="../../assets/images/iv-treatment-nad.png" alt="NAD+ Therapy">
+                    </div>
+                    <div class="treatment-content">
+                        <h3>NAD+ Anti-Aging IV</h3>
+                        <p>Revolutionary cellular repair and anti-aging therapy with NAD+ for longevity and vitality.</p>
+                        <ul class="treatment-benefits">
+                            <li>Cellular regeneration</li>
+                            <li>Anti-aging benefits</li>
+                            <li>Cognitive enhancement</li>
+                            <li>Metabolic optimization</li>
+                        </ul>
+                        <div class="treatment-pricing">
+                            <span class="price">$300</span>
+                            <span class="member-price">Members: $240</span>
+                        </div>
+                        <button class="btn btn-secondary" onclick="bookTreatment('nad-antiaging')">Book This Treatment</button>
+                    </div>
+                </div>
+
+                <div class="treatment-card">
+                    <div class="treatment-image">
+                        <img src="../../assets/images/placeholder.png" alt="Custom IV">
+                    </div>
+                    <div class="treatment-content">
+                        <h3>Custom Formulation</h3>
+                        <p>Personalized IV therapy based on your specific needs, health goals, and laboratory results.</p>
+                        <ul class="treatment-benefits">
+                            <li>Personalized nutrients</li>
+                            <li>Targeted therapy</li>
+                            <li>Lab-based optimization</li>
+                            <li>Ongoing adjustments</li>
+                        </ul>
+                        <div class="treatment-pricing">
+                            <span class="price">Consultation Required</span>
+                        </div>
+                        <button class="btn btn-outline" onclick="bookTreatment('custom')">Schedule Consultation</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How IV Therapy Works -->
+    <section class="how-it-works-iv">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>How IV Therapy Works</h2>
+                <p>Understanding the science behind intravenous nutrient delivery</p>
+            </div>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-icon">1</div>
+                    <h3>Consultation & Assessment</h3>
+                    <p>Our medical team evaluates your health status, goals, and determines the optimal IV formulation for your needs.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-icon">2</div>
+                    <h3>Custom Preparation</h3>
+                    <p>Your IV solution is prepared using pharmaceutical-grade nutrients in our sterile compounding facility.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-icon">3</div>
+                    <h3>Comfortable Administration</h3>
+                    <p>Relax in our luxury treatment rooms while receiving your IV therapy over 30-60 minutes.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-icon">4</div>
+                    <h3>Feel the Difference</h3>
+                    <p>Experience immediate benefits as nutrients are delivered directly to your bloodstream for maximum absorption.</p>
+                </div>
+            </div>
+
+            <div class="iv-benefits-comparison">
+                <h3>Why Choose IV Over Oral Supplements?</h3>
+                <div class="comparison-grid">
+                    <div class="comparison-item">
+                        <h4>Absorption Rate</h4>
+                        <div class="rate-comparison">
+                            <div class="iv-rate">IV: 100% absorption</div>
+                            <div class="oral-rate">Oral: 20-50% absorption</div>
+                        </div>
+                    </div>
+                    <div class="comparison-item">
+                        <h4>Speed of Results</h4>
+                        <div class="speed-comparison">
+                            <div class="iv-speed">IV: Immediate</div>
+                            <div class="oral-speed">Oral: Hours to days</div>
+                        </div>
+                    </div>
+                    <div class="comparison-item">
+                        <h4>Therapeutic Doses</h4>
+                        <div class="dose-comparison">
+                            <div class="iv-dose">IV: High therapeutic doses</div>
+                            <div class="oral-dose">Oral: Limited by digestion</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits & Conditions -->
+    <section class="iv-benefits">
+        <div class="container">
+            <div class="benefits-content">
+                <div class="benefits-text">
+                    <h2>Who Benefits from IV Therapy?</h2>
+                    <p>IV therapy can benefit a wide range of individuals looking to optimize their health and performance:</p>
+                    
+                    <div class="benefit-categories">
+                        <div class="benefit-category">
+                            <h3>🏃‍♂️ Athletes & Active Individuals</h3>
+                            <ul>
+                                <li>Faster recovery from workouts</li>
+                                <li>Enhanced endurance and performance</li>
+                                <li>Reduced muscle fatigue</li>
+                                <li>Optimal hydration</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="benefit-category">
+                            <h3>💼 Busy Professionals</h3>
+                            <ul>
+                                <li>Increased energy and focus</li>
+                                <li>Stress management support</li>
+                                <li>Immune system boost</li>
+                                <li>Better sleep quality</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="benefit-category">
+                            <h3>🌟 Wellness Enthusiasts</h3>
+                            <ul>
+                                <li>Anti-aging benefits</li>
+                                <li>Cellular regeneration</li>
+                                <li>Nutrient optimization</li>
+                                <li>Overall vitality</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="benefit-category">
+                            <h3>🤒 Recovery Support</h3>
+                            <ul>
+                                <li>Hangover relief</li>
+                                <li>Illness recovery</li>
+                                <li>Post-travel wellness</li>
+                                <li>Jet lag remedy</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="benefits-visual">
+                    <img src="../../assets/images/placeholder.png" alt="IV Therapy Benefits">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety & Quality -->
+    <section class="safety-quality">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Safety & Quality Standards</h2>
+                <p>Your safety is our top priority with rigorous quality controls</p>
+            </div>
+            
+            <div class="safety-features">
+                <div class="safety-item">
+                    <div class="safety-icon">🏥</div>
+                    <h3>Medical Supervision</h3>
+                    <p>All IV therapies are administered under the supervision of licensed medical professionals.</p>
+                </div>
+                <div class="safety-item">
+                    <div class="safety-icon">🧪</div>
+                    <h3>Pharmaceutical Grade</h3>
+                    <p>We use only USP pharmaceutical-grade nutrients and sterile compounding practices.</p>
+                </div>
+                <div class="safety-item">
+                    <div class="safety-icon">🔬</div>
+                    <h3>Lab Testing</h3>
+                    <p>Optional comprehensive lab testing to customize and optimize your IV formulations.</p>
+                </div>
+                <div class="safety-item">
+                    <div class="safety-icon">✅</div>
+                    <h3>FDA Compliant</h3>
+                    <p>All procedures follow FDA guidelines and state medical board regulations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing & Packages -->
+    <section class="iv-pricing">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Pricing & Packages</h2>
+                <p>Flexible options to fit your wellness goals and budget</p>
+            </div>
+            
+            <div class="pricing-options">
+                <div class="pricing-card">
+                    <h3>Single Sessions</h3>
+                    <p>Perfect for trying our services or occasional wellness boosts</p>
+                    <ul>
+                        <li>Pay per session</li>
+                        <li>No commitment</li>
+                        <li>Member discounts apply</li>
+                    </ul>
+                    <div class="pricing-range">$100 - $300</div>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <h3>IV Packages</h3>
+                    <p>Save money with our convenient treatment packages</p>
+                    <ul>
+                        <li>3-session package: 10% off</li>
+                        <li>6-session package: 15% off</li>
+                        <li>12-session package: 20% off</li>
+                    </ul>
+                    <div class="pricing-range">Best Value</div>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>Membership Benefits</h3>
+                    <p>Additional savings and perks for Qualiphy members</p>
+                    <ul>
+                        <li>Up to 30% off all IVs</li>
+                        <li>Priority booking</li>
+                        <li>Complimentary monthly IVs</li>
+                    </ul>
+                    <div class="pricing-range">$99+ /month</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="iv-faq">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about IV therapy</p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>How long does an IV therapy session take?</h3>
+                    <p>Most IV sessions take 30-60 minutes, depending on the specific formulation and your body's needs. NAD+ treatments may take longer.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>How often should I get IV therapy?</h3>
+                    <p>Frequency depends on your health goals. Some clients benefit from weekly sessions, while others prefer monthly maintenance. We'll create a personalized schedule during your consultation.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Are there any side effects?</h3>
+                    <p>IV therapy is generally very safe with minimal side effects. Some people may experience slight bruising at the injection site or a cool sensation during infusion.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Can I eat before my IV session?</h3>
+                    <p>Yes, we recommend eating a light meal before your session to prevent any lightheadedness during treatment.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Will I feel results immediately?</h3>
+                    <p>Many clients feel increased energy and improved well-being within hours of treatment. Results may vary based on your individual health status and the specific formulation.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Do you accept insurance?</h3>
+                    <p>IV therapy is typically not covered by insurance as it's considered elective wellness treatment. We offer flexible payment options and membership discounts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="iv-cta">
+        <div class="container">
+            <div class="cta-content text-center">
+                <h2>Ready to Experience Premium IV Therapy?</h2>
+                <p>Book your consultation today and discover how IV therapy can transform your energy, health, and vitality.</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary btn-lg" onclick="openBookingModal()">Book Your IV Session</button>
+                    <a href="../membership.html" class="btn btn-secondary btn-lg">View Membership Savings</a>
+                </div>
+                <p class="cta-note">New client special: $25 off your first IV therapy session</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="../../assets/images/logo.png" alt="Qualiphy">
+                    </div>
+                    <p>Transforming lives through premium wellness and personalized healthcare solutions.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="iv-therapy.html">IV Therapy</a></li>
+                        <li><a href="hormone-replacement.html">Hormone Replacement</a></li>
+                        <li><a href="aesthetic.html">Aesthetic Treatments</a></li>
+                        <li><a href="weight-management.html">Weight Management</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="../membership.html">Membership</a></li>
+                        <li><a href="../corporate-events.html">Corporate Events</a></li>
+                        <li><a href="../franchise.html">Franchise</a></li>
+                        <li><a href="../partnerships.html">Partnerships</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../../privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../../terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="../../medical-disclaimer.html">Medical Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Qualiphy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script>
+        function openBookingModal() {
+            window.location.href = '../../index.html#contact';
+        }
+        
+        function bookTreatment(treatmentType) {
+            // This would integrate with your booking system
+            openBookingModal();
+        }
+        
+        // FAQ Toggle
+        document.querySelectorAll('.faq-item h3').forEach(header => {
+            header.addEventListener('click', function() {
+                const item = this.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(faq => faq.classList.remove('active'));
+                
+                // Toggle current item
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
