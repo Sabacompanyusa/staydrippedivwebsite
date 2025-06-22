@@ -1,89 +1,358 @@
-<section id="services" class="services fade-in" aria-labelledby="services-heading">
-  <div class="container">
-    <h2 id="services-heading">Our Premium Services</h2>
-    <p class="section-subtitle">
-      Comprehensive wellness treatments designed to optimize your health, energy, and performance through cutting-edge therapies.
-    </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Qualiphy Premium Wellness</title>
+    <meta name="description" content="Explore Qualiphy's comprehensive wellness services including IV therapy, hormone replacement, aesthetic treatments, and more.">
+    
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-16x16.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/qualiphy-style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a href="../index.html">
+                        <img src="../assets/images/logo.png" alt="Qualiphy" class="logo">
+                    </a>
+                </div>
+                <div class="navbar-menu">
+                    <ul class="navbar-nav">
+                        <li><a href="../index.html" class="nav-link">Home</a></li>
+                        <li><a href="services.html" class="nav-link active">Services</a></li>
+                        <li><a href="membership.html" class="nav-link">Membership</a></li>
+                        <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+                        <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="openBookingModal()">Book Now</button>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-<div class="service-cards">
-  <div class="card">
-    <h3>IV Therapy Treatments</h3>
-    <p>Fast, effective hydration and vitamin replenishment for immediate wellness boost and recovery.</p>
-    <a href="iv-therapy.html" class="service-btn">View Options</a>
-  </div>
-  
-  <div class="card">
-    <h3>NAD⁺ Therapy Treatments</h3>
-      <p>Revolutionary cellular regeneration therapy to boost cognitive function, energy, and anti-aging benefits.</p>
-      <a href="nad-therapy.html" class="service-btn">View Options</a>
-  </div>
-  
-  <div class="card">
-    <h3>Peptide Therapy Treatments</h3>
-      <p>Advanced peptide protocols to promote healing, optimize hormones, and enhance overall performance.</p>
-      <a href="peptide-therapy.html" class="service-btn">View Options</a>
-  </div>
-  
-  <div class="card">
-    <h3>Micronutrient Treatments</h3>
-      <p>Targeted vitamins, minerals, amino acids, and antioxidants precisely tailored to your body's unique needs.</p>
-      <a href="micronutrient.html" class="service-btn">View Options</a>
-  </div>
-  
-  <div class="card">
-    <h3>Vitamin Injection Shots</h3>
-      <p>Fast-acting intramuscular shots for energy enhancement, immune support, fat burning, and more.</p>
-      <a href="injection-shots.html" class="service-btn">View Options</a>
-  </div>
-  
-  <div class="card">
-    <h3>Weight Management Therapy</h3>
-      <p>Custom peptide and IV-based protocols for sustained, healthy weight loss and metabolic optimization.</p>
-      <a href="weight-management.html" class="service-btn">View Options</a>
-  </div>
-  
-  <div class="card">
-    <h3>Aesthetic Treatments</h3>
-      <p>Skin rejuvenation, anti-aging, Botox, Fillers and injection therapies for radiant wellness.</p>
-      <a href="aesthetic.html" class="service-btn">View Options</a>
-  </div>
-  
-  <div class="card">
-    <h3>Mobile Cold Plunge Services</h3>
-      <p>Mobile cold plunge Services straight to your your door or for your events! Helps to reduce inflammation, improve recovery, and enhance mental clarity.</p>
-      <a href="mobile-cold-plunge.html" class="service-btn">View Options</a>
-  </div>
-  
-  <div class="card">
-    <h3>Hormone Replacement Therapy</h3>
-      <p>BHRT for men and women to restore energy, libido, and hormonal balance for optimal vitality.</p>
-      <a href="hormone-replacement.html" class="service-btn">View Options</a>
-  </div>
-  
-  <div class="card">
-    <h3>Partnerships & Sponsorships</h3>
-      <p>Collaborate with our wellness brand at events, media campaigns, and Sponsorship & Promotional opportunities.</p>
-      <a href="partnerships.html" class="service-btn">Learn More</a>
-  </div>
-  
-  <div class="card">
-    <h3>Private Group & Corporate Events</h3>
-      <p>Host wellness experiences on-site with full IV therapy and recovery stations for your team.</p>
-      <a href="corporate-events.html" class="service-btn">Learn More</a>
-  </div>
-  
-  <div class="card">
-    <h3>Individual & Family Memberships</h3>
-      <p>Save on treatments with monthly wellness plans designed for singles, couples, and families.</p>
-      <a href="memberships.html" class="service-btn">View Plans</a>
-  </div>
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1>Our Premium Services</h1>
+                <p>Comprehensive wellness solutions designed to optimize your health and transform your life</p>
+            </div>
+        </div>
+    </section>
 
-  <div class="card">
-    <h3>At Home Blood Testing Kits & Consultations</h3>
-      <p>Convenient blood testing kits delivered to your home with expert consultation on results.</p>
-      <a href="blood-testing.html" class="service-btn">Learn More</a>
-  </div>
-</div>
+    <!-- Services Categories -->
+    <section class="services-categories">
+        <div class="container">
+            <div class="services-nav">
+                <button class="service-category-btn active" data-category="all">All Services</button>
+                <button class="service-category-btn" data-category="therapy">Therapy Services</button>
+                <button class="service-category-btn" data-category="aesthetic">Aesthetic</button>
+                <button class="service-category-btn" data-category="wellness">Wellness</button>
+            </div>
+        </div>
+    </section>
 
-  </div>
-</section>
+    <!-- IV Therapy Services -->
+    <section class="service-category" id="iv-therapy-section">
+        <div class="container">
+            <div class="category-header">
+                <h2>IV Therapy Services</h2>
+                <p>Personalized intravenous treatments for optimal nutrition and recovery</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card featured" data-category="therapy">
+                    <div class="service-image">
+                        <img src="../assets/images/iv-treatment-premium.png" alt="IV Therapy">
+                    </div>
+                    <div class="service-content">
+                        <h3>Premium IV Therapy</h3>
+                        <p>Advanced IV formulations for energy, immunity, recovery, and overall wellness optimization.</p>
+                        <ul class="service-features">
+                            <li>Custom nutrient blends</li>
+                            <li>NAD+ infusions</li>
+                            <li>Vitamin optimization</li>
+                            <li>Hydration therapy</li>
+                        </ul>
+                        <div class="service-price">Starting at $150</div>
+                        <a href="services/iv-therapy.html" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+                <div class="service-card" data-category="therapy">
+                    <div class="service-image">
+                        <img src="../assets/images/iv-treatment-nad.png" alt="NAD Therapy">
+                    </div>
+                    <div class="service-content">
+                        <h3>NAD+ Therapy</h3>
+                        <p>Revolutionary anti-aging and cellular repair therapy for enhanced longevity and vitality.</p>
+                        <div class="service-price">Starting at $300</div>
+                        <a href="services/nad-therapy.html" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hormone & Peptide Services -->
+    <section class="service-category">
+        <div class="container">
+            <div class="category-header">
+                <h2>Hormone & Peptide Therapy</h2>
+                <p>Optimize your hormones for peak performance and well-being</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-category="therapy">
+                    <div class="service-image">
+                        <img src="../assets/images/placeholder.png" alt="Hormone Replacement">
+                    </div>
+                    <div class="service-content">
+                        <h3>Hormone Replacement Therapy</h3>
+                        <p>Personalized hormone optimization for men and women to restore energy, mood, and vitality.</p>
+                        <ul class="service-features">
+                            <li>Comprehensive hormone testing</li>
+                            <li>Bioidentical hormones</li>
+                            <li>Ongoing monitoring</li>
+                            <li>Lifestyle coaching</li>
+                        </ul>
+                        <div class="service-price">Consultation Required</div>
+                        <a href="services/hormone-replacement.html" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+                <div class="service-card" data-category="therapy">
+                    <div class="service-image">
+                        <img src="../assets/images/placeholder.png" alt="Peptide Therapy">
+                    </div>
+                    <div class="service-content">
+                        <h3>Peptide Therapy</h3>
+                        <p>Advanced peptide treatments for recovery, performance, and anti-aging benefits.</p>
+                        <div class="service-price">Starting at $200</div>
+                        <a href="services/peptide-therapy.html" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aesthetic Services -->
+    <section class="service-category">
+        <div class="container">
+            <div class="category-header">
+                <h2>Aesthetic Treatments</h2>
+                <p>Look and feel your best with our advanced aesthetic procedures</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-category="aesthetic">
+                    <div class="service-image">
+                        <img src="../assets/images/placeholder.png" alt="Aesthetic Treatments">
+                    </div>
+                    <div class="service-content">
+                        <h3>Advanced Aesthetics</h3>
+                        <p>Non-invasive treatments for skin rejuvenation, wrinkle reduction, and facial enhancement.</p>
+                        <ul class="service-features">
+                            <li>Botox & Fillers</li>
+                            <li>Skin rejuvenation</li>
+                            <li>Body contouring</li>
+                            <li>Anti-aging treatments</li>
+                        </ul>
+                        <div class="service-price">Starting at $250</div>
+                        <a href="services/aesthetic.html" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wellness Services -->
+    <section class="service-category">
+        <div class="container">
+            <div class="category-header">
+                <h2>Wellness & Lifestyle</h2>
+                <p>Comprehensive wellness solutions for a healthier lifestyle</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-category="wellness">
+                    <div class="service-image">
+                        <img src="../assets/images/placeholder.png" alt="Weight Management">
+                    </div>
+                    <div class="service-content">
+                        <h3>Weight Management</h3>
+                        <p>Comprehensive weight loss programs combining medical supervision with lifestyle coaching.</p>
+                        <div class="service-price">Starting at $400/month</div>
+                        <a href="services/weight-management.html" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+                <div class="service-card" data-category="wellness">
+                    <div class="service-image">
+                        <img src="../assets/images/placeholder.png" alt="Blood Testing">
+                    </div>
+                    <div class="service-content">
+                        <h3>Comprehensive Blood Testing</h3>
+                        <p>Advanced laboratory testing for complete health assessment and optimization.</p>
+                        <div class="service-price">Starting at $150</div>
+                        <a href="services/blood-testing.html" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+                <div class="service-card" data-category="wellness">
+                    <div class="service-image">
+                        <img src="../assets/images/placeholder.png" alt="Micronutrient Testing">
+                    </div>
+                    <div class="service-content">
+                        <h3>Micronutrient Analysis</h3>
+                        <p>Detailed analysis of vitamin and mineral levels for personalized supplementation.</p>
+                        <div class="service-price">Starting at $200</div>
+                        <a href="services/micronutrient.html" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+                <div class="service-card" data-category="wellness">
+                    <div class="service-image">
+                        <img src="../assets/images/placeholder.png" alt="Injection Shots">
+                    </div>
+                    <div class="service-content">
+                        <h3>Vitamin Injection Shots</h3>
+                        <p>Quick and effective vitamin injections for energy, immunity, and wellness.</p>
+                        <div class="service-price">Starting at $35</div>
+                        <a href="services/injection-shots.html" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+                <div class="service-card" data-category="wellness">
+                    <div class="service-image">
+                        <img src="../assets/images/placeholder.png" alt="Mobile Cold Plunge">
+                    </div>
+                    <div class="service-content">
+                        <h3>Mobile Cold Plunge</h3>
+                        <p>On-demand cold therapy sessions for recovery, inflammation reduction, and mental clarity.</p>
+                        <div class="service-price">Starting at $100</div>
+                        <a href="services/mobile-cold-plunge.html" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Process -->
+    <section class="service-process">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Your Service Experience</h2>
+                <p>What to expect when you choose Qualiphy</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-icon">1</div>
+                    <h3>Initial Consultation</h3>
+                    <p>Comprehensive health assessment and goal discussion with our medical team</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-icon">2</div>
+                    <h3>Personalized Plan</h3>
+                    <p>Custom treatment plan designed specifically for your health goals and needs</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-icon">3</div>
+                    <h3>Treatment Delivery</h3>
+                    <p>Professional service delivery in our comfortable, state-of-the-art facility</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-icon">4</div>
+                    <h3>Ongoing Support</h3>
+                    <p>Continuous monitoring and adjustments to optimize your results</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content text-center">
+                <h2>Ready to Transform Your Health?</h2>
+                <p>Schedule your consultation today and discover how our premium wellness services can help you achieve optimal health.</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary btn-lg" onclick="openBookingModal()">Book Consultation</button>
+                    <a href="membership.html" class="btn btn-secondary btn-lg">View Membership</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="../assets/images/logo.png" alt="Qualiphy">
+                    </div>
+                    <p>Transforming lives through premium wellness and personalized healthcare solutions.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services/iv-therapy.html">IV Therapy</a></li>
+                        <li><a href="services/hormone-replacement.html">Hormone Replacement</a></li>
+                        <li><a href="services/aesthetic.html">Aesthetic Treatments</a></li>
+                        <li><a href="services/weight-management.html">Weight Management</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="membership.html">Membership</a></li>
+                        <li><a href="corporate-events.html">Corporate Events</a></li>
+                        <li><a href="franchise.html">Franchise</a></li>
+                        <li><a href="partnerships.html">Partnerships</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="../medical-disclaimer.html">Medical Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Qualiphy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script>
+        // Service category filtering
+        document.querySelectorAll('.service-category-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const category = this.dataset.category;
+                
+                // Update active button
+                document.querySelectorAll('.service-category-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Filter services
+                document.querySelectorAll('.service-card').forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        function openBookingModal() {
+            window.location.href = '../index.html#contact';
+        }
+    </script>
+</body>
+</html>
