@@ -1,1 +1,35 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Peptide Therapy - Stay Dripped Mobile IV</title>
+  <meta name="description" content="Details about our peptide therapy services are coming soon.">
+  <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-16x16.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body>
+  <div id="header-container"></div>
+  <main class="static-page">
+    <div class="container" style="text-align:center; padding:4rem 1rem;">
+      <h1>Peptide Therapy</h1>
+      <p>Information about this service will be available soon.</p>
+    </div>
+  </main>
+  <div id="footer-container"></div>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    async function loadComponent(id, path) {
+      const resp = await fetch(path);
+      document.getElementById(id).innerHTML = await resp.text();
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      loadComponent('header-container', '../components/header.html');
+      loadComponent('footer-container', '../components/footer.html');
+    });
+  </script>
+</body>
+</html>
