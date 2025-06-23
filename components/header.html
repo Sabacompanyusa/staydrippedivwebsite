@@ -6,6 +6,12 @@
     </a>
   </div>
 
+  <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
 <nav class="nav-menu" id="navMenu">
   <a href="#home" class="nav-link">Home</a>
   <a href="#services" class="nav-link">Services</a>
@@ -297,8 +303,11 @@ document.addEventListener('DOMContentLoaded', function() {
   
   if (mobileMenuToggle && navMenu) {
     mobileMenuToggle.addEventListener('click', function() {
+      const expanded = this.getAttribute('aria-expanded') === 'true';
       this.classList.toggle('active');
       navMenu.classList.toggle('active');
+      document.body.classList.toggle('menu-open');
+      this.setAttribute('aria-expanded', String(!expanded));
     });
   }
   

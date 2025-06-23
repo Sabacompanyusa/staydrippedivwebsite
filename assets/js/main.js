@@ -47,11 +47,23 @@
             behavior: 'smooth'
           });
           
-          // Update URL without jumping
-          history.pushState(null, null, href);
         }
       });
     });
+
+    // Clear location hash when user scrolls away from the target
+    window.addEventListener('scroll', debounce(() => {
+      if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+        if (target) {
+          const headerHeight = document.querySelector('.header')?.offsetHeight || 0;
+          const offset = target.getBoundingClientRect().top - headerHeight;
+          if (Math.abs(offset) > 200) {
+            history.replaceState(null, '', window.location.pathname + window.location.search);
+          }
+        }
+      }
+    }, 200));
   }
 
   // Lazy Loading for images
