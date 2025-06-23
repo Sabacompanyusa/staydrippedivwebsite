@@ -3,7 +3,7 @@
    ============================================== */
 
 /* Tablet Landscape and below (1024px) */
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
   :root {
     --section-padding: 4rem 1.5rem;
   }
@@ -32,7 +32,7 @@
 }
 
 /* Tablet Portrait and below (768px) */
-@media (max-width: 768px) {
+@media (width <= 768px) {
   /* Header Mobile Styles */
   .header-container {
     padding: 1rem;
@@ -72,11 +72,11 @@
     padding: 1rem;
     text-align: center;
     border-radius: var(--br);
-    background: rgba(255, 255, 255, 0.05);
+    background: rgb(255 255 255 / 5%);
   }
   
   .nav-link:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgb(255 255 255 / 15%);
   }
   
   .header-buttons {
@@ -272,7 +272,7 @@
 }
 
 /* Mobile Landscape (640px) */
-@media (max-width: 640px) and (orientation: landscape) {
+@media (width <= 640px) and (orientation: landscape) {
   .hero {
     min-height: auto;
     padding: 4rem 1rem;
@@ -284,7 +284,7 @@
 }
 
 /* Small Mobile (480px) */
-@media (max-width: 480px) {
+@media (width <= 480px) {
   :root {
     --section-padding: 3rem 1rem;
   }
@@ -340,7 +340,7 @@
 }
 
 /* Extra Small Mobile (360px) */
-@media (max-width: 360px) {
+@media (width <= 360px) {
   .container {
     padding: 0 0.75rem;
   }
@@ -399,7 +399,7 @@
   }
   
   /* Ensure links are visible */
-  a[href]:after {
+  a[href]::after {
     content: " (" attr(href) ")";
     font-size: 0.8em;
     color: #666;
@@ -431,7 +431,7 @@
 @media (prefers-contrast: high) {
   :root {
     --primary: #000;
-    --secondary: #0066cc;
+    --secondary: #06c;
     --text-dark: #000;
     --text-light: #333;
     --bg-light: #fff;
@@ -444,7 +444,7 @@
   
   .cta,
   .cta-button {
-    border: 2px solid currentColor;
+    border: 2px solid currentcolor;
   }
 }
 
@@ -472,7 +472,7 @@
   }
   
   .header {
-    background: rgba(10, 10, 10, 0.95);
+    background: rgb(10 10 10 / 95%);
   }
   
   .footer {
