@@ -1,5 +1,7 @@
 /*! elementor-pro - v3.28.0 - 05-05-2025 */
-@charset "UTF-8";.elementor-widget-loop-grid {
+@charset "UTF-8";
+
+.elementor-widget-loop-grid {
     scroll-margin-top: var(--auto-scroll-offset,initial)
 }
 
@@ -51,7 +53,7 @@
     grid-template-columns: repeat(12,minmax(0,1fr))
 }
 
-@media (min-width: -1) {
+@media (width >= -1) {
     .elementor-widget-loop-grid-widescreen-1 .elementor-grid {
         grid-template-columns:repeat(1,minmax(0,1fr))
     }
@@ -101,7 +103,7 @@
     }
 }
 
-@media (max-width: -1) {
+@media (width <= -1) {
     .elementor-widget-loop-grid-laptop-1 .elementor-grid {
         grid-template-columns:repeat(1,minmax(0,1fr))
     }
@@ -199,7 +201,7 @@
     }
 }
 
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
     .elementor-widget-loop-grid-tablet-1 .elementor-grid {
         grid-template-columns:repeat(1,minmax(0,1fr))
     }
@@ -249,7 +251,7 @@
     }
 }
 
-@media (max-width: -1) {
+@media (width <= -1) {
     .elementor-widget-loop-grid-mobile_extra-1 .elementor-grid {
         grid-template-columns:repeat(1,minmax(0,1fr))
     }
@@ -299,7 +301,7 @@
     }
 }
 
-@media (max-width: 767px) {
+@media (width <= 767px) {
     .elementor-widget-loop-grid-mobile-1 .elementor-grid {
         grid-template-columns:repeat(1,minmax(0,1fr))
     }
@@ -350,8 +352,7 @@
 }
 
 .elementor-widget-loop-grid .elementor-grid {
-    grid-column-gap: var(--grid-column-gap,30px);
-    grid-row-gap: var(--grid-row-gap,30px)
+    grid-gap: var(--grid-row-gap,30px) var(--grid-column-gap,30px)
 }
 
 .elementor-widget-loop-grid.e-loading-overlay {
@@ -439,7 +440,7 @@
 
 .elementor-widget-loop-grid .e-loop-nothing-found-message {
     color: var(--e-loop-nothing-found-message-color,#1f2124);
-    padding-block-end:var(--e-loop-nothing-found-message-space-from-bottom,30px);padding-block-start: var(--e-loop-nothing-found-message-space-from-top,30px);
+    padding-block:var(--e-loop-nothing-found-message-space-from-top,30px) var(--e-loop-nothing-found-message-space-from-bottom,30px);
     text-align: var(--e-loop-nothing-found-message-align,center)
 }
 
@@ -452,7 +453,7 @@
 }
 
 @keyframes loadingOpacityAnimation {
-    0%,to {
+    0%,100% {
         opacity: 1
     }
 
