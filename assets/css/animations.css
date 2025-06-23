@@ -4,7 +4,7 @@
    ============================================== */
 
 /* Keyframe Animations */
-@keyframes fadeInUp {
+@keyframes kabab-case {
   from {
     opacity: 0;
     transform: translateY(30px);
@@ -16,7 +16,7 @@
   }
 }
 
-@keyframes fadeInDown {
+@keyframes kabab-case {
   from {
     opacity: 0;
     transform: translateY(-30px);
@@ -28,7 +28,7 @@
   }
 }
 
-@keyframes fadeInLeft {
+@keyframes kabab-case {
   from {
     opacity: 0;
     transform: translateX(-30px);
@@ -40,7 +40,7 @@
   }
 }
 
-@keyframes fadeInRight {
+@keyframes kabab-case {
   from {
     opacity: 0;
     transform: translateX(30px);
@@ -52,7 +52,7 @@
   }
 }
 
-@keyframes slideInUp {
+@keyframes kabab-case {
   from {
     transform: translateY(100%);
     opacity: 0;
@@ -64,7 +64,7 @@
   }
 }
 
-@keyframes slideInDown {
+@keyframes kabab-case {
   from {
     transform: translateY(-100%);
     opacity: 0;
@@ -76,7 +76,7 @@
   }
 }
 
-@keyframes scaleIn {
+@keyframes kabab-case {
   from {
     transform: scale(0.8);
     opacity: 0;
