@@ -166,6 +166,38 @@
   <!-- jQuery - Required by multiple scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
+  <!-- Define global variables for WooCommerce scripts -->
+  <script>
+    // WooCommerce add to cart parameters (static site fallback)
+    window.wc_add_to_cart_params = {
+      ajax_url: '/wp-admin/admin-ajax.php',
+      wc_ajax_url: '/wp-admin/admin-ajax.php?action=%%endpoint%%',
+      i18n_view_cart: 'View cart',
+      cart_url: '/cart',
+      is_cart: false,
+      cart_redirect_after_add: 'no'
+    };
+
+    // WooCommerce general parameters (static site fallback)
+    window.woocommerce_params = {
+      ajax_url: '/wp-admin/admin-ajax.php',
+      wc_ajax_url: '/wp-admin/admin-ajax.php?action=%%endpoint%%',
+      i18n_password_show: 'Show password',
+      i18n_password_hide: 'Hide password'
+    };
+
+    // Liquid WooCommerce search parameters (static site fallback)
+    window.wcLiquid = {
+      ajaxUrl: '/wp-admin/admin-ajax.php'
+    };
+
+    // Cookies utility for WooCommerce (using js-cookie)
+    window.Cookies = window.Cookies || {
+      get: function() { return null; },
+      set: function() { return null; }
+    };
+  </script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
 
   <script id="qualiphy-script" src="https://www.app.qualiphy.me/scripts/quidget_disclosure.js"
