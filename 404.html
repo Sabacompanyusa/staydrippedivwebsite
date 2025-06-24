@@ -39,7 +39,6 @@
             line-height: 1;
             margin-bottom: 20px;
             background: linear-gradient(135deg, var(--primary-color) 0%, #667eea 100%);
-            -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
@@ -84,7 +83,7 @@
             background: transparent;
             color: var(--primary-color);
             transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px rgb(0 0 0 / 10%);
         }
         
         .btn-outline {
@@ -141,7 +140,7 @@
             background: white;
             border-color: var(--primary-color);
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgb(0 0 0 / 10%);
         }
         
         .link-item i {
@@ -152,7 +151,7 @@
         }
         
         /* Responsive */
-        @media (max-width: 768px) {
+        @media (width <= 768px) {
             .error-code {
                 font-size: 80px;
             }
