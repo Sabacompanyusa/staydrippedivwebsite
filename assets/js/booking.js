@@ -148,7 +148,7 @@ this.tabContents.forEach(content => {
 const activeButton = document.querySelector(`[data-tab="${targetTab}"]`);
 const activeContent = document.getElementById(targetTab);
 
-if (activeButton && activeContent) {
+if (activeButton & activeContent) {
   activeButton.classList.add('active');
   activeButton.setAttribute('aria-selected', 'true');
   
