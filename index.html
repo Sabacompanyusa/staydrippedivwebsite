@@ -196,6 +196,26 @@
       get: function() { return null; },
       set: function() { return null; }
     };
+
+    // WooCommerce Order Attribution parameters (static site fallback)
+    window.wc_order_attribution = {
+      params: {
+        lifetime: 30,
+        session: 30,
+        base64: false,
+        allowTracking: true,
+        prefix: 'wc_order_attribution_'
+      },
+      fields: {
+        'source': 'current.typ',
+        'medium': 'current.mdm',
+        'campaign': 'current.cmp',
+        'source_platform': 'current.plt',
+        'utm_campaign': 'current.cmp',
+        'utm_source': 'current.src',
+        'utm_medium': 'current.mdm'
+      }
+    };
   </script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
@@ -231,7 +251,7 @@
 
   <script src="assets/js/intakeq.js" defer></script>
 
-  <script src="assets/js/quidget-disclosure.js" defer></script>
+
 
   <script src="assets/js/sourcebuster.min.js" defer></script>
 
