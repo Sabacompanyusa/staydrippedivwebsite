@@ -37,48 +37,34 @@
     })(document);
   </script>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "MedicalBusiness",
-    "name": "Stay Dripped Mobile IV",
-    "description": "Premium mobile IV therapy and wellness services",
-    "url": "https://staydripped.com",
-    "telephone": "+1-602-688-9825",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Scottsdale",
-      "addressRegion": "AZ",
-      "addressCountry": "US"
-    },
-    "openingHours": "Mo-Su 00:00-23:59",
-    "priceRange": "$$$"
-  }
+  <script>
+  <script type="application/ld+json";{"@context": "https://schema.org","@type": "MedicalBusiness","name": "Stay Dripped Mobile IV","description": "Premium mobile IV therapy and wellness services",
+    "url": "https://staydripped.com";
+    "telephone": "+1-602-688-9825";
+    "address": "@type": "PostalAddress","addressLocality": "Scottsdale","addressRegion": "AZ","addressCountry": "US";
+     "openingHours": "Mo-Su 00:00-23:59";
+     "priceRange": "$$$"
+    };
   </script>
+  
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
   <div class="scroll-indicator" id="scrollIndicator"></div>
-
   <div id="header-container"></div>
   <div id="qualiphy-container"></div>
 
   <main id="main-content">
     <div id="hero-container"></div>
-    <div id="services-container"></div>
-    <div id="booking-container"></div>
-    <div id="booking-modal-container"></div>
     <div id="how-it-works-container"></div>
     <div id="testimonials-container"></div>
     <div id="memberships-container"></div>
     <div id="faq-container"></div>
-    <div id="quiz-container"></div>
   </main>
 
   <div id="footer-container"></div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-  <script id="qualiphy-script" src="https://www.app.qualiphy.me/scripts/quidget_disclosure.js" defer></script>
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/booking.js" defer></script>
   <script src="assets/js/analytics.js" defer></script>
@@ -114,15 +100,12 @@
         loadComponent('header-container', 'components/header.html'),
         loadComponent('hero-container', 'components/hero.html'),
         loadComponent('services-container', 'components/services.html'),
-        loadComponent('booking-container', 'components/booking.html'),
-        loadComponent('booking-modal-container', 'components/booking-modal.html'),
         loadComponent('how-it-works-container', 'components/how-it-works.html'),
         loadComponent('testimonials-container', 'components/testimonials.html'),
         loadComponent('memberships-container', 'components/memberships.html'),
         loadComponent('faq-container', 'components/faq.html'),
         loadComponent('qualiphy-container', 'components/qualiphy.html'),
         loadComponent('footer-container', 'components/footer.html'),
-        loadComponent('quiz-container', 'components/quiz.html')
       ]);
       if (typeof window.initializeApp === 'function') {
         window.initializeApp();
