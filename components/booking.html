@@ -3,120 +3,151 @@
     <h2>Book a Treatment</h2>
     <p class="section-subtitle">Below are IV Therapy Treatment Categories.</p>
 
-<!-- Tabbed Booking Widgets -->
-<div class="booking-tabs">
-  <div class="tab-buttons">
-    <button class="tab-link active" data-tab="basic">Basic IV</button>
-    <button class="tab-link active" data-tab="standard">Standard IV</button>
-    <button class="tab-link active" data-tab="specialty">Specialty IV</button>
-    <button class="tab-link active" data-tab="premium">Premium IV</button>
-    <button class="tab-link active" data-tab="nad">NAD⁺ IV</button>
-  </div>
-  <div id="basic" class="tab-content active">
-  <script>
-      (function (c) {window.intakeq="68460f36bc104b6aa9da43e0";window.intakeqCategoryId="17d0bbca-0d95-4e32-8a8b-3ae8ae2c1152"; 
-                     var i = c.createElement("script");
-                     i.type = "text/javascript";
-                     i.async = true;
-                     i.src = "https://intakeq.com/js/widget.min.js?1";
-                     });
-  </script>
-    <div id="intakeq" style="max-width:720px; width: 100%;">
-    </div>
-  </div>
-  <div id="standard" class="tab-content">
-    <script>(function (c) {window.intakeq="68460f36bc104b6aa9da43e0";window.intakeqCategoryId="2f8be24a-d5ad-40c7-aa8c-5172eed7df3e"; 
-                     var i = c.createElement("script");
-                     i.type = "text/javascript";
-                     i.async = true;i.src = "https://intakeq.com/js/widget.min.js?1";
-                     ;})
- </script>
-    <div id="intakeq" style="max-width:720px; width: 100%;">
-   </div>
-  </div>
-  <div id="specialty" class="tab-content">
-   <script>(function (c) {window.intakeq="68460f36bc104b6aa9da43e0";window.intakeqCategoryId="db6a4c57-2e06-4530-a598-899f20c96a04"; 
-                         var i = c.createElement("script");
-                         i.type = "text/javascript";i.async = true;
-                         i.src = "https://intakeq.com/js/widget.min.js?1";
-                         ;})
-  </script>
-    <div id="intakeq" style="max-width:720px; width: 100%;">
-  </div>
-</div>
-  <div id="premium" class="tab-content">
-    <script>(function (c) {window.intakeq="68460f36bc104b6aa9da43e0";window.intakeqCategoryId="50438982-ce89-47d1-a5f9-453ea9de5e49"; 
-                           var i = c.createElement("script");
-                           i.type = "text/javascript";
-                           i.async = true;i.src = "https://intakeq.com/js/widget.min.js?1";
-                           ;})
-    </script>
-    <div id="intakeq" style="max-width:720px; width: 100%;">
-  </div>
-</div>
-  <div id="nad" class="tab-content">
-   <script>(function (c) {window.intakeq="68460f36bc104b6aa9da43e0";window.intakeqCategoryId="ddf30134-b441-4226-bfe9-27eed5368949"; 
-                          var i = c.createElement("script");
-                          i.type = "text/javascript";i.async = true;
-                          i.src = "https://intakeq.com/js/widget.min.js?1";
-                          ;})
-   </script>
-    <div id="intakeq" style="max-width:720px; width: 100%;">
-   </div>
- </div>
-    
-<!-- Membership CTA with Email Capture -->
-<div class="membership-cta">
-  <h3>Join Our Membership Program</h3>
-  <p>Save money with regular treatments and priority booking</p>
-  
-  <form class="lead-capture" onsubmit="return forwardToBooking(this)">
-    <input type="email" name="email" placeholder="Enter your email address" required />
-    <select name="plan" required>
-      <option value="">Select Membership Plan</option>
-      <option value="Premium">Premium Membership - $199/month</option>
-      <option value="Essential">Essential Membership - $149/month</option>
-      <option value="Shot">Shot Pass - $99/month</option>
-    </select>
-    <button type="submit" class="cta-button">Join &amp; Book First Session</button>
-<script>
-  (function (c) {window.intakeq="68460f36bc104b6aa9da43e0";window.intakeqCategoryId="55411eac-3c23-47e3-bd15-b5357d784a85"; 
-                 var i = c.createElement("script");
-                 i.type = "text/javascript";
-                 i.async = true;
-                 i.src = "https://intakeq.com/js/widget.min.js?1";
-                 ;})
-</script>
-    <div id="intakeq" style="max-width:720px; width: 100%;">
-    </div>
-  </div>
-  <p class="disclaimer">
-    <i class="fas fa-shield-alt"></i>
-    Secure booking process - You'll be taken to our HIPAA-compliant booking page with your email pre-filled for convenience.
-  </p>
-  
-  <div class="membership-benefits">
-    <div class="benefit-item">
-      <i class="fas fa-percentage"></i>
-      <span>Up to 30% savings on all treatments</span>
-    </div>
-    <div class="benefit-item">
-      <i class="fas fa-calendar-check"></i>
-      <span>Priority booking and scheduling</span>
-    </div>
-    <div class="benefit-item">
-      <i class="fas fa-gift"></i>
-      <span>Exclusive member-only treatments</span>
-    </div>
-  </div>
-</div>
+    <div class="booking-tabs">
+      <div class="tab-buttons">
+        <button class="tab-link active" data-tab="basic">Basic IV</button>
+        <button class="tab-link" data-tab="standard">Standard IV</button>
+        <button class="tab-link" data-tab="specialty">Specialty IV</button>
+        <button class="tab-link" data-tab="premium">Premium IV</button>
+        <button class="tab-link" data-tab="nad">NAD⁺ IV</button>
+      </div>
 
-<!-- Returning Client Login Widget -->
-<div class="client-login-widget">
-  <h3>Manage Your Appointments</h3>
-  <p>If you've booked with us before, you can log in below to view or modify your appointments.</p>
-  <script>(function (c) {window.intakeq="68460f36bc104b6aa9da43e0";window.intakeqClientArea=true; var i = c.createElement("script");i.type = "text/javascript";i.async = true;i.src = "https://intakeq.com/js/widget.min.js?1";document.head.appendChild(i);})(document);</script><div id="intakeq" style="max-width:720px; width: 100%;"></div>
-</div>
+      <div id="basic" class="tab-content active">
+        <div id="intakeq-basic" style="max-width:720px;width:100%;"></div>
+        <script>
+          (function(c){
+            window.intakeq='68460f36bc104b6aa9da43e0';
+            window.intakeqCategoryId='17d0bbca-0d95-4e32-8a8b-3ae8ae2c1152';
+            var i=c.createElement('script');
+            i.type='text/javascript';
+            i.async=true;
+            i.src='https://intakeq.com/js/widget.min.js?1';
+            c.head.appendChild(i);
+          })(document);
+        </script>
+      </div>
 
+      <div id="standard" class="tab-content">
+        <div id="intakeq-standard" style="max-width:720px;width:100%;"></div>
+        <script>
+          (function(c){
+            window.intakeq='68460f36bc104b6aa9da43e0';
+            window.intakeqCategoryId='2f8be24a-d5ad-40c7-aa8c-5172eed7df3e';
+            var i=c.createElement('script');
+            i.type='text/javascript';
+            i.async=true;
+            i.src='https://intakeq.com/js/widget.min.js?1';
+            c.head.appendChild(i);
+          })(document);
+        </script>
+      </div>
+
+      <div id="specialty" class="tab-content">
+        <div id="intakeq-specialty" style="max-width:720px;width:100%;"></div>
+        <script>
+          (function(c){
+            window.intakeq='68460f36bc104b6aa9da43e0';
+            window.intakeqCategoryId='db6a4c57-2e06-4530-a598-899f20c96a04';
+            var i=c.createElement('script');
+            i.type='text/javascript';
+            i.async=true;
+            i.src='https://intakeq.com/js/widget.min.js?1';
+            c.head.appendChild(i);
+          })(document);
+        </script>
+      </div>
+
+      <div id="premium" class="tab-content">
+        <div id="intakeq-premium" style="max-width:720px;width:100%;"></div>
+        <script>
+          (function(c){
+            window.intakeq='68460f36bc104b6aa9da43e0';
+            window.intakeqCategoryId='50438982-ce89-47d1-a5f9-453ea9de5e49';
+            var i=c.createElement('script');
+            i.type='text/javascript';
+            i.async=true;
+            i.src='https://intakeq.com/js/widget.min.js?1';
+            c.head.appendChild(i);
+          })(document);
+        </script>
+      </div>
+
+      <div id="nad" class="tab-content">
+        <div id="intakeq-nad" style="max-width:720px;width:100%;"></div>
+        <script>
+          (function(c){
+            window.intakeq='68460f36bc104b6aa9da43e0';
+            window.intakeqCategoryId='ddf30134-b441-4226-bfe9-27eed5368949';
+            var i=c.createElement('script');
+            i.type='text/javascript';
+            i.async=true;
+            i.src='https://intakeq.com/js/widget.min.js?1';
+            c.head.appendChild(i);
+          })(document);
+        </script>
+      </div>
+    </div>
+
+    <div class="membership-cta">
+      <h3>Join Our Membership Program</h3>
+      <p>Save money with regular treatments and priority booking</p>
+      <form class="lead-capture" onsubmit="return forwardToBooking(this)">
+        <input type="email" name="email" placeholder="Enter your email address" required>
+        <select name="plan" required>
+          <option value="">Select Membership Plan</option>
+          <option value="Premium">Premium Membership - $199/month</option>
+          <option value="Essential">Essential Membership - $149/month</option>
+          <option value="Shot">Shot Pass - $99/month</option>
+        </select>
+        <button type="submit" class="cta-button">Join &amp; Book First Session</button>
+      </form>
+      <div id="intakeq-membership" style="max-width:720px;width:100%;"></div>
+      <script>
+        (function(c){
+          window.intakeq='68460f36bc104b6aa9da43e0';
+          window.intakeqCategoryId='55411eac-3c23-47e3-bd15-b5357d784a85';
+          var i=c.createElement('script');
+          i.type='text/javascript';
+          i.async=true;
+          i.src='https://intakeq.com/js/widget.min.js?1';
+          c.head.appendChild(i);
+        })(document);
+      </script>
+      <p class="disclaimer">
+        <i class="fas fa-shield-alt"></i>
+        Secure booking process - You'll be taken to our HIPAA-compliant booking page with your email pre-filled for convenience.
+      </p>
+      <div class="membership-benefits">
+        <div class="benefit-item">
+          <i class="fas fa-percentage"></i>
+          <span>Up to 30% savings on all treatments</span>
+        </div>
+        <div class="benefit-item">
+          <i class="fas fa-calendar-check"></i>
+          <span>Priority booking and scheduling</span>
+        </div>
+        <div class="benefit-item">
+          <i class="fas fa-gift"></i>
+          <span>Exclusive member-only treatments</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="client-login-widget">
+      <h3>Manage Your Appointments</h3>
+      <p>If you've booked with us before, you can log in below to view or modify your appointments.</p>
+      <div id="intakeq-login" style="max-width:720px;width:100%;"></div>
+      <script>
+        (function(c){
+          window.intakeq='68460f36bc104b6aa9da43e0';
+          window.intakeqClientArea=true;
+          var i=c.createElement('script');
+          i.type='text/javascript';
+          i.async=true;
+          i.src='https://intakeq.com/js/widget.min.js?1';
+          c.head.appendChild(i);
+        })(document);
+      </script>
+    </div>
   </div>
 </section>
