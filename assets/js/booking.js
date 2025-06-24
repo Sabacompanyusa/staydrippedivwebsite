@@ -6,19 +6,20 @@
 - Copyright © 2025 Stay Dripped Mobile IV LLC
   */
 
-// CONFIGURATION & CONSTANTS // 
+// CONFIGURATION & CONSTANTS //
 
 const BOOKING_CONFIG = {
 // IntakeQ Base URL
-baseBookingUrl: 'https://staydripped.intakeq.com/booking',
+baseBookingUrl: ‘https://staydripped.intakeq.com/booking’,
 
 // Service IDs for different IV treatments
 serviceIds: {
 // Basic IVs
-basicHydration: '17d0bbca-a123-4b56-789c-def012345678',
-hangoverRelief: 'a7d83ea1-cf5e-4865-923e-bfe2232de898',
-rehydratePlus: 'ae66ce7c-fa68-408c-9ab0-a04b287f6b31',
+basicHydration: ‘17d0bbca-a123-4b56-789c-def012345678’,
+hangoverRelief: ‘a7d83ea1-cf5e-4865-923e-bfe2232de898’,
+rehydratePlus: ‘ae66ce7c-fa68-408c-9ab0-a04b287f6b31’,
 
+```
 // Standard IVs
 myersCocktail: 'c13f904a-a8d0-43b1-bd5f-570387ee77d6',
 megaMyersCocktail: 'e14cdb17-a9d1-47cb-90e1-d3050059bcf3',
@@ -43,61 +44,62 @@ nadTherapy: 'h901234e-f012-8901-234e-f01234567890',
 premiumMembership: 'PREMIUM_MEMBERSHIP_2025',
 essentialMembership: 'ESSENTIAL_MEMBERSHIP_2025',
 shotPassMembership: 'SHOTPASS_MEMBERSHIP_2025'
+```
 
 },
 
 // Quiz recommendation mapping
 quizMapping: {
 hangover: {
-name: 'Scottsdale Hangover Relief IV',
-serviceId: 'hangoverRelief',
-description: 'Fast-acting relief from hangover symptoms with targeted hydration and anti-nausea medication.'
+name: ‘Scottsdale Hangover Relief IV’,
+serviceId: ‘hangoverRelief’,
+description: ‘Fast-acting relief from hangover symptoms with targeted hydration and anti-nausea medication.’
 },
 energy: {
-name: "Mega Myers' Cocktail",
-serviceId: 'megaMyersCocktail',
-description: 'High-dose vitamin blend to boost energy and combat fatigue.'
+name: “Mega Myers’ Cocktail”,
+serviceId: ‘megaMyersCocktail’,
+description: ‘High-dose vitamin blend to boost energy and combat fatigue.’
 },
 hydration: {
-name: 'Gold Ultimate Hydration',
-serviceId: 'goldUltimateHydration',
-description: 'Premium hydration therapy with electrolytes and essential vitamins.'
+name: ‘Gold Ultimate Hydration’,
+serviceId: ‘goldUltimateHydration’,
+description: ‘Premium hydration therapy with electrolytes and essential vitamins.’
 },
 immunity: {
-name: "Myers' Cocktail",
-serviceId: 'myersCocktail',
-description: 'Classic vitamin cocktail to strengthen immune system and overall wellness.'
+name: “Myers’ Cocktail”,
+serviceId: ‘myersCocktail’,
+description: ‘Classic vitamin cocktail to strengthen immune system and overall wellness.’
 },
 beauty: {
-name: 'Beauty Glow IV Drip',
-serviceId: 'beautyGlow',
-description: 'Anti-aging formula with glutathione and vitamins for radiant skin.'
+name: ‘Beauty Glow IV Drip’,
+serviceId: ‘beautyGlow’,
+description: ‘Anti-aging formula with glutathione and vitamins for radiant skin.’
 },
 recovery: {
-name: 'Athletic Recovery IV',
-serviceId: 'athleticRecovery',
-description: 'Specialized blend for muscle recovery and performance enhancement.'
+name: ‘Athletic Recovery IV’,
+serviceId: ‘athleticRecovery’,
+description: ‘Specialized blend for muscle recovery and performance enhancement.’
 },
 wellness: {
-name: 'Platinum Wellness IV',
-serviceId: 'platinumWellness',
-description: 'Comprehensive wellness formula with premium nutrients and antioxidants.'
+name: ‘Platinum Wellness IV’,
+serviceId: ‘platinumWellness’,
+description: ‘Comprehensive wellness formula with premium nutrients and antioxidants.’
 },
 antiaging: {
-name: 'Anti-Aging Premium IV',
-serviceId: 'antiAging',
-description: 'Advanced anti-aging therapy with NAD+ precursors and cellular support.'
+name: ‘Anti-Aging Premium IV’,
+serviceId: ‘antiAging’,
+description: ‘Advanced anti-aging therapy with NAD+ precursors and cellular support.’
 }
 }
 };
 
-// BOOKING TAB SYSTEM // 
+// BOOKING TAB SYSTEM //
 
 class BookingTabManager {
 constructor() {
-this.tabButtons = document.querySelectorAll('.tab-link');
-this.tabContents = document.querySelectorAll('.tab-content');
-this.activeTab = 'basic';
+this.tabButtons = document.querySelectorAll(’.tab-link’);
+this.tabContents = document.querySelectorAll(’.tab-content’);
+this.activeTab = ‘basic’;
 this.init();
 }
 
@@ -109,14 +111,15 @@ this.trackTabAnalytics();
 
 bindEvents() {
 this.tabButtons.forEach(button => {
-button.addEventListener('click', (e) => {
+button.addEventListener(‘click’, (e) => {
 e.preventDefault();
-const target = button.getAttribute('data-tab');
+const target = button.getAttribute(‘data-tab’);
 this.setActiveTab(target);
 this.trackTabClick(target);
 });
 });
 
+```
 // Add keyboard navigation
 this.tabButtons.forEach((button, index) => {
   button.addEventListener('keydown', (e) => {
@@ -129,16 +132,18 @@ this.tabButtons.forEach((button, index) => {
     }
   });
 });
+```
 
 }
 
 setActiveTab(targetTab) {
 // Remove active class from all tabs and contents
 this.tabButtons.forEach(btn => {
-btn.classList.remove('active');
-btn.setAttribute('aria-selected', 'false');
+btn.classList.remove(‘active’);
+btn.setAttribute(‘aria-selected’, ‘false’);
 });
 
+```
 this.tabContents.forEach(content => {
   content.classList.remove('active');
   content.setAttribute('aria-hidden', 'true');
@@ -162,14 +167,15 @@ if (activeButton && activeContent) {
     activeContent.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 }
+```
 
 }
 
 trackTabClick(tabName) {
 // Analytics tracking
-if (typeof gtag !== 'undefined') {
-gtag('event', 'tab_click', {
-event_category: 'booking',
+if (typeof gtag !== ‘undefined’) {
+gtag(‘event’, ‘tab_click’, {
+event_category: ‘booking’,
 event_label: tabName,
 value: 1
 });
@@ -178,20 +184,20 @@ value: 1
 
 trackTabAnalytics() {
 // Track initial page load with default tab
-if (typeof gtag !== 'undefined') {
-gtag('event', 'booking_page_view', {
-event_category: 'booking',
-event_label: 'default_tab_basic'
+if (typeof gtag !== ‘undefined’) {
+gtag(‘event’, ‘booking_page_view’, {
+event_category: ‘booking’,
+event_label: ‘default_tab_basic’
 });
 }
 }
 }
 
-// SMART QUIZ RECOMMENDATION SYSTEM // 
+// SMART QUIZ RECOMMENDATION SYSTEM //
 
 class SmartQuizManager {
 constructor() {
-this.steps = document.querySelectorAll('.quiz-step');
+this.steps = document.querySelectorAll(’.quiz-step’);
 this.currentStep = 0;
 this.answers = {};
 this.init();
@@ -200,18 +206,21 @@ this.init();
 init() {
 if (this.steps.length === 0) return;
 
+```
 this.bindEvents();
 this.showStep(0);
+```
 
 }
 
 bindEvents() {
-const nextBtn = document.getElementById('nextBtn');
-const prevBtn = document.getElementById('prevBtn');
-const submitBtn = document.getElementById('submitBtn');
-const quizForm = document.getElementById('quiz-form');
-const retakeBtn = document.getElementById('retakeQuiz');
+const nextBtn = document.getElementById(‘nextBtn’);
+const prevBtn = document.getElementById(‘prevBtn’);
+const submitBtn = document.getElementById(‘submitBtn’);
+const quizForm = document.getElementById(‘quiz-form’);
+const retakeBtn = document.getElementById(‘retakeQuiz’);
 
+```
 nextBtn?.addEventListener('click', () => this.nextStep());
 prevBtn?.addEventListener('click', () => this.prevStep());
 submitBtn?.addEventListener('click', (e) => this.submitQuiz(e));
@@ -235,23 +244,27 @@ this.steps.forEach(step => {
     });
   });
 });
+```
 
 }
 
 showStep(stepIndex) {
 this.steps.forEach((step, index) => {
-step.classList.toggle('active', index === stepIndex);
-step.setAttribute('aria-hidden', index !== stepIndex);
+step.classList.toggle(‘active’, index === stepIndex);
+step.setAttribute(‘aria-hidden’, index !== stepIndex);
 });
 
+```
 this.updateNavigationButtons();
 this.updateProgressBar();
+```
 
 }
 
 nextStep() {
 const currentStepElement = this.steps[this.currentStep];
 
+```
 if (!this.validateCurrentStep()) {
   this.showValidationError('Please select an option to continue.');
   return;
@@ -263,20 +276,22 @@ if (this.currentStep < this.steps.length - 1) {
   this.currentStep++;
   this.showStep(this.currentStep);
 }
+```
 
 }
 
 prevStep() {
 if (this.currentStep > 0) {
-  this.currentStep--;
-  this.showStep(this.currentStep);
+this.currentStep–;
+this.showStep(this.currentStep);
 }
 }
 
 validateCurrentStep() {
 const currentStepElement = this.steps[this.currentStep];
-const requiredInputs = currentStepElement.querySelectorAll('input[required], select[required]');
+const requiredInputs = currentStepElement.querySelectorAll(‘input[required], select[required]’);
 
+```
 return Array.from(requiredInputs).every(input => {
   if (input.type === 'radio') {
     const radioGroup = currentStepElement.querySelectorAll(`input[name="${input.name}"]`);
@@ -284,13 +299,15 @@ return Array.from(requiredInputs).every(input => {
   }
   return input.value.trim() !== '';
 });
+```
 
 }
 
 saveCurrentAnswer() {
 const currentStepElement = this.steps[this.currentStep];
-const inputs = currentStepElement.querySelectorAll('input, select');
+const inputs = currentStepElement.querySelectorAll(‘input, select’);
 
+```
 inputs.forEach(input => {
   if (input.type === 'radio' && input.checked) {
     this.answers[input.name] = input.value;
@@ -298,14 +315,16 @@ inputs.forEach(input => {
     this.answers[input.name] = input.value;
   }
 });
+```
 
 }
 
 updateNavigationButtons() {
-const nextBtn = document.getElementById('nextBtn');
-const prevBtn = document.getElementById('prevBtn');
-const submitBtn = document.getElementById('submitBtn');
+const nextBtn = document.getElementById(‘nextBtn’);
+const prevBtn = document.getElementById(‘prevBtn’);
+const submitBtn = document.getElementById(‘submitBtn’);
 
+```
 if (prevBtn) {
   prevBtn.style.display = this.currentStep > 0 ? 'inline-block' : 'none';
 }
@@ -317,36 +336,42 @@ if (this.currentStep === this.steps.length - 1) {
   if (nextBtn) nextBtn.style.display = 'inline-block';
   if (submitBtn) submitBtn.style.display = 'none';
 }
+```
 
 }
 
 updateProgressBar() {
-const progressBar = document.querySelector('.quiz-progress-bar');
+const progressBar = document.querySelector(’.quiz-progress-bar’);
 if (progressBar) {
 const progress = ((this.currentStep + 1) / this.steps.length) * 100;
 progressBar.style.width = `${progress}%`;
 }
 
+```
 const progressText = document.querySelector('.quiz-progress-text');
 if (progressText) {
   progressText.textContent = `Step ${this.currentStep + 1} of ${this.steps.length}`;
 }
+```
 
 }
 
 submitQuiz(e) {
 e.preventDefault();
 
+```
 this.saveCurrentAnswer();
 const recommendation = this.calculateRecommendation();
 this.showResult(recommendation);
 this.trackQuizCompletion(recommendation);
+```
 
 }
 
 calculateRecommendation() {
 const { feeling, goal, frequency, budget } = this.answers;
 
+```
 // Advanced recommendation logic
 let recommendedService = 'rehydratePlus';
 
@@ -379,16 +404,18 @@ if (budget === 'budget' && recommendedService.includes('premium')) {
 }
 
 return BOOKING_CONFIG.quizMapping[recommendedService] || BOOKING_CONFIG.quizMapping.hydration;
+```
 
 }
 
 showResult(recommendation) {
-const quizContainer = document.getElementById('quiz-form');
-const resultContainer = document.getElementById('quiz-result');
-const resultText = document.getElementById('result-text');
-const resultDescription = document.getElementById('result-description');
-const bookLink = document.getElementById('book-link');
+const quizContainer = document.getElementById(‘quiz-form’);
+const resultContainer = document.getElementById(‘quiz-result’);
+const resultText = document.getElementById(‘result-text’);
+const resultDescription = document.getElementById(‘result-description’);
+const bookLink = document.getElementById(‘book-link’);
 
+```
 if (quizContainer) quizContainer.style.display = 'none';
 if (resultContainer) resultContainer.style.display = 'block';
 
@@ -407,6 +434,7 @@ if (bookLink) {
 
 // Scroll to result
 resultContainer?.scrollIntoView({ behavior: 'smooth' });
+```
 
 }
 
@@ -414,6 +442,7 @@ resetQuiz() {
 this.currentStep = 0;
 this.answers = {};
 
+```
 // Reset form
 const quizForm = document.getElementById('quiz-form');
 if (quizForm) {
@@ -428,36 +457,41 @@ if (resultContainer) {
 }
 
 this.showStep(0);
+```
 
 }
 
 showValidationError(message) {
-const errorElement = document.querySelector('.quiz-error') || this.createErrorElement();
+const errorElement = document.querySelector(’.quiz-error’) || this.createErrorElement();
 errorElement.textContent = message;
-errorElement.style.display = 'block';
+errorElement.style.display = ‘block’;
 
+```
 setTimeout(() => {
   errorElement.style.display = 'none';
 }, 3000);
+```
 
 }
 
 createErrorElement() {
-const errorDiv = document.createElement('div');
-errorDiv.className = 'quiz-error';
+const errorDiv = document.createElement(‘div’);
+errorDiv.className = ‘quiz-error’;
 errorDiv.style.cssText = `color: #f44336; background: #ffebee; padding: 1rem; border-radius: 8px; margin: 1rem 0; border: 1px solid #ffcdd2; display: none;`;
 
+```
 const currentStep = this.steps[this.currentStep];
 currentStep.appendChild(errorDiv);
 
 return errorDiv;
+```
 
 }
 
 trackQuizCompletion(recommendation) {
-if (typeof gtag !== 'undefined') {
-gtag('event', 'quiz_completed', {
-event_category: 'engagement',
+if (typeof gtag !== ‘undefined’) {
+gtag(‘event’, ‘quiz_completed’, {
+event_category: ‘engagement’,
 event_label: recommendation.name,
 recommended_service: recommendation.serviceId
 });
@@ -474,16 +508,18 @@ this.bindMembershipEvents();
 
 bindMembershipEvents() {
 // Handle membership form submissions
-const membershipForms = document.querySelectorAll('.membership-form, .lead-capture');
+const membershipForms = document.querySelectorAll(’.membership-form, .lead-capture’);
 membershipForms.forEach(form => {
-form.addEventListener('submit', (e) => this.handleMembershipSubmission(e));
+form.addEventListener(‘submit’, (e) => this.handleMembershipSubmission(e));
 });
 
+```
 // Handle individual membership buttons
 const membershipButtons = document.querySelectorAll('[data-membership]');
 membershipButtons.forEach(button => {
   button.addEventListener('click', (e) => this.handleMembershipClick(e));
 });
+```
 
 }
 
@@ -493,6 +529,7 @@ const form = e.target;
 const email = form.email?.value;
 const plan = form.plan?.value;
 
+```
 if (!email || !this.isValidEmail(email)) {
   this.showError(form, 'Please enter a valid email address.');
   return false;
@@ -502,26 +539,30 @@ this.forwardToBooking(email, plan);
 this.trackMembershipInterest(plan, email);
 
 return false;
+```
 
 }
 
 handleMembershipClick(e) {
 const button = e.target;
-const membershipType = button.getAttribute('data-membership');
-const emailField = document.querySelector('.membership-email-input');
+const membershipType = button.getAttribute(‘data-membership’);
+const emailField = document.querySelector(’.membership-email-input’);
 
+```
 if (emailField && emailField.value) {
   this.forwardToBooking(emailField.value, membershipType);
 } else {
   this.showEmailCaptureModal(membershipType);
 }
+```
 
 }
 
 forwardToBooking(email, plan) {
 const encodedEmail = encodeURIComponent(email);
-let serviceId = '';
+let serviceId = ‘’;
 
+```
 // Map membership plans to service IDs
 const membershipMap = {
   Premium: BOOKING_CONFIG.serviceIds.premiumMembership,
@@ -541,27 +582,31 @@ window.open(bookingUrl, '_blank', 'noopener,noreferrer');
 
 // Show success message
 this.showSuccessMessage('Redirecting to secure booking page...');
+```
 
 }
 
 showEmailCaptureModal(membershipType) {
 const modal = this.createEmailModal(membershipType);
 document.body.appendChild(modal);
-modal.style.display = 'flex';
+modal.style.display = ‘flex’;
 
+```
 // Focus on email input
 const emailInput = modal.querySelector('input[type="email"]');
 if (emailInput) {
   setTimeout(() => emailInput.focus(), 100);
 }
+```
 
 }
 
 createEmailModal(membershipType) {
-const modal = document.createElement('div');
-modal.className = 'membership-modal';
+const modal = document.createElement(‘div’);
+modal.className = ‘membership-modal’;
 modal.innerHTML = `<div class="modal-content"> <div class="modal-header"> <h3>Join ${membershipType} Membership</h3> <button class="modal-close">&times;</button> </div> <div class="modal-body"> <p>Enter your email to continue with ${membershipType} membership enrollment:</p> <form class="modal-membership-form"> <input type="email" name="email" placeholder="your@email.com" required> <input type="hidden" name="plan" value="${membershipType}"> <button type="submit" class="cta primary">Continue to Booking</button> </form> </div> </div>`;
 
+```
 modal.style.cssText = `
   position: fixed;
   top: 0;
@@ -594,58 +639,66 @@ modal.addEventListener('click', (e) => {
 });
 
 return modal;
+```
 
 }
 
 isValidEmail(email) {
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const emailRegex = /^[^\s@]+@[^\s@]+.[^\s@]+$/;
 return emailRegex.test(email);
 }
 
 showError(form, message) {
-const errorElement = form.querySelector('.error-message') || this.createErrorElement(form);
+const errorElement = form.querySelector(’.error-message’) || this.createErrorElement(form);
 errorElement.textContent = message;
-errorElement.style.display = 'block';
+errorElement.style.display = ‘block’;
 
+```
 setTimeout(() => {
   errorElement.style.display = 'none';
 }, 5000);
+```
 
 }
 
 showSuccessMessage(message) {
-const successElement = document.createElement('div');
-successElement.className = 'success-message';
+const successElement = document.createElement(‘div’);
+successElement.className = ‘success-message’;
 successElement.textContent = message;
-successElement.style.cssText = `position: fixed; top: 20px; right: 20px; background: #4caf50; color: white; padding: 1rem 2rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 10000; animation: slideIn 0.3s ease-out;`;
+successElement.style.cssText = `position: fixed;  top: 20px;  right: 20px;  background: #4caf50;  color: white;  padding: 1rem 2rem;  border-radius: 8px;  box-shadow: 0 4px 12px rgba(0,0,0,0.15);  z-index: 10000;  animation: slideIn 0.3s ease-out;`;
 
+```
 document.body.appendChild(successElement);
 
 setTimeout(() => {
   successElement.remove();
 }, 3000);
+```
 
 }
 
 createErrorElement(form) {
-const errorDiv = document.createElement('div');
-errorDiv.className = 'error-message';
-errorDiv.style.cssText = `color: #f44336; background: #ffebee; padding: 0.75rem; border-radius: 6px; margin: 0.5rem 0; border: 1px solid #ffcdd2; display: none; font-size: 0.9rem;`;
+const errorDiv = document.createElement(‘div’);
+errorDiv.className = ‘error-message’;
+errorDiv.style.cssText = `color: #f44336;  background: #ffebee;  padding: 0.75rem;  border-radius: 6px;  margin: 0.5rem 0;  border: 1px solid #ffcdd2;  display: none;  font-size: 0.9rem;`;
 
+```
 form.appendChild(errorDiv);
 return errorDiv;
+```
 
 }
 
 trackMembershipInterest(plan, email) {
-if (typeof gtag !== 'undefined') {
-gtag('event', 'membership_interest', {
-event_category: 'conversion',
+if (typeof gtag !== ‘undefined’) {
+gtag(‘event’, ‘membership_interest’, {
+event_category: ‘conversion’,
 event_label: plan,
 value: 1
 });
 }
 
+```
 // Track in localStorage for retargeting
 try {
   const membershipData = {
@@ -657,16 +710,18 @@ try {
 } catch (e) {
   console.warn('Could not save membership interest data');
 }
+```
 
 }
 }
 
-// BOOKING UTILITIES & HELPERS // 
+// BOOKING UTILITIES & HELPERS //
 
 class BookingUtils {
 static createBookingUrl(serviceId, email = null, additionalParams = {}) {
 const url = new URL(BOOKING_CONFIG.baseBookingUrl);
 
+```
 url.searchParams.append('serviceId', serviceId);
 
 if (email) {
@@ -680,13 +735,14 @@ Object.entries(additionalParams).forEach(([key, value]) => {
 });
 
 return url.toString();
+```
 
 }
 
-static trackBookingClick(serviceType, source = 'website') {
-if (typeof gtag !== 'undefined') {
-gtag('event', 'booking_click', {
-event_category: 'conversion',
+static trackBookingClick(serviceType, source = ‘website’) {
+if (typeof gtag !== ‘undefined’) {
+gtag(‘event’, ‘booking_click’, {
+event_category: ‘conversion’,
 event_label: serviceType,
 event_source: source,
 value: 1
@@ -695,17 +751,18 @@ value: 1
 }
 
 static initializeTooltips() {
-const tooltips = document.querySelectorAll('[data-tooltip]');
+const tooltips = document.querySelectorAll(’[data-tooltip]’);
 tooltips.forEach(element => {
-element.addEventListener('mouseenter', this.showTooltip);
-element.addEventListener('mouseleave', this.hideTooltip);
+element.addEventListener(‘mouseenter’, this.showTooltip);
+element.addEventListener(‘mouseleave’, this.hideTooltip);
 });
 }
 
 static showTooltip(e) {
 const element = e.target;
-const tooltipText = element.getAttribute('data-tooltip');
+const tooltipText = element.getAttribute(‘data-tooltip’);
 
+```
 const tooltip = document.createElement('div');
 tooltip.className = 'custom-tooltip';
 tooltip.textContent = tooltipText;
@@ -728,6 +785,7 @@ tooltip.style.left = rect.left + (rect.width / 2) - (tooltip.offsetWidth / 2) + 
 tooltip.style.top = rect.top - tooltip.offsetHeight - 10 + 'px';
 
 element._tooltip = tooltip;
+```
 
 }
 
@@ -740,16 +798,17 @@ delete e.target._tooltip;
 }
 }
 
-// INITIALIZATION // 
+// INITIALIZATION //
 
 // Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener(‘DOMContentLoaded’, () => {
 try {
 // Initialize core booking systems
 window.bookingTabManager = new BookingTabManager();
 window.smartQuizManager = new SmartQuizManager();
 window.membershipManager = new MembershipManager();
 
+```
 // Initialize utilities
 BookingUtils.initializeTooltips();
 
@@ -783,10 +842,12 @@ window.addEventListener('resize', () => {
 });
 
 console.log('Stay Dripped booking system initialized successfully');
+```
 
 } catch (error) {
-console.error('Error initializing booking system:', error);
+console.error(‘Error initializing booking system:’, error);
 
+```
 // Fallback for basic functionality
 const tabButtons = document.querySelectorAll('.tab-link');
 const tabContents = document.querySelectorAll('.tab-content');
@@ -804,12 +865,13 @@ tabButtons.forEach(button => {
     });
   });
 });
+```
 
 }
 });
 
 // Export for module systems
-if (typeof module !== 'undefined' && module.exports) {
+if (typeof module !== ‘undefined’ && module.exports) {
 module.exports = {
 BookingTabManager,
 SmartQuizManager,
