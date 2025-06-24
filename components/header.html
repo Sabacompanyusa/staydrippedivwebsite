@@ -96,7 +96,8 @@
 
 <!-- Enhanced JavaScript for Exam Modal -->
 <script>
-document.addEventListener('DOMContentLoaded', function() {
+(function() {
+  function initHeader() {
   // Enhanced exam modal functionality
   const examButton = document.getElementById('loadFormButton');
   const examModal = document.getElementById('examModal');
@@ -296,6 +297,27 @@ document.addEventListener('DOMContentLoaded', function() {
     // Create the function if it doesn't exist
     window.showDisclosureModal = openExamModal;
   }
+
+  // Header "Book Now" button scroll
+  const headerBookBtn = document.getElementById('headerBookBtn');
+  if (headerBookBtn) {
+    headerBookBtn.addEventListener('click', function() {
+      const bookingSection = document.getElementById('booking-section');
+      if (bookingSection) {
+        bookingSection.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.location.href = 'index.html#booking-section';
+      }
+
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'click', {
+          event_category: 'cta',
+          event_label: 'header_book_now',
+          value: 1
+        });
+      }
+    });
+  }
   
   // Mobile menu toggle (existing functionality)
   const mobileMenuToggle = document.getElementById('mobileMenuToggle');
@@ -328,7 +350,15 @@ document.addEventListener('DOMContentLoaded', function() {
     
     lastScrollTop = scrollTop;
   });
-});
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initHeader);
+  } else {
+    initHeader();
+  }
+
+})();
 
 // Polyfill for older browsers
 if (!Element.prototype.closest) {
