@@ -21,7 +21,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/caveat/v18/WnznHAc5bAfYB2QlBgwZOAqcjg.woff2)
+  src: url("https://fonts.gstatic.com/s/caveat/v18/WnznHAc5bAfYB2QlBgwZOAqcjg.woff2")
     format("woff2");
   unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
