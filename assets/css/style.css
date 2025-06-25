@@ -683,10 +683,13 @@ ul {
 .emergency-call-btn {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   background: var(--success);
   color: white;
-  padding: 0.75rem 1.5rem;
+  height: 40px;
+  min-width: 150px;
+  padding: 0 1rem;
   border-radius: var(--br);
   font-weight: 600;
   transition: var(--transition);
@@ -699,9 +702,14 @@ ul {
 }
 
 .header-book-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: var(--secondary);
   color: white;
-  padding: 0.75rem 1.5rem;
+  height: 40px;
+  min-width: 150px;
+  padding: 0 1rem;
   border-radius: var(--br);
   font-weight: 600;
   transition: var(--transition);
@@ -1974,11 +1982,6 @@ button:focus,
   outline: none;
   box-shadow: 0 0 0 3px rgba(0, 188, 212, 0.4);
 }
-=======
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
 
 .quiz-nav-btn.primary {
   background: var(--secondary);
@@ -2550,6 +2553,4 @@ button:focus,
   right: 0.75rem;
   font-size: 1.5rem;
   cursor: pointer;
-}
- });
 }
