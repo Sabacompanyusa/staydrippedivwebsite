@@ -51,13 +51,12 @@
 
 <script>
   // Initialize Qualiphy widget when component loads
-  document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", () => {
     // Ensure Qualiphy script is loaded and container exists
-    if (
-      typeof quidgetDisclosure !== "undefined" &&
-      document.getElementById("quidget-disclosure-container")
-    ) {
-      console.log("[DEBUG] Qualiphy widget container initialized");
+    const container = document.getElementById("quidget-disclosure-container");
+    if (typeof quidgetDisclosure !== "undefined" && container) {
+      // Qualiphy widget container is ready
+      container.setAttribute("aria-label", "Medical consultation widget");
     }
   });
 </script>

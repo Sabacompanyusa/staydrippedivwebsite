@@ -283,9 +283,8 @@
         if (typeof window.initializeApp === "function") {
           try {
             window.initializeApp();
-            console.log("[DEBUG] initializeApp() executed");
           } catch (err) {
-            console.error("[DEBUG] initializeApp() failed:", err);
+            console.error("App initialization failed:", err);
           }
         }
       });
