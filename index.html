@@ -229,6 +229,31 @@
       if (typeof window.Cookies === "undefined") {
         window.Cookies = Cookies;
       }
+
+      // Order attribution configuration
+      window.wc_order_attribution = {
+        params: {
+          allowTracking: true,
+          lifetime: 60,
+          session: 30,
+          base64: false,
+        },
+        fields: {
+          source_type: "current.typ",
+          referrer: "current.src",
+          utm_campaign: "current.cmp",
+          utm_source: "current.src",
+          utm_medium: "current.mdm",
+          utm_content: "current.cnt",
+          utm_id: "current.id",
+          utm_term: "current.trm",
+          session_entry: "current_add.ep",
+          session_start_time: "current_add.fd",
+          session_pages: "session.pgs",
+          session_count: "udata.vst",
+          user_agent: "udata.uag",
+        },
+      };
     </script>
 
     <script
