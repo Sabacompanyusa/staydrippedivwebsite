@@ -1,0 +1,62 @@
+<!-- Qualiphy Widget Container -->
+<div id="qualiphy-widget-container" class="qualiphy-container">
+  <!-- Qualiphy widget will be loaded here dynamically -->
+  <div id="quidget-disclosure-container"></div>
+</div>
+
+<style>
+  .qualiphy-container {
+    position: relative;
+    z-index: 1000;
+  }
+
+  #quidget-disclosure-container {
+    /* Container for Qualiphy widget */
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Qualiphy modal overlay styles */
+  .qualiphy-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0 0 0 / 50%);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .qualiphy-modal-content {
+    background: white;
+    border-radius: 12px;
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow: auto;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 10%);
+  }
+
+  /* Responsive adjustments */
+  @media (width <= 768px) {
+    .qualiphy-modal-content {
+      max-width: 95vw;
+      max-height: 95vh;
+      margin: 1rem;
+    }
+  }
+</style>
+
+<script>
+  // Initialize Qualiphy widget when component loads
+  document.addEventListener("DOMContentLoaded", () => {
+    // Ensure Qualiphy script is loaded and container exists
+    const container = document.getElementById("quidget-disclosure-container");
+    if (typeof quidgetDisclosure !== "undefined" && container) {
+      // Qualiphy widget container is ready
+      container.setAttribute("aria-label", "Medical consultation widget");
+    }
+  });
+</script>

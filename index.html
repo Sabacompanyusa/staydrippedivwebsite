@@ -281,26 +281,19 @@
 
         // Initialize components after loading
         if (typeof window.initializeApp === "function") {
-          window.initializeApp();
+          try {
+            window.initializeApp();
+          } catch (err) {
+            console.error("App initialization failed:", err);
+          }
         }
       });
-       for (const [id, path] of components) {
-        await loadComponent(id, path);
-      }
-
-      if (typeof window.initializeApp === 'function') {
-        try {
-          window.initializeApp();
-          console.log("[DEBUG] initializeApp() executed");
-        } catch (err) {
-          console.error("[DEBUG] initializeApp() failed:", err);
-        }
-      }
-    });
     </script>
-    
-   <script>
-     <script src="https://static.elfsight.com/platform/platform.js" async>
-  </script>
+
+    <!-- Elfsight Platform Script -->
+    <script
+      src="https://static.elfsight.com/platform/platform.js"
+      async
+    ></script>
   </body>
 </html>
