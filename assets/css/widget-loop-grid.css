@@ -9,10 +9,10 @@
 }
 
 .widget-loop-item {
-  background: #ffffff;
+  background: #fff;
   border-radius: 12px;
   padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -21,7 +21,7 @@
 
 .widget-loop-item:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 25px rgb(0 0 0 / 15%);
 }
 
 .widget-loop-item h3 {
@@ -38,7 +38,7 @@
 }
 
 /* Responsive Grid */
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .widget-loop-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -50,7 +50,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (width <= 480px) {
   .widget-loop-grid {
     padding: 0.5rem;
   }
