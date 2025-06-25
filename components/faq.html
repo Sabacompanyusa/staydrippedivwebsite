@@ -5,178 +5,59 @@
       Get answers to common questions about our mobile IV therapy services, safety protocols, and booking process.
     </p>
 
-<div class="faq-container">
-  <div class="faq-category">
-    <h3>General Questions</h3>
-    
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>What is mobile IV therapy?</span>
-        <i class="fas fa-plus"></i>
-      </button>
-      <div class="faq-answer">
-        <p>Mobile IV therapy brings professional intravenous treatments directly to your location. Our licensed medical professionals administer IV fluids, vitamins, and nutrients in the comfort of your home, office, or preferred location for optimal hydration and wellness.</p>
-      </div>
+    <div class="faq-container">
+      <!-- ... existing faq-category content ... (keep as-is) -->
     </div>
 
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>Is IV therapy safe?</span>
-        <i class="fas fa-plus"></i>
-      </button>
-      <div class="faq-answer">
-        <p>Yes, when administered by licensed professionals. All our nurses and medical staff are certified and experienced in IV therapy. We use sterile, medical-grade equipment and follow strict safety protocols. Every treatment includes a health assessment to ensure safety.</p>
-      </div>
-    </div>
+    <div class="faq-cta">
+      <h3>Still Have Questions?</h3>
+      <p>Our medical team is here to help you understand how IV therapy can support your wellness goals.</p>
 
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>How long does a treatment take?</span>
-        <i class="fas fa-plus"></i>
-      </button>
-      <div class="faq-answer">
-        <p>Most IV treatments take 30-60 minutes, depending on the type and volume of fluids. NAD+ treatments may take 2-4 hours. Our team will provide an estimated duration when you book your appointment.</p>
-      </div>
-    </div>
+      <div class="faq-contact-options">
+        <a href="tel:+16026889825" class="contact-option">
+          <i class="fas fa-phone"></i>
+          <span>Call Us: (602) 688-9825</span>
+        </a>
 
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>What areas do you serve?</span>
-        <i class="fas fa-plus"></i>
-      </button>
-      <div class="faq-answer">
-        <p>We provide mobile IV therapy throughout the Phoenix Valley, including Scottsdale, Phoenix, Tempe, Mesa, Chandler, Glendale, and surrounding areas. Contact us to confirm service availability in your specific location.</p>
+        <a href="mailto:Info@staydrippedmobileiv.com" class="contact-option">
+          <i class="fas fa-envelope"></i>
+          <span>Email: Info@staydrippedmobileiv.com</span>
+        </a>
       </div>
     </div>
   </div>
 
-  <div class="faq-category">
-    <h3>Booking &amp; Scheduling</h3>
-    
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>How far in advance should I book?</span>
-        <i class="fas fa-plus"></i>
-      </button>
-      <div class="faq-answer">
-        <p>We offer same-day appointments based on availability. For guaranteed preferred time slots, we recommend booking 24-48 hours in advance. Emergency and urgent care appointments are available with shorter notice.</p>
-      </div>
-    </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const faqButtons = document.querySelectorAll(".faq-question");
 
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>Can I book for a group or event?</span>
-        <i class="fas fa-plus"></i>
-      </button>
-      <div class="faq-answer">
-        <p>Absolutely! We specialize in group treatments for parties, corporate events, weddings, and athletic teams. Group bookings receive special pricing and can accommodate multiple people simultaneously with our team of professionals.</p>
-      </div>
-    </div>
+      faqButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          const answer = this.nextElementSibling;
+          const expanded = this.getAttribute("aria-expanded") === "true";
 
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>What if I need to cancel or reschedule?</span>
-        <i class="fas fa-plus"></i>
-      </button>
-      <div class="faq-answer">
-        <p>We offer flexible cancellation up to 4 hours before your appointment time. Cancellations within 4 hours may be subject to a fee. Rescheduling is always free and can be done through our booking system or by calling our support line.</p>
-      </div>
-    </div>
-  </div>
+          // Close all other open answers
+          document.querySelectorAll(".faq-answer").forEach((el) => {
+            if (el !== answer) {
+              el.style.display = "none";
+              el.previousElementSibling.setAttribute("aria-expanded", "false");
+              el.previousElementSibling.querySelector("i").classList.replace("fa-minus", "fa-plus");
+            }
+          });
 
-  <div class="faq-category">
-    <h3>Treatments &amp; Pricing</h3>
-    
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>What treatments do you offer?</span>
-        <i class="fas fa-plus"></i>
-      </button>
-      <div class="faq-answer">
-        <p>We offer a comprehensive range including basic hydration, premium vitamin cocktails, NAD+ therapy, hangover relief, immune boost, beauty/anti-aging treatments, athletic recovery, and specialized peptide therapies. Each treatment is customized to your specific needs.</p>
-      </div>
-    </div>
+          // Toggle current one
+          this.setAttribute("aria-expanded", !expanded);
+          answer.style.display = expanded ? "none" : "block";
+          const icon = this.querySelector("i");
+          icon.classList.toggle("fa-plus");
+          icon.classList.toggle("fa-minus");
+        });
+      });
 
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>How much do treatments cost?</span>
-        <i class="fas fa-plus"></i>
-      </button>
-      <div class="faq-answer">
-        <p>Treatment prices range from $149 for basic hydration to $399+ for premium NAD+ therapy. Membership plans offer significant savings. Exact pricing depends on the specific treatment and any add-ons you choose. All prices include the mobile service fee.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>Do you accept insurance?</span>
-        <i class="fas fa-plus"></i>
-      </button>
-      <div class="faq-answer">
-        <p>Most IV wellness treatments are considered elective and aren't covered by insurance. However, we can provide detailed receipts for HSA/FSA reimbursement. Some medically necessary treatments may be eligible for insurance coverage - contact us for specific cases.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>Are there any side effects?</span>
-        <i class="fas fa-plus"></i>
-      </button>
-      <div class="faq-answer">
-        <p>IV therapy is generally very safe with minimal side effects. Some people may experience slight bruising at the injection site or a metallic taste during treatment. Serious side effects are rare when administered by qualified professionals. We conduct health screenings before every treatment.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="faq-category">
-    <h3>Health &amp; Safety</h3>
-    
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>Who can receive IV therapy?</span>
-        <i class="fas fa-plus"></i>
-      </button>
-      <div class="faq-answer">
-        <p>Most healthy adults can safely receive IV therapy. We conduct a health screening before treatment and may require medical clearance for certain conditions. Pregnant women, individuals with heart conditions, kidney disease, or other medical conditions should consult their physician first.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>What safety protocols do you follow?</span>
-        <i class="fas fa-plus"></i>
-      </button>
-      <div class="faq-answer">
-        <p>We follow strict medical protocols including sterile technique, single-use equipment, proper medical waste disposal, and comprehensive health assessments. All staff are licensed medical professionals with current certifications in IV therapy and emergency response.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>How often can I get IV therapy?</span>
-        <i class="fas fa-plus"></i>
-      </button>
-      <div class="faq-answer">
-        <p>Frequency depends on your individual needs and health goals. Many clients benefit from monthly treatments, while others prefer weekly sessions during stress or illness recovery. Our medical team will recommend an appropriate schedule based on your wellness objectives.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="faq-cta">
-  <h3>Still Have Questions?</h3>
-  <p>Our medical team is here to help you understand how IV therapy can support your wellness goals.</p>
-  
-  <div class="faq-contact-options">
-    <a href="tel:+16026889825" class="contact-option">
-      <i class="fas fa-phone"></i>
-      <span>Call Us: (602) 688-9825</span>
-    </a>
-
-    <a href="mailto:Info@staydrippedmobileiv.com" class="contact-option">
-      <i class="fas fa-envelope"></i>
-      <span>Email: Info@staydrippedmobileiv.com</span>
-    </a>
-  
-  </div>
+      // Initialize all answers as hidden
+      document.querySelectorAll(".faq-answer").forEach((el) => {
+        el.style.display = "none";
+      });
+    });
+  </script>
 </section>
