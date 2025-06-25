@@ -1,134 +1,4 @@
-</footer>
-
-  <!-- JavaScript -->
-  <script>
-    const cart = [];
-
-    function addToCart(item, price) {
-      try {
-        const existingItem = cart.find(cartItem => cartItem.item === item);
-        if (existingItem) {
-          existingItem.quantity += 1;
-        } else {
-          cart.push({ item, price, quantity: 1 });
-        }
-        renderCart();
-        showAddedNotification(item);
-      } catch (error) {
-        console.log('Cart error handled');
-      }
-    }
-
-    function removeFromCart(index) {
-      try {
-        if (index >= 0 && index < cart.length) {
-          cart.splice(index, 1);
-          renderCart();
-        }
-      } catch (error) {
-        console.log('Remove cart error handled');
-      }
-    }
-
-    function renderCart() {
-      try {
-        const cartSummary = document.getElementById('cartSummary');
-        const cartTotal = document.getElementById('cartTotal');
-        
-        if (!cartSummary || !cartTotal) return;
-        
-        if (cart.length === 0) {
-          cartSummary.innerHTML = `
-            <div class="empty-cart">
-              <div class="empty-cart-icon">🛒</div>
-              <h3>Your cart is empty</h3>
-              <p>Add some treatments from the menu above to get started!</p>
-            </div>
-          `;
-          cartTotal.textContent = '';
-          return;
-        }
-
-        let html = '';
-        let sum = 0;
-        
-        cart.forEach(({ item, price, quantity }, index) => {
-          const itemTotal = price * quantity;
-          sum += itemTotal;
-          html += `
-            <div class="cart-item">
-              <div>
-                <strong>${item}</strong> ${quantity > 1 ? `(×${quantity})` : ''}
-                <div style="color: #718096; font-size: 0.9em;">${price} each</div>
-              </div>
-              <div style="display: flex; align-items: center; gap: 10px;">
-                <span style="font-weight: 700; color: #00c6ff;">${itemTotal.toFixed(2)}</span>
-                <button onclick="removeFromCart(${index})" style="background: #fed7d7; color: #c53030; border: none; border-radius: 50%; width: 25px; height: 25px; cursor: pointer; font-weight: bold;">×</button>
-              </div>
-            </div>
-          `;
-        });
-        
-        cartSummary.innerHTML = html;
-        cartTotal.innerHTML = `<strong>Total: ${sum.toFixed(2)}</strong>`;
-      } catch (error) {
-        console.log('Render cart error handled');
-      }
-    }
-
-    function showInfo(title, description) {
-      try {
-        alert(`${title}\n\n${description}\n\nFor detailed ingredients, contraindications, and medical information, please consult with our licensed medical team during your consultation.`);
-      } catch (error) {
-        console.log('Show info error handled');
-      }
-    }
-
-    function showAddedNotification(item) {
-      try {
-        const notification = document.createElement('div');
-        notification.style.cssText = `
-          position: fixed;
-          top: 20px;
-          right: 20px;
-          background: #48bb78;
-          color: white;
-          padding: 15px 20px;
-          border-radius: 10px;
-          z-index: 10000;
-          font-weight: 600;
-          box-shadow: 0 4px 15px rgba(72, 187, 120, 0.3);
-          transform: translateX(100%);
-          transition: transform 0.3s ease;
-        `;
-        notification.textContent = `✅ ${item} added to cart!`;
-        
-        document.body.appendChild(notification);
-        
-        setTimeout(() => {
-          notification.style.transform = 'translateX(0)';
-        }, 100);
-        
-        setTimeout(() => {
-          notification.style.transform = 'translateX(100%)';
-          setTimeout(() => {
-            if (notification.parentNode) {
-              document.body.removeChild(notification);
-            }
-          }, 300);
-        }, 3000);
-      } catch (error) {
-        console.log('Notification error handled');
-      }
-    }
-
-    // Navigation handling
-    document.addEventListener('DOMContentLoaded', function() {
-      try {
-        renderCart();
-        
-        // Smooth scrolling for navigation
-        document.querySelectorAll('nav a').forEach(link => {<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -136,14 +6,8 @@
   <title>Stay Dripped® Mobile IV - Mobile IV Therapy</title>
   <meta name="description" content="Premium mobile IV therapy services including hydration, recovery, immunity, anti-aging treatments delivered to you. Book now!">
   
-  <link rel="icon" href=".../assets/images/logo.png" type=".../assets/images/logo.png">
+  <link rel="icon" href="assets/images/logo.png" type="image/png">
   
-  <!-- Qualiphy Widget Stylesheet -->
-  <link rel="stylesheet" href="https://firebasestorage.googleapis.com/v0/b/qualiphy-web-d918b.appspot.com/o/style-v4.css?alt=media&token=34735782-16e8-4a2f-9eaa-426d65af48b2" />
-
-  <!-- Main Website Styles -->
-  <link rel="stylesheet" href="https://staydrippediv.com/wp-content/themes/salient/style.css">
-
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9V90Q7G0M"></script>
   <script>
@@ -246,43 +110,6 @@
       background: rgba(255, 255, 255, 0.3);
       transform: translateY(-3px);
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Navigation */
-    nav {
-      background: rgba(255, 255, 255, 0.95);
-      padding: 20px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(20px);
-    }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 30px;
-    }
-
-    nav a {
-      color: #2d3748;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1em;
-      padding: 10px 20px;
-      border-radius: 25px;
-      transition: all 0.3s ease;
-      position: relative;
-    }
-
-    nav a:hover, nav a.active {
-      color: #00c6ff;
-      background: rgba(0, 198, 255, 0.1);
-      transform: translateY(-2px);
     }
 
     /* Main Content */
@@ -455,6 +282,7 @@
       gap: 10px;
       justify-content: center;
       margin-top: 15px;
+      flex-wrap: wrap;
     }
 
     .injection-btn {
@@ -488,7 +316,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 0;
+      padding: 15px 0;
       border-bottom: 1px solid #b2f5ea;
     }
 
@@ -514,6 +342,24 @@
       font-size: 3em;
       margin-bottom: 15px;
       opacity: 0.5;
+    }
+
+    .remove-btn {
+      background: #fed7d7;
+      color: #c53030;
+      border: none;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+
+    .remove-btn:hover {
+      background: #fc8181;
+      color: white;
     }
 
     /* Service Cards */
@@ -637,6 +483,22 @@
       margin-top: 60px;
     }
 
+    /* Notification */
+    .notification {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #48bb78;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 10px;
+      z-index: 10000;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(72, 187, 120, 0.3);
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+    }
+
     /* Mobile Responsiveness */
     @media (max-width: 768px) {
       .brand-title {
@@ -651,16 +513,6 @@
       .quick-action-btn {
         width: 250px;
         justify-content: center;
-      }
-
-      .nav-container {
-        flex-direction: column;
-        gap: 15px;
-      }
-
-      nav a {
-        text-align: center;
-        display: block;
       }
 
       .menu-grid,
@@ -690,6 +542,12 @@
       .injection-options {
         flex-direction: column;
       }
+
+      .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
     }
   </style>
 </head>
@@ -697,7 +555,7 @@
   <header>
     <div class="header-content">
       <div class="logo-section">
-        <img src="...assets/images/logo.png" alt="Stay Dripped Logo">
+        <img src="assets/images/logo.png" alt="Stay Dripped Logo">
         <div class="brand-title">Stay Dripped® Mobile IV</div>
         <div class="brand-subtitle">Mobile IV Hydration & Wellness in Scottsdale, AZ</div>
       </div>
@@ -714,16 +572,6 @@
       </div>
     </div>
   </header>
-
-  <nav>
-    <div class="nav-container">
-      <a href="#menu" class="active">Menu</a>
-      <a href="#cart">Cart</a>
-      <a href="#gfe">GFE</a>
-      <a href="#book">Book</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
 
   <main>
     <section id="menu">
@@ -954,8 +802,8 @@
           </h3>
           <p>Enhanced hydration with 1000mL Sodium Chloride (Saline) and Vitamin B-Complex for deeper rehydration.</p>
           <div class="menu-actions">
-            <button class="add-btn" onclick="addToCart('Basic Rehydrate IV Drip', 155)">Add to Cart🛒</button>
-            <button class="info-btn" onclick="showInfo('Basic Rehydrate ', 'Double the fluid volume for enhanced hydration.')">More  Infoℹ️</button>
+            <button class="add-btn" onclick="addToCart('Basic Rehydrate IV Drip', 155)">Add to Cart</button>
+            <button class="info-btn" onclick="showInfo('Basic Rehydrate Drip', 'Double the fluid volume for enhanced hydration.')">ℹ️</button>
           </div>
         </div>
 
@@ -966,8 +814,8 @@
           </h3>
           <p>Advanced hydration with 1000mL Lactated Ringer solution and Vitamin B-Complex for optimal electrolyte balance.</p>
           <div class="menu-actions">
-            <button class="add-btn" onclick="addToCart('Rehydrate Plus IV Drip', 165)">Add to Cart🛒</button>
-            <button class="info-btn" onclick="showInfo('Rehydrate Plus', 'Advanced formula with Lactated Ringer for optimal hydration.')">More  Infoℹ️</button>
+            <button class="add-btn" onclick="addToCart('Rehydrate Plus IV Drip', 165)">Add to Cart</button>
+            <button class="info-btn" onclick="showInfo('Rehydrate Plus', 'Advanced formula with Lactated Ringer for optimal hydration.')">ℹ️</button>
           </div>
         </div>
 
@@ -978,8 +826,8 @@
           </h3>
           <p>Simple, effective hydration with 500mL Sodium Chloride 0.9% IV Solution for basic fluid replenishment.</p>
           <div class="menu-actions">
-            <button class="add-btn" onclick="addToCart('Plain Saline 500mL', 99)">Add to Cart🛒</button>
-            <button class="info-btn" onclick="showInfo('Plain Saline 500mL', 'Basic saline hydration for simple fluid replenishment.')">More  Infoℹ️</button>
+            <button class="add-btn" onclick="addToCart('Plain Saline 500mL', 99)">Add to Cart</button>
+            <button class="info-btn" onclick="showInfo('Plain Saline 500mL', 'Basic saline hydration for simple fluid replenishment.')">ℹ️</button>
           </div>
         </div>
 
@@ -990,8 +838,8 @@
           </h3>
           <p>Extended hydration with 1000mL Sodium Chloride 0.9% IV Solution for comprehensive fluid replenishment.</p>
           <div class="menu-actions">
-            <button class="add-btn" onclick="addToCart('Rehydrate - Saline 1000mL', 125)">Add to Cart🛒</button>
-            <button class="info-btn" onclick="showInfo('Rehydrate - Saline 1000mL', 'Double volume saline for extended hydration needs.')">More  Infoℹ️</button>
+            <button class="add-btn" onclick="addToCart('Plain Saline 1000mL', 125)">Add to Cart</button>
+            <button class="info-btn" onclick="showInfo('Plain Saline 1000mL', 'Double volume saline for extended hydration needs.')">ℹ️</button>
           </div>
         </div>
 
@@ -1002,8 +850,8 @@
           </h3>
           <p>Premium hydration with 1000mL Lactated Ringers IV Solution for superior electrolyte balance and hydration.</p>
           <div class="menu-actions">
-            <button class="add-btn" onclick="addToCart('Lactated Ringers 1000mL', 135)">Add to Cart🛒</button>
-            <button class="info-btn" onclick="showInfo('Lactated Ringers', 'Premium IV fluid with optimal electrolyte composition.')">More  Infoℹ️</button>
+            <button class="add-btn" onclick="addToCart('Lactated Ringers 1000mL', 135)">Add to Cart</button>
+            <button class="info-btn" onclick="showInfo('Lactated Ringers', 'Premium IV fluid with optimal electrolyte composition.')">ℹ️</button>
           </div>
         </div>
       </div>
@@ -1018,8 +866,8 @@
           </h3>
           <p>Custom IV with your choice of Saline or Lactated Ringer base ($125) plus 3 add-ins of your choice ($35 each).</p>
           <div class="menu-actions">
-            <button class="add-btn" onclick="addToCart('Build Your Own IV', 230)">Add to Cart🛒</button>
-            <button class="info-btn" onclick="showInfo('Build Your Own', 'Customize your IV with base fluid and 3 add-ins of your choice.')">More  Infoℹ️</button>
+            <button class="add-btn" onclick="addToCart('Build Your Own IV', 230)">Add to Cart</button>
+            <button class="info-btn" onclick="showInfo('Build Your Own', 'Customize your IV with base fluid and 3 add-ins of your choice.')">ℹ️</button>
           </div>
         </div>
       </div>
@@ -1081,18 +929,9 @@
             Complete a quick 3-5 minute video consultation with our licensed medical provider. Valid for 12 months for all future treatments.
           </div>
           <div style="margin-top: 20px;">
-            <div id="main-qualiphy-widget">
-              <div
-                id="loadFormButton"
-                style="width: 200px;height: 50px;cursor: pointer;background-color: #cfc9ff;color: #0a005b;border: none;border-radius: 25px;font-weight: 600;display: flex;justify-content: center;align-items: center;margin: 0 auto;font-size: 1.1em;"
-                onmouseover="this.style.backgroundColor='#8058fa'; this.style.color='white'"
-                onmouseout="this.style.backgroundColor='#CFC9FF'; this.style.color='#0A005B'"
-                onclick="showDisclosureModal()"
-              >
-                Start GFE Exam
-              </div>
-            </div>
-            <p style="display: none" id="not-available">Not available!</p>
+            <button class="service-link" onclick="alert('GFE widget would load here - this is a demo version')">
+              Start GFE Exam
+            </button>
           </div>
         </div>
         <div class="service-card">
@@ -1117,10 +956,13 @@
       <div class="service-grid">
         <div class="service-card">
           <div class="service-icon">📅</div>
-          <div class="service-title">Online Booking Widget</div>
+          <div class="service-title">Online Booking</div>
           <div class="service-description">
-            Use our embedded booking system below to schedule your IV therapy session directly on this page.
+            Click the button below to access our online booking system and schedule your IV therapy session.
           </div>
+          <a href="https://Staydripped.intakeq.com/booking" class="service-link" target="_blank">
+            Book Online Now
+          </a>
         </div>
         <div class="service-card">
           <div class="service-icon">📞</div>
@@ -1142,12 +984,6 @@
             Check Availability
           </a>
         </div>
-      </div>
-      
-      <!-- IntakeQ Booking Widget -->
-      <div class="widget-container">
-        <h3 style="margin-bottom: 20px; color: #2d3748;">Book Your Appointment</h3>
-        <div id="intakeq" style="max-width:720px; width: 100%; margin: 0 auto;"></div>
       </div>
     </section>
 
@@ -1180,3 +1016,135 @@
 
   <footer>
     &copy; 2025 Stay Dripped IV – Scottsdale, AZ | Licensed Medical Professionals | Premium Mobile IV Therapy
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const cart = [];
+
+    function addToCart(item, price) {
+      try {
+        const existingItem = cart.find(cartItem => cartItem.item === item);
+        if (existingItem) {
+          existingItem.quantity += 1;
+        } else {
+          cart.push({ item, price, quantity: 1 });
+        }
+        renderCart();
+        showAddedNotification(item);
+      } catch (error) {
+        console.log('Cart error handled:', error);
+      }
+    }
+
+    function removeFromCart(index) {
+      try {
+        if (index >= 0 && index < cart.length) {
+          cart.splice(index, 1);
+          renderCart();
+        }
+      } catch (error) {
+        console.log('Remove cart error handled:', error);
+      }
+    }
+
+    function renderCart() {
+      try {
+        const cartSummary = document.getElementById('cartSummary');
+        const cartTotal = document.getElementById('cartTotal');
+        
+        if (!cartSummary || !cartTotal) return;
+        
+        if (cart.length === 0) {
+          cartSummary.innerHTML = `
+            <div class="empty-cart">
+              <div class="empty-cart-icon">🛒</div>
+              <h3>Your cart is empty</h3>
+              <p>Add some treatments from the menu above to get started!</p>
+            </div>
+          `;
+          cartTotal.textContent = '';
+          return;
+        }
+
+        let html = '';
+        let sum = 0;
+        
+        cart.forEach(({ item, price, quantity }, index) => {
+          const itemTotal = price * quantity;
+          sum += itemTotal;
+          html += `
+            <div class="cart-item">
+              <div>
+                <strong>${item}</strong> ${quantity > 1 ? `(×${quantity})` : ''}
+                <div style="color: #718096; font-size: 0.9em;">$${price} each</div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <span style="font-weight: 700; color: #00c6ff;">$${itemTotal.toFixed(2)}</span>
+                <button class="remove-btn" onclick="removeFromCart(${index})" title="Remove item">×</button>
+              </div>
+            </div>
+          `;
+        });
+        
+        cartSummary.innerHTML = html;
+        cartTotal.innerHTML = `<strong>Total: $${sum.toFixed(2)}</strong>`;
+      } catch (error) {
+        console.log('Render cart error handled:', error);
+      }
+    }
+
+    function showInfo(title, description) {
+      try {
+        alert(`${title}\n\n${description}\n\nFor detailed ingredients, contraindications, and medical information, please consult with our licensed medical team during your consultation.`);
+      } catch (error) {
+        console.log('Show info error handled:', error);
+      }
+    }
+
+    function showAddedNotification(item) {
+      try {
+        // Remove any existing notifications
+        const existingNotifications = document.querySelectorAll('.notification');
+        existingNotifications.forEach(notification => {
+          if (notification.parentNode) {
+            notification.parentNode.removeChild(notification);
+          }
+        });
+
+        const notification = document.createElement('div');
+        notification.className = 'notification';
+        notification.textContent = `✅ ${item} added to cart!`;
+        
+        document.body.appendChild(notification);
+        
+        // Animate in
+        setTimeout(() => {
+          notification.style.transform = 'translateX(0)';
+        }, 100);
+        
+        // Animate out and remove
+        setTimeout(() => {
+          notification.style.transform = 'translateX(100%)';
+          setTimeout(() => {
+            if (notification.parentNode) {
+              document.body.removeChild(notification);
+            }
+          }, 300);
+        }, 3000);
+      } catch (error) {
+        console.log('Notification error handled:', error);
+      }
+    }
+
+    // Navigation handling
+    document.addEventListener('DOMContentLoaded', function() {
+      try {
+        renderCart();
+      } catch (error) {
+        console.log('Navigation error handled:', error);
+      }
+    });
+  </script>
+</body>
+</html>
