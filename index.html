@@ -9,106 +9,126 @@
   <meta name="author" content="Stay Dripped Mobile IV">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://staydripped.com">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://staydripped.com">
+  <meta property="og:title" content="Stay Dripped Mobile IV - Premium Mobile IV Therapy">
+  <meta property="og:description" content="Professional mobile IV therapy and wellness services delivered to your location in Scottsdale and Phoenix.">
+  <meta property="og:image" content="https://staydripped.com/assets/images/facebook-image.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://staydripped.com">
+  <meta property="twitter:title" content="Stay Dripped Mobile IV - Premium Mobile IV Therapy">
+  <meta property="twitter:description" content="Professional mobile IV therapy and wellness services delivered to your location.">
+  <meta property="twitter:image" content="https://staydripped.com/assets/images/instagram-image.png">
+
+  <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+  <!-- CSS Files -->
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
   <link rel="stylesheet" href="assets/css/animations.css">
-  <link rel="stylesheet" href="assets/css/fonts/rubik.css">
+  <link rel="stylesheet" href="assets/css/widget-loop-common-min.css">
+  <link rel="stylesheet" href="assets/css/widget-loop-grid.css">
+  <link rel="stylesheet" href="assets/css/fonts/style.css">
+  <link rel="stylesheet" href="assets/css/fonts/animations.css">
+  <link rel="stylesheet" href="assets/css/fonts/qualiphy-style.css">
+  <link rel="stylesheet" href="assets/css/fonts/rubiks.css">
   <link rel="stylesheet" href="assets/css/elements/base/typography.css">
-  <link rel="stylesheet" href="assets/css/elements/theme/shop.min.css">
-
+  <link rel="stylesheet" href="assets/css/base/theme/them.min.css">
+  <link rel="stylesheet" href="assets/css/base/theme/shop.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
   <link rel="preload" href="assets/images/hero-bdg.png" as="image">
-
-  <script>
-    (function(c){
-      window.intakeq='68460f36bc104b6aa9da43e0';
-      var i=c.createElement('script');
-      i.type='text/javascript';
-      i.async=true;
-      i.src='https://intakeq.com/js/widget.min.js?1';
-      c.head.appendChild(i);
-    })(document);
-  </script>
-
-  <script>
-  <script type="application/ld+json";{"@context": "https://schema.org","@type": "MedicalBusiness","name": "Stay Dripped Mobile IV","description": "Premium mobile IV therapy and wellness services",
-    "url": "https://staydripped.com";
-    "telephone": "+1-602-688-9825";
-    "address": "@type": "PostalAddress","addressLocality": "Scottsdale","addressRegion": "AZ","addressCountry": "US";
-     "openingHours": "Mo-Su 00:00-23:59";
-     "priceRange": "$$$"
-    };
-  </script>
-  
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
   <div class="scroll-indicator" id="scrollIndicator"></div>
   <div id="header-container"></div>
   <div id="qualiphy-container"></div>
-
   <main id="main-content">
     <div id="hero-container"></div>
+    <div id="services-container"></div>
+    <div id="booking-container"></div>
+    <div id="booking-modal-container"></div>
     <div id="how-it-works-container"></div>
     <div id="testimonials-container"></div>
     <div id="memberships-container"></div>
     <div id="faq-container"></div>
   </main>
-
   <div id="footer-container"></div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-  <script src="assets/js/main.js" defer></script>
-  <script src="assets/js/booking.js" defer></script>
-  <script src="assets/js/analytics.js" defer></script>
-  <script src="assets/js/cookie/cookie.min.js" defer></script>
-  <script src="assets/js/frontend/add-to-cart.min.js" defer></script>
-  <script src="assets/js/frontend/font.js" defer></script>
-  <script src="assets/js/frontend/order-attribution.js" defer></script>
-  <script src="assets/js/frontend/woocommerce.min.js" defer></script>
-  <script src="assets/js/widgets/header-whoo-search.js" defer></script>
-
   <script>
-    async function loadComponent(id, path) {
+    async function loadComponent(containerId, componentPath) {
       try {
-        const resp = await fetch(path);
-        if (resp.ok) {
-          const html = await resp.text();
-          const container = document.getElementById(id);
-          container.innerHTML = html;
-          container.querySelectorAll('script').forEach(old => {
-            const s = document.createElement('script');
-            if (old.src) s.src = old.src; else s.textContent = old.textContent;
-            document.body.appendChild(s);
-            old.remove();
-          });
+        const container = document.getElementById(containerId);
+        if (!container) {
+          console.warn(`[DEBUG] Container "${containerId}" not found.`);
+          return;
         }
-      } catch (err) {
-        console.error('Error loading component', path, err);
+        const response = await fetch(componentPath, { mode: 'cors' });
+        if (!response.ok) {
+          throw new Error(`[DEBUG] Failed to load ${componentPath}: ${response.status}`);
+        }
+        const html = await response.text();
+        container.innerHTML = html;
+        container.querySelectorAll('script').forEach(oldScript => {
+          const newScript = document.createElement('script');
+          if (oldScript.src) {
+            newScript.src = oldScript.src;
+            newScript.crossOrigin = "anonymous";
+          } else {
+            newScript.textContent = oldScript.textContent;
+          }
+          newScript.onerror = () => console.error(`[DEBUG] Script failed: ${newScript.src}`);
+          newScript.onload = () => console.log(`[DEBUG] Script loaded: ${newScript.src || '[inline script]'}`);
+          document.body.appendChild(newScript);
+        });
+        console.log(`[DEBUG] Loaded component: ${componentPath}`);
+      } catch (error) {
+        console.error(`[DEBUG] Error loading ${componentPath}:`, error);
+        const container = document.getElementById(containerId);
+        if (container) container.innerHTML = `<div style="color:red;">⚠️ Could not load: ${componentPath}</div>`;
       }
     }
 
-    document.addEventListener('DOMContentLoaded', async () => {
-      await Promise.all([
-        loadComponent('header-container', 'components/header.html'),
-        loadComponent('hero-container', 'components/hero.html'),
-        loadComponent('services-container', 'components/services.html'),
-        loadComponent('how-it-works-container', 'components/how-it-works.html'),
-        loadComponent('testimonials-container', 'components/testimonials.html'),
-        loadComponent('memberships-container', 'components/memberships.html'),
-        loadComponent('faq-container', 'components/faq.html'),
-        loadComponent('qualiphy-container', 'components/qualiphy.html'),
-        loadComponent('footer-container', 'components/footer.html'),
-      ]);
+    window.addEventListener('load', async () => {
+      const components = [
+        ['header-container', 'components/header.html'],
+        ['hero-container', 'components/hero.html'],
+        ['services-container', 'components/services.html'],
+        ['booking-container', 'components/booking.html'],
+        ['booking-modal-container', 'components/booking-modal.html'],
+        ['how-it-works-container', 'components/how-it-works.html'],
+        ['testimonials-container', 'components/testimonials.html'],
+        ['memberships-container', 'components/memberships.html'],
+        ['faq-container', 'components/faq.html'],
+        ['qualiphy-container', 'components/qualiphy.html'],
+        ['footer-container', 'components/footer.html']
+      ];
+
+      for (const [id, path] of components) {
+        await loadComponent(id, path);
+      }
+
       if (typeof window.initializeApp === 'function') {
-        window.initializeApp();
+        try {
+          window.initializeApp();
+          console.log("[DEBUG] initializeApp() executed");
+        } catch (err) {
+          console.error("[DEBUG] initializeApp() failed:", err);
+        }
       }
     });
   </script>
