@@ -1,74 +1,1298 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Private Group {{TITLE}} Corporate Events - Stay Dripped Mobile IV</title>
-  <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="../assets/css/responsive.css">
-</head>
-<body>
-  <div class="scroll-indicator" id="scrollIndicator"></div>
-  <div id="header-container"></div>
-  <main class="static-page">
-    <div class="container">
-      <h1>Private Group {{TITLE}} Corporate Events</h1>
-      <p>On-site wellness experiences for your team or gathering.</p>
-    </div>
-  </main>
-  <div id="footer-container"></div>
-  <script src="../assets/js/main.js"></script>
-  <script>
-    async function loadComponent(id, path) {
-      const resp = await fetch(path);
-      document.getElementById(id).innerHTML = await resp.text();
-    }
-    document.addEventListener('DOMContentLoaded', () => {
-      loadComponent('header-container', '../components/header.html');
-      loadComponent('footer-container', '../components/footer.html');
-    });
-  </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corporate Wellness Events - Executive Health Programs | Qualiphy</title>
-    <meta name="description" content="Boost employee wellness and productivity with Qualiphy's corporate wellness events. IV therapy, health screenings, and executive programs for your team.">
+    <title>Corporate Wellness Events - Executive Health Programs | Stay Dripped Mobile IV</title>
+    <meta name="description" content="Boost employee wellness and productivity with Stay Dripped's corporate wellness events. IV therapy, health screenings, and executive programs for your team.">
     
     <!-- Favicons -->
     <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-16x16.png">
     
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
     <!-- CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/qualiphy-style.css">
     <link rel="stylesheet" href="../assets/css/responsive.css">
+    
+    <style>
+        /* CSS Variables */
+        :root {
+            /* Brand Colors */
+            --primary: #0a2a43;
+            --secondary: #00bcd4;
+            --accent: #4fc3f7;
+            --gold: #ffd700;
+            --platinum: #e5e5e5;
+            --success: #4caf50;
+            --warning: #ff9800;
+            --error: #f44336;
+            
+            /* Text Colors */
+            --text-dark: #1a1a1a;
+            --text-light: #666;
+            --text-muted: #999;
+            --text-white: #ffffff;
+            
+            /* Background Colors */
+            --bg-light: #f1fbff;
+            --bg-dark: #1a1a1a;
+            --white: #ffffff;
+            
+            /* Shadows */
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.1);
+            
+            /* Border Radius */
+            --br: 12px;
+            --br-lg: 16px;
+            --br-xl: 24px;
+            
+            /* Transitions */
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-fast: all 0.15s ease;
+            
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, var(--secondary), var(--accent));
+            --gradient-gold: linear-gradient(135deg, #ffd700, #ffed4e);
+            --gradient-hero: linear-gradient(135deg, rgba(10, 42, 67, 0.9), rgba(0, 188, 212, 0.7));
+        }
+
+        /* CSS Reset */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: #fafafa;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        img, iframe, svg {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--primary);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .logo-section:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-image {
+            height: 40px;
+            width: auto;
+        }
+
+        .brand-name {
+            font-size: 1.4rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-buttons {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .emergency-call-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: var(--success);
+            color: white;
+            height: 40px;
+            min-width: 150px;
+            padding: 0 1rem;
+            border-radius: var(--br);
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .emergency-call-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .header-book-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--secondary);
+            color: white;
+            height: 40px;
+            min-width: 150px;
+            padding: 0 1rem;
+            border-radius: var(--br);
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .header-book-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .exam-btn {
+            min-width: 180px;
+            height: 48px;
+            padding: 0.75rem 1.5rem;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            line-height: 1;
+            text-align: center;
+            white-space: nowrap;
+            background-color: #cfc9ff;
+            color: #0a005b;
+            border: 2px solid transparent;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(207, 201, 255, 0.3);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            outline: none;
+        }
+
+        .exam-btn:hover {
+            background-color: #8058fa;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(128, 88, 250, 0.4);
+        }
+
+        /* Page Header */
+        .page-header {
+            padding: 8rem 0 6rem;
+            background: var(--gradient-hero), 
+                        url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, transparent, rgba(79, 195, 247, 0.1), transparent);
+            animation: shimmer 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes shimmer {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(100%); }
+        }
+
+        .page-header-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .page-header h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #fff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-header p {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .corporate-stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem 1.5rem;
+            border-radius: var(--br-lg);
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            opacity: 0.9;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .section-light {
+            background: var(--bg-light);
+        }
+
+        .section-header {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Business Benefits */
+        .why-corporate-wellness {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .business-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-card {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: var(--br-lg);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 4px;
+            width: 100%;
+            background: var(--secondary);
+        }
+
+        .benefit-card:hover {
+            background: white;
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .benefit-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .benefit-card p {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .benefit-stat {
+            background: rgba(0, 188, 212, 0.1);
+            color: var(--secondary);
+            padding: 0.75rem 1rem;
+            border-radius: var(--br);
+            font-weight: 600;
+            border-left: 3px solid var(--secondary);
+        }
+
+        /* Services Tabs */
+        .corporate-services {
+            padding: 6rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .services-tabs {
+            margin-top: 3rem;
+        }
+
+        .tab-navigation {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 1rem 2rem;
+            background: white;
+            color: var(--text-dark);
+            border: 2px solid #e0e0e0;
+            border-radius: var(--br);
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tab-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 188, 212, 0.1), transparent);
+            transition: var(--transition);
+        }
+
+        .tab-btn:hover::before {
+            left: 100%;
+        }
+
+        .tab-btn:hover {
+            border-color: var(--secondary);
+            color: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        .tab-btn.active {
+            background: var(--secondary);
+            color: white;
+            border-color: var(--secondary);
+            box-shadow: var(--shadow);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Service Cards */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--br-lg);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 4px;
+            width: 100%;
+            background: var(--secondary);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-card h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .service-content p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .service-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+            text-align: left;
+        }
+
+        .service-content li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .service-content li::before {
+            content: "✓";
+            color: var(--success);
+            font-weight: bold;
+            font-size: 1rem;
+            min-width: 16px;
+        }
+
+        .service-pricing {
+            background: var(--bg-light);
+            padding: 1rem;
+            border-radius: var(--br);
+            color: var(--secondary);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
+            border-left: 3px solid var(--secondary);
+        }
+
+        /* Executive Programs */
+        .executive-programs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .program-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: var(--br-lg);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .program-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 4px;
+            width: 100%;
+            background: var(--gold);
+        }
+
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .program-card.featured {
+            border: 2px solid var(--gold);
+            transform: scale(1.02);
+        }
+
+        .program-card h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+        }
+
+        .program-features ul {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+            text-align: left;
+        }
+
+        .program-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .program-features li::before {
+            content: "→";
+            color: var(--gold);
+            font-weight: bold;
+            min-width: 16px;
+        }
+
+        .program-duration {
+            background: rgba(255, 215, 0, 0.1);
+            color: var(--primary);
+            padding: 0.75rem 1rem;
+            border-radius: var(--br);
+            font-weight: 600;
+            margin: 1.5rem 0;
+            border-left: 3px solid var(--gold);
+        }
+
+        .program-pricing {
+            background: var(--gold);
+            color: var(--primary);
+            padding: 1rem;
+            border-radius: var(--br);
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        /* Ongoing Programs */
+        .ongoing-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .ongoing-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--br-lg);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ongoing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 4px;
+            width: 100%;
+            background: var(--accent);
+        }
+
+        .ongoing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .ongoing-card h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .ongoing-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+            text-align: left;
+        }
+
+        .ongoing-content li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .ongoing-content li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+            min-width: 16px;
+        }
+
+        .ongoing-pricing {
+            background: rgba(79, 195, 247, 0.1);
+            color: var(--accent);
+            padding: 1rem;
+            border-radius: var(--br);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
+            border-left: 3px solid var(--accent);
+        }
+
+        /* Planning Timeline */
+        .event-planning {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .planning-timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .planning-step {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: var(--br-lg);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .planning-step::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 4px;
+            width: 100%;
+            background: var(--secondary);
+        }
+
+        .planning-step:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-content h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .step-content p {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-deliverables ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .step-deliverables li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .step-deliverables li::before {
+            content: "▸";
+            color: var(--secondary);
+            font-weight: bold;
+            min-width: 16px;
+        }
+
+        /* Success Stories */
+        .corporate-success {
+            padding: 6rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .success-stories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .success-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: var(--br-lg);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .success-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 4px;
+            width: 100%;
+            background: var(--success);
+        }
+
+        .success-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .company-info h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .company-type {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .success-content h4 {
+            color: var(--secondary);
+            margin: 1.5rem 0 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .success-content p {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .success-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .success-content li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .success-content li::before {
+            content: "✓";
+            color: var(--success);
+            font-weight: bold;
+            font-size: 1rem;
+            min-width: 16px;
+        }
+
+        /* Pricing */
+        .corporate-pricing {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: var(--bg-light);
+            padding: 2.5rem;
+            border-radius: var(--br-lg);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 4px;
+            width: 100%;
+            background: var(--secondary);
+        }
+
+        .pricing-card:hover {
+            background: white;
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--secondary);
+            transform: scale(1.05);
+        }
+
+        .pricing-card.premium::before {
+            background: var(--gold);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: var(--secondary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--br);
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+
+        .pricing-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .price-range {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-content p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .pricing-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+
+        .pricing-content li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .pricing-content li::before {
+            content: "✓";
+            color: var(--success);
+            font-weight: bold;
+            font-size: 1rem;
+            min-width: 16px;
+        }
+
+        .ideal-for {
+            background: rgba(0, 188, 212, 0.1);
+            padding: 1rem;
+            border-radius: var(--br);
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            margin-top: 1.5rem;
+            border-left: 3px solid var(--secondary);
+        }
+
+        .pricing-note {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: var(--bg-light);
+            border-radius: var(--br);
+            text-align: center;
+            border-left: 4px solid var(--secondary);
+        }
+
+        /* CTA Section */
+        .corporate-cta {
+            background: var(--gradient-hero);
+            color: white;
+            padding: 6rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .corporate-cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, transparent, rgba(79, 195, 247, 0.1), transparent);
+            animation: shimmer 6s ease-in-out infinite;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .cta-text h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-text p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .cta-benefits ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .cta-benefits li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .cta-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: var(--br);
+            font-size: 1rem;
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-3px);
+        }
+
+        .btn-lg {
+            padding: 1.25rem 2.5rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-info {
+            margin-top: 2rem;
+            opacity: 0.9;
+        }
+
+        .contact-info p {
+            margin: 0.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        .site-footer {
+            background: var(--primary);
+            color: white;
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            transition: var(--transition);
+        }
+
+        .footer-section a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .header-buttons {
+                justify-content: center;
+            }
+
+            .page-header {
+                padding: 6rem 0 4rem;
+            }
+
+            .corporate-stats {
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+            }
+
+            .section {
+                padding: 4rem 1rem;
+            }
+
+            .business-benefits,
+            .services-grid,
+            .executive-programs,
+            .ongoing-options,
+            .planning-timeline,
+            .success-stories,
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tab-navigation {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .cta-actions {
+                align-items: center;
+            }
+        }
+
+        /* Focus and accessibility */
+        :focus-visible {
+            outline: 2px solid var(--secondary);
+            outline-offset: 2px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
-    <header id="header">
-        <nav class="navbar">
-            <div class="container">
-                <div class="navbar-brand">
-                    <a href="../index.html">
-                        <img src="../assets/images/logo.png" alt="Qualiphy" class="logo">
-                    </a>
-                </div>
-                <div class="navbar-menu">
-                    <ul class="navbar-nav">
-                        <li><a href="../index.html" class="nav-link">Home</a></li>
-                        <li><a href="services.html" class="nav-link">Services</a></li>
-                        <li><a href="membership.html" class="nav-link">Membership</a></li>
-                        <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
-                        <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
-                    </ul>
-                    <button class="btn btn-primary" onclick="openBookingModal()">Book Event</button>
-                </div>
+    <header class="header" id="header">
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="../assets/images/logo.png" alt="Stay Dripped Mobile IV" class="logo-image">
+                <div class="brand-name">Stay Dripped®</div>
             </div>
-        </nav>
+            
+            <div class="header-buttons">
+                <a href="tel:+16026889825" class="emergency-call-btn">
+                    <i class="fas fa-phone"></i>
+                    Call (602) 688-9825
+                </a>
+                <a href="https://Staydripped.intakeq.com/booking" class="header-book-btn" target="_blank">
+                    <i class="fas fa-calendar"></i>
+                    Book Event
+                </a>
+                <button class="exam-btn" onclick="openExamModal()">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>First Time Patient Exam</span>
+                </button>
+            </div>
+        </div>
     </header>
 
     <!-- Page Header -->
-    <section class="page-header corporate-header">
+    <section class="page-header">
         <div class="container">
             <div class="page-header-content">
                 <h1>Corporate Wellness Events</h1>
@@ -92,67 +1316,65 @@
     </section>
 
     <!-- Why Corporate Wellness -->
-    <section class="why-corporate-wellness">
+    <section class="why-corporate-wellness section">
         <div class="container">
-            <div class="section-header text-center">
-                <h2>Why Invest in Employee Wellness?</h2>
-                <p>The business case for comprehensive employee health programs</p>
+            <div class="section-header">
+                <h2 class="section-title">Why Invest in Employee Wellness?</h2>
+                <p class="section-subtitle">The business case for comprehensive employee health programs</p>
             </div>
 
-            <div class="business-case">
-                <div class="business-benefits">
-                    <div class="benefit-card">
-                        <div class="benefit-icon">📈</div>
-                        <h3>Increased Productivity</h3>
-                        <p>Healthy employees are 13% more productive, with higher energy levels and better focus throughout the workday.</p>
-                        <div class="benefit-stat">+13% productivity boost</div>
-                    </div>
+            <div class="business-benefits">
+                <div class="benefit-card">
+                    <div class="benefit-icon">📈</div>
+                    <h3>Increased Productivity</h3>
+                    <p>Healthy employees are 13% more productive, with higher energy levels and better focus throughout the workday.</p>
+                    <div class="benefit-stat">+13% productivity boost</div>
+                </div>
 
-                    <div class="benefit-card">
-                        <div class="benefit-icon">💰</div>
-                        <h3>Reduced Healthcare Costs</h3>
-                        <p>Preventive wellness programs reduce healthcare costs by an average of $3.27 for every $1 invested.</p>
-                        <div class="benefit-stat">$3.27 ROI per $1 invested</div>
-                    </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3>Reduced Healthcare Costs</h3>
+                    <p>Preventive wellness programs reduce healthcare costs by an average of $3.27 for every $1 invested.</p>
+                    <div class="benefit-stat">$3.27 ROI per $1 invested</div>
+                </div>
 
-                    <div class="benefit-card">
-                        <div class="benefit-icon">🎯</div>
-                        <h3>Lower Absenteeism</h3>
-                        <p>Wellness programs reduce absenteeism by 25%, saving costs and maintaining team continuity.</p>
-                        <div class="benefit-stat">25% reduction in sick days</div>
-                    </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Lower Absenteeism</h3>
+                    <p>Wellness programs reduce absenteeism by 25%, saving costs and maintaining team continuity.</p>
+                    <div class="benefit-stat">25% reduction in sick days</div>
+                </div>
 
-                    <div class="benefit-card">
-                        <div class="benefit-icon">⭐</div>
-                        <h3>Enhanced Recruitment</h3>
-                        <p>88% of job seekers consider wellness benefits when evaluating job offers, giving you a competitive edge.</p>
-                        <div class="benefit-stat">88% value wellness benefits</div>
-                    </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">⭐</div>
+                    <h3>Enhanced Recruitment</h3>
+                    <p>88% of job seekers consider wellness benefits when evaluating job offers, giving you a competitive edge.</p>
+                    <div class="benefit-stat">88% value wellness benefits</div>
+                </div>
 
-                    <div class="benefit-card">
-                        <div class="benefit-icon">🤝</div>
-                        <h3>Improved Retention</h3>
-                        <p>Companies with strong wellness programs see 40% lower turnover rates, reducing recruitment and training costs.</p>
-                        <div class="benefit-stat">40% lower turnover</div>
-                    </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🤝</div>
+                    <h3>Improved Retention</h3>
+                    <p>Companies with strong wellness programs see 40% lower turnover rates, reducing recruitment and training costs.</p>
+                    <div class="benefit-stat">40% lower turnover</div>
+                </div>
 
-                    <div class="benefit-card">
-                        <div class="benefit-icon">🏆</div>
-                        <h3>Better Performance</h3>
-                        <p>Teams with wellness programs show improved collaboration, creativity, and overall job performance.</p>
-                        <div class="benefit-stat">Higher team performance</div>
-                    </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏆</div>
+                    <h3>Better Performance</h3>
+                    <p>Teams with wellness programs show improved collaboration, creativity, and overall job performance.</p>
+                    <div class="benefit-stat">Higher team performance</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Service Offerings -->
-    <section class="corporate-services">
+    <section class="corporate-services section section-light">
         <div class="container">
-            <div class="section-header text-center">
-                <h2>Corporate Wellness Services</h2>
-                <p>Comprehensive health services delivered to your workplace</p>
+            <div class="section-header">
+                <h2 class="section-title">Corporate Wellness Services</h2>
+                <p class="section-subtitle">Comprehensive health services delivered to your workplace</p>
             </div>
 
             <div class="services-tabs">
@@ -297,51 +1519,49 @@
 
                 <!-- Ongoing Wellness -->
                 <div class="tab-content" id="ongoing-tab">
-                    <div name="ongoing-programs">
-                        <div class="ongoing-options">
-                            <div class="ongoing-card">
-                                <h3>📅 Monthly Wellness Days</h3>
-                                <div class="ongoing-content">
-                                    <p>Regular monthly wellness events to maintain employee health and morale</p>
-                                    <ul>
-                                        <li>Rotating wellness services each month</li>
-                                        <li>Consistent employee engagement</li>
-                                        <li>Preventive health focus</li>
-                                        <li>Team building opportunities</li>
-                                        <li>Progress tracking and reporting</li>
-                                    </ul>
-                                    <div class="ongoing-pricing">$2,000/month for up to 50 employees</div>
-                                </div>
+                    <div class="ongoing-options">
+                        <div class="ongoing-card">
+                            <h3>📅 Monthly Wellness Days</h3>
+                            <div class="ongoing-content">
+                                <p>Regular monthly wellness events to maintain employee health and morale</p>
+                                <ul>
+                                    <li>Rotating wellness services each month</li>
+                                    <li>Consistent employee engagement</li>
+                                    <li>Preventive health focus</li>
+                                    <li>Team building opportunities</li>
+                                    <li>Progress tracking and reporting</li>
+                                </ul>
+                                <div class="ongoing-pricing">$2,000/month for up to 50 employees</div>
                             </div>
+                        </div>
 
-                            <div class="ongoing-card">
-                                <h3>🏢 On-Site Wellness Center</h3>
-                                <div class="ongoing-content">
-                                    <p>Dedicated wellness space with regular Qualiphy services</p>
-                                    <ul>
-                                        <li>Weekly on-site presence</li>
-                                        <li>Dedicated wellness room setup</li>
-                                        <li>Employee wellness memberships</li>
-                                        <li>Health coaching and support</li>
-                                        <li>Comprehensive wellness tracking</li>
-                                    </ul>
-                                    <div class="ongoing-pricing">Custom pricing based on company size</div>
-                                </div>
+                        <div class="ongoing-card">
+                            <h3>🏢 On-Site Wellness Center</h3>
+                            <div class="ongoing-content">
+                                <p>Dedicated wellness space with regular Stay Dripped services</p>
+                                <ul>
+                                    <li>Weekly on-site presence</li>
+                                    <li>Dedicated wellness room setup</li>
+                                    <li>Employee wellness memberships</li>
+                                    <li>Health coaching and support</li>
+                                    <li>Comprehensive wellness tracking</li>
+                                </ul>
+                                <div class="ongoing-pricing">Custom pricing based on company size</div>
                             </div>
+                        </div>
 
-                            <div class="ongoing-card">
-                                <h3>📊 Corporate Wellness Membership</h3>
-                                <div class="ongoing-content">
-                                    <p>Company-wide membership with individual employee benefits</p>
-                                    <ul>
-                                        <li>Employee access to all Qualiphy services</li>
-                                        <li>Corporate discounted pricing</li>
-                                        <li>Priority scheduling for employees</li>
-                                        <li>Quarterly wellness reports</li>
-                                        <li>Flexible benefit allocation</li>
-                                    </ul>
-                                    <div class="ongoing-pricing">$150/employee/month minimum 25 employees</div>
-                                </div>
+                        <div class="ongoing-card">
+                            <h3>📊 Corporate Wellness Membership</h3>
+                            <div class="ongoing-content">
+                                <p>Company-wide membership with individual employee benefits</p>
+                                <ul>
+                                    <li>Employee access to all Stay Dripped services</li>
+                                    <li>Corporate discounted pricing</li>
+                                    <li>Priority scheduling for employees</li>
+                                    <li>Quarterly wellness reports</li>
+                                    <li>Flexible benefit allocation</li>
+                                </ul>
+                                <div class="ongoing-pricing">$150/employee/month minimum 25 employees</div>
                             </div>
                         </div>
                     </div>
@@ -351,11 +1571,11 @@
     </section>
 
     <!-- Event Planning Process -->
-    <section class="event-planning">
+    <section class="event-planning section">
         <div class="container">
-            <div class="section-header text-center">
-                <h2>How We Plan Your Corporate Event</h2>
-                <p>Seamless planning and execution for maximum impact</p>
+            <div class="section-header">
+                <h2 class="section-title">How We Plan Your Corporate Event</h2>
+                <p class="section-subtitle">Seamless planning and execution for maximum impact</p>
             </div>
 
             <div class="planning-timeline">
@@ -427,11 +1647,11 @@
     </section>
 
     <!-- Success Stories -->
-    <section class="corporate-success">
+    <section class="corporate-success section section-light">
         <div class="container">
-            <div class="section-header text-center">
-                <h2>Corporate Success Stories</h2>
-                <p>Real results from companies that prioritize employee wellness</p>
+            <div class="section-header">
+                <h2 class="section-title">Corporate Success Stories</h2>
+                <p class="section-subtitle">Real results from companies that prioritize employee wellness</p>
             </div>
 
             <div class="success-stories">
@@ -505,11 +1725,11 @@
     </section>
 
     <!-- Pricing & Packages -->
-    <section class="corporate-pricing">
+    <section class="corporate-pricing section">
         <div class="container">
-            <div class="section-header text-center">
-                <h2>Corporate Wellness Packages</h2>
-                <p>Flexible pricing options to fit every company's needs and budget</p>
+            <div class="section-header">
+                <h2 class="section-title">Corporate Wellness Packages</h2>
+                <p class="section-subtitle">Flexible pricing options to fit every company's needs and budget</p>
             </div>
 
             <div class="pricing-grid">
@@ -600,10 +1820,10 @@
                 </div>
                 <div class="cta-actions">
                     <button class="btn btn-primary btn-lg" onclick="openBookingModal()">Schedule Consultation</button>
-                    <a href="mailto:corporate@qualiphy.com" class="btn btn-secondary btn-lg">Email Us</a>
+                    <a href="mailto:corporate@staydrippedmobileiv.com" class="btn btn-secondary btn-lg">Email Us</a>
                     <div class="contact-info">
-                        <p><strong>Corporate Sales:</strong> (555) 123-4567 ext. 2</p>
-                        <p><strong>Email:</strong> corporate@qualiphy.com</p>
+                        <p><strong>Corporate Sales:</strong> (602) 688-9825</p>
+                        <p><strong>Email:</strong> corporate@staydrippedmobileiv.com</p>
                     </div>
                 </div>
             </div>
@@ -611,45 +1831,43 @@
     </section>
 
     <!-- Footer -->
-    <footer id="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="../assets/images/logo.png" alt="Qualiphy">
-                    </div>
-                    <p>Transforming lives through premium wellness and personalized healthcare solutions.</p>
+    <footer class="site-footer" id="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="../assets/images/logo.png" alt="Stay Dripped Mobile IV" style="height: 40px; width: auto;">
                 </div>
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="services/iv-therapy.html">IV Therapy</a></li>
-                        <li><a href="services/hormone-replacement.html">Hormone Replacement</a></li>
-                        <li><a href="services/aesthetic.html">Aesthetic Treatments</a></li>
-                        <li><a href="services/weight-management.html">Weight Management</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="membership.html">Membership</a></li>
-                        <li><a href="corporate-events.html">Corporate Events</a></li>
-                        <li><a href="franchise.html">Franchise</a></li>
-                        <li><a href="partnerships.html">Partnerships</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="../privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="../terms-of-service.html">Terms of Service</a></li>
-                        <li><a href="../medical-disclaimer.html">Medical Disclaimer</a></li>
-                    </ul>
-                </div>
+                <p>Transforming lives through premium wellness and personalized healthcare solutions.</p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Qualiphy. All rights reserved.</p>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="services/iv-therapy.html">IV Therapy</a></li>
+                    <li><a href="services/injection-shots.html">Injection Shots</a></li>
+                    <li><a href="services/blood-testing.html">Blood Testing</a></li>
+                    <li><a href="services/weight-management.html">Weight Management</a></li>
+                </ul>
             </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="membership.html">Membership</a></li>
+                    <li><a href="corporate-events.html">Corporate Events</a></li>
+                    <li><a href="franchise.html">Franchise</a></li>
+                    <li><a href="partnerships.html">Partnerships</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="../terms-of-service.html">Terms of Service</a></li>
+                    <li><a href="../medical-disclaimer.html">Medical Disclaimer</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Stay Dripped® Mobile IV. All rights reserved.</p>
         </div>
     </footer>
 
@@ -657,7 +1875,12 @@
     <script src="../assets/js/bootstrap.min.js"></script>
     <script>
         function openBookingModal() {
-            window.location.href = '../index.html#contact';
+            window.location.href = 'https://Staydripped.intakeq.com/booking';
+        }
+
+        function openExamModal() {
+            // Add exam modal functionality here
+            alert('First Time Patient Exam - Feature coming soon!');
         }
 
         // Tab functionality
@@ -674,6 +1897,37 @@
                     content.classList.remove('active');
                 });
                 document.getElementById(targetTab + '-tab').classList.add('active');
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.benefit-card, .service-card, .program-card, .ongoing-card, .planning-step, .success-card, .pricing-card').forEach(el => {
+                observer.observe(el);
             });
         });
     </script>
