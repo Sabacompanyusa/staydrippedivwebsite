@@ -8,6 +8,10 @@
   
   <link rel="icon" href="assets/images/logo.png" type="image/png">
   
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9V90Q7G0M"></script>
   <script>
@@ -18,29 +22,123 @@
   </script>
 
   <style>
-    * {
+    /* CSS Variables */
+    :root {
+      /* Brand Colors */
+      --primary: #0a2a43;
+      --secondary: #00bcd4;
+      --accent: #4fc3f7;
+      --gold: #ffd700;
+      --platinum: #e5e5e5;
+      --success: #4caf50;
+      --warning: #ff9800;
+      --error: #f44336;
+      
+      /* Text Colors */
+      --text-dark: #1a1a1a;
+      --text-light: #666;
+      --text-muted: #999;
+      --text-white: #ffffff;
+      
+      /* Background Colors */
+      --bg-light: #f1fbff;
+      --bg-dark: #1a1a1a;
+      --white: #ffffff;
+      
+      /* Shadows */
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+      --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.1);
+      
+      /* Border Radius */
+      --br: 12px;
+      --br-lg: 16px;
+      --br-xl: 24px;
+      
+      /* Transitions */
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-fast: all 0.15s ease;
+      
+      /* Gradients */
+      --gradient-primary: linear-gradient(135deg, var(--secondary), var(--accent));
+      --gradient-gold: linear-gradient(135deg, #ffd700, #ffed4e);
+      --gradient-hero: linear-gradient(135deg, rgba(10, 42, 67, 0.9), rgba(0, 188, 212, 0.7));
+    }
+
+    /* CSS Reset */
+    *, *::before, *::after {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    body {
-      font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #f5f8fb 0%, #c3cfe2 100%);
-      color: #2d3748;
-      line-height: 1.6;
+    html {
       scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.7;
+      color: var(--text-dark);
+      background: #fafafa;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    img, iframe, svg {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
     }
 
     /* Header */
-    header {
-      background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+    .header {
+      background: var(--gradient-hero), 
+                  url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
       color: white;
       text-align: center;
-      padding: 40px 20px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+      padding: 3rem 2rem;
+      box-shadow: var(--shadow-lg);
       position: relative;
       overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(45deg, transparent, rgba(79, 195, 247, 0.1), transparent);
+      animation: shimmer 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes shimmer {
+      from { transform: translateX(-100%); }
+      to { transform: translateX(100%); }
     }
 
     .header-content {
@@ -51,213 +149,725 @@
     }
 
     .logo-section {
-      margin-bottom: 25px;
+      margin-bottom: 2rem;
     }
 
-    header img {
+    .header img {
       max-width: 280px;
-      border-radius: 15px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-      margin-bottom: 20px;
-      transition: transform 0.3s ease;
+      border-radius: var(--br-lg);
+      box-shadow: var(--shadow-lg);
+      margin: 0 auto 1.5rem;
+      transition: var(--transition);
     }
 
-    header img:hover {
+    .header img:hover {
       transform: scale(1.05);
     }
 
     .brand-title {
-      font-size: 3em;
+      font-size: clamp(2.5rem, 5vw, 4rem);
       font-weight: 800;
-      margin-bottom: 10px;
-      text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      margin-bottom: 1rem;
+      text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      background: linear-gradient(135deg, #fff, var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .brand-subtitle {
-      font-size: 1.3em;
+      font-size: 1.3rem;
       opacity: 0.9;
       font-weight: 300;
-      margin-bottom: 30px;
+      margin-bottom: 2rem;
     }
 
     /* Quick Action Buttons */
     .quick-actions {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 1.5rem;
       flex-wrap: wrap;
-      margin-top: 30px;
+      margin-top: 2rem;
     }
 
     .quick-action-btn {
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.15);
       color: white;
-      padding: 15px 25px;
-      border: none;
-      border-radius: 50px;
+      padding: 1rem 2rem;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: var(--br-xl);
       font-weight: 600;
-      font-size: 1.1em;
+      font-size: 1.1rem;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: var(--transition);
       text-decoration: none;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 0.75rem;
       backdrop-filter: blur(10px);
-    }
-
-    .quick-action-btn:hover {
-      background: rgba(255, 255, 255, 0.3);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Main Content */
-    main {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-
-    section {
-      margin-bottom: 60px;
-      background: white;
-      border-radius: 25px;
-      padding: 40px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       position: relative;
       overflow: hidden;
     }
 
-    section::before {
+    .quick-action-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      transition: var(--transition);
+    }
+
+    .quick-action-btn:hover::before {
+      left: 100%;
+    }
+
+    .quick-action-btn:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .exam-btn {
+      min-width: 200px;
+      background-color: #cfc9ff;
+      color: #0a005b;
+      border: 2px solid transparent;
+    }
+
+    .exam-btn:hover {
+      background-color: #8058fa;
+      color: white;
+      border-color: #8058fa;
+    }
+
+    /* Main Content */
+    main {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    .section {
+      margin-bottom: 4rem;
+      background: white;
+      border-radius: var(--br-xl);
+      padding: 3rem;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section::before {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
-      height: 5px;
-      background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+      height: 4px;
+      background: var(--gradient-primary);
     }
 
-    h2 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
-      color: #2d3748;
-      font-weight: 700;
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 1rem;
       text-align: center;
       position: relative;
+      display: inline-block;
+      width: 100%;
     }
 
-    h2::after {
+    .section-title::after {
       content: '';
       position: absolute;
       bottom: -10px;
       left: 50%;
       transform: translateX(-50%);
-      width: 60px;
+      width: 80px;
       height: 4px;
-      background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+      background: var(--secondary);
       border-radius: 2px;
     }
 
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-light);
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
     h3 {
-      font-size: 1.5em;
-      margin-bottom: 15px;
-      color: #00c6ff;
-      font-weight: 600;
+      font-size: 1.8rem;
+      margin: 3rem 0 2rem;
+      color: var(--primary);
+      font-weight: 700;
+      text-align: center;
+      position: relative;
+    }
+
+    h3::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--secondary);
+      border-radius: 2px;
     }
 
     /* Menu Cards */
     .menu-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 25px;
-      margin-top: 30px;
+      gap: 2rem;
+      margin-top: 2rem;
     }
 
     .menu-card {
-      background: #f8fafc;
-      border-radius: 20px;
-      padding: 25px;
-      transition: all 0.3s ease;
+      background: var(--bg-light);
+      border-radius: var(--br-lg);
+      padding: 2rem;
+      transition: var(--transition);
       border: 2px solid transparent;
       position: relative;
+      overflow: hidden;
+    }
+
+    .menu-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 4px;
+      width: 100%;
+      background: var(--secondary);
     }
 
     .menu-card:hover {
       background: white;
-      border-color: #00c6ff;
+      border-color: var(--secondary);
       transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      box-shadow: var(--shadow-hover);
     }
 
     .menu-card h3 {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 15px;
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+
+    .menu-card h3::after {
+      display: none;
     }
 
     .treatment-name {
       flex: 1;
-      color: #2d3748;
-      font-size: 1.3em;
-      margin-right: 15px;
+      color: var(--primary);
+      font-size: 1.3rem;
+      margin-right: 1rem;
+      font-weight: 700;
     }
 
     .treatment-price {
-      color: #00c6ff;
+      color: var(--secondary);
       font-weight: 800;
-      font-size: 1.4em;
+      font-size: 1.4rem;
       white-space: nowrap;
     }
 
+    .menu-card img {
+      width: 100%;
+      border-radius: var(--br);
+      margin-bottom: 1rem;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .menu-card:hover img {
+      transform: scale(1.02);
+    }
+
     .menu-card p {
-      color: #718096;
-      margin-bottom: 20px;
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
       line-height: 1.6;
     }
 
     .menu-actions {
       display: flex;
-      gap: 10px;
+      gap: 0.75rem;
     }
 
     .add-btn {
       flex: 1;
-      background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+      background: var(--gradient-primary);
       color: white;
       border: none;
-      padding: 12px 20px;
-      border-radius: 25px;
+      padding: 0.875rem 1.5rem;
+      border-radius: var(--br-xl);
       font-weight: 600;
       cursor: pointer;
-      transition: all 0.3s ease;
-      font-size: 1em;
+      transition: var(--transition);
+      font-size: 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .add-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      transition: var(--transition);
+    }
+
+    .add-btn:hover::before {
+      left: 100%;
     }
 
     .add-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0, 114, 255, 0.3);
+      box-shadow: 0 8px 20px rgba(0, 188, 212, 0.4);
     }
 
     .info-btn {
       background: #e2e8f0;
-      color: #4a5568;
+      color: var(--text-dark);
       border: none;
-      padding: 12px 15px;
-      border-radius: 25px;
+      padding: 0.875rem 1rem;
+      border-radius: var(--br-xl);
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: var(--transition);
+      font-size: 1.2rem;
+      min-width: 50px;
     }
 
     .info-btn:hover {
       background: #cbd5e0;
+      transform: translateY(-2px);
     }
 
+    /* Add-in Cards */
+    .addin-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .addin-card, .injection-card {
+      background: var(--bg-light);
+      border-radius: var(--br);
+      padding: 1.5rem;
+      border: 1px solid rgba(0, 188, 212, 0.1);
+      transition: var(--transition);
+    }
+
+    .addin-card:hover, .injection-card:hover {
+      background: white;
+      box-shadow: var(--shadow);
+      transform: translateY(-3px);
+    }
+
+    .addin-card h4, .injection-card h4 {
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+      font-size: 1.1rem;
+    }
+
+    .addin-card p, .injection-card p {
+      color: var(--text-light);
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .addin-options, .injection-options {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .addin-btn, .injection-btn {
+      background: var(--secondary);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: var(--br);
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 0.9rem;
+      flex: 1;
+      min-width: 100px;
+    }
+
+    .addin-btn:hover, .injection-btn:hover {
+      background: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    /* Cart Section */
+    .cart-section {
+      background: linear-gradient(135deg, #e6fffa 0%, #b2f5ea 100%);
+      border: 2px solid #81e6d9;
+    }
+
+    .cart-summary {
+      min-height: 120px;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      border-bottom: 1px solid #b2f5ea;
+    }
+
+    .cart-item:last-child {
+      border-bottom: none;
+    }
+
+    .cart-total {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--secondary);
+      text-align: center;
+      margin: 1.5rem 0;
+    }
+
+    .empty-cart {
+      text-align: center;
+      color: var(--text-light);
+      padding: 3rem 2rem;
+    }
+
+    .empty-cart-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      opacity: 0.5;
+    }
+
+    .empty-cart h3 {
+      color: var(--text-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .empty-cart h3::after {
+      display: none;
+    }
+
+    .remove-btn {
+      background: #fed7d7;
+      color: #c53030;
+      border: none;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 16px;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .remove-btn:hover {
+      background: #fc8181;
+      color: white;
+      transform: scale(1.1);
+    }
+
+    /* Service Cards */
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .service-card {
+      background: var(--bg-light);
+      border-radius: var(--br-lg);
+      padding: 2rem;
+      text-align: center;
+      transition: var(--transition);
+      border: 2px solid transparent;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 4px;
+      width: 100%;
+      background: var(--secondary);
+    }
+
+    .service-card:hover {
+      background: white;
+      border-color: var(--secondary);
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .service-icon {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .service-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .service-description {
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-link {
+      display: inline-block;
+      background: var(--gradient-primary);
+      color: white;
+      padding: 0.875rem 2rem;
+      text-decoration: none;
+      border-radius: var(--br-xl);
+      font-weight: 600;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      transition: var(--transition);
+    }
+
+    .service-link:hover::before {
+      left: 100%;
+    }
+
+    .service-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 188, 212, 0.4);
+    }
+
+    /* Contact Section */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .contact-card {
+      background: var(--primary);
+      color: white;
+      border-radius: var(--br-lg);
+      padding: 2rem;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .contact-card:hover {
+      background: #0f3454;
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .contact-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .contact-info {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .contact-info:hover {
+      color: white;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+
+    /* Notification */
+    .notification {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--success);
+      color: white;
+      padding: 1rem 1.5rem;
+      border-radius: var(--br);
+      z-index: 10000;
+      font-weight: 600;
+      box-shadow: var(--shadow-lg);
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .header {
+        padding: 2rem 1rem;
+      }
+
+      .brand-title {
+        font-size: 2.5rem;
+      }
+
+      .quick-actions {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .quick-action-btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+      }
+
+      main {
+        padding: 2rem 1rem;
+      }
+
+      .section {
+        padding: 2rem 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .menu-grid,
+      .service-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .menu-card h3 {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+
+      .treatment-name {
+        margin-right: 0;
+      }
+
+      .menu-actions {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+
+      .addin-options,
+      .injection-options {
+        flex-direction: column;
+      }
+    }
+
+    /* Focus and accessibility */
+    :focus-visible {
+      outline: 2px solid var(--secondary);
+      outline-offset: 2px;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <div class="logo-section">
+        <img src="assets/images/logo.png" alt="Stay Dripped Mobile IV">
+        <div class="brand-title">Stay Dripped® Mobile IV</div>
+        <div class="brand-subtitle">Mobile IV Hydration & Wellness in Scottsdale, AZ</div>
+      </div>
+      
+      <div class="quick-actions">
+        <a href="tel:+16026889825" class="quick-action-btn">
+          <i class="fas fa-phone"></i>
+          Call (602) 688-9825
+        </a>
+        <a href="https://Staydripped.intakeq.com/booking" class="quick-action-btn" target="_blank">
+          <i class="fas fa-calendar"></i>
+          Book Online Now
+        </a>
+        <button class="quick-action-btn exam-btn" onclick="scrollToSection('gfe')">
+          <i class="fas fa-clipboard-list"></i>
+          Start GFE (Required)
+        </button>
+      </div>
+    </div>
+  </header>
+
   <main>
-    <section id="menu">
-      <h2>IV Therapy Menu</h2>
+    <section id="menu" class="section">
+      <h2 class="section-title">IV Therapy Menu</h2>
       
       <!-- Featured Treatments -->
       <div class="menu-grid">
@@ -265,23 +875,21 @@
           <h3>
             <span class="treatment-name">Myers' Cocktail IV Bag</span>
             <span class="treatment-price">$205</span>
-            <img src="assets/images/myers.jpg" alt="Myers' Cocktail" style="width: 100%; border-radius: 15px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
           </h3>
+          <img src="assets/images/myers.jpg" alt="Myers' Cocktail">
           <p>Our signature blend: Sodium Chloride, Vitamin B-12, Zinc Sulfate, Magnesium Chloride, Glutathione, Vitamin C, B-Complex</p>
           <div class="menu-actions">
             <button class="add-btn" onclick="addToCart('Myers Cocktail IV Bag', 205)">Add to Cart</button>
             <button class="info-btn" onclick="showInfo('Myers Cocktail', 'The gold standard IV therapy with essential vitamins and minerals for overall wellness.')">ℹ️</button>
+          </div>
         </div>
-       </div>
-      </div>
-     </div>
-    
+
         <div class="menu-card">
           <h3>
             <span class="treatment-name">Mega Myers' Cocktail IV Bag</span>
             <span class="treatment-price">$235</span>
-            <img src="assets/images/mega-meyers.jpg" alt="Mega Myers' Cocktail" style="width: 100%; border-radius: 15px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
           </h3>
+          <img src="assets/images/mega-meyers.jpg" alt="Mega Myers' Cocktail">
           <p>Double-strength Myers with 2x dose Glutathione and Vitamin C for enhanced benefits and recovery.</p>
           <div class="menu-actions">
             <button class="add-btn" onclick="addToCart('Mega Myers Cocktail IV Bag', 235)">Add to Cart</button>
@@ -293,8 +901,8 @@
           <h3>
             <span class="treatment-name">"The Day After" Hangover Relief</span>
             <span class="treatment-price">$195</span>
-           <img src="assets/images/day-after.jpg" alt="Day After Hangover Relief" style="width: 100%; border-radius: 15px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
           </h3>
+          <img src="assets/images/day-after.jpg" alt="Day After Hangover Relief">
           <p>Fast hangover relief with B-Complex, B-12, and Ondansetron HCl (Anti-Nausea) for rapid recovery.</p>
           <div class="menu-actions">
             <button class="add-btn" onclick="addToCart('Day After The Dale Hangover Relief', 195)">Add to Cart</button>
@@ -306,8 +914,8 @@
           <h3>
             <span class="treatment-name">"D-Book" Athletic Performance Booster</span>
             <span class="treatment-price">$215</span>
-            <img src="assets/images/d-book.jpg" alt="Performace Booster" style="width: 100%; border-radius: 15px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
           </h3>
+          <img src="assets/images/d-book.jpg" alt="Performance Booster">
           <p>Athletic performance blend with Amino Blend, L-Carnitine, Glutathione, and essential vitamins for peak performance.</p>
           <div class="menu-actions">
             <button class="add-btn" onclick="addToCart('D-Book Athletic Performance Booster', 215)">Add to Cart</button>
@@ -319,8 +927,8 @@
           <h3>
             <span class="treatment-name">"Diamondback" Immune System Booster</span>
             <span class="treatment-price">$225</span>
-            <img src="assets/images/diamondback.jpg" alt="Myers' Cocktail" style="width: 100%; border-radius: 15px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
           </h3>
+          <img src="assets/images/diamondback.jpg" alt="Immune Booster">
           <p>Immune support with Lactated Ringers, high-dose Vitamin C, Zinc Sulfate, and Amino Blend for optimal immunity.</p>
           <div class="menu-actions">
             <button class="add-btn" onclick="addToCart('Diamondback Immune System Booster', 225)">Add to Cart</button>
@@ -332,8 +940,8 @@
           <h3>
             <span class="treatment-name">"Scottsdale 10" Beauty IV Bag</span>
             <span class="treatment-price">$245</span>
-            <img src="assets/images/scottsdale.jpg" alt="Beauty Bag" style="width: 100%; border-radius: 15px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
           </h3>
+          <img src="assets/images/scottsdale.jpg" alt="Beauty Bag">
           <p>Beauty enhancement with Vitamin C, B-Complex, Biotin, Zinc Sulfate, and Glutathione for radiant skin and healthy hair.</p>
           <div class="menu-actions">
             <button class="add-btn" onclick="addToCart('Scottsdale 10 Beauty IV Bag', 245)">Add to Cart</button>
@@ -345,8 +953,8 @@
           <h3>
             <span class="treatment-name">Stress Relief IV Bag</span>
             <span class="treatment-price">$215</span>
-           <img src="assets/images/stress-relief.jpg" alt="Stress Relief" style="width: 100%; border-radius: 15px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
           </h3>
+          <img src="assets/images/stress-relief.jpg" alt="Stress Relief">
           <p>Relaxation blend with Magnesium Chloride, B-12, Vitamin C, Thiamine HCL, and Vitamin D3 for stress reduction.</p>
           <div class="menu-actions">
             <button class="add-btn" onclick="addToCart('Stress Relief IV Bag', 215)">Add to Cart</button>
@@ -358,8 +966,8 @@
           <h3>
             <span class="treatment-name">Mental Clarity IV Bag</span>
             <span class="treatment-price">$225</span>
-          <img src="assets/images/mental-clarity.jpg" alt="Mental Clarity" style="width: 100%; border-radius: 15px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
           </h3>
+          <img src="assets/images/mental-clarity.jpg" alt="Mental Clarity">
           <p>Brain-boosting formula with Magnesium Chloride, Thiamine HCL, B-12, and Glutathione for enhanced mental focus.</p>
           <div class="menu-actions">
             <button class="add-btn" onclick="addToCart('Mental Clarity IV Bag', 225)">Add to Cart</button>
@@ -371,8 +979,8 @@
           <h3>
             <span class="treatment-name">Weight Management Support IV Bag</span>
             <span class="treatment-price">$245</span>
-           <img src="assets/images/weight.jpg" alt="Weight Management" style="width: 100%; border-radius: 15px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
           </h3>
+          <img src="assets/images/weight.jpg" alt="Weight Management">
           <p>Metabolism support with MIC (Methionine, Inositol, Choline), B-Complex, and L-Carnitine for weight management goals.</p>
           <div class="menu-actions">
             <button class="add-btn" onclick="addToCart('Weight Management Support IV Bag', 245)">Add to Cart</button>
@@ -382,14 +990,14 @@
       </div>
 
       <!-- Premium Treatments -->
-      <h3 style="margin-top: 50px; text-align: center;">Premium & Ultimate Treatments</h3>
+      <h3>Premium & Ultimate Treatments</h3>
       <div class="menu-grid">
         <div class="menu-card">
           <h3>
             <span class="treatment-name">"Gold" Ultimate Hydration & Recovery</span>
             <span class="treatment-price">$325</span>
-           <img src="assets/images/gold.jpg" alt="The Gold" style="width: 100%; border-radius: 15px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
           </h3>
+          <img src="assets/images/gold.jpg" alt="The Gold">
           <p>Premium recovery with Lactated Ringers, 2x dose Vitamin C & Glutathione, plus full vitamin complex for ultimate wellness.</p>
           <div class="menu-actions">
             <button class="add-btn" onclick="addToCart('Gold Ultimate Hydration Recovery', 325)">Add to Cart</button>
@@ -401,8 +1009,8 @@
           <h3>
             <span class="treatment-name">"Platinum" Ultimate Hydration & Recovery</span>
             <span class="treatment-price">$355</span>
-           <img src="assets/images/platinum.jpg" alt="The Platinum" style="width: 100%; border-radius: 15px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
           </h3>
+          <img src="assets/images/platinum.jpg" alt="The Platinum">
           <p>Top-tier hydration with Lactated Ringers, comprehensive vitamin complex, and premium nutrient blend for peak wellness.</p>
           <div class="menu-actions">
             <button class="add-btn" onclick="addToCart('Platinum Ultimate Hydration Recovery', 355)">Add to Cart</button>
@@ -414,8 +1022,8 @@
           <h3>
             <span class="treatment-name">The Stay Dripped Special IV Bag</span>
             <span class="treatment-price">$345</span>
-            <img src="assets/images/staydripped.jpg" alt="Stay Dripped Special" style="width: 100%; border-radius: 15px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
           </h3>
+          <img src="assets/images/staydripped.jpg" alt="Stay Dripped Special">
           <p>Our flagship blend with Lactated Ringers, 2x dose Vitamin C & Glutathione, Amino Blend, L-Carnitine, and Alpha Lipoic Acid.</p>
           <div class="menu-actions">
             <button class="add-btn" onclick="addToCart('Stay Dripped Special IV Bag', 345)">Add to Cart</button>
@@ -425,14 +1033,14 @@
       </div>
 
       <!-- NAD+ Treatments -->
-      <h3 style="margin-top: 50px; text-align: center;">NAD+ Anti-Aging Therapy</h3>
+      <h3>NAD+ Anti-Aging Therapy</h3>
       <div class="menu-grid">
         <div class="menu-card">
           <h3>
             <span class="treatment-name">Basic NAD+ Therapy IV Bag</span>
             <span class="treatment-price">$400</span>
-            <img src="assets/images/nad.jpg" alt="NAD Therapy" style="width: 100%; border-radius: 15px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
           </h3>
+          <img src="assets/images/nad.jpg" alt="NAD Therapy">
           <p>Foundation NAD+ therapy with 50mg NAD+ and Sodium Chloride for cellular repair and energy production.</p>
           <div class="menu-actions">
             <button class="add-btn" onclick="addToCart('NAD+ Therapy IV Bag', 400)">Add to Cart</button>
@@ -444,8 +1052,8 @@
           <h3>
             <span class="treatment-name">"Fountain Of Youth" IV Bag</span>
             <span class="treatment-price">$425</span>
-            <img src="assets/images/fountain.jpg" alt="Fountain of Youth" style="width: 100%; border-radius: 15px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
           </h3>
+          <img src="assets/images/fountain.jpg" alt="Fountain of Youth">
           <p>Anti-aging powerhouse with 50mg NAD+, Vitamin C, Glutathione, Zinc Sulfate, Biotin, and B-Complex for ultimate rejuvenation.</p>
           <div class="menu-actions">
             <button class="add-btn" onclick="addToCart('Fountain Of Youth IV Bag', 425)">Add to Cart</button>
@@ -457,8 +1065,8 @@
           <h3>
             <span class="treatment-name">Elite NAD+ Therapy IV Bag</span>
             <span class="treatment-price">$475</span>
-            <img src="assets/images/elitenad.jpg" alt="Elite NAD+" style="width: 100%; border-radius: 15px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
           </h3>
+          <img src="assets/images/elitenad.jpg" alt="Elite NAD+">
           <p>Enhanced NAD+ with 50mg NAD+, B-Complex, and high-dose Vitamin C for superior anti-aging benefits.</p>
           <div class="menu-actions">
             <button class="add-btn" onclick="addToCart('Elite NAD+ Therapy IV Bag', 475)">Add to Cart</button>
@@ -470,8 +1078,8 @@
           <h3>
             <span class="treatment-name">Diamond NAD+ Therapy IV Bag</span>
             <span class="treatment-price">$525</span>
-            <img src="assets/images/diamondnad.jpg" alt="Diamond NAD+" style="width: 100%; border-radius: 15px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
           </h3>
+          <img src="assets/images/diamondnad.jpg" alt="Diamond NAD+">
           <p>Ultimate NAD+ experience with 100mg NAD+, B-Complex, and 2x dose Vitamin C for maximum anti-aging power.</p>
           <div class="menu-actions">
             <button class="add-btn" onclick="addToCart('Diamond NAD+ Therapy IV Bag', 525)">Add to Cart</button>
@@ -481,18 +1089,18 @@
       </div>
 
       <!-- Basic Hydration -->
-      <h3 style="margin-top: 50px; text-align: center;">Rehydrate Plus IV Drip</h3>
+      <h3>Hydration IV Drips</h3>
       <div class="menu-grid">
         <div class="menu-card">
           <h3>
             <span class="treatment-name">Rehydrate Plus IV Drip</span>
             <span class="treatment-price">$145</span>
-            <img src="assets/images/rehydrateplus.jpg" alt="Rehydrate Plus" style="width: 100%; border-radius: 15px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
           </h3>
+          <img src="assets/images/rehydrateplus.jpg" alt="Rehydrate Plus">
           <p>Essential hydration with 500mL Sodium Chloride (Saline) and Vitamin B-Complex for basic wellness support.</p>
           <div class="menu-actions">
-            <button class="add-btn" onclick="addToCart('Basic Rehydrate IV Bag', 145)">Add to Cart</button>
-            <button class="info-btn" onclick="showInfo('Basic Rehydrate', 'Essential hydration and B-vitamins for everyday wellness.')">ℹ️</button>
+            <button class="add-btn" onclick="addToCart('Rehydrate Plus IV Drip', 145)">Add to Cart</button>
+            <button class="info-btn" onclick="showInfo('Rehydrate Plus', 'Essential hydration and B-vitamins for everyday wellness.')">ℹ️</button>
           </div>
         </div>
 
@@ -500,8 +1108,8 @@
           <h3>
             <span class="treatment-name">Basic Rehydrate IV Drip</span>
             <span class="treatment-price">$155</span>
-           <img src="assets/images/rehydrate.jpg" alt="Basic Rehydrate" style="width: 100%; border-radius: 15px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
           </h3>
+          <img src="assets/images/rehydrate.jpg" alt="Basic Rehydrate">
           <p>Enhanced hydration with 1000mL Sodium Chloride (Saline) or Lactated Ringers IV Solution.</p>
           <div class="menu-actions">
             <button class="add-btn" onclick="addToCart('Basic Rehydrate IV Drip', 155)">Add to Cart</button>
@@ -511,13 +1119,14 @@
 
         <div class="menu-card">
           <h3>
-            <span class="treatment-name">Rehydrate Plus IV Drip</span>
+            <span class="treatment-name">Advanced Rehydrate Plus IV Drip</span>
             <span class="treatment-price">$165</span>
           </h3>
+          <img src="assets/images/rehydrateplus.jpg" alt="Advanced Rehydrate Plus">
           <p>Advanced hydration with 1000mL Lactated Ringer solution and Vitamin B-Complex for optimal electrolyte balance.</p>
           <div class="menu-actions">
-            <button class="add-btn" onclick="addToCart('Rehydrate Plus IV Drip', 165)">Add to Cart</button>
-            <button class="info-btn" onclick="showInfo('Rehydrate Plus', 'Advanced formula with Lactated Ringer for optimal hydration.')">ℹ️</button>
+            <button class="add-btn" onclick="addToCart('Advanced Rehydrate Plus IV Drip', 165)">Add to Cart</button>
+            <button class="info-btn" onclick="showInfo('Advanced Rehydrate Plus', 'Advanced formula with Lactated Ringer for optimal hydration.')">ℹ️</button>
           </div>
         </div>
 
@@ -525,17 +1134,18 @@
           <h3>
             <span class="treatment-name">Mini Rehydrate IV Drip</span>
             <span class="treatment-price">$99</span>
-            <img src="assets/images/mini.jpg" alt="Mini Rehydrate" style="width: 100%; border-radius: 15px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
           </h3>
+          <img src="assets/images/mini.jpg" alt="Mini Rehydrate">
           <p>Simple, effective hydration with 500mL Sodium Chloride 0.9% or Lactated Ringers IV Solution for basic fluid replenishment.</p>
           <div class="menu-actions">
             <button class="add-btn" onclick="addToCart('Mini Rehydrate IV Drip', 99)">Add to Cart</button>
             <button class="info-btn" onclick="showInfo('Mini Rehydrate IV Drip', 'Basic saline hydration for simple fluid replenishment.')">ℹ️</button>
           </div>
         </div>
+      </div>
 
       <!-- Build Your Own -->
-      <h3 style="margin-top: 50px; text-align: center;">Customize Your Treatment</h3>
+      <h3>Customize Your Treatment</h3>
       <div class="menu-grid">
         <div class="menu-card">
           <h3>
@@ -550,7 +1160,7 @@
         </div>
       </div>
 
-      <h3 style="margin-top: 50px; text-align: center;">Add-In Vitamins</h3>
+      <h3>Add-In Vitamins & Injections</h3>
       <div class="addin-grid">
         <div class="addin-card">
           <h4>Vitamin B12 Injection</h4>
@@ -563,25 +1173,25 @@
 
         <div class="addin-card">
           <h4>Vitamin B Complex</h4>
-          <p>Immune support</p>
-          <div class="injection-options">
+          <p>Immune support and energy</p>
+          <div class="addin-options">
             <button class="addin-btn" onclick="addToCart('B-Complex Single Injection', 30)">Single - $30</button>
             <button class="addin-btn" onclick="addToCart('B-Complex Double Injection', 45)">Double - $45</button>
           </div>
         </div>
 
-        <div class="injection-card">
+        <div class="addin-card">
           <h4>Glutathione Push</h4>
           <p>Master antioxidant for detox and skin brightening</p>
-          <div class="injection-options">
-            <button class="injection-btn" onclick="addToCart('Glutathione Push', 40)">Add - $40</button>
+          <div class="addin-options">
+            <button class="addin-btn" onclick="addToCart('Glutathione Push', 40)">Add - $40</button>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="cart" class="cart-section">
-      <h2>Your Cart</h2>
+    <section id="cart" class="section cart-section">
+      <h2 class="section-title">Your Cart</h2>
       <div class="cart-summary" id="cartSummary">
         <div class="empty-cart">
           <div class="empty-cart-icon">🛒</div>
@@ -590,15 +1200,16 @@
         </div>
       </div>
       <div class="cart-total" id="cartTotal"></div>
-      <div style="text-align: center; margin-top: 20px;">
+      <div style="text-align: center; margin-top: 2rem;">
         <a href="https://Staydripped.intakeq.com/booking" class="service-link" target="_blank">
-          🚀 Proceed to Booking
+          <i class="fas fa-rocket"></i> Proceed to Booking
         </a>
       </div>
     </section>
 
-    <section id="gfe">
-      <h2>Good Faith Exam (GFE)</h2>
+    <section id="gfe" class="section">
+      <h2 class="section-title">Good Faith Exam (GFE)</h2>
+      <p class="section-subtitle">Required medical consultation for new patients - Valid for 12 months</p>
       <div class="service-grid">
         <div class="service-card">
           <div class="service-icon">🩺</div>
@@ -606,11 +1217,9 @@
           <div class="service-description">
             Complete a quick 3-5 minute video consultation with our licensed medical provider. Valid for 12 months for all future treatments.
           </div>
-          <div style="margin-top: 20px;">
-            <button class="service-link" onclick="alert('GFE widget would load here - this is a demo version')">
-              Start GFE Exam
-            </button>
-          </div>
+          <button class="service-link" onclick="alert('GFE widget would load here - this is a demo version')">
+            Start GFE Exam
+          </button>
         </div>
         <div class="service-card">
           <div class="service-icon">📋</div>
@@ -629,8 +1238,9 @@
       </div>
     </section>
 
-    <section id="book">
-      <h2>Book an Appointment</h2>
+    <section id="book" class="section">
+      <h2 class="section-title">Book an Appointment</h2>
+      <p class="section-subtitle">Schedule your mobile IV therapy session - We come to you!</p>
       <div class="service-grid">
         <div class="service-card">
           <div class="service-icon">📅</div>
@@ -665,8 +1275,9 @@
       </div>
     </section>
 
-    <section id="contact">
-      <h2>Contact Us</h2>
+    <section id="contact" class="section">
+      <h2 class="section-title">Contact Us</h2>
+      <p class="section-subtitle">Get in touch with our team for any questions or assistance</p>
       <div class="contact-grid">
         <div class="contact-card">
           <div class="contact-icon">📞</div>
@@ -693,7 +1304,7 @@
   </main>
 
   <footer>
-    &copy; 2025 Stay Dripped IV – Scottsdale, AZ | Licensed Medical Professionals | Premium Mobile IV Therapy
+    &copy; 2025 Stay Dripped® Mobile IV – Scottsdale, AZ | Licensed Medical Professionals | Premium Mobile IV Therapy
   </footer>
 
   <!-- JavaScript -->
@@ -755,10 +1366,10 @@
             <div class="cart-item">
               <div>
                 <strong>${item}</strong> ${quantity > 1 ? `(×${quantity})` : ''}
-                <div style="color: #718096; font-size: 0.9em;">$${price} each</div>
+                <div style="color: var(--text-light); font-size: 0.9em;">$${price} each</div>
               </div>
-              <div style="display: flex; align-items: center; gap: 10px;">
-                <span style="font-weight: 700; color: #00c6ff;">$${itemTotal.toFixed(2)}</span>
+              <div style="display: flex; align-items: center; gap: 1rem;">
+                <span style="font-weight: 700; color: var(--secondary);">$${itemTotal.toFixed(2)}</span>
                 <button class="remove-btn" onclick="removeFromCart(${index})" title="Remove item">×</button>
               </div>
             </div>
@@ -792,7 +1403,7 @@
 
         const notification = document.createElement('div');
         notification.className = 'notification';
-        notification.textContent = `✅ ${item} added to cart!`;
+        notification.innerHTML = `<i class="fas fa-check"></i> ${item} added to cart!`;
         
         document.body.appendChild(notification);
         
@@ -815,12 +1426,45 @@
       }
     }
 
+    function scrollToSection(sectionId) {
+      try {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          section.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      } catch (error) {
+        console.log('Scroll error handled:', error);
+      }
+    }
+
     // Navigation handling
     document.addEventListener('DOMContentLoaded', function() {
       try {
         renderCart();
+        
+        // Animation on scroll
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('fade-in-up');
+            }
+          });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.menu-card, .service-card, .contact-card, .addin-card').forEach(el => {
+          observer.observe(el);
+        });
       } catch (error) {
-        console.log('Navigation error handled:', error);
+        console.log('Initialization error handled:', error);
       }
     });
   </script>
