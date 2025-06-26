@@ -15,6 +15,864 @@
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/qualiphy-style.css">
     <link rel="stylesheet" href="../../assets/css/responsive.css">
+    
+    <style>
+        .injections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .injection-card {
+            background: #f8fafc;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .injection-card:hover {
+            background: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .injection-options {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .injection-btn {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9em;
+        }
+
+        .injection-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(72, 187, 120, 0.3);
+        }
+
+        /* Cart Section */
+        .cart-section {
+            background: linear-gradient(135deg, #e6fffa 0%, #b2f5ea 100%);
+            border: 2px solid #81e6d9;
+        }
+
+        .cart-summary {
+            min-height: 100px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #b2f5ea;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .cart-total {
+            font-size: 1.5em;
+            font-weight: 800;
+            color: #00c6ff;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .empty-cart {
+            text-align: center;
+            color: #718096;
+            padding: 40px 20px;
+        }
+
+        .empty-cart-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            opacity: 0.5;
+        }
+
+        .remove-btn {
+            background: #fed7d7;
+            color: #c53030;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .remove-btn:hover {
+            background: #fc8181;
+            color: white;
+        }
+
+        /* Service Cards */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .service-card {
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .service-card:hover {
+            background: white;
+            border-color: #00c6ff;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .service-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 15px;
+        }
+
+        .service-description {
+            color: #718096;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .service-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .service-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 114, 255, 0.3);
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .contact-card {
+            background: #2d3748;
+            color: white;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            background: #4a5568;
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .contact-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            color: #00c6ff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-info:hover {
+            color: #0072ff;
+        }
+
+        /* Widget Containers */
+        .widget-container {
+            margin: 30px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        /* Header */
+        .header-content {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .logo-section {
+            margin-bottom: 30px;
+        }
+
+        .brand-title {
+            font-size: 2.8em;
+            font-weight: 800;
+            margin: 20px 0 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .brand-subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .quick-actions {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .quick-action-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .quick-action-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Main Content Styles */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5em;
+            color: #2d3748;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            font-size: 1.1em;
+            color: #718096;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-secondary {
+            background: #e2e8f0;
+            color: #4a5568;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #667eea;
+            color: #667eea;
+        }
+
+        .btn-lg {
+            padding: 16px 32px;
+            font-size: 1.1em;
+        }
+
+        .btn-sm {
+            padding: 8px 16px;
+            font-size: 0.9em;
+        }
+
+        /* Shot Menu Styles */
+        .shots-menu {
+            padding: 80px 0;
+            background: #f7fafc;
+        }
+
+        .shots-grid {
+            display: grid;
+            gap: 50px;
+        }
+
+        .shot-category h3 {
+            font-size: 1.8em;
+            color: #2d3748;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .shots-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .shot-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .shot-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .shot-card.popular {
+            border: 3px solid #48bb78;
+        }
+
+        .shot-badge {
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: #48bb78;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+
+        .shot-card h4 {
+            font-size: 1.4em;
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+
+        .shot-price {
+            font-size: 1.8em;
+            font-weight: 800;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .shot-content p {
+            color: #4a5568;
+            margin-bottom: 20px;
+        }
+
+        .shot-benefits {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .shot-benefits li {
+            padding: 8px 0;
+            color: #4a5568;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .shot-benefits li:before {
+            content: "✓";
+            color: #48bb78;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .shot-frequency {
+            background: #e6fffa;
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-size: 0.9em;
+            color: #2d3748;
+            margin: 15px 0;
+        }
+
+        /* Packages */
+        .shot-packages {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .package-card {
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .package-card.featured {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .package-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #48bb78;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .package-price {
+            font-size: 2.5em;
+            font-weight: 800;
+            margin: 20px 0;
+        }
+
+        .original-price {
+            font-size: 0.6em;
+            text-decoration: line-through;
+            opacity: 0.7;
+            margin-left: 10px;
+        }
+
+        /* Benefits and Process */
+        .shots-benefits,
+        .shot-process,
+        .who-benefits,
+        .shots-faq {
+            padding: 80px 0;
+        }
+
+        .shots-benefits {
+            background: #f7fafc;
+        }
+
+        .benefits-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .comparison-table {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .comparison-header,
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 20px;
+            padding: 15px 20px;
+            align-items: center;
+        }
+
+        .comparison-header {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+
+        .comparison-row {
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .comparison-row:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        .key-benefits h3 {
+            color: #2d3748;
+            margin: 30px 0 15px;
+        }
+
+        .key-benefits ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .key-benefits li {
+            padding: 10px 0;
+            color: #4a5568;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        /* Process Steps */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .process-step:hover {
+            transform: translateY(-10px);
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: 800;
+            margin: 0 auto 20px;
+        }
+
+        .step-content h3 {
+            color: #2d3748;
+            margin-bottom: 15px;
+        }
+
+        .step-duration {
+            background: #e6fffa;
+            color: #2d3748;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            display: inline-block;
+            margin-top: 15px;
+        }
+
+        .comfort-features {
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 1.5em;
+        }
+
+        /* Benefits Categories */
+        .benefits-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .benefit-group {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-group:hover {
+            transform: translateY(-10px);
+        }
+
+        .benefit-group h3 {
+            color: #2d3748;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+        }
+
+        .benefit-group ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .benefit-group li {
+            padding: 8px 0;
+            color: #4a5568;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .benefit-group li:before {
+            content: "→";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* FAQ */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .faq-item {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .faq-item h3 {
+            color: #2d3748;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+
+        .faq-item p {
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .shots-cta {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .cta-buttons {
+            margin: 40px 0;
+        }
+
+        .cta-buttons .btn {
+            margin: 0 10px;
+        }
+
+        .cta-note {
+            margin-top: 30px;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a202c;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .footer-section h4 {
+            color: #00c6ff;
+            margin-bottom: 20px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section a {
+            color: #cbd5e0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #00c6ff;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #2d3748;
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .brand-title {
+                font-size: 2.2em;
+            }
+
+            .quick-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .quick-action-btn {
+                width: 250px;
+                justify-content: center;
+            }
+
+            .shots-grid,
+            .service-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .section-header h2 {
+                font-size: 2em;
+            }
+
+            .shots-menu,
+            .shot-packages,
+            .shots-benefits,
+            .shot-process,
+            .who-benefits,
+            .shots-faq,
+            .shots-cta {
+                padding: 40px 0;
+            }
+
+            .benefits-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .comparison-header,
+            .comparison-row {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .benefits-categories {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .cta-buttons .btn {
+                display: block;
+                margin: 10px 0;
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -26,18 +884,28 @@
                         <img src="../../assets/images/logo.png" alt="Qualiphy" class="logo">
                     </a>
                 </div>
-                <div class="navbar-menu">
-                    <ul class="navbar-nav">
-                        <li><a href="../../index.html" class="nav-link">Home</a></li>
-                        <li><a href="../services.html" class="nav-link active">Services</a></li>
-                        <li><a href="../membership.html" class="nav-link">Membership</a></li>
-                        <li><a href="../testimonials.html" class="nav-link">Testimonials</a></li>
-                        <li><a href="../../index.html#contact" class="nav-link">Contact</a></li>
-                    </ul>
-                    <button class="btn btn-primary" onclick="openBookingModal()">Book Now</button>
-                </div>
             </div>
         </nav>
+        
+        <div class="header-content">
+            <div class="logo-section">
+                <img src="../../assets/images/logo.png" alt="Stay Dripped Logo">
+                <div class="brand-title">Stay Dripped® Mobile IV</div>
+                <div class="brand-subtitle">Mobile IV Hydration & Wellness in Scottsdale, AZ</div>
+            </div>
+            
+            <div class="quick-actions">
+                <a href="tel:+16026889825" class="quick-action-btn">
+                    📞 Call (602) 688-9825
+                </a>
+                <a href="https://Staydripped.intakeq.com/booking" class="quick-action-btn" target="_blank">
+                    📅 Book Online Now
+                </a>
+                <a href="#gfe" class="quick-action-btn">
+                    🩺 Start GFE (Required)
+                </a>
+            </div>
+        </div>
     </header>
 
     <!-- Service Hero -->
@@ -140,9 +1008,9 @@
                     </div>
                 </div>
 
-                <!-- Immune Support -->
+                <!-- Immunity & Health -->
                 <div class="shot-category">
-                    <h3>🛡️ Immune Support</h3>
+                    <h3>🛡️ Immunity & Health</h3>
                     <div class="shots-list">
                         <div class="shot-card">
                             <h4>Immune Boost Shot</h4>
