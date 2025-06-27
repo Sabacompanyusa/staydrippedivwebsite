@@ -258,6 +258,48 @@
   margin-top: 2rem;
 }
 
+/* Common utility classes to replace inline styles */
+.text-center {
+  text-align: center;
+}
+
+.section-spacing {
+  padding: 4rem 0;
+}
+
+.section-heading {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.hero-buttons-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  margin-bottom: 1rem;
+  background: var(--bg-light);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.faq-summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.faq-answer {
+  margin-top: 1rem;
+}
+
 /* Cart Item Details */
 .cart-item-details {
   color: var(--text-light);
