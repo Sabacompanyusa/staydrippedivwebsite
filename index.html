@@ -352,6 +352,32 @@
       /* Services */
       .services {
         padding: 4rem 0;
+        background: linear-gradient(145deg, #fafafa, #f0f0f0);
+        position: relative;
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.8),
+          inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+      }
+
+      .services::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background:
+          radial-gradient(
+            circle at 20% 10%,
+            rgba(59, 130, 246, 0.03) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 90%,
+            rgba(147, 51, 234, 0.03) 0%,
+            transparent 50%
+          );
+        pointer-events: none;
       }
 
       .services h2 {
