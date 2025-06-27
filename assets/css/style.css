@@ -4,65 +4,85 @@
    Enhanced with Vibrant Colors & Typography
    ============================================== */
 
-/* Enhanced CSS Variables with More Vibrant Colors */
+/* Enhanced CSS Variables with Metallic/Industrial Design */
 :root {
-  /* Enhanced Brand Colors - More Vibrant & Appealing */
-  --primary: #0a2847; /* Deeper navy for more contrast */
-  --secondary: #00d4ff; /* Brighter cyan for more pop */
-  --accent: #4dd0ff; /* Lighter accent for better visibility */
-  --gold: #ffb100; /* More vibrant gold */
-  --platinum: #e8f4f8; /* Softer platinum with cyan tint */
-  --success: #00c851; /* Brighter green for more impact */
-  --warning: #ff8f00; /* Warmer orange for better contrast */
-  --error: #ff1744; /* Brighter red for attention */
+  /* Metallic Brand Colors - Steel, Chrome, Silver Tones */
+  --primary: #1a1a1a; /* Dark steel */
+  --secondary: #4a5568; /* Medium steel gray */
+  --accent: #718096; /* Light steel */
+  --chrome: #e2e8f0; /* Chrome finish */
+  --silver: #cbd5e1; /* Polished silver */
+  --platinum: #f7fafc; /* Platinum white */
+  --steel: #2d3748; /* Steel blue-gray */
+  --iron: #4a5568; /* Iron gray */
+  --titanium: #a0aec0; /* Titanium light */
 
-  /* Enhanced Text Colors for Better Contrast */
-  --text-dark: #0f172a; /* Deeper dark for better readability */
-  --text-medium: #334155; /* Medium gray for better hierarchy */
-  --text-light: #64748b; /* Improved light gray */
-  --text-muted: #94a3b8; /* Softer muted text */
+  /* Metallic Text Colors */
+  --text-dark: #1a202c; /* Dark charcoal */
+  --text-medium: #2d3748; /* Steel gray */
+  --text-light: #4a5568; /* Medium steel */
+  --text-muted: #718096; /* Light steel */
   --text-white: #ffffff;
+  --text-chrome: #e2e8f0; /* Chrome text */
 
-  /* Enhanced Background Colors */
-  --bg-light: #f0f9ff; /* Softer light blue background */
-  --bg-dark: #0f172a; /* Deeper dark background */
-  --bg-gradient: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  /* Industrial Background Colors */
+  --bg-dark: #1a1a1a; /* Dark metal */
+  --bg-medium: #2d3748; /* Medium steel */
+  --bg-light: #f7fafc; /* Light aluminum */
+  --bg-chrome: #edf2f7; /* Chrome surface */
   --white: #ffffff;
 
-  /* Enhanced Shadows for More Depth */
-  --shadow: 0 4px 20px rgba(0, 212, 255, 0.08);
-  --shadow-hover: 0 8px 40px rgba(0, 212, 255, 0.15);
-  --shadow-lg: 0 16px 64px rgba(0, 212, 255, 0.12);
-  --shadow-glow: 0 0 30px rgba(0, 212, 255, 0.3);
+  /* Metallic Shadows and Effects */
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  --shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 16px 64px rgba(0, 0, 0, 0.2);
+  --shadow-inset: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-metal:
+    0 4px 16px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  --shadow-chrome:
+    0 2px 8px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.25);
 
-  /* Border Radius */
-  --br: 16px; /* Increased for more modern look */
-  --br-lg: 24px;
-  --br-xl: 32px;
+  /* Sharp Industrial Border Radius */
+  --br: 8px; /* Sharp modern edges */
+  --br-lg: 12px;
+  --br-xl: 16px;
 
-  /* Enhanced Transitions */
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-fast: all 0.15s ease;
-  --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  /* Precise Transitions */
+  --transition: all 0.2s ease-out;
+  --transition-fast: all 0.1s ease;
+  --transition-smooth: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
-  /* Enhanced Gradients */
-  --gradient-primary: linear-gradient(
-    135deg,
-    #00d4ff 0%,
-    #4dd0ff 50%,
-    #80e5ff 100%
+  /* Metallic Gradients */
+  --gradient-chrome: linear-gradient(
+    145deg,
+    #f7fafc 0%,
+    #edf2f7 50%,
+    #e2e8f0 100%
   );
-  --gradient-secondary: linear-gradient(135deg, #0a2847 0%, #1e3a8a 100%);
-  --gradient-gold: linear-gradient(135deg, #ffb100 0%, #ffc947 100%);
-  --gradient-hero: linear-gradient(
-    135deg,
-    rgba(10, 40, 71, 0.95) 0%,
-    rgba(0, 212, 255, 0.8) 100%
+  --gradient-steel: linear-gradient(
+    145deg,
+    #2d3748 0%,
+    #4a5568 50%,
+    #718096 100%
   );
-  --gradient-glow: radial-gradient(
-    circle at center,
-    rgba(0, 212, 255, 0.2) 0%,
-    transparent 70%
+  --gradient-silver: linear-gradient(
+    145deg,
+    #cbd5e1 0%,
+    #e2e8f0 50%,
+    #f7fafc 100%
+  );
+  --gradient-dark: linear-gradient(145deg, #1a202c 0%, #2d3748 100%);
+  --gradient-titanium: linear-gradient(
+    145deg,
+    #a0aec0 0%,
+    #cbd5e1 50%,
+    #e2e8f0 100%
+  );
+  --gradient-metal-shine: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
   );
 
   /* Enhanced Typography Scale */
