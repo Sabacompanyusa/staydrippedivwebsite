@@ -252,6 +252,12 @@
   }
 }
 
+/* Cart Actions */
+.cart-actions {
+  text-align: center;
+  margin-top: 2rem;
+}
+
 /* Enhanced Font Imports */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Caveat:wght@400;500;600;700&display=swap");
 
