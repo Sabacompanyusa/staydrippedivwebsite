@@ -888,18 +888,9 @@ ul {
 }
 
 .nav-link {
-  color: var(--text-chrome);
   font-weight: var(--font-weight-semibold);
   font-size: var(--font-size-base);
   padding: 0.875rem 1.5rem;
-  border-radius: var(--br);
-  transition: var(--transition-smooth);
-  position: relative;
-  background: var(--gradient-steel);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: var(--shadow-metal);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-  overflow: hidden;
 }
 
 .nav-link::before {
