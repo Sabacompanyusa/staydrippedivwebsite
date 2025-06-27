@@ -1853,10 +1853,10 @@
             <div class="cart-item">
               <div>
                 <strong>${item}</strong> ${quantity > 1 ? `(×${quantity})` : ""}
-                <div style="color: var(--text-light); font-size: 0.9em;">$${price} each</div>
+                <div class="cart-item-details">$${price} each</div>
               </div>
-              <div style="display: flex; align-items: center; gap: 1rem;">
-                <span style="font-weight: 700; color: var(--secondary);">$${itemTotal.toFixed(2)}</span>
+              <div class="cart-item-controls">
+                <span class="cart-item-price">$${itemTotal.toFixed(2)}</span>
                 <button class="remove-btn" onclick="removeFromCart(${index})" title="Remove item">×</button>
               </div>
             </div>
