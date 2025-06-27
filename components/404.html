@@ -10,7 +10,7 @@
 <body>
   <div class="scroll-indicator" id="scrollIndicator"></div>
   <div id="header-container"></div>
-  <main class="static-page">
+  <main class="static-page" role="main">
     <div class="container" style="text-align:center; padding:4rem 1rem;">
       <h1>404 - Page Not Found</h1>
       <p>Sorry, the page you requested could not be found.</p>
@@ -21,8 +21,14 @@
   <script src="assets/js/main.js"></script>
   <script>
     async function loadComponent(id, path) {
-      const resp = await fetch(path);
-      document.getElementById(id).innerHTML = await resp.text();
+      try {
+        const resp = await fetch(path);
+        if (resp.ok) {
+          document.getElementById(id).innerHTML = await resp.text();
+        }
+      } catch (err) {
+        console.error('Failed to load', path, err);
+      }
     }
     document.addEventListener('DOMContentLoaded', () => {
       loadComponent('header-container', 'components/header.html');

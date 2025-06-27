@@ -1,9 +1,9 @@
 <button class="cta-button" id="openBooking">Book Your Appointment</button>
 
-<div id="bookingModal" class="modal">
+<div id="bookingModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="bookingTitle">
   <div class="modal-content">
-    <span class="close">&times;</span>
-    <h3>Schedule Your IV Treatment</h3>
+    <button class="close" type="button" aria-label="Close">&times;</button>
+    <h3 id="bookingTitle">Schedule Your IV Treatment</h3>
     <form id="bookingForm">
       <label for="name">Full Name</label>
       <input type="text" id="name" name="name" required />
@@ -27,5 +27,26 @@
 
       <button type="submit" class="cta-button">Submit Request</button>
     </form>
-  </div>
 </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const modal = document.getElementById('bookingModal');
+    const openBtn = document.getElementById('openBooking');
+    const closeBtn = modal.querySelector('.close');
+
+    function open() {
+      modal.style.display = 'block';
+    }
+
+    function close() {
+      modal.style.display = 'none';
+    }
+
+    openBtn.addEventListener('click', open);
+    closeBtn.addEventListener('click', close);
+    modal.addEventListener('click', e => {
+      if (e.target === modal) close();
+    });
+  });
+</script>
