@@ -947,11 +947,7 @@ ul {
   text-shadow: none;
 }
 
-.header-buttons {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-}
+/* Duplicate removed - using definition at line 286 */
 
 .emergency-call-btn {
   display: flex;
