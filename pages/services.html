@@ -3,271 +3,1315 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services Premium Wellness</title>
-    <meta name="description" content="Explore our comprehensive wellness services including IV therapy, hormone replacement, aesthetic treatments, and more.">
+    <title>Our Premium Wellness Services - Stay Dripped Mobile IV</title>
+    <meta name="description" content="Explore our comprehensive wellness services including IV therapy, hormone replacement, aesthetic treatments, and more delivered to your location.">
     
     <!-- Favicons -->
-    <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/qualiphy-style.css">
-    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <style>
+        /* Include the Stay Dripped Mobile IV CSS */
+        /* ==============================================
+           STAY DRIPPED MOBILE IV - MAIN STYLESHEET
+           Copyright © 2025 Stay Dripped Mobile IV LLC
+           ============================================== */
+
+        /* CSS Variables */
+        :root {
+          /* Brand Colors */
+          --primary: #0a2a43;
+          --secondary: #00bcd4;
+          --accent: #4fc3f7;
+          --gold: #ffd700;
+          --platinum: #e5e5e5;
+          --success: #4caf50;
+          --warning: #ff9800;
+          --error: #f44336;
+          
+          /* Text Colors */
+          --text-dark: #1a1a1a;
+          --text-light: #666;
+          --text-muted: #999;
+          --text-white: #ffffff;
+          
+          /* Background Colors */
+          --bg-light: #f1fbff;
+          --bg-dark: #1a1a1a;
+          --white: #ffffff;
+          
+          /* Shadows */
+          --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+          --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.1);
+          
+          /* Border Radius */
+          --br: 12px;
+          --br-lg: 16px;
+          --br-xl: 24px;
+          
+          /* Transitions */
+          --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          --transition-fast: all 0.15s ease;
+          
+          /* Gradients */
+          --gradient-primary: linear-gradient(135deg, var(--secondary), var(--accent));
+          --gradient-gold: linear-gradient(135deg, #ffd700, #ffed4e);
+          --gradient-hero: linear-gradient(135deg, rgba(10, 42, 67, 0.9), rgba(0, 188, 212, 0.7));
+          
+          /* Spacing */
+          --container-max-width: 1400px;
+          --section-padding: 6rem 2rem;
+          --section-padding-mobile: 4rem 1rem;
+        }
+
+        /* CSS Reset */
+        *, *::before, *::after {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        html {
+          scroll-behavior: smooth;
+          font-size: 16px;
+        }
+
+        body {
+          font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+          line-height: 1.7;
+          color: var(--text-dark);
+          background: #fafafa;
+          overflow-x: hidden;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+
+        img, iframe, svg {
+          max-width: 100%;
+          height: auto;
+          display: block;
+          image-rendering: -webkit-optimize-contrast;
+          image-rendering: crisp-edges;
+        }
+
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
+
+        button {
+          font-family: inherit;
+          cursor: pointer;
+          border: none;
+          background: none;
+        }
+
+        ul {
+          list-style: none;
+        }
+
+        /* Container */
+        .container {
+          max-width: var(--container-max-width);
+          margin: 0 auto;
+          padding: 0 2rem;
+        }
+
+        /* Section Styles */
+        .section {
+          padding: var(--section-padding);
+          text-align: center;
+        }
+
+        .section-light {
+          background: var(--bg-light);
+        }
+
+        .section-title {
+          font-size: clamp(2rem, 4vw, 3rem);
+          font-weight: 800;
+          color: var(--primary);
+          margin-bottom: 1rem;
+          position: relative;
+          display: inline-block;
+        }
+
+        .section-title::after {
+          content: '';
+          position: absolute;
+          bottom: -10px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 80px;
+          height: 4px;
+          background: var(--secondary);
+          border-radius: 2px;
+        }
+
+        .section-subtitle {
+          font-size: 1.1rem;
+          color: var(--text-light);
+          margin-bottom: 3rem;
+          max-width: 600px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        /* Header Styles */
+        .header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 1000;
+          background: var(--primary);
+          box-shadow: var(--shadow);
+          transition: var(--transition);
+        }
+
+        .header-container {
+          max-width: var(--container-max-width);
+          margin: 0 auto;
+          padding: 1rem 2rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .logo-section {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          transition: var(--transition);
+        }
+
+        .logo-section:hover {
+          transform: scale(1.05);
+        }
+
+        .logo-image {
+          height: 40px;
+          width: auto;
+        }
+
+        .mobile-menu-toggle {
+          display: none;
+          flex-direction: column;
+          gap: 4px;
+          padding: 8px;
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: var(--br);
+          transition: var(--transition);
+        }
+
+        .mobile-menu-toggle span {
+          width: 25px;
+          height: 3px;
+          background: white;
+          border-radius: 2px;
+          transition: var(--transition);
+        }
+
+        .mobile-menu-toggle:hover {
+          background: rgba(255, 255, 255, 0.2);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+          transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+          opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+          transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        .brand-name {
+          font-size: 1.4rem;
+          font-weight: 800;
+          background: var(--gradient-primary);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+
+        .nav-menu {
+          display: flex;
+          gap: 2rem;
+        }
+
+        .nav-link {
+          color: white;
+          font-weight: 500;
+          padding: 0.5rem 1rem;
+          border-radius: var(--br);
+          transition: var(--transition);
+          position: relative;
+        }
+
+        .nav-link::before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          width: 0;
+          height: 2px;
+          background: var(--secondary);
+          transition: var(--transition);
+          transform: translateX(-50%);
+        }
+
+        .nav-link:hover::before {
+          width: 80%;
+        }
+
+        .nav-link:hover {
+          background: rgba(255, 255, 255, 0.15);
+        }
+
+        .nav-link.active {
+          background: rgba(255, 255, 255, 0.25);
+        }
+
+        .header-buttons {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+        }
+
+        .emergency-call-btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+          background: var(--success);
+          color: white;
+          height: 40px;
+          min-width: 150px;
+          padding: 0 1rem;
+          border-radius: var(--br);
+          font-weight: 600;
+          transition: var(--transition);
+          box-shadow: var(--shadow);
+        }
+
+        .emergency-call-btn:hover {
+          transform: translateY(-2px);
+          box-shadow: var(--shadow-hover);
+        }
+
+        /* Qualiphy widget styles */
+        .qualiphy-widget {
+          margin-left: 0.5rem;
+        }
+
+        .qualiphy-button {
+          width: 150px;
+          height: 40px;
+          background: #cfc9ff;
+          color: #0a005b;
+          border: none;
+          border-radius: 5px;
+          font-weight: 600;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          transition: var(--transition);
+        }
+
+        .qualiphy-button:hover {
+          background: #8058fa;
+          color: #fff;
+        }
+
+        .qualiphy-button:focus {
+          outline: none;
+          box-shadow: 0 0 0 3px rgba(128, 88, 250, 0.4);
+        }
+
+        /* Enhanced Exam Button & Modal Styles from original CSS */
+        .exam-modal-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.7);
+          backdrop-filter: blur(5px);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 10000;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.3s ease;
+          padding: 1rem;
+        }
+
+        .exam-modal-overlay.active {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        .exam-modal {
+          background: white;
+          border-radius: 16px;
+          max-width: 600px;
+          width: 100%;
+          max-height: 90vh;
+          overflow-y: auto;
+          box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+          transform: scale(0.9) translateY(20px);
+          transition: all 0.3s ease;
+          position: relative;
+        }
+
+        .exam-modal-overlay.active .exam-modal {
+          transform: scale(1) translateY(0);
+        }
+
+        .exam-modal-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 2rem 2rem 1rem;
+          border-bottom: 1px solid #e0e0e0;
+          background: linear-gradient(135deg, #f1fbff, #fff);
+        }
+
+        .exam-modal-header h3 {
+          margin: 0;
+          color: var(--primary);
+          font-size: 1.4rem;
+          font-weight: 700;
+        }
+
+        .exam-modal-close {
+          background: none;
+          border: none;
+          font-size: 1.8rem;
+          cursor: pointer;
+          color: #666;
+          padding: 0.5rem;
+          border-radius: 8px;
+          transition: all 0.2s ease;
+          width: 40px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .exam-modal-close:hover {
+          background: #f0f0f0;
+          color: #333;
+          transform: scale(1.1);
+        }
+
+        .exam-modal-body {
+          padding: 2rem;
+        }
+
+        .exam-modal-body > p {
+          color: var(--text-light);
+          line-height: 1.6;
+          margin-bottom: 2rem;
+          font-size: 1rem;
+        }
+
+        .exam-process {
+          margin: 2rem 0;
+          padding: 1.5rem;
+          background: linear-gradient(135deg, #f1fbff, #e8f7ff);
+          border-radius: 12px;
+          border-left: 4px solid var(--secondary);
+        }
+
+        .exam-process h4 {
+          margin: 0 0 1rem 0;
+          color: var(--primary);
+          font-size: 1.1rem;
+          font-weight: 600;
+        }
+
+        .exam-process ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+
+        .exam-process li {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          margin-bottom: 0.75rem;
+          color: var(--text-dark);
+          font-size: 0.95rem;
+        }
+
+        .exam-process li:last-child {
+          margin-bottom: 0;
+        }
+
+        .exam-process li i {
+          color: var(--success);
+          font-size: 1rem;
+          min-width: 16px;
+        }
+
+        .exam-benefits {
+          margin: 2rem 0;
+          padding: 1.5rem;
+          background: linear-gradient(135deg, #f8f9ff, #fff);
+          border-radius: 12px;
+          border: 1px solid #e6e1ff;
+        }
+
+        .exam-benefits h4 {
+          margin: 0 0 1rem 0;
+          color: var(--primary);
+          font-size: 1.1rem;
+          font-weight: 600;
+        }
+
+        .benefits-list {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .benefit-point {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          padding: 0.75rem;
+          background: white;
+          border-radius: 8px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+          transition: transform 0.2s ease;
+        }
+
+        .benefit-point:hover {
+          transform: translateX(5px);
+        }
+
+        .benefit-point i {
+          color: var(--secondary);
+          font-size: 1.2rem;
+          min-width: 20px;
+        }
+
+        .benefit-point span {
+          color: var(--text-dark);
+          font-size: 0.9rem;
+          line-height: 1.4;
+        }
+
+        .exam-actions {
+          display: flex;
+          gap: 1rem;
+          margin: 2rem 0 1rem;
+        }
+
+        .exam-proceed-btn,
+        .exam-call-btn {
+          flex: 1;
+          padding: 1rem 1.5rem;
+          border: none;
+          border-radius: 10px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+          font-size: 0.95rem;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .exam-proceed-btn {
+          background: linear-gradient(135deg, var(--secondary), var(--accent));
+          color: white;
+          box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3);
+        }
+
+        .exam-proceed-btn:hover {
+          background: linear-gradient(135deg, var(--accent), #00bcd4);
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(0, 188, 212, 0.4);
+        }
+
+        .exam-call-btn {
+          background: linear-gradient(135deg, var(--success), #66bb6a);
+          color: white;
+          box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+        }
+
+        .exam-call-btn:hover {
+          background: linear-gradient(135deg, #66bb6a, var(--success));
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+        }
+
+        .exam-disclaimer {
+          margin-top: 1.5rem;
+          padding: 1rem;
+          background: #f8f9fa;
+          border-radius: 8px;
+          border-left: 3px solid var(--warning);
+        }
+
+        .exam-disclaimer p {
+          margin: 0;
+          color: var(--text-muted);
+          font-size: 0.85rem;
+          line-height: 1.4;
+        }
+
+        .exam-disclaimer i {
+          color: var(--warning);
+          margin-right: 0.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+          min-height: 70vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          position: relative;
+          color: white;
+          overflow: hidden;
+          background: var(--gradient-hero), 
+                      url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+        }
+
+        .hero-content {
+          position: relative;
+          z-index: 2;
+          max-width: 900px;
+          padding: 0 2rem;
+        }
+
+        .hero-title {
+          font-size: clamp(2.5rem, 6vw, 4rem);
+          font-weight: 800;
+          margin-bottom: 1.5rem;
+          background: linear-gradient(135deg, #fff, var(--accent));
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+
+        .hero-subtitle {
+          font-size: clamp(1rem, 2vw, 1.2rem);
+          margin-bottom: 2rem;
+          opacity: 0.9;
+          max-width: 700px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        /* Services Grid */
+        .services-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+          gap: 2rem;
+          margin-top: 3rem;
+        }
+
+        .service-card {
+          background: white;
+          padding: 2.5rem;
+          border-radius: var(--br-lg);
+          box-shadow: var(--shadow);
+          transition: var(--transition);
+          position: relative;
+          overflow: hidden;
+          border: 1px solid rgba(0, 188, 212, 0.1);
+          text-align: left;
+        }
+
+        .service-card::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 4px;
+          width: 100%;
+          background: var(--secondary);
+        }
+
+        .service-card:hover {
+          transform: translateY(-8px);
+          box-shadow: var(--shadow-hover);
+        }
+
+        .service-icon {
+          font-size: 3rem;
+          color: var(--secondary);
+          margin-bottom: 1.5rem;
+          display: block;
+        }
+
+        .service-card h3 {
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: var(--primary);
+          margin-bottom: 1rem;
+        }
+
+        .service-card p {
+          color: var(--text-light);
+          font-size: 1rem;
+          line-height: 1.6;
+          margin-bottom: 1.5rem;
+        }
+
+        .service-features {
+          margin-bottom: 2rem;
+        }
+
+        .service-features ul {
+          list-style: none;
+          padding: 0;
+        }
+
+        .service-features li {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          margin-bottom: 0.75rem;
+          color: var(--text-dark);
+          font-size: 0.9rem;
+        }
+
+        .service-features li i {
+          color: var(--success);
+          font-size: 1rem;
+          min-width: 16px;
+        }
+
+        .service-cta {
+          display: flex;
+          gap: 1rem;
+          flex-wrap: wrap;
+        }
+
+        .service-btn {
+          flex: 1;
+          min-width: 120px;
+          padding: 0.75rem 1.5rem;
+          background: var(--secondary);
+          color: white;
+          border: none;
+          border-radius: var(--br);
+          font-weight: 600;
+          cursor: pointer;
+          transition: var(--transition);
+          text-align: center;
+        }
+
+        .service-btn:hover {
+          background: var(--accent);
+          transform: translateY(-2px);
+          box-shadow: var(--shadow-hover);
+        }
+
+        .service-btn.secondary {
+          background: rgba(0, 188, 212, 0.1);
+          color: var(--secondary);
+          border: 2px solid var(--secondary);
+        }
+
+        .service-btn.secondary:hover {
+          background: var(--secondary);
+          color: white;
+        }
+
+        /* Why Choose Us Section */
+        .why-choose-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 2rem;
+          margin-top: 3rem;
+        }
+
+        .feature-card {
+          background: white;
+          padding: 2rem;
+          border-radius: var(--br-lg);
+          box-shadow: var(--shadow);
+          text-align: center;
+          transition: var(--transition);
+        }
+
+        .feature-card:hover {
+          transform: translateY(-5px);
+          box-shadow: var(--shadow-hover);
+        }
+
+        .feature-card i {
+          font-size: 2.5rem;
+          color: var(--secondary);
+          margin-bottom: 1rem;
+        }
+
+        .feature-card h4 {
+          color: var(--primary);
+          margin-bottom: 1rem;
+          font-size: 1.2rem;
+        }
+
+        .feature-card p {
+          color: var(--text-light);
+          font-size: 0.9rem;
+          line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta-section {
+          padding: var(--section-padding);
+          background: var(--primary);
+          color: white;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .cta-section::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(45deg, transparent, rgba(79, 195, 247, 0.1), transparent);
+          animation: shimmer 6s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+          from { transform: translateX(-100%); }
+          to { transform: translateX(100%); }
+        }
+
+        .cta-content {
+          position: relative;
+          z-index: 2;
+        }
+
+        .cta-content h2 {
+          color: white;
+          margin-bottom: 1rem;
+          font-size: 2rem;
+        }
+
+        .cta-content p {
+          margin-bottom: 2rem;
+          opacity: 0.9;
+          font-size: 1.1rem;
+        }
+
+        .cta-buttons {
+          display: flex;
+          gap: 1rem;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+
+        .cta {
+          padding: 1rem 2rem;
+          border-radius: var(--br);
+          font-size: 1rem;
+          font-weight: 600;
+          transition: var(--transition);
+          position: relative;
+          overflow: hidden;
+          text-decoration: none;
+          display: inline-block;
+          cursor: pointer;
+          border: none;
+        }
+
+        .cta.primary {
+          background: var(--secondary);
+          color: white;
+        }
+
+        .cta.secondary {
+          background: rgba(255, 255, 255, 0.15);
+          color: white;
+          border: 2px solid white;
+          backdrop-filter: blur(10px);
+        }
+
+        .cta::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: rgba(255, 255, 255, 0.2);
+          transition: var(--transition);
+        }
+
+        .cta:hover::before {
+          left: 100%;
+        }
+
+        .cta:hover {
+          transform: translateY(-3px);
+          box-shadow: var(--shadow-hover);
+        }
+
+        /* Footer */
+        .site-footer {
+          background: var(--primary);
+          color: white;
+          padding: 3rem 2rem 1rem;
+        }
+
+        .footer-content {
+          max-width: var(--container-max-width);
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 2rem;
+          margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+          font-size: 1.2rem;
+          font-weight: 700;
+          margin-bottom: 1rem;
+          color: var(--secondary);
+        }
+
+        .footer-logo {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          margin-bottom: 1rem;
+        }
+
+        .footer-brand-name {
+          font-size: 1.2rem;
+          font-weight: 700;
+          color: var(--secondary);
+        }
+
+        .footer-links {
+          list-style: none;
+        }
+
+        .footer-links li {
+          margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+          color: rgba(255, 255, 255, 0.8);
+          transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+          color: var(--secondary);
+        }
+
+        .footer-bottom {
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          padding-top: 2rem;
+          max-width: var(--container-max-width);
+          margin: 0 auto;
+          text-align: center;
+          color: rgba(255, 255, 255, 0.6);
+          font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+          .mobile-menu-toggle {
+            display: flex;
+          }
+
+          .nav-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--primary);
+            flex-direction: column;
+            padding: 1rem 2rem;
+            box-shadow: var(--shadow-lg);
+          }
+
+          .nav-menu.active {
+            display: flex;
+          }
+
+          .nav-link {
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+          }
+
+          .nav-link:last-child {
+            border-bottom: none;
+          }
+          
+          .services-grid {
+            grid-template-columns: 1fr;
+          }
+          
+          .header-buttons {
+            flex-direction: column;
+            gap: 0.5rem;
+          }
+
+          .header-buttons a img {
+            height: 35px !important;
+            width: auto !important;
+          }
+
+          .qualiphy-button {
+            width: 130px;
+            height: 35px;
+            font-size: 0.8rem;
+          }
+
+          .emergency-call-btn {
+            min-width: 120px;
+            height: 35px;
+            font-size: 0.9rem;
+          }
+
+          .cta-buttons {
+            flex-direction: column;
+            align-items: center;
+          }
+
+          .service-cta {
+            flex-direction: column;
+          }
+        }
+    </style>
 </head>
 <body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-indicator"></div>
+
     <!-- Header -->
-    <header id="header">
-        <nav class="navbar">
-            <div class="container">
-                <div class="navbar-brand">
-                    <a href="../index.html">
-                        <img src="../assets/images/logo.png" alt="Qualiphy" class="logo">
-                    </a>
-                </div>
-                <div class="navbar-menu">
-                    <ul class="navbar-nav">
-                        <li><a href="../index.html" class="nav-link">Home</a></li>
-                        <li><a href="services.html" class="nav-link active">Services</a></li>
-                        <li><a href="membership.html" class="nav-link">Membership</a></li>
-                        <li><a href="partnerships.html" class="nav-link">Partnership</a></li>
-                        <li><a href="corporate-events.html" class="nav-link">Event Inquiry</a></li>
-                         <li><a href="franchise.html" class="nav-link">Franchise Opportunities</a></li>
-                        <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
-                        <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
-                    </ul>
-                    <button class="btn btn-primary active" onclick="openBookingModal()">Book Now</button>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-section">
+                <a href="index.html" aria-label="Stay Dripped Home">
+                    <img src="assets/images/logo.png" alt="Stay Dripped Logo" class="logo-image">
+                </a>
+            </div>
+
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#services" class="nav-link active">Services</a>
+                <a href="#testimonials" class="nav-link">Testimonials</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+                <a href="pages/membership.html" class="nav-link">Memberships</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="header-buttons">
+                <a href="tel:+16026889825" class="emergency-call-btn">
+                    <i class="fas fa-phone"></i>
+                    <span class="btn-text">Call Now</span>
+                </a>
+                <a href="https://Staydripped.intakeq.com/booking" target="_blank" alt="Make an Online Appointment">
+                    <img style="height:45px;width:162px;" height="45" width="162" src="https://intakeq.com/images/booknow.png" />
+                </a>
+                <div id="main-qualiphy-widget" class="qualiphy-widget">
+                    <button id="loadFormButton" class="qualiphy-button" onclick="showDisclosureModal()">
+                        <span class="btn-text">Good Faith Exam</span>
+                    </button>
                 </div>
             </div>
-        </nav>
+
+            <!-- Enhanced Patient Exam Modal -->
+            <div id="examModal" class="exam-modal-overlay" style="display: none;" role="dialog" aria-labelledby="examModalTitle" aria-describedby="examModalDesc">
+                <div class="exam-modal">
+                    <div class="exam-modal-header">
+                        <h3 id="examModalTitle">Good Faith Exam</h3>
+                        <button class="exam-modal-close" aria-label="Close examination modal">&times;</button>
+                    </div>
+                    <div class="exam-modal-body">
+                        <p id="examModalDesc">Welcome to Stay Dripped Mobile IV! Before your first treatment, our licensed medical professional will conduct a brief health assessment to ensure IV therapy is safe and appropriate for you.</p>
+                        
+                        <div class="exam-process">
+                            <h4>What to Expect:</h4>
+                            <ul>
+                                <li><i class="fas fa-check" aria-hidden="true"></i> Review of medical history</li>
+                                <li><i class="fas fa-check" aria-hidden="true"></i> Current health assessment</li>
+                                <li><i class="fas fa-check" aria-hidden="true"></i> Vital signs check</li>
+                                <li><i class="fas fa-check" aria-hidden="true"></i> Personalized treatment recommendation</li>
+                                <li><i class="fas fa-check" aria-hidden="true"></i> Safety protocol review</li>
+                            </ul>
+                        </div>
+
+                        <div class="exam-benefits">
+                            <h4>Why This Matters:</h4>
+                            <div class="benefits-list">
+                                <div class="benefit-point">
+                                    <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                                    <span>Ensures your safety and optimal treatment results</span>
+                                </div>
+                                <div class="benefit-point">
+                                    <i class="fas fa-user-md" aria-hidden="true"></i>
+                                    <span>Personalized care from licensed medical professionals</span>
+                                </div>
+                                <div class="benefit-point">
+                                    <i class="fas fa-clipboard-check" aria-hidden="true"></i>
+                                    <span>Meets all medical and regulatory requirements</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="exam-actions">
+                            <button class="exam-proceed-btn" onclick="proceedToExamBooking()" aria-describedby="examProceedDesc">
+                                <i class="fas fa-calendar-plus" aria-hidden="true"></i>
+                                Book Health Assessment
+                            </button>
+                            <button class="exam-call-btn" onclick="callForExam()" aria-describedby="examCallDesc">
+                                <i class="fas fa-phone" aria-hidden="true"></i>
+                                Call to Schedule
+                            </button>
+                        </div>
+                        
+                        <div class="exam-disclaimer">
+                            <p><small><i class="fas fa-info-circle" aria-hidden="true"></i> This brief assessment takes 10-15 minutes and can be done at your location before your first IV treatment.</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <div class="page-header-content">
-                <h1>Our Premium Services</h1>
-                <p>Comprehensive wellness solutions designed to optimize your health and transform your life</p>
-            </div>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title">Our Premium Services</h1>
+            <p class="hero-subtitle">Comprehensive wellness solutions designed to optimize your health and transform your life, delivered to your location</p>
         </div>
     </section>
 
-    <!-- Services Categories -->
-    <section class="services-categories">
+    <!-- Services Section -->
+    <section class="section" id="services">
         <div class="container">
-            <div class="services-nav">
-                <button class="service-category-btn active" data-category="all">All Services</button>
-                <button class="service-category-btn active" data-category="therapy">Therapy Services</button>
-                <button class="service-category-btn active" data-category="aesthetic">Aesthetic</button>
-                <button class="service-category-btn active" data-category="wellness">Wellness</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- IV Therapy Services -->
-    <section class="service-category" id="iv-therapy-section">
-        <div class="container">
-            <div class="category-header">
-                <h2>IV Therapy Services</h2>
-                <p>Personalized intravenous treatments for optimal nutrition and recovery</p>
-            </div>
+            <h2 class="section-title">Premium Wellness Services</h2>
+            <p class="section-subtitle">Experience the future of healthcare with our mobile wellness services delivered directly to you</p>
+            
             <div class="services-grid">
-                <div class="service-card featured" data-category="therapy">
-                    <div class="service-image">
-                        <img src="../assets/images/iv-treatment-premium.png" alt="IV Therapy">
-                    </div>
-                    <div class="service-content">
-                        <h3>Premium IV Therapy</h3>
-                        <p>Advanced IV formulations for energy, immunity, recovery, and overall wellness optimization.</p>
-                        <ul class="service-features">
-                            <li>Custom nutrient blends</li>
-                            <li>NAD+ infusions</li>
-                            <li>Vitamin optimization</li>
-                            <li>Hydration therapy</li>
+                <!-- IV Therapy -->
+                <div class="service-card">
+                    <i class="fas fa-droplet service-icon"></i>
+                    <h3>IV Hydration Therapy</h3>
+                    <p>Replenish, revitalize, and restore your body with our customized IV hydration treatments. From energy boosts to immune support, we deliver optimal wellness directly to your bloodstream.</p>
+                    
+                    <div class="service-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Energy & Performance Drips</li>
+                            <li><i class="fas fa-check"></i> Immune System Support</li>
+                            <li><i class="fas fa-check"></i> Hangover Recovery</li>
+                            <li><i class="fas fa-check"></i> Athletic Recovery</li>
+                            <li><i class="fas fa-check"></i> Beauty & Anti-Aging</li>
+                            <li><i class="fas fa-check"></i> Weight Loss Support</li>
                         </ul>
-                        <div class="service-price">Starting at $150</div>
-                        <a href="iv-therapy.html" class="btn btn-primary">Learn More</a>
+                    </div>
+                    
+                    <div class="service-cta">
+                        <button class="service-btn">Book Treatment</button>
+                        <button class="service-btn secondary">Learn More</button>
                     </div>
                 </div>
-                <div class="service-card" data-category="therapy">
-                    <div class="service-image">
-                        <img src="../assets/images/iv-treatment-nad.png" alt="NAD Therapy">
-                    </div>
-                    <div class="service-content">
-                        <h3>NAD+ Therapy</h3>
-                        <p>Revolutionary anti-aging and cellular repair therapy for enhanced longevity and vitality.</p>
-                        <div class="service-price">Starting at $300</div>
-                        <a href="nad-therapy.html" class="btn btn-outline">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Hormone & Peptide Services -->
-    <section class="service-category">
-        <div class="container">
-            <div class="category-header">
-                <h2>Hormone & Peptide Therapy</h2>
-                <p>Optimize your hormones for peak performance and well-being</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card" data-category="therapy">
-                    <div class="service-image">
-                        <img src="../assets/images/placeholder.png" alt="Hormone Replacement">
-                    </div>
-                    <div class="service-content">
-                        <h3>Hormone Replacement Therapy</h3>
-                        <p>Personalized hormone optimization for men and women to restore energy, mood, and vitality.</p>
-                        <ul class="service-features">
-                            <li>Comprehensive hormone testing</li>
-                            <li>Bioidentical hormones</li>
-                            <li>Ongoing monitoring</li>
-                            <li>Lifestyle coaching</li>
+                <!-- Hormone Replacement Therapy -->
+                <div class="service-card">
+                    <i class="fas fa-balance-scale service-icon"></i>
+                    <h3>Hormone Replacement Therapy</h3>
+                    <p>Restore optimal hormone levels and reclaim your energy, mood, and vitality with personalized bioidentical hormone replacement therapy.</p>
+                    
+                    <div class="service-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Testosterone Replacement (TRT)</li>
+                            <li><i class="fas fa-check"></i> Bioidentical Hormone Therapy</li>
+                            <li><i class="fas fa-check"></i> Thyroid Optimization</li>
+                            <li><i class="fas fa-check"></i> Growth Hormone Therapy</li>
+                            <li><i class="fas fa-check"></i> Comprehensive Lab Testing</li>
+                            <li><i class="fas fa-check"></i> Ongoing Monitoring</li>
                         </ul>
-                        <div class="service-price">Consultation Required</div>
-                        <a href="hormone-replacement.html" class="btn btn-primary">Learn More</a>
+                    </div>
+                    
+                    <div class="service-cta">
+                        <button class="service-btn">Schedule Consultation</button>
+                        <button class="service-btn secondary">View Details</button>
                     </div>
                 </div>
-                <div class="service-card" data-category="therapy">
-                    <div class="service-image">
-                        <img src="../assets/images/placeholder.png" alt="Peptide Therapy">
-                    </div>
-                    <div class="service-content">
-                        <h3>Peptide Therapy</h3>
-                        <p>Advanced peptide treatments for recovery, performance, and anti-aging benefits.</p>
-                        <div class="service-price">Starting at $200</div>
-                        <a href="peptide-therapy.html" class="btn btn-outline">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Aesthetic Services -->
-    <section class="service-category">
-        <div class="container">
-            <div class="category-header">
-                <h2>Aesthetic Treatments</h2>
-                <p>Look and feel your best with our advanced aesthetic procedures</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card" data-category="aesthetic">
-                    <div class="service-image">
-                        <img src="../assets/images/placeholder.png" alt="Aesthetic Treatments">
-                    </div>
-                    <div class="service-content">
-                        <h3>Advanced Aesthetics</h3>
-                        <p>Non-invasive treatments for skin rejuvenation, wrinkle reduction, and facial enhancement.</p>
-                        <ul class="service-features">
-                            <li>Botox & Fillers</li>
-                            <li>Skin rejuvenation</li>
-                            <li>Body contouring</li>
-                            <li>Anti-aging treatments</li>
+                <!-- Aesthetic Treatments -->
+                <div class="service-card">
+                    <i class="fas fa-sparkles service-icon"></i>
+                    <h3>Aesthetic Treatments</h3>
+                    <p>Enhance your natural beauty and boost confidence with our advanced aesthetic treatments performed by licensed professionals in the comfort of your space.</p>
+                    
+                    <div class="service-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Botox & Dysport</li>
+                            <li><i class="fas fa-check"></i> Dermal Fillers</li>
+                            <li><i class="fas fa-check"></i> Lip Enhancement</li>
+                            <li><i class="fas fa-check"></i> Facial Rejuvenation</li>
+                            <li><i class="fas fa-check"></i> Skin Tightening</li>
+                            <li><i class="fas fa-check"></i> Anti-Aging Treatments</li>
                         </ul>
-                        <div class="service-price">Starting at $250</div>
-                        <a href="aesthetic.html" class="btn btn-primary">Learn More</a>
+                    </div>
+                    
+                    <div class="service-cta">
+                        <button class="service-btn">Book Consultation</button>
+                        <button class="service-btn secondary">View Gallery</button>
+                    </div>
+                </div>
+
+                <!-- Weight Management -->
+                <div class="service-card">
+                    <i class="fas fa-weight service-icon"></i>
+                    <h3>Weight Management</h3>
+                    <p>Achieve your weight loss goals with our comprehensive medical weight management program, including cutting-edge peptide therapies and personalized nutrition plans.</p>
+                    
+                    <div class="service-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Semaglutide (Ozempic) Therapy</li>
+                            <li><i class="fas fa-check"></i> Tirzepatide (Mounjaro) Treatment</li>
+                            <li><i class="fas fa-check"></i> Lipotropic Injections</li>
+                            <li><i class="fas fa-check"></i> Metabolic Testing</li>
+                            <li><i class="fas fa-check"></i> Nutritional Counseling</li>
+                            <li><i class="fas fa-check"></i> Body Composition Analysis</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-cta">
+                        <button class="service-btn">Start Program</button>
+                        <button class="service-btn secondary">Learn More</button>
+                    </div>
+                </div>
+
+                <!-- Vitamin Injections -->
+                <div class="service-card">
+                    <i class="fas fa-syringe service-icon"></i>
+                    <h3>Vitamin Injections</h3>
+                    <p>Boost your energy, immunity, and overall wellness with targeted vitamin and nutrient injections designed for maximum absorption and effectiveness.</p>
+                    
+                    <div class="service-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> B12 Energy Injections</li>
+                            <li><i class="fas fa-check"></i> Vitamin D Therapy</li>
+                            <li><i class="fas fa-check"></i> B-Complex Shots</li>
+                            <li><i class="fas fa-check"></i> Glutathione Injections</li>
+                            <li><i class="fas fa-check"></i> CoQ10 Therapy</li>
+                            <li><i class="fas fa-check"></i> Custom Nutrient Blends</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-cta">
+                        <button class="service-btn">Book Injection</button>
+                        <button class="service-btn secondary">View Options</button>
+                    </div>
+                </div>
+
+                <!-- Wellness Consultations -->
+                <div class="service-card">
+                    <i class="fas fa-user-md service-icon"></i>
+                    <h3>Wellness Consultations</h3>
+                    <p>Receive personalized health assessments and optimization strategies from our licensed medical professionals to create your ideal wellness journey.</p>
+                    
+                    <div class="service-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Comprehensive Health Assessment</li>
+                            <li><i class="fas fa-check"></i> Personalized Treatment Plans</li>
+                            <li><i class="fas fa-check"></i> Lifestyle Optimization</li>
+                            <li><i class="fas fa-check"></i> Preventive Health Strategies</li>
+                            <li><i class="fas fa-check"></i> Supplement Recommendations</li>
+                            <li><i class="fas fa-check"></i> Ongoing Health Monitoring</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-cta">
+                        <button class="service-btn">Schedule Consultation</button>
+                        <button class="service-btn secondary">Learn More</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Wellness Services -->
-    <section class="service-category">
+    <!-- Why Choose Us Section -->
+    <section class="section section-light">
         <div class="container">
-            <div class="category-header">
-                <h2>Wellness & Lifestyle</h2>
-                <p>Comprehensive wellness solutions for a healthier lifestyle</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card" data-category="wellness">
-                    <div class="service-image">
-                        <img src="../assets/images/placeholder.png" alt="Weight Management">
-                    </div>
-                    <div class="service-content">
-                        <h3>Weight Management</h3>
-                        <p>Comprehensive weight loss programs combining medical supervision with lifestyle coaching.</p>
-                        <div class="service-price">Starting at $400/month</div>
-                        <a href="weight-management.html" class="btn btn-outline">Learn More</a>
-                    </div>
+            <h2 class="section-title">Why Choose Stay Dripped Mobile IV?</h2>
+            <p class="section-subtitle">Experience the difference of premium mobile healthcare delivered with professionalism and care</p>
+            
+            <div class="why-choose-grid">
+                <div class="feature-card">
+                    <i class="fas fa-home"></i>
+                    <h4>Mobile Convenience</h4>
+                    <p>Professional treatments delivered to your home, office, or preferred location with no travel required.</p>
                 </div>
-                <div class="service-card" data-category="wellness">
-                    <div class="service-image">
-                        <img src="../assets/images/placeholder.png" alt="Blood Testing">
-                    </div>
-                    <div class="service-content">
-                        <h3>Comprehensive Blood Testing</h3>
-                        <p>Advanced laboratory testing for complete health assessment and optimization.</p>
-                        <div class="service-price">Starting at $150</div>
-                        <a href="blood-testing.html" class="btn btn-outline">Learn More</a>
-                    </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-user-md"></i>
+                    <h4>Licensed Professionals</h4>
+                    <p>All treatments administered by licensed medical professionals with extensive training and experience.</p>
                 </div>
-                <div class="service-card" data-category="wellness">
-                    <div class="service-image">
-                        <img src="../assets/images/placeholder.png" alt="Micronutrient Testing">
-                    </div>
-                    <div class="service-content">
-                        <h3>Micronutrient Analysis</h3>
-                        <p>Detailed analysis of vitamin and mineral levels for personalized supplementation.</p>
-                        <div class="service-price">Starting at $200</div>
-                        <a href="micronutrient.html" class="btn btn-outline">Learn More</a>
-                    </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Safety First</h4>
+                    <p>Rigorous safety protocols, sterile equipment, and comprehensive health assessments for every patient.</p>
                 </div>
-                <div class="service-card" data-category="wellness">
-                    <div class="service-image">
-                        <img src="../assets/images/placeholder.png" alt="Injection Shots">
-                    </div>
-                    <div class="service-content">
-                        <h3>Vitamin Injection Shots</h3>
-                        <p>Quick and effective vitamin injections for energy, immunity, and wellness.</p>
-                        <div class="service-price">Starting at $35</div>
-                        <a href="injection-shots.html" class="btn btn-outline">Learn More</a>
-                    </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-clock"></i>
+                    <h4>Flexible Scheduling</h4>
+                    <p>Convenient appointment times that work with your schedule, including evenings and weekends.</p>
                 </div>
-                <div class="service-card" data-category="wellness">
-                    <div class="service-image">
-                        <img src="../assets/images/placeholder.png" alt="Mobile Cold Plunge">
-                    </div>
-                    <div class="service-content">
-                        <h3>Mobile Cold Plunge</h3>
-                        <p>On-demand cold therapy sessions for recovery, inflammation reduction, and mental clarity.</p>
-                        <div class="service-price">Starting at $100</div>
-                        <a href="mobile-cold-plunge.html" class="btn btn-outline">Learn More</a>
-                    </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-award"></i>
+                    <h4>Premium Quality</h4>
+                    <p>Pharmaceutical-grade medications and supplements from trusted, FDA-approved sources.</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Service Process -->
-    <section class="service-process">
-        <div class="container">
-            <div class="section-header text-center">
-                <h2>Your Service Experience</h2>
-                <p>What to expect when you choose Qualiphy</p>
-            </div>
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="step-icon">1</div>
-                    <h3>Initial Consultation</h3>
-                    <p>Comprehensive health assessment and goal discussion with our medical team</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-icon">2</div>
-                    <h3>Personalized Plan</h3>
-                    <p>Custom treatment plan designed specifically for your health goals and needs</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-icon">3</div>
-                    <h3>Treatment Delivery</h3>
-                    <p>Professional service delivery in our comfortable, state-of-the-art facility</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-icon">4</div>
-                    <h3>Ongoing Support</h3>
-                    <p>Continuous monitoring and adjustments to optimize your results</p>
+                
+                <div class="feature-card">
+                    <i class="fas fa-heart"></i>
+                    <h4>Personalized Care</h4>
+                    <p>Customized treatment plans tailored to your unique health goals and wellness needs.</p>
                 </div>
             </div>
         </div>
@@ -276,85 +1320,385 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <div class="cta-content text-center">
-                <h2>Ready to Transform Your Health?</h2>
-                <p>Schedule your consultation today and discover how our premium wellness services can help you achieve optimal health.</p>
+            <div class="cta-content">
+                <h2>Ready to Experience Premium Mobile Wellness?</h2>
+                <p>Join thousands of satisfied clients who have transformed their health with our convenient, professional services</p>
                 <div class="cta-buttons">
-                    <button class="btn btn-primary btn-lg active" onclick="openBookingModal()">Book Consultation</button>
-                    <a href="membership.html" class="btn btn-secondary btn-lg">View Membership</a>
+                    <button class="cta primary">Book Your Service</button>
+                    <button class="cta secondary">View Membership Options</button>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="../assets/images/logo.png" alt="Qualiphy">
-                    </div>
-                    <p>Transforming lives through premium wellness and personalized healthcare solutions.</p>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <div class="footer-brand-name">Stay Dripped Mobile IV</div>
                 </div>
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="iv-therapy.html">IV Therapy</a></li>
-                        <li><a href="hormone-replacement.html">Hormone Replacement</a></li>
-                        <li><a href="aesthetic.html">Aesthetic Treatments</a></li>
-                        <li><a href="weight-management.html">Weight Management</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="membership.html">Membership</a></li>
-                        <li><a href="corporate-events.html">Corporate Events</a></li>
-                        <li><a href="franchise.html">Franchise</a></li>
-                        <li><a href="partnerships.html">Partnerships</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="../privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="../terms-of-service.html">Terms of Service</a></li>
-                        <li><a href="../medical-disclaimer.html">Medical Disclaimer</a></li>
-                    </ul>
-                </div>
+                <p>Transforming lives through premium wellness and personalized healthcare solutions delivered to your location.</p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Qualiphy. All rights reserved.</p>
+            
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="#services">IV Therapy</a></li>
+                    <li><a href="#services">Hormone Replacement</a></li>
+                    <li><a href="#services">Aesthetic Treatments</a></li>
+                    <li><a href="#services">Weight Management</a></li>
+                    <li><a href="#services">Vitamin Injections</a></li>
+                </ul>
             </div>
+            
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul class="footer-links">
+                    <li><a href="#memberships">Memberships</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Corporate Events</a></li>
+                    <li><a href="#">Service Areas</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact & Legal</h3>
+                <ul class="footer-links">
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Medical Disclaimer</a></li>
+                    <li><a href="#">HIPAA Notice</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Stay Dripped Mobile IV LLC. All rights reserved.</p>
         </div>
     </footer>
 
     <!-- JavaScript -->
-    <script src="../assets/js/bootstrap.min.js"></script>
     <script>
-        // Service category filtering
-        document.querySelectorAll('.service-category-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const category = this.dataset.category;
+        // Enhanced JavaScript for Exam Modal and Header Functionality
+        (function() {
+            function initHeader() {
+                // Enhanced exam modal functionality
+                const examButton = document.getElementById('loadFormButton');
+                const examModal = document.getElementById('examModal');
+                const examModalClose = document.querySelector('.exam-modal-close');
+                const examModalOverlay = document.querySelector('.exam-modal-overlay');
                 
-                // Update active button
-                document.querySelectorAll('.service-category-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
+                // Store the element that opened the modal for focus return
+                let modalTrigger = null;
                 
-                // Filter services
-                document.querySelectorAll('.service-card').forEach(card => {
-                    if (category === 'all' || card.dataset.category === category) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
+                if (examButton) {
+                    // Enhanced click event with loading states
+                    examButton.addEventListener('click', function(event) {
+                        event.preventDefault();
+                        
+                        // Add loading state
+                        this.classList.add('loading');
+                        this.disabled = true;
+                        
+                        // Small delay for UX
+                        setTimeout(() => {
+                            openExamModal();
+                            this.classList.remove('loading');
+                            this.disabled = false;
+                        }, 300);
+                        
+                        // Analytics tracking
+                        if (typeof gtag !== 'undefined') {
+                            gtag('event', 'click', {
+                                event_category: 'engagement',
+                                event_label: 'first_time_patient_exam_header',
+                                value: 1
+                            });
+                        }
+                    });
+                    
+                    // Enhanced keyboard support
+                    examButton.addEventListener('keydown', function(event) {
+                        if (event.key === 'Enter' || event.key === ' ') {
+                            event.preventDefault();
+                            this.click();
+                        }
+                    });
+                }
+                
+                // Open modal function
+                function openExamModal() {
+                    if (examModal) {
+                        modalTrigger = document.activeElement;
+                        examModal.style.display = 'flex';
+                        
+                        // Force reflow then add active class for animation
+                        examModal.offsetHeight;
+                        examModal.classList.add('active');
+                        
+                        // Focus management
+                        const firstFocusable = examModal.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+                        if (firstFocusable) {
+                            firstFocusable.focus();
+                        }
+                        
+                        // Prevent body scroll
+                        document.body.style.overflow = 'hidden';
+                        
+                        // Add escape key listener
+                        document.addEventListener('keydown', handleEscapeKey);
+                        
+                        // Trap focus within modal
+                        trapFocus(examModal);
                     }
+                }
+                
+                // Close modal function
+                function closeExamModal() {
+                    if (examModal) {
+                        examModal.classList.remove('active');
+                        
+                        setTimeout(() => {
+                            examModal.style.display = 'none';
+                            document.body.style.overflow = '';
+                            
+                            // Return focus to trigger element
+                            if (modalTrigger) {
+                                modalTrigger.focus();
+                                modalTrigger = null;
+                            }
+                        }, 300);
+                        
+                        // Remove escape key listener
+                        document.removeEventListener('keydown', handleEscapeKey);
+                    }
+                }
+                
+                // Handle escape key
+                function handleEscapeKey(event) {
+                    if (event.key === 'Escape') {
+                        closeExamModal();
+                    }
+                }
+                
+                // Trap focus within modal
+                function trapFocus(element) {
+                    const focusableElements = element.querySelectorAll(
+                        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+                    );
+                    const firstFocusable = focusableElements[0];
+                    const lastFocusable = focusableElements[focusableElements.length - 1];
+                    
+                    element.addEventListener('keydown', function(e) {
+                        if (e.key === 'Tab') {
+                            if (e.shiftKey) {
+                                if (document.activeElement === firstFocusable) {
+                                    lastFocusable.focus();
+                                    e.preventDefault();
+                                }
+                            } else {
+                                if (document.activeElement === lastFocusable) {
+                                    firstFocusable.focus();
+                                    e.preventDefault();
+                                }
+                            }
+                        }
+                    });
+                }
+                
+                // Close modal events
+                if (examModalClose) {
+                    examModalClose.addEventListener('click', closeExamModal);
+                }
+                
+                if (examModalOverlay) {
+                    examModalOverlay.addEventListener('click', function(e) {
+                        if (e.target === examModalOverlay) {
+                            closeExamModal();
+                        }
+                    });
+                }
+                
+                // Enhanced global functions for modal actions
+                window.proceedToExamBooking = function() {
+                    // Track conversion
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'conversion', {
+                            event_category: 'booking',
+                            event_label: 'exam_booking_started',
+                            value: 1
+                        });
+                    }
+                    
+                    closeExamModal();
+                    
+                    // Open IntakeQ booking
+                    window.open('https://staydripped.intakeq.com/booking', '_blank');
+                };
+                
+                window.callForExam = function() {
+                    // Track phone call intent
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'click', {
+                            event_category: 'contact',
+                            event_label: 'exam_phone_call',
+                            value: 1
+                        });
+                    }
+                    
+                    closeExamModal();
+                    
+                    // Use the phone number from your header
+                    window.open('tel:+16026889825', '_self');
+                };
+                
+                // Initialize any existing Qualiphy or IntakeQ integrations
+                if (typeof showDisclosureModal !== 'undefined') {
+                    // Override the default function if it exists
+                    const originalFunction = window.showDisclosureModal;
+                    window.showDisclosureModal = function() {
+                        // Try to use the enhanced modal first
+                        if (examModal) {
+                            openExamModal();
+                        } else {
+                            // Fallback to original function
+                            originalFunction();
+                        }
+                    };
+                } else {
+                    // Create the function if it doesn't exist
+                    window.showDisclosureModal = openExamModal;
+                }
+                
+                // Mobile menu toggle
+                const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+                const navMenu = document.getElementById('navMenu');
+                
+                if (mobileMenuToggle && navMenu) {
+                    mobileMenuToggle.addEventListener('click', function() {
+                        const expanded = this.getAttribute('aria-expanded') === 'true';
+                        this.classList.toggle('active');
+                        navMenu.classList.toggle('active');
+                        document.body.classList.toggle('menu-open');
+                        this.setAttribute('aria-expanded', String(!expanded));
+                    });
+                }
+                
+                // Header scroll effect
+                let lastScrollTop = 0;
+                const header = document.querySelector('.header');
+                
+                window.addEventListener('scroll', function() {
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    
+                    if (scrollTop > lastScrollTop && scrollTop > 100) {
+                        // Scrolling down
+                        header.style.transform = 'translateY(-100%)';
+                    } else {
+                        // Scrolling up
+                        header.style.transform = 'translateY(0)';
+                    }
+                    
+                    lastScrollTop = scrollTop;
                 });
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initHeader);
+            } else {
+                initHeader();
+            }
+        })();
+
+        // Scroll progress indicator
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.body.offsetHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            const indicator = document.querySelector('.scroll-indicator');
+            if (indicator) {
+                indicator.style.width = scrollPercent + '%';
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
         });
 
-        function openBookingModal() {
-            window.location.href = '../index.html#contact';
+        // Service button actions
+        document.querySelectorAll('.service-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                if (this.textContent.includes('Book') || this.textContent.includes('Schedule') || this.textContent.includes('Start')) {
+                    // Direct to IntakeQ booking
+                    window.open('https://staydripped.intakeq.com/booking', '_blank');
+                } else {
+                    // Show service details or navigate to specific service page
+                    const serviceCard = this.closest('.service-card');
+                    const serviceTitle = serviceCard.querySelector('h3').textContent;
+                    alert(`Learn more about ${serviceTitle} - This would normally navigate to a detailed service page.`);
+                }
+            });
+        });
+
+        // CTA button actions
+        document.querySelectorAll('.cta').forEach(button => {
+            button.addEventListener('click', function() {
+                if (this.textContent.includes('Book')) {
+                    // Direct to IntakeQ booking
+                    window.open('https://staydripped.intakeq.com/booking', '_blank');
+                } else if (this.textContent.includes('Membership')) {
+                    // Navigate to membership page
+                    window.location.href = '#memberships';
+                }
+            });
+        });
+
+        // Add animation to service cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Apply animation to cards
+        document.querySelectorAll('.service-card, .feature-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+
+        // Polyfill for older browsers
+        if (!Element.prototype.closest) {
+            Element.prototype.closest = function(s) {
+                var el = this;
+                do {
+                    if (el.matches(s)) return el;
+                    el = el.parentElement || el.parentNode;
+                } while (el !== null && el.nodeType === 1);
+                return null;
+            };
         }
     </script>
 </body>
