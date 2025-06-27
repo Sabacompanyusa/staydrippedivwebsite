@@ -156,7 +156,9 @@
 .metallic-btn:hover {
   background: var(--gradient-titanium);
   color: var(--text-dark);
-  box-shadow: var(--shadow-hover), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  box-shadow:
+    var(--shadow-hover),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
   text-shadow: none;
   border-color: rgba(255, 255, 255, 0.3);
 }
@@ -1161,11 +1163,6 @@ ul {
 .back-button:active {
   transform: translateX(-1px);
   box-shadow: var(--shadow-inset);
-}
-  padding: 1rem 1.5rem;
-  border-radius: var(--br-lg);
-  backdrop-filter: blur(10px);
-  transition: var(--transition);
 }
 
 .feature-item:hover {
