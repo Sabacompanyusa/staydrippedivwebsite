@@ -258,6 +258,23 @@
   margin-top: 2rem;
 }
 
+/* Cart Item Details */
+.cart-item-details {
+  color: var(--text-light);
+  font-size: 0.9em;
+}
+
+.cart-item-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cart-item-price {
+  font-weight: 700;
+  color: var(--secondary);
+}
+
 /* Enhanced Font Imports */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Caveat:wght@400;500;600;700&display=swap");
 
