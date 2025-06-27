@@ -1,1740 +1,2005 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Membership Plans - Stay Dripped Mobile IV</title>
-    <meta name="description" content="Join Stay Dripped Mobile IV membership for exclusive benefits, priority booking, and special pricing on premium wellness services delivered to your location.">
-    
+    <meta
+      name="description"
+      content="Join Stay Dripped Mobile IV membership for exclusive benefits, priority booking, and special pricing on premium wellness services delivered to your location."
+    />
+
     <!-- Favicons -->
-    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
-    
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon-16x16.png"
+    />
+
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
     <!-- CSS -->
     <style>
-        /* Include the entire CSS from the first document */
-        /* ==============================================
+      /* Include the entire CSS from the first document */
+      /* ==============================================
            STAY DRIPPED MOBILE IV - MAIN STYLESHEET
            Copyright © 2025 Stay Dripped Mobile IV LLC
            ============================================== */
 
-        /* CSS Variables */
-        :root {
-          /* Brand Colors */
-          --primary: #0a2a43;
-          --secondary: #00bcd4;
-          --accent: #4fc3f7;
-          --gold: #ffd700;
-          --platinum: #e5e5e5;
-          --success: #4caf50;
-          --warning: #ff9800;
-          --error: #f44336;
-          
-          /* Text Colors */
-          --text-dark: #1a1a1a;
-          --text-light: #666;
-          --text-muted: #999;
-          --text-white: #ffffff;
-          
-          /* Background Colors */
-          --bg-light: #f1fbff;
-          --bg-dark: #1a1a1a;
-          --white: #ffffff;
-          
-          /* Shadows */
-          --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-          --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
-          --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.1);
-          
-          /* Border Radius */
-          --br: 12px;
-          --br-lg: 16px;
-          --br-xl: 24px;
-          
-          /* Transitions */
-          --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          --transition-fast: all 0.15s ease;
-          
-          /* Gradients */
-          --gradient-primary: linear-gradient(135deg, var(--secondary), var(--accent));
-          --gradient-gold: linear-gradient(135deg, #ffd700, #ffed4e);
-          --gradient-hero: linear-gradient(135deg, rgba(10, 42, 67, 0.9), rgba(0, 188, 212, 0.7));
-          
-          /* Spacing */
-          --container-max-width: 1400px;
-          --section-padding: 6rem 2rem;
-          --section-padding-mobile: 4rem 1rem;
-        }
+      /* CSS Variables */
+      :root {
+        /* Brand Colors */
+        --primary: #0a2a43;
+        --secondary: #00bcd4;
+        --accent: #4fc3f7;
+        --gold: #ffd700;
+        --platinum: #e5e5e5;
+        --success: #4caf50;
+        --warning: #ff9800;
+        --error: #f44336;
 
-        /* CSS Reset */
-        *, *::before, *::after {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-        }
+        /* Text Colors */
+        --text-dark: #1a1a1a;
+        --text-light: #666;
+        --text-muted: #999;
+        --text-white: #ffffff;
 
-        html {
-          scroll-behavior: smooth;
-          font-size: 16px;
-        }
+        /* Background Colors */
+        --bg-light: #f1fbff;
+        --bg-dark: #1a1a1a;
+        --white: #ffffff;
 
-        body {
-          font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-          line-height: 1.7;
-          color: var(--text-dark);
-          background: #fafafa;
-          overflow-x: hidden;
-          -webkit-font-smoothing: antialiased;
-          -moz-osx-font-smoothing: grayscale;
-        }
+        /* Shadows */
+        --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+        --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.1);
 
-        img, iframe, svg {
-          max-width: 100%;
-          height: auto;
-          display: block;
-          image-rendering: -webkit-optimize-contrast;
-          image-rendering: crisp-edges;
-        }
+        /* Border Radius */
+        --br: 12px;
+        --br-lg: 16px;
+        --br-xl: 24px;
 
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
+        /* Transitions */
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        --transition-fast: all 0.15s ease;
 
-        button {
-          font-family: inherit;
-          cursor: pointer;
-          border: none;
-          background: none;
-        }
+        /* Gradients */
+        --gradient-primary: linear-gradient(
+          135deg,
+          var(--secondary),
+          var(--accent)
+        );
+        --gradient-gold: linear-gradient(135deg, #ffd700, #ffed4e);
+        --gradient-hero: linear-gradient(
+          135deg,
+          rgba(10, 42, 67, 0.9),
+          rgba(0, 188, 212, 0.7)
+        );
 
-        ul {
-          list-style: none;
-        }
+        /* Spacing */
+        --container-max-width: 1400px;
+        --section-padding: 6rem 2rem;
+        --section-padding-mobile: 4rem 1rem;
+      }
 
-        /* Container */
-        .container {
-          max-width: var(--container-max-width);
-          margin: 0 auto;
-          padding: 0 2rem;
-        }
+      /* CSS Reset */
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        /* Section Styles */
-        .section {
-          padding: var(--section-padding);
-          text-align: center;
-        }
+      html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+      }
 
-        .section-light {
-          background: var(--bg-light);
-        }
+      body {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Oxygen,
+          Ubuntu,
+          Cantarell,
+          sans-serif;
+        line-height: 1.7;
+        color: var(--text-dark);
+        background: #fafafa;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
 
-        .section-title {
-          font-size: clamp(2rem, 4vw, 3rem);
-          font-weight: 800;
-          color: var(--primary);
-          margin-bottom: 1rem;
-          position: relative;
-          display: inline-block;
-        }
+      img,
+      iframe,
+      svg {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+      }
 
-        .section-title::after {
-          content: '';
-          position: absolute;
-          bottom: -10px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 80px;
-          height: 4px;
-          background: var(--secondary);
-          border-radius: 2px;
-        }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
 
-        .section-subtitle {
-          font-size: 1.1rem;
-          color: var(--text-light);
-          margin-bottom: 3rem;
-          max-width: 600px;
-          margin-left: auto;
-          margin-right: auto;
-        }
+      button {
+        font-family: inherit;
+        cursor: pointer;
+        border: none;
+        background: none;
+      }
 
-        /* Header Styles */
-        .header {
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          z-index: 1000;
-          background: var(--primary);
-          box-shadow: var(--shadow);
-          transition: var(--transition);
-        }
+      ul {
+        list-style: none;
+      }
 
-        .header-container {
-          max-width: var(--container-max-width);
-          margin: 0 auto;
-          padding: 1rem 2rem;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        }
+      /* Container */
+      .container {
+        max-width: var(--container-max-width);
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
 
-        .logo-section {
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          transition: var(--transition);
-        }
+      /* Section Styles */
+      .section {
+        padding: var(--section-padding);
+        text-align: center;
+      }
 
-        .logo-section:hover {
-          transform: scale(1.05);
-        }
+      .section-light {
+        background: var(--bg-light);
+      }
 
+      .section-title {
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 800;
+        color: var(--primary);
+        margin-bottom: 1rem;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: var(--secondary);
+        border-radius: 2px;
+      }
+
+      .section-subtitle {
+        font-size: 1.1rem;
+        color: var(--text-light);
+        margin-bottom: 3rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* Header Styles */
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: var(--primary);
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+      }
+
+      .header-container {
+        max-width: var(--container-max-width);
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo-section {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: var(--transition);
+      }
+
+      .logo-section:hover {
+        transform: scale(1.05);
+      }
+
+      .mobile-menu-toggle {
+        display: none;
+        flex-direction: column;
+        gap: 4px;
+        padding: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: var(--br);
+        transition: var(--transition);
+      }
+
+      .mobile-menu-toggle span {
+        width: 25px;
+        height: 3px;
+        background: white;
+        border-radius: 2px;
+        transition: var(--transition);
+      }
+
+      .mobile-menu-toggle:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      .mobile-menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      .mobile-menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .mobile-menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+      }
+
+      /* Qualiphy widget styles */
+      .qualiphy-widget {
+        margin-left: 0.5rem;
+      }
+
+      .qualiphy-button {
+        width: 150px;
+        height: 40px;
+        background: #cfc9ff;
+        color: #0a005b;
+        border: none;
+        border-radius: 5px;
+        font-weight: 600;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .qualiphy-button:hover {
+        background: #8058fa;
+        color: #fff;
+      }
+
+      .qualiphy-button:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(128, 88, 250, 0.4);
+      }
+
+      .brand-name {
+        font-size: 1.4rem;
+        font-weight: 800;
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .nav-menu {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .nav-link {
+        color: white;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border-radius: var(--br);
+        transition: var(--transition);
+        position: relative;
+      }
+
+      .nav-link::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: var(--secondary);
+        transition: var(--transition);
+        transform: translateX(-50%);
+      }
+
+      .nav-link:hover::before {
+        width: 80%;
+      }
+
+      .nav-link:hover {
+        background: rgba(255, 255, 255, 0.15);
+      }
+
+      .nav-link.active {
+        background: rgba(255, 255, 255, 0.25);
+      }
+
+      .header-buttons {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .emergency-call-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        background: var(--success);
+        color: white;
+        height: 40px;
+        min-width: 150px;
+        padding: 0 1rem;
+        border-radius: var(--br);
+        font-weight: 600;
+        transition: var(--transition);
+        box-shadow: var(--shadow);
+      }
+
+      .emergency-call-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .exam-btn {
+        min-width: 180px;
+        height: 48px;
+        padding: 0.75rem 1.5rem;
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        font-size: 0.9rem;
+        font-weight: 600;
+        line-height: 1;
+        text-align: center;
+        white-space: nowrap;
+        background-color: #cfc9ff;
+        color: #0a005b;
+        border: 2px solid transparent;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(207, 201, 255, 0.3);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        cursor: pointer;
+        user-select: none;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        outline: none;
+      }
+
+      .exam-btn:hover {
+        background-color: #8058fa;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 16px rgba(128, 88, 250, 0.4);
+      }
+
+      /* Hero Section */
+      .hero {
+        min-height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        color: white;
+        overflow: hidden;
+        background:
+          var(--gradient-hero),
+          url("https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1600&q=80")
+            center/cover no-repeat;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 900px;
+        padding: 0 2rem;
+      }
+
+      .hero-title {
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(135deg, #fff, var(--accent));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hero-subtitle {
+        font-size: clamp(1rem, 2vw, 1.2rem);
+        margin-bottom: 2rem;
+        opacity: 0.9;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-features {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 2rem;
+      }
+
+      .feature-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+        opacity: 0.9;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 0.75rem 1rem;
+        border-radius: var(--br);
+        backdrop-filter: blur(10px);
+      }
+
+      .feature-icon {
+        font-size: 1.2rem;
+      }
+
+      /* Memberships Section */
+      .memberships {
+        padding: var(--section-padding);
+      }
+
+      .membership-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .membership-card {
+        background: white;
+        border-radius: var(--br-lg);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        position: relative;
+        transition: var(--transition);
+      }
+
+      .membership-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .membership-card.featured {
+        border: 2px solid var(--secondary);
+        transform: scale(1.05);
+      }
+
+      .popular-badge {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: var(--secondary);
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: var(--br);
+        font-size: 0.8rem;
+        font-weight: 600;
+        z-index: 2;
+      }
+
+      .membership-header {
+        padding: 2rem 2rem 1rem;
+        text-align: center;
+        background: var(--bg-light);
+      }
+
+      .membership-header h3 {
+        color: var(--primary);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .membership-price {
+        margin-bottom: 1rem;
+      }
+
+      .membership-price .price {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--secondary);
+      }
+
+      .membership-price .period {
+        font-size: 1rem;
+        color: var(--text-light);
+      }
+
+      .membership-tagline {
+        color: var(--text-light);
+        font-size: 0.9rem;
+      }
+
+      .membership-features {
+        padding: 2rem;
+      }
+
+      .membership-features ul {
+        list-style: none;
+      }
+
+      .membership-features li {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 0.75rem;
+        font-size: 0.9rem;
+        color: var(--text-dark);
+      }
+
+      .membership-features i {
+        color: var(--success);
+        font-size: 1rem;
+      }
+
+      .membership-features li.not-included {
+        opacity: 0.5;
+      }
+
+      .membership-features li.not-included i {
+        color: var(--text-muted);
+      }
+
+      .membership-btn {
+        width: calc(100% - 4rem);
+        margin: 0 2rem 2rem;
+        padding: 1rem;
+        background: var(--secondary);
+        color: white;
+        border: none;
+        border-radius: var(--br);
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .membership-btn:hover {
+        background: var(--accent);
+        transform: translateY(-2px);
+      }
+
+      .membership-btn.premium {
+        background: var(--gold);
+        color: var(--primary);
+      }
+
+      .membership-btn.premium:hover {
+        background: #ffed4e;
+      }
+
+      /* Benefits Section */
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .benefit {
+        text-align: center;
+        padding: 2rem;
+        background: white;
+        border-radius: var(--br-lg);
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+      }
+
+      .benefit:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .benefit i {
+        font-size: 2.5rem;
+        color: var(--secondary);
+        margin-bottom: 1rem;
+      }
+
+      .benefit h4 {
+        color: var(--primary);
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+      }
+
+      .benefit p {
+        color: var(--text-light);
+        font-size: 0.9rem;
+        line-height: 1.6;
+      }
+
+      /* Testimonials Section */
+      .testimonials {
+        background: white;
+        padding: var(--section-padding);
+        text-align: center;
+      }
+
+      .testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .testimonial-card {
+        background: var(--bg-light);
+        padding: 2rem;
+        border-radius: var(--br-lg);
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+      }
+
+      .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .testimonial-content {
+        margin-bottom: 1.5rem;
+      }
+
+      .testimonial-content p {
+        font-style: italic;
+        color: var(--text-dark);
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      .testimonial-author {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .author-info strong {
+        color: var(--primary);
+        font-size: 1rem;
+        display: block;
+      }
+
+      .author-info span {
+        color: var(--text-light);
+        font-size: 0.9rem;
+      }
+
+      .member-badge {
+        background: var(--secondary);
+        color: white;
+        padding: 0.25rem 0.75rem;
+        border-radius: var(--br);
+        font-size: 0.8rem;
+        font-weight: 600;
+      }
+
+      /* FAQ Section */
+      .membership-faq {
+        padding: var(--section-padding);
+        background: var(--bg-light);
+      }
+
+      .faq-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .faq-item {
+        background: white;
+        padding: 1.5rem;
+        border-radius: var(--br);
+        box-shadow: var(--shadow);
+        text-align: left;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .faq-item:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .faq-item h4 {
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .faq-item h4::after {
+        content: "+";
+        font-size: 1.2rem;
+        color: var(--secondary);
+        transition: var(--transition);
+      }
+
+      .faq-item.active h4::after {
+        content: "−";
+        transform: rotate(180deg);
+      }
+
+      .faq-item p {
+        color: var(--text-light);
+        font-size: 0.9rem;
+        line-height: 1.5;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+
+      .faq-item.active p {
+        max-height: 200px;
+        margin-top: 0.5rem;
+      }
+
+      /* CTA Section */
+      .membership-cta-section {
+        padding: var(--section-padding);
+        text-align: center;
+        background: var(--primary);
+        color: white;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .membership-cta-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          45deg,
+          transparent,
+          rgba(79, 195, 247, 0.1),
+          transparent
+        );
+        animation: shimmer 6s ease-in-out infinite;
+      }
+
+      @keyframes shimmer {
+        from {
+          transform: translateX(-100%);
+        }
+        to {
+          transform: translateX(100%);
+        }
+      }
+
+      .membership-cta-section h3 {
+        color: white;
+        margin-bottom: 1rem;
+        font-size: 1.8rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      .membership-cta-section > p {
+        margin-bottom: 2rem;
+        position: relative;
+        z-index: 2;
+        opacity: 0.9;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      .cta,
+      .cta-button {
+        padding: 1rem 2rem;
+        border-radius: var(--br);
+        font-size: 1rem;
+        font-weight: 600;
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+        text-decoration: none;
+        display: inline-block;
+        cursor: pointer;
+        border: none;
+      }
+
+      .cta.primary,
+      .cta-button {
+        background: var(--secondary);
+        color: white;
+      }
+
+      .cta.secondary {
+        background: rgba(255, 255, 255, 0.15);
+        color: white;
+        border: 2px solid white;
+        backdrop-filter: blur(10px);
+      }
+
+      .cta::before,
+      .cta-button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.2);
+        transition: var(--transition);
+      }
+
+      .cta:hover::before,
+      .cta-button:hover::before {
+        left: 100%;
+      }
+
+      .cta:hover,
+      .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .cta-note {
+        font-size: 0.9rem;
+        opacity: 0.8;
+        position: relative;
+        z-index: 2;
+      }
+
+      /* Footer */
+      .site-footer {
+        background: var(--primary);
+        color: white;
+        padding: 3rem 2rem 1rem;
+      }
+
+      .footer-content {
+        max-width: var(--container-max-width);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .footer-section h3 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--secondary);
+      }
+
+      .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .footer-brand-name {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--secondary);
+      }
+
+      .footer-links {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-links a {
+        color: rgba(255, 255, 255, 0.8);
+        transition: var(--transition);
+      }
+
+      .footer-links a:hover {
+        color: var(--secondary);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 2rem;
+        max-width: var(--container-max-width);
+        margin: 0 auto;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.9rem;
+      }
+
+      /* Annual Savings Highlight */
+      .annual-savings {
+        margin-top: 3rem;
+        padding: 1.5rem;
+        background: var(--bg-light);
+        border-radius: var(--br);
+        border-left: 4px solid var(--gold);
+      }
+
+      .annual-savings p {
+        margin: 0;
+        color: var(--text-dark);
+        font-size: 1rem;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
         .mobile-menu-toggle {
-          display: none;
-          flex-direction: column;
-          gap: 4px;
-          padding: 8px;
-          background: rgba(255, 255, 255, 0.1);
-          border-radius: var(--br);
-          transition: var(--transition);
-        }
-
-        .mobile-menu-toggle span {
-          width: 25px;
-          height: 3px;
-          background: white;
-          border-radius: 2px;
-          transition: var(--transition);
-        }
-
-        .mobile-menu-toggle:hover {
-          background: rgba(255, 255, 255, 0.2);
-        }
-
-        .mobile-menu-toggle.active span:nth-child(1) {
-          transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .mobile-menu-toggle.active span:nth-child(2) {
-          opacity: 0;
-        }
-
-        .mobile-menu-toggle.active span:nth-child(3) {
-          transform: rotate(-45deg) translate(7px, -6px);
-        }
-
-        /* Qualiphy widget styles */
-        .qualiphy-widget {
-          margin-left: 0.5rem;
-        }
-
-        .qualiphy-button {
-          width: 150px;
-          height: 40px;
-          background: #cfc9ff;
-          color: #0a005b;
-          border: none;
-          border-radius: 5px;
-          font-weight: 600;
           display: flex;
-          justify-content: center;
-          align-items: center;
-          cursor: pointer;
-          transition: var(--transition);
-        }
-
-        .qualiphy-button:hover {
-          background: #8058fa;
-          color: #fff;
-        }
-
-        .qualiphy-button:focus {
-          outline: none;
-          box-shadow: 0 0 0 3px rgba(128, 88, 250, 0.4);
-        }
-
-        .brand-name {
-          font-size: 1.4rem;
-          font-weight: 800;
-          background: var(--gradient-primary);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
         }
 
         .nav-menu {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: var(--primary);
+          flex-direction: column;
+          padding: 1rem 2rem;
+          box-shadow: var(--shadow-lg);
+        }
+
+        .nav-menu.active {
           display: flex;
-          gap: 2rem;
         }
 
         .nav-link {
-          color: white;
-          font-weight: 500;
-          padding: 0.5rem 1rem;
-          border-radius: var(--br);
-          transition: var(--transition);
-          position: relative;
-        }
-
-        .nav-link::before {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 50%;
-          width: 0;
-          height: 2px;
-          background: var(--secondary);
-          transition: var(--transition);
-          transform: translateX(-50%);
-        }
-
-        .nav-link:hover::before {
-          width: 80%;
-        }
-
-        .nav-link:hover {
-          background: rgba(255, 255, 255, 0.15);
-        }
-
-        .nav-link.active {
-          background: rgba(255, 255, 255, 0.25);
-        }
-
-        .header-buttons {
-          display: flex;
-          align-items: center;
-          gap: 1rem;
-        }
-
-        .emergency-call-btn {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 0.5rem;
-          background: var(--success);
-          color: white;
-          height: 40px;
-          min-width: 150px;
-          padding: 0 1rem;
-          border-radius: var(--br);
-          font-weight: 600;
-          transition: var(--transition);
-          box-shadow: var(--shadow);
-        }
-
-        .emergency-call-btn:hover {
-          transform: translateY(-2px);
-          box-shadow: var(--shadow-hover);
-        }
-
-        .exam-btn {
-          min-width: 180px;
-          height: 48px;
-          padding: 0.75rem 1.5rem;
-          font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-          font-size: 0.9rem;
-          font-weight: 600;
-          line-height: 1;
+          padding: 1rem 0;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
           text-align: center;
-          white-space: nowrap;
-          background-color: #cfc9ff;
-          color: #0a005b;
-          border: 2px solid transparent;
-          border-radius: 8px;
-          box-shadow: 0 2px 8px rgba(207, 201, 255, 0.3);
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          gap: 0.5rem;
-          cursor: pointer;
-          user-select: none;
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          outline: none;
         }
 
-        .exam-btn:hover {
-          background-color: #8058fa;
-          color: white;
-          transform: translateY(-2px);
-          box-shadow: 0 4px 16px rgba(128, 88, 250, 0.4);
+        .nav-link:last-child {
+          border-bottom: none;
         }
 
-        /* Hero Section */
-        .hero {
-          min-height: 70vh;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          position: relative;
-          color: white;
-          overflow: hidden;
-          background: var(--gradient-hero), 
-                      url('https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-        }
-
-        .hero-content {
-          position: relative;
-          z-index: 2;
-          max-width: 900px;
-          padding: 0 2rem;
-        }
-
-        .hero-title {
-          font-size: clamp(2.5rem, 6vw, 4rem);
-          font-weight: 800;
-          margin-bottom: 1.5rem;
-          background: linear-gradient(135deg, #fff, var(--accent));
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-        }
-
-        .hero-subtitle {
-          font-size: clamp(1rem, 2vw, 1.2rem);
-          margin-bottom: 2rem;
-          opacity: 0.9;
-          max-width: 700px;
-          margin-left: auto;
-          margin-right: auto;
+        .section-padding {
+          --section-padding: var(--section-padding-mobile);
         }
 
         .hero-features {
-          display: flex;
-          gap: 2rem;
-          justify-content: center;
-          flex-wrap: wrap;
-          margin-bottom: 2rem;
-        }
-
-        .feature-item {
-          display: flex;
+          flex-direction: column;
           align-items: center;
-          gap: 0.5rem;
-          font-size: 0.9rem;
-          opacity: 0.9;
-          background: rgba(255, 255, 255, 0.1);
-          padding: 0.75rem 1rem;
-          border-radius: var(--br);
-          backdrop-filter: blur(10px);
-        }
-
-        .feature-icon {
-          font-size: 1.2rem;
-        }
-
-        /* Memberships Section */
-        .memberships {
-          padding: var(--section-padding);
         }
 
         .membership-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 2rem;
-          margin-top: 3rem;
-        }
-
-        .membership-card {
-          background: white;
-          border-radius: var(--br-lg);
-          box-shadow: var(--shadow);
-          overflow: hidden;
-          position: relative;
-          transition: var(--transition);
-        }
-
-        .membership-card:hover {
-          transform: translateY(-5px);
-          box-shadow: var(--shadow-hover);
+          grid-template-columns: 1fr;
         }
 
         .membership-card.featured {
-          border: 2px solid var(--secondary);
-          transform: scale(1.05);
+          transform: none;
         }
 
-        .popular-badge {
-          position: absolute;
-          top: 1rem;
-          right: 1rem;
-          background: var(--secondary);
-          color: white;
-          padding: 0.5rem 1rem;
-          border-radius: var(--br);
-          font-size: 0.8rem;
-          font-weight: 600;
-          z-index: 2;
-        }
-
-        .membership-header {
-          padding: 2rem 2rem 1rem;
-          text-align: center;
-          background: var(--bg-light);
-        }
-
-        .membership-header h3 {
-          color: var(--primary);
-          font-size: 1.5rem;
-          margin-bottom: 1rem;
-        }
-
-        .membership-price {
-          margin-bottom: 1rem;
-        }
-
-        .membership-price .price {
-          font-size: 2.5rem;
-          font-weight: 800;
-          color: var(--secondary);
-        }
-
-        .membership-price .period {
-          font-size: 1rem;
-          color: var(--text-light);
-        }
-
-        .membership-tagline {
-          color: var(--text-light);
-          font-size: 0.9rem;
-        }
-
-        .membership-features {
-          padding: 2rem;
-        }
-
-        .membership-features ul {
-          list-style: none;
-        }
-
-        .membership-features li {
-          display: flex;
-          align-items: center;
-          gap: 0.75rem;
-          margin-bottom: 0.75rem;
-          font-size: 0.9rem;
-          color: var(--text-dark);
-        }
-
-        .membership-features i {
-          color: var(--success);
-          font-size: 1rem;
-        }
-
-        .membership-features li.not-included {
-          opacity: 0.5;
-        }
-
-        .membership-features li.not-included i {
-          color: var(--text-muted);
-        }
-
-        .membership-btn {
-          width: calc(100% - 4rem);
-          margin: 0 2rem 2rem;
-          padding: 1rem;
-          background: var(--secondary);
-          color: white;
-          border: none;
-          border-radius: var(--br);
-          font-weight: 600;
-          cursor: pointer;
-          transition: var(--transition);
-        }
-
-        .membership-btn:hover {
-          background: var(--accent);
-          transform: translateY(-2px);
-        }
-
-        .membership-btn.premium {
-          background: var(--gold);
-          color: var(--primary);
-        }
-
-        .membership-btn.premium:hover {
-          background: #ffed4e;
-        }
-
-        /* Benefits Section */
-        .benefits-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: 2rem;
-          margin-top: 2rem;
-        }
-
-        .benefit {
-          text-align: center;
-          padding: 2rem;
-          background: white;
-          border-radius: var(--br-lg);
-          box-shadow: var(--shadow);
-          transition: var(--transition);
-        }
-
-        .benefit:hover {
-          transform: translateY(-5px);
-          box-shadow: var(--shadow-hover);
-        }
-
-        .benefit i {
-          font-size: 2.5rem;
-          color: var(--secondary);
-          margin-bottom: 1rem;
-        }
-
-        .benefit h4 {
-          color: var(--primary);
-          margin-bottom: 1rem;
-          font-size: 1.2rem;
-        }
-
-        .benefit p {
-          color: var(--text-light);
-          font-size: 0.9rem;
-          line-height: 1.6;
-        }
-
-        /* Testimonials Section */
-        .testimonials {
-          background: white;
-          padding: var(--section-padding);
-          text-align: center;
-        }
-
-        .testimonial-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 2rem;
-          margin-top: 3rem;
-        }
-
-        .testimonial-card {
-          background: var(--bg-light);
-          padding: 2rem;
-          border-radius: var(--br-lg);
-          box-shadow: var(--shadow);
-          transition: var(--transition);
-        }
-
-        .testimonial-card:hover {
-          transform: translateY(-5px);
-          box-shadow: var(--shadow-hover);
-        }
-
-        .testimonial-content {
-          margin-bottom: 1.5rem;
-        }
-
-        .testimonial-content p {
-          font-style: italic;
-          color: var(--text-dark);
-          font-size: 1rem;
-          line-height: 1.6;
-        }
-
-        .testimonial-author {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        }
-
-        .author-info strong {
-          color: var(--primary);
-          font-size: 1rem;
-          display: block;
-        }
-
-        .author-info span {
-          color: var(--text-light);
-          font-size: 0.9rem;
-        }
-
-        .member-badge {
-          background: var(--secondary);
-          color: white;
-          padding: 0.25rem 0.75rem;
-          border-radius: var(--br);
-          font-size: 0.8rem;
-          font-weight: 600;
-        }
-
-        /* FAQ Section */
-        .membership-faq {
-          padding: var(--section-padding);
-          background: var(--bg-light);
-        }
-
-        .faq-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 2rem;
-          margin-top: 3rem;
-        }
-
-        .faq-item {
-          background: white;
-          padding: 1.5rem;
-          border-radius: var(--br);
-          box-shadow: var(--shadow);
-          text-align: left;
-          cursor: pointer;
-          transition: var(--transition);
-        }
-
-        .faq-item:hover {
-          transform: translateY(-2px);
-          box-shadow: var(--shadow-hover);
-        }
-
-        .faq-item h4 {
-          color: var(--primary);
-          margin-bottom: 0.5rem;
-          font-size: 1rem;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-        }
-
-        .faq-item h4::after {
-          content: '+';
-          font-size: 1.2rem;
-          color: var(--secondary);
-          transition: var(--transition);
-        }
-
-        .faq-item.active h4::after {
-          content: '−';
-          transform: rotate(180deg);
-        }
-
-        .faq-item p {
-          color: var(--text-light);
-          font-size: 0.9rem;
-          line-height: 1.5;
-          max-height: 0;
-          overflow: hidden;
-          transition: max-height 0.3s ease;
-        }
-
-        .faq-item.active p {
-          max-height: 200px;
-          margin-top: 0.5rem;
-        }
-
-        /* CTA Section */
-        .membership-cta-section {
-          padding: var(--section-padding);
-          text-align: center;
-          background: var(--primary);
-          color: white;
-          position: relative;
-          overflow: hidden;
-        }
-
-        .membership-cta-section::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(45deg, transparent, rgba(79, 195, 247, 0.1), transparent);
-          animation: shimmer 6s ease-in-out infinite;
-        }
-
-        @keyframes shimmer {
-          from { transform: translateX(-100%); }
-          to { transform: translateX(100%); }
-        }
-
-        .membership-cta-section h3 {
-          color: white;
-          margin-bottom: 1rem;
-          font-size: 1.8rem;
-          position: relative;
-          z-index: 2;
-        }
-
-        .membership-cta-section > p {
-          margin-bottom: 2rem;
-          position: relative;
-          z-index: 2;
-          opacity: 0.9;
+        .header-buttons {
+          flex-direction: column;
+          gap: 0.5rem;
         }
 
         .cta-buttons {
-          display: flex;
-          gap: 1rem;
-          justify-content: center;
-          flex-wrap: wrap;
-          margin-bottom: 1rem;
-          position: relative;
-          z-index: 2;
-        }
-
-        .cta, .cta-button {
-          padding: 1rem 2rem;
-          border-radius: var(--br);
-          font-size: 1rem;
-          font-weight: 600;
-          transition: var(--transition);
-          position: relative;
-          overflow: hidden;
-          text-decoration: none;
-          display: inline-block;
-          cursor: pointer;
-          border: none;
-        }
-
-        .cta.primary, .cta-button {
-          background: var(--secondary);
-          color: white;
-        }
-
-        .cta.secondary {
-          background: rgba(255, 255, 255, 0.15);
-          color: white;
-          border: 2px solid white;
-          backdrop-filter: blur(10px);
-        }
-
-        .cta::before, .cta-button::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: -100%;
-          width: 100%;
-          height: 100%;
-          background: rgba(255, 255, 255, 0.2);
-          transition: var(--transition);
-        }
-
-        .cta:hover::before, .cta-button:hover::before {
-          left: 100%;
-        }
-
-        .cta:hover, .cta-button:hover {
-          transform: translateY(-3px);
-          box-shadow: var(--shadow-hover);
-        }
-
-        .cta-note {
-          font-size: 0.9rem;
-          opacity: 0.8;
-          position: relative;
-          z-index: 2;
-        }
-
-        /* Footer */
-        .site-footer {
-          background: var(--primary);
-          color: white;
-          padding: 3rem 2rem 1rem;
-        }
-
-        .footer-content {
-          max-width: var(--container-max-width);
-          margin: 0 auto;
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: 2rem;
-          margin-bottom: 2rem;
-        }
-
-        .footer-section h3 {
-          font-size: 1.2rem;
-          font-weight: 700;
-          margin-bottom: 1rem;
-          color: var(--secondary);
-        }
-
-        .footer-logo {
-          display: flex;
+          flex-direction: column;
           align-items: center;
-          gap: 0.5rem;
-          margin-bottom: 1rem;
         }
 
-        .footer-brand-name {
-          font-size: 1.2rem;
-          font-weight: 700;
-          color: var(--secondary);
+        .header-buttons a img {
+          height: 35px !important;
+          width: auto !important;
         }
 
-        .footer-links {
-          list-style: none;
+        .qualiphy-button {
+          width: 130px;
+          height: 35px;
+          font-size: 0.8rem;
         }
 
-        .footer-links li {
-          margin-bottom: 0.5rem;
-        }
-
-        .footer-links a {
-          color: rgba(255, 255, 255, 0.8);
-          transition: var(--transition);
-        }
-
-        .footer-links a:hover {
-          color: var(--secondary);
-        }
-
-        .footer-bottom {
-          border-top: 1px solid rgba(255, 255, 255, 0.1);
-          padding-top: 2rem;
-          max-width: var(--container-max-width);
-          margin: 0 auto;
-          text-align: center;
-          color: rgba(255, 255, 255, 0.6);
+        .emergency-call-btn {
+          min-width: 120px;
+          height: 35px;
           font-size: 0.9rem;
         }
-
-        /* Annual Savings Highlight */
-        .annual-savings {
-          margin-top: 3rem;
-          padding: 1.5rem;
-          background: var(--bg-light);
-          border-radius: var(--br);
-          border-left: 4px solid var(--gold);
-        }
-
-        .annual-savings p {
-          margin: 0;
-          color: var(--text-dark);
-          font-size: 1rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-          .mobile-menu-toggle {
-            display: flex;
-          }
-
-          .nav-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: var(--primary);
-            flex-direction: column;
-            padding: 1rem 2rem;
-            box-shadow: var(--shadow-lg);
-          }
-
-          .nav-menu.active {
-            display: flex;
-          }
-
-          .nav-link {
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
-          }
-
-          .nav-link:last-child {
-            border-bottom: none;
-          }
-          
-          .section-padding {
-            --section-padding: var(--section-padding-mobile);
-          }
-          
-          .hero-features {
-            flex-direction: column;
-            align-items: center;
-          }
-          
-          .membership-grid {
-            grid-template-columns: 1fr;
-          }
-          
-          .membership-card.featured {
-            transform: none;
-          }
-          
-          .header-buttons {
-            flex-direction: column;
-            gap: 0.5rem;
-          }
-
-          .cta-buttons {
-            flex-direction: column;
-            align-items: center;
-          }
-
-          .header-buttons a img {
-            height: 35px !important;
-            width: auto !important;
-          }
-
-          .qualiphy-button {
-            width: 130px;
-            height: 35px;
-            font-size: 0.8rem;
-          }
-
-          .emergency-call-btn {
-            min-width: 120px;
-            height: 35px;
-            font-size: 0.9rem;
-          }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <!-- Back Button -->
+    <div class="back-button-container">
+      <a href="../index.html" class="back-button">
+        <i class="fas fa-arrow-left"></i>
+        <span>Back to Home</span>
+      </a>
+    </div>
     <!-- Scroll Progress Indicator -->
     <div class="scroll-indicator"></div>
 
     <!-- Header -->
     <header class="header">
-        <div class="header-container">
-            <div class="logo-section">
-                <a href="index.html" aria-label="Stay Dripped Home">
-                    <img src="assets/images/logo.png" alt="Stay Dripped Logo" class="logo-image">
-                </a>
-            </div>
-
-            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <nav class="nav-menu" id="navMenu">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#testimonials" class="nav-link">Testimonials</a>
-                <a href="#faq" class="nav-link">FAQ</a>
-                <a href="pages/membership.html" class="nav-link active">Memberships</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </nav>
-
-            <div class="header-buttons">
-                <a href="tel:+16026889825" class="emergency-call-btn">
-                    <i class="fas fa-phone"></i>
-                    <span class="btn-text">Call Now</span>
-                </a>
-                <a href="https://Staydripped.intakeq.com/booking" target="_blank" alt="Make an Online Appointment">
-                    <img style="height:45px;width:162px;" height="45" width="162" src="https://intakeq.com/images/booknow.png" />
-                </a>
-                <div id="main-qualiphy-widget" class="qualiphy-widget">
-                    <button id="loadFormButton" class="qualiphy-button" onclick="showDisclosureModal()">
-                        <span class="btn-text">Good Faith Exam</span>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Enhanced Patient Exam Modal -->
-            <div id="examModal" class="exam-modal-overlay" style="display: none;" role="dialog" aria-labelledby="examModalTitle" aria-describedby="examModalDesc">
-                <div class="exam-modal">
-                    <div class="exam-modal-header">
-                        <h3 id="examModalTitle">Good Faith Exam</h3>
-                        <button class="exam-modal-close" aria-label="Close examination modal">&times;</button>
-                    </div>
-                    <div class="exam-modal-body">
-                        <p id="examModalDesc">Welcome to Stay Dripped Mobile IV! Before your first treatment, our licensed medical professional will conduct a brief health assessment to ensure IV therapy is safe and appropriate for you.</p>
-                        
-                        <div class="exam-process">
-                            <h4>What to Expect:</h4>
-                            <ul>
-                                <li><i class="fas fa-check" aria-hidden="true"></i> Review of medical history</li>
-                                <li><i class="fas fa-check" aria-hidden="true"></i> Current health assessment</li>
-                                <li><i class="fas fa-check" aria-hidden="true"></i> Vital signs check</li>
-                                <li><i class="fas fa-check" aria-hidden="true"></i> Personalized treatment recommendation</li>
-                                <li><i class="fas fa-check" aria-hidden="true"></i> Safety protocol review</li>
-                            </ul>
-                        </div>
-
-                        <div class="exam-benefits">
-                            <h4>Why This Matters:</h4>
-                            <div class="benefits-list">
-                                <div class="benefit-point">
-                                    <i class="fas fa-shield-alt" aria-hidden="true"></i>
-                                    <span>Ensures your safety and optimal treatment results</span>
-                                </div>
-                                <div class="benefit-point">
-                                    <i class="fas fa-user-md" aria-hidden="true"></i>
-                                    <span>Personalized care from licensed medical professionals</span>
-                                </div>
-                                <div class="benefit-point">
-                                    <i class="fas fa-clipboard-check" aria-hidden="true"></i>
-                                    <span>Meets all medical and regulatory requirements</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="exam-actions">
-                            <button class="exam-proceed-btn" onclick="proceedToExamBooking()" aria-describedby="examProceedDesc">
-                                <i class="fas fa-calendar-plus" aria-hidden="true"></i>
-                                Book Health Assessment
-                            </button>
-                            <button class="exam-call-btn" onclick="callForExam()" aria-describedby="examCallDesc">
-                                <i class="fas fa-phone" aria-hidden="true"></i>
-                                Call to Schedule
-                            </button>
-                        </div>
-                        
-                        <div class="exam-disclaimer">
-                            <p><small><i class="fas fa-info-circle" aria-hidden="true"></i> This brief assessment takes 10-15 minutes and can be done at your location before your first IV treatment.</small></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="header-container">
+        <div class="logo-section">
+          <a href="index.html" aria-label="Stay Dripped Home">
+            <img
+              src="assets/images/logo.png"
+              alt="Stay Dripped Logo"
+              class="logo-image"
+            />
+          </a>
         </div>
+
+        <button
+          class="mobile-menu-toggle"
+          id="mobileMenuToggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="nav-menu" id="navMenu">
+          <a href="#home" class="nav-link">Home</a>
+          <a href="#services" class="nav-link">Services</a>
+          <a href="#testimonials" class="nav-link">Testimonials</a>
+          <a href="#faq" class="nav-link">FAQ</a>
+          <a href="pages/membership.html" class="nav-link active"
+            >Memberships</a
+          >
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <div class="header-buttons">
+          <a href="tel:+16026889825" class="emergency-call-btn">
+            <i class="fas fa-phone"></i>
+            <span class="btn-text">Call Now</span>
+          </a>
+          <a
+            href="https://Staydripped.intakeq.com/booking"
+            target="_blank"
+            alt="Make an Online Appointment"
+          >
+            <img
+              style="height: 45px; width: 162px"
+              height="45"
+              width="162"
+              src="https://intakeq.com/images/booknow.png"
+            />
+          </a>
+          <div id="main-qualiphy-widget" class="qualiphy-widget">
+            <button
+              id="loadFormButton"
+              class="qualiphy-button"
+              onclick="showDisclosureModal()"
+            >
+              <span class="btn-text">Good Faith Exam</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Enhanced Patient Exam Modal -->
+        <div
+          id="examModal"
+          class="exam-modal-overlay"
+          style="display: none"
+          role="dialog"
+          aria-labelledby="examModalTitle"
+          aria-describedby="examModalDesc"
+        >
+          <div class="exam-modal">
+            <div class="exam-modal-header">
+              <h3 id="examModalTitle">Good Faith Exam</h3>
+              <button
+                class="exam-modal-close"
+                aria-label="Close examination modal"
+              >
+                &times;
+              </button>
+            </div>
+            <div class="exam-modal-body">
+              <p id="examModalDesc">
+                Welcome to Stay Dripped Mobile IV! Before your first treatment,
+                our licensed medical professional will conduct a brief health
+                assessment to ensure IV therapy is safe and appropriate for you.
+              </p>
+
+              <div class="exam-process">
+                <h4>What to Expect:</h4>
+                <ul>
+                  <li>
+                    <i class="fas fa-check" aria-hidden="true"></i> Review of
+                    medical history
+                  </li>
+                  <li>
+                    <i class="fas fa-check" aria-hidden="true"></i> Current
+                    health assessment
+                  </li>
+                  <li>
+                    <i class="fas fa-check" aria-hidden="true"></i> Vital signs
+                    check
+                  </li>
+                  <li>
+                    <i class="fas fa-check" aria-hidden="true"></i> Personalized
+                    treatment recommendation
+                  </li>
+                  <li>
+                    <i class="fas fa-check" aria-hidden="true"></i> Safety
+                    protocol review
+                  </li>
+                </ul>
+              </div>
+
+              <div class="exam-benefits">
+                <h4>Why This Matters:</h4>
+                <div class="benefits-list">
+                  <div class="benefit-point">
+                    <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                    <span
+                      >Ensures your safety and optimal treatment results</span
+                    >
+                  </div>
+                  <div class="benefit-point">
+                    <i class="fas fa-user-md" aria-hidden="true"></i>
+                    <span
+                      >Personalized care from licensed medical
+                      professionals</span
+                    >
+                  </div>
+                  <div class="benefit-point">
+                    <i class="fas fa-clipboard-check" aria-hidden="true"></i>
+                    <span>Meets all medical and regulatory requirements</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="exam-actions">
+                <button
+                  class="exam-proceed-btn"
+                  onclick="proceedToExamBooking()"
+                  aria-describedby="examProceedDesc"
+                >
+                  <i class="fas fa-calendar-plus" aria-hidden="true"></i>
+                  Book Health Assessment
+                </button>
+                <button
+                  class="exam-call-btn"
+                  onclick="callForExam()"
+                  aria-describedby="examCallDesc"
+                >
+                  <i class="fas fa-phone" aria-hidden="true"></i>
+                  Call to Schedule
+                </button>
+              </div>
+
+              <div class="exam-disclaimer">
+                <p>
+                  <small
+                    ><i class="fas fa-info-circle" aria-hidden="true"></i> This
+                    brief assessment takes 10-15 minutes and can be done at your
+                    location before your first IV treatment.</small
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-content">
-            <h1 class="hero-title">Stay Dripped Membership</h1>
-            <p class="hero-subtitle">Unlock exclusive benefits and priority access to premium wellness services delivered to your location</p>
-            
-            <div class="hero-features">
-                <div class="feature-item">
-                    <span class="feature-icon">🎯</span>
-                    <span>Priority Booking</span>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-icon">💰</span>
-                    <span>Member Pricing</span>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-icon">✨</span>
-                    <span>Exclusive Access</span>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-icon">🏠</span>
-                    <span>Mobile Convenience</span>
-                </div>
-            </div>
+      <div class="hero-content">
+        <h1 class="hero-title">Stay Dripped Membership</h1>
+        <p class="hero-subtitle">
+          Unlock exclusive benefits and priority access to premium wellness
+          services delivered to your location
+        </p>
+
+        <div class="hero-features">
+          <div class="feature-item">
+            <span class="feature-icon">🎯</span>
+            <span>Priority Booking</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">💰</span>
+            <span>Member Pricing</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">✨</span>
+            <span>Exclusive Access</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">🏠</span>
+            <span>Mobile Convenience</span>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Memberships Section -->
     <section class="memberships section" id="memberships">
-        <div class="container">
-            <h2 class="section-title">Choose Your Membership</h2>
-            <p class="section-subtitle">Select the plan that best fits your wellness journey and lifestyle</p>
-            
-            <div class="membership-grid">
-                <!-- Wellness Explorer -->
-                <div class="membership-card">
-                    <div class="membership-header">
-                        <h3>Wellness Explorer</h3>
-                        <div class="membership-price">
-                            <span class="price">$99</span>
-                            <span class="period">/month</span>
-                        </div>
-                        <p class="membership-tagline">Perfect for those new to wellness optimization</p>
-                    </div>
-                    <div class="membership-features">
-                        <ul>
-                            <li><i class="fas fa-check"></i> 10% discount on all services</li>
-                            <li><i class="fas fa-check"></i> Priority booking (48hrs advance)</li>
-                            <li><i class="fas fa-check"></i> Monthly wellness consultation</li>
-                            <li><i class="fas fa-check"></i> Access to member portal</li>
-                            <li><i class="fas fa-check"></i> Quarterly health assessments</li>
-                            <li class="not-included"><i class="fas fa-times"></i> VIP treatment experience</li>
-                            <li class="not-included"><i class="fas fa-times"></i> Complimentary services</li>
-                        </ul>
-                    </div>
-                    <button class="membership-btn">Choose Explorer</button>
-                </div>
+      <div class="container">
+        <h2 class="section-title">Choose Your Membership</h2>
+        <p class="section-subtitle">
+          Select the plan that best fits your wellness journey and lifestyle
+        </p>
 
-                <!-- Wellness Elite (Featured) -->
-                <div class="membership-card featured">
-                    <div class="popular-badge">Most Popular</div>
-                    <div class="membership-header">
-                        <h3>Wellness Elite</h3>
-                        <div class="membership-price">
-                            <span class="price">$199</span>
-                            <span class="period">/month</span>
-                        </div>
-                        <p class="membership-tagline">Comprehensive wellness with enhanced benefits</p>
-                    </div>
-                    <div class="membership-features">
-                        <ul>
-                            <li><i class="fas fa-check"></i> 20% discount on all services</li>
-                            <li><i class="fas fa-check"></i> Priority booking (24hrs advance)</li>
-                            <li><i class="fas fa-check"></i> Bi-weekly consultations</li>
-                            <li><i class="fas fa-check"></i> VIP mobile treatment setup</li>
-                            <li><i class="fas fa-check"></i> 1 complimentary IV therapy/month</li>
-                            <li><i class="fas fa-check"></i> Advanced lab testing</li>
-                            <li><i class="fas fa-check"></i> Wellness concierge service</li>
-                        </ul>
-                    </div>
-                    <button class="membership-btn">Choose Elite</button>
-                </div>
-
-                <!-- Wellness Platinum -->
-                <div class="membership-card">
-                    <div class="membership-header">
-                        <h3>Wellness Platinum</h3>
-                        <div class="membership-price">
-                            <span class="price">$399</span>
-                            <span class="period">/month</span>
-                        </div>
-                        <p class="membership-tagline">Ultimate wellness experience with unlimited access</p>
-                    </div>
-                    <div class="membership-features">
-                        <ul>
-                            <li><i class="fas fa-check"></i> 30% discount on all services</li>
-                            <li><i class="fas fa-check"></i> Same-day booking available</li>
-                            <li><i class="fas fa-check"></i> Weekly consultations</li>
-                            <li><i class="fas fa-check"></i> Premium mobile experience</li>
-                            <li><i class="fas fa-check"></i> 2 complimentary IV therapies/month</li>
-                            <li><i class="fas fa-check"></i> 1 complimentary aesthetic treatment/month</li>
-                            <li><i class="fas fa-check"></i> 24/7 telehealth access</li>
-                            <li><i class="fas fa-check"></i> Personalized supplement protocols</li>
-                        </ul>
-                    </div>
-                    <button class="membership-btn premium">Choose Platinum</button>
-                </div>
+        <div class="membership-grid">
+          <!-- Wellness Explorer -->
+          <div class="membership-card">
+            <div class="membership-header">
+              <h3>Wellness Explorer</h3>
+              <div class="membership-price">
+                <span class="price">$99</span>
+                <span class="period">/month</span>
+              </div>
+              <p class="membership-tagline">
+                Perfect for those new to wellness optimization
+              </p>
             </div>
-
-            <!-- Annual Savings Notice -->
-            <div class="annual-savings">
-                <p><strong>💡 Save 20% with annual membership!</strong> Contact us for annual pricing options and additional benefits.</p>
+            <div class="membership-features">
+              <ul>
+                <li>
+                  <i class="fas fa-check"></i> 10% discount on all services
+                </li>
+                <li>
+                  <i class="fas fa-check"></i> Priority booking (48hrs advance)
+                </li>
+                <li>
+                  <i class="fas fa-check"></i> Monthly wellness consultation
+                </li>
+                <li><i class="fas fa-check"></i> Access to member portal</li>
+                <li>
+                  <i class="fas fa-check"></i> Quarterly health assessments
+                </li>
+                <li class="not-included">
+                  <i class="fas fa-times"></i> VIP treatment experience
+                </li>
+                <li class="not-included">
+                  <i class="fas fa-times"></i> Complimentary services
+                </li>
+              </ul>
             </div>
+            <button class="membership-btn">Choose Explorer</button>
+          </div>
+
+          <!-- Wellness Elite (Featured) -->
+          <div class="membership-card featured">
+            <div class="popular-badge">Most Popular</div>
+            <div class="membership-header">
+              <h3>Wellness Elite</h3>
+              <div class="membership-price">
+                <span class="price">$199</span>
+                <span class="period">/month</span>
+              </div>
+              <p class="membership-tagline">
+                Comprehensive wellness with enhanced benefits
+              </p>
+            </div>
+            <div class="membership-features">
+              <ul>
+                <li>
+                  <i class="fas fa-check"></i> 20% discount on all services
+                </li>
+                <li>
+                  <i class="fas fa-check"></i> Priority booking (24hrs advance)
+                </li>
+                <li><i class="fas fa-check"></i> Bi-weekly consultations</li>
+                <li><i class="fas fa-check"></i> VIP mobile treatment setup</li>
+                <li>
+                  <i class="fas fa-check"></i> 1 complimentary IV therapy/month
+                </li>
+                <li><i class="fas fa-check"></i> Advanced lab testing</li>
+                <li><i class="fas fa-check"></i> Wellness concierge service</li>
+              </ul>
+            </div>
+            <button class="membership-btn">Choose Elite</button>
+          </div>
+
+          <!-- Wellness Platinum -->
+          <div class="membership-card">
+            <div class="membership-header">
+              <h3>Wellness Platinum</h3>
+              <div class="membership-price">
+                <span class="price">$399</span>
+                <span class="period">/month</span>
+              </div>
+              <p class="membership-tagline">
+                Ultimate wellness experience with unlimited access
+              </p>
+            </div>
+            <div class="membership-features">
+              <ul>
+                <li>
+                  <i class="fas fa-check"></i> 30% discount on all services
+                </li>
+                <li><i class="fas fa-check"></i> Same-day booking available</li>
+                <li><i class="fas fa-check"></i> Weekly consultations</li>
+                <li><i class="fas fa-check"></i> Premium mobile experience</li>
+                <li>
+                  <i class="fas fa-check"></i> 2 complimentary IV
+                  therapies/month
+                </li>
+                <li>
+                  <i class="fas fa-check"></i> 1 complimentary aesthetic
+                  treatment/month
+                </li>
+                <li><i class="fas fa-check"></i> 24/7 telehealth access</li>
+                <li>
+                  <i class="fas fa-check"></i> Personalized supplement protocols
+                </li>
+              </ul>
+            </div>
+            <button class="membership-btn premium">Choose Platinum</button>
+          </div>
         </div>
+
+        <!-- Annual Savings Notice -->
+        <div class="annual-savings">
+          <p>
+            <strong>💡 Save 20% with annual membership!</strong> Contact us for
+            annual pricing options and additional benefits.
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- Membership Benefits Detail -->
     <section class="section section-light">
-        <div class="container">
-            <h2 class="section-title">Member Exclusive Benefits</h2>
-            <p class="section-subtitle">What makes Stay Dripped membership special</p>
-            
-            <div class="benefits-grid">
-                <div class="benefit">
-                    <i class="fas fa-calendar-check"></i>
-                    <h4>Priority Booking</h4>
-                    <p>Skip the waitlist with priority access to appointments. Members get first choice of available slots and preferred scheduling.</p>
-                </div>
-                
-                <div class="benefit">
-                    <i class="fas fa-tag"></i>
-                    <h4>Exclusive Pricing</h4>
-                    <p>Enjoy significant discounts on all services, from IV therapy to hormone treatments and aesthetic procedures.</p>
-                </div>
-                
-                <div class="benefit">
-                    <i class="fas fa-star"></i>
-                    <h4>VIP Experience</h4>
-                    <p>Premium mobile treatment setup with enhanced comfort amenities delivered directly to your location.</p>
-                </div>
-                
-                <div class="benefit">
-                    <i class="fas fa-user-md"></i>
-                    <h4>Personalized Care</h4>
-                    <p>Regular consultations and customized treatment plans tailored to your specific health and wellness goals.</p>
-                </div>
-                
-                <div class="benefit">
-                    <i class="fas fa-lock"></i>
-                    <h4>Early Access</h4>
-                    <p>Be the first to try new treatments and participate in exclusive wellness programs before general availability.</p>
-                </div>
-                
-                <div class="benefit">
-                    <i class="fas fa-concierge-bell"></i>
-                    <h4>Concierge Service</h4>
-                    <p>Dedicated wellness concierge to coordinate your treatments, schedule appointments, and optimize your health journey.</p>
-                </div>
-            </div>
+      <div class="container">
+        <h2 class="section-title">Member Exclusive Benefits</h2>
+        <p class="section-subtitle">
+          What makes Stay Dripped membership special
+        </p>
+
+        <div class="benefits-grid">
+          <div class="benefit">
+            <i class="fas fa-calendar-check"></i>
+            <h4>Priority Booking</h4>
+            <p>
+              Skip the waitlist with priority access to appointments. Members
+              get first choice of available slots and preferred scheduling.
+            </p>
+          </div>
+
+          <div class="benefit">
+            <i class="fas fa-tag"></i>
+            <h4>Exclusive Pricing</h4>
+            <p>
+              Enjoy significant discounts on all services, from IV therapy to
+              hormone treatments and aesthetic procedures.
+            </p>
+          </div>
+
+          <div class="benefit">
+            <i class="fas fa-star"></i>
+            <h4>VIP Experience</h4>
+            <p>
+              Premium mobile treatment setup with enhanced comfort amenities
+              delivered directly to your location.
+            </p>
+          </div>
+
+          <div class="benefit">
+            <i class="fas fa-user-md"></i>
+            <h4>Personalized Care</h4>
+            <p>
+              Regular consultations and customized treatment plans tailored to
+              your specific health and wellness goals.
+            </p>
+          </div>
+
+          <div class="benefit">
+            <i class="fas fa-lock"></i>
+            <h4>Early Access</h4>
+            <p>
+              Be the first to try new treatments and participate in exclusive
+              wellness programs before general availability.
+            </p>
+          </div>
+
+          <div class="benefit">
+            <i class="fas fa-concierge-bell"></i>
+            <h4>Concierge Service</h4>
+            <p>
+              Dedicated wellness concierge to coordinate your treatments,
+              schedule appointments, and optimize your health journey.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Member Testimonials -->
     <section class="testimonials section" id="testimonials">
-        <div class="container">
-            <h2 class="section-title">Member Success Stories</h2>
-            <p class="section-subtitle">Hear from our valued members about their transformation journey</p>
-            
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"Being a Platinum member has transformed my health routine. The convenience of same-day booking and the personalized care I receive at home is unmatched. No more driving to clinics!"</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-info">
-                            <strong>Jennifer K.</strong>
-                            <span>Platinum Member since 2023</span>
-                        </div>
-                        <div class="member-badge">Platinum</div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"The Elite membership pays for itself with the monthly IV therapy alone. Plus, the priority booking is a game-changer for my busy executive schedule. Professional service every time."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-info">
-                            <strong>Michael R.</strong>
-                            <span>Elite Member since 2023</span>
-                        </div>
-                        <div class="member-badge">Elite</div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"Starting with Explorer membership was perfect. The 10% discount and monthly consultations helped me discover what works best for my body. Now I'm hooked on the convenience!"</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-info">
-                            <strong>Sarah L.</strong>
-                            <span>Explorer Member since 2024</span>
-                        </div>
-                        <div class="member-badge">Explorer</div>
-                    </div>
-                </div>
+      <div class="container">
+        <h2 class="section-title">Member Success Stories</h2>
+        <p class="section-subtitle">
+          Hear from our valued members about their transformation journey
+        </p>
+
+        <div class="testimonial-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <p>
+                "Being a Platinum member has transformed my health routine. The
+                convenience of same-day booking and the personalized care I
+                receive at home is unmatched. No more driving to clinics!"
+              </p>
             </div>
+            <div class="testimonial-author">
+              <div class="author-info">
+                <strong>Jennifer K.</strong>
+                <span>Platinum Member since 2023</span>
+              </div>
+              <div class="member-badge">Platinum</div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <p>
+                "The Elite membership pays for itself with the monthly IV
+                therapy alone. Plus, the priority booking is a game-changer for
+                my busy executive schedule. Professional service every time."
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-info">
+                <strong>Michael R.</strong>
+                <span>Elite Member since 2023</span>
+              </div>
+              <div class="member-badge">Elite</div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <p>
+                "Starting with Explorer membership was perfect. The 10% discount
+                and monthly consultations helped me discover what works best for
+                my body. Now I'm hooked on the convenience!"
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-info">
+                <strong>Sarah L.</strong>
+                <span>Explorer Member since 2024</span>
+              </div>
+              <div class="member-badge">Explorer</div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Membership FAQ -->
     <section class="membership-faq">
-        <div class="container">
-            <h2 class="section-title">Membership FAQs</h2>
-            <p class="section-subtitle">Common questions about our membership program</p>
-            
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <h4>Can I upgrade or downgrade my membership?</h4>
-                    <p>Yes, you can change your membership level at any time. Changes take effect at the start of your next billing cycle, and we'll help you transition smoothly.</p>
-                </div>
-                
-                <div class="faq-item">
-                    <h4>Do unused services roll over?</h4>
-                    <p>Complimentary services included in your membership do not roll over month to month, but your discounts apply to all services you book throughout your membership.</p>
-                </div>
-                
-                <div class="faq-item">
-                    <h4>Is there a contract commitment?</h4>
-                    <p>No long-term contracts required. You can cancel your membership with 30 days notice at any time. We believe in earning your loyalty through excellent service.</p>
-                </div>
-                
-                <div class="faq-item">
-                    <h4>Can I share my membership benefits?</h4>
-                    <p>Membership benefits are non-transferable and can only be used by the member. However, you can refer friends and family for special referral benefits.</p>
-                </div>
-                
-                <div class="faq-item">
-                    <h4>What if I travel frequently?</h4>
-                    <p>Our mobile service area and telehealth consultations accommodate busy lifestyles. Platinum members have access to 24/7 virtual support wherever you are.</p>
-                </div>
-                
-                <div class="faq-item">
-                    <h4>Are there family membership options?</h4>
-                    <p>Yes! Contact us about family plans that provide benefits for multiple household members with special pricing and shared appointment coordination.</p>
-                </div>
-            </div>
+      <div class="container">
+        <h2 class="section-title">Membership FAQs</h2>
+        <p class="section-subtitle">
+          Common questions about our membership program
+        </p>
+
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h4>Can I upgrade or downgrade my membership?</h4>
+            <p>
+              Yes, you can change your membership level at any time. Changes
+              take effect at the start of your next billing cycle, and we'll
+              help you transition smoothly.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Do unused services roll over?</h4>
+            <p>
+              Complimentary services included in your membership do not roll
+              over month to month, but your discounts apply to all services you
+              book throughout your membership.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Is there a contract commitment?</h4>
+            <p>
+              No long-term contracts required. You can cancel your membership
+              with 30 days notice at any time. We believe in earning your
+              loyalty through excellent service.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Can I share my membership benefits?</h4>
+            <p>
+              Membership benefits are non-transferable and can only be used by
+              the member. However, you can refer friends and family for special
+              referral benefits.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h4>What if I travel frequently?</h4>
+            <p>
+              Our mobile service area and telehealth consultations accommodate
+              busy lifestyles. Platinum members have access to 24/7 virtual
+              support wherever you are.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Are there family membership options?</h4>
+            <p>
+              Yes! Contact us about family plans that provide benefits for
+              multiple household members with special pricing and shared
+              appointment coordination.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- CTA Section -->
     <section class="membership-cta-section">
-        <div class="container">
-            <h3>Ready to Join Stay Dripped Membership?</h3>
-            <p>Start your journey to optimal wellness with exclusive member benefits and the convenience of mobile service</p>
-            <div class="cta-buttons">
-                <button class="cta primary">Join Now</button>
-                <button class="cta secondary">View Services</button>
-            </div>
-            <p class="cta-note">30-day money-back guarantee • No long-term contracts • Mobile convenience</p>
+      <div class="container">
+        <h3>Ready to Join Stay Dripped Membership?</h3>
+        <p>
+          Start your journey to optimal wellness with exclusive member benefits
+          and the convenience of mobile service
+        </p>
+        <div class="cta-buttons">
+          <button class="cta primary">Join Now</button>
+          <button class="cta secondary">View Services</button>
         </div>
+        <p class="cta-note">
+          30-day money-back guarantee • No long-term contracts • Mobile
+          convenience
+        </p>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="site-footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <div class="footer-logo">
-                    <div class="footer-brand-name">Stay Dripped Mobile IV</div>
-                </div>
-                <p>Transforming lives through premium wellness and personalized healthcare solutions delivered to your location.</p>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Services</h3>
-                <ul class="footer-links">
-                    <li><a href="#services">IV Therapy</a></li>
-                    <li><a href="#services">Hormone Replacement</a></li>
-                    <li><a href="#services">Aesthetic Treatments</a></li>
-                    <li><a href="#services">Weight Management</a></li>
-                    <li><a href="#services">Wellness Programs</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Company</h3>
-                <ul class="footer-links">
-                    <li><a href="#memberships">Memberships</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Corporate Events</a></li>
-                    <li><a href="#">Mobile Service Areas</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Contact & Legal</h3>
-                <ul class="footer-links">
-                    <li><a href="#contact">Contact Us</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Medical Disclaimer</a></li>
-                    <li><a href="#">HIPAA Notice</a></li>
-                </ul>
-            </div>
+      <div class="footer-content">
+        <div class="footer-section">
+          <div class="footer-logo">
+            <div class="footer-brand-name">Stay Dripped Mobile IV</div>
+          </div>
+          <p>
+            Transforming lives through premium wellness and personalized
+            healthcare solutions delivered to your location.
+          </p>
         </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2025 Stay Dripped Mobile IV LLC. All rights reserved.</p>
+
+        <div class="footer-section">
+          <h3>Services</h3>
+          <ul class="footer-links">
+            <li><a href="#services">IV Therapy</a></li>
+            <li><a href="#services">Hormone Replacement</a></li>
+            <li><a href="#services">Aesthetic Treatments</a></li>
+            <li><a href="#services">Weight Management</a></li>
+            <li><a href="#services">Wellness Programs</a></li>
+          </ul>
         </div>
+
+        <div class="footer-section">
+          <h3>Company</h3>
+          <ul class="footer-links">
+            <li><a href="#memberships">Memberships</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Corporate Events</a></li>
+            <li><a href="#">Mobile Service Areas</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Contact & Legal</h3>
+          <ul class="footer-links">
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Medical Disclaimer</a></li>
+            <li><a href="#">HIPAA Notice</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Stay Dripped Mobile IV LLC. All rights reserved.</p>
+      </div>
     </footer>
 
     <!-- JavaScript -->
     <script>
-        // Enhanced JavaScript for Exam Modal and Header Functionality
-        (function() {
-            function initHeader() {
-                // Enhanced exam modal functionality
-                const examButton = document.getElementById('loadFormButton');
-                const examModal = document.getElementById('examModal');
-                const examModalClose = document.querySelector('.exam-modal-close');
-                const examModalOverlay = document.querySelector('.exam-modal-overlay');
-                
-                // Store the element that opened the modal for focus return
-                let modalTrigger = null;
-                
-                if (examButton) {
-                    // Enhanced click event with loading states
-                    examButton.addEventListener('click', function(event) {
-                        event.preventDefault();
-                        
-                        // Add loading state
-                        this.classList.add('loading');
-                        this.disabled = true;
-                        
-                        // Small delay for UX
-                        setTimeout(() => {
-                            openExamModal();
-                            this.classList.remove('loading');
-                            this.disabled = false;
-                        }, 300);
-                        
-                        // Analytics tracking
-                        if (typeof gtag !== 'undefined') {
-                            gtag('event', 'click', {
-                                event_category: 'engagement',
-                                event_label: 'first_time_patient_exam_header',
-                                value: 1
-                            });
-                        }
-                    });
-                    
-                    // Enhanced keyboard support
-                    examButton.addEventListener('keydown', function(event) {
-                        if (event.key === 'Enter' || event.key === ' ') {
-                            event.preventDefault();
-                            this.click();
-                        }
-                    });
-                }
-                
-                // Open modal function
-                function openExamModal() {
-                    if (examModal) {
-                        modalTrigger = document.activeElement;
-                        examModal.style.display = 'flex';
-                        
-                        // Force reflow then add active class for animation
-                        examModal.offsetHeight;
-                        examModal.classList.add('active');
-                        
-                        // Focus management
-                        const firstFocusable = examModal.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-                        if (firstFocusable) {
-                            firstFocusable.focus();
-                        }
-                        
-                        // Prevent body scroll
-                        document.body.style.overflow = 'hidden';
-                        
-                        // Add escape key listener
-                        document.addEventListener('keydown', handleEscapeKey);
-                        
-                        // Trap focus within modal
-                        trapFocus(examModal);
-                    }
-                }
-                
-                // Close modal function
-                function closeExamModal() {
-                    if (examModal) {
-                        examModal.classList.remove('active');
-                        
-                        setTimeout(() => {
-                            examModal.style.display = 'none';
-                            document.body.style.overflow = '';
-                            
-                            // Return focus to trigger element
-                            if (modalTrigger) {
-                                modalTrigger.focus();
-                                modalTrigger = null;
-                            }
-                        }, 300);
-                        
-                        // Remove escape key listener
-                        document.removeEventListener('keydown', handleEscapeKey);
-                    }
-                }
-                
-                // Handle escape key
-                function handleEscapeKey(event) {
-                    if (event.key === 'Escape') {
-                        closeExamModal();
-                    }
-                }
-                
-                // Trap focus within modal
-                function trapFocus(element) {
-                    const focusableElements = element.querySelectorAll(
-                        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-                    );
-                    const firstFocusable = focusableElements[0];
-                    const lastFocusable = focusableElements[focusableElements.length - 1];
-                    
-                    element.addEventListener('keydown', function(e) {
-                        if (e.key === 'Tab') {
-                            if (e.shiftKey) {
-                                if (document.activeElement === firstFocusable) {
-                                    lastFocusable.focus();
-                                    e.preventDefault();
-                                }
-                            } else {
-                                if (document.activeElement === lastFocusable) {
-                                    firstFocusable.focus();
-                                    e.preventDefault();
-                                }
-                            }
-                        }
-                    });
-                }
-                
-                // Close modal events
-                if (examModalClose) {
-                    examModalClose.addEventListener('click', closeExamModal);
-                }
-                
-                if (examModalOverlay) {
-                    examModalOverlay.addEventListener('click', function(e) {
-                        if (e.target === examModalOverlay) {
-                            closeExamModal();
-                        }
-                    });
-                }
-                
-                // Enhanced global functions for modal actions
-                window.proceedToExamBooking = function() {
-                    // Track conversion
-                    if (typeof gtag !== 'undefined') {
-                        gtag('event', 'conversion', {
-                            event_category: 'booking',
-                            event_label: 'exam_booking_started',
-                            value: 1
-                        });
-                    }
-                    
-                    closeExamModal();
-                    
-                    // Open IntakeQ booking
-                    window.open('https://staydripped.intakeq.com/booking', '_blank');
-                };
-                
-                window.callForExam = function() {
-                    // Track phone call intent
-                    if (typeof gtag !== 'undefined') {
-                        gtag('event', 'click', {
-                            event_category: 'contact',
-                            event_label: 'exam_phone_call',
-                            value: 1
-                        });
-                    }
-                    
-                    closeExamModal();
-                    
-                    // Use the phone number from your header
-                    window.open('tel:+16026889825', '_self');
-                };
-                
-                // Initialize any existing Qualiphy or IntakeQ integrations
-                if (typeof showDisclosureModal !== 'undefined') {
-                    // Override the default function if it exists
-                    const originalFunction = window.showDisclosureModal;
-                    window.showDisclosureModal = function() {
-                        // Try to use the enhanced modal first
-                        if (examModal) {
-                            openExamModal();
-                        } else {
-                            // Fallback to original function
-                            originalFunction();
-                        }
-                    };
-                } else {
-                    // Create the function if it doesn't exist
-                    window.showDisclosureModal = openExamModal;
-                }
-                
-                // Mobile menu toggle
-                const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-                const navMenu = document.getElementById('navMenu');
-                
-                if (mobileMenuToggle && navMenu) {
-                    mobileMenuToggle.addEventListener('click', function() {
-                        const expanded = this.getAttribute('aria-expanded') === 'true';
-                        this.classList.toggle('active');
-                        navMenu.classList.toggle('active');
-                        document.body.classList.toggle('menu-open');
-                        this.setAttribute('aria-expanded', String(!expanded));
-                    });
-                }
-                
-                // Header scroll effect
-                let lastScrollTop = 0;
-                const header = document.querySelector('.header');
-                
-                window.addEventListener('scroll', function() {
-                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                    
-                    if (scrollTop > lastScrollTop && scrollTop > 100) {
-                        // Scrolling down
-                        header.style.transform = 'translateY(-100%)';
-                    } else {
-                        // Scrolling up
-                        header.style.transform = 'translateY(0)';
-                    }
-                    
-                    lastScrollTop = scrollTop;
+      // Enhanced JavaScript for Exam Modal and Header Functionality
+      (function () {
+        function initHeader() {
+          // Enhanced exam modal functionality
+          const examButton = document.getElementById("loadFormButton");
+          const examModal = document.getElementById("examModal");
+          const examModalClose = document.querySelector(".exam-modal-close");
+          const examModalOverlay = document.querySelector(
+            ".exam-modal-overlay",
+          );
+
+          // Store the element that opened the modal for focus return
+          let modalTrigger = null;
+
+          if (examButton) {
+            // Enhanced click event with loading states
+            examButton.addEventListener("click", function (event) {
+              event.preventDefault();
+
+              // Add loading state
+              this.classList.add("loading");
+              this.disabled = true;
+
+              // Small delay for UX
+              setTimeout(() => {
+                openExamModal();
+                this.classList.remove("loading");
+                this.disabled = false;
+              }, 300);
+
+              // Analytics tracking
+              if (typeof gtag !== "undefined") {
+                gtag("event", "click", {
+                  event_category: "engagement",
+                  event_label: "first_time_patient_exam_header",
+                  value: 1,
                 });
+              }
+            });
+
+            // Enhanced keyboard support
+            examButton.addEventListener("keydown", function (event) {
+              if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                this.click();
+              }
+            });
+          }
+
+          // Open modal function
+          function openExamModal() {
+            if (examModal) {
+              modalTrigger = document.activeElement;
+              examModal.style.display = "flex";
+
+              // Force reflow then add active class for animation
+              examModal.offsetHeight;
+              examModal.classList.add("active");
+
+              // Focus management
+              const firstFocusable = examModal.querySelector(
+                'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+              );
+              if (firstFocusable) {
+                firstFocusable.focus();
+              }
+
+              // Prevent body scroll
+              document.body.style.overflow = "hidden";
+
+              // Add escape key listener
+              document.addEventListener("keydown", handleEscapeKey);
+
+              // Trap focus within modal
+              trapFocus(examModal);
+            }
+          }
+
+          // Close modal function
+          function closeExamModal() {
+            if (examModal) {
+              examModal.classList.remove("active");
+
+              setTimeout(() => {
+                examModal.style.display = "none";
+                document.body.style.overflow = "";
+
+                // Return focus to trigger element
+                if (modalTrigger) {
+                  modalTrigger.focus();
+                  modalTrigger = null;
+                }
+              }, 300);
+
+              // Remove escape key listener
+              document.removeEventListener("keydown", handleEscapeKey);
+            }
+          }
+
+          // Handle escape key
+          function handleEscapeKey(event) {
+            if (event.key === "Escape") {
+              closeExamModal();
+            }
+          }
+
+          // Trap focus within modal
+          function trapFocus(element) {
+            const focusableElements = element.querySelectorAll(
+              'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+            );
+            const firstFocusable = focusableElements[0];
+            const lastFocusable =
+              focusableElements[focusableElements.length - 1];
+
+            element.addEventListener("keydown", function (e) {
+              if (e.key === "Tab") {
+                if (e.shiftKey) {
+                  if (document.activeElement === firstFocusable) {
+                    lastFocusable.focus();
+                    e.preventDefault();
+                  }
+                } else {
+                  if (document.activeElement === lastFocusable) {
+                    firstFocusable.focus();
+                    e.preventDefault();
+                  }
+                }
+              }
+            });
+          }
+
+          // Close modal events
+          if (examModalClose) {
+            examModalClose.addEventListener("click", closeExamModal);
+          }
+
+          if (examModalOverlay) {
+            examModalOverlay.addEventListener("click", function (e) {
+              if (e.target === examModalOverlay) {
+                closeExamModal();
+              }
+            });
+          }
+
+          // Enhanced global functions for modal actions
+          window.proceedToExamBooking = function () {
+            // Track conversion
+            if (typeof gtag !== "undefined") {
+              gtag("event", "conversion", {
+                event_category: "booking",
+                event_label: "exam_booking_started",
+                value: 1,
+              });
             }
 
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', initHeader);
-            } else {
-                initHeader();
+            closeExamModal();
+
+            // Open IntakeQ booking
+            window.open("https://staydripped.intakeq.com/booking", "_blank");
+          };
+
+          window.callForExam = function () {
+            // Track phone call intent
+            if (typeof gtag !== "undefined") {
+              gtag("event", "click", {
+                event_category: "contact",
+                event_label: "exam_phone_call",
+                value: 1,
+              });
             }
-        })();
 
-        // Scroll progress indicator
-        window.addEventListener('scroll', function() {
-            const scrollTop = window.pageYOffset;
-            const docHeight = document.body.offsetHeight - window.innerHeight;
-            const scrollPercent = (scrollTop / docHeight) * 100;
-            document.querySelector('.scroll-indicator').style.width = scrollPercent + '%';
-        });
+            closeExamModal();
 
-        // FAQ Toggle functionality
-        document.querySelectorAll('.faq-item').forEach(item => {
-            item.addEventListener('click', function() {
-                const isActive = this.classList.contains('active');
-                
-                // Close all FAQ items
-                document.querySelectorAll('.faq-item').forEach(faq => faq.classList.remove('active'));
-                
-                // Toggle current item
-                if (!isActive) {
-                    this.classList.add('active');
-                }
-            });
-        });
+            // Use the phone number from your header
+            window.open("tel:+16026889825", "_self");
+          };
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Membership button actions
-        document.querySelectorAll('.membership-btn').forEach(button => {
-            button.addEventListener('click', function() {
-                const membershipType = this.textContent.replace('Choose ', '');
-                // Direct to IntakeQ booking for membership signup
-                window.open('https://staydripped.intakeq.com/booking', '_blank');
-            });
-        });
-
-        // CTA button actions
-        document.querySelectorAll('.cta').forEach(button => {
-            button.addEventListener('click', function() {
-                if (this.textContent === 'Join Now') {
-                    // Direct to IntakeQ booking for membership signup
-                    window.open('https://staydripped.intakeq.com/booking', '_blank');
-                } else if (this.textContent === 'View Services') {
-                    // Navigate to services section
-                    window.location.href = '#services';
-                }
-            });
-        });
-
-        // Add animation to membership cards on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Apply animation to cards
-        document.querySelectorAll('.membership-card, .benefit, .testimonial-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
-        });
-
-        // Polyfill for older browsers
-        if (!Element.prototype.closest) {
-            Element.prototype.closest = function(s) {
-                var el = this;
-                do {
-                    if (el.matches(s)) return el;
-                    el = el.parentElement || el.parentNode;
-                } while (el !== null && el.nodeType === 1);
-                return null;
+          // Initialize any existing Qualiphy or IntakeQ integrations
+          if (typeof showDisclosureModal !== "undefined") {
+            // Override the default function if it exists
+            const originalFunction = window.showDisclosureModal;
+            window.showDisclosureModal = function () {
+              // Try to use the enhanced modal first
+              if (examModal) {
+                openExamModal();
+              } else {
+                // Fallback to original function
+                originalFunction();
+              }
             };
+          } else {
+            // Create the function if it doesn't exist
+            window.showDisclosureModal = openExamModal;
+          }
+
+          // Mobile menu toggle
+          const mobileMenuToggle = document.getElementById("mobileMenuToggle");
+          const navMenu = document.getElementById("navMenu");
+
+          if (mobileMenuToggle && navMenu) {
+            mobileMenuToggle.addEventListener("click", function () {
+              const expanded = this.getAttribute("aria-expanded") === "true";
+              this.classList.toggle("active");
+              navMenu.classList.toggle("active");
+              document.body.classList.toggle("menu-open");
+              this.setAttribute("aria-expanded", String(!expanded));
+            });
+          }
+
+          // Header scroll effect
+          let lastScrollTop = 0;
+          const header = document.querySelector(".header");
+
+          window.addEventListener("scroll", function () {
+            const scrollTop =
+              window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+              // Scrolling down
+              header.style.transform = "translateY(-100%)";
+            } else {
+              // Scrolling up
+              header.style.transform = "translateY(0)";
+            }
+
+            lastScrollTop = scrollTop;
+          });
         }
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", initHeader);
+        } else {
+          initHeader();
+        }
+      })();
+
+      // Scroll progress indicator
+      window.addEventListener("scroll", function () {
+        const scrollTop = window.pageYOffset;
+        const docHeight = document.body.offsetHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+        document.querySelector(".scroll-indicator").style.width =
+          scrollPercent + "%";
+      });
+
+      // FAQ Toggle functionality
+      document.querySelectorAll(".faq-item").forEach((item) => {
+        item.addEventListener("click", function () {
+          const isActive = this.classList.contains("active");
+
+          // Close all FAQ items
+          document
+            .querySelectorAll(".faq-item")
+            .forEach((faq) => faq.classList.remove("active"));
+
+          // Toggle current item
+          if (!isActive) {
+            this.classList.add("active");
+          }
+        });
+      });
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Membership button actions
+      document.querySelectorAll(".membership-btn").forEach((button) => {
+        button.addEventListener("click", function () {
+          const membershipType = this.textContent.replace("Choose ", "");
+          // Direct to IntakeQ booking for membership signup
+          window.open("https://staydripped.intakeq.com/booking", "_blank");
+        });
+      });
+
+      // CTA button actions
+      document.querySelectorAll(".cta").forEach((button) => {
+        button.addEventListener("click", function () {
+          if (this.textContent === "Join Now") {
+            // Direct to IntakeQ booking for membership signup
+            window.open("https://staydripped.intakeq.com/booking", "_blank");
+          } else if (this.textContent === "View Services") {
+            // Navigate to services section
+            window.location.href = "#services";
+          }
+        });
+      });
+
+      // Add animation to membership cards on scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+          }
+        });
+      }, observerOptions);
+
+      // Apply animation to cards
+      document
+        .querySelectorAll(".membership-card, .benefit, .testimonial-card")
+        .forEach((card) => {
+          card.style.opacity = "0";
+          card.style.transform = "translateY(20px)";
+          card.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+          observer.observe(card);
+        });
+
+      // Polyfill for older browsers
+      if (!Element.prototype.closest) {
+        Element.prototype.closest = function (s) {
+          var el = this;
+          do {
+            if (el.matches(s)) return el;
+            el = el.parentElement || el.parentNode;
+          } while (el !== null && el.nodeType === 1);
+          return null;
+        };
+      }
     </script>
-</body>
+  </body>
 </html>
