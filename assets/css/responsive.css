@@ -7,24 +7,24 @@
   :root {
     --section-padding: 4rem 1.5rem;
   }
-  
+
   .container {
     padding: 0 1.5rem;
   }
-  
+
   .hero-title {
     font-size: clamp(2rem, 5vw, 3.5rem);
   }
-  
+
   .section-title {
     font-size: clamp(1.8rem, 4vw, 2.5rem);
   }
-  
+
   .membership-grid,
   .service-cards {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
-  
+
   .footer-content {
     grid-template-columns: repeat(2, 1fr);
     gap: 3rem 2rem;
@@ -37,12 +37,12 @@
   .header-container {
     padding: 1rem;
   }
-  
+
   .mobile-menu-toggle {
     display: flex;
     order: 3;
   }
-  
+
   .nav-menu {
     position: fixed;
     top: 70px;
@@ -59,97 +59,91 @@
     overflow-y: auto;
     z-index: 999;
   }
-  
+
   .nav-menu.active {
     transform: translateX(0);
   }
-  
+
   body.menu-open {
     overflow: hidden;
   }
-  
+
   .nav-link {
     padding: 1rem;
     text-align: center;
-    border-radius: var(--br);
-    background: rgb(255 255 255 / 5%);
   }
-  
-  .nav-link:hover {
-    background: rgb(255 255 255 / 15%);
-  }
-  
+
   .header-buttons {
     gap: 0.5rem;
     margin-right: auto;
   }
-  
+
   .emergency-call-btn span {
     display: none;
   }
-  
+
   .emergency-call-btn {
     padding: 0.75rem;
     min-width: auto;
   }
-  
+
   .header-book-btn {
     padding: 0.75rem 1rem;
     font-size: 0.85rem;
   }
-  
+
   .exam-btn {
     min-width: auto;
     padding: 0.75rem 1rem;
     font-size: 0.85rem;
   }
-  
+
   .exam-btn-text {
     display: none;
   }
-  
+
   .exam-btn-icon {
     margin: 0;
   }
-  
+
   /* Hero Mobile */
   .hero {
     min-height: 100vh;
     padding-top: 100px;
   }
-  
+
   .hero-content {
     padding: 0 1rem;
   }
-  
+
   .hero-buttons {
     flex-direction: column;
     width: 100%;
     max-width: 300px;
     margin: 0 auto 2rem;
   }
-  
+
   .cta,
   .cta-button {
     width: 100%;
   }
-  
+
   .hero-features {
     flex-direction: column;
     gap: 1rem;
   }
-  
+
   .feature-item {
     width: 100%;
     justify-content: center;
   }
-  
+
   /* Services Mobile */
   .service-cards {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   /* Booking Mobile */
   .tab-buttons {
     flex-direction: column;
@@ -157,115 +151,115 @@
     max-width: 300px;
     margin: 0 auto 2rem;
   }
-  
+
   .tab-link {
     width: 100%;
   }
-  
+
   .tab-content iframe {
     height: 60vh;
     min-height: 400px;
   }
-  
+
   /* Quiz Mobile */
   .quiz-controls {
     flex-direction: column;
     width: 100%;
   }
-  
+
   .quiz-controls button {
     width: 100%;
   }
-  
+
   /* Membership Mobile */
   .membership-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
+
   .membership-card.featured {
     transform: none;
   }
-  
+
   .lead-capture {
     flex-direction: column;
   }
-  
+
   .lead-capture input,
   .lead-capture select {
     width: 100%;
   }
-  
+
   /* How It Works Mobile */
   .steps-container {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
+
   /* Testimonials Mobile */
   .testimonial-slider {
     padding: 0 1rem;
   }
-  
+
   /* Footer Mobile */
   .footer-content {
     grid-template-columns: 1fr;
     gap: 2rem;
     text-align: center;
   }
-  
+
   .footer-social {
     justify-content: center;
   }
-  
+
   .footer-links {
     text-align: center;
   }
-  
+
   .contact-info .contact-item {
     justify-content: center;
     text-align: center;
   }
-  
+
   .footer-bottom-content {
     flex-direction: column;
     text-align: center;
     gap: 1rem;
   }
-  
+
   .footer-legal {
     flex-direction: column;
     gap: 0.5rem;
   }
-  
+
   /* Modal Mobile */
   .exam-modal {
     margin: 1rem;
     max-height: calc(100vh - 2rem);
   }
-  
+
   .exam-modal-header {
     padding: 1.5rem 1.5rem 1rem;
   }
-  
+
   .exam-modal-body {
     padding: 1.5rem;
   }
-  
+
   .exam-actions {
     flex-direction: column;
   }
-  
+
   .exam-proceed-btn,
   .exam-call-btn {
     width: 100%;
   }
-  
+
   /* Utility Classes Mobile */
   .hide-mobile {
     display: none !important;
   }
-  
+
   .show-mobile {
     display: block !important;
   }
@@ -277,7 +271,7 @@
     min-height: auto;
     padding: 4rem 1rem;
   }
-  
+
   .nav-menu {
     max-height: calc(100vh - 60px);
   }
@@ -288,50 +282,50 @@
   :root {
     --section-padding: 3rem 1rem;
   }
-  
+
   .hero-title {
     font-size: clamp(1.8rem, 6vw, 2.5rem);
   }
-  
+
   .section-title {
     font-size: clamp(1.5rem, 5vw, 2rem);
   }
-  
+
   .logo-image {
     height: 30px;
   }
-  
+
   .brand-name {
     font-size: 1.1rem;
   }
-  
+
   .hero-subtitle {
     font-size: 0.95rem;
   }
-  
+
   .card {
     padding: 1.5rem;
   }
-  
+
   .membership-card {
     padding: 1.5rem;
   }
-  
+
   .membership-price .price {
     font-size: 2rem;
   }
-  
+
   .newsletter-input-group {
     flex-direction: column;
     gap: 0.5rem;
   }
-  
+
   .newsletter-input-group input {
     width: 100%;
     border-radius: var(--br);
     border: 1px solid #e0e0e0;
   }
-  
+
   .newsletter-btn {
     width: 100%;
     border-radius: var(--br);
@@ -344,20 +338,20 @@
   .container {
     padding: 0 0.75rem;
   }
-  
+
   .hero-title {
     font-size: 1.5rem;
   }
-  
+
   .section-title {
     font-size: 1.3rem;
   }
-  
+
   .exam-btn {
     min-width: 40px;
     padding: 0.75rem;
   }
-  
+
   .header-book-btn {
     display: none;
   }
@@ -381,30 +375,30 @@
   .booking-tabs {
     display: none !important;
   }
-  
+
   /* Reset colors for print */
   body {
     color: #000;
     background: #fff;
   }
-  
+
   .section {
     page-break-inside: avoid;
   }
-  
+
   .card,
   .membership-card {
     box-shadow: none;
     border: 1px solid #ddd;
   }
-  
+
   /* Ensure links are visible */
   a[href]::after {
     content: " (" attr(href) ")";
     font-size: 0.8em;
     color: #666;
   }
-  
+
   /* Page margins */
   @page {
     margin: 2cm;
@@ -421,7 +415,7 @@
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-  
+
   .hero-overlay {
     animation: none;
   }
@@ -436,12 +430,12 @@
     --text-light: #333;
     --bg-light: #fff;
   }
-  
+
   .card,
   .membership-card {
     border: 2px solid #000;
   }
-  
+
   .cta,
   .cta-button {
     border: 2px solid currentcolor;
@@ -456,25 +450,25 @@
     --text-light: #ccc;
     --white: #0a0a0a;
   }
-  
+
   body {
     background: #0a0a0a;
   }
-  
+
   .card,
   .membership-card {
     background: #1a1a1a;
     color: #f0f0f0;
   }
-  
+
   .section-light {
     background: #111;
   }
-  
+
   .header {
     background: rgb(10 10 10 / 95%);
   }
-  
+
   .footer {
     background: #0a0a0a;
   }
