@@ -22,6 +22,7 @@
     <!-- CSS -->
     <style>
         /* Include the entire CSS from paste.txt here */
+
         /* ==============================================
            STAY DRIPPED MOBILE IV - MAIN STYLESHEET
            Copyright © 2025 Stay Dripped Mobile IV LLC
@@ -43,17 +44,17 @@
           --text-dark: #1a1a1a;
           --text-light: #666;
           --text-muted: #999;
-          --text-white: #ffffff;
+          --text-white: #fff;
           
           /* Background Colors */
           --bg-light: #f1fbff;
           --bg-dark: #1a1a1a;
-          --white: #ffffff;
+          --white: #fff;
           
           /* Shadows */
-          --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-          --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
-          --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.1);
+          --shadow: 0 4px 12px rgb(0 0 0 / 10%);
+          --shadow-hover: 0 8px 25px rgb(0 0 0 / 15%);
+          --shadow-lg: 0 10px 40px rgb(0 0 0 / 10%);
           
           /* Border Radius */
           --br: 12px;
@@ -67,7 +68,7 @@
           /* Gradients */
           --gradient-primary: linear-gradient(135deg, var(--secondary), var(--accent));
           --gradient-gold: linear-gradient(135deg, #ffd700, #ffed4e);
-          --gradient-hero: linear-gradient(135deg, rgba(10, 42, 67, 0.9), rgba(0, 188, 212, 0.7));
+          --gradient-hero: linear-gradient(135deg, rgb(10 42 67 / 90%), rgb(0 188 212 / 70%));
           
           /* Spacing */
           --container-max-width: 1400px;
@@ -88,7 +89,7 @@
         }
 
         body {
-          font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+          font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
           line-height: 1.7;
           color: var(--text-dark);
           background: #fafafa;
@@ -209,7 +210,6 @@
           font-size: 1.4rem;
           font-weight: 800;
           background: var(--gradient-primary);
-          -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
         }
@@ -245,11 +245,11 @@
         }
 
         .nav-link:hover {
-          background: rgba(255, 255, 255, 0.15);
+          background: rgb(255 255 255 / 15%);
         }
 
         .nav-link.active {
-          background: rgba(255, 255, 255, 0.25);
+          background: rgb(255 255 255 / 25%);
         }
 
         .header-buttons {
@@ -283,7 +283,7 @@
           min-width: 180px;
           height: 48px;
           padding: 0.75rem 1.5rem;
-          font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
           font-size: 0.9rem;
           font-weight: 600;
           line-height: 1;
@@ -293,7 +293,7 @@
           color: #0a005b;
           border: 2px solid transparent;
           border-radius: 8px;
-          box-shadow: 0 2px 8px rgba(207, 201, 255, 0.3);
+          box-shadow: 0 2px 8px rgb(207 201 255 / 30%);
           display: inline-flex;
           align-items: center;
           justify-content: center;
@@ -308,7 +308,7 @@
           background-color: #8058fa;
           color: white;
           transform: translateY(-2px);
-          box-shadow: 0 4px 16px rgba(128, 88, 250, 0.4);
+          box-shadow: 0 4px 16px rgb(128 88 250 / 40%);
         }
 
         /* Hero Section */
@@ -337,7 +337,6 @@
           font-weight: 800;
           margin-bottom: 1.5rem;
           background: linear-gradient(135deg, #fff, var(--accent));
-          -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
         }
@@ -379,7 +378,7 @@
         }
 
         .cta.secondary {
-          background: rgba(255, 255, 255, 0.15);
+          background: rgb(255 255 255 / 15%);
           color: white;
           border: 2px solid white;
           backdrop-filter: blur(10px);
@@ -392,7 +391,7 @@
           left: -100%;
           width: 100%;
           height: 100%;
-          background: rgba(255, 255, 255, 0.2);
+          background: rgb(255 255 255 / 20%);
           transition: var(--transition);
         }
 
@@ -419,7 +418,7 @@
           gap: 0.5rem;
           font-size: 0.9rem;
           opacity: 0.9;
-          background: rgba(255, 255, 255, 0.1);
+          background: rgb(255 255 255 / 10%);
           padding: 0.75rem 1rem;
           border-radius: var(--br);
           backdrop-filter: blur(10px);
@@ -450,7 +449,7 @@
           transition: var(--transition);
           position: relative;
           overflow: hidden;
-          border: 1px solid rgba(0, 188, 212, 0.1);
+          border: 1px solid rgb(0 188 212 / 10%);
         }
 
         .card::before {
@@ -724,7 +723,7 @@
         }
 
         .footer-links a {
-          color: rgba(255, 255, 255, 0.8);
+          color: rgb(255 255 255 / 80%);
           transition: var(--transition);
         }
 
@@ -733,17 +732,17 @@
         }
 
         .footer-bottom {
-          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          border-top: 1px solid rgb(255 255 255 / 10%);
           padding-top: 2rem;
           max-width: var(--container-max-width);
           margin: 0 auto;
           text-align: center;
-          color: rgba(255, 255, 255, 0.6);
+          color: rgb(255 255 255 / 60%);
           font-size: 0.9rem;
         }
 
         /* Responsive Design */
-        @media (max-width: 768px) {
+        @media (width <= 768px) {
           .nav-menu {
             display: none;
           }
@@ -825,7 +824,7 @@
           border-radius: var(--br-lg);
           box-shadow: var(--shadow);
           transition: var(--transition);
-          border: 1px solid rgba(0, 188, 212, 0.1);
+          border: 1px solid rgb(0 188 212 / 10%);
         }
 
         .treatment-card:hover {
