@@ -275,8 +275,7 @@
   color: var(--secondary);
 }
 
-/* Enhanced Font Imports */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Caveat:wght@400;500;600;700&display=swap");
+/* Font imports handled in individual font files */
 
 /* ===============================================
    FIRST TIME PATIENT EXAM BUTTON & MODAL STYLES
