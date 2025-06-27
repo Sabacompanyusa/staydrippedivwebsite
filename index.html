@@ -113,36 +113,6 @@
         c.head.appendChild(i);
       })(document);
     </script>
-
-    <!-- Schema.org structured data -->
-
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "MedicalBusiness",
-        "name": "Stay Dripped® Mobile IV",
-        "description": "Premium mobile IV therapy and wellness services",
-        "url": "https://staydripped.com",
-        "telephone": "+1-602-688-9825",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Scottsdale",
-          "addressRegion": "AZ",
-          "addressCountry": "US"
-        },
-        "openingHours": "Mo-Su 00:00-23:59",
-        "priceRange": "$$$",
-        "serviceArea": {
-          "@type": "GeoCircle",
-          "geoMidpoint": {
-            "@type": "GeoCoordinates",
-            "latitude": 33.4942,
-            "longitude": -111.9261
-          },
-          "geoRadius": "80000"
-        }
-      }
-    </script>
   </head>
 
   <body>
@@ -167,21 +137,20 @@
       <!-- Booking Component -->
       <div id="booking-container"></div>
       <div id="booking-modal-container"></div>
-
+      
+       <!-- Memberships Component -->
+      <div id="memberships-container"></div>
+      
       <!-- How It Works Component -->
       <div id="how-it-works-container"></div>
 
       <!-- Testimonials Component -->
       <div id="testimonials-container"></div>
 
-      <!-- Memberships Component -->
-      <div id="memberships-container"></div>
 
       <!-- FAQ Component -->
       <div id="faq-container"></div>
-
-      <!-- Quiz Component -->
-      <div id="quiz-container"></div>
+      
     </main>
 
     <!-- Footer Component -->
@@ -275,7 +244,6 @@
           loadComponent("faq-container", "components/faq.html"),
           loadComponent("qualiphy-container", "components/qualiphy.html"),
           loadComponent("footer-container", "components/footer.html"),
-          loadComponent("quiz-container", "components/quiz.html"),
         ]);
 
         // Initialize components after loading
