@@ -1866,7 +1866,7 @@
           cartSummary.innerHTML = html;
           cartTotal.innerHTML = `<strong>Total: $${sum.toFixed(2)}</strong>`;
         } catch (error) {
-          console.log("Render cart error handled:", error);
+          // Error handled silently
         }
       }
 
