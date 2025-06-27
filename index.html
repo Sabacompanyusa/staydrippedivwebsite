@@ -389,51 +389,70 @@
     <header>
       <nav class="container">
         <a href="/" class="logo">
-          <img
-            src="assets/images/logo.png"
-            alt="Stay Dripped Mobile IV"
-            style="height: 40px; width: auto"
-          />
         </a>
         <ul class="nav-links">
-          <li><a href="#services">Services</a></li>
-          <li><a href="#how-it-works">How It Works</a></li>
-          <li><a href="pages/membership.html">Memberships</a></li>
-          <li><a href="#testimonials">Reviews</a></li>
-          <li><a href="#faq">FAQ</a></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
         </ul>
         <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
-        <a href="#book" class="btn">Book Now</a>
       </nav>
     </header>
 
     <!-- Main Content -->
-    <main id="main-content">
+    <main id="main-content" style="display: flex; flex-direction: column; margin-left: 13px;">
+      <!-- Logo moved to main content -->
+      <img
+        src="assets/images/logo.png"
+        alt="Stay Dripped Mobile IV"
+        style="display: block; height: auto; max-width: 500px; flex-grow: 0;"
+      />
+
+      <!-- Navigation moved to main content -->
+      <a href="#services" style="font-weight: 500; transition: color 0.2s; margin-left: auto;">Services</a>
+      <a href="#faq" style="font-weight: 500; transition: color 0.2s; margin-left: auto;">FAQ</a>
+      <a href="#how-it-works" style="font-weight: 500; transition: color 0.2s; margin-left: auto;">How It Works</a>
+      <a href="pages/membership.html" style="font-weight: 500; transition: color 0.2s; margin-left: auto;">Memberships</a>
+      <a href="#testimonials" style="font-weight: 500; transition: color 0.2s; margin-left: auto;">Reviews</a>
+
       <!-- Hero Section -->
-      <section class="hero">
-        <div class="container">
+      <section class="hero" style="display: flex; flex-direction: column; margin-bottom: 82px;">
+        <!-- Hero image moved up -->
+        <img
+          src="/assets/images/hero-image.jpg"
+          alt="Mobile IV therapy service"
+          style="display: inline; border-radius: 16px; margin: 0 auto;"
+        />
+
+        <div class="container" style="display: flex; flex-direction: column;">
           <div class="hero-content">
-            <div>
-              <h1>Premium Mobile IV Therapy Delivered to You</h1>
-              <p>
-                Professional hydration, NAD+, and wellness services in
-                Scottsdale & Phoenix. Recharge. Rejuvenate. Repeat.
-              </p>
-              <div style="display: flex; gap: 1rem">
-                <a href="#book" class="btn">Book Treatment</a>
-                <a href="#services" class="btn btn-secondary">View Services</a>
+            <div style="display: flex; flex-direction: column;">
+              <div style="display: flex; gap: 16px;">
               </div>
             </div>
             <div>
-              <!-- Hero image placeholder -->
-              <img
-                src="/assets/images/hero-image.jpg"
-                alt="Mobile IV therapy service"
-                style="width: 100%; border-radius: 1rem"
-              />
             </div>
           </div>
+
+          <!-- Text content restructured -->
+          <h1 style="font-size: 48px; font-weight: 700; line-height: 57.6px; margin: 0 auto 16px;">
+            Premium Mobile IV Therapy Delivered to You
+          </h1>
+          <p style="color: rgb(107, 114, 128); font-size: 20px; line-height: 32px; margin: 0 auto 32px;">
+            <p>Professional hydration, NAD+, and wellness services in Scottsdale & Phoenix. </p>
+            <p>Recharge. Rejuvenate. Repeat.</p>
+          </p>
         </div>
+
+        <!-- CTA buttons moved outside and repositioned -->
+        <a href="#book" style="background-color: rgb(37, 99, 235); border-radius: 8px; color: rgb(255, 255, 255); font-weight: 600; transition: background 0.2s; margin: 20px auto; padding: 20px;">
+          Book Now
+        </a>
+        <a href="#services" style="border-radius: 8px; color: rgb(37, 99, 235); font-weight: 600; transition: background 0.2s; margin: 0 auto; padding: 20px; border: 2px solid rgb(37, 99, 235);">
+          View Services
+        </a>
       </section>
 
       <!-- Services Section -->
