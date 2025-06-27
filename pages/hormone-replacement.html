@@ -1,1368 +1,1551 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hormone Replacement Therapy - Stay Dripped Mobile IV</title>
-    <meta name="description" content="Professional hormone replacement therapy services. Restore your energy, mood, and vitality with personalized bioidentical hormone optimization from Stay Dripped Mobile IV.">
-    
+    <meta
+      name="description"
+      content="Professional hormone replacement therapy services. Restore your energy, mood, and vitality with personalized bioidentical hormone optimization from Stay Dripped Mobile IV."
+    />
+
     <!-- Favicons -->
-    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
-    
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon-16x16.png"
+    />
+
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
     <!-- CSS -->
     <style>
-        /* Include the entire CSS from paste.txt here */
-        /* ==============================================
+      /* Include the entire CSS from paste.txt here */
+      /* ==============================================
            STAY DRIPPED MOBILE IV - MAIN STYLESHEET
            Copyright © 2025 Stay Dripped Mobile IV LLC
            ============================================== */
 
-        /* CSS Variables */
-        :root {
-          /* Brand Colors */
-          --primary: #0a2a43;
-          --secondary: #00bcd4;
-          --accent: #4fc3f7;
-          --gold: #ffd700;
-          --platinum: #e5e5e5;
-          --success: #4caf50;
-          --warning: #ff9800;
-          --error: #f44336;
-          
-          /* Text Colors */
-          --text-dark: #1a1a1a;
-          --text-light: #666;
-          --text-muted: #999;
-          --text-white: #ffffff;
-          
-          /* Background Colors */
-          --bg-light: #f1fbff;
-          --bg-dark: #1a1a1a;
-          --white: #ffffff;
-          
-          /* Shadows */
-          --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-          --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
-          --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.1);
-          
-          /* Border Radius */
-          --br: 12px;
-          --br-lg: 16px;
-          --br-xl: 24px;
-          
-          /* Transitions */
-          --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          --transition-fast: all 0.15s ease;
-          
-          /* Gradients */
-          --gradient-primary: linear-gradient(135deg, var(--secondary), var(--accent));
-          --gradient-gold: linear-gradient(135deg, #ffd700, #ffed4e);
-          --gradient-hero: linear-gradient(135deg, rgba(10, 42, 67, 0.9), rgba(0, 188, 212, 0.7));
-          
-          /* Spacing */
-          --container-max-width: 1400px;
-          --section-padding: 6rem 2rem;
-          --section-padding-mobile: 4rem 1rem;
-        }
+      /* CSS Variables */
+      :root {
+        /* Brand Colors */
+        --primary: #0a2a43;
+        --secondary: #00bcd4;
+        --accent: #4fc3f7;
+        --gold: #ffd700;
+        --platinum: #e5e5e5;
+        --success: #4caf50;
+        --warning: #ff9800;
+        --error: #f44336;
 
-        /* CSS Reset */
-        *, *::before, *::after {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-        }
+        /* Text Colors */
+        --text-dark: #1a1a1a;
+        --text-light: #666;
+        --text-muted: #999;
+        --text-white: #ffffff;
 
-        html {
-          scroll-behavior: smooth;
-          font-size: 16px;
-        }
+        /* Background Colors */
+        --bg-light: #f1fbff;
+        --bg-dark: #1a1a1a;
+        --white: #ffffff;
 
-        body {
-          font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-          line-height: 1.7;
-          color: var(--text-dark);
-          background: #fafafa;
-          overflow-x: hidden;
-          -webkit-font-smoothing: antialiased;
-          -moz-osx-font-smoothing: grayscale;
-        }
+        /* Shadows */
+        --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+        --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.1);
 
-        img, iframe, svg {
-          max-width: 100%;
-          height: auto;
-          display: block;
-          image-rendering: -webkit-optimize-contrast;
-          image-rendering: crisp-edges;
-        }
+        /* Border Radius */
+        --br: 12px;
+        --br-lg: 16px;
+        --br-xl: 24px;
 
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
+        /* Transitions */
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        --transition-fast: all 0.15s ease;
 
-        button {
-          font-family: inherit;
-          cursor: pointer;
-          border: none;
-          background: none;
-        }
+        /* Gradients */
+        --gradient-primary: linear-gradient(
+          135deg,
+          var(--secondary),
+          var(--accent)
+        );
+        --gradient-gold: linear-gradient(135deg, #ffd700, #ffed4e);
+        --gradient-hero: linear-gradient(
+          135deg,
+          rgba(10, 42, 67, 0.9),
+          rgba(0, 188, 212, 0.7)
+        );
 
-        ul {
-          list-style: none;
-        }
+        /* Spacing */
+        --container-max-width: 1400px;
+        --section-padding: 6rem 2rem;
+        --section-padding-mobile: 4rem 1rem;
+      }
 
-        /* Container */
-        .container {
-          max-width: var(--container-max-width);
-          margin: 0 auto;
-          padding: 0 2rem;
-        }
+      /* CSS Reset */
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        /* Section Styles */
-        .section {
-          padding: var(--section-padding);
-          text-align: center;
-        }
+      html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+      }
 
-        .section-light {
-          background: var(--bg-light);
-        }
+      body {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Oxygen,
+          Ubuntu,
+          Cantarell,
+          sans-serif;
+        line-height: 1.7;
+        color: var(--text-dark);
+        background: #fafafa;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
 
-        .section-title {
-          font-size: clamp(2rem, 4vw, 3rem);
-          font-weight: 800;
-          color: var(--primary);
-          margin-bottom: 1rem;
-          position: relative;
-          display: inline-block;
-        }
+      img,
+      iframe,
+      svg {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+      }
 
-        .section-title::after {
-          content: '';
-          position: absolute;
-          bottom: -10px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 80px;
-          height: 4px;
-          background: var(--secondary);
-          border-radius: 2px;
-        }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
 
-        .section-subtitle {
-          font-size: 1.1rem;
-          color: var(--text-light);
-          margin-bottom: 3rem;
-          max-width: 600px;
-          margin-left: auto;
-          margin-right: auto;
-        }
+      button {
+        font-family: inherit;
+        cursor: pointer;
+        border: none;
+        background: none;
+      }
 
-        /* Header Styles */
-        .header {
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          z-index: 1000;
-          background: var(--primary);
-          box-shadow: var(--shadow);
-          transition: var(--transition);
-        }
+      ul {
+        list-style: none;
+      }
 
-        .header-container {
-          max-width: var(--container-max-width);
-          margin: 0 auto;
-          padding: 1rem 2rem;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        }
+      /* Container */
+      .container {
+        max-width: var(--container-max-width);
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
 
-        .logo-section {
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          transition: var(--transition);
-        }
+      /* Section Styles */
+      .section {
+        padding: var(--section-padding);
+        text-align: center;
+      }
 
-        .logo-section:hover {
-          transform: scale(1.05);
-        }
+      .section-light {
+        background: var(--bg-light);
+      }
 
-        .logo-image {
-          height: 40px;
-          width: auto;
-        }
+      .section-title {
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 800;
+        color: var(--primary);
+        margin-bottom: 1rem;
+        position: relative;
+        display: inline-block;
+      }
 
-        .brand-name {
-          font-size: 1.4rem;
-          font-weight: 800;
-          background: var(--gradient-primary);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-        }
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: var(--secondary);
+        border-radius: 2px;
+      }
 
+      .section-subtitle {
+        font-size: 1.1rem;
+        color: var(--text-light);
+        margin-bottom: 3rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* Header Styles */
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: var(--primary);
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+      }
+
+      .header-container {
+        max-width: var(--container-max-width);
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo-section {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: var(--transition);
+      }
+
+      .logo-section:hover {
+        transform: scale(1.05);
+      }
+
+      .logo-image {
+        height: 40px;
+        width: auto;
+      }
+
+      .brand-name {
+        font-size: 1.4rem;
+        font-weight: 800;
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .nav-menu {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .nav-link {
+        color: white;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border-radius: var(--br);
+        transition: var(--transition);
+        position: relative;
+      }
+
+      .nav-link::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: var(--secondary);
+        transition: var(--transition);
+        transform: translateX(-50%);
+      }
+
+      .nav-link:hover::before {
+        width: 80%;
+      }
+
+      .nav-link:hover {
+        background: rgba(255, 255, 255, 0.15);
+      }
+
+      .nav-link.active {
+        background: rgba(255, 255, 255, 0.25);
+      }
+
+      .header-buttons {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .emergency-call-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        background: var(--success);
+        color: white;
+        height: 40px;
+        min-width: 150px;
+        padding: 0 1rem;
+        border-radius: var(--br);
+        font-weight: 600;
+        transition: var(--transition);
+        box-shadow: var(--shadow);
+      }
+
+      .emergency-call-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .exam-btn {
+        min-width: 180px;
+        height: 48px;
+        padding: 0.75rem 1.5rem;
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        font-size: 0.9rem;
+        font-weight: 600;
+        line-height: 1;
+        text-align: center;
+        white-space: nowrap;
+        background-color: #cfc9ff;
+        color: #0a005b;
+        border: 2px solid transparent;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(207, 201, 255, 0.3);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        cursor: pointer;
+        user-select: none;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        outline: none;
+      }
+
+      .exam-btn:hover {
+        background-color: #8058fa;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 16px rgba(128, 88, 250, 0.4);
+      }
+
+      /* Hero Section */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        color: white;
+        overflow: hidden;
+        background:
+          var(--gradient-hero),
+          url("https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1600&q=80")
+            center/cover no-repeat;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 900px;
+        padding: 0 2rem;
+      }
+
+      .hero-title {
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(135deg, #fff, var(--accent));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hero-subtitle {
+        font-size: clamp(1rem, 2vw, 1.2rem);
+        margin-bottom: 2rem;
+        opacity: 0.9;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 3rem;
+      }
+
+      .cta,
+      .cta-button {
+        padding: 1rem 2rem;
+        border-radius: var(--br);
+        font-size: 1rem;
+        font-weight: 600;
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+        text-decoration: none;
+        display: inline-block;
+        cursor: pointer;
+        border: none;
+      }
+
+      .cta.primary,
+      .cta-button {
+        background: var(--secondary);
+        color: white;
+      }
+
+      .cta.secondary {
+        background: rgba(255, 255, 255, 0.15);
+        color: white;
+        border: 2px solid white;
+        backdrop-filter: blur(10px);
+      }
+
+      .cta::before,
+      .cta-button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.2);
+        transition: var(--transition);
+      }
+
+      .cta:hover::before,
+      .cta-button:hover::before {
+        left: 100%;
+      }
+
+      .cta:hover,
+      .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .hero-features {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 2rem;
+      }
+
+      .feature-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+        opacity: 0.9;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 0.75rem 1rem;
+        border-radius: var(--br);
+        backdrop-filter: blur(10px);
+      }
+
+      .feature-icon {
+        font-size: 1.2rem;
+      }
+
+      /* Services Section */
+      .services {
+        padding: var(--section-padding);
+        background: white;
+      }
+
+      .service-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .card {
+        background: white;
+        padding: 2rem;
+        border-radius: var(--br-lg);
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(0, 188, 212, 0.1);
+      }
+
+      .card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 4px;
+        width: 100%;
+        background: var(--secondary);
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .card h3 {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 1rem;
+      }
+
+      .card p {
+        color: var(--text-light);
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+
+      /* How It Works Section */
+      .how-it-works {
+        padding: var(--section-padding);
+      }
+
+      .steps-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 3rem;
+        margin-top: 3rem;
+      }
+
+      .step {
+        text-align: center;
+        position: relative;
+      }
+
+      .step-icon {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 1.5rem;
+      }
+
+      .step-icon i {
+        font-size: 3rem;
+        color: var(--secondary);
+        background: var(--bg-light);
+        padding: 1.5rem;
+        border-radius: 50%;
+        display: block;
+      }
+
+      .step-number {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        background: var(--primary);
+        color: white;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 0.9rem;
+      }
+
+      .step h3 {
+        color: var(--primary);
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+      }
+
+      .step p {
+        color: var(--text-light);
+        line-height: 1.6;
+      }
+
+      /* Testimonials Section */
+      .testimonials {
+        background: white;
+        padding: var(--section-padding);
+        text-align: center;
+      }
+
+      .testimonial-slider {
+        max-width: 800px;
+        margin: 3rem auto 0;
+        position: relative;
+        min-height: 250px;
+      }
+
+      .testimonial-slider blockquote {
+        font-style: italic;
+        font-size: 1.1rem;
+        color: var(--text-dark);
+        margin: 0;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        transition: opacity 0.5s ease-in-out;
+        background: var(--bg-light);
+        padding: 2rem;
+        border-radius: var(--br-lg);
+        box-shadow: var(--shadow);
+      }
+
+      .testimonial-slider blockquote.active {
+        opacity: 1;
+        position: relative;
+      }
+
+      .testimonial-slider blockquote strong {
+        color: var(--secondary);
+        font-weight: 600;
+      }
+
+      /* Memberships Section */
+      .memberships {
+        padding: var(--section-padding);
+      }
+
+      .membership-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .membership-card {
+        background: white;
+        border-radius: var(--br-lg);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        position: relative;
+        transition: var(--transition);
+      }
+
+      .membership-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .membership-card.featured {
+        border: 2px solid var(--secondary);
+        transform: scale(1.05);
+      }
+
+      .membership-header {
+        padding: 2rem 2rem 1rem;
+        text-align: center;
+        background: var(--bg-light);
+      }
+
+      .membership-header h3 {
+        color: var(--primary);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .membership-price {
+        margin-bottom: 1rem;
+      }
+
+      .membership-price .price {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--secondary);
+      }
+
+      .membership-price .period {
+        font-size: 1rem;
+        color: var(--text-light);
+      }
+
+      .membership-features {
+        padding: 2rem;
+      }
+
+      .membership-features ul {
+        list-style: none;
+      }
+
+      .membership-features li {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 0.75rem;
+        font-size: 0.9rem;
+        color: var(--text-dark);
+      }
+
+      .membership-features i {
+        color: var(--success);
+        font-size: 1rem;
+      }
+
+      .membership-btn {
+        width: calc(100% - 4rem);
+        margin: 0 2rem 2rem;
+        padding: 1rem;
+        background: var(--secondary);
+        color: white;
+        border: none;
+        border-radius: var(--br);
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .membership-btn:hover {
+        background: var(--accent);
+        transform: translateY(-2px);
+      }
+
+      /* Footer */
+      .site-footer {
+        background: var(--primary);
+        color: white;
+        padding: 3rem 2rem 1rem;
+      }
+
+      .footer-content {
+        max-width: var(--container-max-width);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .footer-section h3 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--secondary);
+      }
+
+      .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .footer-brand-name {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--secondary);
+      }
+
+      .footer-links {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-links a {
+        color: rgba(255, 255, 255, 0.8);
+        transition: var(--transition);
+      }
+
+      .footer-links a:hover {
+        color: var(--secondary);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 2rem;
+        max-width: var(--container-max-width);
+        margin: 0 auto;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.9rem;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
         .nav-menu {
-          display: flex;
-          gap: 2rem;
+          display: none;
         }
 
-        .nav-link {
-          color: white;
-          font-weight: 500;
-          padding: 0.5rem 1rem;
-          border-radius: var(--br);
-          transition: var(--transition);
-          position: relative;
-        }
-
-        .nav-link::before {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 50%;
-          width: 0;
-          height: 2px;
-          background: var(--secondary);
-          transition: var(--transition);
-          transform: translateX(-50%);
-        }
-
-        .nav-link:hover::before {
-          width: 80%;
-        }
-
-        .nav-link:hover {
-          background: rgba(255, 255, 255, 0.15);
-        }
-
-        .nav-link.active {
-          background: rgba(255, 255, 255, 0.25);
-        }
-
-        .header-buttons {
-          display: flex;
-          align-items: center;
-          gap: 1rem;
-        }
-
-        .emergency-call-btn {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 0.5rem;
-          background: var(--success);
-          color: white;
-          height: 40px;
-          min-width: 150px;
-          padding: 0 1rem;
-          border-radius: var(--br);
-          font-weight: 600;
-          transition: var(--transition);
-          box-shadow: var(--shadow);
-        }
-
-        .emergency-call-btn:hover {
-          transform: translateY(-2px);
-          box-shadow: var(--shadow-hover);
-        }
-
-        .exam-btn {
-          min-width: 180px;
-          height: 48px;
-          padding: 0.75rem 1.5rem;
-          font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-          font-size: 0.9rem;
-          font-weight: 600;
-          line-height: 1;
-          text-align: center;
-          white-space: nowrap;
-          background-color: #cfc9ff;
-          color: #0a005b;
-          border: 2px solid transparent;
-          border-radius: 8px;
-          box-shadow: 0 2px 8px rgba(207, 201, 255, 0.3);
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          gap: 0.5rem;
-          cursor: pointer;
-          user-select: none;
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          outline: none;
-        }
-
-        .exam-btn:hover {
-          background-color: #8058fa;
-          color: white;
-          transform: translateY(-2px);
-          box-shadow: 0 4px 16px rgba(128, 88, 250, 0.4);
-        }
-
-        /* Hero Section */
-        .hero {
-          min-height: 100vh;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          position: relative;
-          color: white;
-          overflow: hidden;
-          background: var(--gradient-hero), 
-                      url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-        }
-
-        .hero-content {
-          position: relative;
-          z-index: 2;
-          max-width: 900px;
-          padding: 0 2rem;
-        }
-
-        .hero-title {
-          font-size: clamp(2.5rem, 6vw, 4.5rem);
-          font-weight: 800;
-          margin-bottom: 1.5rem;
-          background: linear-gradient(135deg, #fff, var(--accent));
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-        }
-
-        .hero-subtitle {
-          font-size: clamp(1rem, 2vw, 1.2rem);
-          margin-bottom: 2rem;
-          opacity: 0.9;
-          max-width: 700px;
-          margin-left: auto;
-          margin-right: auto;
+        .section-padding {
+          --section-padding: var(--section-padding-mobile);
         }
 
         .hero-buttons {
-          display: flex;
-          gap: 1rem;
-          flex-wrap: wrap;
-          justify-content: center;
-          margin-bottom: 3rem;
-        }
-
-        .cta, .cta-button {
-          padding: 1rem 2rem;
-          border-radius: var(--br);
-          font-size: 1rem;
-          font-weight: 600;
-          transition: var(--transition);
-          position: relative;
-          overflow: hidden;
-          text-decoration: none;
-          display: inline-block;
-          cursor: pointer;
-          border: none;
-        }
-
-        .cta.primary, .cta-button {
-          background: var(--secondary);
-          color: white;
-        }
-
-        .cta.secondary {
-          background: rgba(255, 255, 255, 0.15);
-          color: white;
-          border: 2px solid white;
-          backdrop-filter: blur(10px);
-        }
-
-        .cta::before, .cta-button::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: -100%;
-          width: 100%;
-          height: 100%;
-          background: rgba(255, 255, 255, 0.2);
-          transition: var(--transition);
-        }
-
-        .cta:hover::before, .cta-button:hover::before {
-          left: 100%;
-        }
-
-        .cta:hover, .cta-button:hover {
-          transform: translateY(-3px);
-          box-shadow: var(--shadow-hover);
-        }
-
-        .hero-features {
-          display: flex;
-          gap: 2rem;
-          justify-content: center;
-          flex-wrap: wrap;
-          margin-bottom: 2rem;
-        }
-
-        .feature-item {
-          display: flex;
+          flex-direction: column;
           align-items: center;
-          gap: 0.5rem;
-          font-size: 0.9rem;
-          opacity: 0.9;
-          background: rgba(255, 255, 255, 0.1);
-          padding: 0.75rem 1rem;
-          border-radius: var(--br);
-          backdrop-filter: blur(10px);
-        }
-
-        .feature-icon {
-          font-size: 1.2rem;
-        }
-
-        /* Services Section */
-        .services {
-          padding: var(--section-padding);
-          background: white;
-        }
-
-        .service-cards {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-          gap: 2rem;
-          margin-top: 3rem;
-        }
-
-        .card {
-          background: white;
-          padding: 2rem;
-          border-radius: var(--br-lg);
-          box-shadow: var(--shadow);
-          transition: var(--transition);
-          position: relative;
-          overflow: hidden;
-          border: 1px solid rgba(0, 188, 212, 0.1);
-        }
-
-        .card::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 4px;
-          width: 100%;
-          background: var(--secondary);
-        }
-
-        .card:hover {
-          transform: translateY(-5px);
-          box-shadow: var(--shadow-hover);
-        }
-
-        .card h3 {
-          font-size: 1.3rem;
-          font-weight: 700;
-          color: var(--primary);
-          margin-bottom: 1rem;
-        }
-
-        .card p {
-          color: var(--text-light);
-          font-size: 0.95rem;
-          line-height: 1.6;
-        }
-
-        /* How It Works Section */
-        .how-it-works {
-          padding: var(--section-padding);
         }
 
         .steps-container {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: 3rem;
-          margin-top: 3rem;
-        }
-
-        .step {
-          text-align: center;
-          position: relative;
-        }
-
-        .step-icon {
-          position: relative;
-          display: inline-block;
-          margin-bottom: 1.5rem;
-        }
-
-        .step-icon i {
-          font-size: 3rem;
-          color: var(--secondary);
-          background: var(--bg-light);
-          padding: 1.5rem;
-          border-radius: 50%;
-          display: block;
-        }
-
-        .step-number {
-          position: absolute;
-          top: -10px;
-          right: -10px;
-          background: var(--primary);
-          color: white;
-          width: 30px;
-          height: 30px;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-weight: 700;
-          font-size: 0.9rem;
-        }
-
-        .step h3 {
-          color: var(--primary);
-          margin-bottom: 1rem;
-          font-size: 1.3rem;
-        }
-
-        .step p {
-          color: var(--text-light);
-          line-height: 1.6;
-        }
-
-        /* Testimonials Section */
-        .testimonials {
-          background: white;
-          padding: var(--section-padding);
-          text-align: center;
-        }
-
-        .testimonial-slider {
-          max-width: 800px;
-          margin: 3rem auto 0;
-          position: relative;
-          min-height: 250px;
-        }
-
-        .testimonial-slider blockquote {
-          font-style: italic;
-          font-size: 1.1rem;
-          color: var(--text-dark);
-          margin: 0;
-          opacity: 0;
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          transition: opacity 0.5s ease-in-out;
-          background: var(--bg-light);
-          padding: 2rem;
-          border-radius: var(--br-lg);
-          box-shadow: var(--shadow);
-        }
-
-        .testimonial-slider blockquote.active {
-          opacity: 1;
-          position: relative;
-        }
-
-        .testimonial-slider blockquote strong {
-          color: var(--secondary);
-          font-weight: 600;
-        }
-
-        /* Memberships Section */
-        .memberships {
-          padding: var(--section-padding);
+          grid-template-columns: 1fr;
         }
 
         .membership-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 2rem;
-          margin-top: 3rem;
+          grid-template-columns: 1fr;
         }
 
-        .membership-card {
-          background: white;
-          border-radius: var(--br-lg);
-          box-shadow: var(--shadow);
-          overflow: hidden;
-          position: relative;
-          transition: var(--transition);
-        }
-
-        .membership-card:hover {
-          transform: translateY(-5px);
-          box-shadow: var(--shadow-hover);
-        }
-
-        .membership-card.featured {
-          border: 2px solid var(--secondary);
-          transform: scale(1.05);
-        }
-
-        .membership-header {
-          padding: 2rem 2rem 1rem;
-          text-align: center;
-          background: var(--bg-light);
-        }
-
-        .membership-header h3 {
-          color: var(--primary);
-          font-size: 1.5rem;
-          margin-bottom: 1rem;
-        }
-
-        .membership-price {
-          margin-bottom: 1rem;
-        }
-
-        .membership-price .price {
-          font-size: 2.5rem;
-          font-weight: 800;
-          color: var(--secondary);
-        }
-
-        .membership-price .period {
-          font-size: 1rem;
-          color: var(--text-light);
-        }
-
-        .membership-features {
-          padding: 2rem;
-        }
-
-        .membership-features ul {
-          list-style: none;
-        }
-
-        .membership-features li {
-          display: flex;
-          align-items: center;
-          gap: 0.75rem;
-          margin-bottom: 0.75rem;
-          font-size: 0.9rem;
-          color: var(--text-dark);
-        }
-
-        .membership-features i {
-          color: var(--success);
-          font-size: 1rem;
-        }
-
-        .membership-btn {
-          width: calc(100% - 4rem);
-          margin: 0 2rem 2rem;
-          padding: 1rem;
-          background: var(--secondary);
-          color: white;
-          border: none;
-          border-radius: var(--br);
-          font-weight: 600;
-          cursor: pointer;
-          transition: var(--transition);
-        }
-
-        .membership-btn:hover {
-          background: var(--accent);
-          transform: translateY(-2px);
-        }
-
-        /* Footer */
-        .site-footer {
-          background: var(--primary);
-          color: white;
-          padding: 3rem 2rem 1rem;
-        }
-
-        .footer-content {
-          max-width: var(--container-max-width);
-          margin: 0 auto;
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: 2rem;
-          margin-bottom: 2rem;
-        }
-
-        .footer-section h3 {
-          font-size: 1.2rem;
-          font-weight: 700;
-          margin-bottom: 1rem;
-          color: var(--secondary);
-        }
-
-        .footer-logo {
-          display: flex;
-          align-items: center;
+        .header-buttons {
+          flex-direction: column;
           gap: 0.5rem;
-          margin-bottom: 1rem;
         }
+      }
 
-        .footer-brand-name {
-          font-size: 1.2rem;
-          font-weight: 700;
-          color: var(--secondary);
-        }
+      /* Benefits Section Specific Styles */
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
 
-        .footer-links {
-          list-style: none;
-        }
+      .benefit-card {
+        background: white;
+        padding: 2rem;
+        border-radius: var(--br-lg);
+        box-shadow: var(--shadow);
+        text-align: center;
+        transition: var(--transition);
+      }
 
-        .footer-links li {
-          margin-bottom: 0.5rem;
-        }
+      .benefit-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
+      }
 
-        .footer-links a {
-          color: rgba(255, 255, 255, 0.8);
-          transition: var(--transition);
-        }
+      .benefit-card i {
+        font-size: 2.5rem;
+        color: var(--secondary);
+        margin-bottom: 1rem;
+      }
 
-        .footer-links a:hover {
-          color: var(--secondary);
-        }
+      .benefit-card h4 {
+        color: var(--primary);
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+      }
 
-        .footer-bottom {
-          border-top: 1px solid rgba(255, 255, 255, 0.1);
-          padding-top: 2rem;
-          max-width: var(--container-max-width);
-          margin: 0 auto;
-          text-align: center;
-          color: rgba(255, 255, 255, 0.6);
-          font-size: 0.9rem;
-        }
+      .benefit-card p {
+        color: var(--text-light);
+        font-size: 0.9rem;
+        line-height: 1.6;
+      }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-          .nav-menu {
-            display: none;
-          }
-          
-          .section-padding {
-            --section-padding: var(--section-padding-mobile);
-          }
-          
-          .hero-buttons {
-            flex-direction: column;
-            align-items: center;
-          }
-          
-          .steps-container {
-            grid-template-columns: 1fr;
-          }
-          
-          .membership-grid {
-            grid-template-columns: 1fr;
-          }
-          
-          .header-buttons {
-            flex-direction: column;
-            gap: 0.5rem;
-          }
-        }
+      /* Treatment Options Styles */
+      .treatment-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
 
-        /* Benefits Section Specific Styles */
-        .benefits-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: 2rem;
-          margin-top: 2rem;
-        }
+      .treatment-card {
+        background: white;
+        padding: 2rem;
+        border-radius: var(--br-lg);
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        border: 1px solid rgba(0, 188, 212, 0.1);
+      }
 
-        .benefit-card {
-          background: white;
-          padding: 2rem;
-          border-radius: var(--br-lg);
-          box-shadow: var(--shadow);
-          text-align: center;
-          transition: var(--transition);
-        }
+      .treatment-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
+      }
 
-        .benefit-card:hover {
-          transform: translateY(-5px);
-          box-shadow: var(--shadow-hover);
-        }
+      .treatment-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        display: block;
+      }
 
-        .benefit-card i {
-          font-size: 2.5rem;
-          color: var(--secondary);
-          margin-bottom: 1rem;
-        }
+      .treatment-card h4 {
+        color: var(--primary);
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+      }
 
-        .benefit-card h4 {
-          color: var(--primary);
-          margin-bottom: 1rem;
-          font-size: 1.2rem;
-        }
+      .treatment-card ul {
+        text-align: left;
+        margin-top: 1rem;
+      }
 
-        .benefit-card p {
-          color: var(--text-light);
-          font-size: 0.9rem;
-          line-height: 1.6;
-        }
+      .treatment-card li {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+        color: var(--text-light);
+        font-size: 0.9rem;
+      }
 
-        /* Treatment Options Styles */
-        .treatment-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-          gap: 2rem;
-          margin-top: 3rem;
-        }
-
-        .treatment-card {
-          background: white;
-          padding: 2rem;
-          border-radius: var(--br-lg);
-          box-shadow: var(--shadow);
-          transition: var(--transition);
-          border: 1px solid rgba(0, 188, 212, 0.1);
-        }
-
-        .treatment-card:hover {
-          transform: translateY(-5px);
-          box-shadow: var(--shadow-hover);
-        }
-
-        .treatment-icon {
-          font-size: 2.5rem;
-          margin-bottom: 1rem;
-          display: block;
-        }
-
-        .treatment-card h4 {
-          color: var(--primary);
-          margin-bottom: 1rem;
-          font-size: 1.3rem;
-        }
-
-        .treatment-card ul {
-          text-align: left;
-          margin-top: 1rem;
-        }
-
-        .treatment-card li {
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          margin-bottom: 0.5rem;
-          color: var(--text-light);
-          font-size: 0.9rem;
-        }
-
-        .treatment-card li::before {
-          content: '✓';
-          color: var(--success);
-          font-weight: bold;
-        }
+      .treatment-card li::before {
+        content: "✓";
+        color: var(--success);
+        font-weight: bold;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <!-- Back Button -->
+    <div class="back-button-container">
+      <a href="../index.html" class="back-button">
+        <i class="fas fa-arrow-left"></i>
+        <span>Back to Home</span>
+      </a>
+    </div>
+
     <!-- Scroll Progress Indicator -->
     <div class="scroll-indicator"></div>
 
     <!-- Header -->
     <header class="header">
-        <div class="header-container">
-            <div class="logo-section">
-                <div class="brand-name">Stay Dripped Mobile IV</div>
-            </div>
-            
-            <nav class="nav-menu">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#services" class="nav-link active">Services</a>
-                <a href="#how-it-works" class="nav-link">How It Works</a>
-                <a href="#testimonials" class="nav-link">Testimonials</a>
-                <a href="#memberships" class="nav-link">Memberships</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </nav>
-            
-            <div class="header-buttons">
-                <button class="emergency-call-btn">
-                    <i class="fas fa-phone"></i>
-                    Emergency: (555) 123-4567
-                </button>
-                <button class="exam-btn">
-                    <i class="fas fa-user-md exam-btn-icon"></i>
-                    <span class="exam-btn-text">First Time Patient Exam</span>
-                </button>
-            </div>
+      <div class="header-container">
+        <div class="logo-section">
+          <div class="brand-name">Stay Dripped Mobile IV</div>
         </div>
+
+        <nav class="nav-menu">
+          <a href="#home" class="nav-link">Home</a>
+          <a href="#services" class="nav-link active">Services</a>
+          <a href="#how-it-works" class="nav-link">How It Works</a>
+          <a href="#testimonials" class="nav-link">Testimonials</a>
+          <a href="#memberships" class="nav-link">Memberships</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <div class="header-buttons">
+          <button class="emergency-call-btn">
+            <i class="fas fa-phone"></i>
+            Emergency: (555) 123-4567
+          </button>
+          <button class="exam-btn">
+            <i class="fas fa-user-md exam-btn-icon"></i>
+            <span class="exam-btn-text">First Time Patient Exam</span>
+          </button>
+        </div>
+      </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-content">
-            <h1 class="hero-title">Hormone Replacement Therapy</h1>
-            <p class="hero-subtitle">Restore optimal hormone levels and reclaim your energy, mood, and vitality with personalized bioidentical hormone replacement therapy delivered to your location.</p>
-            
-            <div class="hero-features">
-                <div class="feature-item">
-                    <span class="feature-icon">⚡</span>
-                    <span>Increased Energy</span>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-icon">😊</span>
-                    <span>Improved Mood</span>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-icon">💪</span>
-                    <span>Enhanced Vitality</span>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-icon">🧠</span>
-                    <span>Mental Clarity</span>
-                </div>
-            </div>
-            
-            <div class="hero-buttons">
-                <button class="cta primary">Schedule Consultation</button>
-                <button class="cta secondary">Learn More</button>
-            </div>
+      <div class="hero-content">
+        <h1 class="hero-title">Hormone Replacement Therapy</h1>
+        <p class="hero-subtitle">
+          Restore optimal hormone levels and reclaim your energy, mood, and
+          vitality with personalized bioidentical hormone replacement therapy
+          delivered to your location.
+        </p>
+
+        <div class="hero-features">
+          <div class="feature-item">
+            <span class="feature-icon">⚡</span>
+            <span>Increased Energy</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">😊</span>
+            <span>Improved Mood</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">💪</span>
+            <span>Enhanced Vitality</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">🧠</span>
+            <span>Mental Clarity</span>
+          </div>
         </div>
+
+        <div class="hero-buttons">
+          <button class="cta primary">Schedule Consultation</button>
+          <button class="cta secondary">Learn More</button>
+        </div>
+      </div>
     </section>
 
     <!-- Services Section -->
     <section class="services section" id="services">
-        <div class="container">
-            <h2 class="section-title">Comprehensive Hormone Optimization</h2>
-            <p class="section-subtitle">Tailored hormone therapy solutions for men and women delivered with convenience and expertise</p>
-            
-            <div class="service-cards">
-                <div class="card">
-                    <h3>Testosterone Replacement Therapy (TRT)</h3>
-                    <p>Restore optimal testosterone levels to combat low T symptoms and improve overall male health with personalized treatment protocols.</p>
-                    <ul style="text-align: left; margin-top: 1rem;">
-                        <li style="margin-bottom: 0.5rem;">✓ Increased energy and stamina</li>
-                        <li style="margin-bottom: 0.5rem;">✓ Improved muscle mass and strength</li>
-                        <li style="margin-bottom: 0.5rem;">✓ Enhanced libido and sexual function</li>
-                        <li style="margin-bottom: 0.5rem;">✓ Better mood and mental clarity</li>
-                    </ul>
-                </div>
-                
-                <div class="card">
-                    <h3>Bioidentical Hormone Replacement (BHRT)</h3>
-                    <p>Comprehensive hormone optimization for women addressing estrogen, progesterone, and testosterone imbalances with natural solutions.</p>
-                    <ul style="text-align: left; margin-top: 1rem;">
-                        <li style="margin-bottom: 0.5rem;">✓ Relief from menopausal symptoms</li>
-                        <li style="margin-bottom: 0.5rem;">✓ Improved sleep quality</li>
-                        <li style="margin-bottom: 0.5rem;">✓ Enhanced mood stability</li>
-                        <li style="margin-bottom: 0.5rem;">✓ Increased libido and vitality</li>
-                    </ul>
-                </div>
-                
-                <div class="card">
-                    <h3>Thyroid Optimization</h3>
-                    <p>Comprehensive thyroid hormone management for optimal metabolic function and energy levels with advanced testing and treatment.</p>
-                    <ul style="text-align: left; margin-top: 1rem;">
-                        <li style="margin-bottom: 0.5rem;">✓ T3 and T4 optimization</li>
-                        <li style="margin-bottom: 0.5rem;">✓ Reverse T3 monitoring</li>
-                        <li style="margin-bottom: 0.5rem;">✓ Metabolic enhancement</li>
-                        <li style="margin-bottom: 0.5rem;">✓ Energy level improvement</li>
-                    </ul>
-                </div>
-                
-                <div class="card">
-                    <h3>Growth Hormone Therapy</h3>
-                    <p>Anti-aging and recovery-focused growth hormone optimization to help you maintain youthful vitality and performance.</p>
-                    <ul style="text-align: left; margin-top: 1rem;">
-                        <li style="margin-bottom: 0.5rem;">✓ HGH peptide therapy</li>
-                        <li style="margin-bottom: 0.5rem;">✓ Anti-aging benefits</li>
-                        <li style="margin-bottom: 0.5rem;">✓ Improved recovery</li>
-                        <li style="margin-bottom: 0.5rem;">✓ Enhanced body composition</li>
-                    </ul>
-                </div>
-            </div>
+      <div class="container">
+        <h2 class="section-title">Comprehensive Hormone Optimization</h2>
+        <p class="section-subtitle">
+          Tailored hormone therapy solutions for men and women delivered with
+          convenience and expertise
+        </p>
+
+        <div class="service-cards">
+          <div class="card">
+            <h3>Testosterone Replacement Therapy (TRT)</h3>
+            <p>
+              Restore optimal testosterone levels to combat low T symptoms and
+              improve overall male health with personalized treatment protocols.
+            </p>
+            <ul style="text-align: left; margin-top: 1rem">
+              <li style="margin-bottom: 0.5rem">
+                ✓ Increased energy and stamina
+              </li>
+              <li style="margin-bottom: 0.5rem">
+                ✓ Improved muscle mass and strength
+              </li>
+              <li style="margin-bottom: 0.5rem">
+                ✓ Enhanced libido and sexual function
+              </li>
+              <li style="margin-bottom: 0.5rem">
+                ✓ Better mood and mental clarity
+              </li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Bioidentical Hormone Replacement (BHRT)</h3>
+            <p>
+              Comprehensive hormone optimization for women addressing estrogen,
+              progesterone, and testosterone imbalances with natural solutions.
+            </p>
+            <ul style="text-align: left; margin-top: 1rem">
+              <li style="margin-bottom: 0.5rem">
+                ✓ Relief from menopausal symptoms
+              </li>
+              <li style="margin-bottom: 0.5rem">✓ Improved sleep quality</li>
+              <li style="margin-bottom: 0.5rem">✓ Enhanced mood stability</li>
+              <li style="margin-bottom: 0.5rem">
+                ✓ Increased libido and vitality
+              </li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Thyroid Optimization</h3>
+            <p>
+              Comprehensive thyroid hormone management for optimal metabolic
+              function and energy levels with advanced testing and treatment.
+            </p>
+            <ul style="text-align: left; margin-top: 1rem">
+              <li style="margin-bottom: 0.5rem">✓ T3 and T4 optimization</li>
+              <li style="margin-bottom: 0.5rem">✓ Reverse T3 monitoring</li>
+              <li style="margin-bottom: 0.5rem">✓ Metabolic enhancement</li>
+              <li style="margin-bottom: 0.5rem">✓ Energy level improvement</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Growth Hormone Therapy</h3>
+            <p>
+              Anti-aging and recovery-focused growth hormone optimization to
+              help you maintain youthful vitality and performance.
+            </p>
+            <ul style="text-align: left; margin-top: 1rem">
+              <li style="margin-bottom: 0.5rem">✓ HGH peptide therapy</li>
+              <li style="margin-bottom: 0.5rem">✓ Anti-aging benefits</li>
+              <li style="margin-bottom: 0.5rem">✓ Improved recovery</li>
+              <li style="margin-bottom: 0.5rem">✓ Enhanced body composition</li>
+            </ul>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Treatment Options -->
     <section class="section section-light">
-        <div class="container">
-            <h2 class="section-title">Treatment Delivery Methods</h2>
-            <p class="section-subtitle">Choose the method that works best for your lifestyle and preferences</p>
-            
-            <div class="treatment-grid">
-                <div class="treatment-card">
-                    <span class="treatment-icon">💉</span>
-                    <h4>Injections</h4>
-                    <p>Precise dosing with excellent absorption and consistent levels for optimal results.</p>
-                    <ul>
-                        <li>Most effective absorption</li>
-                        <li>Precise dosing control</li>
-                        <li>Weekly or bi-weekly</li>
-                        <li>Cost-effective</li>
-                    </ul>
-                </div>
-                
-                <div class="treatment-card">
-                    <span class="treatment-icon">🩹</span>
-                    <h4>Pellets</h4>
-                    <p>Long-lasting hormone delivery with consistent levels for 3-6 months of convenience.</p>
-                    <ul>
-                        <li>Consistent hormone levels</li>
-                        <li>Long-term convenience</li>
-                        <li>Minimal maintenance</li>
-                        <li>3-6 month duration</li>
-                    </ul>
-                </div>
-                
-                <div class="treatment-card">
-                    <span class="treatment-icon">🧴</span>
-                    <h4>Topical Gels/Creams</h4>
-                    <p>Easy daily application with good absorption and dosing flexibility.</p>
-                    <ul>
-                        <li>Easy daily application</li>
-                        <li>Adjustable dosing</li>
-                        <li>Non-invasive</li>
-                        <li>Good patient compliance</li>
-                    </ul>
-                </div>
-                
-                <div class="treatment-card">
-                    <span class="treatment-icon">💊</span>
-                    <h4>Sublingual/Oral</h4>
-                    <p>Convenient oral administration for certain hormone types with easy dosing.</p>
-                    <ul>
-                        <li>Convenient administration</li>
-                        <li>Good for specific hormones</li>
-                        <li>Easy to adjust</li>
-                        <li>Travel-friendly</li>
-                    </ul>
-                </div>
-            </div>
+      <div class="container">
+        <h2 class="section-title">Treatment Delivery Methods</h2>
+        <p class="section-subtitle">
+          Choose the method that works best for your lifestyle and preferences
+        </p>
+
+        <div class="treatment-grid">
+          <div class="treatment-card">
+            <span class="treatment-icon">💉</span>
+            <h4>Injections</h4>
+            <p>
+              Precise dosing with excellent absorption and consistent levels for
+              optimal results.
+            </p>
+            <ul>
+              <li>Most effective absorption</li>
+              <li>Precise dosing control</li>
+              <li>Weekly or bi-weekly</li>
+              <li>Cost-effective</li>
+            </ul>
+          </div>
+
+          <div class="treatment-card">
+            <span class="treatment-icon">🩹</span>
+            <h4>Pellets</h4>
+            <p>
+              Long-lasting hormone delivery with consistent levels for 3-6
+              months of convenience.
+            </p>
+            <ul>
+              <li>Consistent hormone levels</li>
+              <li>Long-term convenience</li>
+              <li>Minimal maintenance</li>
+              <li>3-6 month duration</li>
+            </ul>
+          </div>
+
+          <div class="treatment-card">
+            <span class="treatment-icon">🧴</span>
+            <h4>Topical Gels/Creams</h4>
+            <p>
+              Easy daily application with good absorption and dosing
+              flexibility.
+            </p>
+            <ul>
+              <li>Easy daily application</li>
+              <li>Adjustable dosing</li>
+              <li>Non-invasive</li>
+              <li>Good patient compliance</li>
+            </ul>
+          </div>
+
+          <div class="treatment-card">
+            <span class="treatment-icon">💊</span>
+            <h4>Sublingual/Oral</h4>
+            <p>
+              Convenient oral administration for certain hormone types with easy
+              dosing.
+            </p>
+            <ul>
+              <li>Convenient administration</li>
+              <li>Good for specific hormones</li>
+              <li>Easy to adjust</li>
+              <li>Travel-friendly</li>
+            </ul>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- How It Works Section -->
     <section class="how-it-works section" id="how-it-works">
-        <div class="container">
-            <h2 class="section-title">Your Hormone Optimization Journey</h2>
-            <p class="section-subtitle">A comprehensive, personalized approach to hormone replacement therapy</p>
-            
-            <div class="steps-container">
-                <div class="step">
-                    <div class="step-icon">
-                        <i class="fas fa-user-md"></i>
-                        <div class="step-number">1</div>
-                    </div>
-                    <h3>Comprehensive Consultation</h3>
-                    <p>Detailed health history, symptom assessment, and goal discussion with our hormone specialists at your location.</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-icon">
-                        <i class="fas fa-flask"></i>
-                        <div class="step-number">2</div>
-                    </div>
-                    <h3>Advanced Laboratory Testing</h3>
-                    <p>Comprehensive hormone panel including free and total hormones, metabolites, and related biomarkers.</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-icon">
-                        <i class="fas fa-clipboard-list"></i>
-                        <div class="step-number">3</div>
-                    </div>
-                    <h3>Personalized Treatment Plan</h3>
-                    <p>Custom hormone protocol designed specifically for your unique needs and goals with ongoing support.</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-icon">
-                        <i class="fas fa-syringe"></i>
-                        <div class="step-number">4</div>
-                    </div>
-                    <h3>Treatment Implementation</h3>
-                    <p>Begin your hormone therapy with your choice of delivery methods and professional administration.</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-icon">
-                        <i class="fas fa-chart-line"></i>
-                        <div class="step-number">5</div>
-                    </div>
-                    <h3>Ongoing Monitoring</h3>
-                    <p>Regular follow-ups, lab monitoring, and protocol adjustments to optimize your results and safety.</p>
-                </div>
+      <div class="container">
+        <h2 class="section-title">Your Hormone Optimization Journey</h2>
+        <p class="section-subtitle">
+          A comprehensive, personalized approach to hormone replacement therapy
+        </p>
+
+        <div class="steps-container">
+          <div class="step">
+            <div class="step-icon">
+              <i class="fas fa-user-md"></i>
+              <div class="step-number">1</div>
             </div>
+            <h3>Comprehensive Consultation</h3>
+            <p>
+              Detailed health history, symptom assessment, and goal discussion
+              with our hormone specialists at your location.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-icon">
+              <i class="fas fa-flask"></i>
+              <div class="step-number">2</div>
+            </div>
+            <h3>Advanced Laboratory Testing</h3>
+            <p>
+              Comprehensive hormone panel including free and total hormones,
+              metabolites, and related biomarkers.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-icon">
+              <i class="fas fa-clipboard-list"></i>
+              <div class="step-number">3</div>
+            </div>
+            <h3>Personalized Treatment Plan</h3>
+            <p>
+              Custom hormone protocol designed specifically for your unique
+              needs and goals with ongoing support.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-icon">
+              <i class="fas fa-syringe"></i>
+              <div class="step-number">4</div>
+            </div>
+            <h3>Treatment Implementation</h3>
+            <p>
+              Begin your hormone therapy with your choice of delivery methods
+              and professional administration.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-icon">
+              <i class="fas fa-chart-line"></i>
+              <div class="step-number">5</div>
+            </div>
+            <h3>Ongoing Monitoring</h3>
+            <p>
+              Regular follow-ups, lab monitoring, and protocol adjustments to
+              optimize your results and safety.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Benefits Section -->
     <section class="section section-light">
-        <div class="container">
-            <h2 class="section-title">Why Choose Hormone Replacement Therapy?</h2>
-            <p class="section-subtitle">Hormones are your body's chemical messengers, controlling everything from energy and mood to metabolism and sexual function</p>
-            
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <i class="fas fa-bolt"></i>
-                    <h4>Energy & Vitality</h4>
-                    <p>Restore youthful energy levels and combat chronic fatigue with optimized hormone balance.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <i class="fas fa-dumbbell"></i>
-                    <h4>Strength & Muscle</h4>
-                    <p>Maintain muscle mass and physical strength as you age with proper hormone optimization.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <i class="fas fa-brain"></i>
-                    <h4>Mental Clarity</h4>
-                    <p>Improve focus, memory, and cognitive function with balanced hormone levels.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <i class="fas fa-bed"></i>
-                    <h4>Better Sleep</h4>
-                    <p>Achieve deeper, more restorative sleep patterns for improved recovery and well-being.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <i class="fas fa-heart"></i>
-                    <h4>Heart Health</h4>
-                    <p>Support cardiovascular health and circulation with optimized hormone therapy.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <i class="fas fa-bone"></i>
-                    <h4>Bone Density</h4>
-                    <p>Maintain strong bones and prevent osteoporosis with proper hormone balance.</p>
-                </div>
-            </div>
+      <div class="container">
+        <h2 class="section-title">Why Choose Hormone Replacement Therapy?</h2>
+        <p class="section-subtitle">
+          Hormones are your body's chemical messengers, controlling everything
+          from energy and mood to metabolism and sexual function
+        </p>
+
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <i class="fas fa-bolt"></i>
+            <h4>Energy & Vitality</h4>
+            <p>
+              Restore youthful energy levels and combat chronic fatigue with
+              optimized hormone balance.
+            </p>
+          </div>
+
+          <div class="benefit-card">
+            <i class="fas fa-dumbbell"></i>
+            <h4>Strength & Muscle</h4>
+            <p>
+              Maintain muscle mass and physical strength as you age with proper
+              hormone optimization.
+            </p>
+          </div>
+
+          <div class="benefit-card">
+            <i class="fas fa-brain"></i>
+            <h4>Mental Clarity</h4>
+            <p>
+              Improve focus, memory, and cognitive function with balanced
+              hormone levels.
+            </p>
+          </div>
+
+          <div class="benefit-card">
+            <i class="fas fa-bed"></i>
+            <h4>Better Sleep</h4>
+            <p>
+              Achieve deeper, more restorative sleep patterns for improved
+              recovery and well-being.
+            </p>
+          </div>
+
+          <div class="benefit-card">
+            <i class="fas fa-heart"></i>
+            <h4>Heart Health</h4>
+            <p>
+              Support cardiovascular health and circulation with optimized
+              hormone therapy.
+            </p>
+          </div>
+
+          <div class="benefit-card">
+            <i class="fas fa-bone"></i>
+            <h4>Bone Density</h4>
+            <p>
+              Maintain strong bones and prevent osteoporosis with proper hormone
+              balance.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Testimonials Section -->
     <section class="testimonials section" id="testimonials">
-        <div class="container">
-            <h2 class="section-title">What Our Patients Say</h2>
-            <p class="section-subtitle">Real results from real people who have transformed their lives with hormone optimization</p>
-            
-            <div class="testimonial-slider">
-                <blockquote class="active">
-                    "The hormone therapy has completely changed my life. I have more energy than I've had in years, my mood is stable, and I feel like myself again. The convenience of having treatments at home is incredible."
-                    <br><br>
-                    <strong>- Sarah M., Age 45</strong>
-                </blockquote>
-                
-                <blockquote>
-                    "As a busy executive, I was skeptical about hormone therapy. But the results speak for themselves - better focus, increased energy, and improved performance both at work and in the gym."
-                    <br><br>
-                    <strong>- Michael R., Age 52</strong>
-                </blockquote>
-                
-                <blockquote>
-                    "The team at Stay Dripped Mobile IV made the entire process seamless. From the initial consultation to ongoing monitoring, they've been professional and results-oriented."
-                    <br><br>
-                    <strong>- Jennifer L., Age 38</strong>
-                </blockquote>
-            </div>
+      <div class="container">
+        <h2 class="section-title">What Our Patients Say</h2>
+        <p class="section-subtitle">
+          Real results from real people who have transformed their lives with
+          hormone optimization
+        </p>
+
+        <div class="testimonial-slider">
+          <blockquote class="active">
+            "The hormone therapy has completely changed my life. I have more
+            energy than I've had in years, my mood is stable, and I feel like
+            myself again. The convenience of having treatments at home is
+            incredible."
+            <br /><br />
+            <strong>- Sarah M., Age 45</strong>
+          </blockquote>
+
+          <blockquote>
+            "As a busy executive, I was skeptical about hormone therapy. But the
+            results speak for themselves - better focus, increased energy, and
+            improved performance both at work and in the gym."
+            <br /><br />
+            <strong>- Michael R., Age 52</strong>
+          </blockquote>
+
+          <blockquote>
+            "The team at Stay Dripped Mobile IV made the entire process
+            seamless. From the initial consultation to ongoing monitoring,
+            they've been professional and results-oriented."
+            <br /><br />
+            <strong>- Jennifer L., Age 38</strong>
+          </blockquote>
         </div>
+      </div>
     </section>
 
     <!-- Memberships Section -->
     <section class="memberships section section-light" id="memberships">
-        <div class="container">
-            <h2 class="section-title">Hormone Therapy Memberships</h2>
-            <p class="section-subtitle">Choose the membership plan that fits your hormone optimization goals</p>
-            
-            <div class="membership-grid">
-                <div class="membership-card">
-                    <div class="membership-header">
-                        <h3>Basic Hormone</h3>
-                        <div class="membership-price">
-                            <span class="price">$299</span>
-                            <span class="period">/month</span>
-                        </div>
-                        <p>Perfect for starting your hormone journey</p>
-                    </div>
-                    <div class="membership-features">
-                        <ul>
-                            <li><i class="fas fa-check"></i> Initial consultation and assessment</li>
-                            <li><i class="fas fa-check"></i> Basic hormone panel testing</li>
-                            <li><i class="fas fa-check"></i> Personalized treatment plan</li>
-                            <li><i class="fas fa-check"></i> Monthly monitoring</li>
-                            <li><i class="fas fa-check"></i> Mobile service convenience</li>
-                        </ul>
-                    </div>
-                    <button class="membership-btn">Get Started</button>
-                </div>
-                
-                <div class="membership-card featured">
-                    <div class="membership-header">
-                        <h3>Premium Hormone</h3>
-                        <div class="membership-price">
-                            <span class="price">$499</span>
-                            <span class="period">/month</span>
-                        </div>
-                        <p>Comprehensive hormone optimization</p>
-                    </div>
-                    <div class="membership-features">
-                        <ul>
-                            <li><i class="fas fa-check"></i> Everything in Basic plan</li>
-                            <li><i class="fas fa-check"></i> Advanced hormone panel</li>
-                            <li><i class="fas fa-check"></i> Multiple delivery methods</li>
-                            <li><i class="fas fa-check"></i> Bi-weekly monitoring</li>
-                            <li><i class="fas fa-check"></i> Nutrition counseling</li>
-                            <li><i class="fas fa-check"></i> 24/7 support access</li>
-                        </ul>
-                    </div>
-                    <button class="membership-btn">Most Popular</button>
-                </div>
-                
-                <div class="membership-card">
-                    <div class="membership-header">
-                        <h3>Elite Hormone</h3>
-                        <div class="membership-price">
-                            <span class="price">$799</span>
-                            <span class="period">/month</span>
-                        </div>
-                        <p>Complete wellness optimization</p>
-                    </div>
-                    <div class="membership-features">
-                        <ul>
-                            <li><i class="fas fa-check"></i> Everything in Premium plan</li>
-                            <li><i class="fas fa-check"></i> Comprehensive metabolic panel</li>
-                            <li><i class="fas fa-check"></i> IV therapy integration</li>
-                            <li><i class="fas fa-check"></i> Weekly monitoring</li>
-                            <li><i class="fas fa-check"></i> Genetic testing</li>
-                            <li><i class="fas fa-check"></i> Personal health coach</li>
-                        </ul>
-                    </div>
-                    <button class="membership-btn">Ultimate Care</button>
-                </div>
+      <div class="container">
+        <h2 class="section-title">Hormone Therapy Memberships</h2>
+        <p class="section-subtitle">
+          Choose the membership plan that fits your hormone optimization goals
+        </p>
+
+        <div class="membership-grid">
+          <div class="membership-card">
+            <div class="membership-header">
+              <h3>Basic Hormone</h3>
+              <div class="membership-price">
+                <span class="price">$299</span>
+                <span class="period">/month</span>
+              </div>
+              <p>Perfect for starting your hormone journey</p>
             </div>
+            <div class="membership-features">
+              <ul>
+                <li>
+                  <i class="fas fa-check"></i> Initial consultation and
+                  assessment
+                </li>
+                <li>
+                  <i class="fas fa-check"></i> Basic hormone panel testing
+                </li>
+                <li>
+                  <i class="fas fa-check"></i> Personalized treatment plan
+                </li>
+                <li><i class="fas fa-check"></i> Monthly monitoring</li>
+                <li><i class="fas fa-check"></i> Mobile service convenience</li>
+              </ul>
+            </div>
+            <button class="membership-btn">Get Started</button>
+          </div>
+
+          <div class="membership-card featured">
+            <div class="membership-header">
+              <h3>Premium Hormone</h3>
+              <div class="membership-price">
+                <span class="price">$499</span>
+                <span class="period">/month</span>
+              </div>
+              <p>Comprehensive hormone optimization</p>
+            </div>
+            <div class="membership-features">
+              <ul>
+                <li><i class="fas fa-check"></i> Everything in Basic plan</li>
+                <li><i class="fas fa-check"></i> Advanced hormone panel</li>
+                <li><i class="fas fa-check"></i> Multiple delivery methods</li>
+                <li><i class="fas fa-check"></i> Bi-weekly monitoring</li>
+                <li><i class="fas fa-check"></i> Nutrition counseling</li>
+                <li><i class="fas fa-check"></i> 24/7 support access</li>
+              </ul>
+            </div>
+            <button class="membership-btn">Most Popular</button>
+          </div>
+
+          <div class="membership-card">
+            <div class="membership-header">
+              <h3>Elite Hormone</h3>
+              <div class="membership-price">
+                <span class="price">$799</span>
+                <span class="period">/month</span>
+              </div>
+              <p>Complete wellness optimization</p>
+            </div>
+            <div class="membership-features">
+              <ul>
+                <li><i class="fas fa-check"></i> Everything in Premium plan</li>
+                <li>
+                  <i class="fas fa-check"></i> Comprehensive metabolic panel
+                </li>
+                <li><i class="fas fa-check"></i> IV therapy integration</li>
+                <li><i class="fas fa-check"></i> Weekly monitoring</li>
+                <li><i class="fas fa-check"></i> Genetic testing</li>
+                <li><i class="fas fa-check"></i> Personal health coach</li>
+              </ul>
+            </div>
+            <button class="membership-btn">Ultimate Care</button>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="site-footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <div class="footer-logo">
-                    <div class="footer-brand-name">Stay Dripped Mobile IV</div>
-                </div>
-                <p>Transforming lives through premium wellness and personalized healthcare solutions delivered to your location.</p>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Services</h3>
-                <ul class="footer-links">
-                    <li><a href="#services">IV Therapy</a></li>
-                    <li><a href="#services">Hormone Replacement</a></li>
-                    <li><a href="#services">Aesthetic Treatments</a></li>
-                    <li><a href="#services">Weight Management</a></li>
-                    <li><a href="#services">Wellness Programs</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Company</h3>
-                <ul class="footer-links">
-                    <li><a href="#memberships">Memberships</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Corporate Events</a></li>
-                    <li><a href="#">Partnerships</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Contact & Legal</h3>
-                <ul class="footer-links">
-                    <li><a href="#contact">Contact Us</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Medical Disclaimer</a></li>
-                    <li><a href="#">HIPAA Notice</a></li>
-                </ul>
-            </div>
+      <div class="footer-content">
+        <div class="footer-section">
+          <div class="footer-logo">
+            <div class="footer-brand-name">Stay Dripped Mobile IV</div>
+          </div>
+          <p>
+            Transforming lives through premium wellness and personalized
+            healthcare solutions delivered to your location.
+          </p>
         </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2025 Stay Dripped Mobile IV LLC. All rights reserved.</p>
+
+        <div class="footer-section">
+          <h3>Services</h3>
+          <ul class="footer-links">
+            <li><a href="#services">IV Therapy</a></li>
+            <li><a href="#services">Hormone Replacement</a></li>
+            <li><a href="#services">Aesthetic Treatments</a></li>
+            <li><a href="#services">Weight Management</a></li>
+            <li><a href="#services">Wellness Programs</a></li>
+          </ul>
         </div>
+
+        <div class="footer-section">
+          <h3>Company</h3>
+          <ul class="footer-links">
+            <li><a href="#memberships">Memberships</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Corporate Events</a></li>
+            <li><a href="#">Partnerships</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Contact & Legal</h3>
+          <ul class="footer-links">
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Medical Disclaimer</a></li>
+            <li><a href="#">HIPAA Notice</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Stay Dripped Mobile IV LLC. All rights reserved.</p>
+      </div>
     </footer>
 
     <!-- JavaScript -->
     <script>
-        // Scroll progress indicator
-        window.addEventListener('scroll', function() {
-            const scrollTop = window.pageYOffset;
-            const docHeight = document.body.offsetHeight - window.innerHeight;
-            const scrollPercent = (scrollTop / docHeight) * 100;
-            document.querySelector('.scroll-indicator').style.width = scrollPercent + '%';
-        });
+      // Scroll progress indicator
+      window.addEventListener("scroll", function () {
+        const scrollTop = window.pageYOffset;
+        const docHeight = document.body.offsetHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+        document.querySelector(".scroll-indicator").style.width =
+          scrollPercent + "%";
+      });
 
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('.header');
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Testimonial slider
-        let currentTestimonial = 0;
-        const testimonials = document.querySelectorAll('.testimonial-slider blockquote');
-        
-        function showTestimonial(index) {
-            testimonials.forEach(testimonial => testimonial.classList.remove('active'));
-            testimonials[index].classList.add('active');
+      // Header scroll effect
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector(".header");
+        if (window.scrollY > 100) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
         }
-        
-        function nextTestimonial() {
-            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-            showTestimonial(currentTestimonial);
-        }
-        
-        // Auto-rotate testimonials
-        setInterval(nextTestimonial, 5000);
+      });
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+      // Testimonial slider
+      let currentTestimonial = 0;
+      const testimonials = document.querySelectorAll(
+        ".testimonial-slider blockquote",
+      );
+
+      function showTestimonial(index) {
+        testimonials.forEach((testimonial) =>
+          testimonial.classList.remove("active"),
+        );
+        testimonials[index].classList.add("active");
+      }
+
+      function nextTestimonial() {
+        currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+        showTestimonial(currentTestimonial);
+      }
+
+      // Auto-rotate testimonials
+      setInterval(nextTestimonial, 5000);
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
             });
+          }
+        });
+      });
+
+      // CTA button actions
+      document
+        .querySelectorAll(".cta, .cta-button, .membership-btn")
+        .forEach((button) => {
+          button.addEventListener("click", function () {
+            alert(
+              "Thank you for your interest! This would normally open a booking modal or redirect to a booking page.",
+            );
+          });
         });
 
-        // CTA button actions
-        document.querySelectorAll('.cta, .cta-button, .membership-btn').forEach(button => {
-            button.addEventListener('click', function() {
-                alert('Thank you for your interest! This would normally open a booking modal or redirect to a booking page.');
-            });
+      // First Time Patient Exam button
+      document
+        .querySelector(".exam-btn")
+        .addEventListener("click", function () {
+          alert(
+            "First Time Patient Exam feature would open a modal for scheduling your initial consultation and hormone assessment.",
+          );
         });
 
-        // First Time Patient Exam button
-        document.querySelector('.exam-btn').addEventListener('click', function() {
-            alert('First Time Patient Exam feature would open a modal for scheduling your initial consultation and hormone assessment.');
-        });
-
-        // Emergency call button
-        document.querySelector('.emergency-call-btn').addEventListener('click', function() {
-            window.location.href = 'tel:5551234567';
+      // Emergency call button
+      document
+        .querySelector(".emergency-call-btn")
+        .addEventListener("click", function () {
+          window.location.href = "tel:5551234567";
         });
     </script>
-</body>
+  </body>
 </html>
