@@ -35,41 +35,64 @@
     <link rel="stylesheet" href="../../assets/css/responsive.css" />
   </head>
   <body>
+    <!-- Back Button -->
+    <div class="back-button-container">
+      <a href="../index.html" class="back-button metallic-btn">
+        <i class="fas fa-arrow-left"></i>
+        <span>Back to Home</span>
+      </a>
+    </div>
+
     <!-- Header -->
-    <header id="header">
-      <nav class="navbar">
-        <div class="container">
-          <div class="navbar-brand">
-            <a href="../../index.html">
-              <img
-                src="../../assets/images/logo.png"
-                alt="Qualiphy"
-                class="logo"
-              />
-            </a>
-          </div>
-          <div class="navbar-menu">
-            <ul class="navbar-nav">
-              <li><a href="../../index.html" class="nav-link">Home</a></li>
-              <li>
-                <a href="../services.html" class="nav-link active">Services</a>
-              </li>
-              <li>
-                <a href="../membership.html" class="nav-link">Membership</a>
-              </li>
-              <li>
-                <a href="../testimonials.html" class="nav-link">Testimonials</a>
-              </li>
-              <li>
-                <a href="../../index.html#contact" class="nav-link">Contact</a>
-              </li>
-            </ul>
-            <button class="btn btn-primary" onclick="openBookingModal()">
-              Book Now
-            </button>
+    <header class="header">
+      <div class="header-content">
+        <div class="logo-section">
+          <img src="../assets/images/logo.png" alt="Stay Dripped Mobile IV" />
+          <div class="brand-title">Peptide Therapy Treatments</div>
+          <div class="brand-subtitle">
+            Advanced Recovery & Performance Enhancement in Scottsdale, AZ
           </div>
         </div>
-      </nav>
+
+        <div class="quick-actions">
+          <a href="tel:+16026889825" class="quick-action-btn">
+            <i class="fas fa-phone"></i>
+            Call (602) 688-9825
+          </a>
+          <a
+            href="https://Staydripped.intakeq.com/booking"
+            class="quick-action-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fas fa-calendar"></i>
+            Book Online Now
+          </a>
+          <div
+            id="loadFormButton"
+            style="
+              width: 180px;
+              height: 50px;
+              cursor: pointer;
+              background-color: #cfc9ff;
+              color: #0a005b;
+              border: none;
+              border-radius: 12px;
+              font-weight: 600;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              gap: 0.5rem;
+            "
+            onmouseover="this.style.backgroundColor='#8058fa'; this.style.color='white'"
+            onmouseout="this.style.backgroundColor='#CFC9FF'; this.style.color='#0A005B'"
+            onclick="showDisclosureModal()"
+          >
+            <i class="fas fa-clipboard-list"></i>
+            Start GFE (Required)
+          </div>
+        </div>
+      </div>
     </header>
 
     <!-- Service Hero -->
@@ -620,7 +643,7 @@
 
         <div class="safety-features">
           <div class="safety-item">
-            <h3>👨‍⚕️ Medical Oversight</h3>
+            <h3>👨‍��️ Medical Oversight</h3>
             <p>
               All peptide therapies are prescribed and monitored by licensed
               medical professionals
