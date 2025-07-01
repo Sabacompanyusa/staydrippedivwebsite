@@ -169,8 +169,16 @@
 
 /* Back Button Container */
 .back-button-container {
-  padding: 1rem 2rem;
-  background: var(--gradient-chrome);
+  padding: 1.5rem 2rem 1rem;
+  position: sticky;
+  top: 80px;
+  z-index: 999;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: rgba(247, 250, 252, 0.95);
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--silver);
   box-shadow: var(--shadow-chrome);
 }
@@ -179,12 +187,21 @@
 .back-button {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: var(--gradient-chrome);
+  color: var(--text-dark);
   text-decoration: none;
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--font-size-sm);
+  border-radius: var(--br-lg);
+  font-weight: 700;
+  font-size: var(--font-size-base);
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--chrome);
+  box-shadow: var(--shadow-chrome);
   min-width: 140px;
+  justify-content: center;
 }
 
 .back-button::before {
@@ -214,22 +231,31 @@
 
 .back-button:hover {
   background: var(--gradient-titanium);
-  color: var(--text-dark);
-  transform: translateX(-2px);
+  transform: translateY(-3px) translateX(-3px);
   box-shadow:
-    var(--shadow-hover),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
-  text-shadow: none;
-  border-color: rgba(255, 255, 255, 0.3);
+    var(--shadow-metal),
+    3px 3px 0 var(--steel);
+  color: var(--text-dark);
+  text-decoration: none;
+  border-color: var(--titanium);
+  scale: 1.05;
+}
+
+.back-button:hover i {
+  transform: translateX(-3px);
 }
 
 .back-button:active {
-  transform: translateX(-1px);
-  box-shadow: var(--shadow-inset);
+  transform: translateY(-1px) translateX(-1px);
+  box-shadow:
+    var(--shadow-inset),
+    1px 1px 0 var(--steel);
+  scale: 1.02;
 }
 
 .back-button i {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-lg);
+  transition: var(--transition-smooth);
   z-index: 2;
   position: relative;
 }
@@ -237,18 +263,45 @@
 .back-button span {
   z-index: 2;
   position: relative;
+  font-weight: 700;
+  letter-spacing: 0.025em;
 }
 
 /* Responsive Back Button */
 @media (max-width: 768px) {
   .back-button-container {
-    padding: 0.75rem 1rem;
+    padding: 1rem 1rem 0.75rem;
+    top: 70px;
+    position: relative;
+    margin-bottom: 1rem;
   }
 
   .back-button {
-    padding: 0.625rem 1.25rem;
-    font-size: var(--font-size-xs);
+    padding: 0.875rem 1.5rem;
+    font-size: var(--font-size-sm);
     min-width: 120px;
+    gap: 0.5rem;
+  }
+
+  .back-button i {
+    font-size: var(--font-size-base);
+  }
+
+  .back-button:hover {
+    transform: translateY(-2px);
+    scale: 1.03;
+  }
+}
+
+@media (max-width: 480px) {
+  .back-button-container {
+    padding: 0.75rem 1rem 0.5rem;
+  }
+
+  .back-button {
+    padding: 0.75rem 1.25rem;
+    font-size: var(--font-size-xs);
+    min-width: 100px;
   }
 }
 
