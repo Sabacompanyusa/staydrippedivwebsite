@@ -1062,10 +1062,15 @@
           window.IntakeQ.open();
         } else {
           // Fallback if widget not loaded
-          const widgetId = document.querySelector(
+          const widgetIdMeta = document.querySelector(
             'meta[name="intakeq-widget-id"]',
-          ).content;
-          window.open(`https://intakeq.com/booking/${widgetId}`, "_blank");
+          );
+          if (widgetIdMeta && widgetIdMeta.content) {
+            const widgetId = widgetIdMeta.content;
+            window.open(`https://intakeq.com/booking/${widgetId}`, "_blank");
+          } else {
+            console.error("IntakeQ widget ID not found");
+          }
         }
       }
 
