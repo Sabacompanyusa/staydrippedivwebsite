@@ -1914,6 +1914,17 @@
       if (typeof window.initializeApp === "function") {
         window.initializeApp();
       }
+
+      // Global fallback function for showDisclosureModal
+      if (typeof window.showDisclosureModal === "undefined") {
+        window.showDisclosureModal = function () {
+          console.log(
+            "Good Faith Exam modal function not yet loaded. Please try again in a moment.",
+          );
+          // Try to redirect to booking as fallback
+          openBookingModal();
+        };
+      }
     </script>
 
     <!-- Qualiphy GFE Scripts -->
