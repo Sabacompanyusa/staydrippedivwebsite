@@ -1035,12 +1035,15 @@
     <!-- Optimized Scripts -->
     <script>
       // Mobile menu toggle
-      document
-        .querySelector(".mobile-menu-toggle")
-        .addEventListener("click", function () {
+      const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+      if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener("click", function () {
           const navLinks = document.querySelector(".nav-links");
-          navLinks.classList.toggle("active");
+          if (navLinks) {
+            navLinks.classList.toggle("active");
+          }
         });
+      }
 
       // Smooth scrolling
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
