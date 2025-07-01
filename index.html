@@ -1113,6 +1113,21 @@
       if (testimonialSection) {
         testimonialObserver.observe(testimonialSection);
       }
+
+      // Global fallback function for showDisclosureModal
+      if (typeof window.showDisclosureModal === "undefined") {
+        window.showDisclosureModal = function () {
+          console.log(
+            "Good Faith Exam modal function not yet loaded. Please try again in a moment.",
+          );
+          // Try to redirect to booking as fallback
+          if (typeof openBookingWidget === "function") {
+            openBookingWidget();
+          } else {
+            window.open("https://Staydripped.intakeq.com/booking", "_blank");
+          }
+        };
+      }
     </script>
 
     <!-- Structured Data -->
