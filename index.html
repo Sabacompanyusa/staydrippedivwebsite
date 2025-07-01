@@ -670,7 +670,7 @@
           <img
             src="assets/images/logo.png"
             alt="Stay Dripped Mobile IV"
-            style="height: 40px; width: auto"
+            class="logo-height"
           />
         </a>
         <ul class="nav-links">
@@ -697,14 +697,7 @@
                 Professional hydration, NAD+, and wellness services in
                 Scottsdale & Phoenix. Recharge. Rejuvenate. Repeat.
               </p>
-              <div
-                style="
-                  display: flex;
-                  gap: 1rem;
-                  justify-content: center;
-                  margin-top: 2rem;
-                "
-              >
+              <div class="hero-buttons-container">
                 <a href="#book" class="btn">Book Treatment</a>
                 <a href="#services" class="btn btn-secondary">View Services</a>
               </div>
@@ -717,7 +710,7 @@
         id="services"
         class="services fade-in"
         aria-labelledby="services-heading"
-        style="margin-top: -4px; padding: 64px 0"
+        class="services-section"
       >
         <div class="container">
           <h2 id="services-heading">Our Premium Services</h2>
@@ -872,61 +865,27 @@
       </section>
 
       <!-- How It Works -->
-      <section id="how-it-works" style="padding: 4rem 0">
+      <section id="how-it-works" class="section-spacing">
         <div class="container">
-          <h2
-            style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem"
-          >
-            How It Works
-          </h2>
-          <div
-            style="
-              display: grid;
-              grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-              gap: 2rem;
-            "
-          >
-            <div style="text-align: center">
-              <div
-                style="
-                  font-size: 3rem;
-                  color: var(--primary-color);
-                  margin-bottom: 1rem;
-                "
-              >
-                1
-              </div>
+          <h2 class="text-center section-heading">How It Works</h2>
+          <div class="how-it-works-grid">
+            <div class="how-it-works-step">
+              <div class="step-number">1</div>
               <h3>Book Online</h3>
               <p>
                 Choose your treatment and schedule a time that works for you.
               </p>
             </div>
-            <div style="text-align: center">
-              <div
-                style="
-                  font-size: 3rem;
-                  color: var(--primary-color);
-                  margin-bottom: 1rem;
-                "
-              >
-                2
-              </div>
+            <div class="how-it-works-step">
+              <div class="step-number">2</div>
               <h3>We Come to You</h3>
               <p>
                 Our certified professionals arrive at your location with
                 everything needed.
               </p>
             </div>
-            <div style="text-align: center">
-              <div
-                style="
-                  font-size: 3rem;
-                  color: var(--primary-color);
-                  margin-bottom: 1rem;
-                "
-              >
-                3
-              </div>
+            <div class="how-it-works-step">
+              <div class="step-number">3</div>
               <h3>Relax & Recharge</h3>
               <p>
                 Sit back and enjoy your treatment in the comfort of your own
@@ -938,9 +897,13 @@
       </section>
 
       <!-- Booking Section -->
-      <section id="book" style="background: var(--bg-light); padding: 4rem 0">
-        <div class="container" style="text-align: center">
-          <h2 style="font-size: 2.5rem; margin-bottom: 1rem">
+      <section
+        id="book"
+        class="section-spacing"
+        style="background: var(--bg-light)"
+      >
+        <div class="container text-center">
+          <h2 class="section-heading" style="margin-bottom: 1rem">
             Ready to Feel Better?
           </h2>
           <p
@@ -967,13 +930,9 @@
       </section>
 
       <!-- Testimonials -->
-      <section id="testimonials" style="padding: 4rem 0">
+      <section id="testimonials" class="section-spacing">
         <div class="container">
-          <h2
-            style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem"
-          >
-            What Our Clients Say
-          </h2>
+          <h2 class="text-center section-heading">What Our Clients Say</h2>
           <div
             class="elfsight-app-d433d327-22a0-44e1-b166-f607a4df45d8"
             data-elfsight-app-lazy
@@ -982,77 +941,41 @@
       </section>
 
       <!-- FAQ -->
-      <section id="faq" style="padding: 4rem 0">
+      <section id="faq" class="section-spacing">
         <div class="container">
-          <h2
-            style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem"
-          >
+          <h2 class="text-center section-heading">
             Frequently Asked Questions
           </h2>
-          <div style="max-width: 800px; margin: 0 auto">
-            <details
-              style="
-                margin-bottom: 1rem;
-                background: var(--bg-light);
-                padding: 1rem;
-                border-radius: 0.5rem;
-              "
-            >
-              <summary style="cursor: pointer; font-weight: 600">
-                What is mobile IV therapy?
-              </summary>
-              <p style="margin-top: 1rem">
+          <div class="faq-container">
+            <details class="faq-item">
+              <summary class="faq-summary">What is mobile IV therapy?</summary>
+              <p class="faq-answer">
                 Mobile IV therapy brings professional intravenous treatments
                 directly to your location. Our certified nurses administer IV
                 drips containing vitamins, minerals, and hydration in the
                 comfort of your home, office, or hotel.
               </p>
             </details>
-            <details
-              style="
-                margin-bottom: 1rem;
-                background: var(--bg-light);
-                padding: 1rem;
-                border-radius: 0.5rem;
-              "
-            >
-              <summary style="cursor: pointer; font-weight: 600">
+            <details class="faq-item">
+              <summary class="faq-summary">
                 How long does a treatment take?
               </summary>
-              <p style="margin-top: 1rem">
+              <p class="faq-answer">
                 Most IV therapy sessions take 30-60 minutes, depending on the
                 type of treatment and your individual needs.
               </p>
             </details>
-            <details
-              style="
-                margin-bottom: 1rem;
-                background: var(--bg-light);
-                padding: 1rem;
-                border-radius: 0.5rem;
-              "
-            >
-              <summary style="cursor: pointer; font-weight: 600">
-                Is IV therapy safe?
-              </summary>
-              <p style="margin-top: 1rem">
+            <details class="faq-item">
+              <summary class="faq-summary">Is IV therapy safe?</summary>
+              <p class="faq-answer">
                 Yes, when administered by qualified healthcare professionals.
                 All our nurses are licensed and experienced in IV therapy
                 administration.
               </p>
             </details>
-            <details
-              style="
-                margin-bottom: 1rem;
-                background: var(--bg-light);
-                padding: 1rem;
-                border-radius: 0.5rem;
-              "
-            >
-              <summary style="cursor: pointer; font-weight: 600">
-                Do you accept insurance?
-              </summary>
-              <p style="margin-top: 1rem">
+            <details class="faq-item">
+              <summary class="faq-summary">Do you accept insurance?</summary>
+              <p class="faq-answer">
                 We accept HSA and FSA payments. While most insurance doesn't
                 cover elective IV therapy, we can provide documentation for
                 reimbursement requests.

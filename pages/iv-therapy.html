@@ -1236,7 +1236,6 @@
               </div>
             </div>
           </div>
-
           <div class="menu-card">
             <h3>
               <i class="fas fa-crown"></i> The Platinum NAD+ Therapy IV Bag
@@ -1634,7 +1633,6 @@
           </div>
         </div>
       </section>
-
       <!-- Quick Actions Section -->
       <section class="quick-actions-section">
         <div class="container">
@@ -1764,6 +1762,21 @@
             navLinks.style.display =
               navLinks.style.display === "flex" ? "none" : "flex";
           });
+
+          cartSummary.innerHTML = html;
+          cartTotal.innerHTML = `<strong>Total: $${sum.toFixed(2)}</strong>`;
+        } catch (error) {
+          // Error handled silently
+        }
+      }
+
+      function showInfo(title, description) {
+        try {
+          alert(
+            `${title}\n\n${description}\n\nFor detailed ingredients, contraindications, and medical information, please consult with our licensed medical team during your consultation.`,
+          );
+        } catch (error) {
+          // Error handled silently
         }
       });
     </script>

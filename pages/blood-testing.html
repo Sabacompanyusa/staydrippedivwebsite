@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -258,11 +258,1076 @@
             animation: shimmer 4s ease-in-out infinite alternate;
         }
 
-        @keyframes shimmer {
-            from { transform: translateX(-100%); }
-            to { transform: translateX(100%); }
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/qualiphy-style.css" />
+    <link rel="stylesheet" href="../../assets/css/responsive.css" />
+
+    <style>
+      /* CSS Variables */
+      :root {
+        /* Brand Colors */
+        --primary: #0a2a43;
+        --secondary: #00bcd4;
+        --accent: #4fc3f7;
+        --gold: #ffd700;
+        --platinum: #e5e5e5;
+        --success: #4caf50;
+        --warning: #ff9800;
+        --error: #f44336;
+
+        /* Text Colors */
+        --text-dark: #1a1a1a;
+        --text-light: #666;
+        --text-muted: #999;
+        --text-white: #fff;
+
+        /* Background Colors */
+        --bg-light: #f1fbff;
+        --bg-dark: #1a1a1a;
+        --white: #fff
+
+        /* Shadows */
+        --shadow: 0 4px 12px rgb(0 0 0 / 10%);
+        --shadow-hover: 0 8px 25px rgb(0 0 0 / 15%);
+        --shadow-lg: 0 10px 40px rgb(0 0 0 / 10%);
+
+        /* Border Radius */
+        --br: 12px;
+        --br-lg: 16px;
+        --br-xl: 24px;
+
+        /* Transitions */
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        --transition-fast: all 0.15s ease;
+
+        /* Gradients */
+        --gradient-primary: linear-gradient(
+          135deg,
+          var(--secondary),
+          var(--accent)
+        );
+        --gradient-gold: linear-gradient(135deg, #ffd700, #ffed4e);
+        --gradient-hero: linear-gradient(
+          135deg,
+          rgb(10 42 67 / 90%),
+          rgb(0 188 212 / 70%)
+        );
+      }
+
+      /* CSS Reset */
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+      }
+
+      body {
+        font-family:
+          Inter,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Oxygen,
+          Ubuntu,
+          Cantarell,
+          sans-serif;
+        line-height: 1.7;
+        color: var(--text-dark);
+        background: #fafafa;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      img,
+      iframe,
+      svg {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button {
+        font-family: inherit;
+        cursor: pointer;
+        border: none;
+        background: none;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      /* Container */
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      /* Header */
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: var(--primary);
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+      }
+
+      .header-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo-section {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: var(--transition);
+      }
+
+      .logo-section:hover {
+        transform: scale(1.05);
+      }
+
+      .logo-image {
+        height: 40px;
+        width: auto;
+      }
+
+      .brand-name {
+        font-size: 1.4rem;
+        font-weight: 800;
+        background: var(--gradient-primary);
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .header-buttons {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+      }
+
+      .emergency-call-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        background: var(--success);
+        color: white;
+        height: 40px;
+        min-width: 150px;
+        padding: 0 1rem;
+        border-radius: var(--br);
+        font-weight: 600;
+        transition: var(--transition);
+        box-shadow: var(--shadow);
+      }
+
+      .emergency-call-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .header-book-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--secondary);
+        color: white;
+        height: 40px;
+        min-width: 150px;
+        padding: 0 1rem;
+        border-radius: var(--br);
+        font-weight: 600;
+        transition: var(--transition);
+        box-shadow: var(--shadow);
+      }
+
+      .header-book-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .exam-btn {
+        min-width: 180px;
+        height: 48px;
+        padding: 0.75rem 1.5rem;
+        font-family:
+          Inter,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        font-size: 0.9rem;
+        font-weight: 600;
+        line-height: 1;
+        text-align: center;
+        white-space: nowrap;
+        background-color: #cfc9ff;
+        color: #0a005b;
+        border: 2px solid transparent;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgb(207 201 255 / 30%);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        cursor: pointer;
+        user-select: none;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        outline: none;
+      }
+
+      .exam-btn:hover {
+        background-color: #8058fa;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 16px rgb(128 88 250 / 40%);
+      }
+
+      /* Service Hero Section */
+      .service-hero {
+        padding: 8rem 0 4rem;
+        background:
+          var(--gradient-hero),
+          url("https://images.unsplash.com/photo-1579952363873-27d3bfad9c0d?auto=format&fit=crop&w=1600&q=80")
+            center/cover no-repeat;
+        color: white;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .service-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          45deg,
+          transparent,
+          rgb(79 195 247 / 10%),
+          transparent
+        );
+        animation: shimmer 4s ease-in-out infinite alternate;
+      }
+
+      @keyframes shimmer {
+        from {
+          transform: translateX(-100%);
         }
 
+        to {
+          transform: translateX(100%);
+        }
+      }
+
+      .service-hero-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+      }
+
+      .breadcrumbs {
+        color: rgb(255 255 255 / 80%);
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+      }
+
+      .breadcrumbs a {
+        color: var(--accent);
+        transition: var(--transition);
+      }
+
+      .breadcrumbs a:hover {
+        color: white;
+      }
+
+      .service-hero h1 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(135deg, #fff, var(--accent));
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .service-subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+        line-height: 1.6;
+      }
+
+      .service-highlights {
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+      }
+
+      .highlight-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: rgb(255 255 255 / 10%);
+        padding: 0.75rem 1rem;
+        border-radius: var(--br);
+        backdrop-filter: blur(10px);
+      }
+
+      .highlight-icon {
+        font-size: 1.2rem;
+      }
+
+      .service-cta {
+        margin-top: 2rem;
+      }
+
+      .btn {
+        padding: 1rem 2rem;
+        border-radius: var(--br);
+        font-size: 1rem;
+        font-weight: 600;
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+        text-decoration: none;
+        display: inline-block;
+        cursor: pointer;
+        border: none;
+      }
+
+      .btn-primary {
+        background: var(--secondary);
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background: var(--accent);
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .btn-lg {
+        padding: 1.25rem 2.5rem;
+        font-size: 1.1rem;
+      }
+
+      .pricing-info {
+        margin-top: 1rem;
+        font-size: 0.9rem;
+        opacity: 0.8;
+      }
+
+      /* Section Styles */
+      .section {
+        padding: 6rem 2rem;
+        text-align: center;
+      }
+
+      .section-light {
+        background: var(--bg-light);
+      }
+
+      .section-header {
+        margin-bottom: 4rem;
+      }
+
+      .section-title {
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 800;
+        color: var(--primary);
+        margin-bottom: 1rem;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: var(--secondary);
+        border-radius: 2px;
+      }
+
+      .section-subtitle {
+        font-size: 1.1rem;
+        color: var(--text-light);
+        margin-bottom: 3rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* Testing Panels */
+      .testing-panels {
+        padding: 6rem 2rem;
+        background: white;
+      }
+
+      .panels-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .panel-card {
+        background: var(--bg-light);
+        border-radius: var(--br-lg);
+        padding: 2rem;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        position: relative;
+        border: 2px solid transparent;
+        overflow: hidden;
+      }
+
+      .panel-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 4px;
+        width: 100%;
+        background: var(--secondary);
+      }
+
+      .panel-card:hover {
+        background: white;
+        border-color: var(--secondary);
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .panel-card.featured {
+        border: 2px solid var(--secondary);
+        transform: scale(1.05);
+      }
+
+      .popular-badge {
+        position: absolute;
+        top: -10px;
+        right: 20px;
+        background: var(--secondary);
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: var(--br);
+        font-size: 0.8rem;
+        font-weight: 600;
+        z-index: 2;
+      }
+
+      .panel-header {
+        margin-bottom: 1.5rem;
+      }
+
+      .panel-header h3 {
+        color: var(--primary);
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+      }
+
+      .panel-price {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--secondary);
+        margin-bottom: 1rem;
+      }
+
+      .panel-content p {
+        color: var(--text-light);
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+      }
+
+      .panel-tests {
+        list-style: none;
+        padding: 0;
+        margin: 1.5rem 0;
+        text-align: left;
+      }
+
+      .panel-tests li {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 0.75rem;
+        color: var(--text-dark);
+        font-size: 0.95rem;
+      }
+
+      .panel-tests li::before {
+        content: "✓";
+        color: var(--success);
+        font-weight: bold;
+        font-size: 1rem;
+        min-width: 16px;
+      }
+
+      .panel-ideal {
+        background: rgb(0 188 212 / 10%);
+        padding: 1rem;
+        border-radius: var(--br);
+        margin: 1.5rem 0;
+        border-left: 3px solid var(--secondary);
+        text-align: left;
+        color: var(--text-dark);
+        font-size: 0.9rem;
+      }
+
+      .btn-outline {
+        background: transparent;
+        border: 2px solid var(--secondary);
+        color: var(--secondary);
+      }
+
+      .btn-outline:hover {
+        background: var(--secondary);
+        color: white;
+        transform: translateY(-2px);
+      }
+
+      .btn-secondary {
+        background: var(--gold);
+        color: var(--primary);
+      }
+
+      .btn-secondary:hover {
+        background: #ffed4e;
+        transform: translateY(-2px);
+      }
+
+      /* Specialized Testing */
+      .specialized-testing {
+        padding: 6rem 2rem;
+        background: var(--bg-light);
+      }
+
+      .specialized-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 3rem;
+        margin-top: 3rem;
+      }
+
+      .test-category {
+        background: white;
+        padding: 2rem;
+        border-radius: var(--br-lg);
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .test-category::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 4px;
+        width: 100%;
+        background: var(--secondary);
+      }
+
+      .test-category:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .test-category h3 {
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+        font-size: 1.3rem;
+        text-align: center;
+      }
+
+      .test-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .test-item {
+        padding: 1.5rem;
+        background: var(--bg-light);
+        border-radius: var(--br);
+        transition: var(--transition);
+      }
+
+      .test-item:hover {
+        background: rgb(0 188 212 / 5%);
+        transform: translateX(5px);
+      }
+
+      .test-item h4 {
+        color: var(--primary);
+        margin-bottom: 0.75rem;
+        font-size: 1.1rem;
+      }
+
+      .test-item p {
+        color: var(--text-light);
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      /* Testing Process */
+      .testing-process {
+        padding: 6rem 2rem;
+        background: white;
+      }
+
+      .process-steps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 3rem;
+        margin-top: 3rem;
+      }
+
+      .process-step {
+        text-align: center;
+        padding: 2rem;
+        background: var(--bg-light);
+        border-radius: var(--br-lg);
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .process-step::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 4px;
+        width: 100%;
+        background: var(--secondary);
+      }
+
+      .process-step:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .step-number {
+        width: 60px;
+        height: 60px;
+        background: var(--gradient-primary);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: 800;
+        margin: 0 auto 1.5rem;
+      }
+
+      .step-content h3 {
+        color: var(--primary);
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+      }
+
+      .step-content p {
+        color: var(--text-light);
+        line-height: 1.6;
+        margin-bottom: 1rem;
+      }
+
+      .step-duration {
+        background: rgb(0 188 212 / 10%);
+        color: var(--text-dark);
+        padding: 0.5rem 1rem;
+        border-radius: var(--br);
+        font-size: 0.9rem;
+        display: inline-block;
+        margin-top: 1rem;
+      }
+
+      /* Key Biomarkers */
+      .key-biomarkers {
+        padding: 6rem 2rem;
+        background: var(--bg-light);
+      }
+
+      .biomarkers-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .biomarker-category {
+        background: white;
+        padding: 2rem;
+        border-radius: var(--br-lg);
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .biomarker-category::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 4px;
+        width: 100%;
+        background: var(--secondary);
+      }
+
+      .biomarker-category:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .biomarker-category h3 {
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+        font-size: 1.3rem;
+      }
+
+      .biomarker-category ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .biomarker-category li {
+        margin-bottom: 1rem;
+        color: var(--text-dark);
+        line-height: 1.5;
+      }
+
+      .biomarker-category li strong {
+        color: var(--primary);
+      }
+
+      /* Results & Action Plans */
+      .results-action {
+        padding: 6rem 2rem;
+        background: white;
+      }
+
+      .results-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+      }
+
+      .results-features {
+        margin-top: 2rem;
+      }
+
+      .feature-item {
+        margin-bottom: 2rem;
+        text-align: left;
+      }
+
+      .feature-item h3 {
+        color: var(--primary);
+        margin-bottom: 0.75rem;
+        font-size: 1.2rem;
+      }
+
+      .feature-item p {
+        color: var(--text-light);
+        line-height: 1.6;
+      }
+
+      /* Quality Assurance */
+      .quality-assurance {
+        padding: 6rem 2rem;
+        background: var(--bg-light);
+      }
+
+      .quality-features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .quality-item {
+        background: white;
+        padding: 2rem;
+        border-radius: var(--br-lg);
+        box-shadow: var(--shadow);
+        text-align: center;
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .quality-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 4px;
+        width: 100%;
+        background: var(--secondary);
+      }
+
+      .quality-item:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .quality-item h3 {
+        color: var(--primary);
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+      }
+
+      .quality-item p {
+        color: var(--text-light);
+        line-height: 1.6;
+      }
+
+      /* Who Should Test */
+      .who-should-test {
+        padding: 6rem 2rem;
+        background: white;
+      }
+
+      .testing-candidates {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .candidate-group {
+        background: var(--bg-light);
+        padding: 2rem;
+        border-radius: var(--br-lg);
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .candidate-group::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 4px;
+        width: 100%;
+        background: var(--secondary);
+      }
+
+      .candidate-group:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .candidate-group h3 {
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+        font-size: 1.3rem;
+      }
+
+      .candidate-group ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .candidate-group li {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 0.75rem;
+        color: var(--text-dark);
+        line-height: 1.5;
+      }
+
+      .candidate-group li::before {
+        content: "→";
+        color: var(--secondary);
+        font-weight: bold;
+        min-width: 16px;
+      }
+
+      /* FAQ Section */
+      .testing-faq {
+        padding: 6rem 2rem;
+        background: var(--bg-light);
+      }
+
+      .faq-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .faq-item {
+        background: white;
+        padding: 2rem;
+        border-radius: var(--br-lg);
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+      }
+
+      .faq-item:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .faq-item h3 {
+        color: var(--primary);
+        margin-bottom: 1rem;
+        cursor: pointer;
+        font-size: 1.2rem;
+      }
+
+      .faq-item p {
+        color: var(--text-light);
+        line-height: 1.6;
+      }
+
+      /* CTA Section */
+      .testing-cta {
+        background: var(--gradient-hero);
+        color: white;
+        padding: 6rem 2rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .testing-cta::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          45deg,
+          transparent,
+          rgb(79 195 247 / 10%),
+          transparent
+        );
+        animation: shimmer 6s ease-in-out infinite;
+      }
+
+      .cta-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .cta-content h2 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        margin-bottom: 1.5rem;
+      }
+
+      .cta-content p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin: 2rem 0;
+        flex-wrap: wrap;
+      }
+
+      .cta-note {
+        margin-top: 2rem;
+        opacity: 0.8;
+        font-size: 0.9rem;
+      }
+
+      /* Footer */
+      .site-footer {
+        background: var(--primary);
+        color: white;
+        padding: 3rem 2rem 1rem;
+      }
+
+      .footer-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .footer-section h4 {
+        color: var(--secondary);
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+      }
+
+      .footer-section ul {
+        list-style: none;
+      }
+
+      .footer-section li {
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-section a {
+        color: rgb(255 255 255 / 80%);
+        transition: var(--transition);
+      }
+
+      .footer-section a:hover {
+        color: var(--secondary);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgb(255 255 255 / 10%);
+        padding-top: 2rem;
+        text-align: center;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      /* Mobile Responsiveness */
+      @media (width <= 768px) {
         .service-hero-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -764,153 +1829,30 @@
         }
 
         .results-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
+          grid-template-columns: 1fr;
+          gap: 2rem;
         }
 
-        .results-features {
-            margin-top: 2rem;
+        .header-container {
+          flex-direction: column;
+          gap: 1rem;
+          padding: 1rem;
         }
 
-        .feature-item {
-            margin-bottom: 2rem;
-            text-align: left;
+        .header-buttons {
+          justify-content: center;
         }
 
-        .feature-item h3 {
-            color: var(--primary);
-            margin-bottom: 0.75rem;
-            font-size: 1.2rem;
+        .section {
+          padding: 4rem 1rem;
         }
 
-        .feature-item p {
-            color: var(--text-light);
-            line-height: 1.6;
-        }
-
-        /* Quality Assurance */
-        .quality-assurance {
-            padding: 6rem 2rem;
-            background: var(--bg-light);
-        }
-
-        .quality-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .quality-item {
-            background: white;
-            padding: 2rem;
-            border-radius: var(--br-lg);
-            box-shadow: var(--shadow);
-            text-align: center;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .quality-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 4px;
-            width: 100%;
-            background: var(--secondary);
-        }
-
-        .quality-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .quality-item h3 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-
-        .quality-item p {
-            color: var(--text-light);
-            line-height: 1.6;
-        }
-
-        /* Who Should Test */
-        .who-should-test {
-            padding: 6rem 2rem;
-            background: white;
-        }
-
-        .testing-candidates {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .candidate-group {
-            background: var(--bg-light);
-            padding: 2rem;
-            border-radius: var(--br-lg);
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .candidate-group::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 4px;
-            width: 100%;
-            background: var(--secondary);
-        }
-
-        .candidate-group:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .candidate-group h3 {
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
-        }
-
-        .candidate-group ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .candidate-group li {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 0.75rem;
-            color: var(--text-dark);
-            line-height: 1.5;
-        }
-
-        .candidate-group li::before {
-            content: "→";
-            color: var(--secondary);
-            font-weight: bold;
-            min-width: 16px;
-        }
-
-        /* FAQ Section */
-        .testing-faq {
-            padding: 6rem 2rem;
-            background: var(--bg-light);
-        }
-
+        .panels-grid,
+        .specialized-grid,
+        .process-steps,
+        .biomarkers-grid,
+        .quality-features,
+        .testing-candidates,
         .faq-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -975,38 +1917,6 @@
             font-size: 1.2rem;
             margin-bottom: 2rem;
             opacity: 0.9;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-        }
-
-        .cta-note {
-            margin-top: 2rem;
-            opacity: 0.8;
-            font-size: 0.9rem;
-        }
-
-        /* Footer */
-        .site-footer {
-            background: var(--primary);
-            color: white;
-            padding: 3rem 2rem 1rem;
-        }
-
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
         .footer-section h4 {
             color: var(--secondary);
             margin-bottom: 1rem;
@@ -1107,633 +2017,799 @@
         .fade-in-up {
             animation: fadeInUp 0.6s ease-out;
         }
+          
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <!-- Back Button -->
+    <div class="back-button-container">
+      <a href="../index.html" class="back-button">
+        <i class="fas fa-arrow-left"></i>
+        <span>Back to Home</span>
+      </a>
+    </div>
+
     <!-- Header -->
     <header class="header" id="header">
-        <div class="header-container">
-            <div class="logo-section">
-                <img src="../../assets/images/logo.png" alt="Stay Dripped Mobile IV" class="logo-image">
-                <div class="brand-name">Stay Dripped® Health & Wellness</div>
-            </div>
-            
-            <div class="header-buttons">
-                <a href="tel:+16026889825" class="emergency-call-btn">
-                    <i class="fas fa-phone"></i>
-                    Call (602) 688-9825
-                </a>
-                <a href="https://Staydripped.intakeq.com/booking" class="header-book-btn" target="_blank">
-                    <i class="fas fa-calendar"></i>
-                    Book Online
-                </a>
-                <span>First Time Patient Exam</span>
-                <button class="exam-btn" onclick="openExamModal()">
-                    <i class="fas fa-clipboard-list"></i>
-                    <script
-      id="qualiphy-script"
-      src="https://www.app.qualiphy.me/scripts/quidget_disclosure.js"
-      data-formsrc="https://www.app.qualiphy.me/qualiphy-widget?clinic=Stay Dripped Mobile IV LLC&amp;clinicId=3454&amp;first_name=&amp;last_name=&amp;email=&amp;phone_number=&amp;gender=&amp;exams=selectable&amp;tele_state_required=true&amp;token=25f1c2618e146d725e934313417e918418a5068e"
-      data-timezone="-6"
-      data-examhours='[{"SUN":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"MON":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"TUE":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"WED":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"THU":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"FRI":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"SAT":{"FROM":"00:00","TO":"23:59","isDaySelected":true}}]'
-    ></script>
-                    <span>First Time Patient Exam</span>
-                </button>
-            </div>
+      <div class="header-container">
+        <div class="logo-section">
+          <img
+            src="../../assets/images/logo.png"
+            alt="Stay Dripped Mobile IV"
+            class="logo-image"
+          />
+          <div class="brand-name">Stay Dripped® Health & Wellness</div>
         </div>
+
+        <div class="header-buttons">
+          <a href="tel:+16026889825" class="emergency-call-btn">
+            <i class="fas fa-phone"></i>
+            Call (602) 688-9825
+          </a>
+          <a
+            href="https://Staydripped.intakeq.com/booking"
+            class="header-book-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fas fa-calendar"></i>
+            Book Online
+          </a>
+          <span>First Time Patient Exam</span>
+          <button class="exam-btn" onclick="openExamModal()">
+            <i class="fas fa-clipboard-list"></i>
+            <script
+              id="qualiphy-script"
+              src="https://www.app.qualiphy.me/scripts/quidget_disclosure.js"
+              data-formsrc="https://www.app.qualiphy.me/qualiphy-widget?clinic=Stay Dripped Mobile IV LLC&amp;clinicId=3454&amp;first_name=&amp;last_name=&amp;email=&amp;phone_number=&amp;gender=&amp;exams=selectable&amp;tele_state_required=true&amp;token=25f1c2618e146d725e934313417e918418a5068e"
+              data-timezone="-6"
+              data-examhours='[{"SUN":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"MON":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"TUE":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"WED":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"THU":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"FRI":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"SAT":{"FROM":"00:00","TO":"23:59","isDaySelected":true}}]'
+            ></script>
+            <span>First Time Patient Exam</span>
+          </button>
+        </div>
+      </div>
     </header>
 
     <!-- Service Hero -->
     <section class="service-hero">
-        <div class="container">
-            <div class="service-hero-content">
-                <div class="service-hero-text">
-                    <div class="breadcrumbs">
-                        <a href="../services.html">Services</a> > <span>Blood Testing</span>
-                    </div>
-                    <h1>Comprehensive Blood Testing</h1>
-                    <p class="service-subtitle">Get detailed insights into your health with advanced laboratory testing. Our comprehensive panels provide the data needed to optimize your wellness and identify potential health issues before they become problems.</p>
-                    <div class="service-highlights">
-                        <div class="highlight-item">
-                            <span class="highlight-icon">🔬</span>
-                            <span>Advanced Analytics</span>
-                        </div>
-                        <div class="highlight-item">
-                            <span class="highlight-icon">📊</span>
-                            <span>Detailed Reports</span>
-                        </div>
-                        <div class="highlight-item">
-                            <span class="highlight-icon">⚡</span>
-                            <span>Fast Results</span>
-                        </div>
-                    </div>
-                    <div class="service-cta">
-                        <button class="btn btn-primary btn-lg" onclick="openBookingModal()">Order Blood Panel</button>
-                        <div class="pricing-info">Starting at $150 | Results in 24-48 hours</div>
-                    </div>
-                </div>
-                <div class="service-hero-image">
-                    <img src="../../assets/images/placeholder.png" alt="Blood Testing" style="border-radius: var(--br-lg); box-shadow: var(--shadow-lg);">
-                </div>
+      <div class="container">
+        <div class="service-hero-content">
+          <div class="service-hero-text">
+            <div class="breadcrumbs">
+              <a href="../services.html">Services</a> >
+              <span>Blood Testing</span>
             </div>
+            <h1>Comprehensive Blood Testing</h1>
+            <p class="service-subtitle">
+              Get detailed insights into your health with advanced laboratory
+              testing. Our comprehensive panels provide the data needed to
+              optimize your wellness and identify potential health issues before
+              they become problems.
+            </p>
+            <div class="service-highlights">
+              <div class="highlight-item">
+                <span class="highlight-icon">🔬</span>
+                <span>Advanced Analytics</span>
+              </div>
+              <div class="highlight-item">
+                <span class="highlight-icon">📊</span>
+                <span>Detailed Reports</span>
+              </div>
+              <div class="highlight-item">
+                <span class="highlight-icon">⚡</span>
+                <span>Fast Results</span>
+              </div>
+            </div>
+            <div class="service-cta">
+              <button
+                class="btn btn-primary btn-lg"
+                onclick="openBookingModal()"
+              >
+                Order Blood Panel
+              </button>
+              <div class="pricing-info">
+                Starting at $150 | Results in 24-48 hours
+              </div>
+            </div>
+          </div>
+          <div class="service-hero-image">
+            <img
+              src="../../assets/images/placeholder.png"
+              alt="Blood Testing"
+              style="border-radius: var(--br-lg); box-shadow: var(--shadow-lg)"
+            />
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Testing Panels -->
     <section class="testing-panels section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Our Testing Panels</h2>
-                <p class="section-subtitle">Comprehensive health assessments tailored to your wellness goals</p>
-            </div>
-
-            <div class="panels-grid">
-                <div class="panel-card">
-                    <div class="panel-header">
-                        <h3>Essential Wellness Panel</h3>
-                        <div class="panel-price">$150</div>
-                    </div>
-                    <div class="panel-content">
-                        <p>Foundation health markers for overall wellness assessment</p>
-                        <ul class="panel-tests">
-                            <li>Complete Blood Count (CBC)</li>
-                            <li>Comprehensive Metabolic Panel</li>
-                            <li>Lipid Profile</li>
-                            <li>Thyroid Function (TSH, T3, T4)</li>
-                            <li>Vitamin D</li>
-                            <li>Vitamin B12</li>
-                            <li>Hemoglobin A1C</li>
-                            <li>C-Reactive Protein</li>
-                        </ul>
-                        <div class="panel-ideal">
-                            <strong>Ideal for:</strong> Annual health checkups, baseline health assessment
-                        </div>
-                    </div>
-                    <button class="btn btn-outline">Order Panel</button>
-                </div>
-
-                <div class="panel-card featured">
-                    <div class="popular-badge">Most Comprehensive</div>
-                    <div class="panel-header">
-                        <h3>Complete Optimization Panel</h3>
-                        <div class="panel-price">$350</div>
-                    </div>
-                    <div class="panel-content">
-                        <p>Extensive testing for complete health optimization and longevity</p>
-                        <ul class="panel-tests">
-                            <li>All Essential Wellness tests</li>
-                            <li>Complete Hormone Panel</li>
-                            <li>Advanced Lipid Analysis</li>
-                            <li>Inflammatory Markers</li>
-                            <li>Nutrient Status Panel</li>
-                            <li>Food Sensitivity Testing</li>
-                            <li>Heavy Metal Screening</li>
-                            <li>Cardiac Risk Assessment</li>
-                            <li>Autoimmune Markers</li>
-                        </ul>
-                        <div class="panel-ideal">
-                            <strong>Ideal for:</strong> Health optimization, hormone therapy preparation
-                        </div>
-                    </div>
-                    <button class="btn btn-primary">Order Panel</button>
-                </div>
-
-                <div class="panel-card">
-                    <div class="panel-header">
-                        <h3>Athletic Performance Panel</h3>
-                        <div class="panel-price">$275</div>
-                    </div>
-                    <div class="panel-content">
-                        <p>Specialized testing for athletes and active individuals</p>
-                        <ul class="panel-tests">
-                            <li>Complete Blood Count</li>
-                            <li>Performance Hormones</li>
-                            <li>Electrolyte Balance</li>
-                            <li>Iron Studies</li>
-                            <li>Muscle Recovery Markers</li>
-                            <li>Energy Metabolism Panel</li>
-                            <li>Oxidative Stress Markers</li>
-                            <li>Amino Acid Profile</li>
-                        </ul>
-                        <div class="panel-ideal">
-                            <strong>Ideal for:</strong> Athletes, fitness enthusiasts, performance optimization
-                        </div>
-                    </div>
-                    <button class="btn btn-outline">Order Panel</button>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Our Testing Panels</h2>
+          <p class="section-subtitle">
+            Comprehensive health assessments tailored to your wellness goals
+          </p>
         </div>
+
+        <div class="panels-grid">
+          <div class="panel-card">
+            <div class="panel-header">
+              <h3>Essential Wellness Panel</h3>
+              <div class="panel-price">$150</div>
+            </div>
+            <div class="panel-content">
+              <p>Foundation health markers for overall wellness assessment</p>
+              <ul class="panel-tests">
+                <li>Complete Blood Count (CBC)</li>
+                <li>Comprehensive Metabolic Panel</li>
+                <li>Lipid Profile</li>
+                <li>Thyroid Function (TSH, T3, T4)</li>
+                <li>Vitamin D</li>
+                <li>Vitamin B12</li>
+                <li>Hemoglobin A1C</li>
+                <li>C-Reactive Protein</li>
+              </ul>
+              <div class="panel-ideal">
+                <strong>Ideal for:</strong> Annual health checkups, baseline
+                health assessment
+              </div>
+            </div>
+            <button class="btn btn-outline">Order Panel</button>
+          </div>
+
+          <div class="panel-card featured">
+            <div class="popular-badge">Most Comprehensive</div>
+            <div class="panel-header">
+              <h3>Complete Optimization Panel</h3>
+              <div class="panel-price">$350</div>
+            </div>
+            <div class="panel-content">
+              <p>
+                Extensive testing for complete health optimization and longevity
+              </p>
+              <ul class="panel-tests">
+                <li>All Essential Wellness tests</li>
+                <li>Complete Hormone Panel</li>
+                <li>Advanced Lipid Analysis</li>
+                <li>Inflammatory Markers</li>
+                <li>Nutrient Status Panel</li>
+                <li>Food Sensitivity Testing</li>
+                <li>Heavy Metal Screening</li>
+                <li>Cardiac Risk Assessment</li>
+                <li>Autoimmune Markers</li>
+              </ul>
+              <div class="panel-ideal">
+                <strong>Ideal for:</strong> Health optimization, hormone therapy
+                preparation
+              </div>
+            </div>
+            <button class="btn btn-primary">Order Panel</button>
+          </div>
+
+          <div class="panel-card">
+            <div class="panel-header">
+              <h3>Athletic Performance Panel</h3>
+              <div class="panel-price">$275</div>
+            </div>
+            <div class="panel-content">
+              <p>Specialized testing for athletes and active individuals</p>
+              <ul class="panel-tests">
+                <li>Complete Blood Count</li>
+                <li>Performance Hormones</li>
+                <li>Electrolyte Balance</li>
+                <li>Iron Studies</li>
+                <li>Muscle Recovery Markers</li>
+                <li>Energy Metabolism Panel</li>
+                <li>Oxidative Stress Markers</li>
+                <li>Amino Acid Profile</li>
+              </ul>
+              <div class="panel-ideal">
+                <strong>Ideal for:</strong> Athletes, fitness enthusiasts,
+                performance optimization
+              </div>
+            </div>
+            <button class="btn btn-outline">Order Panel</button>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Specialized Testing -->
     <section class="specialized-testing section section-light">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Specialized Testing Options</h2>
-                <p class="section-subtitle">Advanced diagnostics for specific health concerns</p>
-            </div>
-
-            <div class="specialized-grid">
-                <div class="test-category">
-                    <h3>🧬 Hormone Testing</h3>
-                    <div class="test-list">
-                        <div class="test-item">
-                            <h4>Men's Hormone Panel - $200</h4>
-                            <p>Total & Free Testosterone, Estradiol, DHEA-S, Cortisol, Thyroid Function</p>
-                        </div>
-                        <div class="test-item">
-                            <h4>Women's Hormone Panel - $225</h4>
-                            <p>Estradiol, Progesterone, Testosterone, DHEA-S, Cortisol, Thyroid Function</p>
-                        </div>
-                        <div class="test-item">
-                            <h4>Comprehensive Hormone Analysis - $300</h4>
-                            <p>Complete hormone evaluation including metabolites and binding proteins</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="test-category">
-                    <h3>🍎 Nutritional Assessment</h3>
-                    <div class="test-list">
-                        <div class="test-item">
-                            <h4>Vitamin & Mineral Panel - $175</h4>
-                            <p>Essential vitamins, minerals, and trace elements analysis</p>
-                        </div>
-                        <div class="test-item">
-                            <h4>Micronutrient Analysis - $250</h4>
-                            <p>Comprehensive cellular nutrient evaluation</p>
-                        </div>
-                        <div class="test-item">
-                            <h4>Food Sensitivity Panel - $200</h4>
-                            <p>IgG antibody testing for 96 common foods</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="test-category">
-                    <h3>🔥 Inflammatory Markers</h3>
-                    <div class="test-list">
-                        <div class="test-item">
-                            <h4>Basic Inflammation Panel - $125</h4>
-                            <p>CRP, ESR, and basic inflammatory markers</p>
-                        </div>
-                        <div class="test-item">
-                            <h4>Advanced Inflammatory Profile - $200</h4>
-                            <p>Comprehensive inflammation and autoimmune assessment</p>
-                        </div>
-                        <div class="test-item">
-                            <h4>Cardiovascular Risk Panel - $175</h4>
-                            <p>Advanced lipids, inflammatory markers, and heart health assessment</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="test-category">
-                    <h3>🧠 Cognitive Health</h3>
-                    <div class="test-list">
-                        <div class="test-item">
-                            <h4>Brain Health Panel - $225</h4>
-                            <p>Markers for cognitive function and neurological health</p>
-                        </div>
-                        <div class="test-item">
-                            <h4>Neurotransmitter Testing - $275</h4>
-                            <p>Comprehensive neurotransmitter analysis</p>
-                        </div>
-                        <div class="test-item">
-                            <h4>Heavy Metal Screening - $150</h4>
-                            <p>Detection of toxic metals that can affect brain function</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Specialized Testing Options</h2>
+          <p class="section-subtitle">
+            Advanced diagnostics for specific health concerns
+          </p>
         </div>
+
+        <div class="specialized-grid">
+          <div class="test-category">
+            <h3>🧬 Hormone Testing</h3>
+            <div class="test-list">
+              <div class="test-item">
+                <h4>Men's Hormone Panel - $200</h4>
+                <p>
+                  Total & Free Testosterone, Estradiol, DHEA-S, Cortisol,
+                  Thyroid Function
+                </p>
+              </div>
+              <div class="test-item">
+                <h4>Women's Hormone Panel - $225</h4>
+                <p>
+                  Estradiol, Progesterone, Testosterone, DHEA-S, Cortisol,
+                  Thyroid Function
+                </p>
+              </div>
+              <div class="test-item">
+                <h4>Comprehensive Hormone Analysis - $300</h4>
+                <p>
+                  Complete hormone evaluation including metabolites and binding
+                  proteins
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="test-category">
+            <h3>🍎 Nutritional Assessment</h3>
+            <div class="test-list">
+              <div class="test-item">
+                <h4>Vitamin & Mineral Panel - $175</h4>
+                <p>Essential vitamins, minerals, and trace elements analysis</p>
+              </div>
+              <div class="test-item">
+                <h4>Micronutrient Analysis - $250</h4>
+                <p>Comprehensive cellular nutrient evaluation</p>
+              </div>
+              <div class="test-item">
+                <h4>Food Sensitivity Panel - $200</h4>
+                <p>IgG antibody testing for 96 common foods</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="test-category">
+            <h3>🔥 Inflammatory Markers</h3>
+            <div class="test-list">
+              <div class="test-item">
+                <h4>Basic Inflammation Panel - $125</h4>
+                <p>CRP, ESR, and basic inflammatory markers</p>
+              </div>
+              <div class="test-item">
+                <h4>Advanced Inflammatory Profile - $200</h4>
+                <p>Comprehensive inflammation and autoimmune assessment</p>
+              </div>
+              <div class="test-item">
+                <h4>Cardiovascular Risk Panel - $175</h4>
+                <p>
+                  Advanced lipids, inflammatory markers, and heart health
+                  assessment
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="test-category">
+            <h3>🧠 Cognitive Health</h3>
+            <div class="test-list">
+              <div class="test-item">
+                <h4>Brain Health Panel - $225</h4>
+                <p>Markers for cognitive function and neurological health</p>
+              </div>
+              <div class="test-item">
+                <h4>Neurotransmitter Testing - $275</h4>
+                <p>Comprehensive neurotransmitter analysis</p>
+              </div>
+              <div class="test-item">
+                <h4>Heavy Metal Screening - $150</h4>
+                <p>Detection of toxic metals that can affect brain function</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Testing Process -->
     <section class="testing-process section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">How It Works</h2>
-                <p class="section-subtitle">Simple, convenient, and comprehensive health testing</p>
-            </div>
-
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Choose Your Panel</h3>
-                        <p>Select the testing panel that best fits your health goals and needs.</p>
-                        <div class="step-duration">Online or consultation</div>
-                    </div>
-                </div>
-
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Sample Collection</h3>
-                        <p>Quick and comfortable blood draw at our facility or mobile collection available.</p>
-                        <div class="step-duration">15 minutes</div>
-                    </div>
-                </div>
-
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Laboratory Analysis</h3>
-                        <p>Samples processed at certified laboratories using advanced testing methods.</p>
-                        <div class="step-duration">24-48 hours</div>
-                    </div>
-                </div>
-
-                <div class="process-step">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h3>Results Review</h3>
-                        <p>Detailed consultation to review results and create your personalized wellness plan.</p>
-                        <div class="step-duration">30-45 minutes</div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">How It Works</h2>
+          <p class="section-subtitle">
+            Simple, convenient, and comprehensive health testing
+          </p>
         </div>
+
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>Choose Your Panel</h3>
+              <p>
+                Select the testing panel that best fits your health goals and
+                needs.
+              </p>
+              <div class="step-duration">Online or consultation</div>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>Sample Collection</h3>
+              <p>
+                Quick and comfortable blood draw at our facility or mobile
+                collection available.
+              </p>
+              <div class="step-duration">15 minutes</div>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>Laboratory Analysis</h3>
+              <p>
+                Samples processed at certified laboratories using advanced
+                testing methods.
+              </p>
+              <div class="step-duration">24-48 hours</div>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h3>Results Review</h3>
+              <p>
+                Detailed consultation to review results and create your
+                personalized wellness plan.
+              </p>
+              <div class="step-duration">30-45 minutes</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Key Biomarkers -->
     <section class="key-biomarkers section section-light">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Key Health Biomarkers We Track</h2>
-                <p class="section-subtitle">Understanding the markers that matter most for your health</p>
-            </div>
-
-            <div class="biomarkers-grid">
-                <div class="biomarker-category">
-                    <h3>💓 Cardiovascular Health</h3>
-                    <ul>
-                        <li><strong>Lipid Profile:</strong> Total cholesterol, LDL, HDL, triglycerides</li>
-                        <li><strong>Advanced Lipids:</strong> Particle size and density analysis</li>
-                        <li><strong>Inflammatory Markers:</strong> CRP, homocysteine</li>
-                        <li><strong>Cardiac Risk:</strong> Lipoprotein(a), apolipoprotein B</li>
-                    </ul>
-                </div>
-
-                <div class="biomarker-category">
-                    <h3>🔋 Energy & Metabolism</h3>
-                    <ul>
-                        <li><strong>Thyroid Function:</strong> TSH, T3, T4, reverse T3</li>
-                        <li><strong>Blood Sugar:</strong> Glucose, HbA1C, insulin</li>
-                        <li><strong>Energy Production:</strong> B vitamins, CoQ10</li>
-                        <li><strong>Adrenal Function:</strong> Cortisol rhythm</li>
-                    </ul>
-                </div>
-
-                <div class="biomarker-category">
-                    <h3>🛡️ Immune Function</h3>
-                    <ul>
-                        <li><strong>Complete Blood Count:</strong> White blood cells, immune status</li>
-                        <li><strong>Vitamin Status:</strong> D, C, zinc, selenium</li>
-                        <li><strong>Inflammatory Response:</strong> ESR, cytokines</li>
-                        <li><strong>Autoimmune Markers:</strong> ANA, specific antibodies</li>
-                    </ul>
-                </div>
-
-                <div class="biomarker-category">
-                    <h3>🧬 Hormonal Balance</h3>
-                    <ul>
-                        <li><strong>Sex Hormones:</strong> Testosterone, estrogen, progesterone</li>
-                        <li><strong>Stress Hormones:</strong> Cortisol, DHEA</li>
-                        <li><strong>Growth Factors:</strong> IGF-1, growth hormone</li>
-                        <li><strong>Reproductive Health:</strong> LH, FSH, prolactin</li>
-                    </ul>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Key Health Biomarkers We Track</h2>
+          <p class="section-subtitle">
+            Understanding the markers that matter most for your health
+          </p>
         </div>
+
+        <div class="biomarkers-grid">
+          <div class="biomarker-category">
+            <h3>💓 Cardiovascular Health</h3>
+            <ul>
+              <li>
+                <strong>Lipid Profile:</strong> Total cholesterol, LDL, HDL,
+                triglycerides
+              </li>
+              <li>
+                <strong>Advanced Lipids:</strong> Particle size and density
+                analysis
+              </li>
+              <li><strong>Inflammatory Markers:</strong> CRP, homocysteine</li>
+              <li>
+                <strong>Cardiac Risk:</strong> Lipoprotein(a), apolipoprotein B
+              </li>
+            </ul>
+          </div>
+
+          <div class="biomarker-category">
+            <h3>🔋 Energy & Metabolism</h3>
+            <ul>
+              <li>
+                <strong>Thyroid Function:</strong> TSH, T3, T4, reverse T3
+              </li>
+              <li><strong>Blood Sugar:</strong> Glucose, HbA1C, insulin</li>
+              <li><strong>Energy Production:</strong> B vitamins, CoQ10</li>
+              <li><strong>Adrenal Function:</strong> Cortisol rhythm</li>
+            </ul>
+          </div>
+
+          <div class="biomarker-category">
+            <h3>🛡️ Immune Function</h3>
+            <ul>
+              <li>
+                <strong>Complete Blood Count:</strong> White blood cells, immune
+                status
+              </li>
+              <li><strong>Vitamin Status:</strong> D, C, zinc, selenium</li>
+              <li><strong>Inflammatory Response:</strong> ESR, cytokines</li>
+              <li>
+                <strong>Autoimmune Markers:</strong> ANA, specific antibodies
+              </li>
+            </ul>
+          </div>
+
+          <div class="biomarker-category">
+            <h3>🧬 Hormonal Balance</h3>
+            <ul>
+              <li>
+                <strong>Sex Hormones:</strong> Testosterone, estrogen,
+                progesterone
+              </li>
+              <li><strong>Stress Hormones:</strong> Cortisol, DHEA</li>
+              <li><strong>Growth Factors:</strong> IGF-1, growth hormone</li>
+              <li><strong>Reproductive Health:</strong> LH, FSH, prolactin</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Results & Action Plans -->
     <section class="results-action section">
-        <div class="container">
-            <div class="results-content">
-                <div class="results-text">
-                    <h2>Comprehensive Results & Action Plans</h2>
-                    <p>Your test results come with detailed analysis and personalized recommendations for optimal health.</p>
-                    
-                    <div class="results-features">
-                        <div class="feature-item">
-                            <h3>📊 Detailed Analysis</h3>
-                            <p>Easy-to-understand reports with reference ranges and trend analysis</p>
-                        </div>
-                        <div class="feature-item">
-                            <h3>🎯 Personalized Recommendations</h3>
-                            <p>Specific action steps for diet, supplements, and lifestyle modifications</p>
-                        </div>
-                        <div class="feature-item">
-                            <h3>📈 Progress Tracking</h3>
-                            <p>Monitor improvements over time with follow-up testing</p>
-                        </div>
-                        <div class="feature-item">
-                            <h3>👨‍⚕️ Medical Consultation</h3>
-                            <p>One-on-one review with our medical professionals</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="results-visual">
-                    <img src="../../assets/images/placeholder.png" alt="Test Results" style="border-radius: var(--br-lg); box-shadow: var(--shadow);">
-                </div>
+      <div class="container">
+        <div class="results-content">
+          <div class="results-text">
+            <h2>Comprehensive Results & Action Plans</h2>
+            <p>
+              Your test results come with detailed analysis and personalized
+              recommendations for optimal health.
+            </p>
+
+            <div class="results-features">
+              <div class="feature-item">
+                <h3>📊 Detailed Analysis</h3>
+                <p>
+                  Easy-to-understand reports with reference ranges and trend
+                  analysis
+                </p>
+              </div>
+              <div class="feature-item">
+                <h3>🎯 Personalized Recommendations</h3>
+                <p>
+                  Specific action steps for diet, supplements, and lifestyle
+                  modifications
+                </p>
+              </div>
+              <div class="feature-item">
+                <h3>📈 Progress Tracking</h3>
+                <p>Monitor improvements over time with follow-up testing</p>
+              </div>
+              <div class="feature-item">
+                <h3>👨‍⚕️ Medical Consultation</h3>
+                <p>One-on-one review with our medical professionals</p>
+              </div>
             </div>
+          </div>
+          <div class="results-visual">
+            <img
+              src="../../assets/images/placeholder.png"
+              alt="Test Results"
+              style="border-radius: var(--br-lg); box-shadow: var(--shadow)"
+            />
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Quality Assurance -->
     <section class="quality-assurance section section-light">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Quality & Accuracy Standards</h2>
-                <p class="section-subtitle">Trusted laboratory partnerships and rigorous quality control</p>
-            </div>
-
-            <div class="quality-features">
-                <div class="quality-item">
-                    <h3>🏥 CLIA-Certified Labs</h3>
-                    <p>All testing performed at Clinical Laboratory Improvement Amendments certified facilities</p>
-                </div>
-                <div class="quality-item">
-                    <h3>⚡ Fast Results</h3>
-                    <p>Most results available within 24-48 hours with secure online access</p>
-                </div>
-                <div class="quality-item">
-                    <h3>🔒 Secure & Private</h3>
-                    <p>HIPAA-compliant handling and secure storage of all health information</p>
-                </div>
-                <div class="quality-item">
-                    <h3>🎯 Accurate Testing</h3>
-                    <p>State-of-the-art equipment and rigorous quality control protocols</p>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Quality & Accuracy Standards</h2>
+          <p class="section-subtitle">
+            Trusted laboratory partnerships and rigorous quality control
+          </p>
         </div>
+
+        <div class="quality-features">
+          <div class="quality-item">
+            <h3>🏥 CLIA-Certified Labs</h3>
+            <p>
+              All testing performed at Clinical Laboratory Improvement
+              Amendments certified facilities
+            </p>
+          </div>
+          <div class="quality-item">
+            <h3>⚡ Fast Results</h3>
+            <p>
+              Most results available within 24-48 hours with secure online
+              access
+            </p>
+          </div>
+          <div class="quality-item">
+            <h3>🔒 Secure & Private</h3>
+            <p>
+              HIPAA-compliant handling and secure storage of all health
+              information
+            </p>
+          </div>
+          <div class="quality-item">
+            <h3>🎯 Accurate Testing</h3>
+            <p>
+              State-of-the-art equipment and rigorous quality control protocols
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Who Should Get Tested -->
     <section class="who-should-test section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Who Should Get Comprehensive Testing?</h2>
-                <p class="section-subtitle">Blood testing benefits everyone seeking to optimize their health</p>
-            </div>
-
-            <div class="testing-candidates">
-                <div class="candidate-group">
-                    <h3>🏃‍♂️ Active Individuals</h3>
-                    <ul>
-                        <li>Athletes seeking performance optimization</li>
-                        <li>Fitness enthusiasts tracking progress</li>
-                        <li>Those with high physical demands</li>
-                        <li>Recovery and injury prevention</li>
-                    </ul>
-                </div>
-
-                <div class="candidate-group">
-                    <h3>🎯 Health Optimizers</h3>
-                    <ul>
-                        <li>Preventive health and longevity focus</li>
-                        <li>Hormone therapy candidates</li>
-                        <li>Weight management participants</li>
-                        <li>Wellness program members</li>
-                    </ul>
-                </div>
-
-                <div class="candidate-group">
-                    <h3>⚠️ Symptom Management</h3>
-                    <ul>
-                        <li>Unexplained fatigue or low energy</li>
-                        <li>Mood changes or brain fog</li>
-                        <li>Digestive or autoimmune issues</li>
-                        <li>Sleep or stress-related problems</li>
-                    </ul>
-                </div>
-
-                <div class="candidate-group">
-                    <h3>👥 Everyone Else</h3>
-                    <ul>
-                        <li>Annual health maintenance</li>
-                        <li>Family history of health conditions</li>
-                        <li>Age-related health monitoring</li>
-                        <li>Baseline health establishment</li>
-                    </ul>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Who Should Get Comprehensive Testing?</h2>
+          <p class="section-subtitle">
+            Blood testing benefits everyone seeking to optimize their health
+          </p>
         </div>
+
+        <div class="testing-candidates">
+          <div class="candidate-group">
+            <h3>🏃‍♂️ Active Individuals</h3>
+            <ul>
+              <li>Athletes seeking performance optimization</li>
+              <li>Fitness enthusiasts tracking progress</li>
+              <li>Those with high physical demands</li>
+              <li>Recovery and injury prevention</li>
+            </ul>
+          </div>
+
+          <div class="candidate-group">
+            <h3>🎯 Health Optimizers</h3>
+            <ul>
+              <li>Preventive health and longevity focus</li>
+              <li>Hormone therapy candidates</li>
+              <li>Weight management participants</li>
+              <li>Wellness program members</li>
+            </ul>
+          </div>
+
+          <div class="candidate-group">
+            <h3>⚠️ Symptom Management</h3>
+            <ul>
+              <li>Unexplained fatigue or low energy</li>
+              <li>Mood changes or brain fog</li>
+              <li>Digestive or autoimmune issues</li>
+              <li>Sleep or stress-related problems</li>
+            </ul>
+          </div>
+
+          <div class="candidate-group">
+            <h3>👥 Everyone Else</h3>
+            <ul>
+              <li>Annual health maintenance</li>
+              <li>Family history of health conditions</li>
+              <li>Age-related health monitoring</li>
+              <li>Baseline health establishment</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- FAQ -->
     <section class="testing-faq section section-light">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Frequently Asked Questions</h2>
-                <p class="section-subtitle">Common questions about blood testing</p>
-            </div>
-
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <h3>Do I need to fast before my blood test?</h3>
-                    <p>Fasting requirements depend on the specific tests ordered. Most panels require 8-12 hours of fasting. We'll provide specific instructions when you schedule.</p>
-                </div>
-
-                <div class="faq-item">
-                    <h3>How long do results take?</h3>
-                    <p>Most standard panels are available within 24-48 hours. Specialized tests may take 3-5 business days. You'll receive secure online access to your results.</p>
-                </div>
-
-                <div class="faq-item">
-                    <h3>Are the tests covered by insurance?</h3>
-                    <p>Coverage varies by insurance plan and medical necessity. We provide detailed receipts for insurance submission and offer competitive self-pay pricing.</p>
-                </div>
-
-                <div class="faq-item">
-                    <h3>Can I add tests to my panel?</h3>
-                    <p>Yes, additional tests can often be added to your order before sample collection. Our team will help customize your panel based on your needs.</p>
-                </div>
-
-                <div class="faq-item">
-                    <h3>What happens after I get my results?</h3>
-                    <p>We schedule a consultation to review your results, explain findings, and create a personalized action plan for your health optimization goals.</p>
-                </div>
-
-                <div class="faq-item">
-                    <h3>How often should I get tested?</h3>
-                    <p>Testing frequency depends on your health status and goals. Generally, annual comprehensive testing is recommended, with more frequent monitoring for specific conditions.</p>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-subtitle">Common questions about blood testing</p>
         </div>
+
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3>Do I need to fast before my blood test?</h3>
+            <p>
+              Fasting requirements depend on the specific tests ordered. Most
+              panels require 8-12 hours of fasting. We'll provide specific
+              instructions when you schedule.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>How long do results take?</h3>
+            <p>
+              Most standard panels are available within 24-48 hours. Specialized
+              tests may take 3-5 business days. You'll receive secure online
+              access to your results.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Are the tests covered by insurance?</h3>
+            <p>
+              Coverage varies by insurance plan and medical necessity. We
+              provide detailed receipts for insurance submission and offer
+              competitive self-pay pricing.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Can I add tests to my panel?</h3>
+            <p>
+              Yes, additional tests can often be added to your order before
+              sample collection. Our team will help customize your panel based
+              on your needs.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What happens after I get my results?</h3>
+            <p>
+              We schedule a consultation to review your results, explain
+              findings, and create a personalized action plan for your health
+              optimization goals.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>How often should I get tested?</h3>
+            <p>
+              Testing frequency depends on your health status and goals.
+              Generally, annual comprehensive testing is recommended, with more
+              frequent monitoring for specific conditions.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- CTA Section -->
     <section class="testing-cta">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Take Control of Your Health Today</h2>
-                <p>Get the insights you need to optimize your wellness with comprehensive blood testing.</p>
-                <div class="cta-buttons">
-                    <button class="btn btn-primary btn-lg" onclick="openBookingModal()">Order Blood Panel</button>
-                    <a href="../membership.html" class="btn btn-secondary btn-lg">View Member Discounts</a>
-                </div>
-                <p class="cta-note">Consultation included with all comprehensive panels</p>
-            </div>
+      <div class="container">
+        <div class="cta-content">
+          <h2>Take Control of Your Health Today</h2>
+          <p>
+            Get the insights you need to optimize your wellness with
+            comprehensive blood testing.
+          </p>
+          <div class="cta-buttons">
+            <button class="btn btn-primary btn-lg" onclick="openBookingModal()">
+              Order Blood Panel
+            </button>
+            <a href="../membership.html" class="btn btn-secondary btn-lg"
+              >View Member Discounts</a
+            >
+          </div>
+          <p class="cta-note">
+            Consultation included with all comprehensive panels
+          </p>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="site-footer" id="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <div class="footer-logo">
-                    <img src="../../assets/images/logo.png" alt="Stay Dripped Mobile IV" style="height: 40px; width: auto;">
-                </div>
-                <p>Transforming lives through premium wellness and personalized healthcare solutions.</p>
-            </div>
-            <div class="footer-section">
-                <h4>Services</h4>
-                <ul>
-                    <li><a href="iv-therapy.html">IV Therapy</a></li>
-                    <li><a href="injection-shots.html">Injection Shots</a></li>
-                    <li><a href="blood-testing.html">Blood Testing</a></li>
-                    <li><a href="weight-management.html">Weight Management</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="../membership.html">Membership</a></li>
-                    <li><a href="../corporate-events.html">Corporate Events</a></li>
-                    <li><a href="../franchise.html">Franchise</a></li>
-                    <li><a href="../partnerships.html">Partnerships</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Legal</h4>
-                <ul>
-                    <li><a href="../../privacy-policy.html">Privacy Policy</a></li>
-                    <li><a href="../../terms-of-service.html">Terms of Service</a></li>
-                    <li><a href="../../medical-disclaimer.html">Medical Disclaimer</a></li>
-                </ul>
-            </div>
+      <div class="footer-content">
+        <div class="footer-section">
+          <div class="footer-logo">
+            <img
+              src="../../assets/images/logo.png"
+              alt="Stay Dripped Mobile IV"
+              style="height: 40px; width: auto"
+            />
+          </div>
+          <p>
+            Transforming lives through premium wellness and personalized
+            healthcare solutions.
+          </p>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Stay Dripped® Mobile IV. All rights reserved.</p>
+        <div class="footer-section">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="iv-therapy.html">IV Therapy</a></li>
+            <li><a href="injection-shots.html">Injection Shots</a></li>
+            <li><a href="blood-testing.html">Blood Testing</a></li>
+            <li><a href="weight-management.html">Weight Management</a></li>
+          </ul>
         </div>
+        <div class="footer-section">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="../membership.html">Membership</a></li>
+            <li><a href="../corporate-events.html">Corporate Events</a></li>
+            <li><a href="../franchise.html">Franchise</a></li>
+            <li><a href="../partnerships.html">Partnerships</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="../../privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="../../terms-of-service.html">Terms of Service</a></li>
+            <li>
+              <a href="../../medical-disclaimer.html">Medical Disclaimer</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Stay Dripped® Mobile IV. All rights reserved.</p>
+      </div>
     </footer>
 
     <!-- JavaScript -->
     <script src="../../assets/js/bootstrap.min.js"></script>
     <script>
-        function openBookingModal() {
-            window.location.href = 'https://Staydripped.intakeq.com/booking';
+      function openBookingModal() {
+        window.location.href = "https://Staydripped.intakeq.com/booking";
+      }
+
+      function openExamModal() {
+        // Add exam modal functionality here
+        alert("First Time Patient Exam - Feature coming soon!");
+      }
+
+      // FAQ Toggle
+      document.querySelectorAll(".faq-item h3").forEach((header) => {
+        header.addEventListener("click", function () {
+          const item = this.parentElement;
+          const isActive = item.classList.contains("active");
+
+          // Close all FAQ items
+          document
+            .querySelectorAll(".faq-item")
+            .forEach((faq) => faq.classList.remove("active"));
+
+          // Toggle current item
+          if (!isActive) {
+            item.classList.add("active");
+          }
+        });
+      });
+
+      // Header scroll effect
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector(".header");
+        if (window.scrollY > 50) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
         }
+      });
 
-        function openExamModal() {
-            // Add exam modal functionality here
-            alert('First Time Patient Exam - Feature coming soon!');
-        }
-
-        // FAQ Toggle
-        document.querySelectorAll('.faq-item h3').forEach(header => {
-            header.addEventListener('click', function() {
-                const item = this.parentElement;
-                const isActive = item.classList.contains('active');
-                
-                // Close all FAQ items
-                document.querySelectorAll('.faq-item').forEach(faq => faq.classList.remove('active'));
-                
-                // Toggle current item
-                if (!isActive) {
-                    item.classList.add('active');
-                }
+      // Smooth scrolling for internal links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
             });
+          }
         });
+      });
 
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('.header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
+      // Animation on scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("fade-in-up");
+          }
         });
+      }, observerOptions);
 
-        // Smooth scrolling for internal links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in-up');
-                }
-            });
-        }, observerOptions);
-
-        // Observe elements for animation
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('.panel-card, .test-category, .process-step, .biomarker-category, .quality-item, .candidate-group, .faq-item').forEach(el => {
-                observer.observe(el);
-            });
-        });
+      // Observe elements for animation
+      document.addEventListener("DOMContentLoaded", function () {
+        document
+          .querySelectorAll(
+            ".panel-card, .test-category, .process-step, .biomarker-category, .quality-item, .candidate-group, .faq-item",
+          )
+          .forEach((el) => {
+            observer.observe(el);
+          });
+      });
     </script>
-</body>
+  </body>
 </html>

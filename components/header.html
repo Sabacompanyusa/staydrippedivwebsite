@@ -1,373 +1,444 @@
 <header class="header">
   <div class="header-container">
-  <div class="logo-section">
-    <a href="index.html" aria-label="Stay Dripped Home">
-      <img src="assets/images/logo.png" alt="Stay Dripped Logo" class="logo-image">
-    </a>
-  </div>
+    <div class="logo-section">
+      <a href="index.html" aria-label="Stay Dripped Home">
+        <img
+          src="assets/images/logo.png"
+          alt="Stay Dripped Logo"
+          class="logo-image"
+        />
+      </a>
+    </div>
 
-  <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation" aria-expanded="false">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-
-<nav class="nav-menu" id="navMenu">
-  <a href="#services" class="nav-link">Services</a>
-  <a href="pages/membership.html" class="nav-link">Memberships</a>
-  <a href="#faq" class="nav-link">FAQ</a>
-  <a href="#contact" class="nav-link">Contact</a>
-</nav>
-
-<div class="header-buttons">
-  <a href="tel:+16026889825" class="emergency-call-btn">
-    <i class="fas fa-phone"></i>
-    <span class="btn-text">Call Now</span>
-  </a>
-  <a href="https://Staydripped.intakeq.com/booking" target="_blank" alt="Make an Online Appointment">
-    <img style="height:45px;width:162px;" height="45" width="162" src="https://intakeq.com/images/booknow.png" />
-  </a>
-  <div id="main-qualiphy-widget" class="qualiphy-widget">
-    <button id="loadFormButton" class="qualiphy-button" onclick="showDisclosureModal()">
-      <span class="btn-text">Good Faith Exam</span>
+    <button
+      class="mobile-menu-toggle"
+      id="mobileMenuToggle"
+      aria-label="Toggle navigation"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
-  </div>
-</div>
 
-  <!-- Enhanced Patient Exam Modal -->
-  <div id="examModal" class="exam-modal-overlay" style="display: none;" role="dialog" aria-labelledby="examModalTitle" aria-describedby="examModalDesc">
-    <div class="exam-modal">
-      <div class="exam-modal-header">
-        <h3 id="examModalTitle">Good Faith Exam</h3>
-        <button class="exam-modal-close" aria-label="Close examination modal">&times;</button>
+    <nav class="nav-menu" id="navMenu">
+      <a href="#services" class="nav-link metallic-btn">Services</a>
+      <a href="pages/membership.html" class="nav-link metallic-btn"
+        >Memberships</a
+      >
+      <a href="#faq" class="nav-link metallic-btn">FAQ</a>
+      <a href="#contact" class="nav-link metallic-btn">Contact</a>
+    </nav>
+
+    <div class="header-buttons">
+      <a href="tel:+16026889825" class="emergency-call-btn">
+        <i class="fas fa-phone"></i>
+        <span class="btn-text">Call Now</span>
+      </a>
+      <a
+        href="https://Staydripped.intakeq.com/booking"
+        target="_blank"
+        rel="noopener noreferrer"
+        alt="Make an Online Appointment"
+      >
+        <img
+          style="height: 45px; width: 162px"
+          height="45"
+          width="162"
+          src="https://intakeq.com/images/booknow.png"
+        />
+      </a>
+      <div id="main-qualiphy-widget" class="qualiphy-widget">
+        <button
+          id="loadFormButton"
+          class="qualiphy-button"
+          onclick="showDisclosureModal()"
+        >
+          <span class="btn-text">Good Faith Exam</span>
+        </button>
       </div>
-      <div class="exam-modal-body">
-        <p id="examModalDesc">Welcome to Stay Dripped Mobile IV! Before your first treatment, our licensed medical professional will conduct a brief health assessment to ensure IV therapy is safe and appropriate for you.</p>
-        
-        <div class="exam-process">
-          <h4>What to Expect:</h4>
-          <ul>
-            <li><i class="fas fa-check" aria-hidden="true"></i> Review of medical history</li>
-            <li><i class="fas fa-check" aria-hidden="true"></i> Current health assessment</li>
-            <li><i class="fas fa-check" aria-hidden="true"></i> Vital signs check</li>
-            <li><i class="fas fa-check" aria-hidden="true"></i> Personalized treatment recommendation</li>
-            <li><i class="fas fa-check" aria-hidden="true"></i> Safety protocol review</li>
-          </ul>
-        </div>
+    </div>
 
-        <div class="exam-benefits">
-          <h4>Why This Matters:</h4>
-          <div class="benefits-list">
-            <div class="benefit-point">
-              <i class="fas fa-shield-alt" aria-hidden="true"></i>
-              <span>Ensures your safety and optimal treatment results</span>
-            </div>
-            <div class="benefit-point">
-              <i class="fas fa-user-md" aria-hidden="true"></i>
-              <span>Personalized care from licensed medical professionals</span>
-            </div>
-            <div class="benefit-point">
-              <i class="fas fa-clipboard-check" aria-hidden="true"></i>
-              <span>Meets all medical and regulatory requirements</span>
+    <!-- Enhanced Patient Exam Modal -->
+    <div
+      id="examModal"
+      class="exam-modal-overlay"
+      style="display: none"
+      role="dialog"
+      aria-labelledby="examModalTitle"
+      aria-describedby="examModalDesc"
+    >
+      <div class="exam-modal">
+        <div class="exam-modal-header">
+          <h3 id="examModalTitle">Good Faith Exam</h3>
+          <button class="exam-modal-close" aria-label="Close examination modal">
+            &times;
+          </button>
+        </div>
+        <div class="exam-modal-body">
+          <p id="examModalDesc">
+            Welcome to Stay Dripped Mobile IV! Before your first treatment, our
+            licensed medical professional will conduct a brief health assessment
+            to ensure IV therapy is safe and appropriate for you.
+          </p>
+
+          <div class="exam-process">
+            <h4>What to Expect:</h4>
+            <ul>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> Review of
+                medical history
+              </li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> Current health
+                assessment
+              </li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> Vital signs
+                check
+              </li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> Personalized
+                treatment recommendation
+              </li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> Safety protocol
+                review
+              </li>
+            </ul>
+          </div>
+
+          <div class="exam-benefits">
+            <h4>Why This Matters:</h4>
+            <div class="benefits-list">
+              <div class="benefit-point">
+                <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                <span>Ensures your safety and optimal treatment results</span>
+              </div>
+              <div class="benefit-point">
+                <i class="fas fa-user-md" aria-hidden="true"></i>
+                <span
+                  >Personalized care from licensed medical professionals</span
+                >
+              </div>
+              <div class="benefit-point">
+                <i class="fas fa-clipboard-check" aria-hidden="true"></i>
+                <span>Meets all medical and regulatory requirements</span>
+              </div>
             </div>
           </div>
-        </div>
-        
-        <div class="exam-actions">
-          <button class="exam-proceed-btn" onclick="proceedToExamBooking()" aria-describedby="examProceedDesc">
-            <i class="fas fa-calendar-plus" aria-hidden="true"></i>
-            Book Health Assessment
-          </button>
-          <button class="exam-call-btn" onclick="callForExam()" aria-describedby="examCallDesc">
-            <i class="fas fa-phone" aria-hidden="true"></i>
-            Call to Schedule
-          </button>
-        </div>
-        
-        <div class="exam-disclaimer">
-          <p><small><i class="fas fa-info-circle" aria-hidden="true"></i> This brief assessment takes 10-15 minutes and can be done at your location before your first IV treatment.</small></p>
+
+          <div class="exam-actions">
+            <button
+              class="exam-proceed-btn"
+              onclick="proceedToExamBooking()"
+              aria-describedby="examProceedDesc"
+            >
+              <i class="fas fa-calendar-plus" aria-hidden="true"></i>
+              Book Health Assessment
+            </button>
+            <button
+              class="exam-call-btn"
+              onclick="callForExam()"
+              aria-describedby="examCallDesc"
+            >
+              <i class="fas fa-phone" aria-hidden="true"></i>
+              Call to Schedule
+            </button>
+          </div>
+
+          <div class="exam-disclaimer">
+            <p>
+              <small
+                ><i class="fas fa-info-circle" aria-hidden="true"></i> This
+                brief assessment takes 10-15 minutes and can be done at your
+                location before your first IV treatment.</small
+              >
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
   </div>
 </header>
 
 <!-- Enhanced JavaScript for Exam Modal -->
 <script>
-(function() {
-  function initHeader() {
-  // Enhanced exam modal functionality
-  const examButton = document.getElementById('loadFormButton');
-  const examModal = document.getElementById('examModal');
-  const examModalClose = document.querySelector('.exam-modal-close');
-  const examModalOverlay = document.querySelector('.exam-modal-overlay');
-  
-  // Store the element that opened the modal for focus return
-  let modalTrigger = null;
-  
-  if (examButton) {
-    // Enhanced click event with loading states
-    examButton.addEventListener('click', function(event) {
-      event.preventDefault();
-      
-      // Add loading state
-      this.classList.add('loading');
-      this.disabled = true;
-      
-      // Small delay for UX
-      setTimeout(() => {
-        openExamModal();
-        this.classList.remove('loading');
-        this.disabled = false;
-      }, 300);
-      
-      // Analytics tracking
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'click', {
-          event_category: 'engagement',
-          event_label: 'first_time_patient_exam_header',
-          value: 1
+  (function () {
+    function initHeader() {
+      // Enhanced exam modal functionality
+      const examButton = document.getElementById("loadFormButton");
+      const examModal = document.getElementById("examModal");
+      const examModalClose = document.querySelector(".exam-modal-close");
+      const examModalOverlay = document.querySelector(".exam-modal-overlay");
+
+      // Store the element that opened the modal for focus return
+      let modalTrigger = null;
+
+      if (examButton) {
+        // Enhanced click event with loading states
+        examButton.addEventListener("click", function (event) {
+          event.preventDefault();
+
+          // Add loading state
+          this.classList.add("loading");
+          this.disabled = true;
+
+          // Small delay for UX
+          setTimeout(() => {
+            openExamModal();
+            this.classList.remove("loading");
+            this.disabled = false;
+          }, 300);
+
+          // Analytics tracking
+          if (typeof gtag !== "undefined") {
+            gtag("event", "click", {
+              event_category: "engagement",
+              event_label: "first_time_patient_exam_header",
+              value: 1,
+            });
+          }
+        });
+
+        // Enhanced keyboard support
+        examButton.addEventListener("keydown", function (event) {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            this.click();
+          }
         });
       }
-    });
-    
-    // Enhanced keyboard support
-    examButton.addEventListener('keydown', function(event) {
-      if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault();
-        this.click();
-      }
-    });
-  }
-  
-  // Open modal function
-  function openExamModal() {
-    if (examModal) {
-      modalTrigger = document.activeElement;
-      examModal.style.display = 'flex';
-      
-      // Force reflow then add active class for animation
-      examModal.offsetHeight;
-      examModal.classList.add('active');
-      
-      // Focus management
-      const firstFocusable = examModal.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-      if (firstFocusable) {
-        firstFocusable.focus();
-      }
-      
-      // Prevent body scroll
-      document.body.style.overflow = 'hidden';
-      
-      // Add escape key listener
-      document.addEventListener('keydown', handleEscapeKey);
-      
-      // Trap focus within modal
-      trapFocus(examModal);
-    }
-  }
-  
-  // Close modal function
-  function closeExamModal() {
-    if (examModal) {
-      examModal.classList.remove('active');
-      
-      setTimeout(() => {
-        examModal.style.display = 'none';
-        document.body.style.overflow = '';
-        
-        // Return focus to trigger element
-        if (modalTrigger) {
-          modalTrigger.focus();
-          modalTrigger = null;
-        }
-      }, 300);
-      
-      // Remove escape key listener
-      document.removeEventListener('keydown', handleEscapeKey);
-    }
-  }
-  
-  // Handle escape key
-  function handleEscapeKey(event) {
-    if (event.key === 'Escape') {
-      closeExamModal();
-    }
-  }
-  
-  // Trap focus within modal
-  function trapFocus(element) {
-    const focusableElements = element.querySelectorAll(
-      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-    );
-    const firstFocusable = focusableElements[0];
-    const lastFocusable = focusableElements[focusableElements.length - 1];
-    
-    element.addEventListener('keydown', function(e) {
-      if (e.key === 'Tab') {
-        if (e.shiftKey) {
-          if (document.activeElement === firstFocusable) {
-            lastFocusable.focus();
-            e.preventDefault();
-          }
-        } else {
-          if (document.activeElement === lastFocusable) {
+
+      // Open modal function
+      function openExamModal() {
+        if (examModal) {
+          modalTrigger = document.activeElement;
+          examModal.style.display = "flex";
+
+          // Force reflow then add active class for animation
+          examModal.offsetHeight;
+          examModal.classList.add("active");
+
+          // Focus management
+          const firstFocusable = examModal.querySelector(
+            'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+          );
+          if (firstFocusable) {
             firstFocusable.focus();
-            e.preventDefault();
           }
+
+          // Prevent body scroll
+          document.body.style.overflow = "hidden";
+
+          // Add escape key listener
+          document.addEventListener("keydown", handleEscapeKey);
+
+          // Trap focus within modal
+          trapFocus(examModal);
         }
       }
-    });
-  }
-  
-  // Close modal events
-  if (examModalClose) {
-    examModalClose.addEventListener('click', closeExamModal);
-  }
-  
-  if (examModalOverlay) {
-    examModalOverlay.addEventListener('click', function(e) {
-      if (e.target === examModalOverlay) {
-        closeExamModal();
-      }
-    });
-  }
-  
-  // Enhanced global functions for modal actions
-  window.proceedToExamBooking = function() {
-    // Track conversion
-    if (typeof gtag !== 'undefined') {
-      gtag('event', 'conversion', {
-        event_category: 'booking',
-        event_label: 'exam_booking_started',
-        value: 1
-      });
-    }
-    
-    closeExamModal();
-    
-    // Scroll to booking section if it exists
-    const bookingSection = document.getElementById('booking-section');
-    if (bookingSection) {
-      bookingSection.scrollIntoView({ behavior: 'smooth' });
-      
-      // Highlight the booking section briefly
-      bookingSection.style.boxShadow = '0 0 20px rgba(0, 188, 212, 0.5)';
-      setTimeout(() => {
-        bookingSection.style.boxShadow = '';
-      }, 2000);
-    } else {
-      // Fallback to external booking
-      window.open('https://staydripped.intakeq.com/booking', '_blank');
-    }
-  };
-  
-  window.callForExam = function() {
-    // Track phone call intent
-    if (typeof gtag !== 'undefined') {
-      gtag('event', 'click', {
-        event_category: 'contact',
-        event_label: 'exam_phone_call',
-        value: 1
-      });
-    }
-    
-    closeExamModal();
-    
-    // Use the phone number from your header
-    window.open('tel:+12345678900', '_self');
-  };
-  
-  // Initialize any existing Qualiphy or IntakeQ integrations
-  if (typeof showDisclosureModal !== 'undefined') {
-    // Override the default function if it exists
-    const originalFunction = window.showDisclosureModal;
-    window.showDisclosureModal = function() {
-      // Try to use the enhanced modal first
-      if (examModal) {
-        openExamModal();
-      } else {
-        // Fallback to original function
-        originalFunction();
-      }
-    };
-  } else {
-    // Create the function if it doesn't exist
-    window.showDisclosureModal = openExamModal;
-  }
 
-  // Header "Book Now" button scroll
-  const headerBookBtn = document.getElementById('headerBookBtn');
-  if (headerBookBtn) {
-    headerBookBtn.addEventListener('click', function() {
-      const bookingSection = document.getElementById('booking-section');
-      if (bookingSection) {
-        bookingSection.scrollIntoView({ behavior: 'smooth' });
-      } else {
-        window.location.href = 'index.html#booking-section';
+      // Close modal function
+      function closeExamModal() {
+        if (examModal) {
+          examModal.classList.remove("active");
+
+          setTimeout(() => {
+            examModal.style.display = "none";
+            document.body.style.overflow = "";
+
+            // Return focus to trigger element
+            if (modalTrigger) {
+              modalTrigger.focus();
+              modalTrigger = null;
+            }
+          }, 300);
+
+          // Remove escape key listener
+          document.removeEventListener("keydown", handleEscapeKey);
+        }
       }
 
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'click', {
-          event_category: 'cta',
-          event_label: 'header_book_now',
-          value: 1
+      // Handle escape key
+      function handleEscapeKey(event) {
+        if (event.key === "Escape") {
+          closeExamModal();
+        }
+      }
+
+      // Trap focus within modal
+      function trapFocus(element) {
+        const focusableElements = element.querySelectorAll(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+        );
+        const firstFocusable = focusableElements[0];
+        const lastFocusable = focusableElements[focusableElements.length - 1];
+
+        element.addEventListener("keydown", function (e) {
+          if (e.key === "Tab") {
+            if (e.shiftKey) {
+              if (document.activeElement === firstFocusable) {
+                lastFocusable.focus();
+                e.preventDefault();
+              }
+            } else {
+              if (document.activeElement === lastFocusable) {
+                firstFocusable.focus();
+                e.preventDefault();
+              }
+            }
+          }
         });
       }
-    });
-  }
-  
-  // Mobile menu toggle (existing functionality)
-  const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-  const navMenu = document.getElementById('navMenu');
-  
-  if (mobileMenuToggle && navMenu) {
-    mobileMenuToggle.addEventListener('click', function() {
-      const expanded = this.getAttribute('aria-expanded') === 'true';
-      this.classList.toggle('active');
-      navMenu.classList.toggle('active');
-      document.body.classList.toggle('menu-open');
-      this.setAttribute('aria-expanded', String(!expanded));
-    });
-  }
-  
-  // Header scroll effect
-  let lastScrollTop = 0;
-  const header = document.querySelector('.header');
-  
-  window.addEventListener('scroll', function() {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
-    if (scrollTop > lastScrollTop && scrollTop > 100) {
-      // Scrolling down
-      header.style.transform = 'translateY(-100%)';
-    } else {
-      // Scrolling up
-      header.style.transform = 'translateY(0)';
+
+      // Close modal events
+      if (examModalClose) {
+        examModalClose.addEventListener("click", closeExamModal);
+      }
+
+      if (examModalOverlay) {
+        examModalOverlay.addEventListener("click", function (e) {
+          if (e.target === examModalOverlay) {
+            closeExamModal();
+          }
+        });
+      }
+
+      // Enhanced global functions for modal actions
+      window.proceedToExamBooking = function () {
+        // Track conversion
+        if (typeof gtag !== "undefined") {
+          gtag("event", "conversion", {
+            event_category: "booking",
+            event_label: "exam_booking_started",
+            value: 1,
+          });
+        }
+
+        closeExamModal();
+
+        // Scroll to booking section if it exists
+        const bookingSection = document.getElementById("booking-section");
+        if (bookingSection) {
+          bookingSection.scrollIntoView({ behavior: "smooth" });
+
+          // Highlight the booking section briefly
+          bookingSection.style.boxShadow = "0 0 20px rgba(0, 188, 212, 0.5)";
+          setTimeout(() => {
+            bookingSection.style.boxShadow = "";
+          }, 2000);
+        } else {
+          // Fallback to external booking
+          window.open("https://staydripped.intakeq.com/booking", "_blank");
+        }
+      };
+
+      window.callForExam = function () {
+        // Track phone call intent
+        if (typeof gtag !== "undefined") {
+          gtag("event", "click", {
+            event_category: "contact",
+            event_label: "exam_phone_call",
+            value: 1,
+          });
+        }
+
+        closeExamModal();
+
+        // Use the phone number from your header
+        window.open("tel:+12345678900", "_self");
+      };
+
+      // Initialize any existing Qualiphy or IntakeQ integrations
+      if (typeof showDisclosureModal !== "undefined") {
+        // Override the default function if it exists
+        const originalFunction = window.showDisclosureModal;
+        window.showDisclosureModal = function () {
+          // Try to use the enhanced modal first
+          if (examModal) {
+            openExamModal();
+          } else {
+            // Fallback to original function
+            originalFunction();
+          }
+        };
+      } else {
+        // Create the function if it doesn't exist
+        window.showDisclosureModal = openExamModal;
+      }
+
+      // Header "Book Now" button scroll
+      const headerBookBtn = document.getElementById("headerBookBtn");
+      if (headerBookBtn) {
+        headerBookBtn.addEventListener("click", function () {
+          const bookingSection = document.getElementById("booking-section");
+          if (bookingSection) {
+            bookingSection.scrollIntoView({ behavior: "smooth" });
+          } else {
+            window.location.href = "index.html#booking-section";
+          }
+
+          if (typeof gtag !== "undefined") {
+            gtag("event", "click", {
+              event_category: "cta",
+              event_label: "header_book_now",
+              value: 1,
+            });
+          }
+        });
+      }
+
+      // Mobile menu toggle (existing functionality)
+      const mobileMenuToggle = document.getElementById("mobileMenuToggle");
+      const navMenu = document.getElementById("navMenu");
+
+      if (mobileMenuToggle && navMenu) {
+        mobileMenuToggle.addEventListener("click", function () {
+          const expanded = this.getAttribute("aria-expanded") === "true";
+          this.classList.toggle("active");
+          navMenu.classList.toggle("active");
+          document.body.classList.toggle("menu-open");
+          this.setAttribute("aria-expanded", String(!expanded));
+        });
+      }
+
+      // Header scroll effect
+      let lastScrollTop = 0;
+      const header = document.querySelector(".header");
+
+      window.addEventListener("scroll", function () {
+        const scrollTop =
+          window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollTop > lastScrollTop && scrollTop > 100) {
+          // Scrolling down
+          header.style.transform = "translateY(-100%)";
+        } else {
+          // Scrolling up
+          header.style.transform = "translateY(0)";
+        }
+
+        lastScrollTop = scrollTop;
+      });
     }
-    
-    lastScrollTop = scrollTop;
-  });
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initHeader);
+    } else {
+      initHeader();
+    }
+  })();
+
+  // Polyfill for older browsers
+  if (!Element.prototype.closest) {
+    Element.prototype.closest = function (s) {
+      var el = this;
+      do {
+        if (el.matches(s)) return el;
+        el = el.parentElement || el.parentNode;
+      } while (el !== null && el.nodeType === 1);
+      return null;
+    };
   }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initHeader);
-  } else {
-    initHeader();
-  }
-
-})();
-
-// Polyfill for older browsers
-if (!Element.prototype.closest) {
-  Element.prototype.closest = function(s) {
-    var el = this;
-    do {
-      if (el.matches(s)) return el;
-      el = el.parentElement || el.parentNode;
-    } while (el !== null && el.nodeType === 1);
-    return null;
-  };
-}
 </script>
