@@ -10,6 +10,7 @@
     transform: translateY(40px) scale(0.95);
     filter: blur(2px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -22,6 +23,7 @@
     opacity: 0;
     transform: translateX(-60px) rotateY(-15deg);
   }
+
   to {
     opacity: 1;
     transform: translateX(0) rotateY(0);
@@ -33,6 +35,7 @@
     opacity: 0;
     transform: translateX(60px) rotateY(15deg);
   }
+
   to {
     opacity: 1;
     transform: translateX(0) rotateY(0);
@@ -44,6 +47,7 @@
     opacity: 0;
     transform: scale(0.8) rotateZ(-5deg);
   }
+
   to {
     opacity: 1;
     transform: scale(1) rotateZ(0);
@@ -53,11 +57,12 @@
 @keyframes pulseGlow {
   0%,
   100% {
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+    box-shadow: 0 0 20px rgb(0 212 255 / 30%);
     transform: scale(1);
   }
+
   50% {
-    box-shadow: 0 0 40px rgba(0, 212, 255, 0.6);
+    box-shadow: 0 0 40px rgb(0 212 255 / 60%);
     transform: scale(1.02);
   }
 }
@@ -67,6 +72,7 @@
   100% {
     transform: translateY(0) rotateX(0deg);
   }
+
   50% {
     transform: translateY(-15px) rotateX(2deg);
   }
@@ -76,6 +82,7 @@
   0% {
     transform: translateX(-100%) skewX(-15deg);
   }
+
   100% {
     transform: translateX(200%) skewX(-15deg);
   }
@@ -86,6 +93,7 @@
   100% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
@@ -96,12 +104,15 @@
   100% {
     border-radius: var(--br-lg);
   }
+
   25% {
     border-radius: var(--br-xl) var(--br) var(--br-lg) var(--br);
   }
+
   50% {
     border-radius: var(--br);
   }
+
   75% {
     border-radius: var(--br) var(--br-xl) var(--br) var(--br-lg);
   }
@@ -109,12 +120,13 @@
 
 @keyframes textGlow {
   from {
-    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+    text-shadow: 0 0 10px rgb(0 212 255 / 50%);
   }
+
   to {
     text-shadow:
-      0 0 20px rgba(0, 212, 255, 0.8),
-      0 0 30px rgba(0, 212, 255, 0.4);
+      0 0 20px rgb(0 212 255 / 80%),
+      0 0 30px rgb(0 212 255 / 40%);
   }
 }
 
@@ -123,12 +135,15 @@
   100% {
     clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 85% 100%, 0% 100%);
   }
+
   25% {
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 70% 85%, 0% 100%);
   }
+
   50% {
     clip-path: polygon(0% 0%, 100% 0%, 85% 100%, 15% 100%, 0% 85%);
   }
+
   75% {
     clip-path: polygon(0% 15%, 100% 0%, 100% 100%, 0% 100%, 0% 70%);
   }
@@ -177,7 +192,7 @@
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.4),
+    rgb(255 255 255 / 40%),
     transparent
   );
   animation: shimmerPass 2s infinite;
@@ -208,8 +223,8 @@
 .hover-lift-rotate:hover {
   transform: translateY(-10px) rotateY(5deg) rotateX(5deg);
   box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.15),
-    0 0 30px rgba(0, 212, 255, 0.3);
+    0 20px 40px rgb(0 0 0 / 15%),
+    0 0 30px rgb(0 212 255 / 30%);
 }
 
 .hover-glow-expand {
@@ -223,9 +238,9 @@
   inset: -5px;
   background: linear-gradient(
     45deg,
-    rgba(0, 212, 255, 0.3),
-    rgba(0, 255, 204, 0.3),
-    rgba(0, 212, 255, 0.3)
+    rgb(0 212 255 / 30%),
+    rgb(0 255 204 / 30%),
+    rgb(0 212 255 / 30%)
   );
   border-radius: inherit;
   opacity: 0;
@@ -261,27 +276,35 @@
 .stagger-children > *:nth-child(1) {
   animation-delay: 0.1s;
 }
+
 .stagger-children > *:nth-child(2) {
   animation-delay: 0.2s;
 }
+
 .stagger-children > *:nth-child(3) {
   animation-delay: 0.3s;
 }
+
 .stagger-children > *:nth-child(4) {
   animation-delay: 0.4s;
 }
+
 .stagger-children > *:nth-child(5) {
   animation-delay: 0.5s;
 }
+
 .stagger-children > *:nth-child(6) {
   animation-delay: 0.6s;
 }
+
 .stagger-children > *:nth-child(7) {
   animation-delay: 0.7s;
 }
+
 .stagger-children > *:nth-child(8) {
   animation-delay: 0.8s;
 }
+
 .stagger-children > *:nth-child(9) {
   animation-delay: 0.9s;
 }
@@ -325,7 +348,7 @@
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.3),
+    rgb(255 255 255 / 30%),
     transparent
   );
   transition: left 0.6s ease;
