@@ -1,7 +1,7 @@
 // Service Worker for Stay Dripped Mobile IV
 // This service worker provides basic caching functionality
 
-const CACHE_NAME = "stay-dripped-v1";
+const CACHE_NAME = "stay-dripped-v2";
 const urlsToCache = [
   "/",
   "/assets/css/style.css",
@@ -9,6 +9,8 @@ const urlsToCache = [
   "/assets/css/animations.css",
   "/assets/js/main.js",
   "/assets/js/booking.js",
+  "/assets/js/globals.js",
+  "/assets/images/logo.png",
 ];
 
 // Install event
