@@ -1077,14 +1077,22 @@
       // Lazy load IntakeQ widget
       window.addEventListener("load", function () {
         if (!window.IntakeQ) {
-          const widgetId = document.querySelector(
+          const widgetIdMeta = document.querySelector(
             'meta[name="intakeq-widget-id"]',
-          ).content;
-          window.intakeq = widgetId;
-          const script = document.createElement("script");
-          script.src = "https://intakeq.com/js/widget.min.js?1";
-          script.async = true;
-          document.body.appendChild(script);
+          );
+          if (widgetIdMeta && widgetIdMeta.content) {
+            const widgetId = widgetIdMeta.content;
+            window.intakeq = widgetId;
+            const script = document.createElement("script");
+            script.src = "https://intakeq.com/js/widget.min.js?1";
+            script.async = true;
+            script.onerror = function () {
+              console.error("Failed to load IntakeQ widget script");
+            };
+            document.body.appendChild(script);
+          } else {
+            console.error("IntakeQ widget ID meta tag not found");
+          }
         }
       });
 
