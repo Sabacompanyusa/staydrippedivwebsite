@@ -654,14 +654,36 @@
     <!-- External CSS (deferred) -->
     <link
       rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
       as="style"
       onload="this.onload=null;this.rel='stylesheet'"
     />
     <noscript
       ><link
         rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    /></noscript>
+
+    <!-- Premium Animations (deferred) -->
+    <link
+      rel="preload"
+      href="assets/css/premium-animations.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link rel="stylesheet" href="assets/css/premium-animations.css"
+    /></noscript>
+
+    <!-- Premium Responsive (deferred) -->
+    <link
+      rel="preload"
+      href="assets/css/premium-responsive.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link rel="stylesheet" href="assets/css/premium-responsive.css"
     /></noscript>
   </head>
   <body>
@@ -712,155 +734,197 @@
       <!-- Services Section -->
       <section
         id="services"
-        class="services fade-in"
+        class="services fade-in stagger-children"
         aria-labelledby="services-heading"
         class="services-section"
       >
         <div class="container">
-          <h2 id="services-heading">Our Premium Services</h2>
-          <p class="section-subtitle">
+          <h2 id="services-heading" class="animate-premium-fade-in">
+            Our Premium Services
+          </h2>
+          <p class="section-subtitle animate-premium-fade-in">
             Comprehensive wellness treatments designed to optimize your health,
             energy, and performance through cutting-edge therapies.
           </p>
           <div class="service-cards">
-            <div class="card">
+            <div
+              class="card service-card hover-lift-rotate animate-float-gentle"
+            >
               <h3>IV Therapy Treatments</h3>
               <p>
                 Fast, effective hydration and vitamin replenishment for
                 immediate wellness boost and recovery.
               </p>
-              <a href="pages/iv-therapy.html" class="service-btn"
+              <a href="pages/iv-therapy.html" class="service-btn premium-btn"
                 >View Options</a
               >
             </div>
 
-            <div class="card">
+            <div
+              class="card service-card hover-lift-rotate animate-float-gentle"
+            >
               <h3>NAD⁺ Therapy Treatments</h3>
               <p>
                 Revolutionary cellular regeneration therapy to boost cognitive
                 function, energy, and anti-aging benefits.
               </p>
-              <a href="pages/nad-therapy.html" class="service-btn"
+              <a href="pages/nad-therapy.html" class="service-btn premium-btn"
                 >View Options</a
               >
             </div>
 
-            <div class="card">
+            <div
+              class="card service-card hover-lift-rotate animate-float-gentle"
+            >
               <h3>Peptide Therapy Treatments</h3>
               <p>
                 Advanced peptide protocols to promote healing, optimize
                 hormones, and enhance overall performance.
               </p>
-              <a href="pages/peptide-therapy.html" class="service-btn"
+              <a
+                href="pages/peptide-therapy.html"
+                class="service-btn premium-btn"
                 >View Options</a
               >
             </div>
 
-            <div class="card">
+            <div
+              class="card service-card hover-lift-rotate animate-float-gentle"
+            >
               <h3>Micronutrient Treatments</h3>
               <p>
                 Targeted vitamins, minerals, amino acids, and antioxidants
                 precisely tailored to your body's unique needs.
               </p>
-              <a href="pages/micronutrient.html" class="service-btn"
+              <a href="pages/micronutrient.html" class="service-btn premium-btn"
                 >View Options</a
               >
             </div>
 
-            <div class="card">
+            <div
+              class="card service-card hover-lift-rotate animate-float-gentle"
+            >
               <h3>Vitamin Injection Shots</h3>
               <p>
                 Fast-acting intramuscular shots for energy enhancement, immune
                 support, fat burning, and more.
               </p>
-              <a href="pages/injection-shots.html" class="service-btn"
+              <a
+                href="pages/injection-shots.html"
+                class="service-btn premium-btn"
                 >View Options</a
               >
             </div>
 
-            <div class="card">
+            <div
+              class="card service-card hover-lift-rotate animate-float-gentle"
+            >
               <h3>Weight Management Therapy</h3>
               <p>
                 Custom peptide and IV-based protocols for sustained, healthy
                 weight loss and metabolic optimization.
               </p>
-              <a href="pages/weight-management.html" class="service-btn"
+              <a
+                href="pages/weight-management.html"
+                class="service-btn premium-btn"
                 >View Options</a
               >
             </div>
 
-            <div class="card">
+            <div
+              class="card service-card hover-lift-rotate animate-float-gentle"
+            >
               <h3>Aesthetic Treatments</h3>
               <p>
                 Skin rejuvenation, anti-aging, Botox, Fillers and injection
                 therapies for radiant wellness.
               </p>
-              <a href="pages/aesthetic.html" class="service-btn"
+              <a href="pages/aesthetic.html" class="service-btn premium-btn"
                 >View Options</a
               >
             </div>
 
-            <div class="card">
+            <div
+              class="card service-card hover-lift-rotate animate-float-gentle"
+            >
               <h3>Mobile Cold Plunge Services</h3>
               <p>
                 Mobile cold plunge services straight to your door or for your
                 events! Helps to reduce inflammation, improve recovery, and
                 enhance mental clarity.
               </p>
-              <a href="pages/mobile-cold-plunge.html" class="service-btn"
+              <a
+                href="pages/mobile-cold-plunge.html"
+                class="service-btn premium-btn"
                 >View Options</a
               >
             </div>
 
-            <div class="card">
+            <div
+              class="card service-card hover-lift-rotate animate-float-gentle"
+            >
               <h3>Hormone Replacement Therapy</h3>
               <p>
                 BHRT for men and women to restore energy, libido, and hormonal
                 balance for optimal vitality.
               </p>
-              <a href="pages/hormone-replacement.html" class="service-btn"
+              <a
+                href="pages/hormone-replacement.html"
+                class="service-btn premium-btn"
                 >View Options</a
               >
             </div>
 
-            <div class="card">
+            <div
+              class="card service-card hover-lift-rotate animate-float-gentle"
+            >
               <h3>Partnerships & Sponsorships</h3>
               <p>
                 Collaborate with our wellness brand at events, media campaigns,
                 and sponsorship & promotional opportunities.
               </p>
-              <a href="pages/partnerships.html" class="service-btn"
+              <a href="pages/partnerships.html" class="service-btn premium-btn"
                 >Learn More</a
               >
             </div>
 
-            <div class="card">
+            <div
+              class="card service-card hover-lift-rotate animate-float-gentle"
+            >
               <h3>Private Group & Corporate Events</h3>
               <p>
                 Host wellness experiences on-site with full IV therapy and
                 recovery stations for your team.
               </p>
-              <a href="pages/corporate-events.html" class="service-btn"
+              <a
+                href="pages/corporate-events.html"
+                class="service-btn premium-btn"
                 >Learn More</a
               >
             </div>
 
-            <div class="card">
+            <div
+              class="card service-card hover-lift-rotate animate-float-gentle"
+            >
               <h3>Individual & Family Memberships</h3>
               <p>
                 Save on treatments with monthly wellness plans designed for
                 singles, couples, and families.
               </p>
-              <a href="pages/membership.html" class="service-btn">View Plans</a>
+              <a href="pages/membership.html" class="service-btn premium-btn"
+                >View Plans</a
+              >
             </div>
 
-            <div class="card">
+            <div
+              class="card service-card hover-lift-rotate animate-float-gentle"
+            >
               <h3>At Home Blood Testing Kits & Consultations</h3>
               <p>
                 Convenient blood testing kits delivered to your home with expert
                 consultation on results.
               </p>
-              <a href="pages/blood-testing.html" class="service-btn"
+              <a href="pages/blood-testing.html" class="service-btn premium-btn"
                 >Learn More</a
               >
             </div>
@@ -1158,6 +1222,9 @@
         }
       });
     </script>
+
+    <!-- Premium Interactions Script -->
+    <script src="assets/js/premium-interactions.js" defer></script>
 
     <!-- Structured Data -->
     <script type="application/ld+json">
