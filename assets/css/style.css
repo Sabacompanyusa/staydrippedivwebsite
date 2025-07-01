@@ -4,12 +4,18 @@
    Enhanced with Vibrant Colors & Typography
    ============================================== */
 
-/* Enhanced CSS Variables with Metallic/Industrial Design */
+/* Enhanced CSS Variables with Metallic/Industrial Design + Premium Color Palette */
 :root {
+  /* Premium Cyan Brand Colors - Enhanced Stay Dripped Palette */
+  --primary: #00d4ff; /* Vibrant cyan */
+  --primary-dark: #0099cc; /* Deep cyan */
+  --primary-light: #66e0ff; /* Light cyan */
+  --secondary: #1a1a1a; /* Dark steel */
+  --accent: #00ffcc; /* Neon mint */
+  --accent-warm: #ff6b35; /* Energetic orange */
+  --accent-purple: #8b5cf6; /* Modern purple */
+
   /* Metallic Brand Colors - Steel, Chrome, Silver Tones */
-  --primary: #1a1a1a; /* Dark steel */
-  --secondary: #4a5568; /* Medium steel gray */
-  --accent: #718096; /* Light steel */
   --chrome: #e2e8f0; /* Chrome finish */
   --silver: #cbd5e1; /* Polished silver */
   --platinum: #f7fafc; /* Platinum white */
@@ -17,72 +23,103 @@
   --iron: #4a5568; /* Iron gray */
   --titanium: #a0aec0; /* Titanium light */
 
-  /* Metallic Text Colors */
-  --text-dark: #1a202c; /* Dark charcoal */
-  --text-medium: #2d3748; /* Steel gray */
-  --text-light: #4a5568; /* Medium steel */
-  --text-muted: #718096; /* Light steel */
+  /* Enhanced Text Colors with Better Hierarchy */
+  --text-dark: #0f172a; /* Rich dark blue */
+  --text-medium: #334155; /* Slate gray */
+  --text-light: #64748b; /* Cool gray */
+  --text-muted: #94a3b8; /* Light slate */
   --text-white: #ffffff;
   --text-chrome: #e2e8f0; /* Chrome text */
+  --text-cyan: #06b6d4; /* Cyan text accent */
 
-  /* Industrial Background Colors */
-  --bg-dark: #1a1a1a; /* Dark metal */
-  --bg-medium: #2d3748; /* Medium steel */
-  --bg-light: #f7fafc; /* Light aluminum */
-  --bg-chrome: #edf2f7; /* Chrome surface */
+  /* Modern Background Colors */
+  --bg-dark: #0f172a; /* Rich dark */
+  --bg-medium: #1e293b; /* Dark slate */
+  --bg-light: #f8fafc; /* Soft white */
+  --bg-chrome: #f1f5f9; /* Light chrome */
+  --bg-gradient-primary: linear-gradient(
+    135deg,
+    #00d4ff 0%,
+    #0099cc 50%,
+    #006699 100%
+  );
+  --bg-gradient-surface: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
   --white: #ffffff;
 
-  /* Metallic Shadows and Effects */
-  --shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  --shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.25);
-  --shadow-lg: 0 16px 64px rgba(0, 0, 0, 0.2);
-  --shadow-inset: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Premium Shadows and Effects */
+  --shadow: 0 4px 20px rgba(0, 212, 255, 0.08);
+  --shadow-hover: 0 12px 40px rgba(0, 212, 255, 0.15);
+  --shadow-lg: 0 20px 64px rgba(0, 212, 255, 0.12);
+  --shadow-xl: 0 32px 80px rgba(0, 0, 0, 0.15);
+  --shadow-inset: inset 0 2px 4px rgba(0, 0, 0, 0.06);
   --shadow-metal:
-    0 4px 16px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    0 8px 32px rgba(0, 0, 0, 0.12), 0 4px 16px rgba(0, 212, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
   --shadow-chrome:
-    0 2px 8px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    0 4px 16px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  --shadow-cyan: 0 0 40px rgba(0, 212, 255, 0.3);
+  --shadow-glow: 0 0 60px rgba(0, 212, 255, 0.4);
 
-  /* Sharp Industrial Border Radius */
-  --br: 8px; /* Sharp modern edges */
-  --br-lg: 12px;
-  --br-xl: 16px;
+  /* Modern Border Radius */
+  --br: 12px; /* Modern rounded edges */
+  --br-sm: 8px;
+  --br-lg: 16px;
+  --br-xl: 24px;
+  --br-full: 9999px;
 
-  /* Precise Transitions */
-  --transition: all 0.2s ease-out;
-  --transition-fast: all 0.1s ease;
-  --transition-smooth: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* Smooth Transitions */
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: all 0.15s ease;
+  --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-bounce: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
-  /* Metallic Gradients */
+  /* Premium Gradients */
   --gradient-chrome: linear-gradient(
     145deg,
-    #f7fafc 0%,
-    #edf2f7 50%,
-    #e2e8f0 100%
+    #ffffff 0%,
+    #f8fafc 50%,
+    #f1f5f9 100%
+  );
+  --gradient-cyan: linear-gradient(
+    135deg,
+    #00d4ff 0%,
+    #0099cc 50%,
+    #006699 100%
+  );
+  --gradient-mint: linear-gradient(
+    135deg,
+    #00ffcc 0%,
+    #00cc99 50%,
+    #009966 100%
+  );
+  --gradient-surface: linear-gradient(
+    145deg,
+    #ffffff 0%,
+    #f8fafc 30%,
+    #f1f5f9 100%
   );
   --gradient-steel: linear-gradient(
     145deg,
-    #2d3748 0%,
-    #4a5568 50%,
-    #718096 100%
+    #334155 0%,
+    #475569 50%,
+    #64748b 100%
   );
-  --gradient-silver: linear-gradient(
+  --gradient-dark: linear-gradient(
     145deg,
-    #cbd5e1 0%,
-    #e2e8f0 50%,
-    #f7fafc 100%
+    #0f172a 0%,
+    #1e293b 50%,
+    #334155 100%
   );
-  --gradient-dark: linear-gradient(145deg, #1a202c 0%, #2d3748 100%);
-  --gradient-titanium: linear-gradient(
-    145deg,
-    #a0aec0 0%,
-    #cbd5e1 50%,
-    #e2e8f0 100%
-  );
-  --gradient-metal-shine: linear-gradient(
+  --gradient-shine: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.3),
     transparent
+  );
+  --gradient-glow: radial-gradient(
+    circle at center,
+    rgba(0, 212, 255, 0.15) 0%,
+    transparent 70%
   );
 
   /* Enhanced Typography Scale */
@@ -124,19 +161,24 @@
    SHARED METALLIC BUTTON BASE CLASS
    ============================================= */
 
-/* Base metallic button styling */
+/* Premium Button Base Styling */
+.premium-btn,
 .metallic-btn {
-  background: var(--gradient-steel);
-  color: var(--text-chrome);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--gradient-cyan);
+  color: var(--text-white);
+  border: 2px solid rgba(0, 212, 255, 0.3);
   box-shadow: var(--shadow-metal);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   border-radius: var(--br);
   transition: var(--transition-smooth);
   position: relative;
   overflow: hidden;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  backdrop-filter: blur(10px);
 }
 
+.premium-btn::before,
 .metallic-btn::before {
   content: "";
   position: absolute;
@@ -144,23 +186,102 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: var(--gradient-metal-shine);
-  transition: left 0.6s ease;
+  background: var(--gradient-shine);
+  transition: left 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   z-index: 1;
 }
 
+.premium-btn::after,
+.metallic-btn::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: inherit;
+  border-radius: calc(var(--br) - 2px);
+  z-index: 0;
+}
+
+.premium-btn:hover::before,
 .metallic-btn:hover::before {
   left: 100%;
 }
 
+.premium-btn:hover,
 .metallic-btn:hover {
-  background: var(--gradient-titanium);
+  background: var(--gradient-mint);
   color: var(--text-dark);
   box-shadow:
-    var(--shadow-hover),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    var(--shadow-glow),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
   text-shadow: none;
-  border-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(0, 255, 204, 0.5);
+  transform: translateY(-3px) scale(1.02);
+}
+
+.premium-btn:active,
+.metallic-btn:active {
+  transform: translateY(-1px) scale(1.01);
+  box-shadow: var(--shadow-cyan);
+}
+
+/* Enhanced Service Cards */
+.service-card,
+.card {
+  background: var(--gradient-surface);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: var(--br-lg);
+  box-shadow: var(--shadow-chrome);
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.service-card::before,
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--gradient-shine);
+  opacity: 0.8;
+}
+
+.service-card::after,
+.card::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: var(--gradient-glow);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.service-card:hover,
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow:
+    var(--shadow-xl),
+    0 0 40px rgba(0, 212, 255, 0.2);
+  border-color: rgba(0, 212, 255, 0.3);
+}
+
+.service-card:hover::after,
+.card:hover::after {
+  opacity: 1;
+}
+
+.service-card > *,
+.card > * {
+  position: relative;
+  z-index: 2;
 }
 
 /* =============================================
