@@ -1107,6 +1107,9 @@
             const script = document.createElement("script");
             script.src = "https://static.elfsight.com/platform/platform.js";
             script.async = true;
+            script.onerror = function () {
+              console.error("Failed to load Elfsight testimonials script");
+            };
             document.body.appendChild(script);
             testimonialObserver.disconnect();
           }
