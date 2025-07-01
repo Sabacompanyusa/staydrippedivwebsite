@@ -12,7 +12,7 @@
 }
 
 /* Responsive Typography Scale */
-@media (min-width: 320px) {
+@media (width >= 320px) {
   html {
     font-size: 14px;
   }
@@ -22,13 +22,13 @@
   }
 }
 
-@media (min-width: 375px) {
+@media (width >= 375px) {
   html {
     font-size: 15px;
   }
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   html {
     font-size: 16px;
   }
@@ -42,13 +42,13 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (width >= 1024px) {
   :root {
     --section-padding: 8rem 2rem;
   }
 }
 
-@media (min-width: 1200px) {
+@media (width >= 1200px) {
   .container {
     padding: 0 3rem;
   }
@@ -61,27 +61,27 @@
   grid-template-columns: 1fr;
 }
 
-@media (min-width: 640px) {
+@media (width >= 640px) {
   .service-cards {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .service-cards {
     gap: 2rem;
   }
 }
 
-@media (min-width: 1024px) {
+@media (width >= 1024px) {
   .service-cards {
     grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
   }
 }
 
-@media (min-width: 1440px) {
+@media (width >= 1440px) {
   .service-cards {
     grid-template-columns: repeat(4, 1fr);
     gap: 3rem;
@@ -96,13 +96,13 @@
   padding: 4rem 0;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .hero {
     padding: 6rem 0;
   }
 }
 
-@media (min-width: 1024px) {
+@media (width >= 1024px) {
   .hero {
     padding: 8rem 0;
   }
@@ -115,21 +115,21 @@
   padding: 2rem;
 }
 
-@media (min-width: 640px) {
+@media (width >= 640px) {
   .hero-content {
     max-width: 85%;
     padding: 2.5rem;
   }
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .hero-content {
     max-width: 800px;
     padding: 3rem;
   }
 }
 
-@media (min-width: 1024px) {
+@media (width >= 1024px) {
   .hero-content {
     padding: 4rem;
   }
@@ -142,7 +142,7 @@
   margin-bottom: 1rem;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .hero h1 {
     font-size: clamp(2.5rem, 6vw, 3.5rem);
     margin-bottom: 1.5rem;
@@ -154,7 +154,7 @@
   margin-bottom: 2rem;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .hero p {
     margin-bottom: 2.5rem;
   }
@@ -176,7 +176,7 @@
   margin-right: auto;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .section-subtitle {
     margin-bottom: 3rem;
     max-width: 800px;
@@ -201,7 +201,7 @@
   border: none;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .btn,
   .premium-btn,
   .service-btn {
@@ -223,14 +223,14 @@
   flex-direction: column;
 }
 
-@media (min-width: 640px) {
+@media (width >= 640px) {
   .card,
   .service-card {
     padding: 2rem;
   }
 }
 
-@media (min-width: 1024px) {
+@media (width >= 1024px) {
   .card,
   .service-card {
     padding: 2.5rem;
@@ -258,7 +258,7 @@ nav {
   padding: 1rem 0;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   nav {
     padding: 1.25rem 0;
   }
@@ -269,7 +269,7 @@ nav {
   gap: 1rem;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .nav-links {
     display: flex;
     gap: 2rem;
@@ -290,7 +290,7 @@ nav {
 .mobile-menu-toggle {
   display: block;
   background: var(--gradient-surface);
-  border: 1px solid rgba(0, 212, 255, 0.2);
+  border: 1px solid rgb(0 212 255 / 20%);
   padding: 0.75rem;
   border-radius: var(--br);
   font-size: 1.25rem;
@@ -299,7 +299,7 @@ nav {
   box-shadow: var(--shadow);
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .mobile-menu-toggle {
     display: none;
   }
@@ -320,14 +320,14 @@ nav {
   margin-bottom: 2rem;
 }
 
-@media (min-width: 640px) {
+@media (width >= 640px) {
   .footer-content {
     grid-template-columns: repeat(2, 1fr);
     gap: 3rem;
   }
 }
 
-@media (min-width: 1024px) {
+@media (width >= 1024px) {
   .footer-content {
     grid-template-columns: repeat(4, 1fr);
     gap: 4rem;
@@ -335,7 +335,7 @@ nav {
 }
 
 /* Enhanced Animations for Mobile */
-@media (max-width: 767px) {
+@media (width <= 767px) {
   .hover-lift-rotate:hover {
     transform: translateY(-3px) scale(1.02);
   }
@@ -378,14 +378,14 @@ nav {
   height: 200px;
 }
 
-@media (min-width: 640px) {
+@media (width >= 640px) {
   .loading-card {
     padding: 2rem;
     height: 250px;
   }
 }
 
-@media (min-width: 1024px) {
+@media (width >= 1024px) {
   .loading-card {
     padding: 2.5rem;
     height: 300px;
@@ -419,7 +419,7 @@ nav {
   .btn,
   .premium-btn,
   .service-btn {
-    border: 2px solid currentColor;
+    border: 2px solid currentcolor;
   }
 }
 
@@ -466,13 +466,13 @@ nav {
 }
 
 /* Viewport-Specific Optimizations */
-@media (min-height: 800px) {
+@media (height >= 800px) {
   .hero {
     min-height: 90vh;
   }
 }
 
-@media (max-height: 600px) and (orientation: landscape) {
+@media (height <= 600px) and (orientation: landscape) {
   .hero {
     min-height: auto;
     padding: 2rem 0;
@@ -487,11 +487,11 @@ nav {
 .btn:focus-visible,
 .premium-btn:focus-visible,
 .service-btn:focus-visible {
-  outline: 3px solid rgba(0, 212, 255, 0.5);
+  outline: 3px solid rgb(0 212 255 / 50%);
   outline-offset: 2px;
 }
 
 .nav-links a:focus-visible {
-  outline: 2px solid rgba(0, 212, 255, 0.5);
+  outline: 2px solid rgb(0 212 255 / 50%);
   outline-offset: 2px;
 }
