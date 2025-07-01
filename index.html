@@ -1135,6 +1135,28 @@
           }
         };
       }
+
+      // Global error handling for unhandled promise rejections
+      window.addEventListener("unhandledrejection", function (event) {
+        console.error("Unhandled promise rejection:", event.reason);
+        event.preventDefault(); // Prevent default browser error handling
+      });
+
+      // Global error handling for script errors
+      window.addEventListener("error", function (event) {
+        if (event.message === "Script error.") {
+          console.error(
+            "Cross-origin script error detected. This is usually due to external scripts.",
+          );
+        } else {
+          console.error(
+            "JavaScript error:",
+            event.message,
+            "at",
+            event.filename + ":" + event.lineno,
+          );
+        }
+      });
     </script>
 
     <!-- Structured Data -->
