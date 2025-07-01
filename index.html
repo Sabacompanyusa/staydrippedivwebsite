@@ -30,7 +30,7 @@
     />
     <meta
       property="og:image"
-      content="https://staydripped.com/assets/images/og-image.jpg"
+      content="https://staydripped.com/assets/images/logo.png"
     />
 
     <!-- Twitter -->
@@ -45,8 +45,12 @@
     />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/apple-touch-icon.png"
+    />
 
     <!-- IntakeQ Configuration -->
     <meta name="intakeq-widget-id" content="68460f36bc104b6aa9da43e0" />
@@ -1035,12 +1039,15 @@
     <!-- Optimized Scripts -->
     <script>
       // Mobile menu toggle
-      document
-        .querySelector(".mobile-menu-toggle")
-        .addEventListener("click", function () {
+      const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+      if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener("click", function () {
           const navLinks = document.querySelector(".nav-links");
-          navLinks.classList.toggle("active");
+          if (navLinks) {
+            navLinks.classList.toggle("active");
+          }
         });
+      }
 
       // Smooth scrolling
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -1059,24 +1066,37 @@
           window.IntakeQ.open();
         } else {
           // Fallback if widget not loaded
-          const widgetId = document.querySelector(
+          const widgetIdMeta = document.querySelector(
             'meta[name="intakeq-widget-id"]',
-          ).content;
-          window.open(`https://intakeq.com/booking/${widgetId}`, "_blank");
+          );
+          if (widgetIdMeta && widgetIdMeta.content) {
+            const widgetId = widgetIdMeta.content;
+            window.open(`https://intakeq.com/booking/${widgetId}`, "_blank");
+          } else {
+            console.error("IntakeQ widget ID not found");
+          }
         }
       }
 
       // Lazy load IntakeQ widget
       window.addEventListener("load", function () {
         if (!window.IntakeQ) {
-          const widgetId = document.querySelector(
+          const widgetIdMeta = document.querySelector(
             'meta[name="intakeq-widget-id"]',
-          ).content;
-          window.intakeq = widgetId;
-          const script = document.createElement("script");
-          script.src = "https://intakeq.com/js/widget.min.js?1";
-          script.async = true;
-          document.body.appendChild(script);
+          );
+          if (widgetIdMeta && widgetIdMeta.content) {
+            const widgetId = widgetIdMeta.content;
+            window.intakeq = widgetId;
+            const script = document.createElement("script");
+            script.src = "https://intakeq.com/js/widget.min.js?1";
+            script.async = true;
+            script.onerror = function () {
+              console.error("Failed to load IntakeQ widget script");
+            };
+            document.body.appendChild(script);
+          } else {
+            console.error("IntakeQ widget ID meta tag not found");
+          }
         }
       });
 
@@ -1087,6 +1107,9 @@
             const script = document.createElement("script");
             script.src = "https://static.elfsight.com/platform/platform.js";
             script.async = true;
+            script.onerror = function () {
+              console.error("Failed to load Elfsight testimonials script");
+            };
             document.body.appendChild(script);
             testimonialObserver.disconnect();
           }
@@ -1097,6 +1120,43 @@
       if (testimonialSection) {
         testimonialObserver.observe(testimonialSection);
       }
+
+      // Global fallback function for showDisclosureModal
+      if (typeof window.showDisclosureModal === "undefined") {
+        window.showDisclosureModal = function () {
+          console.log(
+            "Good Faith Exam modal function not yet loaded. Please try again in a moment.",
+          );
+          // Try to redirect to booking as fallback
+          if (typeof openBookingWidget === "function") {
+            openBookingWidget();
+          } else {
+            window.open("https://Staydripped.intakeq.com/booking", "_blank");
+          }
+        };
+      }
+
+      // Global error handling for unhandled promise rejections
+      window.addEventListener("unhandledrejection", function (event) {
+        console.error("Unhandled promise rejection:", event.reason);
+        event.preventDefault(); // Prevent default browser error handling
+      });
+
+      // Global error handling for script errors
+      window.addEventListener("error", function (event) {
+        if (event.message === "Script error.") {
+          console.error(
+            "Cross-origin script error detected. This is usually due to external scripts.",
+          );
+        } else {
+          console.error(
+            "JavaScript error:",
+            event.message,
+            "at",
+            event.filename + ":" + event.lineno,
+          );
+        }
+      });
     </script>
 
     <!-- Structured Data -->
