@@ -919,14 +919,6 @@
     </style>
   </head>
   <body>
-    <!-- Back Button -->
-    <div class="back-button-container">
-      <a href="../index.html" class="back-button">
-        <i class="fas fa-arrow-left"></i>
-        <span>Back to Home</span>
-      </a>
-    </div>
-
     <!-- Scroll Progress Indicator -->
     <div class="scroll-indicator"></div>
 
@@ -951,10 +943,30 @@
             <i class="fas fa-phone"></i>
             Emergency: (555) 123-4567
           </button>
-          <button class="exam-btn">
-            <i class="fas fa-user-md exam-btn-icon"></i>
-            <span class="exam-btn-text">First Time Patient Exam</span>
-          </button>
+          <div
+            id="loadFormButton"
+            style="
+              width: 200px;
+              height: 45px;
+              cursor: pointer;
+              background-color: #cfc9ff;
+              color: #0a005b;
+              border: none;
+              border-radius: 5px;
+              font-weight: 600;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              gap: 0.5rem;
+            "
+            onmouseover="this.style.backgroundColor='#8058fa'; this.style.color='white'"
+            onmouseout="this.style.backgroundColor='#CFC9FF'; this.style.color='#0A005B'"
+            onclick="showDisclosureModal()"
+          >
+            <i class="fas fa-user-md"></i>
+            <span>First Time Patient Exam</span>
+          </div>
+          <p style="display: none" id="not-available">Not available!</p>
         </div>
       </div>
     </header>
@@ -1546,5 +1558,16 @@
           window.location.href = "tel:5551234567";
         });
     </script>
+
+    <!-- Qualiphy GFE Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script
+      id="qualiphy-script"
+      type="text/javascript"
+      src="https://www.app.qualiphy.me/scripts/quidget_disclosure.js"
+      data-formsrc="https://www.app.qualiphy.me/qualiphy-widget?clinic=Stay Dripped Mobile IV LLC&clinicId=3454&first_name=&last_name=&email=&phone_number=&gender=&exams=918,2095,2097,2246,2316,2120,2315,2129,1620,2130,1623,2248,1148,1693,2122,1287,1694,2207&tele_state_required=true&token=25f1c2618e146d725e934313417e918418a5068e"
+      data-timezone="-6"
+      data-examhours='[{"SUN":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"MON":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"TUE":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"WED":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"THU":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"FRI":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"SAT":{"FROM":"00:00","TO":"23:59","isDaySelected":true}}]'
+    ></script>
   </body>
 </html>

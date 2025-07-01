@@ -1,30 +1,111 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Franchise Opportunities - Join the Stay Dripped Mobile IV Family
-    </title>
-    <meta
-      name="description"
-      content="Discover lucrative franchise opportunities with Stay Dripped Mobile IV. Join the booming mobile wellness industry with proven business model and comprehensive support."
-    />
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Franchise Opportunities - Join the Stay Dripped Mobile IV Family</title>
+    <meta name="description" content="Discover lucrative franchise opportunities with Stay Dripped Mobile IV. Join the booming mobile wellness industry with proven business model and comprehensive support.">
+    
     <!-- Favicons -->
-    <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="../assets/images/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="../assets/images/favicon-16x16.png"
-    />
+    <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-16x16.png">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    
+    <style>
+        /* CSS Variables */
+        :root {
+            /* Brand Colors */
+            --primary: #0a2a43;
+            --secondary: #00bcd4;
+            --accent: #4fc3f7;
+            --gold: #ffd700;
+            --platinum: #e5e5e5;
+            --success: #4caf50;
+            --warning: #ff9800;
+            --error: #f44336;
+            
+            /* Text Colors */
+            --text-dark: #1a1a1a;
+            --text-light: #666;
+            --text-muted: #999;
+            --text-white: #fff;
+            
+            /* Background Colors */
+            --bg-light: #f1fbff;
+            --bg-dark: #1a1a1a;
+            --white: #fff;
+            
+            /* Shadows */
+            --shadow: 0 4px 12px rgb(0 0 0 / 10%);
+            --shadow-hover: 0 8px 25px rgb(0 0 0 / 15%);
+            --shadow-lg: 0 10px 40px rgb(0 0 0 / 10%);
+            
+            /* Border Radius */
+            --br: 12px;
+            --br-lg: 16px;
+            --br-xl: 24px;
+            
+            /* Transitions */
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-fast: all 0.15s ease;
+            
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, var(--secondary), var(--accent));
+            --gradient-gold: linear-gradient(135deg, #ffd700, #ffed4e);
+            --gradient-hero: linear-gradient(135deg, rgb(10 42 67 / 90%), rgb(0 188 212 / 70%));
+        }
+
+        /* CSS Reset */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: #fafafa;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        img, iframe, svg {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+
+        ul {
+            list-style: none;
+        }
 
     <!-- Google Fonts -->
     <link
@@ -1001,27 +1082,548 @@
       /* Mobile Responsiveness */
       @media (width <= 768px) {
         .header-container {
-          flex-direction: column;
-          gap: 1rem;
-          padding: 1rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .logo-section:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-image {
+            height: 40px;
+            width: auto;
+        }
+
+        .brand-name {
+            font-size: 1.4rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .header-buttons {
           justify-content: center;
         }
 
+        .header-book-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .franchise-inquiry-btn {
+            min-width: 180px;
+            height: 48px;
+            padding: 0.75rem 1.5rem;
+            font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            line-height: 1;
+            text-align: center;
+            white-space: nowrap;
+            background: var(--gradient-gold);
+            color: var(--primary);
+            border: 2px solid transparent;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgb(255 215 0 / 30%);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            outline: none;
+        }
+
+        .franchise-inquiry-btn:hover {
+            background: #ffed4e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgb(255 215 0 / 40%);
+        }
+
+        /* Franchise Hero Section */
         .franchise-hero {
-          padding: 6rem 0 4rem;
+            padding: 8rem 0 6rem;
+            background: var(--gradient-hero), 
+                        url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .franchise-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, transparent, rgb(79 195 247 / 10%), transparent);
+            animation: shimmer 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes shimmer {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(100%); }
+        }
+
+        .franchise-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .franchise-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #fff, var(--accent));
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .franchise-hero p {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            line-height: 1.6;
         }
 
         .franchise-stats {
-          flex-direction: column;
-          align-items: center;
-          gap: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .franchise-stat {
+            text-align: center;
+            background: rgb(255 255 255 / 10%);
+            padding: 2rem 1.5rem;
+            border-radius: var(--br-lg);
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+
+        .franchise-stat:hover {
+            background: rgb(255 255 255 / 20%);
+            transform: translateY(-5px);
         }
 
         .section {
-          padding: 4rem 1rem;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .section-light {
+            background: var(--bg-light);
+        }
+
+        .section-header {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Market Opportunity */
+        .market-opportunity {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .opportunity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .opportunity-card {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: var(--br-lg);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .opportunity-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 4px;
+            width: 100%;
+            background: var(--secondary);
+        }
+
+        .opportunity-card:hover {
+            background: white;
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .opportunity-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+        }
+
+        .opportunity-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .opportunity-card p {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .opportunity-stat {
+            background: rgb(0 188 212 / 10%);
+            color: var(--secondary);
+            padding: 0.75rem 1rem;
+            border-radius: var(--br);
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--secondary);
+        }
+
+        /* Why Choose Us */
+        .why-choose-us {
+            padding: 6rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .why-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: var(--br-lg);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 4px;
+            width: 100%;
+            background: var(--gold);
+        }
+
+        .why-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .why-card h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+        }
+
+        .why-card p {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .why-benefits {
+            list-style: none;
+            padding: 0;
+        }
+
+        .why-benefits li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .why-benefits li::before {
+            content: "✓";
+            color: var(--success);
+            font-weight: bold;
+            font-size: 1rem;
+            min-width: 16px;
+        }
+
+        /* Investment Details */
+        .investment-details {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .investment-breakdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .investment-card {
+            background: var(--bg-light);
+            padding: 2.5rem;
+            border-radius: var(--br-lg);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .investment-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 4px;
+            width: 100%;
+            background: var(--accent);
+        }
+
+        .investment-card:hover {
+            background: white;
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .investment-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .investment-amount {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .investment-includes {
+            list-style: none;
+            padding: 0;
+        }
+
+        .investment-includes li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .investment-includes li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+            min-width: 16px;
+        }
+
+        /* Support & Training */
+        .support-training {
+            padding: 6rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .support-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--br-lg);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .support-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 4px;
+            width: 100%;
+            background: var(--success);
+        }
+
+        .support-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .support-icon {
+            font-size: 2.5rem;
+            color: var(--success);
+            margin-bottom: 1.5rem;
+        }
+
+        .support-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .support-card p {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .support-features {
+            list-style: none;
+            padding: 0;
+        }
+
+        .support-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .support-features li::before {
+            content: "→";
+            color: var(--success);
+            font-weight: bold;
+            min-width: 16px;
+        }
+
+        /* Application Process */
+        .application-process {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .process-timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .process-step {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: var(--br-lg);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .process-step::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 4px;
+            width: 100%;
+            background: var(--secondary);
+        }
+
+        .process-step:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin: 0 auto 1.5rem;
+        }
+
+        .process-step h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .process-step p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Franchisee Requirements */
+        .franchisee-requirements {
+            padding: 6rem 2rem;
+            background: var(--bg-light);
         }
 
         .opportunity-grid,
@@ -1030,7 +1632,99 @@
         .support-grid,
         .process-timeline,
         .requirements-grid {
-          grid-template-columns: 1fr;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .requirement-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--br-lg);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .requirement-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 4px;
+            width: 100%;
+            background: var(--warning);
+        }
+
+        .requirement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .requirement-card h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .requirement-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .requirement-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .requirement-list li::before {
+            content: "▸";
+            color: var(--warning);
+            font-weight: bold;
+            min-width: 16px;
+        }
+
+        /* CTA Section */
+        .franchise-cta {
+            background: var(--gradient-hero);
+            color: white;
+            padding: 6rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .franchise-cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, transparent, rgb(79 195 247 / 10%), transparent);
+            animation: shimmer 6s ease-in-out infinite;
+        }
+
+        .franchise-cta-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .franchise-cta h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .franchise-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            line-height: 1.6;
         }
 
         .franchise-hero-cta,
@@ -1059,9 +1753,88 @@
         }
       }
 
-      .fade-in-up {
-        animation: fadeInUp 0.6s ease-out;
-      }
+        .footer-section a {
+            color: rgb(255 255 255 / 80%);
+            transition: var(--transition);
+        }
+
+        .footer-section a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgb(255 255 255 / 10%);
+            padding-top: 2rem;
+            text-align: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Mobile Responsiveness */
+        @media (width <= 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .header-buttons {
+                justify-content: center;
+            }
+
+            .franchise-hero {
+                padding: 6rem 0 4rem;
+            }
+
+            .franchise-stats {
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+            }
+
+            .section {
+                padding: 4rem 1rem;
+            }
+
+            .opportunity-grid,
+            .why-grid,
+            .investment-breakdown,
+            .support-grid,
+            .process-timeline,
+            .requirements-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .franchise-hero-cta,
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Focus and accessibility */
+        :focus-visible {
+            outline: 2px solid var(--secondary);
+            outline-offset: 2px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+      
     </style>
   </head>
   <body>
