@@ -1,19 +1,24 @@
 // Modern CSS Reset and Base Styles
 
+// Box sizing reset
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+// Remove default margins and padding
 * {
   margin: 0;
   padding: 0;
 }
 
+// HTML and body setup
 html {
   height: 100%;
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
 
 body {
@@ -26,8 +31,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeSpeed;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
 }
 
+// Media elements
 img,
 picture,
 video,
@@ -38,13 +46,16 @@ svg {
   height: auto;
 }
 
+// Form elements
 input,
 button,
 textarea,
 select {
   font: inherit;
+  color: inherit;
 }
 
+// Paragraph and heading elements
 p,
 h1,
 h2,
@@ -66,17 +77,48 @@ button {
   background: none;
   border: none;
   cursor: pointer;
+  font-family: inherit;
 }
 
-// Remove default link styles
+// Remove default link styles but keep accessibility
 a {
   color: inherit;
   text-decoration: none;
 }
 
+a:not([class]) {
+  color: $color-primary;
+  text-decoration: underline;
+  text-decoration-skip-ink: auto;
+}
+
+// Table styles
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+// Form field improvements
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="number"],
+input[type="search"],
+textarea,
+select {
+  appearance: none;
+  border-radius: 0;
+}
+
 // Focus styles
 *:focus-visible {
   @include focus-ring;
+}
+
+// Remove focus for mouse users
+*:focus:not(:focus-visible) {
+  outline: none;
 }
 
 // Skip link for accessibility
@@ -87,7 +129,7 @@ a {
     position: fixed;
     top: map-get($spacing, 2);
     left: map-get($spacing, 2);
-    z-index: map-get($z-index, modal);
+    z-index: map-get($z-index, max);
     background: $color-primary;
     color: $color-secondary;
     padding: map-get($spacing, 2) map-get($spacing, 4);
@@ -99,10 +141,87 @@ a {
   }
 }
 
+// Reduce motion for users who prefer it
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  :root {
+    --color-primary: #000000;
+    --color-secondary: #ffffff;
+    --color-accent: #ffffff;
+  }
+}
+
 // Dark mode styles
 @include dark-mode {
   body {
     color: $color-secondary;
     background-color: $color-dark-bg;
+  }
+}
+
+// Print styles
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
   }
 }

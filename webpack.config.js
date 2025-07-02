@@ -20,7 +20,18 @@ module.exports = (env) => {
       filename: isProduction ? "js/[name].[contenthash].js" : "js/[name].js",
       path: path.resolve(__dirname, "dist"),
       clean: true,
-      assetModuleFilename: "assets/[path][name].[contenthash][ext]",
+      assetModuleFilename: "assets/[path][name][ext][query]",
+      publicPath: "/",
+    },
+    devServer: {
+      static: {
+        directory: path.join(__dirname, "dist"),
+      },
+      compress: true,
+      port: 3000,
+      hot: true,
+      open: true,
+      historyApiFallback: true,
     },
     module: {
       rules: [
@@ -31,6 +42,11 @@ module.exports = (env) => {
             loader: "babel-loader",
             options: {
               presets: ["@babel/preset-env"],
+              plugins: [
+                "@babel/plugin-transform-class-properties",
+                "@babel/plugin-transform-private-methods",
+                "@babel/plugin-transform-private-property-in-object",
+              ],
             },
           },
         },
@@ -38,13 +54,25 @@ module.exports = (env) => {
           test: /\.scss$/,
           use: [
             MiniCssExtractPlugin.loader,
-            "css-loader",
-            "postcss-loader",
+            {
+              loader: "css-loader",
+              options: {
+                sourceMap: !isProduction,
+              },
+            },
+            {
+              loader: "postcss-loader",
+              options: {
+                sourceMap: !isProduction,
+              },
+            },
             {
               loader: "sass-loader",
               options: {
+                sourceMap: !isProduction,
                 sassOptions: {
                   quietDeps: true,
+                  silenceDeprecations: ["legacy-js-api"],
                 },
               },
             },
@@ -54,14 +82,14 @@ module.exports = (env) => {
           test: /\.(png|jpe?g|gif|svg|ico|webp)$/i,
           type: "asset/resource",
           generator: {
-            filename: "assets/images/[name].[contenthash][ext]",
+            filename: "assets/images/[name].[hash][ext]",
           },
         },
         {
           test: /\.(woff|woff2|eot|ttf|otf)$/i,
           type: "asset/resource",
           generator: {
-            filename: "assets/fonts/[name].[contenthash][ext]",
+            filename: "assets/fonts/[name].[hash][ext]",
           },
         },
       ],
@@ -76,6 +104,20 @@ module.exports = (env) => {
         template: "./index.html",
         filename: "index.html",
         inject: "body",
+        minify: isProduction
+          ? {
+              removeComments: true,
+              collapseWhitespace: true,
+              removeRedundantAttributes: true,
+              useShortDoctype: true,
+              removeEmptyAttributes: true,
+              removeStyleLinkTypeAttributes: true,
+              keepClosingSlash: true,
+              minifyJS: true,
+              minifyCSS: true,
+              minifyURLs: true,
+            }
+          : false,
       }),
       ...(isProduction
         ? [
@@ -88,7 +130,7 @@ module.exports = (env) => {
               ]),
               safelist: {
                 standard: [
-                  /^btn-/,
+                  /^btn/,
                   /^fs-/,
                   /^m-/,
                   /^p-/,
@@ -96,24 +138,42 @@ module.exports = (env) => {
                   /^lazy/,
                   /^dark/,
                   /^skip-/,
+                  /^site-/,
+                  /^main-/,
+                  /^hero/,
+                  /^card/,
+                  /^service/,
+                  /^program/,
+                  /^container/,
+                  /^section/,
+                  /^footer/,
+                  /^header/,
                 ],
-                deep: [/modal/, /dropdown/, /accordion/],
-                greedy: [/data-/],
+                deep: [/modal/, /dropdown/, /accordion/, /nav/, /menu/],
+                greedy: [/data-/, /aria-/],
               },
             }),
             new GenerateSW({
               clientsClaim: true,
               skipWaiting: true,
+              exclude: [/\.map$/, /manifest$/, /\.htaccess$/],
               runtimeCaching: [
                 {
-                  urlPattern: /\.(?:png|jpg|jpeg|svg|webp)$/,
+                  urlPattern: /\.(?:png|jpg|jpeg|svg|webp|gif|ico)$/,
                   handler: "CacheFirst",
                   options: {
                     cacheName: "images",
                     expiration: {
-                      maxEntries: 60,
+                      maxEntries: 100,
                       maxAgeSeconds: 30 * 24 * 60 * 60, // 30 days
                     },
+                  },
+                },
+                {
+                  urlPattern: /\.(?:js|css)$/,
+                  handler: "StaleWhileRevalidate",
+                  options: {
+                    cacheName: "static-resources",
                   },
                 },
               ],
@@ -128,8 +188,13 @@ module.exports = (env) => {
           terserOptions: {
             compress: {
               drop_console: isProduction,
+              drop_debugger: isProduction,
+            },
+            format: {
+              comments: false,
             },
           },
+          extractComments: false,
         }),
         new CssMinimizerPlugin(),
       ],
@@ -141,15 +206,22 @@ module.exports = (env) => {
             name: "vendors",
             chunks: "all",
           },
+          common: {
+            name: "common",
+            minChunks: 2,
+            chunks: "all",
+            enforce: true,
+          },
         },
       },
     },
-    devServer: {
-      contentBase: path.join(__dirname, "dist"),
-      compress: true,
-      port: 3000,
-      hot: true,
-      open: true,
+    resolve: {
+      extensions: [".js", ".json"],
+      alias: {
+        "@": path.resolve(__dirname, "js"),
+        "@styles": path.resolve(__dirname, "scss"),
+        "@assets": path.resolve(__dirname, "assets"),
+      },
     },
     devtool: isProduction ? "source-map" : "eval-source-map",
   };

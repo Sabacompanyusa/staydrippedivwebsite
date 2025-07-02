@@ -1,4 +1,4 @@
-// Mixins for Stay Dripped Mobile IV
+// Stay Dripped Mobile IV - Advanced SCSS Mixins
 
 // Responsive breakpoints
 @mixin respond-to($breakpoint) {
@@ -11,7 +11,7 @@
   }
 }
 
-// Smooth transitions
+// Advanced transition mixin
 @mixin transition($properties...) {
   $transition-list: ();
 
@@ -32,13 +32,38 @@
   transition: $transition-list;
 }
 
-// Button styles
+// Container mixin
+@mixin container($max-width: xl) {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: map-get($spacing, 4);
+  padding-right: map-get($spacing, 4);
+
+  @if map-has-key($container-max-widths, $max-width) {
+    max-width: map-get($container-max-widths, $max-width);
+  }
+
+  @include respond-to(sm) {
+    padding-left: map-get($spacing, 6);
+    padding-right: map-get($spacing, 6);
+  }
+
+  @include respond-to(lg) {
+    padding-left: map-get($spacing, 8);
+    padding-right: map-get($spacing, 8);
+  }
+}
+
+// Button base styles
 @mixin button-base {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-weight: 600;
   text-align: center;
+  vertical-align: middle;
+  user-select: none;
   border: none;
   cursor: pointer;
   text-decoration: none;
@@ -51,27 +76,33 @@
   }
 
   &:disabled {
-    opacity: 0.5;
+    opacity: 0.6;
     cursor: not-allowed;
+    pointer-events: none;
   }
 }
 
+// Button size variants
 @mixin button-size($size: "md") {
   @if $size == "sm" {
     padding: map-get($spacing, 2) map-get($spacing, 3);
     font-size: map-get($fs-scale, sm);
     border-radius: map-get($border-radius, base);
+    min-height: 2rem;
   } @else if $size == "md" {
     padding: map-get($spacing, 3) map-get($spacing, 6);
     font-size: map-get($fs-scale, base);
     border-radius: map-get($border-radius, md);
+    min-height: 2.5rem;
   } @else if $size == "lg" {
     padding: map-get($spacing, 4) map-get($spacing, 8);
     font-size: map-get($fs-scale, lg);
     border-radius: map-get($border-radius, lg);
+    min-height: 3rem;
   }
 }
 
+// Button variant styles
 @mixin button-variant($variant: "primary") {
   @if $variant == "primary" {
     background: linear-gradient(
@@ -89,15 +120,22 @@
         $color-primary
       );
       box-shadow: map-get($shadow, lg);
+      transform: translateY(-1px);
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: map-get($shadow, base);
     }
   } @else if $variant == "secondary" {
     background: $color-secondary;
     color: $color-primary;
-    border: 1px solid rgba($color-primary, 0.2);
+    border: 2px solid $color-primary;
     box-shadow: map-get($shadow, sm);
 
     &:hover {
-      background: darken($color-secondary, 2%);
+      background: $color-primary;
+      color: $color-secondary;
       box-shadow: map-get($shadow, md);
     }
   } @else if $variant == "outline" {
@@ -109,28 +147,54 @@
       background: $color-primary;
       color: $color-secondary;
     }
+  } @else if $variant == "ghost" {
+    background: transparent;
+    color: $color-primary;
+    border: none;
+    box-shadow: none;
+
+    &:hover {
+      background: rgba($color-primary, 0.1);
+    }
   }
 }
 
 // Card styles
-@mixin card {
+@mixin card($elevated: false) {
   background: $color-secondary;
   border-radius: map-get($border-radius, lg);
-  box-shadow: map-get($shadow, base);
   overflow: hidden;
   @include transition(transform, box-shadow);
 
-  &:hover {
-    transform: translateY(-2px);
+  @if $elevated {
     box-shadow: map-get($shadow, lg);
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: map-get($shadow, xl);
+    }
+  } @else {
+    box-shadow: map-get($shadow, base);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: map-get($shadow, lg);
+    }
   }
 }
 
-// Text truncation
+// Text utilities
 @mixin truncate {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+@mixin line-clamp($lines: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 // Screen reader only
@@ -147,34 +211,9 @@
 }
 
 // Focus styles
-@mixin focus-ring {
-  outline: 2px solid $color-info;
+@mixin focus-ring($color: $color-info) {
+  outline: 2px solid $color;
   outline-offset: 2px;
-}
-
-// Container
-@mixin container {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: map-get($spacing, 4);
-  padding-right: map-get($spacing, 4);
-
-  @include respond-to(sm) {
-    max-width: map-get($breakpoints, sm);
-  }
-
-  @include respond-to(md) {
-    max-width: map-get($breakpoints, md);
-  }
-
-  @include respond-to(lg) {
-    max-width: map-get($breakpoints, lg);
-  }
-
-  @include respond-to(xl) {
-    max-width: map-get($breakpoints, xl);
-  }
 }
 
 // Generate utility classes
@@ -246,5 +285,69 @@
 
   .dark & {
     @content;
+  }
+}
+
+// Aspect ratio
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    padding-top: percentage($height / $width);
+  }
+
+  > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// Grid utilities
+@mixin grid-container($columns: $grid-columns, $gap: $grid-gutter) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+}
+
+// Flexbox utilities
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// Animations
+@mixin slide-in-up($duration: 0.3s) {
+  transform: translateY(100%);
+  opacity: 0;
+  animation: slide-in-up $duration ease-out forwards;
+}
+
+@keyframes slide-in-up {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@mixin fade-in($duration: 0.3s, $delay: 0s) {
+  opacity: 0;
+  animation: fade-in $duration ease-out #{$delay} forwards;
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
   }
 }

@@ -1,4 +1,4 @@
-// Typography System
+// Typography System for Stay Dripped Mobile IV
 
 // Headings
 h1,
@@ -19,60 +19,94 @@ h6 {
 }
 
 h1 {
-  font-size: map-get($fs-scale, 5xl);
+  font-size: map-get($fs-scale, 4xl);
+  font-weight: 800;
+  letter-spacing: -0.025em;
 
   @include respond-to(md) {
+    font-size: map-get($fs-scale, 5xl);
+  }
+
+  @include respond-to(lg) {
     font-size: map-get($fs-scale, 6xl);
   }
 }
 
 h2 {
-  font-size: map-get($fs-scale, 4xl);
+  font-size: map-get($fs-scale, 3xl);
+  font-weight: 700;
+  letter-spacing: -0.025em;
 
   @include respond-to(md) {
+    font-size: map-get($fs-scale, 4xl);
+  }
+
+  @include respond-to(lg) {
     font-size: map-get($fs-scale, 5xl);
   }
 }
 
 h3 {
-  font-size: map-get($fs-scale, 3xl);
+  font-size: map-get($fs-scale, 2xl);
+  font-weight: 600;
 
   @include respond-to(md) {
+    font-size: map-get($fs-scale, 3xl);
+  }
+
+  @include respond-to(lg) {
     font-size: map-get($fs-scale, 4xl);
   }
 }
 
 h4 {
-  font-size: map-get($fs-scale, 2xl);
+  font-size: map-get($fs-scale, xl);
+  font-weight: 600;
 
   @include respond-to(md) {
+    font-size: map-get($fs-scale, 2xl);
+  }
+
+  @include respond-to(lg) {
     font-size: map-get($fs-scale, 3xl);
   }
 }
 
 h5 {
-  font-size: map-get($fs-scale, xl);
+  font-size: map-get($fs-scale, lg);
+  font-weight: 600;
 
   @include respond-to(md) {
+    font-size: map-get($fs-scale, xl);
+  }
+
+  @include respond-to(lg) {
     font-size: map-get($fs-scale, 2xl);
   }
 }
 
 h6 {
-  font-size: map-get($fs-scale, lg);
+  font-size: map-get($fs-scale, base);
+  font-weight: 600;
 
   @include respond-to(md) {
+    font-size: map-get($fs-scale, lg);
+  }
+
+  @include respond-to(lg) {
     font-size: map-get($fs-scale, xl);
   }
 }
 
-// Paragraphs
+// Paragraphs and body text
 p {
   margin-bottom: map-get($spacing, 4);
   color: $color-text-light;
+  font-size: map-get($fs-scale, base);
+  line-height: 1.7;
 
   @include dark-mode {
-    color: rgba($color-secondary, 0.8);
+    color: rgba($color-secondary, 0.9);
   }
 }
 
@@ -108,15 +142,109 @@ li {
   color: $color-text-light;
 
   @include dark-mode {
+    color: rgba($color-secondary, 0.9);
+  }
+}
+
+// Definition lists
+dl {
+  margin-bottom: map-get($spacing, 6);
+}
+
+dt {
+  font-weight: 600;
+  color: $color-text-dark;
+  margin-bottom: map-get($spacing, 1);
+
+  @include dark-mode {
+    color: $color-secondary;
+  }
+}
+
+dd {
+  margin-bottom: map-get($spacing, 4);
+  margin-left: map-get($spacing, 4);
+  color: $color-text-light;
+
+  @include dark-mode {
     color: rgba($color-secondary, 0.8);
   }
 }
 
-// Lead text
+// Blockquotes
+blockquote {
+  margin: map-get($spacing, 6) 0;
+  padding: map-get($spacing, 4) map-get($spacing, 6);
+  border-left: 4px solid $color-primary;
+  background: rgba($color-primary, 0.05);
+  font-style: italic;
+
+  p {
+    margin-bottom: map-get($spacing, 2);
+  }
+
+  cite {
+    display: block;
+    margin-top: map-get($spacing, 2);
+    font-size: map-get($fs-scale, sm);
+    color: $color-text-light;
+    font-style: normal;
+
+    &::before {
+      content: "— ";
+    }
+  }
+
+  @include dark-mode {
+    background: rgba($color-secondary, 0.1);
+    border-left-color: $color-info;
+  }
+}
+
+// Code and preformatted text
+code {
+  font-family:
+    "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New",
+    monospace;
+  font-size: 0.875em;
+  background: rgba($color-primary, 0.1);
+  padding: 0.125em 0.25em;
+  border-radius: map-get($border-radius, sm);
+  color: $color-primary;
+
+  @include dark-mode {
+    background: rgba($color-secondary, 0.2);
+    color: $color-info;
+  }
+}
+
+pre {
+  font-family:
+    "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New",
+    monospace;
+  background: rgba($color-primary, 0.05);
+  padding: map-get($spacing, 4);
+  border-radius: map-get($border-radius, lg);
+  overflow-x: auto;
+  margin-bottom: map-get($spacing, 6);
+
+  code {
+    background: none;
+    padding: 0;
+    border-radius: 0;
+  }
+
+  @include dark-mode {
+    background: rgba($color-secondary, 0.1);
+  }
+}
+
+// Utility classes for typography
 .lead {
   font-size: map-get($fs-scale, lg);
   font-weight: 400;
   color: $color-text-light;
+  margin-bottom: map-get($spacing, 6);
 
   @include respond-to(md) {
     font-size: map-get($fs-scale, xl);
@@ -127,7 +255,6 @@ li {
   }
 }
 
-// Small text
 .small {
   font-size: map-get($fs-scale, sm);
   color: $color-text-light;
@@ -137,33 +264,55 @@ li {
   }
 }
 
-// Text utilities
-.text-center {
-  text-align: center;
+.text-large {
+  font-size: map-get($fs-scale, lg);
 }
+
+.text-xl {
+  font-size: map-get($fs-scale, xl);
+}
+
+// Text alignment utilities
 .text-left {
   text-align: left;
+}
+.text-center {
+  text-align: center;
 }
 .text-right {
   text-align: right;
 }
+.text-justify {
+  text-align: justify;
+}
 
-.font-bold {
-  font-weight: 700;
-}
-.font-semibold {
-  font-weight: 600;
-}
-.font-medium {
-  font-weight: 500;
-}
-.font-normal {
-  font-weight: 400;
+// Font weight utilities
+.font-thin {
+  font-weight: 100;
 }
 .font-light {
   font-weight: 300;
 }
+.font-normal {
+  font-weight: 400;
+}
+.font-medium {
+  font-weight: 500;
+}
+.font-semibold {
+  font-weight: 600;
+}
+.font-bold {
+  font-weight: 700;
+}
+.font-extrabold {
+  font-weight: 800;
+}
+.font-black {
+  font-weight: 900;
+}
 
+// Text color utilities
 .text-primary {
   color: $color-primary;
 }
@@ -183,5 +332,149 @@ li {
   color: $color-info;
 }
 
+// Text transform utilities
+.uppercase {
+  text-transform: uppercase;
+}
+.lowercase {
+  text-transform: lowercase;
+}
+.capitalize {
+  text-transform: capitalize;
+}
+.normal-case {
+  text-transform: none;
+}
+
+// Text decoration utilities
+.underline {
+  text-decoration: underline;
+}
+.line-through {
+  text-decoration: line-through;
+}
+.no-underline {
+  text-decoration: none;
+}
+
+// Letter spacing utilities
+.tracking-tight {
+  letter-spacing: -0.025em;
+}
+.tracking-normal {
+  letter-spacing: 0;
+}
+.tracking-wide {
+  letter-spacing: 0.025em;
+}
+.tracking-wider {
+  letter-spacing: 0.05em;
+}
+.tracking-widest {
+  letter-spacing: 0.1em;
+}
+
+// Line height utilities
+.leading-none {
+  line-height: 1;
+}
+.leading-tight {
+  line-height: 1.25;
+}
+.leading-snug {
+  line-height: 1.375;
+}
+.leading-normal {
+  line-height: 1.5;
+}
+.leading-relaxed {
+  line-height: 1.625;
+}
+.leading-loose {
+  line-height: 2;
+}
+
+// Text utilities
+.truncate {
+  @include truncate;
+}
+
+.text-ellipsis {
+  @include line-clamp(2);
+}
+
 // Generate typography utilities
 @include generate-typography-utilities;
+
+// Responsive typography utilities
+@include respond-to(sm) {
+  .sm\:text-sm {
+    font-size: map-get($fs-scale, sm) !important;
+  }
+  .sm\:text-base {
+    font-size: map-get($fs-scale, base) !important;
+  }
+  .sm\:text-lg {
+    font-size: map-get($fs-scale, lg) !important;
+  }
+  .sm\:text-xl {
+    font-size: map-get($fs-scale, xl) !important;
+  }
+  .sm\:text-2xl {
+    font-size: map-get($fs-scale, 2xl) !important;
+  }
+  .sm\:text-3xl {
+    font-size: map-get($fs-scale, 3xl) !important;
+  }
+}
+
+@include respond-to(md) {
+  .md\:text-sm {
+    font-size: map-get($fs-scale, sm) !important;
+  }
+  .md\:text-base {
+    font-size: map-get($fs-scale, base) !important;
+  }
+  .md\:text-lg {
+    font-size: map-get($fs-scale, lg) !important;
+  }
+  .md\:text-xl {
+    font-size: map-get($fs-scale, xl) !important;
+  }
+  .md\:text-2xl {
+    font-size: map-get($fs-scale, 2xl) !important;
+  }
+  .md\:text-3xl {
+    font-size: map-get($fs-scale, 3xl) !important;
+  }
+  .md\:text-4xl {
+    font-size: map-get($fs-scale, 4xl) !important;
+  }
+  .md\:text-5xl {
+    font-size: map-get($fs-scale, 5xl) !important;
+  }
+}
+
+@include respond-to(lg) {
+  .lg\:text-lg {
+    font-size: map-get($fs-scale, lg) !important;
+  }
+  .lg\:text-xl {
+    font-size: map-get($fs-scale, xl) !important;
+  }
+  .lg\:text-2xl {
+    font-size: map-get($fs-scale, 2xl) !important;
+  }
+  .lg\:text-3xl {
+    font-size: map-get($fs-scale, 3xl) !important;
+  }
+  .lg\:text-4xl {
+    font-size: map-get($fs-scale, 4xl) !important;
+  }
+  .lg\:text-5xl {
+    font-size: map-get($fs-scale, 5xl) !important;
+  }
+  .lg\:text-6xl {
+    font-size: map-get($fs-scale, 6xl) !important;
+  }
+}
