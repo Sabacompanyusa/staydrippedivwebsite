@@ -8,36 +8,602 @@
     </title>
     <meta
       name="description"
-      content="Enhance recovery, performance, and longevity with advanced peptide therapy at Stay Dripped Mobile IV in Scottsdale, AZ. Targeted treatments for muscle growth, fat loss, healing, and anti-aging."
+      content="Advanced peptide therapy for enhanced recovery, performance, and anti-aging. Professional peptide treatments delivered to your location in Scottsdale, AZ."
     />
 
     <!-- Favicons -->
-    <link
-      rel="apple-touch-icon"
-      href="../../assets/images/apple-touch-icon.png"
-    />
+    <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png" />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="../../assets/images/favicon-32x32.png"
+      href="../assets/images/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="../../assets/images/favicon-16x16.png"
+      href="../assets/images/favicon-16x16.png"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
     />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link rel="stylesheet" href="../../assets/css/qualiphy-style.css" />
-    <link rel="stylesheet" href="../../assets/css/responsive.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/qualiphy-style.css" />
+    <link rel="stylesheet" href="../assets/css/responsive.css" />
+    <link rel="stylesheet" href="../assets/css/professional-theme.css" />
+    <link rel="stylesheet" href="../assets/css/enhanced-sections.css" />
+
+    <style>
+      /* CSS Variables */
+      :root {
+        /* Brand Colors */
+        --primary: #0a2a43;
+        --secondary: #00bcd4;
+        --accent: #4fc3f7;
+        --gold: #ffd700;
+        --platinum: #e5e5e5;
+        --success: #4caf50;
+        --warning: #ff9800;
+        --error: #f44336;
+
+        /* Text Colors */
+        --text-dark: #1a1a1a;
+        --text-light: #666;
+        --text-muted: #999;
+        --text-white: #fff;
+
+        /* Background Colors */
+        --bg-light: #f1fbff;
+        --bg-dark: #1a1a1a;
+        --white: #fff;
+
+        /* Shadows */
+        --shadow: 0 4px 12px rgb(0 0 0 / 10%);
+        --shadow-hover: 0 8px 25px rgb(0 0 0 / 15%);
+        --shadow-lg: 0 10px 40px rgb(0 0 0 / 10%);
+
+        /* Border Radius */
+        --br: 12px;
+        --br-lg: 16px;
+        --br-xl: 24px;
+
+        /* Transitions */
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        --transition-fast: all 0.15s ease;
+
+        /* Gradients */
+        --gradient-primary: linear-gradient(
+          135deg,
+          var(--secondary),
+          var(--accent)
+        );
+        --gradient-gold: linear-gradient(135deg, #ffd700, #ffed4e);
+        --gradient-hero: linear-gradient(
+          135deg,
+          rgb(10 42 67 / 90%),
+          rgb(0 188 212 / 70%)
+        );
+      }
+
+      /* CSS Reset */
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+      }
+
+      body {
+        font-family:
+          Inter,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Oxygen,
+          Ubuntu,
+          Cantarell,
+          sans-serif;
+        line-height: 1.7;
+        color: var(--text-dark);
+        background: #fafafa;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      body.has-back-button {
+        padding-top: 120px;
+      }
+
+      img,
+      iframe,
+      svg {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button {
+        font-family: inherit;
+        cursor: pointer;
+        border: none;
+        background: none;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      /* Container */
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      /* Header */
+      .header {
+        background: var(--primary);
+        color: white;
+        text-align: center;
+        padding: 4rem 2rem 3rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .header::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: var(--gradient-hero);
+        background-size: 400% 400%;
+        animation: gradientShift 10s ease infinite;
+      }
+
+      @keyframes gradientShift {
+        0%,
+        100% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+      }
+
+      .header-content {
+        position: relative;
+        z-index: 2;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .header h1 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(135deg, #fff, var(--accent));
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .header p {
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+        line-height: 1.6;
+      }
+
+      /* Navigation */
+      .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: var(--primary);
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+      }
+
+      .nav-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: white;
+        font-weight: 800;
+        transition: var(--transition);
+      }
+
+      .logo:hover {
+        transform: scale(1.05);
+      }
+
+      .logo img {
+        height: 40px;
+        width: auto;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .nav-link {
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: var(--br);
+        transition: var(--transition);
+        font-weight: 500;
+      }
+
+      .nav-link:hover,
+      .nav-link.active {
+        background: var(--secondary);
+        transform: translateY(-2px);
+      }
+
+      .mobile-menu-toggle {
+        display: none;
+        color: white;
+        font-size: 1.5rem;
+        padding: 0.5rem;
+      }
+
+      /* Section Styles */
+      .section {
+        padding: 6rem 2rem;
+        text-align: center;
+      }
+
+      .section-light {
+        background: var(--bg-light);
+      }
+
+      .section-title {
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 800;
+        color: var(--primary);
+        margin-bottom: 1rem;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: var(--secondary);
+        border-radius: 2px;
+      }
+
+      .section-subtitle {
+        font-size: 1.1rem;
+        color: var(--text-light);
+        margin-bottom: 3rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* Menu Grid */
+      .menu-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .menu-card {
+        background: white;
+        border-radius: var(--br-lg);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        position: relative;
+      }
+
+      .menu-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .menu-card-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .menu-card-content {
+        padding: 2rem;
+        text-align: left;
+      }
+
+      .menu-card h3 {
+        color: var(--primary);
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .menu-card h3 i {
+        color: var(--secondary);
+      }
+
+      .price {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--secondary);
+        margin-bottom: 1rem;
+      }
+
+      .description {
+        color: var(--text-light);
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+      }
+
+      .benefits {
+        margin-bottom: 2rem;
+      }
+
+      .benefits li {
+        color: var(--text-light);
+        margin-bottom: 0.5rem;
+        padding-left: 1.5rem;
+        position: relative;
+      }
+
+      .benefits li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--success);
+        font-weight: bold;
+      }
+
+      .action-buttons {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1rem 1.5rem;
+        border-radius: var(--br);
+        font-weight: 600;
+        text-decoration: none;
+        transition: var(--transition);
+        cursor: pointer;
+        border: none;
+        font-size: 0.9rem;
+        flex: 1;
+        justify-content: center;
+        min-width: 140px;
+      }
+
+      .btn-primary {
+        background: var(--secondary);
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background: var(--primary);
+        transform: translateY(-2px);
+      }
+
+      .btn-outline {
+        background: transparent;
+        color: var(--primary);
+        border: 2px solid var(--primary);
+      }
+
+      .btn-outline:hover {
+        background: var(--primary);
+        color: white;
+        transform: translateY(-2px);
+      }
+
+      /* Intro Section */
+      .peptide-intro {
+        padding: 6rem 2rem;
+        background: white;
+      }
+
+      .intro-content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .intro-highlights {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .highlight-item {
+        background: var(--bg-light);
+        padding: 2rem;
+        border-radius: var(--br-lg);
+        text-align: center;
+        transition: var(--transition);
+      }
+
+      .highlight-item:hover {
+        transform: translateY(-5px);
+        background: white;
+        box-shadow: var(--shadow);
+      }
+
+      .highlight-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        display: block;
+      }
+
+      .highlight-item h3 {
+        color: var(--primary);
+        margin-bottom: 1rem;
+      }
+
+      /* Footer */
+      .footer {
+        background: var(--primary);
+        color: white;
+        text-align: center;
+        padding: 3rem 2rem 2rem;
+        margin-top: 4rem;
+      }
+
+      .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .footer-logo {
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+      }
+
+      .footer-info {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin: 2rem 0;
+        text-align: left;
+      }
+
+      .footer-section h3 {
+        color: var(--accent);
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+      }
+
+      .footer-section p,
+      .footer-section a {
+        color: rgb(255 255 255 / 80%);
+        line-height: 1.6;
+        transition: var(--transition);
+      }
+
+      .footer-section a:hover {
+        color: var(--accent);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgb(255 255 255 / 10%);
+        padding-top: 2rem;
+        margin-top: 2rem;
+        color: rgb(255 255 255 / 60%);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        body.has-back-button {
+          padding-top: 80px;
+        }
+
+        .nav-links {
+          display: none;
+        }
+
+        .mobile-menu-toggle {
+          display: block;
+        }
+
+        .menu-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .action-buttons {
+          flex-direction: column;
+        }
+
+        .btn {
+          width: 100%;
+        }
+
+        .intro-highlights {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* IntakeQ Widget Styling */
+      .intakeq-widget {
+        margin-top: 1rem;
+        padding: 1rem;
+        background: var(--bg-light);
+        border-radius: var(--br);
+      }
+    </style>
   </head>
-  <body>
+  <body class="has-back-button">
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="nav-container">
+        <div class="logo">
+          <img src="../assets/images/logo.png" alt="Stay Dripped Logo" />
+          <span>Stay Dripped</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="#menu" class="nav-link active">Peptide Menu</a></li>
+          <li><a href="membership.html" class="nav-link">Membership</a></li>
+          <li><a href="tel:+16026889825" class="nav-link">Call Now</a></li>
+        </ul>
+        <button class="mobile-menu-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+
     <!-- Back Button -->
     <div class="back-button-container">
-      <a href="../index.html" class="back-button metallic-btn">
+      <a href="../index.html" class="back-button">
         <i class="fas fa-arrow-left"></i>
         <span>Back to Home</span>
       </a>
@@ -46,832 +612,463 @@
     <!-- Header -->
     <header class="header">
       <div class="header-content">
-        <div class="logo-section">
-          <img src="../assets/images/logo.png" alt="Stay Dripped Mobile IV" />
-          <div class="brand-title">Peptide Therapy Treatments</div>
-          <div class="brand-subtitle">
-            Advanced Recovery & Performance Enhancement in Scottsdale, AZ
-          </div>
-        </div>
-
-        <div class="quick-actions">
-          <a href="tel:+16026889825" class="quick-action-btn">
-            <i class="fas fa-phone"></i>
-            Call (602) 688-9825
-          </a>
-          <a
-            href="https://Staydripped.intakeq.com/booking"
-            class="quick-action-btn"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="fas fa-calendar"></i>
-            Book Online Now
-          </a>
-          <div
-            id="loadFormButton"
-            style="
-              width: 180px;
-              height: 50px;
-              cursor: pointer;
-              background-color: #cfc9ff;
-              color: #0a005b;
-              border: none;
-              border-radius: 12px;
-              font-weight: 600;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              gap: 0.5rem;
-            "
-            onmouseover="this.style.backgroundColor='#8058fa'; this.style.color='white'"
-            onmouseout="this.style.backgroundColor='#CFC9FF'; this.style.color='#0A005B'"
-            onclick="showDisclosureModal()"
-          >
-            <i class="fas fa-clipboard-list"></i>
-            Start GFE (Required)
-          </div>
-        </div>
+        <h1>Peptide Therapy Menu</h1>
+        <p>
+          Advanced peptide treatments for enhanced recovery, performance, and
+          anti-aging delivered directly to your location in the Scottsdale
+          metropolitan area
+        </p>
       </div>
     </header>
 
-    <!-- Service Hero -->
-    <section class="service-hero">
-      <div class="container">
-        <div class="service-hero-content">
-          <div class="service-hero-text">
-            <div class="breadcrumbs">
-              <a href="../services.html">Services</a> >
-              <span>Peptide Therapy</span>
-            </div>
-            <h1>Advanced Peptide Therapy</h1>
-            <p class="service-subtitle">
-              Unlock your body's natural healing and performance potential with
-              targeted peptide treatments designed to enhance recovery, optimize
-              performance, and support anti-aging goals.
+    <main>
+      <!-- Peptide Introduction -->
+      <section class="peptide-intro">
+        <div class="container">
+          <div class="intro-content">
+            <h2 class="section-title">What Are Peptides?</h2>
+            <p class="section-subtitle">
+              Peptides are short chains of amino acids that act as signaling
+              molecules in your body, instructing cells to perform specific
+              functions like healing, growth, fat burning, and anti-aging
+              processes.
             </p>
-            <div class="service-highlights">
+            <div class="intro-highlights">
               <div class="highlight-item">
-                <span class="highlight-icon">🚀</span>
-                <span>Enhanced Performance</span>
+                <span class="highlight-icon">🧬</span>
+                <h3>Cellular Communication</h3>
+                <p>Direct cellular messaging for optimal function</p>
+              </div>
+              <div class="highlight-item">
+                <span class="highlight-icon">🎯</span>
+                <h3>Targeted Action</h3>
+                <p>Precise therapeutic effects for specific goals</p>
+              </div>
+              <div class="highlight-item">
+                <span class="highlight-icon">⚡</span>
+                <h3>Rapid Results</h3>
+                <p>Faster results than traditional therapies</p>
               </div>
               <div class="highlight-item">
                 <span class="highlight-icon">🔄</span>
-                <span>Faster Recovery</span>
-              </div>
-              <div class="highlight-item">
-                <span class="highlight-icon">⏱️</span>
-                <span>Anti-Aging Benefits</span>
+                <h3>Natural Process</h3>
+                <p>Works with your body's existing systems</p>
               </div>
             </div>
-            <div class="service-cta">
-              <button
-                class="btn btn-primary btn-lg"
-                onclick="openBookingModal()"
-              >
-                Start Peptide Therapy
-              </button>
-              <div class="pricing-info">
-                Starting at $200 | Consultation Required
-              </div>
-            </div>
-          </div>
-          <div class="service-hero-image">
-            <img
-              src="../../assets/images/placeholder.png"
-              alt="Peptide Therapy"
-            />
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- What Are Peptides -->
-    <section class="peptides-explanation">
-      <div class="container">
-        <div class="section-header text-center">
-          <h2>What Are Peptides?</h2>
-          <p>
-            Understanding the science behind these powerful therapeutic
-            compounds
+      <!-- Peptide Menu -->
+      <section id="menu" class="section section-light">
+        <div class="container">
+          <h2 class="section-title">Peptide Therapy Menu</h2>
+          <p class="section-subtitle">
+            Professional peptide treatments for recovery, performance, and
+            anti-aging
           </p>
-        </div>
 
-        <div class="peptides-content">
-          <div class="peptides-info">
-            <h3>The Building Blocks of Life</h3>
-            <p>
-              Peptides are short chains of amino acids that act as signaling
-              molecules in your body. They instruct cells to perform specific
-              functions like healing, growth, fat burning, and anti-aging
-              processes. As we age, our natural peptide production declines,
-              making therapeutic peptides an effective way to restore optimal
-              function.
-            </p>
+          <div class="menu-grid">
+            <!-- BPC-157 -->
+            <div class="menu-card">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F8b73c477407048d0945425bdc93ba34d%2Ff5958fd15db54ea28489076f16976d01?format=webp&width=800"
+                alt="BPC-157 Peptide Therapy"
+                class="menu-card-image"
+              />
+              <div class="menu-card-content">
+                <h3><i class="fas fa-shield-alt"></i> BPC-157</h3>
+                <div class="price">$250/month</div>
+                <div class="description">
+                  Body Protection Compound for accelerated healing, gut health,
+                  and tissue repair.
+                </div>
+                <ul class="benefits">
+                  <li>Accelerated injury healing</li>
+                  <li>Gut health improvement</li>
+                  <li>Reduced inflammation</li>
+                  <li>Enhanced recovery</li>
+                  <li>Joint and tendon repair</li>
+                </ul>
+                <div class="action-buttons">
+                  <a href="tel:+16026889825" class="btn btn-primary">
+                    <i class="fas fa-phone"></i>
+                    Call to Book
+                  </a>
+                  <a
+                    href="https://Staydripped.intakeq.com/booking"
+                    class="btn btn-outline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="fas fa-calendar"></i>
+                    Book Online
+                  </a>
+                </div>
+              </div>
+            </div>
 
-            <div class="peptide-benefits">
-              <h4>How Peptides Work:</h4>
-              <div class="benefits-grid">
-                <div class="benefit-item">
-                  <div class="benefit-icon">📡</div>
-                  <h5>Cellular Communication</h5>
-                  <p>
-                    Act as messengers between cells to coordinate body functions
-                  </p>
+            <!-- TB-500 -->
+            <div class="menu-card">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F8b73c477407048d0945425bdc93ba34d%2F53b96c765a114d0682a9902ab397efc0?format=webp&width=800"
+                alt="TB-500 Peptide Therapy"
+                class="menu-card-image"
+              />
+              <div class="menu-card-content">
+                <h3><i class="fas fa-running"></i> TB-500</h3>
+                <div class="price">$300/month</div>
+                <div class="description">
+                  Thymosin Beta-4 for tissue repair, regeneration, and enhanced
+                  athletic performance.
                 </div>
-                <div class="benefit-item">
-                  <div class="benefit-icon">🎯</div>
-                  <h5>Targeted Action</h5>
-                  <p>
-                    Bind to specific receptors for precise therapeutic effects
-                  </p>
+                <ul class="benefits">
+                  <li>Tissue repair and regeneration</li>
+                  <li>Reduced inflammation</li>
+                  <li>Improved flexibility</li>
+                  <li>Enhanced endurance</li>
+                  <li>Wound healing acceleration</li>
+                </ul>
+                <div class="action-buttons">
+                  <a href="tel:+16026889825" class="btn btn-primary">
+                    <i class="fas fa-phone"></i>
+                    Call to Book
+                  </a>
+                  <a
+                    href="https://Staydripped.intakeq.com/booking"
+                    class="btn btn-outline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="fas fa-calendar"></i>
+                    Book Online
+                  </a>
                 </div>
-                <div class="benefit-item">
-                  <div class="benefit-icon">🔄</div>
-                  <h5>Natural Process</h5>
-                  <p>Work with your body's existing systems and pathways</p>
+              </div>
+            </div>
+
+            <!-- IGF-1 LR3 -->
+            <div class="menu-card">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F8b73c477407048d0945425bdc93ba34d%2Ff5958fd15db54ea28489076f16976d01?format=webp&width=800"
+                alt="IGF-1 LR3 Peptide Therapy"
+                class="menu-card-image"
+              />
+              <div class="menu-card-content">
+                <h3><i class="fas fa-dumbbell"></i> IGF-1 LR3</h3>
+                <div class="price">$400/month</div>
+                <div class="description">
+                  Insulin-like Growth Factor for muscle growth, enhanced
+                  recovery, and performance optimization.
                 </div>
-                <div class="benefit-item">
-                  <div class="benefit-icon">⚡</div>
-                  <h5>Rapid Results</h5>
-                  <p>Often provide faster results than traditional therapies</p>
+                <ul class="benefits">
+                  <li>Muscle growth and repair</li>
+                  <li>Enhanced recovery</li>
+                  <li>Improved performance</li>
+                  <li>Fat metabolism</li>
+                  <li>Anti-aging effects</li>
+                </ul>
+                <div class="action-buttons">
+                  <a href="tel:+16026889825" class="btn btn-primary">
+                    <i class="fas fa-phone"></i>
+                    Call to Book
+                  </a>
+                  <a
+                    href="https://Staydripped.intakeq.com/booking"
+                    class="btn btn-outline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="fas fa-calendar"></i>
+                    Book Online
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- GHK-Cu -->
+            <div class="menu-card">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F8b73c477407048d0945425bdc93ba34d%2Fdcf67a4833054b048c22676c6830729f?format=webp&width=800"
+                alt="GHK-Cu Peptide Therapy"
+                class="menu-card-image"
+              />
+              <div class="menu-card-content">
+                <h3><i class="fas fa-gem"></i> GHK-Cu</h3>
+                <div class="price">$200/month</div>
+                <div class="description">
+                  Copper Peptide for skin regeneration, collagen production, and
+                  anti-aging benefits.
+                </div>
+                <ul class="benefits">
+                  <li>Skin regeneration and repair</li>
+                  <li>Collagen production</li>
+                  <li>Hair growth stimulation</li>
+                  <li>Wound healing</li>
+                  <li>Anti-inflammatory effects</li>
+                </ul>
+                <div class="action-buttons">
+                  <a href="tel:+16026889825" class="btn btn-primary">
+                    <i class="fas fa-phone"></i>
+                    Call to Book
+                  </a>
+                  <a
+                    href="https://Staydripped.intakeq.com/booking"
+                    class="btn btn-outline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="fas fa-calendar"></i>
+                    Book Online
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- CJC-1295 -->
+            <div class="menu-card">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F8b73c477407048d0945425bdc93ba34d%2F53b96c765a114d0682a9902ab397efc0?format=webp&width=800"
+                alt="CJC-1295 Peptide Therapy"
+                class="menu-card-image"
+              />
+              <div class="menu-card-content">
+                <h3><i class="fas fa-chart-line"></i> CJC-1295</h3>
+                <div class="price">$250/month</div>
+                <div class="description">
+                  Growth Hormone Releasing Hormone for increased growth hormone,
+                  fat burning, and energy.
+                </div>
+                <ul class="benefits">
+                  <li>Increased growth hormone</li>
+                  <li>Enhanced muscle growth</li>
+                  <li>Improved fat burning</li>
+                  <li>Better sleep quality</li>
+                  <li>Increased energy</li>
+                </ul>
+                <div class="action-buttons">
+                  <a href="tel:+16026889825" class="btn btn-primary">
+                    <i class="fas fa-phone"></i>
+                    Call to Book
+                  </a>
+                  <a
+                    href="https://Staydripped.intakeq.com/booking"
+                    class="btn btn-outline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="fas fa-calendar"></i>
+                    Book Online
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Ipamorelin -->
+            <div class="menu-card">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F8b73c477407048d0945425bdc93ba34d%2Ff5958fd15db54ea28489076f16976d01?format=webp&width=800"
+                alt="Ipamorelin Peptide Therapy"
+                class="menu-card-image"
+              />
+              <div class="menu-card-content">
+                <h3><i class="fas fa-moon"></i> Ipamorelin</h3>
+                <div class="price">$200/month</div>
+                <div class="description">
+                  Growth Hormone Secretagogue for natural GH production, fat
+                  loss, and enhanced recovery.
+                </div>
+                <ul class="benefits">
+                  <li>Natural GH production</li>
+                  <li>Fat loss acceleration</li>
+                  <li>Muscle preservation</li>
+                  <li>Improved recovery</li>
+                  <li>Enhanced sleep</li>
+                </ul>
+                <div class="action-buttons">
+                  <a href="tel:+16026889825" class="btn btn-primary">
+                    <i class="fas fa-phone"></i>
+                    Call to Book
+                  </a>
+                  <a
+                    href="https://Staydripped.intakeq.com/booking"
+                    class="btn btn-outline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="fas fa-calendar"></i>
+                    Book Online
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Epitalon -->
+            <div class="menu-card">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F8b73c477407048d0945425bdc93ba34d%2Fdcf67a4833054b048c22676c6830729f?format=webp&width=800"
+                alt="Epitalon Peptide Therapy"
+                class="menu-card-image"
+              />
+              <div class="menu-card-content">
+                <h3><i class="fas fa-hourglass-half"></i> Epitalon</h3>
+                <div class="price">$350/month</div>
+                <div class="description">
+                  Telomerase Activator for cellular regeneration, longevity, and
+                  sleep cycle regulation.
+                </div>
+                <ul class="benefits">
+                  <li>Telomere lengthening</li>
+                  <li>Cellular regeneration</li>
+                  <li>Sleep cycle regulation</li>
+                  <li>Immune system support</li>
+                  <li>Longevity enhancement</li>
+                </ul>
+                <div class="action-buttons">
+                  <a href="tel:+16026889825" class="btn btn-primary">
+                    <i class="fas fa-phone"></i>
+                    Call to Book
+                  </a>
+                  <a
+                    href="https://Staydripped.intakeq.com/booking"
+                    class="btn btn-outline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="fas fa-calendar"></i>
+                    Book Online
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- AOD-9604 -->
+            <div class="menu-card">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F8b73c477407048d0945425bdc93ba34d%2F53b96c765a114d0682a9902ab397efc0?format=webp&width=800"
+                alt="AOD-9604 Peptide Therapy"
+                class="menu-card-image"
+              />
+              <div class="menu-card-content">
+                <h3><i class="fas fa-weight"></i> AOD-9604</h3>
+                <div class="price">$180/month</div>
+                <div class="description">
+                  Anti-Obesity Drug for targeted fat loss, metabolic
+                  enhancement, and body composition improvement.
+                </div>
+                <ul class="benefits">
+                  <li>Targeted fat burning</li>
+                  <li>Metabolic enhancement</li>
+                  <li>Body composition improvement</li>
+                  <li>No muscle loss</li>
+                  <li>Appetite regulation</li>
+                </ul>
+                <div class="action-buttons">
+                  <a href="tel:+16026889825" class="btn btn-primary">
+                    <i class="fas fa-phone"></i>
+                    Call to Book
+                  </a>
+                  <a
+                    href="https://Staydripped.intakeq.com/booking"
+                    class="btn btn-outline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="fas fa-calendar"></i>
+                    Book Online
+                  </a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="peptides-visual">
-            <img
-              src="../../assets/images/placeholder.png"
-              alt="Peptide Science"
-            />
-          </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Peptide Categories -->
-    <section class="peptide-categories">
-      <div class="container">
-        <div class="section-header text-center">
-          <h2>Our Peptide Therapy Menu</h2>
-          <p>Targeted peptides for specific health and performance goals</p>
-        </div>
-
-        <div class="categories-tabs">
-          <div class="tab-navigation">
-            <button class="tab-btn active" data-tab="performance">
-              Performance & Recovery
-            </button>
-            <button class="tab-btn" data-tab="anti-aging">
-              Anti-Aging & Longevity
-            </button>
-            <button class="tab-btn" data-tab="metabolic">
-              Metabolic & Weight Loss
-            </button>
-            <button class="tab-btn" data-tab="healing">Healing & Repair</button>
-          </div>
-
-          <!-- Performance & Recovery Peptides -->
-          <div class="tab-content active" id="performance-tab">
-            <div class="peptides-grid">
-              <div class="peptide-card">
-                <h3>BPC-157</h3>
-                <div class="peptide-subtitle">Body Protection Compound</div>
-                <div class="peptide-info">
-                  <h4>Benefits:</h4>
-                  <ul>
-                    <li>Accelerated healing of injuries</li>
-                    <li>Gut health improvement</li>
-                    <li>Reduced inflammation</li>
-                    <li>Enhanced recovery</li>
-                    <li>Joint and tendon repair</li>
-                  </ul>
-                  <h4>Ideal for:</h4>
-                  <p>
-                    Athletes, injury recovery, digestive issues, chronic pain
-                  </p>
-                </div>
-                <div class="peptide-price">$250/month</div>
-              </div>
-
-              <div class="peptide-card">
-                <h3>TB-500</h3>
-                <div class="peptide-subtitle">Thymosin Beta-4</div>
-                <div class="peptide-info">
-                  <h4>Benefits:</h4>
-                  <ul>
-                    <li>Tissue repair and regeneration</li>
-                    <li>Reduced inflammation</li>
-                    <li>Improved flexibility</li>
-                    <li>Enhanced endurance</li>
-                    <li>Wound healing acceleration</li>
-                  </ul>
-                  <h4>Ideal for:</h4>
-                  <p>
-                    Injury recovery, athletic performance, chronic conditions
-                  </p>
-                </div>
-                <div class="peptide-price">$300/month</div>
-              </div>
-
-              <div class="peptide-card">
-                <h3>IGF-1 LR3</h3>
-                <div class="peptide-subtitle">Insulin-like Growth Factor</div>
-                <div class="peptide-info">
-                  <h4>Benefits:</h4>
-                  <ul>
-                    <li>Muscle growth and repair</li>
-                    <li>Enhanced recovery</li>
-                    <li>Improved performance</li>
-                    <li>Fat metabolism</li>
-                    <li>Anti-aging effects</li>
-                  </ul>
-                  <h4>Ideal for:</h4>
-                  <p>Muscle building, performance enhancement, anti-aging</p>
-                </div>
-                <div class="peptide-price">$400/month</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Anti-Aging & Longevity Peptides -->
-          <div class="tab-content" id="anti-aging-tab">
-            <div class="peptides-grid">
-              <div class="peptide-card">
-                <h3>GHK-Cu</h3>
-                <div class="peptide-subtitle">Copper Peptide</div>
-                <div class="peptide-info">
-                  <h4>Benefits:</h4>
-                  <ul>
-                    <li>Skin regeneration and repair</li>
-                    <li>Collagen production</li>
-                    <li>Hair growth stimulation</li>
-                    <li>Wound healing</li>
-                    <li>Anti-inflammatory effects</li>
-                  </ul>
-                  <h4>Ideal for:</h4>
-                  <p>Skin health, hair loss, anti-aging, wound healing</p>
-                </div>
-                <div class="peptide-price">$200/month</div>
-              </div>
-
-              <div class="peptide-card">
-                <h3>Epitalon</h3>
-                <div class="peptide-subtitle">Telomerase Activator</div>
-                <div class="peptide-info">
-                  <h4>Benefits:</h4>
-                  <ul>
-                    <li>Telomere lengthening</li>
-                    <li>Cellular regeneration</li>
-                    <li>Sleep cycle regulation</li>
-                    <li>Immune system support</li>
-                    <li>Longevity enhancement</li>
-                  </ul>
-                  <h4>Ideal for:</h4>
-                  <p>Anti-aging, longevity, sleep disorders, immune support</p>
-                </div>
-                <div class="peptide-price">$350/month</div>
-              </div>
-
-              <div class="peptide-card">
-                <h3>NAD+ Precursors</h3>
-                <div class="peptide-subtitle">Cellular Energy Support</div>
-                <div class="peptide-info">
-                  <h4>Benefits:</h4>
-                  <ul>
-                    <li>Enhanced cellular energy</li>
-                    <li>DNA repair support</li>
-                    <li>Cognitive enhancement</li>
-                    <li>Metabolic improvement</li>
-                    <li>Neuroprotection</li>
-                  </ul>
-                  <h4>Ideal for:</h4>
-                  <p>Anti-aging, cognitive health, energy enhancement</p>
-                </div>
-                <div class="peptide-price">$300/month</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Metabolic & Weight Loss Peptides -->
-          <div class="tab-content" id="metabolic-tab">
-            <div class="peptides-grid">
-              <div class="peptide-card">
-                <h3>CJC-1295</h3>
-                <div class="peptide-subtitle">
-                  Growth Hormone Releasing Hormone
-                </div>
-                <div class="peptide-info">
-                  <h4>Benefits:</h4>
-                  <ul>
-                    <li>Increased growth hormone</li>
-                    <li>Enhanced muscle growth</li>
-                    <li>Improved fat burning</li>
-                    <li>Better sleep quality</li>
-                    <li>Increased energy</li>
-                  </ul>
-                  <h4>Ideal for:</h4>
-                  <p>Weight loss, muscle building, anti-aging, energy</p>
-                </div>
-                <div class="peptide-price">$250/month</div>
-              </div>
-
-              <div class="peptide-card">
-                <h3>Ipamorelin</h3>
-                <div class="peptide-subtitle">Growth Hormone Secretagogue</div>
-                <div class="peptide-info">
-                  <h4>Benefits:</h4>
-                  <ul>
-                    <li>Natural GH production</li>
-                    <li>Fat loss acceleration</li>
-                    <li>Muscle preservation</li>
-                    <li>Improved recovery</li>
-                    <li>Enhanced sleep</li>
-                  </ul>
-                  <h4>Ideal for:</h4>
-                  <p>Weight management, body composition, recovery</p>
-                </div>
-                <div class="peptide-price">$200/month</div>
-              </div>
-
-              <div class="peptide-card">
-                <h3>AOD-9604</h3>
-                <div class="peptide-subtitle">Anti-Obesity Drug</div>
-                <div class="peptide-info">
-                  <h4>Benefits:</h4>
-                  <ul>
-                    <li>Targeted fat burning</li>
-                    <li>Metabolic enhancement</li>
-                    <li>Muscle preservation</li>
-                    <li>Improved body composition</li>
-                    <li>No side effects on growth</li>
-                  </ul>
-                  <h4>Ideal for:</h4>
-                  <p>Weight loss, body recomposition, metabolic health</p>
-                </div>
-                <div class="peptide-price">$275/month</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Healing & Repair Peptides -->
-          <div class="tab-content" id="healing-tab">
-            <div class="peptides-grid">
-              <div class="peptide-card">
-                <h3>PT-141</h3>
-                <div class="peptide-subtitle">Bremelanotide</div>
-                <div class="peptide-info">
-                  <h4>Benefits:</h4>
-                  <ul>
-                    <li>Enhanced libido</li>
-                    <li>Improved sexual function</li>
-                    <li>Increased arousal</li>
-                    <li>Mood enhancement</li>
-                    <li>Relationship wellness</li>
-                  </ul>
-                  <h4>Ideal for:</h4>
-                  <p>
-                    Sexual wellness, libido enhancement, relationship health
-                  </p>
-                </div>
-                <div class="peptide-price">$200/month</div>
-              </div>
-
-              <div class="peptide-card">
-                <h3>Cerebrolysin</h3>
-                <div class="peptide-subtitle">Neuroprotective Peptide</div>
-                <div class="peptide-info">
-                  <h4>Benefits:</h4>
-                  <ul>
-                    <li>Cognitive enhancement</li>
-                    <li>Neuroprotection</li>
-                    <li>Memory improvement</li>
-                    <li>Focus and clarity</li>
-                    <li>Brain repair support</li>
-                  </ul>
-                  <h4>Ideal for:</h4>
-                  <p>Cognitive health, memory issues, brain optimization</p>
-                </div>
-                <div class="peptide-price">$400/month</div>
-              </div>
-
-              <div class="peptide-card">
-                <h3>Selank</h3>
-                <div class="peptide-subtitle">Nootropic Peptide</div>
-                <div class="peptide-info">
-                  <h4>Benefits:</h4>
-                  <ul>
-                    <li>Anxiety reduction</li>
-                    <li>Stress management</li>
-                    <li>Cognitive enhancement</li>
-                    <li>Mood stabilization</li>
-                    <li>Immune support</li>
-                  </ul>
-                  <h4>Ideal for:</h4>
-                  <p>Anxiety, stress, cognitive performance, mood</p>
-                </div>
-                <div class="peptide-price">$250/month</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Treatment Protocols -->
-    <section class="treatment-protocols">
-      <div class="container">
-        <div class="section-header text-center">
-          <h2>Personalized Treatment Protocols</h2>
-          <p>Customized peptide combinations for optimal results</p>
-        </div>
-
-        <div class="protocols-grid">
-          <div class="protocol-card">
-            <h3>🏃‍♂️ Athletic Performance Protocol</h3>
-            <div class="protocol-combination">
-              <strong>Recommended Combination:</strong>
-              <ul>
-                <li>BPC-157 for recovery</li>
-                <li>TB-500 for tissue repair</li>
-                <li>CJC-1295 + Ipamorelin for growth</li>
-              </ul>
-            </div>
-            <div class="protocol-benefits">
-              <strong>Expected Benefits:</strong>
-              <p>
-                Enhanced performance, faster recovery, reduced injury risk,
-                improved endurance
-              </p>
-            </div>
-            <div class="protocol-duration">12-16 week program</div>
-            <div class="protocol-price">$600-800/month</div>
-          </div>
-
-          <div class="protocol-card">
-            <h3>⏰ Anti-Aging & Longevity Protocol</h3>
-            <div class="protocol-combination">
-              <strong>Recommended Combination:</strong>
-              <ul>
-                <li>Epitalon for cellular regeneration</li>
-                <li>GHK-Cu for skin health</li>
-                <li>NAD+ precursors for energy</li>
-              </ul>
-            </div>
-            <div class="protocol-benefits">
-              <strong>Expected Benefits:</strong>
-              <p>
-                Cellular renewal, improved skin, enhanced energy, longevity
-                support
-              </p>
-            </div>
-            <div class="protocol-duration">6-12 month program</div>
-            <div class="protocol-price">$500-700/month</div>
-          </div>
-
-          <div class="protocol-card">
-            <h3>🎯 Weight Loss & Body Composition Protocol</h3>
-            <div class="protocol-combination">
-              <strong>Recommended Combination:</strong>
-              <ul>
-                <li>AOD-9604 for fat burning</li>
-                <li>CJC-1295 for muscle preservation</li>
-                <li>Ipamorelin for recovery</li>
-            </div>
-            <div class="protocol-benefits">
-              <strong>Expected Benefits:</strong>
-              <p>
-                Accelerated fat loss, muscle preservation, improved metabolism
-              </p>
-            </div>
-            <div class="protocol-duration">8-12 week program</div>
-            <div class="protocol-price">$450-650/month</div>
-          </div>
-
-          <div class="protocol-card">
-            <h3>🔄 Recovery & Healing Protocol</h3>
-            <div class="protocol-combination">
-              <strong>Recommended Combination:</strong>
-              <ul>
-                <li>BPC-157 for tissue healing</li>
-                <li>TB-500 for inflammation</li>
-                <li>IGF-1 LR3 for muscle repair</li>
-              </ul>
-            </div>
-            <div class="protocol-benefits">
-              <strong>Expected Benefits:</strong>
-              <p>Accelerated healing, reduced pain, improved mobility</p>
-            </div>
-            <div class="protocol-duration">6-10 week program</div>
-            <div class="protocol-price">$550-750/month</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Administration Methods -->
-    <section class="administration-methods">
-      <div class="container">
-        <div class="section-header text-center">
-          <h2>Administration Methods</h2>
-          <p>Flexible delivery options for optimal results</p>
-        </div>
-
-        <div class="methods-grid">
-          <div class="method-card">
-            <div class="method-icon">💉</div>
-            <h3>Subcutaneous Injection</h3>
-            <p>
-              Most common method using small insulin-type needles for precise
-              dosing
-            </p>
-            <ul>
-              <li>High bioavailability</li>
-              <li>Precise dosing</li>
-              <li>Self-administered</li>
-              <li>Quick and easy</li>
-            </ul>
-          </div>
-
-          <div class="method-card">
-            <div class="method-icon">💊</div>
-            <h3>Oral Capsules</h3>
-            <p>Convenient oral administration for select peptides</p>
-            <ul>
-              <li>Easy to take</li>
-              <li>No needles required</li>
-              <li>Travel-friendly</li>
-              <li>Good compliance</li>
-            </ul>
-          </div>
-
-          <div class="method-card">
-            <div class="method-icon">👃</div>
-            <h3>Nasal Spray</h3>
-            <p>Rapid absorption through nasal mucosa for specific peptides</p>
-            <ul>
-              <li>Fast absorption</li>
-              <li>Non-invasive</li>
-              <li>Bypasses digestion</li>
-              <li>Convenient dosing</li>
-            </ul>
-          </div>
-
-          <div class="method-card">
-            <div class="method-icon">🧴</div>
-            <h3>Topical Creams</h3>
-            <p>Targeted application for skin and localized treatment</p>
-            <ul>
-              <li>Localized treatment</li>
-              <li>No systemic effects</li>
-              <li>Easy application</li>
-              <li>Good for skin peptides</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Safety & Monitoring -->
-    <section class="peptide-safety">
-      <div class="container">
-        <div class="section-header text-center">
-          <h2>Safety & Medical Supervision</h2>
-          <p>Comprehensive monitoring and support throughout your treatment</p>
-        </div>
-
-        <div class="safety-features">
-          <div class="safety-item">
-            <h3>👨‍⚕️ Medical Oversight</h3>
-            <p>
-              All peptide therapies are prescribed and monitored by licensed
-              medical professionals
-            </p>
-          </div>
-          <div class="safety-item">
-            <h3>🔬 Quality Peptides</h3>
-            <p>
-              Pharmaceutical-grade peptides from certified compounding
-              pharmacies
-            </p>
-          </div>
-          <div class="safety-item">
-            <h3>📊 Regular Monitoring</h3>
-            <p>
-              Ongoing assessment of progress and side effects with adjustments
-              as needed
-            </p>
-          </div>
-          <div class="safety-item">
-            <h3>📚 Education & Support</h3>
-            <p>
-              Comprehensive training on proper administration and what to expect
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="peptide-faq">
-      <div class="container">
-        <div class="section-header text-center">
-          <h2>Frequently Asked Questions</h2>
-          <p>Common questions about peptide therapy</p>
-        </div>
-
-        <div class="faq-grid">
-          <div class="faq-item">
-            <h3>Are peptides safe?</h3>
-            <p>
-              When prescribed and monitored by medical professionals, peptides
-              are generally very safe with minimal side effects. We use only
-              pharmaceutical-grade peptides from certified facilities.
-            </p>
-          </div>
-
-          <div class="faq-item">
-            <h3>How long does it take to see results?</h3>
-            <p>
-              Results vary by peptide and individual. Some benefits like
-              improved sleep or mood may be noticed within days, while tissue
-              repair and body composition changes typically take 4-8 weeks.
-            </p>
-          </div>
-
-          <div class="faq-item">
-            <h3>Do I need to inject peptides myself?</h3>
-            <p>
-              Most peptides require subcutaneous injection, which we thoroughly
-              train you to do safely at home. The needles are very small and
-              most patients find it easier than expected.
-            </p>
-          </div>
-
-          <div class="faq-item">
-            <h3>Can peptides be combined with other treatments?</h3>
-            <p>
-              Yes, peptides often complement other therapies like hormone
-              replacement, IV therapy, and weight management programs. We
-              coordinate all treatments for optimal results.
-            </p>
-          </div>
-
-          <div class="faq-item">
-            <h3>How long do I need to use peptides?</h3>
-            <p>
-              Treatment duration varies based on goals. Some protocols are 6-12
-              weeks for specific outcomes, while others may be used longer-term
-              for ongoing benefits.
-            </p>
-          </div>
-
-          <div class="faq-item">
-            <h3>Are peptides legal?</h3>
-            <p>
-              Yes, peptides prescribed by licensed physicians for therapeutic
-              purposes are legal. We only use peptides approved for research and
-              therapeutic use.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="peptide-cta">
-      <div class="container">
-        <div class="cta-content text-center">
-          <h2>Unlock Your Body's Potential with Peptide Therapy</h2>
-          <p>
-            Discover how targeted peptide treatments can enhance your
-            performance, recovery, and overall wellness.
-          </p>
-          <div class="cta-buttons">
-            <button class="btn btn-primary btn-lg" onclick="openBookingModal()">
-              Schedule Consultation
-            </button>
-            <a href="../membership.html" class="btn btn-secondary btn-lg"
-              >View Member Benefits</a
-            >
-          </div>
-          <p class="cta-note">
-            Comprehensive consultation required for all peptide therapy programs
-          </p>
-        </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
     <!-- Footer -->
-    <footer id="footer">
-      <div class="container">
-        <div class="footer-content">
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-logo">Stay Dripped®</div>
+        <div class="footer-info">
           <div class="footer-section">
-            <div class="footer-logo">
-              <img
-                src="../assets/images/logo.png"
-                alt="Stay Dripped Mobile IV"
-              />
-            </div>
-            <p>
-              Premium mobile IV therapy and wellness services delivered to your
-              location in Scottsdale & Phoenix.
-            </p>
+            <h3>Contact Information</h3>
+            <p>📞 (602) 688-9825</p>
+            <p>📧 info@staydripped.com</p>
+            <p>📍 Serving Scottsdale & Phoenix Metro</p>
           </div>
           <div class="footer-section">
-            <h4>Services</h4>
-            <ul>
-              <li><a href="iv-therapy.html">IV Therapy</a></li>
-              <li>
-                <a href="hormone-replacement.html">Hormone Replacement</a>
-              </li>
-              <li><a href="aesthetic.html">Aesthetic Treatments</a></li>
-              <li><a href="weight-management.html">Weight Management</a></li>
-            </ul>
+            <h3>Services</h3>
+            <p><a href="iv-therapy.html">IV Therapy</a></p>
+            <p><a href="peptide-therapy.html">Peptide Therapy</a></p>
+            <p><a href="nad-therapy.html">NAD+ Therapy</a></p>
+            <p><a href="membership.html">Memberships</a></p>
           </div>
           <div class="footer-section">
-            <h4>Company</h4>
-            <ul>
-              <li><a href="../membership.html">Membership</a></li>
-              <li><a href="../corporate-events.html">Corporate Events</a></li>
-              <li><a href="../franchise.html">Franchise</a></li>
-              <li><a href="../partnerships.html">Partnerships</a></li>
-            </ul>
-          </div>
-          <div class="footer-section">
-            <h4>Legal</h4>
-            <ul>
-              <li><a href="../../privacy-policy.html">Privacy Policy</a></li>
-              <li>
-                <a href="../../terms-of-service.html">Terms of Service</a>
-              </li>
-              <li>
-                <a href="../../medical-disclaimer.html">Medical Disclaimer</a>
-              </li>
-            </ul>
+            <h3>Professional Care</h3>
+            <p>Licensed medical professionals</p>
+            <p>FDA-approved treatments</p>
+            <p>Consultation required</p>
+            <p>Mobile service available</p>
           </div>
         </div>
         <div class="footer-bottom">
-          <p>&copy; 2025 Stay Dripped Mobile IV LLC. All rights reserved.</p>
+          <p>&copy; 2024 Stay Dripped Mobile IV LLC. All rights reserved.</p>
         </div>
       </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="../../assets/js/bootstrap.min.js"></script>
+    <!-- Scripts -->
+    <script src="https://qualiphy.com/api/integration/loader.js"></script>
+    <script src="../assets/js/gfe-utility.js"></script>
     <script>
-      function openBookingModal() {
-        window.location.href = "../../index.html#contact";
+      // Initialize Qualiphy widget
+      const qualiphyConfig = {
+        clinicId: "3454",
+        examIds:
+          "918,2095,2097,2246,2316,2120,2315,2129,1620,2130,1623,2248,1148,1693,2122,1287,1694,2207",
+        timezone: "-6",
+        availabilityStartTime: "00:00",
+        availabilityEndTime: "23:59",
+        availabilityDays: "1,2,3,4,5,6,7",
+      };
+
+      // Load Qualiphy scripts and initialize
+      function loadQualiphyScripts() {
+        const qualiphyScript = document.createElement("script");
+        qualiphyScript.src = "https://qualiphy.com/api/integration/inject.js";
+        qualiphyScript.async = true;
+        document.head.appendChild(qualiphyScript);
       }
 
-      // Tab functionality
-      document.querySelectorAll(".tab-btn").forEach((btn) => {
-        btn.addEventListener("click", function () {
-          const targetTab = this.dataset.tab;
+      // Mobile menu toggle
+      const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+      const navLinks = document.querySelector(".nav-links");
 
-          // Update active button
-          document
-            .querySelectorAll(".tab-btn")
-            .forEach((b) => b.classList.remove("active"));
-          this.classList.add("active");
-
-          // Show target tab content
-          document.querySelectorAll(".tab-content").forEach((content) => {
-            content.classList.remove("active");
-          });
-          document.getElementById(targetTab + "-tab").classList.add("active");
+      if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener("click", function () {
+          navLinks.classList.toggle("active");
         });
-      });
+      }
 
-      // FAQ Toggle
-      document.querySelectorAll(".faq-item h3").forEach((header) => {
-        header.addEventListener("click", function () {
-          const item = this.parentElement;
-          const isActive = item.classList.contains("active");
-
-          // Close all FAQ items
-          document
-            .querySelectorAll(".faq-item")
-            .forEach((faq) => faq.classList.remove("active"));
-
-          // Toggle current item
-          if (!isActive) {
-            item.classList.add("active");
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
           }
         });
       });
-    </script>
 
-    <!-- Qualiphy GFE Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-    <script
-      id="qualiphy-script"
-      type="text/javascript"
-      src="https://www.app.qualiphy.me/scripts/quidget_disclosure.js"
-      data-formsrc="https://www.app.qualiphy.me/qualiphy-widget?clinic=Stay Dripped Mobile IV LLC&clinicId=3454&first_name=&last_name=&email=&phone_number=&gender=&exams=918,2095,2097,2246,2316,2120,2315,2129,1620,2130,1623,2248,1148,1693,2122,1287,1694,2207&tele_state_required=true&token=25f1c2618e146d725e934313417e918418a5068e"
-      data-timezone="-6"
-      data-examhours='[{"SUN":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"MON":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"TUE":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"WED":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"THU":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"FRI":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"SAT":{"FROM":"00:00","TO":"23:59","isDaySelected":true}}]'
-    ></script>
-    <p style="display: none" id="not-available">Not available!</p>
+      // Initialize on DOM load
+      document.addEventListener("DOMContentLoaded", function () {
+        loadQualiphyScripts();
+        console.log("Stay Dripped Peptide Therapy page loaded");
+      });
+    </script>
   </body>
 </html>
