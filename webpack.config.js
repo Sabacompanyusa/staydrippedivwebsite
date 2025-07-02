@@ -51,7 +51,7 @@ module.exports = (env) => {
           },
         },
         {
-          test: /\.scss$/,
+          test: /\.(scss|css)$/,
           use: [
             MiniCssExtractPlugin.loader,
             {
@@ -217,9 +217,9 @@ module.exports = (env) => {
     },
     resolve: {
       extensions: [".js", ".json"],
-      aliases: {
+      alias: {
         "@": path.resolve(__dirname, "js"),
-        "@styles": path.resolve(__dirname, "scss"),
+        "@styles": path.resolve(__dirname, "assets/css"),
         "@assets": path.resolve(__dirname, "assets"),
       },
     },
