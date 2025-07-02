@@ -5,19 +5,35 @@
 
 class PremiumInteractions {
   constructor() {
-    this.init();
+    try {
+      this.init();
+    } catch (error) {
+      console.warn("PremiumInteractions initialization error:", error);
+    }
   }
 
   init() {
-    this.createScrollIndicator();
-    this.setupParallaxEffects();
-    this.setupIntersectionObserver();
-    this.setupSmoothScrolling();
-    this.setupButtonRippleEffect();
-    this.setupImageLazyLoading();
-    this.setupPreloadAnimations();
-    this.setupFloatingElements();
-    this.setupMouseTracker();
+    const methods = [
+      "createScrollIndicator",
+      "setupParallaxEffects",
+      "setupIntersectionObserver",
+      "setupSmoothScrolling",
+      "setupButtonRippleEffect",
+      "setupImageLazyLoading",
+      "setupPreloadAnimations",
+      "setupFloatingElements",
+      "setupMouseTracker",
+    ];
+
+    methods.forEach((methodName) => {
+      try {
+        if (typeof this[methodName] === "function") {
+          this[methodName]();
+        }
+      } catch (error) {
+        console.warn(`Error in ${methodName}:`, error);
+      }
+    });
   }
 
   // Scroll Progress Indicator
@@ -41,7 +57,7 @@ class PremiumInteractions {
         background: rgba(15, 23, 42, 0.1);
         backdrop-filter: blur(10px);
       }
-      
+
       .scroll-progress-bar {
         height: 100%;
         background: var(--gradient-cyan);
@@ -50,7 +66,7 @@ class PremiumInteractions {
         position: relative;
         box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
       }
-      
+
       .scroll-progress-glow {
         position: absolute;
         top: -2px;
@@ -62,7 +78,7 @@ class PremiumInteractions {
         opacity: 0;
         transition: opacity 0.3s ease;
       }
-      
+
       .scroll-progress-indicator.visible .scroll-progress-glow {
         opacity: 1;
       }
@@ -179,7 +195,7 @@ class PremiumInteractions {
         animation: slideInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards,
                    glow 0.8s ease-out 0.3s forwards;
       }
-      
+
       @keyframes slideInUp {
         from {
           opacity: 0;
@@ -190,7 +206,7 @@ class PremiumInteractions {
           transform: translateY(0) scale(1);
         }
       }
-      
+
       @keyframes glow {
         from {
           box-shadow: var(--shadow);
@@ -314,12 +330,12 @@ class PremiumInteractions {
         background-size: 200% 100%;
         animation: loading 1.5s infinite;
       }
-      
+
       img.loaded {
         opacity: 1;
         animation: none;
       }
-      
+
       @keyframes loading {
         0% { background-position: 200% 0; }
         100% { background-position: -200% 0; }
