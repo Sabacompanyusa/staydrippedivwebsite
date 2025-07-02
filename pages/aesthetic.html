@@ -786,21 +786,21 @@
       // Load Qualiphy script safely
       function loadQualiphy() {
         try {
-          const script = document.createElement('script');
-          script.src = 'https://qualiphy.com/api/integration/loader.js';
+          const script = document.createElement("script");
+          script.src = "https://qualiphy.com/api/integration/loader.js";
           script.async = true;
-          script.onerror = function() {
-            console.log('Qualiphy script failed to load, using fallback');
+          script.onerror = function () {
+            console.log("Qualiphy script failed to load, using fallback");
           };
           document.head.appendChild(script);
         } catch (error) {
-          console.log('Error loading Qualiphy script:', error);
+          console.log("Error loading Qualiphy script:", error);
         }
       }
 
       // Load Qualiphy after page is ready
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', loadQualiphy);
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", loadQualiphy);
       } else {
         loadQualiphy();
       }
@@ -823,7 +823,7 @@
             const href = this.getAttribute("href");
 
             // Skip if href is just '#' or empty
-            if (!href || href === '#' || href.length <= 1) {
+            if (!href || href === "#" || href.length <= 1) {
               return;
             }
 
@@ -832,10 +832,13 @@
             try {
               const target = document.querySelector(href);
               if (target) {
-              target.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-              });
+                target.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                });
+              }
+            } catch (error) {
+              console.warn("Error in smooth scrolling:", error);
             }
           });
         });
