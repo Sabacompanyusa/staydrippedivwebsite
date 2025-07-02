@@ -1,44 +1,325 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Standard Meta Tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      Micronutrient Analysis - Cellular Nutrition Testing | Stay Dripped Mobile
-      IV
+      Micronutrient Testing & Analysis - Optimize Your Nutrition | Stay Dripped
+      Mobile IV
     </title>
     <meta
       name="description"
-      content="Discover your nutritional deficiencies with comprehensive micronutrient analysis at Stay Dripped Mobile IV in Scottsdale, AZ. Cellular-level testing for vitamins, minerals, and antioxidants."
+      content="Discover your micronutrient deficiencies with comprehensive testing and personalized supplementation plans for optimal health and performance."
+    />
+    <meta
+      name="keywords"
+      content="micronutrient testing, vitamin deficiency testing, nutrition analysis, personalized supplements, nutritional assessment"
+    />
+    <meta name="robots" content="index, follow" />
+    <link
+      rel="canonical"
+      href="https://staydripped.com/pages/micronutrient.html"
+    />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://staydripped.com/pages/micronutrient.html"
+    />
+    <meta
+      property="og:title"
+      content="Micronutrient Testing & Analysis - Optimize Your Nutrition | Stay Dripped Mobile IV"
+    />
+    <meta
+      property="og:description"
+      content="Discover your micronutrient deficiencies with comprehensive testing and personalized supplementation plans for optimal health and performance."
+    />
+    <meta
+      property="og:image"
+      content="https://staydripped.com/assets/images/logo.png"
+    />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:title"
+      content="Micronutrient Testing & Analysis - Optimize Your Nutrition | Stay Dripped Mobile IV"
+    />
+    <meta
+      property="twitter:description"
+      content="Discover your micronutrient deficiencies with comprehensive testing and personalized supplementation plans for optimal health and performance."
     />
 
     <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico" />
     <link
       rel="apple-touch-icon"
-      href="../../assets/images/apple-touch-icon.png"
+      sizes="180x180"
+      href="../assets/images/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="../../assets/images/favicon-32x32.png"
+      href="../assets/images/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="../../assets/images/favicon-16x16.png"
+      href="../assets/images/favicon-16x16.png"
     />
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link rel="stylesheet" href="../../assets/css/qualiphy-style.css" />
-    <link rel="stylesheet" href="../../assets/css/responsive.css" />
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://intakeq.com" />
+
+    <!-- Preload critical assets -->
+    <link rel="preload" href="../assets/images/logo.png" as="image" />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      as="style"
+    />
+
+    <!-- Critical CSS (inline for performance) -->
+    <style>
+      :root {
+        /* Professional Brand Colors */
+        --primary: #0a2a43;
+        --secondary: #00bcd4;
+        --accent: #4fc3f7;
+        --gold: #ffd700;
+        --platinum: #e5e5e5;
+        --success: #4caf50;
+        --warning: #ff9800;
+        --error: #f44336;
+
+        /* Enhanced Text Colors */
+        --text-dark: #1a1a1a;
+        --text-medium: #334155;
+        --text-light: #666;
+        --text-muted: #999;
+        --text-white: #fff;
+        --text-cyan: #06b6d4;
+
+        /* Professional Background Colors */
+        --bg-light: #f1fbff;
+        --bg-dark: #1a1a1a;
+        --bg-chrome: #f1f5f9;
+        --white: #fff;
+
+        /* Professional Shadows */
+        --shadow: 0 4px 12px rgb(0 0 0 / 10%);
+        --shadow-hover: 0 8px 25px rgb(0 0 0 / 15%);
+        --shadow-lg: 0 10px 40px rgb(0 0 0 / 10%);
+        --shadow-xl: 0 20px 64px rgb(0 0 0 / 12%);
+        --shadow-cyan: 0 8px 32px rgba(0, 188, 212, 0.25);
+
+        /* Professional Border Radius */
+        --br: 12px;
+        --br-lg: 16px;
+        --br-xl: 24px;
+        --br-full: 9999px;
+
+        /* Professional Transitions */
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        --transition-fast: all 0.15s ease;
+        --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+        /* Professional Gradients */
+        --gradient-primary: linear-gradient(
+          135deg,
+          var(--secondary),
+          var(--accent)
+        );
+        --gradient-gold: linear-gradient(135deg, #ffd700, #ffed4e);
+        --gradient-hero: linear-gradient(
+          135deg,
+          rgb(10 42 67 / 90%),
+          rgb(0 188 212 / 70%)
+        );
+        --gradient-surface: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+      }
+
+      /* CSS Reset */
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+      }
+
+      body {
+        font-family:
+          Inter,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Oxygen,
+          Ubuntu,
+          Cantarell,
+          sans-serif;
+        line-height: 1.7;
+        color: var(--text-dark);
+        background: #fafafa;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      body.has-back-button {
+        padding-top: 120px;
+      }
+
+      /* Skip Link */
+      .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: var(--primary);
+        color: white;
+        padding: 8px;
+        text-decoration: none;
+        z-index: 100;
+      }
+
+      .skip-link:focus {
+        top: 0;
+      }
+
+      /* Container */
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      @media (width >= 768px) {
+        .container {
+          padding: 0 3rem;
+        }
+      }
+    </style>
+
+    <!-- External CSS (deferred) -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    /></noscript>
+
+    <!-- Professional Theme CSS -->
+    <link
+      rel="preload"
+      href="../assets/css/professional-theme.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link rel="stylesheet" href="../assets/css/professional-theme.css"
+    /></noscript>
+
+    <!-- Enhanced Sections CSS -->
+    <link
+      rel="preload"
+      href="../assets/css/enhanced-sections.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link rel="stylesheet" href="../assets/css/enhanced-sections.css"
+    /></noscript>
+
+    <!-- Enhanced Footer CSS -->
+    <link
+      rel="preload"
+      href="../assets/css/enhanced-footer.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link rel="stylesheet" href="../assets/css/enhanced-footer.css"
+    /></noscript>
+
+    <!-- Premium Animations CSS -->
+    <link
+      rel="preload"
+      href="../assets/css/premium-animations.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link rel="stylesheet" href="../assets/css/premium-animations.css"
+    /></noscript>
+
+    <!-- Premium Responsive CSS -->
+    <link
+      rel="preload"
+      href="../assets/css/premium-responsive.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link rel="stylesheet" href="../assets/css/premium-responsive.css"
+    /></noscript>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
   </head>
-  <body>
+
+  <body class="has-back-button">
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="nav-container">
+        <div class="logo">
+          <img
+            src="../assets/images/logo.png"
+            alt="Stay Dripped Logo"
+            class="logo-image"
+          />
+          <span class="brand-name">Stay Dripped</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li>
+            <a href="#menu" class="nav-link active">Micronutrient Testing</a>
+          </li>
+          <li><a href="membership.html" class="nav-link">Membership</a></li>
+          <li><a href="tel:+16026889825" class="nav-link">Call Now</a></li>
+        </ul>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+
     <!-- Back Button -->
     <div class="back-button-container">
-      <a href="../index.html" class="back-button metallic-btn">
+      <a href="../index.html" class="back-button">
         <i class="fas fa-arrow-left"></i>
         <span>Back to Home</span>
       </a>
@@ -47,850 +328,632 @@
     <!-- Header -->
     <header class="header">
       <div class="header-content">
-        <div class="logo-section">
-          <img src="../assets/images/logo.png" alt="Stay Dripped Mobile IV" />
-          <div class="brand-title">Micronutrient Analysis</div>
-          <div class="brand-subtitle">
-            Comprehensive Cellular Nutrition Testing in Scottsdale, AZ
-          </div>
-        </div>
-
-        <div class="quick-actions">
-          <a href="tel:+16026889825" class="quick-action-btn">
-            <i class="fas fa-phone"></i>
-            Call (602) 688-9825
-          </a>
-          <a
-            href="https://Staydripped.intakeq.com/booking"
-            class="quick-action-btn"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="fas fa-calendar"></i>
-            Book Online Now
-          </a>
-          <div
-            id="loadFormButton"
-            style="
-              width: 180px;
-              height: 50px;
-              cursor: pointer;
-              background-color: #cfc9ff;
-              color: #0a005b;
-              border: none;
-              border-radius: 12px;
-              font-weight: 600;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              gap: 0.5rem;
-            "
-            onmouseover="this.style.backgroundColor='#8058fa'; this.style.color='white'"
-            onmouseout="this.style.backgroundColor='#CFC9FF'; this.style.color='#0A005B'"
-            onclick="showDisclosureModal()"
-          >
-            <i class="fas fa-clipboard-list"></i>
-            Start GFE (Required)
-          </div>
-        </div>
+        <h1>Micronutrient Testing & Analysis</h1>
+        <p>
+          Discover your unique nutritional needs with comprehensive
+          micronutrient testing and personalized supplementation plans.
+        </p>
       </div>
     </header>
 
-    <!-- Service Hero -->
-    <section class="service-hero">
-      <div class="container">
-        <div class="service-hero-content">
-          <div class="service-hero-text">
-            <div class="breadcrumbs">
-              <a href="../services.html">Services</a> >
-              <span>Micronutrient Analysis</span>
-            </div>
-            <h1>Micronutrient Analysis</h1>
-            <p class="service-subtitle">
-              Discover your unique nutritional needs with comprehensive
-              cellular-level testing of vitamins, minerals, antioxidants, and
-              metabolites to optimize your health and performance.
-            </p>
-            <div class="service-highlights">
-              <div class="highlight-item">
-                <span class="highlight-icon">🔬</span>
-                <span>Cellular Testing</span>
-              </div>
-              <div class="highlight-item">
-                <span class="highlight-icon">📊</span>
-                <span>Comprehensive Analysis</span>
-              </div>
-              <div class="highlight-item">
-                <span class="highlight-icon">🎯</span>
-                <span>Personalized Plan</span>
-              </div>
-            </div>
-            <div class="service-cta">
-              <button
-                class="btn btn-primary btn-lg"
-                onclick="openBookingModal()"
-              >
-                Order Analysis
-              </button>
-              <div class="pricing-info">
-                Starting at $200 | Comprehensive Report Included
-              </div>
-            </div>
-          </div>
-          <div class="service-hero-image">
-            <img
-              src="../../assets/images/placeholder.png"
-              alt="Micronutrient Analysis"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why Micronutrients Matter -->
-    <section class="micronutrients-importance">
-      <div class="container">
-        <div class="section-header text-center">
-          <h2>Why Micronutrients Matter</h2>
-          <p>
-            Understanding the critical role of vitamins and minerals in optimal
-            health
-          </p>
-        </div>
-
-        <div class="importance-content">
-          <div class="importance-text">
-            <h3>The Foundation of Cellular Health</h3>
+    <!-- Main Content -->
+    <main id="main-content">
+      <!-- Testing Overview -->
+      <section class="testing-overview section-padding">
+        <div class="container">
+          <div class="section-header text-center">
+            <h2>Precision Nutrition Testing</h2>
             <p>
-              Micronutrients are essential vitamins, minerals, and antioxidants
-              that your cells need to function optimally. Even small
-              deficiencies can significantly impact energy, immunity, mental
-              clarity, and overall health.
+              Advanced micronutrient analysis to optimize your health from the
+              inside out
             </p>
+          </div>
 
-            <div class="key-facts">
-              <div class="fact-item">
-                <h4>🧬 Cellular Function</h4>
-                <p>
-                  Micronutrients are cofactors in thousands of enzymatic
-                  reactions that power your cells
-                </p>
+          <div class="testing-packages">
+            <!-- Comprehensive Micronutrient Panel -->
+            <div class="package-card premium-card featured">
+              <div class="package-header">
+                <h3>🔬 Comprehensive Micronutrient Panel</h3>
+                <div class="package-price">$299</div>
+                <span class="popular-badge">Most Popular</span>
               </div>
-              <div class="fact-item">
-                <h4>⚡ Energy Production</h4>
-                <p>
-                  B vitamins and minerals are essential for converting food into
-                  cellular energy (ATP)
-                </p>
+              <div class="package-content">
+                <p>Complete analysis of 35+ essential micronutrients</p>
+                <ul class="package-tests">
+                  <li>All essential vitamins (A, B-complex, C, D, E, K)</li>
+                  <li>Critical minerals (Iron, Magnesium, Zinc, Selenium)</li>
+                  <li>Amino acids and antioxidants</li>
+                  <li>Metabolic cofactors</li>
+                  <li>Functional nutrient assessment</li>
+                  <li>Personalized supplement recommendations</li>
+                </ul>
+                <div class="package-timeline">
+                  <i class="fas fa-clock"></i>
+                  Results in 7-10 days
+                </div>
               </div>
-              <div class="fact-item">
-                <h4>🛡️ Immune Defense</h4>
-                <p>
-                  Vitamins C, D, zinc, and selenium are crucial for immune
-                  system function
-                </p>
+            </div>
+
+            <!-- Essential Vitamin Panel -->
+            <div class="package-card premium-card">
+              <div class="package-header">
+                <h3>🍎 Essential Vitamin Panel</h3>
+                <div class="package-price">$199</div>
               </div>
-              <div class="fact-item">
-                <h4>🧠 Brain Health</h4>
-                <p>
-                  Omega-3s, B vitamins, and antioxidants support cognitive
-                  function and mood
-                </p>
+              <div class="package-content">
+                <p>Core vitamin analysis for foundational health</p>
+                <ul class="package-tests">
+                  <li>Vitamin D3 (25-OH)</li>
+                  <li>Vitamin B12 (methylcobalamin)</li>
+                  <li>Folate and B-complex vitamins</li>
+                  <li>Vitamin C and antioxidant status</li>
+                  <li>Iron and ferritin levels</li>
+                  <li>Basic supplementation guidance</li>
+                </ul>
+                <div class="package-timeline">
+                  <i class="fas fa-clock"></i>
+                  Results in 3-5 days
+                </div>
+              </div>
+            </div>
+
+            <!-- Athletic Performance Panel -->
+            <div class="package-card premium-card">
+              <div class="package-header">
+                <h3>💪 Athletic Performance Panel</h3>
+                <div class="package-price">$349</div>
+              </div>
+              <div class="package-content">
+                <p>Specialized testing for athletes and active individuals</p>
+                <ul class="package-tests">
+                  <li>Complete micronutrient analysis</li>
+                  <li>Muscle recovery nutrients</li>
+                  <li>Energy metabolism markers</li>
+                  <li>Inflammation and oxidative stress</li>
+                  <li>Performance optimization nutrients</li>
+                  <li>Sport-specific supplementation plan</li>
+                </ul>
+                <div class="package-timeline">
+                  <i class="fas fa-clock"></i>
+                  Results in 7-10 days
+                </div>
+              </div>
+            </div>
+
+            <!-- Women's Wellness Panel -->
+            <div class="package-card premium-card">
+              <div class="package-header">
+                <h3>🌸 Women's Wellness Panel</h3>
+                <div class="package-price">$279</div>
+              </div>
+              <div class="package-content">
+                <p>Targeted nutrition testing for women's unique needs</p>
+                <ul class="package-tests">
+                  <li>Hormone-supporting nutrients</li>
+                  <li>Reproductive health vitamins</li>
+                  <li>Bone health minerals</li>
+                  <li>Energy and mood nutrients</li>
+                  <li>Prenatal and postnatal support</li>
+                  <li>Women-specific recommendations</li>
+                </ul>
+                <div class="package-timeline">
+                  <i class="fas fa-clock"></i>
+                  Results in 7-10 days
+                </div>
               </div>
             </div>
           </div>
-          <div class="importance-visual">
-            <img
-              src="../../assets/images/placeholder.png"
-              alt="Micronutrient Importance"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Testing Difference -->
-    <section class="testing-difference">
-      <div class="container">
-        <div class="section-header text-center">
-          <h2>Cellular vs. Serum Testing</h2>
-          <p>Why our advanced testing provides more accurate results</p>
-        </div>
-
-        <div class="testing-comparison">
-          <div class="comparison-cards">
-            <div class="comparison-card standard">
-              <h3>Standard Serum Testing</h3>
-              <div class="testing-method">Tests blood plasma levels</div>
-              <div class="limitations">
-                <h4>Limitations:</h4>
+          <!-- What We Test -->
+          <div class="what-we-test">
+            <h3>What We Analyze</h3>
+            <div class="nutrients-grid">
+              <div class="nutrient-category">
+                <h4>🟡 Fat-Soluble Vitamins</h4>
                 <ul>
-                  <li>Only shows recent intake</li>
-                  <li>Doesn't reflect cellular function</li>
-                  <li>Can miss functional deficiencies</li>
-                  <li>Affected by recent meals</li>
-                  <li>Limited clinical relevance</li>
+                  <li>Vitamin A (Retinol)</li>
+                  <li>Vitamin D3 (25-OH)</li>
+                  <li>Vitamin E (Tocopherols)</li>
+                  <li>Vitamin K1 & K2</li>
+                </ul>
+              </div>
+              <div class="nutrient-category">
+                <h4>🔵 Water-Soluble Vitamins</h4>
+                <ul>
+                  <li>B1 (Thiamine)</li>
+                  <li>B2 (Riboflavin)</li>
+                  <li>B3 (Niacin)</li>
+                  <li>B5 (Pantothenic Acid)</li>
+                  <li>B6 (Pyridoxine)</li>
+                  <li>B7 (Biotin)</li>
+                  <li>B9 (Folate)</li>
+                  <li>B12 (Cobalamin)</li>
+                  <li>Vitamin C</li>
+                </ul>
+              </div>
+              <div class="nutrient-category">
+                <h4>🟠 Essential Minerals</h4>
+                <ul>
+                  <li>Iron & Ferritin</li>
+                  <li>Magnesium</li>
+                  <li>Zinc</li>
+                  <li>Selenium</li>
+                  <li>Copper</li>
+                  <li>Manganese</li>
+                  <li>Chromium</li>
+                </ul>
+              </div>
+              <div class="nutrient-category">
+                <h4>🟢 Amino Acids & Antioxidants</h4>
+                <ul>
+                  <li>Glutathione</li>
+                  <li>CoQ10</li>
+                  <li>Alpha-Lipoic Acid</li>
+                  <li>Carnitine</li>
+                  <li>Cysteine</li>
+                  <li>Serine</li>
                 </ul>
               </div>
             </div>
+          </div>
 
-            <div class="comparison-card cellular featured">
-              <div class="better-badge">Better Accuracy</div>
-              <h3>Cellular Micronutrient Testing</h3>
-              <div class="testing-method">
-                Tests nutrient function inside cells
+          <!-- Testing Process -->
+          <div class="testing-process">
+            <h3>Your Testing Journey</h3>
+            <div class="process-steps">
+              <div class="step-item">
+                <div class="step-number">1</div>
+                <h4>Book Your Test</h4>
+                <p>Schedule your micronutrient testing appointment</p>
               </div>
-              <div class="advantages">
-                <h4>Advantages:</h4>
-                <ul>
-                  <li>Measures actual cellular function</li>
-                  <li>Reflects long-term nutrient status</li>
-                  <li>Identifies functional deficiencies</li>
-                  <li>Not affected by recent intake</li>
-                  <li>Clinically relevant results</li>
-                </ul>
+              <div class="step-item">
+                <div class="step-number">2</div>
+                <h4>Sample Collection</h4>
+                <p>Simple blood draw at your location or our lab</p>
+              </div>
+              <div class="step-item">
+                <div class="step-number">3</div>
+                <h4>Laboratory Analysis</h4>
+                <p>Advanced testing using cellular nutrient analysis</p>
+              </div>
+              <div class="step-item">
+                <div class="step-number">4</div>
+                <h4>Results Review</h4>
+                <p>Comprehensive report with detailed explanations</p>
+              </div>
+              <div class="step-item">
+                <div class="step-number">5</div>
+                <h4>Personalized Plan</h4>
+                <p>Custom supplementation and nutrition recommendations</p>
               </div>
             </div>
           </div>
 
-          <div class="testing-stats">
-            <div class="stat-item">
-              <div class="stat-number">35%</div>
-              <div class="stat-label">
-                of people with "normal" serum levels have cellular deficiencies
-              </div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">90%</div>
-              <div class="stat-label">
-                more accurate than standard blood tests
-              </div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">6 months</div>
-              <div class="stat-label">of nutritional history revealed</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- What We Test -->
-    <section class="what-we-test">
-      <div class="container">
-        <div class="section-header text-center">
-          <h2>Comprehensive Micronutrient Panel</h2>
-          <p>Testing over 35 essential vitamins, minerals, and antioxidants</p>
-        </div>
-
-        <div class="nutrients-categories">
-          <div class="nutrient-category">
-            <h3>💊 B-Complex Vitamins</h3>
-            <div class="nutrients-list">
-              <div class="nutrient-item">
-                <h4>Vitamin B1 (Thiamine)</h4>
-                <p>Energy metabolism, nervous system function</p>
-              </div>
-              <div class="nutrient-item">
-                <h4>Vitamin B2 (Riboflavin)</h4>
-                <p>Energy production, antioxidant function</p>
-              </div>
-              <div class="nutrient-item">
-                <h4>Vitamin B3 (Niacin)</h4>
-                <p>DNA repair, cellular energy, cholesterol metabolism</p>
-              </div>
-              <div class="nutrient-item">
-                <h4>Vitamin B5 (Pantothenic Acid)</h4>
-                <p>Hormone production, stress response</p>
-              </div>
-              <div class="nutrient-item">
-                <h4>Vitamin B6 (Pyridoxine)</h4>
-                <p>Neurotransmitter synthesis, immune function</p>
-              </div>
-              <div class="nutrient-item">
-                <h4>Vitamin B12 (Cobalamin)</h4>
-                <p>Red blood cell formation, neurological function</p>
-              </div>
-              <div class="nutrient-item">
-                <h4>Folate</h4>
-                <p>DNA synthesis, cell division, methylation</p>
-              </div>
-              <div class="nutrient-item">
-                <h4>Biotin</h4>
-                <p>Metabolism, hair/skin/nail health</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="nutrient-category">
-            <h3>🌟 Fat-Soluble Vitamins</h3>
-            <div class="nutrients-list">
-              <div class="nutrient-item">
-                <h4>Vitamin A</h4>
-                <p>Vision, immune function, cellular growth</p>
-              </div>
-              <div class="nutrient-item">
-                <h4>Vitamin D3</h4>
-                <p>Bone health, immune system, hormone regulation</p>
-              </div>
-              <div class="nutrient-item">
-                <h4>Vitamin E</h4>
-                <p>Antioxidant protection, cardiovascular health</p>
-              </div>
-              <div class="nutrient-item">
-                <h4>Vitamin K</h4>
-                <p>Blood clotting, bone metabolism</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="nutrient-category">
-            <h3>⚡ Essential Minerals</h3>
-            <div class="nutrients-list">
-              <div class="nutrient-item">
-                <h4>Calcium</h4>
-                <p>Bone health, muscle function, nerve transmission</p>
-              </div>
-              <div class="nutrient-item">
-                <h4>Magnesium</h4>
-                <p>Energy production, muscle relaxation, sleep</p>
-              </div>
-              <div class="nutrient-item">
-                <h4>Zinc</h4>
-                <p>Immune function, wound healing, protein synthesis</p>
-              </div>
-              <div class="nutrient-item">
-                <h4>Iron</h4>
-                <p>Oxygen transport, energy metabolism</p>
-              </div>
-              <div class="nutrient-item">
-                <h4>Selenium</h4>
-                <p>Antioxidant function, thyroid health</p>
-              </div>
-              <div class="nutrient-item">
-                <h4>Copper</h4>
-                <p>Iron metabolism, connective tissue formation</p>
-              </div>
-              <div class="nutrient-item">
-                <h4>Manganese</h4>
-                <p>Bone development, antioxidant function</p>
-              </div>
-              <div class="nutrient-item">
-                <h4>Chromium</h4>
-                <p>Glucose metabolism, insulin sensitivity</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="nutrient-category">
-            <h3>🛡️ Antioxidants & Others</h3>
-            <div class="nutrients-list">
-              <div class="nutrient-item">
-                <h4>Vitamin C</h4>
-                <p>Immune support, collagen synthesis, antioxidant</p>
-              </div>
-              <div class="nutrient-item">
-                <h4>Coenzyme Q10</h4>
-                <p>Cellular energy, heart health, antioxidant</p>
-              </div>
-              <div class="nutrient-item">
-                <h4>Alpha Lipoic Acid</h4>
-                <p>Antioxidant, glucose metabolism, nerve function</p>
-              </div>
-              <div class="nutrient-item">
-                <h4>Glutathione</h4>
-                <p>Master antioxidant, detoxification</p>
-              </div>
-              <div class="nutrient-item">
-                <h4>Carnitine</h4>
-                <p>Fat metabolism, energy production</p>
-              </div>
-              <div class="nutrient-item">
-                <h4>Inositol</h4>
-                <p>Cell membrane function, mood regulation</p>
-              </div>
-              <div class="nutrient-item">
-                <h4>Choline</h4>
-                <p>Brain function, liver health, methylation</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testing Process -->
-    <section class="testing-process">
-      <div class="container">
-        <div class="section-header text-center">
-          <h2>Simple Testing Process</h2>
-          <p>
-            Easy collection with comprehensive results and personalized
-            recommendations
-          </p>
-        </div>
-
-        <div class="process-timeline">
-          <div class="process-step">
-            <div class="step-number">1</div>
-            <div class="step-content">
-              <h3>Order Your Test</h3>
-              <p>
-                Schedule your micronutrient analysis and receive collection
-                instructions.
-              </p>
-              <div class="step-duration">Online ordering</div>
-            </div>
-          </div>
-
-          <div class="process-step">
-            <div class="step-number">2</div>
-            <div class="step-content">
-              <h3>Blood Collection</h3>
-              <p>
-                Simple blood draw at our facility or schedule mobile collection
-                service.
-              </p>
-              <div class="step-duration">10 minutes</div>
-            </div>
-          </div>
-
-          <div class="process-step">
-            <div class="step-number">3</div>
-            <div class="step-content">
-              <h3>Laboratory Analysis</h3>
-              <p>
-                Advanced cellular testing performed at specialized laboratory
-                facilities.
-              </p>
-              <div class="step-duration">7-10 business days</div>
-            </div>
-          </div>
-
-          <div class="process-step">
-            <div class="step-number">4</div>
-            <div class="step-content">
-              <h3>Results & Consultation</h3>
-              <p>
-                Comprehensive report review and personalized supplementation
-                recommendations.
-              </p>
-              <div class="step-duration">45-60 minutes</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Test Results -->
-    <section class="test-results">
-      <div class="container">
-        <div class="section-header text-center">
-          <h2>Comprehensive Results Report</h2>
-          <p>Detailed analysis with actionable recommendations</p>
-        </div>
-
-        <div class="results-features">
-          <div class="results-text">
-            <h3>What Your Report Includes:</h3>
-            <div class="report-features">
-              <div class="feature-item">
-                <h4>📊 Visual Results Dashboard</h4>
+          <!-- Benefits of Testing -->
+          <div class="testing-benefits">
+            <h3>Why Test Your Micronutrients?</h3>
+            <div class="benefits-grid">
+              <div class="benefit-item">
+                <div class="benefit-icon">🎯</div>
+                <h4>Targeted Supplementation</h4>
                 <p>
-                  Easy-to-read color-coded results showing your nutrient status
-                  at a glance
+                  Stop guessing and start supplementing based on your actual
+                  needs
                 </p>
               </div>
-              <div class="feature-item">
-                <h4>🎯 Deficiency Identification</h4>
+              <div class="benefit-item">
+                <div class="benefit-icon">⚡</div>
+                <h4>Optimize Energy</h4>
                 <p>
-                  Clear identification of which nutrients are deficient,
-                  borderline, or optimal
+                  Identify and correct deficiencies that may be causing fatigue
                 </p>
               </div>
-              <div class="feature-item">
-                <h4>💊 Personalized Supplement Plan</h4>
+              <div class="benefit-item">
+                <div class="benefit-icon">🧠</div>
+                <h4>Enhance Mental Clarity</h4>
+                <p>Support cognitive function with proper nutrient levels</p>
+              </div>
+              <div class="benefit-item">
+                <div class="benefit-icon">🛡️</div>
+                <h4>Boost Immunity</h4>
                 <p>
-                  Specific dosing recommendations for supplements based on your
-                  unique needs
+                  Strengthen your immune system with optimal nutrient status
                 </p>
               </div>
-              <div class="feature-item">
-                <h4>🥗 Nutritional Guidance</h4>
+              <div class="benefit-item">
+                <div class="benefit-icon">💪</div>
+                <h4>Improve Performance</h4>
                 <p>
-                  Food sources and dietary recommendations to improve nutrient
-                  levels naturally
+                  Enhance athletic and daily performance through proper
+                  nutrition
                 </p>
               </div>
-              <div class="feature-item">
-                <h4>📈 Progress Tracking</h4>
+              <div class="benefit-item">
+                <div class="benefit-icon">💰</div>
+                <h4>Save Money</h4>
                 <p>
-                  Recommendations for follow-up testing to monitor improvement
-                </p>
-              </div>
-              <div class="feature-item">
-                <h4>🔗 Health Connections</h4>
-                <p>
-                  How your nutrient status relates to symptoms and health
-                  concerns
+                  Avoid unnecessary supplements and focus on what you actually
+                  need
                 </p>
               </div>
             </div>
           </div>
-          <div class="results-visual">
-            <img
-              src="../../assets/images/placeholder.png"
-              alt="Test Results Sample"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Health Conditions -->
-    <section class="health-conditions">
-      <div class="container">
-        <div class="section-header text-center">
-          <h2>Common Conditions Linked to Nutrient Deficiencies</h2>
-          <p>Understanding how micronutrient status affects your health</p>
-        </div>
-
-        <div class="conditions-grid">
-          <div class="condition-card">
-            <h3>😴 Fatigue & Low Energy</h3>
-            <div class="related-nutrients">
-              <strong>Often related to:</strong>
-              <p>B12, Iron, B6, Folate, Magnesium, CoQ10</p>
-            </div>
-            <div class="symptoms">
-              <ul>
-                <li>Chronic tiredness</li>
-                <li>Afternoon energy crashes</li>
-                <li>Poor exercise tolerance</li>
-                <li>Mental fatigue</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="condition-card">
-            <h3>🧠 Brain Fog & Memory Issues</h3>
-            <div class="related-nutrients">
-              <strong>Often related to:</strong>
-              <p>B12, Folate, B6, Vitamin D, Omega-3s</p>
-            </div>
-            <div class="symptoms">
-              <ul>
-                <li>Difficulty concentrating</li>
-                <li>Memory problems</li>
-                <li>Mental clarity issues</li>
-                <li>Poor decision making</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="condition-card">
-            <h3>😰 Mood & Anxiety Issues</h3>
-            <div class="related-nutrients">
-              <strong>Often related to:</strong>
-              <p>B6, Folate, Magnesium, Vitamin D, B12</p>
-            </div>
-            <div class="symptoms">
-              <ul>
-                <li>Depression symptoms</li>
-                <li>Anxiety and worry</li>
-                <li>Mood swings</li>
-                <li>Irritability</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="condition-card">
-            <h3>🤒 Frequent Illness</h3>
-            <div class="related-nutrients">
-              <strong>Often related to:</strong>
-              <p>Vitamin C, D, Zinc, Selenium, Vitamin A</p>
-            </div>
-            <div class="symptoms">
-              <ul>
-                <li>Recurring infections</li>
-                <li>Slow wound healing</li>
-                <li>Seasonal illness</li>
-                <li>Allergies</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="condition-card">
-            <h3>💪 Muscle & Joint Pain</h3>
-            <div class="related-nutrients">
-              <strong>Often related to:</strong>
-              <p>Vitamin D, Magnesium, B1, B6, Vitamin E</p>
-            </div>
-            <div class="symptoms">
-              <ul>
-                <li>Muscle weakness</li>
-                <li>Joint stiffness</li>
-                <li>Exercise intolerance</li>
-                <li>Recovery issues</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="condition-card">
-            <h3>👱‍♀️ Hair, Skin & Nail Issues</h3>
-            <div class="related-nutrients">
-              <strong>Often related to:</strong>
-              <p>Biotin, Iron, Zinc, Vitamin A, Vitamin C</p>
-            </div>
-            <div class="symptoms">
-              <ul>
-                <li>Hair loss or thinning</li>
-                <li>Brittle nails</li>
-                <li>Skin problems</li>
-                <li>Slow healing</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Who Should Test -->
-    <section class="who-should-test">
-      <div class="container">
-        <div class="section-header text-center">
-          <h2>Who Should Get Micronutrient Testing?</h2>
-          <p>
-            Testing is beneficial for anyone seeking to optimize their health
-          </p>
-        </div>
-
-        <div class="testing-candidates">
-          <div class="candidate-group">
-            <h3>🎯 Health Optimizers</h3>
-            <ul>
-              <li>Anyone wanting to optimize nutrition</li>
-              <li>Preventive health approach</li>
-              <li>Performance enhancement goals</li>
-              <li>Longevity and anti-aging focus</li>
-            </ul>
-          </div>
-
-          <div class="candidate-group">
-            <h3>⚠️ Symptom Sufferers</h3>
-            <ul>
-              <li>Chronic fatigue or low energy</li>
-              <li>Mood or cognitive issues</li>
-              <li>Frequent illness or infections</li>
-              <li>Unexplained health problems</li>
-            </ul>
-          </div>
-
-          <div class="candidate-group">
-            <h3>🥗 Dietary Restrictions</h3>
-            <ul>
-              <li>Vegetarian or vegan diets</li>
-              <li>Food allergies or intolerances</li>
-              <li>Restrictive eating patterns</li>
-              <li>Poor appetite or absorption</li>
-            </ul>
-          </div>
-
-          <div class="candidate-group">
-            <h3>💊 Supplement Users</h3>
-            <ul>
-              <li>Taking multiple supplements</li>
-              <li>Unsure of supplement needs</li>
-              <li>Want to optimize supplementation</li>
-              <li>Assess supplement effectiveness</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="micronutrient-faq">
-      <div class="container">
-        <div class="section-header text-center">
-          <h2>Frequently Asked Questions</h2>
-          <p>Common questions about micronutrient testing</p>
-        </div>
-
-        <div class="faq-grid">
-          <div class="faq-item">
-            <h3>How is this different from regular blood tests?</h3>
+          <!-- CTA Section -->
+          <div class="cta-section text-center">
+            <h3>Ready to Optimize Your Nutrition?</h3>
             <p>
-              Our cellular micronutrient testing measures how vitamins and
-              minerals function inside your cells, not just their blood levels.
-              This provides a more accurate picture of your nutritional status.
+              Take the guesswork out of supplementation with precise
+              micronutrient testing.
             </p>
-          </div>
-
-          <div class="faq-item">
-            <h3>Do I need to stop supplements before testing?</h3>
-            <p>
-              No, continue taking your supplements as normal. The test measures
-              your cells' actual functional nutrient levels over the past 4-6
-              months, not recent intake.
-            </p>
-          </div>
-
-          <div class="faq-item">
-            <h3>How often should I get tested?</h3>
-            <p>
-              We typically recommend retesting every 6-12 months to assess
-              progress and adjust supplementation. Initial follow-up testing may
-              be done after 3-4 months of supplementation.
-            </p>
-          </div>
-
-          <div class="faq-item">
-            <h3>Can this test detect food sensitivities?</h3>
-            <p>
-              This specific test focuses on nutrient function. We offer separate
-              food sensitivity testing that can be combined with micronutrient
-              analysis for comprehensive evaluation.
-            </p>
-          </div>
-
-          <div class="faq-item">
-            <h3>Will this test show if my supplements are working?</h3>
-            <p>
-              Yes, the cellular testing will show whether your supplements are
-              actually improving your nutritional status at the cellular level,
-              not just raising blood levels.
-            </p>
-          </div>
-
-          <div class="faq-item">
-            <h3>Is the test covered by insurance?</h3>
-            <p>
-              Coverage varies by insurance plan. We provide detailed receipts
-              for insurance submission and offer competitive self-pay pricing
-              for this specialized testing.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="micronutrient-cta">
-      <div class="container">
-        <div class="cta-content text-center">
-          <h2>Discover Your Nutritional Blueprint</h2>
-          <p>
-            Get the detailed insights you need to optimize your nutrition and
-            unlock your body's potential.
-          </p>
-          <div class="cta-buttons">
-            <button class="btn btn-primary btn-lg" onclick="openBookingModal()">
-              Order Your Test
-            </button>
-            <a href="../membership.html" class="btn btn-secondary btn-lg"
-              >View Member Pricing</a
+            <button
+              class="btn-primary btn-large pulse-animation"
+              onclick="showDisclosureModal()"
             >
+              Schedule Testing
+            </button>
+            <div class="pricing-info">
+              Starting at $199 | Results in 3-10 days | Includes consultation
+            </div>
           </div>
-          <p class="cta-note">
-            Includes comprehensive consultation and personalized supplementation
-            plan
-          </p>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
     <!-- Footer -->
-    <footer id="footer">
+    <footer class="professional-footer">
+      <div class="footer-pattern"></div>
       <div class="container">
-        <div class="footer-content">
-          <div class="footer-section">
-            <div class="footer-logo">
-              <img
-                src="../assets/images/logo.png"
-                alt="Stay Dripped Mobile IV"
-              />
+        <div class="footer-main">
+          <div class="footer-grid">
+            <div class="footer-brand">
+              <div class="footer-logo">
+                <img
+                  src="../assets/images/logo.png"
+                  alt="Stay Dripped Mobile IV"
+                  style="height: 40px; width: auto"
+                />
+              </div>
+              <h3 class="footer-brand-title">Stay Dripped®</h3>
+              <p class="footer-brand-description">
+                Premium mobile IV therapy and wellness services delivered to
+                your location in Scottsdale and Phoenix. Experience the future
+                of personalized healthcare.
+              </p>
+              <div class="footer-social">
+                <a href="#" class="social-link" aria-label="Instagram">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 2H7C4.24 2 2 4.24 2 7V17C2 19.76 4.24 22 7 22H17C19.76 22 22 19.76 22 17V7C22 4.24 19.76 2 17 2Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M16 11.37C16.12 12.25 15.95 13.15 15.52 13.91C15.09 14.67 14.42 15.24 13.64 15.52C12.86 15.8 12.01 15.78 11.24 15.46C10.47 15.14 9.83 14.54 9.42 13.77C9.01 13 8.85 12.1 8.97 11.22C9.09 10.34 9.48 9.53 10.08 8.93C10.68 8.33 11.45 7.97 12.27 7.9C13.09 7.83 13.91 8.05 14.59 8.53"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M17.5 6.5H17.51"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+                <a href="#" class="social-link" aria-label="Facebook">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M18 2H15C13.67 2 12.4 2.53 11.46 3.46C10.53 4.4 10 5.67 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73 14.11 6.48 14.29 6.29C14.48 6.11 14.73 6 15 6H18V2Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+                <a href="#" class="social-link" aria-label="Twitter">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23 3C22.0424 3.67548 20.9821 4.19211 19.86 4.53C19.2577 3.83751 18.4573 3.34669 17.567 3.12393C16.6767 2.90116 15.7395 2.95718 14.8821 3.28445C14.0247 3.61171 13.2884 4.19445 12.773 4.95371C12.2575 5.71297 11.9877 6.61435 12 7.53V8.53C10.2426 8.57557 8.50127 8.18581 6.93101 7.39624C5.36074 6.60667 4.01032 5.43666 3 4V4C3 4 -1 13 8 17C5.94053 18.398 3.48716 19.099 1 19C10 24 21 19 21 7.5C20.9991 7.22145 20.9723 6.94359 20.92 6.67C21.9406 5.66349 22.6608 4.39271 23 3V3Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+                <a href="#" class="social-link" aria-label="LinkedIn">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16 8C17.59 8 19.1 8.63 20.21 9.79C21.32 10.95 21.92 12.53 21.92 14.17V21H18.25V14.17C18.25 13.45 17.96 12.76 17.44 12.24C16.92 11.72 16.23 11.43 15.51 11.43C14.79 11.43 14.1 11.72 13.58 12.24C13.06 12.76 12.77 13.45 12.77 14.17V21H9.1V14.17C9.1 12.53 9.7 10.95 10.81 9.79C11.92 8.63 13.43 8 15.02 8H16Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <rect
+                      x="2"
+                      y="9"
+                      width="4"
+                      height="12"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <circle
+                      cx="4"
+                      cy="4"
+                      r="2"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+              </div>
             </div>
-            <p>
-              Premium mobile IV therapy and wellness services delivered to your
-              location in Scottsdale & Phoenix.
-            </p>
-          </div>
-          <div class="footer-section">
-            <h4>Services</h4>
-            <ul>
-              <li><a href="iv-therapy.html">IV Therapy</a></li>
-              <li>
-                <a href="hormone-replacement.html">Hormone Replacement</a>
-              </li>
-              <li><a href="aesthetic.html">Aesthetic Treatments</a></li>
-              <li><a href="weight-management.html">Weight Management</a></li>
-            </ul>
-          </div>
-          <div class="footer-section">
-            <h4>Company</h4>
-            <ul>
-              <li><a href="../membership.html">Membership</a></li>
-              <li><a href="../corporate-events.html">Corporate Events</a></li>
-              <li><a href="../franchise.html">Franchise</a></li>
-              <li><a href="../partnerships.html">Partnerships</a></li>
-            </ul>
-          </div>
-          <div class="footer-section">
-            <h4>Legal</h4>
-            <ul>
-              <li><a href="../../privacy-policy.html">Privacy Policy</a></li>
-              <li>
-                <a href="../../terms-of-service.html">Terms of Service</a>
-              </li>
-              <li>
-                <a href="../../medical-disclaimer.html">Medical Disclaimer</a>
-              </li>
-            </ul>
+
+            <div class="footer-section">
+              <h4 class="footer-section-title">Services</h4>
+              <div class="footer-links">
+                <a href="iv-therapy.html" class="footer-link">IV Therapy</a>
+                <a href="nad-therapy.html" class="footer-link">NAD+ Therapy</a>
+                <a href="peptide-therapy.html" class="footer-link"
+                  >Peptide Therapy</a
+                >
+                <a href="aesthetic.html" class="footer-link"
+                  >Aesthetic Treatments</a
+                >
+                <a href="membership.html" class="footer-link">Memberships</a>
+                <a href="corporate-events.html" class="footer-link"
+                  >Corporate Events</a
+                >
+              </div>
+            </div>
+
+            <div class="footer-section">
+              <h4 class="footer-section-title">Company</h4>
+              <div class="footer-links">
+                <a href="#about" class="footer-link">About Us</a>
+                <a href="#how-it-works" class="footer-link">How It Works</a>
+                <a href="#testimonials" class="footer-link">Testimonials</a>
+                <a href="#faq" class="footer-link">FAQ</a>
+                <a href="franchise.html" class="footer-link">Franchise</a>
+                <a href="partnerships.html" class="footer-link">Partnerships</a>
+              </div>
+            </div>
+
+            <div class="footer-section">
+              <h4 class="footer-section-title">Contact</h4>
+              <div class="contact-item">
+                <svg
+                  class="contact-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M22 16.92V19.92C22.0011 20.1985 21.9441 20.4742 21.8325 20.7293C21.7209 20.9845 21.5573 21.2136 21.3521 21.4019C21.1468 21.5901 20.9046 21.7335 20.6407 21.8227C20.3769 21.9119 20.0974 21.9451 19.82 21.92C16.7428 21.5856 13.787 20.5341 11.19 18.85C8.77382 17.3147 6.72533 15.2662 5.18999 12.85C3.49997 10.2412 2.44824 7.27099 2.11999 4.18C2.095 3.90347 2.12787 3.62476 2.21649 3.36162C2.30512 3.09849 2.44756 2.85669 2.63476 2.65162C2.82196 2.44655 3.0498 2.28271 3.30379 2.17052C3.55777 2.05833 3.83233 2.00026 4.10999 2H7.10999C7.59531 1.99522 8.06579 2.16708 8.43376 2.48353C8.80173 2.79999 9.04207 3.23945 9.10999 3.72C9.23662 4.68007 9.47144 5.62273 9.80999 6.53C9.94454 6.88792 9.97366 7.27691 9.8939 7.65088C9.81415 8.02485 9.62886 8.36811 9.35999 8.64L8.08999 9.91C9.51355 12.4135 11.5865 14.4864 14.09 15.91L15.36 14.64C15.6319 14.3711 15.9751 14.1858 16.3491 14.1061C16.7231 14.0263 17.1121 14.0555 17.47 14.19C18.3773 14.5286 19.3199 14.7634 20.28 14.89C20.7658 14.9585 21.2094 15.2032 21.5265 15.5775C21.8437 15.9518 22.0122 16.4296 21.0 16.92H22Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <div class="contact-text">
+                  <a href="tel:+16026889825" class="contact-link"
+                    >(602) 688-9825</a
+                  >
+                </div>
+              </div>
+              <div class="contact-item">
+                <svg
+                  class="contact-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <polyline
+                    points="22,6 12,13 2,6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <div class="contact-text">
+                  <a href="mailto:info@staydripped.com" class="contact-link"
+                    >info@staydripped.com</a
+                  >
+                </div>
+              </div>
+              <div class="contact-item">
+                <svg
+                  class="contact-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <polyline
+                    points="12,6 12,12 16,14"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <div class="contact-text">Available 7 days a week</div>
+              </div>
+            </div>
           </div>
         </div>
+
         <div class="footer-bottom">
-          <p>&copy; 2025 Stay Dripped Mobile IV LLC. All rights reserved.</p>
+          <div class="footer-bottom-content">
+            <div class="footer-copyright">
+              <p>
+                &copy; 2024 Stay Dripped Mobile IV LLC. All rights reserved.
+              </p>
+            </div>
+            <div class="footer-legal">
+              <a href="../privacy-policy.html" class="footer-legal-link"
+                >Privacy Policy</a
+              >
+              <a href="../terms-of-service.html" class="footer-legal-link"
+                >Terms of Service</a
+              >
+              <a href="../medical-disclaimer.html" class="footer-legal-link"
+                >Medical Disclaimer</a
+              >
+            </div>
+          </div>
         </div>
       </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="../../assets/js/bootstrap.min.js"></script>
+    <!-- Scripts -->
+    <script src="https://qualiphy.com/api/integration/loader.js"></script>
+    <script src="../assets/js/gfe-utility.js"></script>
+    <script src="../assets/js/premium-interactions.js" defer></script>
+    <script src="../assets/js/advanced-interactions.js" defer></script>
+
     <script>
-      function openBookingModal() {
-        window.location.href = "../../index.html#contact";
-      }
+      // Initialize Qualiphy widget
+      const qualiphyConfig = {
+        clinicId: "3454",
+        examIds:
+          "918,2095,2097,2246,2316,2120,2315,2129,1620,2130,1623,2248,1148,1693,2122,1287,1694,2207",
+        timezone: "-6",
+        availabilityStartTime: "00:00",
+        availabilityEndTime: "23:59",
+        availabilityDays: "1,2,3,4,5,6,7",
+      };
 
-      // FAQ Toggle
-      document.querySelectorAll(".faq-item h3").forEach((header) => {
-        header.addEventListener("click", function () {
-          const item = this.parentElement;
-          const isActive = item.classList.contains("active");
+      // Universal page functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+        const navLinks = document.querySelector(".nav-links");
 
-          // Close all FAQ items
-          document
-            .querySelectorAll(".faq-item")
-            .forEach((faq) => faq.classList.remove("active"));
+        if (mobileMenuToggle) {
+          mobileMenuToggle.addEventListener("click", function () {
+            navLinks.classList.toggle("active");
+          });
+        }
 
-          // Toggle current item
-          if (!isActive) {
-            item.classList.add("active");
-          }
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+              target.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          });
         });
+
+        // Back button functionality
+        const backButton = document.querySelector(".back-button");
+        if (backButton) {
+          backButton.addEventListener("click", function (e) {
+            if (
+              document.referrer &&
+              document.referrer.includes(window.location.host)
+            ) {
+              e.preventDefault();
+              history.back();
+            }
+          });
+        }
+
+        console.log("Stay Dripped: Micronutrient testing page loaded");
       });
+
+      // Global fallback function for showDisclosureModal
+      if (typeof window.showDisclosureModal === "undefined") {
+        window.showDisclosureModal = function () {
+          console.log(
+            "Good Faith Exam modal function not yet loaded. Please try again in a moment.",
+          );
+          // Try to redirect to booking as fallback
+          window.open("https://Staydripped.intakeq.com/booking", "_blank");
+        };
+      }
     </script>
 
-    <!-- Qualiphy GFE Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-    <script
-      id="qualiphy-script"
-      type="text/javascript"
-      src="https://www.app.qualiphy.me/scripts/quidget_disclosure.js"
-      data-formsrc="https://www.app.qualiphy.me/qualiphy-widget?clinic=Stay Dripped Mobile IV LLC&clinicId=3454&first_name=&last_name=&email=&phone_number=&gender=&exams=918,2095,2097,2246,2316,2120,2315,2129,1620,2130,1623,2248,1148,1693,2122,1287,1694,2207&tele_state_required=true&token=25f1c2618e146d725e934313417e918418a5068e"
-      data-timezone="-6"
-      data-examhours='[{"SUN":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"MON":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"TUE":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"WED":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"THU":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"FRI":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"SAT":{"FROM":"00:00","TO":"23:59","isDaySelected":true}}]'
-    ></script>
-    <p style="display: none" id="not-available">Not available!</p>
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "MedicalBusiness",
+        "name": "Stay Dripped Mobile IV",
+        "description": "Micronutrient testing and analysis services in Scottsdale and Phoenix for optimal nutrition",
+        "url": "https://staydripped.com/pages/micronutrient.html",
+        "telephone": "+16026889825",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Scottsdale",
+          "addressRegion": "AZ",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 33.4942,
+          "longitude": -111.9261
+        },
+        "openingHours": "Mo-Su 00:00-23:59",
+        "priceRange": "$$",
+        "image": "https://staydripped.com/assets/images/logo.png"
+      }
+    </script>
   </body>
 </html>
