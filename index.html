@@ -43,27 +43,41 @@
             src="/assets/images/logo.png"
             alt="Stay Dripped Mobile IV"
             width="200"
-            height="40"
+            height="48"
+            onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=&quot;font-size:1.5rem;font-weight:700;color:var(--primary);&quot;>Stay Dripped Mobile IV</span>'"
           />
         </a>
 
         <nav class="main-nav">
           <ul class="main-nav__list">
-            <li><a href="/services" class="main-nav__link">Services</a></li>
+            <li><a href="#services" class="main-nav__link">Services</a></li>
             <li>
-              <a href="/how-it-works" class="main-nav__link">How It Works</a>
+              <a href="#how-it-works" class="main-nav__link">How It Works</a>
             </li>
             <li>
-              <a href="/memberships" class="main-nav__link">Memberships</a>
+              <a href="#memberships" class="main-nav__link">Memberships</a>
             </li>
-            <li><a href="/testimonials" class="main-nav__link">Reviews</a></li>
-            <li><a href="/faq" class="main-nav__link">FAQ</a></li>
+            <li><a href="#testimonials" class="main-nav__link">Reviews</a></li>
+            <li><a href="#faq" class="main-nav__link">FAQ</a></li>
           </ul>
         </nav>
 
         <div class="header-actions">
-          <button id="dark-mode-toggle" class="dark-mode-toggle">☀️</button>
-          <a href="/booking" class="btn btn--primary">Book Now</a>
+          <button
+            id="dark-mode-toggle"
+            class="dark-mode-toggle"
+            aria-label="Toggle dark mode"
+          >
+            ☀️
+          </button>
+          <button class="mobile-menu-toggle lg:hidden" aria-label="Toggle menu">
+            <div class="hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </button>
+          <a href="#booking" class="btn btn--primary">Book Now</a>
         </div>
       </div>
     </header>
@@ -71,15 +85,233 @@
     <!-- Main Content -->
     <main id="main-content" role="main">
       <!-- Hero Section -->
-      <section class="hero">
+      <section class="hero section--hero">
         <div class="container">
-          <h1>Premium Mobile IV Therapy Delivered to You</h1>
-          <p class="lead">
-            Recharge, rejuvenate, and repeat with our professional healthcare
-            services.
+          <div class="hero__content">
+            <div class="hero__text animate-fadeInUp">
+              <h1 class="display-1">
+                Premium Mobile IV Therapy Delivered to You
+              </h1>
+              <p class="lead">
+                Recharge, rejuvenate, and repeat with our professional
+                healthcare services. Experience the convenience of premium IV
+                therapy in the comfort of your home or office.
+              </p>
+              <div class="hero__actions">
+                <a href="#booking" class="btn btn--primary btn--lg"
+                  >Book Treatment Now</a
+                >
+                <a href="#services" class="btn btn--secondary btn--lg"
+                  >View Services</a
+                >
+              </div>
+
+              <div class="hero__stats">
+                <div class="hero__stat">
+                  <span class="hero__stat-number">5000+</span>
+                  <span class="hero__stat-label">Treatments Delivered</span>
+                </div>
+                <div class="hero__stat">
+                  <span class="hero__stat-number">4.9★</span>
+                  <span class="hero__stat-label">Average Rating</span>
+                </div>
+                <div class="hero__stat">
+                  <span class="hero__stat-number">24/7</span>
+                  <span class="hero__stat-label">Availability</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section id="services" class="section">
+        <div class="container">
+          <div class="text-center" style="margin-bottom: var(--space-3xl)">
+            <h2 class="display-2">Our Premium Services</h2>
+            <p class="lead" style="color: var(--neutral-600)">
+              Choose from our range of professional IV therapy treatments
+            </p>
+          </div>
+
+          <div class="grid grid--3">
+            <div class="card card--featured">
+              <div
+                class="card__icon"
+                style="font-size: 3rem; margin-bottom: var(--space-md)"
+              >
+                💧
+              </div>
+              <h3 class="card__title">Hydration Therapy</h3>
+              <p class="card__text">
+                Rapid rehydration with essential electrolytes and vitamins to
+                restore your energy levels.
+              </p>
+              <div
+                class="card__price"
+                style="
+                  font-size: 1.5rem;
+                  font-weight: 700;
+                  color: var(--primary);
+                "
+              >
+                Starting at $150
+              </div>
+            </div>
+
+            <div class="card">
+              <div
+                class="card__icon"
+                style="font-size: 3rem; margin-bottom: var(--space-md)"
+              >
+                🧬
+              </div>
+              <h3 class="card__title">NAD+ Therapy</h3>
+              <p class="card__text">
+                Anti-aging and cognitive enhancement therapy to boost cellular
+                energy and mental clarity.
+              </p>
+              <div
+                class="card__price"
+                style="
+                  font-size: 1.5rem;
+                  font-weight: 700;
+                  color: var(--primary);
+                "
+              >
+                Starting at $300
+              </div>
+            </div>
+
+            <div class="card">
+              <div
+                class="card__icon"
+                style="font-size: 3rem; margin-bottom: var(--space-md)"
+              >
+                💊
+              </div>
+              <h3 class="card__title">Vitamin Boosters</h3>
+              <p class="card__text">
+                Customized vitamin and mineral infusions to support your
+                specific health goals.
+              </p>
+              <div
+                class="card__price"
+                style="
+                  font-size: 1.5rem;
+                  font-weight: 700;
+                  color: var(--primary);
+                "
+              >
+                Starting at $200
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How It Works Section -->
+      <section id="how-it-works" class="section section--light">
+        <div class="container">
+          <div class="text-center" style="margin-bottom: var(--space-3xl)">
+            <h2 class="display-2">How It Works</h2>
+            <p class="lead" style="color: var(--neutral-600)">
+              Simple, convenient, and professional
+            </p>
+          </div>
+
+          <div class="grid grid--3">
+            <div class="card text-center">
+              <div
+                style="
+                  width: 60px;
+                  height: 60px;
+                  background: var(--primary);
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin: 0 auto var(--space-md);
+                  color: white;
+                  font-weight: 700;
+                  font-size: 1.5rem;
+                "
+              >
+                1
+              </div>
+              <h3 class="card__title">Book Online</h3>
+              <p class="card__text">
+                Schedule your appointment through our easy online booking system
+                or call us directly.
+              </p>
+            </div>
+
+            <div class="card text-center">
+              <div
+                style="
+                  width: 60px;
+                  height: 60px;
+                  background: var(--primary);
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin: 0 auto var(--space-md);
+                  color: white;
+                  font-weight: 700;
+                  font-size: 1.5rem;
+                "
+              >
+                2
+              </div>
+              <h3 class="card__title">We Come to You</h3>
+              <p class="card__text">
+                Our certified medical professionals arrive at your location with
+                all necessary equipment.
+              </p>
+            </div>
+
+            <div class="card text-center">
+              <div
+                style="
+                  width: 60px;
+                  height: 60px;
+                  background: var(--primary);
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin: 0 auto var(--space-md);
+                  color: white;
+                  font-weight: 700;
+                  font-size: 1.5rem;
+                "
+              >
+                3
+              </div>
+              <h3 class="card__title">Relax & Recharge</h3>
+              <p class="card__text">
+                Sit back and relax while receiving your personalized IV therapy
+                treatment safely.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="section section--dark text-center">
+        <div class="container">
+          <h2 class="display-2" style="margin-bottom: var(--space-lg)">
+            Ready to Feel Your Best?
+          </h2>
+          <p class="lead" style="margin-bottom: var(--space-2xl)">
+            Join thousands of satisfied clients who have experienced the
+            benefits of mobile IV therapy.
           </p>
-          <a href="/booking" class="btn btn--primary btn--lg"
-            >Book Treatment Now</a
+          <a href="#booking" class="btn btn--primary btn--lg animate-pulse"
+            >Book Your Treatment Today</a
           >
         </div>
       </section>
