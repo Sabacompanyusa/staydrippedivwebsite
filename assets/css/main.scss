@@ -1,0 +1,59 @@
+// Main SCSS entry point for Stay Dripped Mobile IV
+
+// 1. Abstracts
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+// 2. Base
+@import "elements/base/reset";
+@import "elements/base/typography";
+@import "elements/base/utilities";
+
+// 3. Components
+@import "../../components/css/buttons";
+@import "../../components/css/cards";
+@import "../../components/css/header";
+@import "../../components/css/hero";
+@import "../../components/css/footer";
+@import "../../components/css/service-cards";
+@import "../../components/css/membership";
+
+// 4. Layout (responsive containers and grids)
+.container {
+  @include container;
+}
+
+.section {
+  padding: map-get($spacing, 16) 0;
+
+  @include respond-to(md) {
+    padding: map-get($spacing, 20) 0;
+  }
+
+  &--sm {
+    padding: map-get($spacing, 12) 0;
+
+    @include respond-to(md) {
+      padding: map-get($spacing, 16) 0;
+    }
+  }
+
+  &--lg {
+    padding: map-get($spacing, 20) 0;
+
+    @include respond-to(md) {
+      padding: map-get($spacing, 24) 0;
+    }
+  }
+}
+
+// 5. Additional Styles
+@import "animations";
+@import "enhanced-footer";
+@import "enhanced-sections";
+@import "premium-animations";
+@import "premium-responsive";
+@import "professional-theme";
+@import "responsive";
+@import "style";
+@import "universal-navigation";
