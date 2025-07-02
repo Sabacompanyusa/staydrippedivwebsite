@@ -283,6 +283,7 @@
     @content;
   }
 
+  :root.dark &,
   .dark & {
     @content;
   }
