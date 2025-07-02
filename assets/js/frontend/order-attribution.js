@@ -61,7 +61,7 @@
             if (super(),
             this._fieldNames = Object.keys(t.fields),
             this.hasOwnProperty("_values")) {
-                let t = this.values;
+                const t = this.values;
                 delete this.values,
                 this.values = t || {}
             }
