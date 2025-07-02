@@ -395,7 +395,7 @@
   .back-button-container {
     padding: 1rem 1rem 0.75rem;
     top: 70px;
-    position: relative;
+    position: fixed;
     margin-bottom: 1rem;
   }
 
