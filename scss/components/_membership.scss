@@ -1,0 +1,275 @@
+// Membership-specific components
+
+.membership-comparison {
+  margin: map-get($spacing, 16) 0;
+  background: $color-secondary;
+  padding: map-get($spacing, 8);
+  border-radius: map-get($border-radius, xl);
+  box-shadow: map-get($shadow, lg);
+
+  h3 {
+    text-align: center;
+    font-size: map-get($fs-scale, 3xl);
+    color: $color-primary;
+    margin-bottom: map-get($spacing, 8);
+  }
+}
+
+.comparison-table {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 1px;
+  background: rgba($color-primary, 0.1);
+  border-radius: map-get($border-radius, lg);
+  overflow: hidden;
+
+  @include respond-to(md) {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+  }
+}
+
+.comparison-header {
+  display: contents;
+
+  .feature-column,
+  .plan-column {
+    background: $color-primary;
+    color: $color-secondary;
+    padding: map-get($spacing, 4);
+    font-weight: 600;
+    text-align: center;
+
+    &.featured {
+      background: linear-gradient(
+        135deg,
+        $color-success,
+        lighten($color-success, 10%)
+      );
+    }
+  }
+
+  .feature-column {
+    text-align: left;
+  }
+}
+
+.comparison-row {
+  display: contents;
+
+  .feature-name,
+  .feature-value {
+    background: $color-secondary;
+    padding: map-get($spacing, 3) map-get($spacing, 4);
+    border-bottom: 1px solid rgba($color-primary, 0.1);
+  }
+
+  .feature-name {
+    font-weight: 500;
+    color: $color-text-dark;
+  }
+
+  .feature-value {
+    text-align: center;
+    color: $color-text-light;
+
+    &:nth-child(3) {
+      background: rgba($color-success, 0.05);
+      font-weight: 600;
+      color: $color-success;
+    }
+  }
+}
+
+.corporate-memberships {
+  padding: map-get($spacing, 16) 0;
+  background: rgba($color-primary, 0.02);
+}
+
+.corporate-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: map-get($spacing, 8);
+  margin-top: map-get($spacing, 8);
+
+  @include respond-to(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.corporate-card {
+  @include card;
+  background: $color-secondary;
+  padding: map-get($spacing, 8);
+  text-align: center;
+
+  h3 {
+    font-size: map-get($fs-scale, xl);
+    color: $color-primary;
+    margin-bottom: map-get($spacing, 4);
+  }
+
+  p {
+    color: $color-text-light;
+    margin-bottom: map-get($spacing, 6);
+  }
+
+  ul {
+    list-style: none;
+    margin-bottom: map-get($spacing, 6);
+    text-align: left;
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: map-get($spacing, 2);
+      margin-bottom: map-get($spacing, 2);
+      font-size: map-get($fs-scale, sm);
+      color: $color-text-light;
+
+      &::before {
+        content: "✓";
+        color: $color-success;
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+    }
+  }
+}
+
+.membership-faq {
+  padding: map-get($spacing, 16) 0;
+
+  h2 {
+    text-align: center;
+    font-size: map-get($fs-scale, 4xl);
+    color: $color-primary;
+    margin-bottom: map-get($spacing, 8);
+  }
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: map-get($spacing, 6);
+
+  @include respond-to(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.faq-item {
+  background: $color-secondary;
+  padding: map-get($spacing, 6);
+  border-radius: map-get($border-radius, lg);
+  box-shadow: map-get($shadow, base);
+
+  h4 {
+    font-size: map-get($fs-scale, lg);
+    color: $color-primary;
+    margin-bottom: map-get($spacing, 3);
+  }
+
+  p {
+    color: $color-text-light;
+    font-size: map-get($fs-scale, sm);
+    line-height: 1.6;
+  }
+}
+
+// Enhanced pricing card styles for memberships
+.card--pricing {
+  text-align: center;
+
+  .program-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: map-get($spacing, 1);
+    font-size: map-get($fs-scale, 5xl);
+    font-weight: 700;
+    color: $color-primary;
+    margin-bottom: map-get($spacing, 4);
+
+    .currency {
+      font-size: map-get($fs-scale, 2xl);
+      opacity: 0.7;
+    }
+
+    .period {
+      font-size: map-get($fs-scale, base);
+      color: $color-text-light;
+      font-weight: 400;
+    }
+  }
+
+  .program-features {
+    text-align: left;
+    margin-bottom: map-get($spacing, 8);
+
+    li {
+      &.included::before {
+        content: "✓";
+        color: $color-success;
+      }
+
+      &.excluded {
+        opacity: 0.5;
+
+        &::before {
+          content: "✗";
+          color: $color-error;
+        }
+      }
+    }
+  }
+}
+
+// Dark mode support
+@include dark-mode {
+  .comparison-table {
+    background: rgba($color-secondary, 0.1);
+  }
+
+  .comparison-header {
+    .feature-column,
+    .plan-column {
+      background: lighten($color-dark-bg, 10%);
+      color: $color-secondary;
+    }
+  }
+
+  .comparison-row {
+    .feature-name,
+    .feature-value {
+      background: lighten($color-dark-bg, 5%);
+      border-color: rgba($color-secondary, 0.1);
+    }
+
+    .feature-name {
+      color: $color-secondary;
+    }
+
+    .feature-value {
+      color: rgba($color-secondary, 0.8);
+
+      &:nth-child(3) {
+        background: rgba($color-info, 0.1);
+        color: $color-info;
+      }
+    }
+  }
+
+  .corporate-card,
+  .faq-item {
+    background: lighten($color-dark-bg, 5%);
+
+    h3,
+    h4 {
+      color: $color-secondary;
+    }
+
+    p {
+      color: rgba($color-secondary, 0.8);
+    }
+  }
+}
