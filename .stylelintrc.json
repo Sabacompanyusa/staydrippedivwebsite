@@ -25,7 +25,8 @@
           "while",
           "if",
           "else",
-          "warn"
+          "warn",
+          "content"
         ]
       }
     ],
@@ -56,5 +57,9 @@
     "no-descending-specificity": null,
     "media-feature-range-notation": null
   },
-  "ignoreFiles": ["assets/css/**/*.css", "dist/**/*.css"]
+  "ignoreFiles": [
+    "assets/css/**/*.css",
+    "dist/**/*.css",
+    "node_modules/**/*.scss"
+  ]
 }

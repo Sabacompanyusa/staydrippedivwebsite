@@ -13,11 +13,14 @@
     "no-unused-vars": "warn",
     "no-console": "off",
     "prefer-const": "warn",
-    "no-var": "error"
+    "no-var": "error",
+    "semi": ["error", "always"],
+    "quotes": ["error", "single"]
   },
   "globals": {
     "process": "readonly",
     "gtag": "readonly",
-    "dataLayer": "readonly"
+    "dataLayer": "readonly",
+    "IntersectionObserver": "readonly"
   }
 }

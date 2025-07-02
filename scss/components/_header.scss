@@ -1,4 +1,4 @@
-// Header Component
+// Comprehensive Header System for Stay Dripped Mobile IV
 
 .site-header {
   position: sticky;
@@ -7,11 +7,31 @@
   background: rgba($color-secondary, 0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba($color-primary, 0.1);
-  @include transition(background-color, border-color);
+  @include transition(background-color, border-color, backdrop-filter);
+
+  &--transparent {
+    background: transparent;
+    border-bottom-color: transparent;
+
+    &.scrolled {
+      background: rgba($color-secondary, 0.95);
+      border-bottom-color: rgba($color-primary, 0.1);
+    }
+  }
 
   @include dark-mode {
     background: rgba($color-dark-bg, 0.95);
     border-bottom-color: rgba($color-secondary, 0.1);
+
+    &--transparent {
+      background: transparent;
+      border-bottom-color: transparent;
+
+      &.scrolled {
+        background: rgba($color-dark-bg, 0.95);
+        border-bottom-color: rgba($color-secondary, 0.1);
+      }
+    }
   }
 
   .container {
@@ -20,29 +40,46 @@
     justify-content: space-between;
     padding-top: map-get($spacing, 4);
     padding-bottom: map-get($spacing, 4);
+
+    @include respond-to(lg) {
+      padding-top: map-get($spacing, 5);
+      padding-bottom: map-get($spacing, 5);
+    }
   }
 }
 
+// Logo
 .site-logo {
   display: flex;
   align-items: center;
+  text-decoration: none;
   @include transition(transform);
 
   &:hover {
     transform: scale(1.05);
   }
 
+  &:focus {
+    @include focus-ring;
+    border-radius: map-get($border-radius, base);
+  }
+
   img {
     height: 40px;
     width: auto;
+    display: block;
 
     @include respond-to(md) {
       height: 48px;
     }
+
+    @include respond-to(lg) {
+      height: 52px;
+    }
   }
 
-  // Logo text variant
-  &-text {
+  // Text logo variant
+  &--text {
     font-size: map-get($fs-scale, xl);
     font-weight: 700;
     color: $color-primary;
@@ -50,13 +87,18 @@
     @include dark-mode {
       color: $color-secondary;
     }
+
+    @include respond-to(md) {
+      font-size: map-get($fs-scale, 2xl);
+    }
   }
 }
 
+// Main navigation
 .main-nav {
   display: none;
 
-  @include respond-to(md) {
+  @include respond-to(lg) {
     display: flex;
     align-items: center;
     gap: map-get($spacing, 8);
@@ -69,10 +111,22 @@
     list-style: none;
     margin: 0;
     padding: 0;
+
+    @include respond-to(xl) {
+      gap: map-get($spacing, 8);
+    }
   }
 
   &__item {
     position: relative;
+
+    &--has-dropdown {
+      &:hover .main-nav__dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    }
   }
 
   &__link {
@@ -80,20 +134,26 @@
     padding: map-get($spacing, 2) map-get($spacing, 3);
     color: $color-text-dark;
     font-weight: 500;
-    @include transition(color);
+    font-size: map-get($fs-scale, base);
+    text-decoration: none;
+    border-radius: map-get($border-radius, base);
+    @include transition(color, background-color);
 
     &:hover,
     &:focus {
       color: $color-primary;
+      background: rgba($color-primary, 0.05);
     }
 
     &.active {
       color: $color-primary;
+      background: rgba($color-primary, 0.1);
+      font-weight: 600;
 
       &::after {
         content: "";
         position: absolute;
-        bottom: -2px;
+        bottom: -8px;
         left: 50%;
         transform: translateX(-50%);
         width: 20px;
@@ -110,6 +170,7 @@
       &:focus,
       &.active {
         color: $color-info;
+        background: rgba($color-info, 0.1);
       }
 
       &.active::after {
@@ -121,9 +182,9 @@
   // Dropdown menu
   &__dropdown {
     position: absolute;
-    top: 100%;
+    top: calc(100% + map-get($spacing, 2));
     left: 0;
-    min-width: 200px;
+    min-width: 220px;
     background: $color-secondary;
     border-radius: map-get($border-radius, lg);
     box-shadow: map-get($shadow, lg);
@@ -132,26 +193,29 @@
     visibility: hidden;
     transform: translateY(-10px);
     @include transition(opacity, visibility, transform);
+    z-index: map-get($z-index, dropdown);
 
     @include dark-mode {
       background: lighten($color-dark-bg, 5%);
+      border: 1px solid rgba($color-secondary, 0.1);
     }
   }
 
-  &__item:hover &__dropdown {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+  &__dropdown-item {
+    margin: 0;
   }
 
   &__dropdown-link {
     display: block;
-    padding: map-get($spacing, 2) map-get($spacing, 3);
+    padding: map-get($spacing, 3);
     color: $color-text-dark;
+    text-decoration: none;
     border-radius: map-get($border-radius, base);
+    font-size: map-get($fs-scale, sm);
     @include transition(background-color, color);
 
-    &:hover {
+    &:hover,
+    &:focus {
       background: rgba($color-primary, 0.1);
       color: $color-primary;
     }
@@ -159,20 +223,37 @@
     @include dark-mode {
       color: $color-secondary;
 
-      &:hover {
+      &:hover,
+      &:focus {
         background: rgba($color-secondary, 0.1);
         color: $color-info;
       }
     }
   }
+
+  &__dropdown-divider {
+    height: 1px;
+    background: rgba($color-primary, 0.1);
+    margin: map-get($spacing, 2) 0;
+
+    @include dark-mode {
+      background: rgba($color-secondary, 0.1);
+    }
+  }
 }
 
+// Header actions
 .header-actions {
   display: flex;
   align-items: center;
-  gap: map-get($spacing, 4);
+  gap: map-get($spacing, 3);
+
+  @include respond-to(md) {
+    gap: map-get($spacing, 4);
+  }
 }
 
+// Mobile menu toggle
 .mobile-menu-toggle {
   display: flex;
   align-items: center;
@@ -186,7 +267,7 @@
   cursor: pointer;
   @include transition(all);
 
-  @include respond-to(md) {
+  @include respond-to(lg) {
     display: none;
   }
 
@@ -195,14 +276,19 @@
     border-color: $color-primary;
   }
 
+  &:focus {
+    @include focus-ring;
+  }
+
   &.active {
     background: $color-primary;
     color: $color-secondary;
+    border-color: $color-primary;
   }
 
   .hamburger {
     width: 20px;
-    height: 20px;
+    height: 14px;
     position: relative;
 
     span {
@@ -211,14 +297,19 @@
       height: 2px;
       background: currentColor;
       border-radius: 1px;
+      position: absolute;
       @include transition(all);
 
       &:nth-child(1) {
-        transform: translateY(-6px);
+        top: 0;
+      }
+
+      &:nth-child(2) {
+        top: 6px;
       }
 
       &:nth-child(3) {
-        transform: translateY(6px);
+        top: 12px;
       }
     }
   }
@@ -226,6 +317,7 @@
   &.active .hamburger span {
     &:nth-child(1) {
       transform: rotate(45deg);
+      top: 6px;
     }
 
     &:nth-child(2) {
@@ -234,6 +326,7 @@
 
     &:nth-child(3) {
       transform: rotate(-45deg);
+      top: 6px;
     }
   }
 
@@ -261,7 +354,7 @@
   width: 100%;
   height: 100vh;
   background: rgba($color-dark-bg, 0.95);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
   z-index: map-get($z-index, modal);
   opacity: 0;
   visibility: hidden;
@@ -279,29 +372,7 @@
     align-items: center;
     height: 100%;
     text-align: center;
-  }
-
-  &__list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  &__item {
-    margin-bottom: map-get($spacing, 4);
-  }
-
-  &__link {
-    display: block;
-    font-size: map-get($fs-scale, xl);
-    font-weight: 600;
-    color: $color-secondary;
-    padding: map-get($spacing, 3);
-    @include transition(color);
-
-    &:hover {
-      color: $color-info;
-    }
+    padding: map-get($spacing, 6);
   }
 
   &__close {
@@ -315,10 +386,87 @@
     color: $color-secondary;
     font-size: map-get($fs-scale, xl);
     cursor: pointer;
-    @include transition(transform);
+    border-radius: map-get($border-radius, base);
+    @include transition(transform, background-color);
 
     &:hover {
       transform: scale(1.1);
+      background: rgba($color-secondary, 0.1);
+    }
+
+    &:focus {
+      @include focus-ring($color-secondary);
+    }
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: map-get($spacing, 8);
+  }
+
+  &__item {
+    margin-bottom: map-get($spacing, 4);
+  }
+
+  &__link {
+    display: block;
+    font-size: map-get($fs-scale, xl);
+    font-weight: 600;
+    color: $color-secondary;
+    padding: map-get($spacing, 3);
+    text-decoration: none;
+    border-radius: map-get($border-radius, lg);
+    @include transition(color, background-color);
+
+    &:hover,
+    &:focus {
+      color: $color-info;
+      background: rgba($color-info, 0.1);
+    }
+
+    &.active {
+      color: $color-info;
+      background: rgba($color-info, 0.2);
+    }
+
+    @include respond-to(md) {
+      font-size: map-get($fs-scale, 2xl);
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    gap: map-get($spacing, 4);
+
+    @include respond-to(sm) {
+      flex-direction: row;
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: map-get($spacing, 4);
+    margin-top: map-get($spacing, 8);
+
+    .social-link {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba($color-secondary, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $color-secondary;
+      text-decoration: none;
+      @include transition(background-color, transform);
+
+      &:hover {
+        background: rgba($color-secondary, 0.2);
+        transform: translateY(-2px);
+      }
     }
   }
 }
@@ -333,12 +481,19 @@
   color: $color-primary;
   font-size: map-get($fs-scale, lg);
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   @include transition(all);
 
   &:hover {
     background: rgba($color-primary, 0.1);
     border-color: $color-primary;
     transform: rotate(180deg);
+  }
+
+  &:focus {
+    @include focus-ring;
   }
 
   @include dark-mode {
@@ -349,5 +504,83 @@
       background: rgba($color-secondary, 0.1);
       border-color: $color-secondary;
     }
+  }
+}
+
+// Header search (if needed)
+.header-search {
+  position: relative;
+
+  &__input {
+    width: 200px;
+    padding: map-get($spacing, 2) map-get($spacing, 3);
+    border: 1px solid rgba($color-primary, 0.2);
+    border-radius: map-get($border-radius, full);
+    background: $color-secondary;
+    color: $color-text-dark;
+    font-size: map-get($fs-scale, sm);
+    @include transition(border-color, box-shadow);
+
+    &:focus {
+      outline: none;
+      border-color: $color-primary;
+      box-shadow: 0 0 0 3px rgba($color-primary, 0.1);
+    }
+
+    &::placeholder {
+      color: $color-text-light;
+    }
+
+    @include dark-mode {
+      background: lighten($color-dark-bg, 5%);
+      border-color: rgba($color-secondary, 0.2);
+      color: $color-secondary;
+
+      &:focus {
+        border-color: $color-info;
+        box-shadow: 0 0 0 3px rgba($color-info, 0.1);
+      }
+    }
+  }
+
+  &__button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 40px;
+    background: transparent;
+    border: none;
+    color: $color-text-light;
+    cursor: pointer;
+    border-radius: 0 map-get($border-radius, full) map-get($border-radius, full)
+      0;
+    @include transition(color);
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
+
+// Scroll behavior
+.header-scrolled {
+  .site-header {
+    box-shadow: map-get($shadow, sm);
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  .site-logo,
+  .dark-mode-toggle,
+  .mobile-menu-toggle {
+    &:hover {
+      transform: none;
+    }
+  }
+
+  .mobile-menu__close:hover {
+    transform: none;
   }
 }

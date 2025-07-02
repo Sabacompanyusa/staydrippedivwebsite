@@ -1,0 +1,364 @@
+// Service Cards Component for Stay Dripped Mobile IV
+
+.service-programs {
+  padding: map-get($spacing, 16) 0;
+  background: linear-gradient(
+    135deg,
+    $color-light-bg 0%,
+    $color-secondary 100%
+  );
+
+  .section-header {
+    text-align: center;
+    margin-bottom: map-get($spacing, 12);
+
+    h2 {
+      font-size: map-get($fs-scale, 4xl);
+      color: $color-primary;
+      margin-bottom: map-get($spacing, 4);
+
+      @include respond-to(md) {
+        font-size: map-get($fs-scale, 5xl);
+      }
+    }
+
+    p {
+      font-size: map-get($fs-scale, lg);
+      color: $color-text-light;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+}
+
+.programs-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: map-get($spacing, 8);
+  margin-bottom: map-get($spacing, 16);
+
+  @include respond-to(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond-to(lg) {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+}
+
+.program-card {
+  @include card;
+  position: relative;
+  background: $color-secondary;
+  padding: map-get($spacing, 8);
+
+  &.featured {
+    border: 2px solid $color-primary;
+    transform: scale(1.02);
+
+    @include respond-to(lg) {
+      transform: scale(1.05);
+    }
+  }
+
+  .program-header {
+    margin-bottom: map-get($spacing, 6);
+
+    h3 {
+      font-size: map-get($fs-scale, xl);
+      color: $color-primary;
+      margin-bottom: map-get($spacing, 3);
+      display: flex;
+      align-items: center;
+      gap: map-get($spacing, 2);
+
+      @include respond-to(md) {
+        font-size: map-get($fs-scale, 2xl);
+      }
+    }
+
+    .program-price {
+      font-size: map-get($fs-scale, 2xl);
+      font-weight: 700;
+      color: $color-success;
+      margin-bottom: map-get($spacing, 2);
+
+      @include respond-to(md) {
+        font-size: map-get($fs-scale, 3xl);
+      }
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: -10px;
+      right: map-get($spacing, 4);
+      background: linear-gradient(
+        135deg,
+        $color-success,
+        lighten($color-success, 10%)
+      );
+      color: $color-secondary;
+      padding: map-get($spacing, 1) map-get($spacing, 3);
+      border-radius: map-get($border-radius, full);
+      font-size: map-get($fs-scale, sm);
+      font-weight: 600;
+      box-shadow: map-get($shadow, md);
+    }
+  }
+
+  .program-content {
+    p {
+      font-size: map-get($fs-scale, base);
+      color: $color-text-light;
+      margin-bottom: map-get($spacing, 4);
+      line-height: 1.6;
+    }
+  }
+
+  .program-features {
+    list-style: none;
+    margin-bottom: map-get($spacing, 6);
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: map-get($spacing, 2);
+      margin-bottom: map-get($spacing, 2);
+      font-size: map-get($fs-scale, sm);
+      color: $color-text-light;
+
+      &::before {
+        content: "✓";
+        color: $color-success;
+        font-weight: 700;
+        flex-shrink: 0;
+        margin-top: 1px;
+      }
+    }
+  }
+
+  .program-benefits {
+    padding: map-get($spacing, 4);
+    background: rgba($color-primary, 0.05);
+    border-radius: map-get($border-radius, base);
+    border-left: 4px solid $color-primary;
+    font-size: map-get($fs-scale, sm);
+    color: $color-text-dark;
+
+    strong {
+      color: $color-primary;
+    }
+  }
+}
+
+// Treatment Process Component
+.treatment-process {
+  background: $color-secondary;
+  padding: map-get($spacing, 12) map-get($spacing, 6);
+  border-radius: map-get($border-radius, xl);
+  box-shadow: map-get($shadow, lg);
+  margin: map-get($spacing, 16) 0;
+
+  h3 {
+    text-align: center;
+    font-size: map-get($fs-scale, 3xl);
+    color: $color-primary;
+    margin-bottom: map-get($spacing, 10);
+  }
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: map-get($spacing, 6);
+
+  @include respond-to(md) {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+.step-item {
+  text-align: center;
+  position: relative;
+
+  .step-number {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(
+      135deg,
+      $color-primary,
+      darken($color-primary, 10%)
+    );
+    color: $color-secondary;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: map-get($fs-scale, xl);
+    font-weight: 700;
+    margin: 0 auto map-get($spacing, 4);
+    box-shadow: map-get($shadow, md);
+  }
+
+  h4 {
+    font-size: map-get($fs-scale, lg);
+    color: $color-primary;
+    margin-bottom: map-get($spacing, 2);
+  }
+
+  p {
+    color: $color-text-light;
+    font-size: map-get($fs-scale, sm);
+    line-height: 1.5;
+  }
+}
+
+// Symptoms/Benefits Grid
+.symptoms-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: map-get($spacing, 8);
+  margin-top: map-get($spacing, 8);
+
+  @include respond-to(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.symptom-category {
+  background: $color-secondary;
+  padding: map-get($spacing, 6);
+  border-radius: map-get($border-radius, lg);
+  box-shadow: map-get($shadow, base);
+
+  h4 {
+    font-size: map-get($fs-scale, lg);
+    color: $color-primary;
+    margin-bottom: map-get($spacing, 4);
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: map-get($spacing, 2);
+      margin-bottom: map-get($spacing, 2);
+      font-size: map-get($fs-scale, sm);
+      color: $color-text-light;
+
+      &::before {
+        content: "→";
+        color: $color-primary;
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+    }
+  }
+}
+
+// Enhanced CTA Section
+.service-cta {
+  background: linear-gradient(
+    135deg,
+    $color-primary 0%,
+    darken($color-primary, 15%) 100%
+  );
+  color: $color-secondary;
+  padding: map-get($spacing, 16) map-get($spacing, 6);
+  text-align: center;
+  margin-top: map-get($spacing, 16);
+
+  h3 {
+    font-size: map-get($fs-scale, 3xl);
+    margin-bottom: map-get($spacing, 4);
+  }
+
+  p {
+    font-size: map-get($fs-scale, lg);
+    margin-bottom: map-get($spacing, 8);
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: map-get($spacing, 4);
+    align-items: center;
+
+    @include respond-to(sm) {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+
+  .btn--secondary {
+    background: $color-secondary;
+    color: $color-primary;
+
+    &:hover {
+      background: darken($color-secondary, 5%);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+// Dark mode support
+@include dark-mode {
+  .program-card {
+    background: lighten($color-dark-bg, 5%);
+    border-color: rgba($color-secondary, 0.2);
+
+    .program-header h3 {
+      color: $color-secondary;
+    }
+
+    .program-benefits {
+      background: rgba($color-secondary, 0.1);
+      border-left-color: $color-info;
+      color: $color-secondary;
+
+      strong {
+        color: $color-info;
+      }
+    }
+  }
+
+  .treatment-process {
+    background: lighten($color-dark-bg, 5%);
+
+    h3 {
+      color: $color-secondary;
+    }
+  }
+
+  .step-item {
+    h4 {
+      color: $color-secondary;
+    }
+
+    p {
+      color: rgba($color-secondary, 0.8);
+    }
+  }
+
+  .symptom-category {
+    background: lighten($color-dark-bg, 5%);
+
+    h4 {
+      color: $color-secondary;
+    }
+
+    li {
+      color: rgba($color-secondary, 0.8);
+
+      &::before {
+        color: $color-info;
+      }
+    }
+  }
+}

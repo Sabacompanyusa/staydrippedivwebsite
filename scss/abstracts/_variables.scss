@@ -1,43 +1,52 @@
-// Design Tokens for Stay Dripped Mobile IV
+// Stay Dripped Mobile IV - Design Tokens & Variables
 
-// Brand Colors
-$color-primary: #1a2a47; // Navy blue - professional trust
-$color-secondary: #ffffff; // Pure white - cleanliness
+// Brand Colors - Professional Healthcare Palette
+$color-primary: #1a2a47; // Deep navy - trust and professionalism
+$color-secondary: #ffffff; // Pure white - cleanliness and clarity
 $color-accent: #f5f5f5; // Light gray - modern minimalism
-$color-charcoal: #333333; // Dark charcoal - contrast
-$color-success: #28a745; // Medical green - health
-$color-warning: #ffc107; // Attention yellow
-$color-error: #dc3545; // Medical red - urgency
-$color-info: #17a2b8; // Medical blue - calm
+$color-charcoal: #333333; // Dark charcoal - contrast and readability
+$color-success: #28a745; // Medical green - health and vitality
+$color-warning: #ffc107; // Attention yellow - important information
+$color-error: #dc3545; // Medical red - alerts and errors
+$color-info: #17a2b8; // Medical blue - calm and informative
 
-// Extended Palette
-$color-light-bg: #f8fafc;
-$color-dark-bg: #1e293b;
-$color-text-light: #64748b;
-$color-text-dark: #0f172a;
-$color-border: rgba(255, 255, 255, 0.2);
+// Extended Color Palette
+$color-light-bg: #f8fafc; // Light background
+$color-dark-bg: #1e293b; // Dark mode background
+$color-text-light: #64748b; // Light text
+$color-text-dark: #0f172a; // Dark text
+$color-border: rgba(255, 255, 255, 0.2); // Border color
 
-// Typography Scale
+// Typography System
 $font-base:
   "Inter",
   -apple-system,
   BlinkMacSystemFont,
   "Segoe UI",
+  Roboto,
+  Oxygen,
+  Ubuntu,
+  Cantarell,
   sans-serif;
 $font-heading:
   "Inter",
   -apple-system,
   BlinkMacSystemFont,
   "Segoe UI",
+  Roboto,
+  Oxygen,
+  Ubuntu,
+  Cantarell,
   sans-serif;
 
+// Typography Scale - Perfect Fourth (1.333)
 $fs-scale: (
   xs: 0.75rem,
   // 12px
   sm: 0.875rem,
   // 14px
   base: 1rem,
-  // 16px
+  // 16px - base
   lg: 1.125rem,
   // 18px
   xl: 1.25rem,
@@ -50,10 +59,12 @@ $fs-scale: (
   // 36px
   5xl: 3rem,
   // 48px
-  6xl: 3.75rem, // 60px
+  6xl: 3.75rem,
+  // 60px
+  7xl: 4.5rem, // 72px
 );
 
-// Spacing Scale (consistent with design systems)
+// Spacing Scale - Consistent 8px grid system
 $spacing: (
   0: 0,
   1: 0.25rem,
@@ -80,24 +91,31 @@ $spacing: (
   // 80px
   24: 6rem,
   // 96px
-  32: 8rem, // 128px
+  32: 8rem,
+  // 128px
+  40: 10rem,
+  // 160px
+  48: 12rem, // 192px
 );
 
 // Responsive Breakpoints
 $breakpoints: (
+  xs: 475px,
+  // Extra small devices
   sm: 640px,
-  // Mobile landscape
+  // Small devices
   md: 768px,
-  // Tablet
+  // Medium devices
   lg: 1024px,
-  // Desktop
+  // Large devices
   xl: 1280px,
-  // Large desktop
-  2xl: 1536px, // Extra large
+  // Extra large devices
+  2xl: 1536px, // 2X Extra large devices
 );
 
 // Z-index Scale
 $z-index: (
+  base: 1,
   dropdown: 1000,
   sticky: 1020,
   fixed: 1030,
@@ -105,9 +123,11 @@ $z-index: (
   modal: 1050,
   popover: 1060,
   tooltip: 1070,
+  overlay: 1080,
+  max: 9999,
 );
 
-// Border Radius
+// Border Radius Scale
 $border-radius: (
   none: 0,
   sm: 0.125rem,
@@ -127,8 +147,9 @@ $border-radius: (
   full: 9999px,
 );
 
-// Box Shadow
+// Box Shadow Scale
 $shadow: (
+  none: "none",
   sm: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
   base: "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
   md: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
@@ -137,7 +158,6 @@ $shadow: (
     "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
   2xl: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
   inner: "inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)",
-  none: "none",
 );
 
 // Transition Timing
@@ -157,4 +177,15 @@ $transition-timing: (
   in: cubic-bezier(0.4, 0, 1, 1),
   out: cubic-bezier(0, 0, 0.2, 1),
   in-out: cubic-bezier(0.4, 0, 0.2, 1),
+);
+
+// Grid System
+$grid-columns: 12;
+$grid-gutter: map-get($spacing, 6);
+$container-max-widths: (
+  sm: 640px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+  2xl: 1536px,
 );
