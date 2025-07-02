@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Standard Meta Tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
@@ -10,9 +11,50 @@
       name="description"
       content="Discover lucrative franchise opportunities with Stay Dripped Mobile IV. Join the booming mobile wellness industry with proven business model and comprehensive support."
     />
+    <meta
+      name="keywords"
+      content="franchise opportunities, mobile IV business, wellness franchise, healthcare franchise, business opportunity, franchise investment"
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://staydripped.com/pages/franchise.html" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://staydripped.com/pages/franchise.html"
+    />
+    <meta
+      property="og:title"
+      content="Franchise Opportunities - Join the Stay Dripped Mobile IV Family"
+    />
+    <meta
+      property="og:description"
+      content="Discover lucrative franchise opportunities with Stay Dripped Mobile IV. Join the booming mobile wellness industry with proven business model and comprehensive support."
+    />
+    <meta
+      property="og:image"
+      content="https://staydripped.com/assets/images/logo.png"
+    />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:title"
+      content="Franchise Opportunities - Join the Stay Dripped Mobile IV Family"
+    />
+    <meta
+      property="twitter:description"
+      content="Discover lucrative franchise opportunities with Stay Dripped Mobile IV. Join the booming mobile wellness industry with proven business model and comprehensive support."
+    />
 
     <!-- Favicons -->
-    <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png" />
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../assets/images/apple-touch-icon.png"
+    />
     <link
       rel="icon"
       type="image/png"
@@ -26,24 +68,23 @@
       href="../assets/images/favicon-16x16.png"
     />
 
-    <!-- Google Fonts -->
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://intakeq.com" />
+
+    <!-- Preload critical assets -->
+    <link rel="preload" href="../assets/images/logo.png" as="image" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      rel="stylesheet"
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      as="style"
     />
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="../assets/css/style.css" />
-    <link rel="stylesheet" href="../assets/css/responsive.css" />
-
+    <!-- Critical CSS (inline for performance) -->
     <style>
-      /* CSS Variables */
       :root {
-        /* Brand Colors */
+        /* Professional Brand Colors */
         --primary: #0a2a43;
         --secondary: #00bcd4;
         --accent: #4fc3f7;
@@ -53,32 +94,39 @@
         --warning: #ff9800;
         --error: #f44336;
 
-        /* Text Colors */
+        /* Enhanced Text Colors */
         --text-dark: #1a1a1a;
+        --text-medium: #334155;
         --text-light: #666;
         --text-muted: #999;
         --text-white: #fff;
+        --text-cyan: #06b6d4;
 
-        /* Background Colors */
+        /* Professional Background Colors */
         --bg-light: #f1fbff;
         --bg-dark: #1a1a1a;
+        --bg-chrome: #f1f5f9;
         --white: #fff;
 
-        /* Shadows */
+        /* Professional Shadows */
         --shadow: 0 4px 12px rgb(0 0 0 / 10%);
         --shadow-hover: 0 8px 25px rgb(0 0 0 / 15%);
         --shadow-lg: 0 10px 40px rgb(0 0 0 / 10%);
+        --shadow-xl: 0 20px 64px rgb(0 0 0 / 12%);
+        --shadow-cyan: 0 8px 32px rgba(0, 188, 212, 0.25);
 
-        /* Border Radius */
+        /* Professional Border Radius */
         --br: 12px;
         --br-lg: 16px;
         --br-xl: 24px;
+        --br-full: 9999px;
 
-        /* Transitions */
+        /* Professional Transitions */
         --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         --transition-fast: all 0.15s ease;
+        --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
-        /* Gradients */
+        /* Professional Gradients */
         --gradient-primary: linear-gradient(
           135deg,
           var(--secondary),
@@ -90,6 +138,7 @@
           rgb(10 42 67 / 90%),
           rgb(0 188 212 / 70%)
         );
+        --gradient-surface: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
       }
 
       /* CSS Reset */
@@ -125,151 +174,24 @@
         -moz-osx-font-smoothing: grayscale;
       }
 
-      img,
-      iframe,
-      svg {
-        max-width: 100%;
-        height: auto;
-        display: block;
+      body.has-back-button {
+        padding-top: 120px;
       }
 
-      a {
-        color: inherit;
+      /* Skip Link */
+      .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: var(--primary);
+        color: white;
+        padding: 8px;
         text-decoration: none;
+        z-index: 100;
       }
 
-      button {
-        font-family: inherit;
-        cursor: pointer;
-        border: none;
-        background: none;
-      }
-
-      ul {
-        list-style: none;
-      }
-
-      <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      rel="stylesheet"
-    />
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="../assets/css/style.css" />
-    <link rel="stylesheet" href="../assets/css/responsive.css" />
-
-    <style>
-      /* CSS Variables */
-      :root {
-        /* Brand Colors */
-        --primary: #0a2a43;
-        --secondary: #00bcd4;
-        --accent: #4fc3f7;
-        --gold: #ffd700;
-        --platinum: #e5e5e5;
-        --success: #4caf50;
-        --warning: #ff9800;
-        --error: #f44336;
-
-        /* Text Colors */
-        --text-dark: #1a1a1a;
-        --text-light: #666;
-        --text-muted: #999;
-        --text-white: #fff;
-
-        /* Background Colors */
-        --bg-light: #f1fbff;
-        --bg-dark: #1a1a1a;
-        --white: #fff;
-
-        /* Shadows */
-        --shadow: 0 4px 12px rgb(0 0 0 / 10%);
-        --shadow-hover: 0 8px 25px rgb(0 0 0 / 15%);
-        --shadow-lg: 0 10px 40px rgb(0 0 0 / 10%);
-
-        /* Border Radius */
-        --br: 12px;
-        --br-lg: 16px;
-        --br-xl: 24px;
-
-        /* Transitions */
-        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        --transition-fast: all 0.15s ease;
-
-        /* Gradients */
-        --gradient-primary: linear-gradient(
-          135deg,
-          var(--secondary),
-          var(--accent)
-        );
-        --gradient-gold: linear-gradient(135deg, #ffd700, #ffed4e);
-        --gradient-hero: linear-gradient(
-          135deg,
-          rgb(10 42 67 / 90%),
-          rgb(0 188 212 / 70%)
-        );
-      }
-
-      /* CSS Reset */
-      *,
-      *::before,
-      *::after {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      html {
-        scroll-behavior: smooth;
-        font-size: 16px;
-      }
-
-      body {
-        font-family:
-          Inter,
-          -apple-system,
-          BlinkMacSystemFont,
-          "Segoe UI",
-          Roboto,
-          Oxygen,
-          Ubuntu,
-          Cantarell,
-          sans-serif;
-        line-height: 1.7;
-        color: var(--text-dark);
-        background: #fafafa;
-        overflow-x: hidden;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
-
-      img,
-      iframe,
-      svg {
-        max-width: 100%;
-        height: auto;
-        display: block;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      button {
-        font-family: inherit;
-        cursor: pointer;
-        border: none;
-        background: none;
-      }
-
-      ul {
-        list-style: none;
+      .skip-link:focus {
+        top: 0;
       }
 
       /* Container */
@@ -279,2339 +201,697 @@
         padding: 0 2rem;
       }
 
-      /* Header */
-      .header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1000;
-        background: var(--primary);
-        box-shadow: var(--shadow);
-        transition: var(--transition);
-      }
-
-      .header-container {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 1rem 2rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .logo-section {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        transition: var(--transition);
-      }
-
-      .logo-section:hover {
-        transform: scale(1.05);
-      }
-
-      .logo-image {
-        height: 40px;
-        width: auto;
-      }
-
-      .brand-name {
-        font-size: 1.4rem;
-        font-weight: 800;
-        background: var(--gradient-primary);
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-
-      .header-buttons {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        flex-wrap: wrap;
-      }
-
-      .emergency-call-btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-        background: var(--success);
-        color: white;
-        height: 40px;
-        min-width: 150px;
-        padding: 0 1rem;
-        border-radius: var(--br);
-        font-weight: 600;
-        transition: var(--transition);
-        box-shadow: var(--shadow);
-      }
-
-      .emergency-call-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-hover);
-      }
-
-      .header-book-btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: var(--secondary);
-        color: white;
-        height: 40px;
-        min-width: 150px;
-        padding: 0 1rem;
-        border-radius: var(--br);
-        font-weight: 600;
-        transition: var(--transition);
-        box-shadow: var(--shadow);
-      }
-
-      .header-book-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-hover);
-      }
-
-      .franchise-inquiry-btn {
-        min-width: 180px;
-        height: 48px;
-        padding: 0.75rem 1.5rem;
-        font-family:
-          Inter,
-          -apple-system,
-          BlinkMacSystemFont,
-          "Segoe UI",
-          Roboto,
-          sans-serif;
-        font-size: 0.9rem;
-        font-weight: 600;
-        line-height: 1;
-        text-align: center;
-        white-space: nowrap;
-        background: var(--gradient-gold);
-        color: var(--primary);
-        border: 2px solid transparent;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgb(255 215 0 / 30%);
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-        cursor: pointer;
-        user-select: none;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        outline: none;
-      }
-
-      .franchise-inquiry-btn:hover {
-        background: #ffed4e;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 16px rgb(255 215 0 / 40%);
-      }
-
-      /* Franchise Hero Section */
-      .franchise-hero {
-        padding: 8rem 0 6rem;
-        background:
-          var(--gradient-hero),
-          url("https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1600&q=80")
-            center/cover no-repeat;
-        color: white;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .franchise-hero::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          45deg,
-          transparent,
-          rgb(79 195 247 / 10%),
-          transparent
-        );
-        animation: shimmer 4s ease-in-out infinite alternate;
-      }
-
-      @keyframes shimmer {
-        from {
-          transform: translateX(-100%);
+      @media (width >= 768px) {
+        .container {
+          padding: 0 3rem;
         }
-
-        to {
-          transform: translateX(100%);
-        }
-      }
-
-      .franchise-hero-content {
-        position: relative;
-        z-index: 2;
-        text-align: center;
-        max-width: 900px;
-        margin: 0 auto;
-      }
-
-      .franchise-hero h1 {
-        font-size: clamp(2.5rem, 5vw, 4rem);
-        font-weight: 800;
-        margin-bottom: 1.5rem;
-        background: linear-gradient(135deg, #fff, var(--accent));
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-
-      .franchise-hero p {
-        font-size: 1.3rem;
-        margin-bottom: 3rem;
-        opacity: 0.9;
-        line-height: 1.6;
-      }
-
-      .franchise-stats {
-        display: flex;
-        justify-content: center;
-        gap: 4rem;
-        flex-wrap: wrap;
-        margin-bottom: 3rem;
-      }
-
-      .franchise-stat {
-        text-align: center;
-        background: rgb(255 255 255 / 10%);
-        padding: 2rem 1.5rem;
-        border-radius: var(--br-lg);
-        backdrop-filter: blur(10px);
-        transition: var(--transition);
-      }
-
-      .franchise-stat:hover {
-        background: rgb(255 255 255 / 20%);
-        transform: translateY(-5px);
-      }
-
-      .franchise-stat-number {
-        display: block;
-        font-size: 2.5rem;
-        font-weight: 800;
-        margin-bottom: 0.5rem;
-        color: var(--gold);
-      }
-
-      .franchise-stat-label {
-        font-size: 0.9rem;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        opacity: 0.9;
-      }
-
-      .franchise-hero-cta {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-
-      /* Section Styles */
-      .section {
-        padding: 6rem 2rem;
-        text-align: center;
-      }
-
-      .section-light {
-        background: var(--bg-light);
-      }
-
-      .section-header {
-        margin-bottom: 4rem;
-      }
-
-      .section-title {
-        font-size: clamp(2rem, 4vw, 3rem);
-        font-weight: 800;
-        color: var(--primary);
-        margin-bottom: 1rem;
-        position: relative;
-        display: inline-block;
-      }
-
-      .section-title::after {
-        content: "";
-        position: absolute;
-        bottom: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80px;
-        height: 4px;
-        background: var(--secondary);
-        border-radius: 2px;
-      }
-
-      .section-subtitle {
-        font-size: 1.1rem;
-        color: var(--text-light);
-        margin-bottom: 3rem;
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      /* Market Opportunity */
-      .market-opportunity {
-        padding: 6rem 2rem;
-        background: white;
-      }
-
-      .opportunity-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-        margin-top: 3rem;
-      }
-
-      .opportunity-card {
-        background: var(--bg-light);
-        padding: 2rem;
-        border-radius: var(--br-lg);
-        box-shadow: var(--shadow);
-        transition: var(--transition);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .opportunity-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 4px;
-        width: 100%;
-        background: var(--secondary);
-      }
-
-      .opportunity-card:hover {
-        background: white;
-        transform: translateY(-5px);
-        box-shadow: var(--shadow-hover);
-      }
-
-      .opportunity-icon {
-        font-size: 3rem;
-        margin-bottom: 1.5rem;
-        color: var(--secondary);
-      }
-
-      .opportunity-card h3 {
-        color: var(--primary);
-        margin-bottom: 1rem;
-        font-size: 1.3rem;
-      }
-
-      .opportunity-card p {
-        color: var(--text-light);
-        line-height: 1.6;
-        margin-bottom: 1.5rem;
-      }
-
-      .opportunity-stat {
-        background: rgb(0 188 212 / 10%);
-        color: var(--secondary);
-        padding: 0.75rem 1rem;
-        border-radius: var(--br);
-        font-weight: 700;
-        font-size: 1.1rem;
-        border-left: 3px solid var(--secondary);
-      }
-
-      /* Why Choose Us */
-      .why-choose-us {
-        padding: 6rem 2rem;
-        background: var(--bg-light);
-      }
-
-      .why-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 2rem;
-        margin-top: 3rem;
-      }
-
-      .why-card {
-        background: white;
-        padding: 2.5rem;
-        border-radius: var(--br-lg);
-        box-shadow: var(--shadow);
-        transition: var(--transition);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .why-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 4px;
-        width: 100%;
-        background: var(--gold);
-      }
-
-      .why-card:hover {
-        transform: translateY(-5px);
-        box-shadow: var(--shadow-hover);
-      }
-
-      .why-card h3 {
-        color: var(--primary);
-        margin-bottom: 1.5rem;
-        font-size: 1.4rem;
-      }
-
-      .why-card p {
-        color: var(--text-light);
-        line-height: 1.6;
-        margin-bottom: 1.5rem;
-      }
-
-      .why-benefits {
-        list-style: none;
-        padding: 0;
-      }
-
-      .why-benefits li {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        margin-bottom: 0.75rem;
-        color: var(--text-dark);
-        font-size: 0.95rem;
-      }
-
-      .why-benefits li::before {
-        content: "✓";
-        color: var(--success);
-        font-weight: bold;
-        font-size: 1rem;
-        min-width: 16px;
-      }
-
-      /* Investment Details */
-      .investment-details {
-        padding: 6rem 2rem;
-        background: white;
-      }
-
-      .investment-breakdown {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 3rem;
-        margin-top: 3rem;
-      }
-
-      .investment-card {
-        background: var(--bg-light);
-        padding: 2.5rem;
-        border-radius: var(--br-lg);
-        box-shadow: var(--shadow);
-        transition: var(--transition);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .investment-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 4px;
-        width: 100%;
-        background: var(--accent);
-      }
-
-      .investment-card:hover {
-        background: white;
-        transform: translateY(-5px);
-        box-shadow: var(--shadow-hover);
-      }
-
-      .investment-card h3 {
-        color: var(--primary);
-        margin-bottom: 1rem;
-        font-size: 1.4rem;
-      }
-
-      .investment-amount {
-        font-size: 2rem;
-        font-weight: 800;
-        color: var(--secondary);
-        margin-bottom: 1.5rem;
-      }
-
-      .investment-includes {
-        list-style: none;
-        padding: 0;
-      }
-
-      .investment-includes li {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        margin-bottom: 0.75rem;
-        color: var(--text-dark);
-        font-size: 0.95rem;
-      }
-
-      .investment-includes li::before {
-        content: "•";
-        color: var(--accent);
-        font-weight: bold;
-        font-size: 1.2rem;
-        min-width: 16px;
-      }
-
-      /* Support & Training */
-      .support-training {
-        padding: 6rem 2rem;
-        background: var(--bg-light);
-      }
-
-      .support-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-        margin-top: 3rem;
-      }
-
-      .support-card {
-        background: white;
-        padding: 2rem;
-        border-radius: var(--br-lg);
-        box-shadow: var(--shadow);
-        transition: var(--transition);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .support-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 4px;
-        width: 100%;
-        background: var(--success);
-      }
-
-      .support-card:hover {
-        transform: translateY(-5px);
-        box-shadow: var(--shadow-hover);
-      }
-
-      .support-icon {
-        font-size: 2.5rem;
-        color: var(--success);
-        margin-bottom: 1.5rem;
-      }
-
-      .support-card h3 {
-        color: var(--primary);
-        margin-bottom: 1rem;
-        font-size: 1.3rem;
-      }
-
-      .support-card p {
-        color: var(--text-light);
-        line-height: 1.6;
-        margin-bottom: 1.5rem;
-      }
-
-      .support-features {
-        list-style: none;
-        padding: 0;
-      }
-
-      .support-features li {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        margin-bottom: 0.75rem;
-        color: var(--text-dark);
-        font-size: 0.95rem;
-      }
-
-      .support-features li::before {
-        content: "→";
-        color: var(--success);
-        font-weight: bold;
-        min-width: 16px;
-      }
-
-      /* Application Process */
-      .application-process {
-        padding: 6rem 2rem;
-        background: white;
-      }
-
-      .process-timeline {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 3rem;
-        margin-top: 3rem;
-      }
-
-      .process-step {
-        background: var(--bg-light);
-        padding: 2rem;
-        border-radius: var(--br-lg);
-        box-shadow: var(--shadow);
-        transition: var(--transition);
-        position: relative;
-        overflow: hidden;
-        text-align: center;
-      }
-
-      .process-step::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 4px;
-        width: 100%;
-        background: var(--secondary);
-      }
-
-      .process-step:hover {
-        transform: translateY(-5px);
-        box-shadow: var(--shadow-hover);
-      }
-
-      .step-number {
-        width: 60px;
-        height: 60px;
-        background: var(--gradient-primary);
-        color: white;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.5rem;
-        font-weight: 800;
-        margin: 0 auto 1.5rem;
-      }
-
-      .process-step h3 {
-        color: var(--primary);
-        margin-bottom: 1rem;
-        font-size: 1.2rem;
-      }
-
-      .process-step p {
-        color: var(--text-light);
-        line-height: 1.6;
-      }
-
-      /* Franchisee Requirements */
-      .franchisee-requirements {
-        padding: 6rem 2rem;
-        background: var(--bg-light);
-      }
-
-      .requirements-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2rem;
-        margin-top: 3rem;
-      }
-
-      .requirement-card {
-        background: white;
-        padding: 2rem;
-        border-radius: var(--br-lg);
-        box-shadow: var(--shadow);
-        transition: var(--transition);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .requirement-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 4px;
-        width: 100%;
-        background: var(--warning);
-      }
-
-      .requirement-card:hover {
-        transform: translateY(-5px);
-        box-shadow: var(--shadow-hover);
-      }
-
-      .requirement-card h3 {
-        color: var(--primary);
-        margin-bottom: 1.5rem;
-        font-size: 1.3rem;
-      }
-
-      .requirement-list {
-        list-style: none;
-        padding: 0;
-      }
-
-      .requirement-list li {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        margin-bottom: 0.75rem;
-        color: var(--text-dark);
-        font-size: 0.95rem;
-      }
-
-      .requirement-list li::before {
-        content: "▸";
-        color: var(--warning);
-        font-weight: bold;
-        min-width: 16px;
-      }
-
-      /* CTA Section */
-      .franchise-cta {
-        background: var(--gradient-hero);
-        color: white;
-        padding: 6rem 2rem;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .franchise-cta::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          45deg,
-          transparent,
-          rgb(79 195 247 / 10%),
-          transparent
-        );
-        animation: shimmer 6s ease-in-out infinite;
-      }
-
-      .franchise-cta-content {
-        position: relative;
-        z-index: 2;
-        text-align: center;
-        max-width: 800px;
-        margin: 0 auto;
-      }
-
-      .franchise-cta h2 {
-        font-size: clamp(2rem, 4vw, 3rem);
-        margin-bottom: 1.5rem;
-      }
-
-      .franchise-cta p {
-        font-size: 1.2rem;
-        margin-bottom: 3rem;
-        opacity: 0.9;
-        line-height: 1.6;
-      }
-
-      .cta-buttons {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        margin-bottom: 3rem;
-        flex-wrap: wrap;
-      }
-
-      .btn {
-        padding: 1rem 2rem;
-        border-radius: var(--br);
-        font-size: 1rem;
-        font-weight: 600;
-        transition: var(--transition);
-        position: relative;
-        overflow: hidden;
-        text-decoration: none;
-        display: inline-block;
-        cursor: pointer;
-        border: none;
-      }
-
-      .btn-primary {
-        background: var(--secondary);
-        color: white;
-      }
-
-      .btn-primary:hover {
-        background: var(--accent);
-        transform: translateY(-3px);
-        box-shadow: var(--shadow-hover);
-      }
-
-      .btn-secondary {
-        background: var(--gold);
-        color: var(--primary);
-      }
-
-      .btn-secondary:hover {
-        background: #ffed4e;
-        transform: translateY(-3px);
-      }
-
-      .btn-lg {
-        padding: 1.25rem 2.5rem;
-        font-size: 1.1rem;
-      }
-
-      .contact-info {
-        opacity: 0.9;
-      }
-
-      .contact-info p {
-        margin: 0.5rem 0;
-        font-size: 0.95rem;
-      }
-
-      /* Footer */
-      .site-footer {
-        background: var(--primary);
-        color: white;
-        padding: 3rem 2rem 1rem;
-      }
-
-      .footer-content {
-        max-width: 1400px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-        margin-bottom: 2rem;
-      }
-
-      .footer-section h4 {
-        color: var(--secondary);
-        margin-bottom: 1rem;
-        font-size: 1.2rem;
-      }
-
-      .footer-section ul {
-        list-style: none;
-      }
-
-      .footer-section li {
-        margin-bottom: 0.5rem;
-      }
-
-      .footer-section a {
-        color: rgb(255 255 255 / 80%);
-        transition: var(--transition);
-      }
-
-      .footer-section a:hover {
-        color: var(--secondary);
-      }
-
-      .footer-bottom {
-        border-top: 1px solid rgb(255 255 255 / 10%);
-        padding-top: 2rem;
-        text-align: center;
-        max-width: 1400px;
-        margin: 0 auto;
-      }
-
-      /* Mobile Responsiveness */
-      @media (width <= 768px) {
-        .header-container {
-          max-width: 1400px;
-          margin: 0 auto;
-          padding: 1rem 2rem;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        }
-
-        .logo-section {
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          transition: var(--transition);
-        }
-
-        .logo-section:hover {
-          transform: scale(1.05);
-        }
-
-        .logo-image {
-          height: 40px;
-          width: auto;
-        }
-
-        .brand-name {
-          font-size: 1.4rem;
-          font-weight: 800;
-          background: var(--gradient-primary);
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-        }
-
-        .header-buttons {
-          justify-content: center;
-        }
-
-        .header-book-btn:hover {
-          transform: translateY(-2px);
-          box-shadow: var(--shadow-hover);
-        }
-
-        .franchise-inquiry-btn {
-          min-width: 180px;
-          height: 48px;
-          padding: 0.75rem 1.5rem;
-          font-family:
-            Inter,
-            -apple-system,
-            BlinkMacSystemFont,
-            "Segoe UI",
-            Roboto,
-            sans-serif;
-          font-size: 0.9rem;
-          font-weight: 600;
-          line-height: 1;
-          text-align: center;
-          white-space: nowrap;
-          background: var(--gradient-gold);
-          color: var(--primary);
-          border: 2px solid transparent;
-          border-radius: 8px;
-          box-shadow: 0 2px 8px rgb(255 215 0 / 30%);
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          gap: 0.5rem;
-          cursor: pointer;
-          user-select: none;
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          outline: none;
-        }
-
-        .franchise-inquiry-btn:hover {
-          background: #ffed4e;
-          transform: translateY(-2px);
-          box-shadow: 0 4px 16px rgb(255 215 0 / 40%);
-        }
-
-        /* Franchise Hero Section */
-        .franchise-hero {
-          padding: 8rem 0 6rem;
-          background:
-            var(--gradient-hero),
-            url("https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1600&q=80")
-              center/cover no-repeat;
-          color: white;
-          position: relative;
-          overflow: hidden;
-        }
-
-        .franchise-hero::before {
-          content: "";
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(
-            45deg,
-            transparent,
-            rgb(79 195 247 / 10%),
-            transparent
-          );
-          animation: shimmer 4s ease-in-out infinite alternate;
-        }
-
-        @keyframes shimmer {
-          from {
-            transform: translateX(-100%);
-          }
-
-          to {
-            transform: translateX(100%);
-          }
-        }
-
-        .franchise-hero-content {
-          position: relative;
-          z-index: 2;
-          text-align: center;
-          max-width: 900px;
-          margin: 0 auto;
-        }
-
-        .franchise-hero h1 {
-          font-size: clamp(2.5rem, 5vw, 4rem);
-          font-weight: 800;
-          margin-bottom: 1.5rem;
-          background: linear-gradient(135deg, #fff, var(--accent));
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-        }
-
-        .franchise-hero p {
-          font-size: 1.3rem;
-          margin-bottom: 3rem;
-          opacity: 0.9;
-          line-height: 1.6;
-        }
-
-        .franchise-stats {
-          display: flex;
-          justify-content: center;
-          gap: 4rem;
-          flex-wrap: wrap;
-          margin-bottom: 3rem;
-        }
-
-        .franchise-stat {
-          text-align: center;
-          background: rgb(255 255 255 / 10%);
-          padding: 2rem 1.5rem;
-          border-radius: var(--br-lg);
-          backdrop-filter: blur(10px);
-          transition: var(--transition);
-        }
-
-        .franchise-stat:hover {
-          background: rgb(255 255 255 / 20%);
-          transform: translateY(-5px);
-        }
-
-        .section {
-          padding: 6rem 2rem;
-          text-align: center;
-        }
-
-        .section-light {
-          background: var(--bg-light);
-        }
-
-        .section-header {
-          margin-bottom: 4rem;
-        }
-
-        .section-title {
-          font-size: clamp(2rem, 4vw, 3rem);
-          font-weight: 800;
-          color: var(--primary);
-          margin-bottom: 1rem;
-          position: relative;
-          display: inline-block;
-        }
-
-        .section-title::after {
-          content: "";
-          position: absolute;
-          bottom: -10px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 80px;
-          height: 4px;
-          background: var(--secondary);
-          border-radius: 2px;
-        }
-
-        .section-subtitle {
-          font-size: 1.1rem;
-          color: var(--text-light);
-          margin-bottom: 3rem;
-          max-width: 600px;
-          margin-left: auto;
-          margin-right: auto;
-        }
-
-        /* Market Opportunity */
-        .market-opportunity {
-          padding: 6rem 2rem;
-          background: white;
-        }
-
-        .opportunity-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 2rem;
-          margin-top: 3rem;
-        }
-
-        .opportunity-card {
-          background: var(--bg-light);
-          padding: 2rem;
-          border-radius: var(--br-lg);
-          box-shadow: var(--shadow);
-          transition: var(--transition);
-          position: relative;
-          overflow: hidden;
-        }
-
-        .opportunity-card::before {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 4px;
-          width: 100%;
-          background: var(--secondary);
-        }
-
-        .opportunity-card:hover {
-          background: white;
-          transform: translateY(-5px);
-          box-shadow: var(--shadow-hover);
-        }
-
-        .opportunity-icon {
-          font-size: 3rem;
-          margin-bottom: 1.5rem;
-          color: var(--secondary);
-        }
-
-        .opportunity-card h3 {
-          color: var(--primary);
-          margin-bottom: 1rem;
-          font-size: 1.3rem;
-        }
-
-        .opportunity-card p {
-          color: var(--text-light);
-          line-height: 1.6;
-          margin-bottom: 1.5rem;
-        }
-
-        .opportunity-stat {
-          background: rgb(0 188 212 / 10%);
-          color: var(--secondary);
-          padding: 0.75rem 1rem;
-          border-radius: var(--br);
-          font-weight: 700;
-          font-size: 1.1rem;
-          border-left: 3px solid var(--secondary);
-        }
-
-        /* Why Choose Us */
-        .why-choose-us {
-          padding: 6rem 2rem;
-          background: var(--bg-light);
-        }
-
-        .why-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-          gap: 2rem;
-          margin-top: 3rem;
-        }
-
-        .why-card {
-          background: white;
-          padding: 2.5rem;
-          border-radius: var(--br-lg);
-          box-shadow: var(--shadow);
-          transition: var(--transition);
-          position: relative;
-          overflow: hidden;
-        }
-
-        .why-card::before {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 4px;
-          width: 100%;
-          background: var(--gold);
-        }
-
-        .why-card:hover {
-          transform: translateY(-5px);
-          box-shadow: var(--shadow-hover);
-        }
-
-        .why-card h3 {
-          color: var(--primary);
-          margin-bottom: 1.5rem;
-          font-size: 1.4rem;
-        }
-
-        .why-card p {
-          color: var(--text-light);
-          line-height: 1.6;
-          margin-bottom: 1.5rem;
-        }
-
-        .why-benefits {
-          list-style: none;
-          padding: 0;
-        }
-
-        .why-benefits li {
-          display: flex;
-          align-items: center;
-          gap: 0.75rem;
-          margin-bottom: 0.75rem;
-          color: var(--text-dark);
-          font-size: 0.95rem;
-        }
-
-        .why-benefits li::before {
-          content: "✓";
-          color: var(--success);
-          font-weight: bold;
-          font-size: 1rem;
-          min-width: 16px;
-        }
-
-        /* Investment Details */
-        .investment-details {
-          padding: 6rem 2rem;
-          background: white;
-        }
-
-        .investment-breakdown {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 3rem;
-          margin-top: 3rem;
-        }
-
-        .investment-card {
-          background: var(--bg-light);
-          padding: 2.5rem;
-          border-radius: var(--br-lg);
-          box-shadow: var(--shadow);
-          transition: var(--transition);
-          position: relative;
-          overflow: hidden;
-        }
-
-        .investment-card::before {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 4px;
-          width: 100%;
-          background: var(--accent);
-        }
-
-        .investment-card:hover {
-          background: white;
-          transform: translateY(-5px);
-          box-shadow: var(--shadow-hover);
-        }
-
-        .investment-card h3 {
-          color: var(--primary);
-          margin-bottom: 1rem;
-          font-size: 1.4rem;
-        }
-
-        .investment-amount {
-          font-size: 2rem;
-          font-weight: 800;
-          color: var(--secondary);
-          margin-bottom: 1.5rem;
-        }
-
-        .investment-includes {
-          list-style: none;
-          padding: 0;
-        }
-
-        .investment-includes li {
-          display: flex;
-          align-items: center;
-          gap: 0.75rem;
-          margin-bottom: 0.75rem;
-          color: var(--text-dark);
-          font-size: 0.95rem;
-        }
-
-        .investment-includes li::before {
-          content: "•";
-          color: var(--accent);
-          font-weight: bold;
-          font-size: 1.2rem;
-          min-width: 16px;
-        }
-
-        /* Support & Training */
-        .support-training {
-          padding: 6rem 2rem;
-          background: var(--bg-light);
-        }
-
-        .support-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 2rem;
-          margin-top: 3rem;
-        }
-
-        .support-card {
-          background: white;
-          padding: 2rem;
-          border-radius: var(--br-lg);
-          box-shadow: var(--shadow);
-          transition: var(--transition);
-          position: relative;
-          overflow: hidden;
-        }
-
-        .support-card::before {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 4px;
-          width: 100%;
-          background: var(--success);
-        }
-
-        .support-card:hover {
-          transform: translateY(-5px);
-          box-shadow: var(--shadow-hover);
-        }
-
-        .support-icon {
-          font-size: 2.5rem;
-          color: var(--success);
-          margin-bottom: 1.5rem;
-        }
-
-        .support-card h3 {
-          color: var(--primary);
-          margin-bottom: 1rem;
-          font-size: 1.3rem;
-        }
-
-        .support-card p {
-          color: var(--text-light);
-          line-height: 1.6;
-          margin-bottom: 1.5rem;
-        }
-
-        .support-features {
-          list-style: none;
-          padding: 0;
-        }
-
-        .support-features li {
-          display: flex;
-          align-items: center;
-          gap: 0.75rem;
-          margin-bottom: 0.75rem;
-          color: var(--text-dark);
-          font-size: 0.95rem;
-        }
-
-        .support-features li::before {
-          content: "→";
-          color: var(--success);
-          font-weight: bold;
-          min-width: 16px;
-        }
-
-        /* Application Process */
-        .application-process {
-          padding: 6rem 2rem;
-          background: white;
-        }
-
-        .process-timeline {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: 3rem;
-          margin-top: 3rem;
-        }
-
-        .process-step {
-          background: var(--bg-light);
-          padding: 2rem;
-          border-radius: var(--br-lg);
-          box-shadow: var(--shadow);
-          transition: var(--transition);
-          position: relative;
-          overflow: hidden;
-          text-align: center;
-        }
-
-        .process-step::before {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 4px;
-          width: 100%;
-          background: var(--secondary);
-        }
-
-        .process-step:hover {
-          transform: translateY(-5px);
-          box-shadow: var(--shadow-hover);
-        }
-
-        .step-number {
-          width: 60px;
-          height: 60px;
-          background: var(--gradient-primary);
-          color: white;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 1.5rem;
-          font-weight: 800;
-          margin: 0 auto 1.5rem;
-        }
-
-        .process-step h3 {
-          color: var(--primary);
-          margin-bottom: 1rem;
-          font-size: 1.2rem;
-        }
-
-        .process-step p {
-          color: var(--text-light);
-          line-height: 1.6;
-        }
-
-        /* Franchisee Requirements */
-        .franchisee-requirements {
-          padding: 6rem 2rem;
-          background: var(--bg-light);
-        }
-
-        .opportunity-grid,
-        .why-grid,
-        .investment-breakdown,
-        .support-grid,
-        .process-timeline,
-        .requirements-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-          gap: 2rem;
-          margin-top: 3rem;
-        }
-
-        .requirement-card {
-          background: white;
-          padding: 2rem;
-          border-radius: var(--br-lg);
-          box-shadow: var(--shadow);
-          transition: var(--transition);
-          position: relative;
-          overflow: hidden;
-        }
-
-        .requirement-card::before {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 4px;
-          width: 100%;
-          background: var(--warning);
-        }
-
-        .requirement-card:hover {
-          transform: translateY(-5px);
-          box-shadow: var(--shadow-hover);
-        }
-
-        .requirement-card h3 {
-          color: var(--primary);
-          margin-bottom: 1.5rem;
-          font-size: 1.3rem;
-        }
-
-        .requirement-list {
-          list-style: none;
-          padding: 0;
-        }
-
-        .requirement-list li {
-          display: flex;
-          align-items: center;
-          gap: 0.75rem;
-          margin-bottom: 0.75rem;
-          color: var(--text-dark);
-          font-size: 0.95rem;
-        }
-
-        .requirement-list li::before {
-          content: "▸";
-          color: var(--warning);
-          font-weight: bold;
-          min-width: 16px;
-        }
-
-        /* CTA Section */
-        .franchise-cta {
-          background: var(--gradient-hero);
-          color: white;
-          padding: 6rem 2rem;
-          position: relative;
-          overflow: hidden;
-        }
-
-        .franchise-cta::before {
-          content: "";
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(
-            45deg,
-            transparent,
-            rgb(79 195 247 / 10%),
-            transparent
-          );
-          animation: shimmer 6s ease-in-out infinite;
-        }
-
-        .franchise-cta-content {
-          position: relative;
-          z-index: 2;
-          text-align: center;
-          max-width: 800px;
-          margin: 0 auto;
-        }
-
-        .franchise-cta h2 {
-          font-size: clamp(2rem, 4vw, 3rem);
-          margin-bottom: 1.5rem;
-        }
-
-        .franchise-cta p {
-          font-size: 1.2rem;
-          margin-bottom: 3rem;
-          opacity: 0.9;
-          line-height: 1.6;
-        }
-
-        .franchise-hero-cta,
-        .cta-buttons {
-          flex-direction: column;
-          align-items: center;
-        }
-      }
-
-      /* Focus and accessibility */
-      :focus-visible {
-        outline: 2px solid var(--secondary);
-        outline-offset: 2px;
-      }
-
-      /* Animations */
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .footer-section a {
-        color: rgb(255 255 255 / 80%);
-        transition: var(--transition);
-      }
-
-      .footer-section a:hover {
-        color: var(--secondary);
-      }
-
-      .footer-bottom {
-        border-top: 1px solid rgb(255 255 255 / 10%);
-        padding-top: 2rem;
-        text-align: center;
-        max-width: 1400px;
-        margin: 0 auto;
-      }
-
-      /* Mobile Responsiveness */
-      @media (width <= 768px) {
-        .header-container {
-          flex-direction: column;
-          gap: 1rem;
-          padding: 1rem;
-        }
-
-        .header-buttons {
-          justify-content: center;
-        }
-
-        .franchise-hero {
-          padding: 6rem 0 4rem;
-        }
-
-        .franchise-stats {
-          flex-direction: column;
-          align-items: center;
-          gap: 2rem;
-        }
-
-        .section {
-          padding: 4rem 1rem;
-        }
-
-        .opportunity-grid,
-        .why-grid,
-        .investment-breakdown,
-        .support-grid,
-        .process-timeline,
-        .requirements-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .franchise-hero-cta,
-        .cta-buttons {
-          flex-direction: column;
-          align-items: center;
-        }
-      }
-
-      /* Focus and accessibility */
-      :focus-visible {
-        outline: 2px solid var(--secondary);
-        outline-offset: 2px;
-      }
-
-      /* Animations */
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .fade-in-up {
-        animation: fadeInUp 0.6s ease-out;
       }
     </style>
+
+    <!-- External CSS (deferred) -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    /></noscript>
+
+    <!-- Professional Theme CSS -->
+    <link
+      rel="preload"
+      href="../assets/css/professional-theme.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link rel="stylesheet" href="../assets/css/professional-theme.css"
+    /></noscript>
+
+    <!-- Enhanced Sections CSS -->
+    <link
+      rel="preload"
+      href="../assets/css/enhanced-sections.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link rel="stylesheet" href="../assets/css/enhanced-sections.css"
+    /></noscript>
+
+    <!-- Enhanced Footer CSS -->
+    <link
+      rel="preload"
+      href="../assets/css/enhanced-footer.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link rel="stylesheet" href="../assets/css/enhanced-footer.css"
+    /></noscript>
+
+    <!-- Premium Animations CSS -->
+    <link
+      rel="preload"
+      href="../assets/css/premium-animations.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link rel="stylesheet" href="../assets/css/premium-animations.css"
+    /></noscript>
+
+    <!-- Premium Responsive CSS -->
+    <link
+      rel="preload"
+      href="../assets/css/premium-responsive.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link rel="stylesheet" href="../assets/css/premium-responsive.css"
+    /></noscript>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
   </head>
-  <body>
+
+  <body class="has-back-button">
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="nav-container">
+        <div class="logo">
+          <img
+            src="../assets/images/logo.png"
+            alt="Stay Dripped Logo"
+            class="logo-image"
+          />
+          <span class="brand-name">Stay Dripped</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#menu" class="nav-link active">Franchise</a></li>
+          <li><a href="membership.html" class="nav-link">Membership</a></li>
+          <li><a href="tel:+16026889825" class="nav-link">Call Now</a></li>
+        </ul>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+
     <!-- Back Button -->
     <div class="back-button-container">
-      <a href="../index.html" class="back-button metallic-btn">
+      <a href="../index.html" class="back-button">
         <i class="fas fa-arrow-left"></i>
         <span>Back to Home</span>
       </a>
     </div>
 
     <!-- Header -->
-    <header class="header" id="header">
-      <div class="header-container">
-        <div class="logo-section">
-          <img
-            src="../assets/images/logo.png"
-            alt="Stay Dripped Mobile IV"
-            class="logo-image"
-          />
-          <div class="brand-name">Stay Dripped®</div>
-        </div>
-
-        <div class="header-buttons">
-          <a href="tel:+16026889825" class="emergency-call-btn">
-            <i class="fas fa-phone"></i>
-            Call (602) 688-9825
-          </a>
-          <a
-            href="https://Staydripped.intakeq.com/booking"
-            class="header-book-btn"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="fas fa-calendar"></i>
-            Book Service
-          </a>
-          <button class="franchise-inquiry-btn" onclick="scrollToApplication()">
-            <i class="fas fa-handshake"></i>
-            <span>Franchise Inquiry</span>
-          </button>
-        </div>
+    <header class="header">
+      <div class="header-content">
+        <h1>Franchise Opportunities</h1>
+        <p>
+          Join the booming mobile wellness industry with Stay Dripped's proven
+          business model and comprehensive support system.
+        </p>
       </div>
     </header>
 
-    <!-- Franchise Hero -->
-    <section class="franchise-hero">
-      <div class="container">
-        <div class="franchise-hero-content">
-          <h1>Join the Stay Dripped® Family</h1>
-          <p>
-            Own a thriving mobile IV therapy franchise in the rapidly growing
-            wellness industry. Low overhead, high margins, and proven business
-            model.
-          </p>
+    <!-- Main Content -->
+    <main id="main-content">
+      <!-- Franchise Overview -->
+      <section class="franchise-overview section-padding">
+        <div class="container">
+          <div class="section-header text-center">
+            <h2>Why Choose Stay Dripped Franchise?</h2>
+            <p>
+              The mobile wellness industry is exploding. Be part of the next
+              generation of healthcare delivery.
+            </p>
+          </div>
 
-          <div class="franchise-stats">
-            <div class="franchise-stat">
-              <span class="franchise-stat-number">$847B</span>
-              <span class="franchise-stat-label">Wellness Market Size</span>
+          <div class="overview-stats">
+            <div class="stat-item">
+              <div class="stat-number">$4.2B</div>
+              <div class="stat-label">Mobile Health Market Size</div>
             </div>
-            <div class="franchise-stat">
-              <span class="franchise-stat-number">23%</span>
-              <span class="franchise-stat-label">Annual Industry Growth</span>
+            <div class="stat-item">
+              <div class="stat-number">23%</div>
+              <div class="stat-label">Annual Growth Rate</div>
             </div>
-            <div class="franchise-stat">
-              <span class="franchise-stat-number">85%</span>
-              <span class="franchise-stat-label">Franchisee Satisfaction</span>
+            <div class="stat-item">
+              <div class="stat-number">85%</div>
+              <div class="stat-label">Customer Retention Rate</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">$250K+</div>
+              <div class="stat-label">Average Annual Revenue</div>
             </div>
           </div>
 
-          <div class="franchise-hero-cta">
+          <!-- Investment Packages -->
+          <div class="investment-packages">
+            <h3 class="text-center">Investment Packages</h3>
+            <div class="packages-grid">
+              <!-- Single Territory -->
+              <div class="package-card premium-card">
+                <div class="package-header">
+                  <h4>🏪 Single Territory</h4>
+                  <div class="package-price">$85,000</div>
+                </div>
+                <div class="package-content">
+                  <p>Perfect for first-time franchise owners</p>
+                  <ul class="package-features">
+                    <li>Exclusive territory rights</li>
+                    <li>Complete training program</li>
+                    <li>Marketing support</li>
+                    <li>Equipment package</li>
+                    <li>Operations manual</li>
+                    <li>Ongoing support</li>
+                  </ul>
+                  <div class="package-roi">
+                    <strong>ROI Timeline: 12-18 months</strong>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Multi-Territory -->
+              <div class="package-card premium-card featured">
+                <div class="package-header">
+                  <h4>🏢 Multi-Territory</h4>
+                  <div class="package-price">$200,000</div>
+                  <span class="popular-badge">Most Popular</span>
+                </div>
+                <div class="package-content">
+                  <p>Scale faster with multiple territories</p>
+                  <ul class="package-features">
+                    <li>3-5 territory rights</li>
+                    <li>Advanced training program</li>
+                    <li>Priority marketing support</li>
+                    <li>Enhanced equipment package</li>
+                    <li>Master operations manual</li>
+                    <li>Dedicated account manager</li>
+                    <li>Staff recruitment assistance</li>
+                  </ul>
+                  <div class="package-roi">
+                    <strong>ROI Timeline: 8-12 months</strong>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Regional Master -->
+              <div class="package-card premium-card">
+                <div class="package-header">
+                  <h4>🌟 Regional Master</h4>
+                  <div class="package-price">$500,000</div>
+                </div>
+                <div class="package-content">
+                  <p>Become a regional development partner</p>
+                  <ul class="package-features">
+                    <li>Regional development rights</li>
+                    <li>Sub-franchise opportunities</li>
+                    <li>Executive training program</li>
+                    <li>Co-marketing partnerships</li>
+                    <li>Complete business package</li>
+                    <li>Revenue sharing model</li>
+                    <li>Strategic planning support</li>
+                  </ul>
+                  <div class="package-roi">
+                    <strong>ROI Timeline: 6-10 months</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Why Stay Dripped -->
+          <div class="why-staydripped">
+            <h3>What Sets Us Apart</h3>
+            <div class="advantages-grid">
+              <div class="advantage-item">
+                <div class="advantage-icon">📈</div>
+                <h4>Proven Business Model</h4>
+                <p>
+                  Time-tested operations with consistent profitability and
+                  growth
+                </p>
+              </div>
+              <div class="advantage-item">
+                <div class="advantage-icon">🎓</div>
+                <h4>Comprehensive Training</h4>
+                <p>
+                  4-week intensive training program covering all aspects of
+                  operations
+                </p>
+              </div>
+              <div class="advantage-item">
+                <div class="advantage-icon">🚀</div>
+                <h4>Marketing Support</h4>
+                <p>
+                  National advertising campaigns and local marketing assistance
+                </p>
+              </div>
+              <div class="advantage-item">
+                <div class="advantage-icon">⚕️</div>
+                <h4>Medical Partnerships</h4>
+                <p>
+                  Established relationships with healthcare providers and
+                  suppliers
+                </p>
+              </div>
+              <div class="advantage-item">
+                <div class="advantage-icon">📱</div>
+                <h4>Technology Platform</h4>
+                <p>Proprietary booking and management software included</p>
+              </div>
+              <div class="advantage-item">
+                <div class="advantage-icon">🏆</div>
+                <h4>Ongoing Support</h4>
+                <p>Continuous business coaching and operational guidance</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Franchise Process -->
+          <div class="franchise-process">
+            <h3>Your Path to Ownership</h3>
+            <div class="process-steps">
+              <div class="step-item">
+                <div class="step-number">1</div>
+                <h4>Initial Inquiry</h4>
+                <p>Submit your application and speak with our franchise team</p>
+              </div>
+              <div class="step-item">
+                <div class="step-number">2</div>
+                <h4>Discovery Process</h4>
+                <p>Review franchise disclosure document and business model</p>
+              </div>
+              <div class="step-item">
+                <div class="step-number">3</div>
+                <h4>Qualification</h4>
+                <p>Financial review and territory selection process</p>
+              </div>
+              <div class="step-item">
+                <div class="step-number">4</div>
+                <h4>Training Program</h4>
+                <p>Complete comprehensive 4-week training program</p>
+              </div>
+              <div class="step-item">
+                <div class="step-number">5</div>
+                <h4>Launch Support</h4>
+                <p>Grand opening support and initial marketing assistance</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA Section -->
+          <div class="cta-section text-center">
+            <h3>Ready to Start Your Journey?</h3>
+            <p>
+              Take the first step towards owning a profitable mobile wellness
+              franchise.
+            </p>
             <button
-              class="btn btn-primary btn-lg"
-              onclick="scrollToApplication()"
+              class="btn-primary btn-large pulse-animation"
+              onclick="showDisclosureModal()"
             >
-              Start Your Application
+              Request Franchise Information
             </button>
-            <a
-              href="mailto:franchise@staydrippedmobileiv.com"
-              class="btn btn-secondary btn-lg"
-              >Request Information</a
-            >
+            <div class="pricing-info">
+              Financing options available | Qualified candidates only
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Market Opportunity -->
-    <section class="market-opportunity section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Massive Market Opportunity</h2>
-          <p class="section-subtitle">
-            The wellness industry is booming, and mobile IV therapy is leading
-            the growth
-          </p>
-        </div>
-
-        <div class="opportunity-grid">
-          <div class="opportunity-card">
-            <div class="opportunity-icon">📈</div>
-            <h3>Growing Demand</h3>
-            <p>
-              Consumer awareness of preventive healthcare and wellness
-              optimization is at an all-time high, driving unprecedented demand
-              for IV therapy services.
-            </p>
-            <div class="opportunity-stat">23% annual growth rate</div>
-          </div>
-
-          <div class="opportunity-card">
-            <div class="opportunity-icon">💰</div>
-            <h3>High Profit Margins</h3>
-            <p>
-              IV therapy services offer exceptional profit margins with
-              relatively low overhead costs, especially in the mobile service
-              model.
-            </p>
-            <div class="opportunity-stat">70-80% gross margins</div>
-          </div>
-
-          <div class="opportunity-card">
-            <div class="opportunity-icon">🎯</div>
-            <h3>Diverse Customer Base</h3>
-            <p>
-              From busy professionals to athletes to wellness enthusiasts, our
-              services appeal to a broad and growing demographic.
-            </p>
-            <div class="opportunity-stat">Multiple target markets</div>
-          </div>
-
-          <div class="opportunity-card">
-            <div class="opportunity-icon">🏢</div>
-            <h3>B2B Opportunities</h3>
-            <p>
-              Corporate wellness programs and executive health services provide
-              steady, high-value revenue streams beyond individual clients.
-            </p>
-            <div class="opportunity-stat">$15,000+ avg corporate deals</div>
-          </div>
-
-          <div class="opportunity-card">
-            <div class="opportunity-icon">📱</div>
-            <h3>Technology Advantage</h3>
-            <p>
-              Our proprietary booking platform and customer management system
-              gives franchisees a competitive edge in service delivery.
-            </p>
-            <div class="opportunity-stat">Streamlined operations</div>
-          </div>
-
-          <div class="opportunity-card">
-            <div class="opportunity-icon">🌟</div>
-            <h3>Brand Recognition</h3>
-            <p>
-              Stay Dripped® is building strong brand recognition in key
-              markets, making customer acquisition easier for new franchisees.
-            </p>
-            <div class="opportunity-stat">Established reputation</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why Choose Us -->
-    <section class="why-choose-us section section-light">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Why Choose Stay Dripped®</h2>
-          <p class="section-subtitle">
-            Proven business model with comprehensive support for your success
-          </p>
-        </div>
-
-        <div class="why-grid">
-          <div class="why-card">
-            <h3>🚀 Proven Business Model</h3>
-            <p>
-              Our mobile IV therapy model has been tested and refined across
-              multiple markets, delivering consistent profitability and growth.
-            </p>
-            <ul class="why-benefits">
-              <li>Low startup costs compared to traditional clinics</li>
-              <li>Flexible scheduling and location independence</li>
-              <li>Scalable business operations</li>
-              <li>Multiple revenue streams</li>
-            </ul>
-          </div>
-
-          <div class="why-card">
-            <h3>📚 Comprehensive Training</h3>
-            <p>
-              Extensive training program covering medical protocols, business
-              operations, marketing, and customer service excellence.
-            </p>
-            <ul class="why-benefits">
-              <li>2-week intensive training program</li>
-              <li>Medical certification support</li>
-              <li>Business operations training</li>
-              <li>Ongoing education and updates</li>
-            </ul>
-          </div>
-
-          <div class="why-card">
-            <h3>🏆 Brand Power</h3>
-            <p>
-              Leverage our established brand reputation and professional medical
-              protocols to build trust and attract customers quickly.
-            </p>
-            <ul class="why-benefits">
-              <li>Professional brand identity</li>
-              <li>Medical credibility and trust</li>
-              <li>Marketing materials and campaigns</li>
-              <li>Corporate partnership opportunities</li>
-            </ul>
-          </div>
-
-          <div class="why-card">
-            <h3>💻 Technology Platform</h3>
-            <p>
-              Advanced booking and management system designed specifically for
-              mobile IV therapy operations and customer experience.
-            </p>
-            <ul class="why-benefits">
-              <li>Online booking and scheduling</li>
-              <li>Customer management system</li>
-              <li>Payment processing integration</li>
-              <li>Business analytics and reporting</li>
-            </ul>
-          </div>
-
-          <div class="why-card">
-            <h3>🤝 Ongoing Support</h3>
-            <p>
-              Dedicated support team providing continuous guidance on
-              operations, marketing, and business growth strategies.
-            </p>
-            <ul class="why-benefits">
-              <li>Dedicated franchise support manager</li>
-              <li>Marketing and advertising support</li>
-              <li>Operational guidance and best practices</li>
-              <li>Peer network and collaboration</li>
-            </ul>
-          </div>
-
-          <div class="why-card">
-            <h3>📊 Protected Territory</h3>
-            <p>
-              Exclusive territorial rights ensure you can build your business
-              without internal competition in your designated market area.
-            </p>
-            <ul class="why-benefits">
-              <li>Defined exclusive territory</li>
-              <li>Population-based territory sizing</li>
-              <li>Growth and expansion opportunities</li>
-              <li>Market protection guarantees</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Investment Details -->
-    <section class="investment-details section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Investment Overview</h2>
-          <p class="section-subtitle">
-            Transparent pricing and comprehensive packages for your franchise
-            investment
-          </p>
-        </div>
-
-        <div class="investment-breakdown">
-          <div class="investment-card">
-            <h3>Initial Franchise Fee</h3>
-            <div class="investment-amount">$45,000</div>
-            <ul class="investment-includes">
-              <li>Franchise rights and territory</li>
-              <li>Brand and trademark usage</li>
-              <li>Initial training program</li>
-              <li>Operations manual and protocols</li>
-              <li>Marketing materials and setup</li>
-              <li>Technology platform access</li>
-            </ul>
-          </div>
-
-          <div class="investment-card">
-            <h3>Equipment & Setup</h3>
-            <div class="investment-amount">$35,000</div>
-            <ul class="investment-includes">
-              <li>Medical equipment package</li>
-              <li>IV supplies and inventory</li>
-              <li>Mobile setup equipment</li>
-              <li>Professional uniforms and branding</li>
-              <li>Insurance and certifications</li>
-              <li>Initial marketing launch</li>
-            </ul>
-          </div>
-
-          <div class="investment-card">
-            <h3>Working Capital</h3>
-            <div class="investment-amount">$20,000</div>
-            <ul class="investment-includes">
-              <li>Operating expenses (first 3 months)</li>
-              <li>Marketing and advertising budget</li>
-              <li>Professional services (legal, accounting)</li>
-              <li>Business insurance premiums</li>
-              <li>Emergency fund and contingencies</li>
-              <li>Staff training and certification</li>
-            </ul>
-          </div>
-        </div>
-
-        <div
-          style="
-            text-align: center;
-            margin-top: 3rem;
-            padding: 2rem;
-            background: var(--bg-light);
-            border-radius: var(--br-lg);
-          "
-        >
-          <h3 style="color: var(--primary); margin-bottom: 1rem">
-            Total Investment Range
-          </h3>
-          <div
-            style="
-              font-size: 2.5rem;
-              font-weight: 800;
-              color: var(--secondary);
-              margin-bottom: 1rem;
-            "
-          >
-            $100,000 - $120,000
-          </div>
-          <p style="color: var(--text-light)">
-            Comprehensive package including everything needed to launch your
-            successful franchise
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Support & Training -->
-    <section class="support-training section section-light">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Comprehensive Support & Training</h2>
-          <p class="section-subtitle">
-            We're committed to your success with ongoing support and world-class
-            training
-          </p>
-        </div>
-
-        <div class="support-grid">
-          <div class="support-card">
-            <div class="support-icon">📚</div>
-            <h3>Initial Training Program</h3>
-            <p>
-              Comprehensive 2-week training covering all aspects of your
-              franchise operation and medical protocols.
-            </p>
-            <ul class="support-features">
-              <li>Medical training and certification</li>
-              <li>Business operations and procedures</li>
-              <li>Customer service excellence</li>
-              <li>Marketing and sales strategies</li>
-              <li>Technology platform training</li>
-            </ul>
-          </div>
-
-          <div class="support-card">
-            <div class="support-icon">🎯</div>
-            <h3>Marketing Support</h3>
-            <p>
-              Professional marketing materials and campaigns designed to drive
-              customer acquisition and brand awareness.
-            </p>
-            <ul class="support-features">
-              <li>Brand guidelines and materials</li>
-              <li>Digital marketing campaigns</li>
-              <li>Social media content and strategy</li>
-              <li>Local marketing support</li>
-              <li>Corporate partnership development</li>
-            </ul>
-          </div>
-
-          <div class="support-card">
-            <div class="support-icon">⚙️</div>
-            <h3>Operational Guidance</h3>
-            <p>
-              Ongoing operational support to ensure consistent service delivery
-              and business optimization.
-            </p>
-            <ul class="support-features">
-              <li>Standard operating procedures</li>
-              <li>Quality assurance protocols</li>
-              <li>Performance monitoring and improvement</li>
-              <li>Supply chain management</li>
-              <li>Best practice sharing</li>
-            </ul>
-          </div>
-
-          <div class="support-card">
-            <div class="support-icon">💻</div>
-            <h3>Technology Platform</h3>
-            <p>
-              Advanced technology solutions to streamline operations and enhance
-              customer experience.
-            </p>
-            <ul class="support-features">
-              <li>Online booking and scheduling system</li>
-              <li>Customer relationship management</li>
-              <li>Payment processing and billing</li>
-              <li>Business analytics and reporting</li>
-              <li>Mobile app for customers</li>
-            </ul>
-          </div>
-
-          <div class="support-card">
-            <div class="support-icon">🏥</div>
-            <h3>Medical Support</h3>
-            <p>
-              Access to medical professionals and ongoing clinical support for
-              protocols and best practices.
-            </p>
-            <ul class="support-features">
-              <li>Medical director oversight</li>
-              <li>Protocol updates and training</li>
-              <li>Clinical best practices</li>
-              <li>Regulatory compliance support</li>
-              <li>Medical advisory board access</li>
-            </ul>
-          </div>
-
-          <div class="support-card">
-            <div class="support-icon">📈</div>
-            <h3>Business Development</h3>
-            <p>
-              Strategic guidance to grow your franchise and maximize
-              profitability in your market.
-            </p>
-            <ul class="support-features">
-              <li>Growth strategy development</li>
-              <li>Market analysis and opportunities</li>
-              <li>Corporate sales support</li>
-              <li>Expansion planning</li>
-              <li>Financial performance optimization</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Application Process -->
-    <section class="application-process section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Application Process</h2>
-          <p class="section-subtitle">
-            Simple steps to join the Stay Dripped® franchise family
-          </p>
-        </div>
-
-        <div class="process-timeline">
-          <div class="process-step">
-            <div class="step-number">1</div>
-            <h3>Initial Inquiry</h3>
-            <p>
-              Submit your franchise inquiry and receive our comprehensive
-              information package with detailed franchise disclosure document.
-            </p>
-          </div>
-
-          <div class="process-step">
-            <div class="step-number">2</div>
-            <h3>Qualification Review</h3>
-            <p>
-              Complete our qualification questionnaire and participate in an
-              initial discovery call to discuss your goals and market.
-            </p>
-          </div>
-
-          <div class="process-step">
-            <div class="step-number">3</div>
-            <h3>Discovery Day</h3>
-            <p>
-              Visit our headquarters for an in-depth meeting with our team and
-              experience our operations firsthand.
-            </p>
-          </div>
-
-          <div class="process-step">
-            <div class="step-number">4</div>
-            <h3>Financial Validation</h3>
-            <p>
-              Work with our team to validate your financial capability and
-              discuss financing options if needed.
-            </p>
-          </div>
-
-          <div class="process-step">
-            <div class="step-number">5</div>
-            <h3>Territory Assignment</h3>
-            <p>
-              Secure your exclusive territory and finalize the franchise
-              agreement with legal review and approval.
-            </p>
-          </div>
-
-          <div class="process-step">
-            <div class="step-number">6</div>
-            <h3>Training & Launch</h3>
-            <p>
-              Complete comprehensive training program and launch your franchise
-              with full corporate support.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Franchisee Requirements -->
-    <section class="franchisee-requirements section section-light">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Ideal Franchisee Profile</h2>
-          <p class="section-subtitle">
-            We're looking for passionate entrepreneurs committed to wellness and
-            excellence
-          </p>
-        </div>
-
-        <div class="requirements-grid">
-          <div class="requirement-card">
-            <h3>💰 Financial Requirements</h3>
-            <ul class="requirement-list">
-              <li>Minimum $150,000 liquid capital</li>
-              <li>$300,000+ net worth</li>
-              <li>Ability to secure financing if needed</li>
-              <li>Strong credit history and background</li>
-            </ul>
-          </div>
-
-          <div class="requirement-card">
-            <h3>🎯 Business Experience</h3>
-            <ul class="requirement-list">
-              <li>Entrepreneurial mindset and drive</li>
-              <li>Business or management experience preferred</li>
-              <li>Customer service orientation</li>
-              <li>Marketing and sales capability</li>
-            </ul>
-          </div>
-
-          <div class="requirement-card">
-            <h3>🏥 Industry Interest</h3>
-            <ul class="requirement-list">
-              <li>Passion for health and wellness</li>
-              <li>Commitment to medical excellence</li>
-              <li>Professional appearance and demeanor</li>
-              <li>Willingness to follow protocols</li>
-            </ul>
-          </div>
-
-          <div class="requirement-card">
-            <h3>📍 Market Commitment</h3>
-            <ul class="requirement-list">
-              <li>Commitment to assigned territory</li>
-              <li>Full-time business dedication</li>
-              <li>Community involvement and networking</li>
-              <li>Long-term growth mindset</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="franchise-cta" id="application">
-      <div class="container">
-        <div class="franchise-cta-content">
-          <h2>Ready to Start Your Franchise Journey?</h2>
-          <p>
-            Join the rapidly growing mobile wellness industry with a proven
-            business model and comprehensive support system. Take the first step
-            toward owning a successful Stay Dripped® franchise.
-          </p>
-
-          <div class="cta-buttons">
-            <a
-              href="mailto:franchise@staydrippedmobileiv.com"
-              class="btn btn-primary btn-lg"
-              >Submit Application</a
-            >
-            <button class="btn btn-secondary btn-lg" onclick="scheduleCall()">
-              Schedule Discovery Call
-            </button>
-          </div>
-
-          <div class="contact-info">
-            <p><strong>Franchise Development:</strong> (602) 688-9825 ext. 3</p>
-            <p><strong>Email:</strong> franchise@staydrippedmobileiv.com</p>
-            <p><strong>Response Time:</strong> Within 24 hours</p>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="site-footer" id="footer">
-      <div class="footer-content">
-        <div class="footer-section">
-          <div class="footer-logo">
-            <img
-              src="../assets/images/logo.png"
-              alt="Stay Dripped Mobile IV"
-              style="height: 40px; width: auto"
-            />
+    <footer class="professional-footer">
+      <div class="footer-pattern"></div>
+      <div class="container">
+        <div class="footer-main">
+          <div class="footer-grid">
+            <div class="footer-brand">
+              <div class="footer-logo">
+                <img
+                  src="../assets/images/logo.png"
+                  alt="Stay Dripped Mobile IV"
+                  style="height: 40px; width: auto"
+                />
+              </div>
+              <h3 class="footer-brand-title">Stay Dripped®</h3>
+              <p class="footer-brand-description">
+                Premium mobile IV therapy and wellness services delivered to
+                your location in Scottsdale and Phoenix. Experience the future
+                of personalized healthcare.
+              </p>
+              <div class="footer-social">
+                <a href="#" class="social-link" aria-label="Instagram">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 2H7C4.24 2 2 4.24 2 7V17C2 19.76 4.24 22 7 22H17C19.76 22 22 19.76 22 17V7C22 4.24 19.76 2 17 2Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M16 11.37C16.12 12.25 15.95 13.15 15.52 13.91C15.09 14.67 14.42 15.24 13.64 15.52C12.86 15.8 12.01 15.78 11.24 15.46C10.47 15.14 9.83 14.54 9.42 13.77C9.01 13 8.85 12.1 8.97 11.22C9.09 10.34 9.48 9.53 10.08 8.93C10.68 8.33 11.45 7.97 12.27 7.9C13.09 7.83 13.91 8.05 14.59 8.53"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M17.5 6.5H17.51"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+                <a href="#" class="social-link" aria-label="Facebook">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M18 2H15C13.67 2 12.4 2.53 11.46 3.46C10.53 4.4 10 5.67 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73 14.11 6.48 14.29 6.29C14.48 6.11 14.73 6 15 6H18V2Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+                <a href="#" class="social-link" aria-label="Twitter">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23 3C22.0424 3.67548 20.9821 4.19211 19.86 4.53C19.2577 3.83751 18.4573 3.34669 17.567 3.12393C16.6767 2.90116 15.7395 2.95718 14.8821 3.28445C14.0247 3.61171 13.2884 4.19445 12.773 4.95371C12.2575 5.71297 11.9877 6.61435 12 7.53V8.53C10.2426 8.57557 8.50127 8.18581 6.93101 7.39624C5.36074 6.60667 4.01032 5.43666 3 4V4C3 4 -1 13 8 17C5.94053 18.398 3.48716 19.099 1 19C10 24 21 19 21 7.5C20.9991 7.22145 20.9723 6.94359 20.92 6.67C21.9406 5.66349 22.6608 4.39271 23 3V3Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+                <a href="#" class="social-link" aria-label="LinkedIn">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16 8C17.59 8 19.1 8.63 20.21 9.79C21.32 10.95 21.92 12.53 21.92 14.17V21H18.25V14.17C18.25 13.45 17.96 12.76 17.44 12.24C16.92 11.72 16.23 11.43 15.51 11.43C14.79 11.43 14.1 11.72 13.58 12.24C13.06 12.76 12.77 13.45 12.77 14.17V21H9.1V14.17C9.1 12.53 9.7 10.95 10.81 9.79C11.92 8.63 13.43 8 15.02 8H16Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <rect
+                      x="2"
+                      y="9"
+                      width="4"
+                      height="12"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <circle
+                      cx="4"
+                      cy="4"
+                      r="2"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="footer-section">
+              <h4 class="footer-section-title">Services</h4>
+              <div class="footer-links">
+                <a href="iv-therapy.html" class="footer-link">IV Therapy</a>
+                <a href="nad-therapy.html" class="footer-link">NAD+ Therapy</a>
+                <a href="peptide-therapy.html" class="footer-link"
+                  >Peptide Therapy</a
+                >
+                <a href="aesthetic.html" class="footer-link"
+                  >Aesthetic Treatments</a
+                >
+                <a href="membership.html" class="footer-link">Memberships</a>
+                <a href="corporate-events.html" class="footer-link"
+                  >Corporate Events</a
+                >
+              </div>
+            </div>
+
+            <div class="footer-section">
+              <h4 class="footer-section-title">Company</h4>
+              <div class="footer-links">
+                <a href="#about" class="footer-link">About Us</a>
+                <a href="#how-it-works" class="footer-link">How It Works</a>
+                <a href="#testimonials" class="footer-link">Testimonials</a>
+                <a href="#faq" class="footer-link">FAQ</a>
+                <a href="franchise.html" class="footer-link">Franchise</a>
+                <a href="partnerships.html" class="footer-link">Partnerships</a>
+              </div>
+            </div>
+
+            <div class="footer-section">
+              <h4 class="footer-section-title">Contact</h4>
+              <div class="contact-item">
+                <svg
+                  class="contact-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M22 16.92V19.92C22.0011 20.1985 21.9441 20.4742 21.8325 20.7293C21.7209 20.9845 21.5573 21.2136 21.3521 21.4019C21.1468 21.5901 20.9046 21.7335 20.6407 21.8227C20.3769 21.9119 20.0974 21.9451 19.82 21.92C16.7428 21.5856 13.787 20.5341 11.19 18.85C8.77382 17.3147 6.72533 15.2662 5.18999 12.85C3.49997 10.2412 2.44824 7.27099 2.11999 4.18C2.095 3.90347 2.12787 3.62476 2.21649 3.36162C2.30512 3.09849 2.44756 2.85669 2.63476 2.65162C2.82196 2.44655 3.0498 2.28271 3.30379 2.17052C3.55777 2.05833 3.83233 2.00026 4.10999 2H7.10999C7.59531 1.99522 8.06579 2.16708 8.43376 2.48353C8.80173 2.79999 9.04207 3.23945 9.10999 3.72C9.23662 4.68007 9.47144 5.62273 9.80999 6.53C9.94454 6.88792 9.97366 7.27691 9.8939 7.65088C9.81415 8.02485 9.62886 8.36811 9.35999 8.64L8.08999 9.91C9.51355 12.4135 11.5865 14.4864 14.09 15.91L15.36 14.64C15.6319 14.3711 15.9751 14.1858 16.3491 14.1061C16.7231 14.0263 17.1121 14.0555 17.47 14.19C18.3773 14.5286 19.3199 14.7634 20.28 14.89C20.7658 14.9585 21.2094 15.2032 21.5265 15.5775C21.8437 15.9518 22.0122 16.4296 21.0 16.92H22Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <div class="contact-text">
+                  <a href="tel:+16026889825" class="contact-link"
+                    >(602) 688-9825</a
+                  >
+                </div>
+              </div>
+              <div class="contact-item">
+                <svg
+                  class="contact-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <polyline
+                    points="22,6 12,13 2,6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <div class="contact-text">
+                  <a
+                    href="mailto:franchise@staydripped.com"
+                    class="contact-link"
+                    >franchise@staydripped.com</a
+                  >
+                </div>
+              </div>
+              <div class="contact-item">
+                <svg
+                  class="contact-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <polyline
+                    points="12,6 12,12 16,14"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <div class="contact-text">Franchise support available</div>
+              </div>
+            </div>
           </div>
-          <p>
-            Transforming lives through premium wellness and personalized
-            healthcare solutions.
-          </p>
         </div>
-        <div class="footer-section">
-          <h4>Services</h4>
-          <ul>
-            <li><a href="services/iv-therapy.html">IV Therapy</a></li>
-            <li><a href="services/injection-shots.html">Injection Shots</a></li>
-            <li><a href="services/blood-testing.html">Blood Testing</a></li>
-            <li>
-              <a href="services/weight-management.html">Weight Management</a>
-            </li>
-          </ul>
+
+        <div class="footer-bottom">
+          <div class="footer-bottom-content">
+            <div class="footer-copyright">
+              <p>
+                &copy; 2024 Stay Dripped Mobile IV LLC. All rights reserved.
+              </p>
+            </div>
+            <div class="footer-legal">
+              <a href="../privacy-policy.html" class="footer-legal-link"
+                >Privacy Policy</a
+              >
+              <a href="../terms-of-service.html" class="footer-legal-link"
+                >Terms of Service</a
+              >
+              <a href="../medical-disclaimer.html" class="footer-legal-link"
+                >Medical Disclaimer</a
+              >
+            </div>
+          </div>
         </div>
-        <div class="footer-section">
-          <h4>Business</h4>
-          <ul>
-            <li><a href="membership.html">Membership</a></li>
-            <li><a href="corporate-events.html">Corporate Events</a></li>
-            <li><a href="franchise.html">Franchise Opportunities</a></li>
-            <li><a href="partnerships.html">Partnerships</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4>Legal</h4>
-          <ul>
-            <li><a href="../privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="../terms-of-service.html">Terms of Service</a></li>
-            <li><a href="../medical-disclaimer.html">Medical Disclaimer</a></li>
-            <li>
-              <a href="../franchise-disclosure.html">Franchise Disclosure</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2024 Stay Dripped® Mobile IV. All rights reserved.</p>
       </div>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- Scripts -->
+    <script src="https://qualiphy.com/api/integration/loader.js"></script>
+    <script src="../assets/js/gfe-utility.js"></script>
+    <script src="../assets/js/premium-interactions.js" defer></script>
+    <script src="../assets/js/advanced-interactions.js" defer></script>
+
     <script>
-      function scrollToApplication() {
-        document.getElementById("application").scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }
-
-      function scheduleCall() {
-        window.open(
-          "https://calendly.com/staydripped/franchise-discovery",
-          "_blank",
-        );
-      }
-
-      // Header scroll effect
-      window.addEventListener("scroll", function () {
-        const header = document.querySelector(".header");
-        if (window.scrollY > 50) {
-          header.classList.add("scrolled");
-        } else {
-          header.classList.remove("scrolled");
-        }
-      });
-
-      // Animation on scroll
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px",
+      // Initialize Qualiphy widget
+      const qualiphyConfig = {
+        clinicId: "3454",
+        examIds:
+          "918,2095,2097,2246,2316,2120,2315,2129,1620,2130,1623,2248,1148,1693,2122,1287,1694,2207",
+        timezone: "-6",
+        availabilityStartTime: "00:00",
+        availabilityEndTime: "23:59",
+        availabilityDays: "1,2,3,4,5,6,7",
       };
 
-      const observer = new IntersectionObserver(function (entries) {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("fade-in-up");
-          }
-        });
-      }, observerOptions);
-
-      // Observe elements for animation
+      // Universal page functionality
       document.addEventListener("DOMContentLoaded", function () {
-        document
-          .querySelectorAll(
-            ".opportunity-card, .why-card, .investment-card, .support-card, .process-step, .requirement-card",
-          )
-          .forEach((el) => {
-            observer.observe(el);
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+        const navLinks = document.querySelector(".nav-links");
+
+        if (mobileMenuToggle) {
+          mobileMenuToggle.addEventListener("click", function () {
+            navLinks.classList.toggle("active");
           });
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+              target.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          });
+        });
+
+        // Back button functionality
+        const backButton = document.querySelector(".back-button");
+        if (backButton) {
+          backButton.addEventListener("click", function (e) {
+            if (
+              document.referrer &&
+              document.referrer.includes(window.location.host)
+            ) {
+              e.preventDefault();
+              history.back();
+            }
+          });
+        }
+
+        console.log("Stay Dripped: Franchise page loaded");
       });
+
+      // Global fallback function for showDisclosureModal
+      if (typeof window.showDisclosureModal === "undefined") {
+        window.showDisclosureModal = function () {
+          console.log(
+            "Good Faith Exam modal function not yet loaded. Please try again in a moment.",
+          );
+          // Try to redirect to booking as fallback
+          window.open("https://Staydripped.intakeq.com/booking", "_blank");
+        };
+      }
+    </script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Stay Dripped Mobile IV",
+        "description": "Franchise opportunities in the mobile wellness industry with Stay Dripped Mobile IV",
+        "url": "https://staydripped.com/pages/franchise.html",
+        "telephone": "+16026889825",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Scottsdale",
+          "addressRegion": "AZ",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 33.4942,
+          "longitude": -111.9261
+        },
+        "image": "https://staydripped.com/assets/images/logo.png"
+      }
     </script>
   </body>
 </html>
