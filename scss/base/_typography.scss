@@ -1,0 +1,187 @@
+// Typography System
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-heading;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: map-get($spacing, 4);
+  color: $color-text-dark;
+
+  @include dark-mode {
+    color: $color-secondary;
+  }
+}
+
+h1 {
+  font-size: map-get($fs-scale, 5xl);
+
+  @include respond-to(md) {
+    font-size: map-get($fs-scale, 6xl);
+  }
+}
+
+h2 {
+  font-size: map-get($fs-scale, 4xl);
+
+  @include respond-to(md) {
+    font-size: map-get($fs-scale, 5xl);
+  }
+}
+
+h3 {
+  font-size: map-get($fs-scale, 3xl);
+
+  @include respond-to(md) {
+    font-size: map-get($fs-scale, 4xl);
+  }
+}
+
+h4 {
+  font-size: map-get($fs-scale, 2xl);
+
+  @include respond-to(md) {
+    font-size: map-get($fs-scale, 3xl);
+  }
+}
+
+h5 {
+  font-size: map-get($fs-scale, xl);
+
+  @include respond-to(md) {
+    font-size: map-get($fs-scale, 2xl);
+  }
+}
+
+h6 {
+  font-size: map-get($fs-scale, lg);
+
+  @include respond-to(md) {
+    font-size: map-get($fs-scale, xl);
+  }
+}
+
+// Paragraphs
+p {
+  margin-bottom: map-get($spacing, 4);
+  color: $color-text-light;
+
+  @include dark-mode {
+    color: rgba($color-secondary, 0.8);
+  }
+}
+
+// Links
+a {
+  color: $color-primary;
+  @include transition(color);
+
+  &:hover,
+  &:focus {
+    color: lighten($color-primary, 15%);
+  }
+
+  @include dark-mode {
+    color: $color-info;
+
+    &:hover,
+    &:focus {
+      color: lighten($color-info, 15%);
+    }
+  }
+}
+
+// Lists
+ul,
+ol {
+  margin-bottom: map-get($spacing, 4);
+  padding-left: map-get($spacing, 6);
+}
+
+li {
+  margin-bottom: map-get($spacing, 2);
+  color: $color-text-light;
+
+  @include dark-mode {
+    color: rgba($color-secondary, 0.8);
+  }
+}
+
+// Lead text
+.lead {
+  font-size: map-get($fs-scale, lg);
+  font-weight: 400;
+  color: $color-text-light;
+
+  @include respond-to(md) {
+    font-size: map-get($fs-scale, xl);
+  }
+
+  @include dark-mode {
+    color: rgba($color-secondary, 0.9);
+  }
+}
+
+// Small text
+.small {
+  font-size: map-get($fs-scale, sm);
+  color: $color-text-light;
+
+  @include dark-mode {
+    color: rgba($color-secondary, 0.7);
+  }
+}
+
+// Text utilities
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+.font-semibold {
+  font-weight: 600;
+}
+.font-medium {
+  font-weight: 500;
+}
+.font-normal {
+  font-weight: 400;
+}
+.font-light {
+  font-weight: 300;
+}
+
+.text-primary {
+  color: $color-primary;
+}
+.text-secondary {
+  color: $color-text-light;
+}
+.text-success {
+  color: $color-success;
+}
+.text-warning {
+  color: $color-warning;
+}
+.text-error {
+  color: $color-error;
+}
+.text-info {
+  color: $color-info;
+}
+
+// Generate typography utilities
+@include generate-typography-utilities;

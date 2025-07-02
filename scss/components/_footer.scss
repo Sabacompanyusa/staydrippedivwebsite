@@ -1,0 +1,316 @@
+// Footer Component
+
+.site-footer {
+  background: linear-gradient(
+    135deg,
+    $color-primary 0%,
+    darken($color-primary, 15%) 100%
+  );
+  color: $color-secondary;
+  padding-top: map-get($spacing, 16);
+  padding-bottom: map-get($spacing, 8);
+  margin-top: map-get($spacing, 16);
+
+  @include dark-mode {
+    background: linear-gradient(
+      135deg,
+      darken($color-dark-bg, 5%) 0%,
+      $color-dark-bg 100%
+    );
+  }
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: map-get($spacing, 8);
+  margin-bottom: map-get($spacing, 12);
+
+  @include respond-to(md) {
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: map-get($spacing, 12);
+  }
+}
+
+.footer-section {
+  &--brand {
+    .footer-description {
+      margin: map-get($spacing, 4) 0 map-get($spacing, 6);
+      color: rgba($color-secondary, 0.9);
+      line-height: 1.6;
+    }
+  }
+
+  &__title {
+    font-size: map-get($fs-scale, lg);
+    font-weight: 600;
+    margin-bottom: map-get($spacing, 4);
+    color: $color-secondary;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background: $color-info;
+    }
+  }
+}
+
+.footer-logo {
+  display: inline-block;
+  @include transition(transform);
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  img {
+    filter: brightness(0) invert(1);
+  }
+}
+
+.footer-social {
+  display: flex;
+  gap: map-get($spacing, 3);
+  margin-top: map-get($spacing, 4);
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: rgba($color-secondary, 0.1);
+  border-radius: 50%;
+  @include transition(all);
+
+  &:hover {
+    background: $color-info;
+    transform: translateY(-2px);
+    box-shadow: map-get($shadow, md);
+  }
+
+  img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+  }
+}
+
+.footer-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    margin-bottom: map-get($spacing, 2);
+  }
+
+  &__link {
+    color: rgba($color-secondary, 0.8);
+    @include transition(color);
+
+    &:hover {
+      color: $color-info;
+    }
+  }
+}
+
+.footer-contact {
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: map-get($spacing, 2);
+    margin-bottom: map-get($spacing, 3);
+    color: rgba($color-secondary, 0.9);
+    @include transition(color);
+
+    &:hover {
+      color: $color-info;
+    }
+  }
+
+  &__icon {
+    font-size: map-get($fs-scale, lg);
+    width: 24px;
+    text-align: center;
+  }
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba($color-secondary, 0.2);
+  padding-top: map-get($spacing, 6);
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: map-get($spacing, 4);
+    text-align: center;
+
+    @include respond-to(md) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+    }
+  }
+}
+
+.footer-copyright {
+  color: rgba($color-secondary, 0.7);
+  font-size: map-get($fs-scale, sm);
+}
+
+.footer-legal {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: map-get($spacing, 4);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @include respond-to(md) {
+      justify-content: flex-start;
+    }
+  }
+
+  &__link {
+    color: rgba($color-secondary, 0.8);
+    font-size: map-get($fs-scale, sm);
+    @include transition(color);
+
+    &:hover {
+      color: $color-info;
+    }
+  }
+}
+
+.footer-certifications {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: map-get($spacing, 2);
+
+  @include respond-to(md) {
+    justify-content: flex-end;
+  }
+
+  .certification {
+    font-size: map-get($fs-scale, xs);
+    background: rgba($color-success, 0.2);
+    color: $color-success;
+    padding: map-get($spacing, 1) map-get($spacing, 2);
+    border-radius: map-get($border-radius, full);
+    border: 1px solid rgba($color-success, 0.3);
+  }
+}
+
+// Back to top button
+.fab {
+  position: fixed;
+  bottom: map-get($spacing, 6);
+  right: map-get($spacing, 6);
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(
+    145deg,
+    $color-primary,
+    darken($color-primary, 10%)
+  );
+  color: $color-secondary;
+  border: none;
+  border-radius: 50%;
+  font-size: map-get($fs-scale, xl);
+  cursor: pointer;
+  z-index: map-get($z-index, sticky);
+  box-shadow: map-get($shadow, lg);
+  @include transition(all);
+
+  &:hover {
+    transform: scale(1.1) translateY(-2px);
+    box-shadow: map-get($shadow, xl);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  @include dark-mode {
+    background: linear-gradient(145deg, $color-info, darken($color-info, 10%));
+  }
+}
+
+// Floating contact buttons
+.floating-contact {
+  position: fixed;
+  bottom: map-get($spacing, 6);
+  left: map-get($spacing, 6);
+  display: flex;
+  flex-direction: column;
+  gap: map-get($spacing, 2);
+  z-index: map-get($z-index, sticky);
+
+  @include respond-to(md) {
+    display: none; // Hide on desktop where header CTA is more prominent
+  }
+
+  &__phone,
+  &__sms {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: $color-success;
+    color: $color-secondary;
+    border-radius: 50%;
+    font-size: map-get($fs-scale, lg);
+    text-decoration: none;
+    box-shadow: map-get($shadow, md);
+    @include transition(all);
+
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: map-get($shadow, lg);
+    }
+  }
+
+  &__sms {
+    background: $color-info;
+  }
+}
+
+// Mobile-specific adjustments
+@media (max-width: 480px) {
+  .footer-main {
+    gap: map-get($spacing, 6);
+  }
+
+  .footer-section {
+    text-align: center;
+
+    &--brand {
+      text-align: center;
+    }
+  }
+
+  .footer-contact__item {
+    justify-content: center;
+  }
+
+  .footer-legal__list {
+    flex-direction: column;
+    gap: map-get($spacing, 2);
+  }
+
+  .footer-certifications {
+    justify-content: center;
+  }
+}

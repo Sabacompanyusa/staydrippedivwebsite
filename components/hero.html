@@ -1,47 +1,200 @@
-<section class="hero fade-in" id="home" aria-labelledby="hero-heading">
-  <div class="hero-background">
-    <img
-      src="assets/images/hero-bdg.png"
-      alt="Medical professional preparing IV therapy"
-      class="hero-bg-image"
-      loading="lazy"
-      decoding="async"
-    />
+<!-- Hero Section -->
+<section class="hero" role="banner">
+  <div class="hero__background">
+    <picture>
+      <source
+        media="(max-width: 768px)"
+        srcset="
+          /assets/images/hero-mobile.webp     768w,
+          /assets/images/hero-mobile@2x.webp 1536w
+        "
+        type="image/webp"
+      />
+      <source
+        media="(min-width: 769px)"
+        srcset="
+          /assets/images/hero-desktop.webp    1920w,
+          /assets/images/hero-desktop@2x.webp 3840w
+        "
+        type="image/webp"
+      />
+      <source
+        media="(max-width: 768px)"
+        srcset="
+          /assets/images/hero-mobile.jpg     768w,
+          /assets/images/hero-mobile@2x.jpg 1536w
+        "
+      />
+      <img
+        src="/assets/images/hero-desktop.jpg"
+        srcset="
+          /assets/images/hero-desktop.jpg    1920w,
+          /assets/images/hero-desktop@2x.jpg 3840w
+        "
+        alt="Professional nurse preparing IV therapy treatment"
+        class="hero__image"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </picture>
+    <div class="hero__overlay"></div>
   </div>
-  <div class="hero-overlay"></div>
 
-  <div class="hero-content">
-    <h1>The Stay Dripped® Wellness Company</h1>
-    <p class="hero-subtitle">
-      Health & Wellness Services delivered to your door - Premium IV therapy,
-      NAD+, Peptide, Hormone & Weight Management Therapy programs whenever you
-      need them.
-    </p>
+  <div class="container">
+    <div class="hero__content">
+      <!-- Main Content -->
+      <div class="hero__text">
+        <h1 class="hero__title">
+          <span class="hero__title-primary">Premium Mobile IV Therapy</span>
+          <span class="hero__title-secondary">Delivered to You</span>
+        </h1>
 
-    <div class="hero-buttons">
-      <a href="pages/services.html" class="cta secondary">
-        <i class="fas fa-info-circle"></i>
-        View Services
-      </a>
+        <p class="hero__subtitle lead">
+          Recharge, rejuvenate, and repeat with our professional healthcare
+          services. Licensed medical professionals deliver personalized IV
+          treatments to your location in Scottsdale & Phoenix.
+        </p>
+
+        <!-- Key Benefits -->
+        <ul class="hero__benefits">
+          <li class="hero__benefit">
+            <span class="hero__benefit-icon">🏠</span>
+            <span>Home & Office Service</span>
+          </li>
+          <li class="hero__benefit">
+            <span class="hero__benefit-icon">⚡</span>
+            <span>Same-Day Appointments</span>
+          </li>
+          <li class="hero__benefit">
+            <span class="hero__benefit-icon">👩‍⚕️</span>
+            <span>Licensed Medical Staff</span>
+          </li>
+          <li class="hero__benefit">
+            <span class="hero__benefit-icon">💯</span>
+            <span>100% Satisfaction Guarantee</span>
+          </li>
+        </ul>
+
+        <!-- CTA Buttons -->
+        <div class="hero__actions">
+          <a
+            href="/booking"
+            class="btn btn--primary btn--lg"
+            data-analytics="hero-primary-cta"
+          >
+            Book Treatment Now
+          </a>
+          <a
+            href="#services"
+            class="btn btn--outline btn--lg"
+            data-analytics="hero-secondary-cta"
+          >
+            View Services
+          </a>
+        </div>
+
+        <!-- Trust Indicators -->
+        <div class="hero__trust">
+          <div class="hero__stats">
+            <div class="hero__stat">
+              <span class="hero__stat-number">5,000+</span>
+              <span class="hero__stat-label">Treatments Delivered</span>
+            </div>
+            <div class="hero__stat">
+              <span class="hero__stat-number">4.9★</span>
+              <span class="hero__stat-label">Average Rating</span>
+            </div>
+            <div class="hero__stat">
+              <span class="hero__stat-number">30min</span>
+              <span class="hero__stat-label">Average Response Time</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service Preview Cards -->
+      <div class="hero__services">
+        <div class="hero__service-card">
+          <div class="hero__service-icon">
+            <img
+              src="/assets/images/hydration-icon.svg"
+              alt=""
+              width="40"
+              height="40"
+            />
+          </div>
+          <h3 class="hero__service-title">Hydration IV</h3>
+          <p class="hero__service-description">
+            Rapid rehydration and electrolyte balance
+          </p>
+          <span class="hero__service-price">Starting at $149</span>
+        </div>
+
+        <div class="hero__service-card hero__service-card--featured">
+          <div class="hero__service-badge">Most Popular</div>
+          <div class="hero__service-icon">
+            <img
+              src="/assets/images/nad-icon.svg"
+              alt=""
+              width="40"
+              height="40"
+            />
+          </div>
+          <h3 class="hero__service-title">NAD+ Therapy</h3>
+          <p class="hero__service-description">
+            Cellular regeneration and anti-aging
+          </p>
+          <span class="hero__service-price">Starting at $449</span>
+        </div>
+
+        <div class="hero__service-card">
+          <div class="hero__service-icon">
+            <img
+              src="/assets/images/wellness-icon.svg"
+              alt=""
+              width="40"
+              height="40"
+            />
+          </div>
+          <h3 class="hero__service-title">Wellness IV</h3>
+          <p class="hero__service-description">
+            Immune support and energy boost
+          </p>
+          <span class="hero__service-price">Starting at $199</span>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <div class="hero-features">
-      <div class="feature-item">
-        <i class="fas fa-user-md feature-icon"></i>
-        Expert Team
-      </div>
-      <div class="feature-item">
-        <i class="fas fa-home feature-icon"></i>
-        Convenient Mobile Service
-      </div>
-      <div class="feature-item">
-        <i class="fas fa-cogs feature-icon"></i>
-        Personalized Plans
-      </div>
-      <div class="feature-item">
-        <i class="fas fa-bolt feature-icon"></i>
-        Fast Results
-      </div>
-    </div>
+  <!-- Scroll Indicator -->
+  <div class="hero__scroll">
+    <a
+      href="#services"
+      class="hero__scroll-link"
+      aria-label="Scroll to services"
+    >
+      <span class="hero__scroll-text">Discover Our Services</span>
+      <span class="hero__scroll-arrow">↓</span>
+    </a>
   </div>
 </section>
+
+<!-- Floating Contact -->
+<div class="floating-contact">
+  <a
+    href="tel:+15555555555"
+    class="floating-contact__phone"
+    aria-label="Call us now"
+    data-analytics="floating-phone"
+  >
+    📞
+  </a>
+  <a
+    href="sms:+15555555555"
+    class="floating-contact__sms"
+    aria-label="Text us now"
+    data-analytics="floating-sms"
+  >
+    💬
+  </a>
+</div>
