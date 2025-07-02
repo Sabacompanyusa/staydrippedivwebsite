@@ -1,0 +1,27 @@
+// Main SCSS entry point for Stay Dripped Mobile IV
+
+// 1. Abstracts
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+// 2. Base
+@import "base/reset";
+@import "base/typography";
+@import "base/utilities";
+
+// 3. Components
+@import "components/buttons";
+@import "components/cards";
+@import "components/header";
+
+// 4. Layout (when created)
+// @import 'layout/grid';
+// @import 'layout/header';
+// @import 'layout/footer';
+
+// 5. Pages (when created)
+// @import 'pages/home';
+// @import 'pages/services';
+
+// 6. Themes
+// @import 'themes/dark';

@@ -1,0 +1,218 @@
+// Button Component System
+
+.btn {
+  @include button-base;
+  @include button-size(md);
+  @include button-variant(primary);
+
+  // Size variants
+  &--sm {
+    @include button-size(sm);
+  }
+
+  &--lg {
+    @include button-size(lg);
+  }
+
+  // Style variants
+  &--primary {
+    @include button-variant(primary);
+  }
+
+  &--secondary {
+    @include button-variant(secondary);
+  }
+
+  &--outline {
+    @include button-variant(outline);
+  }
+
+  &--success {
+    background: linear-gradient(
+      145deg,
+      $color-success,
+      darken($color-success, 10%)
+    );
+    color: $color-secondary;
+    box-shadow: map-get($shadow, md);
+
+    &:hover {
+      background: linear-gradient(
+        145deg,
+        lighten($color-success, 5%),
+        $color-success
+      );
+      box-shadow: map-get($shadow, lg);
+    }
+  }
+
+  &--warning {
+    background: linear-gradient(
+      145deg,
+      $color-warning,
+      darken($color-warning, 10%)
+    );
+    color: $color-text-dark;
+    box-shadow: map-get($shadow, md);
+
+    &:hover {
+      background: linear-gradient(
+        145deg,
+        lighten($color-warning, 5%),
+        $color-warning
+      );
+      box-shadow: map-get($shadow, lg);
+    }
+  }
+
+  &--error {
+    background: linear-gradient(
+      145deg,
+      $color-error,
+      darken($color-error, 10%)
+    );
+    color: $color-secondary;
+    box-shadow: map-get($shadow, md);
+
+    &:hover {
+      background: linear-gradient(
+        145deg,
+        lighten($color-error, 5%),
+        $color-error
+      );
+      box-shadow: map-get($shadow, lg);
+    }
+  }
+
+  // Ghost variant
+  &--ghost {
+    background: transparent;
+    color: $color-primary;
+    border: none;
+    box-shadow: none;
+
+    &:hover {
+      background: rgba($color-primary, 0.1);
+    }
+
+    @include dark-mode {
+      color: $color-secondary;
+
+      &:hover {
+        background: rgba($color-secondary, 0.1);
+      }
+    }
+  }
+
+  // Link variant
+  &--link {
+    background: transparent;
+    color: $color-primary;
+    border: none;
+    box-shadow: none;
+    text-decoration: underline;
+
+    &:hover {
+      background: transparent;
+      color: lighten($color-primary, 15%);
+    }
+  }
+
+  // Full width
+  &--full {
+    width: 100%;
+  }
+
+  // With icon
+  &--icon {
+    gap: map-get($spacing, 2);
+
+    .icon {
+      width: 1.25em;
+      height: 1.25em;
+    }
+  }
+
+  // Loading state
+  &--loading {
+    position: relative;
+    color: transparent;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 1rem;
+      height: 1rem;
+      margin: -0.5rem 0 0 -0.5rem;
+      border: 2px solid transparent;
+      border-top-color: currentColor;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+  }
+}
+
+// Button group
+.btn-group {
+  display: inline-flex;
+  border-radius: map-get($border-radius, md);
+  overflow: hidden;
+  box-shadow: map-get($shadow, sm);
+
+  .btn {
+    border-radius: 0;
+    border-right: 1px solid rgba($color-primary, 0.2);
+
+    &:first-child {
+      border-radius: map-get($border-radius, md) 0 0 map-get($border-radius, md);
+    }
+
+    &:last-child {
+      border-right: none;
+      border-radius: 0 map-get($border-radius, md) map-get($border-radius, md) 0;
+    }
+
+    &:only-child {
+      border-radius: map-get($border-radius, md);
+      border-right: none;
+    }
+  }
+}
+
+// Floating action button
+.fab {
+  @include button-base;
+  position: fixed;
+  bottom: map-get($spacing, 6);
+  right: map-get($spacing, 6);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(
+    145deg,
+    $color-primary,
+    darken($color-primary, 10%)
+  );
+  color: $color-secondary;
+  box-shadow: map-get($shadow, lg);
+  z-index: map-get($z-index, sticky);
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: map-get($shadow, xl);
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+// Animations
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

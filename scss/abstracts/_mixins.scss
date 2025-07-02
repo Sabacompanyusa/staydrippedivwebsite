@@ -1,0 +1,250 @@
+// Mixins for Stay Dripped Mobile IV
+
+// Responsive breakpoints
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+// Smooth transitions
+@mixin transition($properties...) {
+  $transition-list: ();
+
+  @each $property in $properties {
+    @if length($property) == 1 {
+      $transition-list: append(
+        $transition-list,
+        #{$property}
+          map-get($transition-duration, 200)
+          map-get($transition-timing, out),
+        comma
+      );
+    } @else {
+      $transition-list: append($transition-list, $property, comma);
+    }
+  }
+
+  transition: $transition-list;
+}
+
+// Button styles
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  outline: none;
+  @include transition(all);
+
+  &:focus {
+    outline: 2px solid $color-info;
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+@mixin button-size($size: "md") {
+  @if $size == "sm" {
+    padding: map-get($spacing, 2) map-get($spacing, 3);
+    font-size: map-get($fs-scale, sm);
+    border-radius: map-get($border-radius, base);
+  } @else if $size == "md" {
+    padding: map-get($spacing, 3) map-get($spacing, 6);
+    font-size: map-get($fs-scale, base);
+    border-radius: map-get($border-radius, md);
+  } @else if $size == "lg" {
+    padding: map-get($spacing, 4) map-get($spacing, 8);
+    font-size: map-get($fs-scale, lg);
+    border-radius: map-get($border-radius, lg);
+  }
+}
+
+@mixin button-variant($variant: "primary") {
+  @if $variant == "primary" {
+    background: linear-gradient(
+      145deg,
+      $color-primary,
+      darken($color-primary, 10%)
+    );
+    color: $color-secondary;
+    box-shadow: map-get($shadow, md);
+
+    &:hover {
+      background: linear-gradient(
+        145deg,
+        lighten($color-primary, 5%),
+        $color-primary
+      );
+      box-shadow: map-get($shadow, lg);
+    }
+  } @else if $variant == "secondary" {
+    background: $color-secondary;
+    color: $color-primary;
+    border: 1px solid rgba($color-primary, 0.2);
+    box-shadow: map-get($shadow, sm);
+
+    &:hover {
+      background: darken($color-secondary, 2%);
+      box-shadow: map-get($shadow, md);
+    }
+  } @else if $variant == "outline" {
+    background: transparent;
+    color: $color-primary;
+    border: 2px solid $color-primary;
+
+    &:hover {
+      background: $color-primary;
+      color: $color-secondary;
+    }
+  }
+}
+
+// Card styles
+@mixin card {
+  background: $color-secondary;
+  border-radius: map-get($border-radius, lg);
+  box-shadow: map-get($shadow, base);
+  overflow: hidden;
+  @include transition(transform, box-shadow);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: map-get($shadow, lg);
+  }
+}
+
+// Text truncation
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Screen reader only
+@mixin sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// Focus styles
+@mixin focus-ring {
+  outline: 2px solid $color-info;
+  outline-offset: 2px;
+}
+
+// Container
+@mixin container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: map-get($spacing, 4);
+  padding-right: map-get($spacing, 4);
+
+  @include respond-to(sm) {
+    max-width: map-get($breakpoints, sm);
+  }
+
+  @include respond-to(md) {
+    max-width: map-get($breakpoints, md);
+  }
+
+  @include respond-to(lg) {
+    max-width: map-get($breakpoints, lg);
+  }
+
+  @include respond-to(xl) {
+    max-width: map-get($breakpoints, xl);
+  }
+}
+
+// Generate utility classes
+@mixin generate-spacing-utilities {
+  @each $name, $value in $spacing {
+    .m-#{$name} {
+      margin: $value !important;
+    }
+    .mt-#{$name} {
+      margin-top: $value !important;
+    }
+    .mr-#{$name} {
+      margin-right: $value !important;
+    }
+    .mb-#{$name} {
+      margin-bottom: $value !important;
+    }
+    .ml-#{$name} {
+      margin-left: $value !important;
+    }
+    .mx-#{$name} {
+      margin-left: $value !important;
+      margin-right: $value !important;
+    }
+    .my-#{$name} {
+      margin-top: $value !important;
+      margin-bottom: $value !important;
+    }
+
+    .p-#{$name} {
+      padding: $value !important;
+    }
+    .pt-#{$name} {
+      padding-top: $value !important;
+    }
+    .pr-#{$name} {
+      padding-right: $value !important;
+    }
+    .pb-#{$name} {
+      padding-bottom: $value !important;
+    }
+    .pl-#{$name} {
+      padding-left: $value !important;
+    }
+    .px-#{$name} {
+      padding-left: $value !important;
+      padding-right: $value !important;
+    }
+    .py-#{$name} {
+      padding-top: $value !important;
+      padding-bottom: $value !important;
+    }
+  }
+}
+
+@mixin generate-typography-utilities {
+  @each $name, $size in $fs-scale {
+    .text-#{$name} {
+      font-size: $size !important;
+    }
+  }
+}
+
+// Dark mode support
+@mixin dark-mode {
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+
+  .dark & {
+    @content;
+  }
+}

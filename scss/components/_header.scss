@@ -1,0 +1,353 @@
+// Header Component
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: map-get($z-index, sticky);
+  background: rgba($color-secondary, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba($color-primary, 0.1);
+  @include transition(background-color, border-color);
+
+  @include dark-mode {
+    background: rgba($color-dark-bg, 0.95);
+    border-bottom-color: rgba($color-secondary, 0.1);
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: map-get($spacing, 4);
+    padding-bottom: map-get($spacing, 4);
+  }
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+  @include transition(transform);
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  img {
+    height: 40px;
+    width: auto;
+
+    @include respond-to(md) {
+      height: 48px;
+    }
+  }
+
+  // Logo text variant
+  &-text {
+    font-size: map-get($fs-scale, xl);
+    font-weight: 700;
+    color: $color-primary;
+
+    @include dark-mode {
+      color: $color-secondary;
+    }
+  }
+}
+
+.main-nav {
+  display: none;
+
+  @include respond-to(md) {
+    display: flex;
+    align-items: center;
+    gap: map-get($spacing, 8);
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: map-get($spacing, 6);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__link {
+    display: block;
+    padding: map-get($spacing, 2) map-get($spacing, 3);
+    color: $color-text-dark;
+    font-weight: 500;
+    @include transition(color);
+
+    &:hover,
+    &:focus {
+      color: $color-primary;
+    }
+
+    &.active {
+      color: $color-primary;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 20px;
+        height: 2px;
+        background: $color-primary;
+        border-radius: map-get($border-radius, full);
+      }
+    }
+
+    @include dark-mode {
+      color: $color-secondary;
+
+      &:hover,
+      &:focus,
+      &.active {
+        color: $color-info;
+      }
+
+      &.active::after {
+        background: $color-info;
+      }
+    }
+  }
+
+  // Dropdown menu
+  &__dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    background: $color-secondary;
+    border-radius: map-get($border-radius, lg);
+    box-shadow: map-get($shadow, lg);
+    padding: map-get($spacing, 2);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    @include transition(opacity, visibility, transform);
+
+    @include dark-mode {
+      background: lighten($color-dark-bg, 5%);
+    }
+  }
+
+  &__item:hover &__dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  &__dropdown-link {
+    display: block;
+    padding: map-get($spacing, 2) map-get($spacing, 3);
+    color: $color-text-dark;
+    border-radius: map-get($border-radius, base);
+    @include transition(background-color, color);
+
+    &:hover {
+      background: rgba($color-primary, 0.1);
+      color: $color-primary;
+    }
+
+    @include dark-mode {
+      color: $color-secondary;
+
+      &:hover {
+        background: rgba($color-secondary, 0.1);
+        color: $color-info;
+      }
+    }
+  }
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: map-get($spacing, 4);
+}
+
+.mobile-menu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: 1px solid rgba($color-primary, 0.2);
+  border-radius: map-get($border-radius, base);
+  color: $color-primary;
+  cursor: pointer;
+  @include transition(all);
+
+  @include respond-to(md) {
+    display: none;
+  }
+
+  &:hover {
+    background: rgba($color-primary, 0.1);
+    border-color: $color-primary;
+  }
+
+  &.active {
+    background: $color-primary;
+    color: $color-secondary;
+  }
+
+  .hamburger {
+    width: 20px;
+    height: 20px;
+    position: relative;
+
+    span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: currentColor;
+      border-radius: 1px;
+      @include transition(all);
+
+      &:nth-child(1) {
+        transform: translateY(-6px);
+      }
+
+      &:nth-child(3) {
+        transform: translateY(6px);
+      }
+    }
+  }
+
+  &.active .hamburger span {
+    &:nth-child(1) {
+      transform: rotate(45deg);
+    }
+
+    &:nth-child(2) {
+      opacity: 0;
+    }
+
+    &:nth-child(3) {
+      transform: rotate(-45deg);
+    }
+  }
+
+  @include dark-mode {
+    border-color: rgba($color-secondary, 0.2);
+    color: $color-secondary;
+
+    &:hover {
+      background: rgba($color-secondary, 0.1);
+      border-color: $color-secondary;
+    }
+
+    &.active {
+      background: $color-secondary;
+      color: $color-dark-bg;
+    }
+  }
+}
+
+// Mobile menu
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba($color-dark-bg, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: map-get($z-index, modal);
+  opacity: 0;
+  visibility: hidden;
+  @include transition(opacity, visibility);
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    margin-bottom: map-get($spacing, 4);
+  }
+
+  &__link {
+    display: block;
+    font-size: map-get($fs-scale, xl);
+    font-weight: 600;
+    color: $color-secondary;
+    padding: map-get($spacing, 3);
+    @include transition(color);
+
+    &:hover {
+      color: $color-info;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: map-get($spacing, 6);
+    right: map-get($spacing, 6);
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
+    color: $color-secondary;
+    font-size: map-get($fs-scale, xl);
+    cursor: pointer;
+    @include transition(transform);
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+// Dark mode toggle
+.dark-mode-toggle {
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: 1px solid rgba($color-primary, 0.2);
+  border-radius: 50%;
+  color: $color-primary;
+  font-size: map-get($fs-scale, lg);
+  cursor: pointer;
+  @include transition(all);
+
+  &:hover {
+    background: rgba($color-primary, 0.1);
+    border-color: $color-primary;
+    transform: rotate(180deg);
+  }
+
+  @include dark-mode {
+    border-color: rgba($color-secondary, 0.2);
+    color: $color-secondary;
+
+    &:hover {
+      background: rgba($color-secondary, 0.1);
+      border-color: $color-secondary;
+    }
+  }
+}
