@@ -421,6 +421,10 @@
 }
 
 @media (max-width: 480px) {
+  body.has-back-button {
+    padding-top: 130px;
+  }
+
   .back-button-container {
     padding: 0.75rem 1rem 0.5rem;
   }
