@@ -29,15 +29,13 @@ module.exports = (env) => {
       },
       compress: true,
       port: 3000,
-      hot: true,
+      hot: false,
+      liveReload: false,
       open: false,
       historyApiFallback: true,
       client: {
-        logging: "warn",
-        overlay: {
-          errors: true,
-          warnings: false,
-        },
+        logging: "none",
+        overlay: false,
       },
     },
     module: {
