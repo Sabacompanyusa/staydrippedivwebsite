@@ -22,7 +22,7 @@
   --neutral-300: #cbd5e1; /* Soft gray */
   --neutral-200: #e2e8f0; /* Very light gray */
   --neutral-100: #f7fafc; /* Almost white */
-  --pure-white: #ffffff;
+  --pure-white: #fff;
 
   /* Professional Gradients */
   --gradient-primary: linear-gradient(
@@ -39,29 +39,29 @@
   );
   --gradient-surface: linear-gradient(
     145deg,
-    #ffffff 0%,
+    #fff 0%,
     #f8fafc 50%,
     #f1f5f9 100%
   );
   --gradient-glass: linear-gradient(
     145deg,
-    rgba(255, 255, 255, 0.1) 0%,
-    rgba(255, 255, 255, 0.05) 100%
+    rgb(255 255 255 / 10%) 0%,
+    rgb(255 255 255 / 5%) 100%
   );
   --gradient-glow: radial-gradient(
     circle at center,
-    rgba(0, 229, 255, 0.2) 0%,
+    rgb(0 229 255 / 20%) 0%,
     transparent 70%
   );
 
   /* Professional Shadows */
-  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
-  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.15);
-  --shadow-xl: 0 24px 64px rgba(0, 0, 0, 0.2);
-  --shadow-cyan: 0 8px 32px rgba(0, 229, 255, 0.25);
-  --shadow-mint: 0 8px 32px rgba(0, 255, 166, 0.2);
+  --shadow-xs: 0 1px 2px rgb(0 0 0 / 5%);
+  --shadow-sm: 0 2px 8px rgb(0 0 0 / 8%);
+  --shadow-md: 0 8px 24px rgb(0 0 0 / 12%);
+  --shadow-lg: 0 16px 48px rgb(0 0 0 / 15%);
+  --shadow-xl: 0 24px 64px rgb(0 0 0 / 20%);
+  --shadow-cyan: 0 8px 32px rgb(0 229 255 / 25%);
+  --shadow-mint: 0 8px 32px rgb(0 255 166 / 20%);
 
   /* Professional Spacing Scale */
   --space-0: 0;
@@ -129,11 +129,11 @@ html {
 
 body {
   font-family:
-    "Inter",
+    Inter,
     -apple-system,
     BlinkMacSystemFont,
     "Segoe UI",
-    "Roboto",
+    Roboto,
     sans-serif;
   font-variation-settings: "slnt" 0;
   background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
@@ -142,7 +142,7 @@ body {
   letter-spacing: -0.01em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizelegibility;
 }
 
 /* Professional Container System */
@@ -253,7 +253,7 @@ body {
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.2) 0%,
+    rgb(255 255 255 / 20%) 0%,
     transparent 50%
   );
   opacity: 0;
@@ -268,7 +268,7 @@ body {
   transform: translateY(-2px);
   box-shadow:
     var(--shadow-xl),
-    0 0 40px rgba(0, 229, 255, 0.4);
+    0 0 40px rgb(0 229 255 / 40%);
 }
 
 .btn-primary:active {
@@ -328,7 +328,7 @@ body {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.8),
+    rgb(255 255 255 / 80%),
     transparent
   );
 }
@@ -337,8 +337,8 @@ body {
   transform: translateY(-4px);
   box-shadow:
     var(--shadow-xl),
-    0 0 32px rgba(0, 229, 255, 0.15);
-  border-color: rgba(0, 229, 255, 0.3);
+    0 0 32px rgb(0 229 255 / 15%);
+  border-color: rgb(0 229 255 / 30%);
 }
 
 .card-title {
@@ -368,12 +368,15 @@ body {
 .grid-1 {
   grid-template-columns: 1fr;
 }
+
 .grid-2 {
   grid-template-columns: repeat(2, 1fr);
 }
+
 .grid-3 {
   grid-template-columns: repeat(3, 1fr);
 }
+
 .grid-4 {
   grid-template-columns: repeat(4, 1fr);
 }
@@ -456,21 +459,27 @@ body {
 .mt-4 {
   margin-top: var(--space-4);
 }
+
 .mt-6 {
   margin-top: var(--space-6);
 }
+
 .mt-8 {
   margin-top: var(--space-8);
 }
+
 .mb-4 {
   margin-bottom: var(--space-4);
 }
+
 .mb-6 {
   margin-bottom: var(--space-6);
 }
+
 .mb-8 {
   margin-bottom: var(--space-8);
 }
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -479,24 +488,30 @@ body {
 .p-4 {
   padding: var(--space-4);
 }
+
 .p-6 {
   padding: var(--space-6);
 }
+
 .p-8 {
   padding: var(--space-8);
 }
+
 .px-4 {
   padding-left: var(--space-4);
   padding-right: var(--space-4);
 }
+
 .px-6 {
   padding-left: var(--space-6);
   padding-right: var(--space-6);
 }
+
 .py-4 {
   padding-top: var(--space-4);
   padding-bottom: var(--space-4);
 }
+
 .py-6 {
   padding-top: var(--space-6);
   padding-bottom: var(--space-6);
@@ -524,6 +539,7 @@ body {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -535,6 +551,7 @@ body {
     opacity: 0;
     transform: translateY(40px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -546,6 +563,7 @@ body {
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-10px);
   }
@@ -556,6 +574,7 @@ body {
   100% {
     box-shadow: var(--shadow-md);
   }
+
   50% {
     box-shadow: var(--shadow-cyan);
   }
@@ -589,7 +608,7 @@ body {
 /* Professional Focus States */
 .btn-primary:focus-visible,
 .btn-secondary:focus-visible {
-  outline: 3px solid rgba(0, 229, 255, 0.5);
+  outline: 3px solid rgb(0 229 255 / 50%);
   outline-offset: 2px;
 }
 
@@ -613,6 +632,6 @@ body {
   .btn-primary,
   .btn-secondary {
     border-width: 2px;
-    border-color: currentColor;
+    border-color: currentcolor;
   }
 }
