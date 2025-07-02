@@ -685,6 +685,39 @@
     <noscript
       ><link rel="stylesheet" href="assets/css/premium-responsive.css"
     /></noscript>
+
+    <!-- Professional Theme -->
+    <link
+      rel="preload"
+      href="assets/css/professional-theme.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link rel="stylesheet" href="assets/css/professional-theme.css"
+    /></noscript>
+
+    <!-- Enhanced Sections -->
+    <link
+      rel="preload"
+      href="assets/css/enhanced-sections.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link rel="stylesheet" href="assets/css/enhanced-sections.css"
+    /></noscript>
+
+    <!-- Enhanced Footer -->
+    <link
+      rel="preload"
+      href="assets/css/enhanced-footer.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link rel="stylesheet" href="assets/css/enhanced-footer.css"
+    /></noscript>
   </head>
   <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -933,31 +966,39 @@
       </section>
 
       <!-- How It Works -->
-      <section id="how-it-works" class="section-spacing">
+      <section id="how-it-works" class="how-it-works">
         <div class="container">
-          <h2 class="text-center section-heading">How It Works</h2>
+          <div class="how-it-works-header">
+            <h2 class="how-it-works-title">How It Works</h2>
+            <p class="how-it-works-subtitle">
+              Experience premium mobile IV therapy in three simple steps. Our
+              professional process ensures you receive the highest quality care
+              in the comfort of your chosen location.
+            </p>
+          </div>
           <div class="how-it-works-grid">
-            <div class="how-it-works-step">
+            <div class="how-it-works-step animate-slide-up">
               <div class="step-number">1</div>
-              <h3>Book Online</h3>
-              <p>
-                Choose your treatment and schedule a time that works for you.
+              <h3 class="step-title">Book Online</h3>
+              <p class="step-description">
+                Choose your treatment and schedule a time that works for you
+                through our seamless booking system.
               </p>
             </div>
-            <div class="how-it-works-step">
+            <div class="how-it-works-step animate-slide-up">
               <div class="step-number">2</div>
-              <h3>We Come to You</h3>
-              <p>
-                Our certified professionals arrive at your location with
-                everything needed.
+              <h3 class="step-title">We Come to You</h3>
+              <p class="step-description">
+                Our certified professionals arrive at your location with all
+                necessary equipment and premium-grade IV therapies.
               </p>
             </div>
-            <div class="how-it-works-step">
+            <div class="how-it-works-step animate-slide-up">
               <div class="step-number">3</div>
-              <h3>Relax & Recharge</h3>
-              <p>
-                Sit back and enjoy your treatment in the comfort of your own
-                space.
+              <h3 class="step-title">Relax & Recharge</h3>
+              <p class="step-description">
+                Sit back and enjoy your treatment while our experts ensure your
+                comfort and safety throughout the process.
               </p>
             </div>
           </div>
@@ -965,55 +1006,74 @@
       </section>
 
       <!-- Booking Section -->
-      <section
-        id="book"
-        class="section-spacing"
-        style="background: var(--bg-light)"
-      >
-        <div class="container text-center">
-          <h2 class="section-heading" style="margin-bottom: 1rem">
-            Ready to Feel Better?
-          </h2>
-          <p
-            style="
-              font-size: 1.25rem;
-              color: var(--text-secondary);
-              margin-bottom: 2rem;
-            "
-          >
-            Book your mobile IV therapy session today and experience the
-            difference.
-          </p>
-          <div id="booking-widget">
-            <!-- IntakeQ widget will be inserted here -->
-            <a
-              href="#"
-              class="btn"
-              style="font-size: 1.125rem; padding: 1rem 2rem"
-              onclick="openBookingWidget(); return false;"
-              >Book Your Treatment Now</a
-            >
+      <section id="book" class="booking-section">
+        <div class="container">
+          <div class="booking-header">
+            <h2 class="booking-title">Ready to Feel Better?</h2>
+            <p class="booking-subtitle">
+              Book your mobile IV therapy session today and experience the Stay
+              Dripped difference. Professional care delivered to your location.
+            </p>
+          </div>
+          <div class="booking-cta">
+            <div id="booking-widget">
+              <!-- IntakeQ widget will be inserted here -->
+              <a
+                href="#"
+                class="booking-btn"
+                onclick="openBookingWidget(); return false;"
+              >
+                <span>Book Your Treatment Now</span>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5 12H19M19 12L12 5M19 12L12 19"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- Testimonials -->
-      <section id="testimonials" class="section-spacing">
+      <section id="testimonials" class="testimonials-section">
         <div class="container">
-          <h2 class="text-center section-heading">What Our Clients Say</h2>
-          <div
-            class="elfsight-app-d433d327-22a0-44e1-b166-f607a4df45d8"
-            data-elfsight-app-lazy
-          ></div>
+          <div class="testimonials-header">
+            <h2 class="testimonials-title">What Our Clients Say</h2>
+            <p class="testimonials-subtitle">
+              Discover why thousands of clients trust Stay Dripped for their
+              wellness journey. Real experiences from real people.
+            </p>
+          </div>
+          <div class="testimonials-widget">
+            <div
+              class="elfsight-app-d433d327-22a0-44e1-b166-f607a4df45d8"
+              data-elfsight-app-lazy
+            ></div>
+          </div>
         </div>
       </section>
 
       <!-- FAQ -->
-      <section id="faq" class="section-spacing">
+      <section id="faq" class="faq-section">
         <div class="container">
-          <h2 class="text-center section-heading">
-            Frequently Asked Questions
-          </h2>
+          <div class="faq-header">
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+            <p class="faq-subtitle">
+              Get answers to common questions about our mobile IV therapy
+              services, safety protocols, and booking process.
+            </p>
+          </div>
           <div class="faq-container">
             <details class="faq-item">
               <summary class="faq-summary">What is mobile IV therapy?</summary>
@@ -1021,7 +1081,9 @@
                 Mobile IV therapy brings professional intravenous treatments
                 directly to your location. Our certified nurses administer IV
                 drips containing vitamins, minerals, and hydration in the
-                comfort of your home, office, or hotel.
+                comfort of your home, office, or hotel. This convenient service
+                eliminates travel time and provides personalized care in your
+                preferred environment.
               </p>
             </details>
             <details class="faq-item">
@@ -1030,23 +1092,48 @@
               </summary>
               <p class="faq-answer">
                 Most IV therapy sessions take 30-60 minutes, depending on the
-                type of treatment and your individual needs.
+                type of treatment and your individual needs. Our nurses will
+                discuss the expected duration during your consultation and
+                ensure you're comfortable throughout the entire process.
               </p>
             </details>
             <details class="faq-item">
               <summary class="faq-summary">Is IV therapy safe?</summary>
               <p class="faq-answer">
                 Yes, when administered by qualified healthcare professionals.
-                All our nurses are licensed and experienced in IV therapy
-                administration.
+                All our nurses are licensed, experienced, and follow strict
+                safety protocols. We use sterile equipment, pharmaceutical-grade
+                ingredients, and conduct thorough health screenings before each
+                treatment.
               </p>
             </details>
             <details class="faq-item">
               <summary class="faq-summary">Do you accept insurance?</summary>
               <p class="faq-answer">
-                We accept HSA and FSA payments. While most insurance doesn't
-                cover elective IV therapy, we can provide documentation for
-                reimbursement requests.
+                We accept HSA and FSA payments for eligible treatments. While
+                most insurance doesn't cover elective IV therapy, we can provide
+                detailed receipts and documentation for potential reimbursement
+                requests. Contact your insurance provider to verify coverage.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-summary">What areas do you serve?</summary>
+              <p class="faq-answer">
+                We proudly serve Scottsdale, Phoenix, and surrounding areas in
+                Arizona. Our mobile service brings premium IV therapy directly
+                to your home, office, hotel, or event location within our
+                service area.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-summary">
+                How do I prepare for my appointment?
+              </summary>
+              <p class="faq-answer">
+                Stay hydrated before your appointment and eat a light meal. Wear
+                comfortable clothing with easy access to your arm. Our nurses
+                will bring all necessary equipment and will guide you through
+                any specific preparation based on your chosen treatment.
               </p>
             </details>
           </div>
@@ -1055,47 +1142,266 @@
     </main>
 
     <!-- Footer -->
-    <footer>
+    <footer class="professional-footer">
+      <div class="footer-pattern"></div>
       <div class="container">
-        <div class="footer-content">
-          <div class="footer-section">
-            <h3>Stay Dripped®</h3>
-            <p>
-              Premium mobile IV therapy and wellness services in Scottsdale and
-              Phoenix.
-            </p>
-          </div>
-          <div class="footer-section">
-            <h3>Services</h3>
-            <a href="pages/iv-therapy.html">IV Therapy</a>
-            <a href="pages/nad-therapy.html">NAD+ Therapy</a>
-            <a href="pages/peptide-therapy.html">Peptide Therapy</a>
-            <a href="pages/membership.html">Memberships</a>
-          </div>
-          <div class="footer-section">
-            <h3>Contact</h3>
-            <a href="tel:+1234567890">Call: (123) 456-7890</a>
-            <a href="mailto:info@staydripped.com"
-              >Email: info@staydripped.com</a
-            >
-            <p>Available 7 days a week</p>
-          </div>
-          <div class="footer-section">
-            <h3>Follow Us</h3>
-            <a href="#">Instagram</a>
-            <a href="#">Facebook</a>
-            <a href="#">Twitter</a>
+        <div class="footer-main">
+          <div class="footer-grid">
+            <div class="footer-brand">
+              <div class="footer-logo">
+                <img
+                  src="assets/images/logo.png"
+                  alt="Stay Dripped Mobile IV"
+                  style="height: 40px; width: auto"
+                />
+              </div>
+              <h3 class="footer-brand-title">Stay Dripped®</h3>
+              <p class="footer-brand-description">
+                Premium mobile IV therapy and wellness services delivered to
+                your location in Scottsdale and Phoenix. Experience the future
+                of personalized healthcare.
+              </p>
+              <div class="footer-social">
+                <a href="#" class="social-link" aria-label="Instagram">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 2H7C4.24 2 2 4.24 2 7V17C2 19.76 4.24 22 7 22H17C19.76 22 22 19.76 22 17V7C22 4.24 19.76 2 17 2Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M16 11.37C16.12 12.25 15.95 13.15 15.52 13.91C15.09 14.67 14.42 15.24 13.64 15.52C12.86 15.8 12.01 15.78 11.24 15.46C10.47 15.14 9.83 14.54 9.42 13.77C9.01 13 8.85 12.1 8.97 11.22C9.09 10.34 9.48 9.53 10.08 8.93C10.68 8.33 11.45 7.97 12.27 7.9C13.09 7.83 13.91 8.05 14.59 8.53"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M17.5 6.5H17.51"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+                <a href="#" class="social-link" aria-label="Facebook">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M18 2H15C13.67 2 12.4 2.53 11.46 3.46C10.53 4.4 10 5.67 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73 14.11 6.48 14.29 6.29C14.48 6.11 14.73 6 15 6H18V2Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+                <a href="#" class="social-link" aria-label="Twitter">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23 3C22.0424 3.67548 20.9821 4.19211 19.86 4.53C19.2577 3.83751 18.4573 3.34669 17.567 3.12393C16.6767 2.90116 15.7395 2.95718 14.8821 3.28445C14.0247 3.61171 13.2884 4.19445 12.773 4.95371C12.2575 5.71297 11.9877 6.61435 12 7.53V8.53C10.2426 8.57557 8.50127 8.18581 6.93101 7.39624C5.36074 6.60667 4.01032 5.43666 3 4V4C3 4 -1 13 8 17C5.94053 18.398 3.48716 19.099 1 19C10 24 21 19 21 7.5C20.9991 7.22145 20.9723 6.94359 20.92 6.67C21.9406 5.66349 22.6608 4.39271 23 3V3Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+                <a href="#" class="social-link" aria-label="LinkedIn">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16 8C17.59 8 19.1 8.63 20.21 9.79C21.32 10.95 21.92 12.53 21.92 14.17V21H18.25V14.17C18.25 13.45 17.96 12.76 17.44 12.24C16.92 11.72 16.23 11.43 15.51 11.43C14.79 11.43 14.1 11.72 13.58 12.24C13.06 12.76 12.77 13.45 12.77 14.17V21H9.1V14.17C9.1 12.53 9.7 10.95 10.81 9.79C11.92 8.63 13.43 8 15.02 8H16Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <rect
+                      x="2"
+                      y="9"
+                      width="4"
+                      height="12"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <circle
+                      cx="4"
+                      cy="4"
+                      r="2"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="footer-section">
+              <h4 class="footer-section-title">Services</h4>
+              <div class="footer-links">
+                <a href="pages/iv-therapy.html" class="footer-link"
+                  >IV Therapy</a
+                >
+                <a href="pages/nad-therapy.html" class="footer-link"
+                  >NAD+ Therapy</a
+                >
+                <a href="pages/peptide-therapy.html" class="footer-link"
+                  >Peptide Therapy</a
+                >
+                <a href="pages/aesthetic.html" class="footer-link"
+                  >Aesthetic Treatments</a
+                >
+                <a href="pages/membership.html" class="footer-link"
+                  >Memberships</a
+                >
+                <a href="pages/corporate-events.html" class="footer-link"
+                  >Corporate Events</a
+                >
+              </div>
+            </div>
+
+            <div class="footer-section">
+              <h4 class="footer-section-title">Company</h4>
+              <div class="footer-links">
+                <a href="#about" class="footer-link">About Us</a>
+                <a href="#how-it-works" class="footer-link">How It Works</a>
+                <a href="#testimonials" class="footer-link">Testimonials</a>
+                <a href="#faq" class="footer-link">FAQ</a>
+                <a href="pages/franchise.html" class="footer-link">Franchise</a>
+                <a href="pages/partnerships.html" class="footer-link"
+                  >Partnerships</a
+                >
+              </div>
+            </div>
+
+            <div class="footer-section">
+              <h4 class="footer-section-title">Contact</h4>
+              <div class="contact-item">
+                <svg
+                  class="contact-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M22 16.92V19.92C22.0011 20.1985 21.9441 20.4742 21.8325 20.7293C21.7209 20.9845 21.5573 21.2136 21.3521 21.4019C21.1468 21.5901 20.9046 21.7335 20.6407 21.8227C20.3769 21.9119 20.0974 21.9451 19.82 21.92C16.7428 21.5856 13.787 20.5341 11.19 18.85C8.77382 17.3147 6.72533 15.2662 5.18999 12.85C3.49997 10.2412 2.44824 7.27099 2.11999 4.18C2.095 3.90347 2.12787 3.62476 2.21649 3.36162C2.30512 3.09849 2.44756 2.85669 2.63476 2.65162C2.82196 2.44655 3.0498 2.28271 3.30379 2.17052C3.55777 2.05833 3.83233 2.00026 4.10999 2H7.10999C7.59531 1.99522 8.06579 2.16708 8.43376 2.48353C8.80173 2.79999 9.04207 3.23945 9.10999 3.72C9.23662 4.68007 9.47144 5.62273 9.80999 6.53C9.94454 6.88792 9.97366 7.27691 9.8939 7.65088C9.81415 8.02485 9.62886 8.36811 9.35999 8.64L8.08999 9.91C9.51355 12.4135 11.5865 14.4864 14.09 15.91L15.36 14.64C15.6319 14.3711 15.9751 14.1858 16.3491 14.1061C16.7231 14.0263 17.1121 14.0555 17.47 14.19C18.3773 14.5286 19.3199 14.7634 20.28 14.89C20.7658 14.9585 21.2094 15.2032 21.5265 15.5775C21.8437 15.9518 22.0122 16.4296 21.0 16.92H22Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <div class="contact-text">
+                  <a href="tel:+1234567890" class="contact-link"
+                    >Call: (123) 456-7890</a
+                  >
+                </div>
+              </div>
+              <div class="contact-item">
+                <svg
+                  class="contact-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <polyline
+                    points="22,6 12,13 2,6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <div class="contact-text">
+                  <a href="mailto:info@staydripped.com" class="contact-link"
+                    >info@staydripped.com</a
+                  >
+                </div>
+              </div>
+              <div class="contact-item">
+                <svg
+                  class="contact-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <polyline
+                    points="12,6 12,12 16,14"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <div class="contact-text">Available 7 days a week</div>
+              </div>
+            </div>
           </div>
         </div>
-        <div
-          style="
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid #374151;
-            color: #9ca3af;
-          "
-        >
-          <p>&copy; 2024 Stay Dripped Mobile IV LLC. All rights reserved.</p>
+
+        <div class="footer-bottom">
+          <div class="footer-bottom-content">
+            <div class="footer-copyright">
+              <p>
+                &copy; 2024 Stay Dripped Mobile IV LLC. All rights reserved.
+              </p>
+            </div>
+            <div class="footer-legal">
+              <a href="privacy-policy.html" class="footer-legal-link"
+                >Privacy Policy</a
+              >
+              <a href="terms-of-service.html" class="footer-legal-link"
+                >Terms of Service</a
+              >
+              <a href="medical-disclaimer.html" class="footer-legal-link"
+                >Medical Disclaimer</a
+              >
+            </div>
+          </div>
         </div>
       </div>
     </footer>
@@ -1225,6 +1531,9 @@
 
     <!-- Premium Interactions Script -->
     <script src="assets/js/premium-interactions.js" defer></script>
+
+    <!-- Advanced Interactions Script -->
+    <script src="assets/js/advanced-interactions.js" defer></script>
 
     <!-- Structured Data -->
     <script type="application/ld+json">
