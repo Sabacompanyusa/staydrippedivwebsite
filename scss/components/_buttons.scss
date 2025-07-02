@@ -1,9 +1,21 @@
-// Button Component System
+// Comprehensive Button System for Stay Dripped Mobile IV
 
 .btn {
   @include button-base;
   @include button-size(md);
   @include button-variant(primary);
+
+  // Icon support
+  &--icon {
+    gap: map-get($spacing, 2);
+
+    .icon {
+      width: 1.25em;
+      height: 1.25em;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+  }
 
   // Size variants
   &--sm {
@@ -27,6 +39,10 @@
     @include button-variant(outline);
   }
 
+  &--ghost {
+    @include button-variant(ghost);
+  }
+
   &--success {
     background: linear-gradient(
       145deg,
@@ -43,6 +59,7 @@
         $color-success
       );
       box-shadow: map-get($shadow, lg);
+      transform: translateY(-1px);
     }
   }
 
@@ -62,6 +79,7 @@
         $color-warning
       );
       box-shadow: map-get($shadow, lg);
+      transform: translateY(-1px);
     }
   }
 
@@ -81,40 +99,7 @@
         $color-error
       );
       box-shadow: map-get($shadow, lg);
-    }
-  }
-
-  // Ghost variant
-  &--ghost {
-    background: transparent;
-    color: $color-primary;
-    border: none;
-    box-shadow: none;
-
-    &:hover {
-      background: rgba($color-primary, 0.1);
-    }
-
-    @include dark-mode {
-      color: $color-secondary;
-
-      &:hover {
-        background: rgba($color-secondary, 0.1);
-      }
-    }
-  }
-
-  // Link variant
-  &--link {
-    background: transparent;
-    color: $color-primary;
-    border: none;
-    box-shadow: none;
-    text-decoration: underline;
-
-    &:hover {
-      background: transparent;
-      color: lighten($color-primary, 15%);
+      transform: translateY(-1px);
     }
   }
 
@@ -123,20 +108,11 @@
     width: 100%;
   }
 
-  // With icon
-  &--icon {
-    gap: map-get($spacing, 2);
-
-    .icon {
-      width: 1.25em;
-      height: 1.25em;
-    }
-  }
-
   // Loading state
   &--loading {
     position: relative;
     color: transparent;
+    cursor: wait;
 
     &::after {
       content: "";
@@ -152,6 +128,21 @@
       animation: spin 1s linear infinite;
     }
   }
+
+  // Round variant
+  &--round {
+    border-radius: map-get($border-radius, full);
+  }
+
+  // Elevated variant
+  &--elevated {
+    box-shadow: map-get($shadow, lg);
+
+    &:hover {
+      box-shadow: map-get($shadow, xl);
+      transform: translateY(-2px);
+    }
+  }
 }
 
 // Button group
@@ -163,20 +154,48 @@
 
   .btn {
     border-radius: 0;
-    border-right: 1px solid rgba($color-primary, 0.2);
+    margin: 0;
+
+    &:not(:last-child) {
+      border-right: 1px solid rgba($color-primary, 0.2);
+    }
 
     &:first-child {
       border-radius: map-get($border-radius, md) 0 0 map-get($border-radius, md);
     }
 
     &:last-child {
-      border-right: none;
       border-radius: 0 map-get($border-radius, md) map-get($border-radius, md) 0;
     }
 
     &:only-child {
       border-radius: map-get($border-radius, md);
-      border-right: none;
+    }
+
+    &:focus {
+      z-index: 1;
+      position: relative;
+    }
+  }
+
+  &--vertical {
+    flex-direction: column;
+
+    .btn {
+      &:not(:last-child) {
+        border-right: none;
+        border-bottom: 1px solid rgba($color-primary, 0.2);
+      }
+
+      &:first-child {
+        border-radius: map-get($border-radius, md) map-get($border-radius, md) 0
+          0;
+      }
+
+      &:last-child {
+        border-radius: 0 0 map-get($border-radius, md)
+          map-get($border-radius, md);
+      }
     }
   }
 }
@@ -204,9 +223,156 @@
     box-shadow: map-get($shadow, xl);
   }
 
+  &:active {
+    transform: scale(0.95);
+  }
+
   .icon {
     width: 24px;
     height: 24px;
+    fill: currentColor;
+  }
+
+  // Mini variant
+  &--mini {
+    width: 40px;
+    height: 40px;
+
+    .icon {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  // Extended variant with text
+  &--extended {
+    width: auto;
+    padding: 0 map-get($spacing, 4);
+    border-radius: map-get($border-radius, full);
+    gap: map-get($spacing, 2);
+    font-weight: 600;
+  }
+}
+
+// CTA (Call to Action) buttons
+.cta-button {
+  @extend .btn;
+  @extend .btn--primary;
+  @extend .btn--lg;
+
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: left 0.5s;
+  }
+
+  &:hover::before {
+    left: 100%;
+  }
+}
+
+// Link buttons
+.btn-link {
+  @include button-base;
+  background: transparent;
+  color: $color-primary;
+  border: none;
+  box-shadow: none;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+
+  &:hover {
+    background: transparent;
+    color: lighten($color-primary, 15%);
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline-offset: 0.25em;
+  }
+}
+
+// Social media buttons
+.btn-social {
+  @include button-base;
+  @include button-size(md);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+
+  &--facebook {
+    background: #1877f2;
+    color: white;
+
+    &:hover {
+      background: darken(#1877f2, 10%);
+    }
+  }
+
+  &--twitter {
+    background: #1da1f2;
+    color: white;
+
+    &:hover {
+      background: darken(#1da1f2, 10%);
+    }
+  }
+
+  &--instagram {
+    background: linear-gradient(
+      45deg,
+      #f09433 0%,
+      #e6683c 25%,
+      #dc2743 50%,
+      #cc2366 75%,
+      #bc1888 100%
+    );
+    color: white;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &--linkedin {
+    background: #0077b5;
+    color: white;
+
+    &:hover {
+      background: darken(#0077b5, 10%);
+    }
+  }
+}
+
+// Toggle buttons
+.btn-toggle {
+  @include button-base;
+  @include button-size(md);
+  background: rgba($color-primary, 0.1);
+  color: $color-primary;
+  border: 2px solid rgba($color-primary, 0.2);
+
+  &.active {
+    background: $color-primary;
+    color: $color-secondary;
+    border-color: $color-primary;
+  }
+
+  &:hover {
+    border-color: $color-primary;
   }
 }
 
@@ -214,5 +380,66 @@
 @keyframes spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+// Dark mode support
+@include dark-mode {
+  .btn {
+    &--secondary {
+      background: lighten($color-dark-bg, 10%);
+      color: $color-secondary;
+      border-color: rgba($color-secondary, 0.3);
+
+      &:hover {
+        background: $color-secondary;
+        color: $color-dark-bg;
+      }
+    }
+
+    &--ghost {
+      color: $color-secondary;
+
+      &:hover {
+        background: rgba($color-secondary, 0.1);
+      }
+    }
+  }
+
+  .btn-link {
+    color: $color-info;
+
+    &:hover {
+      color: lighten($color-info, 15%);
+    }
+  }
+
+  .btn-toggle {
+    background: rgba($color-secondary, 0.1);
+    color: $color-secondary;
+    border-color: rgba($color-secondary, 0.2);
+
+    &.active {
+      background: $color-secondary;
+      color: $color-dark-bg;
+    }
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .fab {
+    &:hover {
+      transform: none;
+    }
+  }
+
+  .btn--loading::after {
+    animation: none;
+  }
+
+  .cta-button::before {
+    display: none;
   }
 }
