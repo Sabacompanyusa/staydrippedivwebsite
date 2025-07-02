@@ -1,22 +1,22 @@
 // Main SCSS entry point for Stay Dripped Mobile IV
 
 // 1. Abstracts
-@import "abstracts/variables";
-@import "abstracts/mixins";
+@import "abstracts/variables.css";
+@import "abstracts/mixins.css";
 
 // 2. Base
-@import "elements/base/reset";
-@import "elements/base/typography";
-@import "elements/base/utilities";
+@import "elements/base/reset.css";
+@import "elements/base/typography.css";
+@import "elements/base/utilities.css";
 
 // 3. Components
-@import "../../components/css/buttons";
-@import "../../components/css/cards";
-@import "../../components/css/header";
-@import "../../components/css/hero";
-@import "../../components/css/footer";
-@import "../../components/css/service-cards";
-@import "../../components/css/membership";
+@import "../../components/css/buttons.css";
+@import "../../components/css/cards.css";
+@import "../../components/css/header.css";
+@import "../../components/css/hero.css";
+@import "../../components/css/footer.css";
+@import "../../components/css/service-cards.css";
+@import "../../components/css/membership.css";
 
 // 4. Layout (responsive containers and grids)
 .container {
@@ -48,12 +48,12 @@
 }
 
 // 5. Additional Styles
-@import "animations";
-@import "enhanced-footer";
-@import "enhanced-sections";
-@import "premium-animations";
-@import "premium-responsive";
-@import "professional-theme";
-@import "responsive";
-@import "style";
-@import "universal-navigation";
+@import "animations.css";
+@import "enhanced-footer.css";
+@import "enhanced-sections.css";
+@import "premium-animations.css";
+@import "premium-responsive.css";
+@import "professional-theme.css";
+@import "responsive.css";
+@import "style.css";
+@import "universal-navigation.css";
