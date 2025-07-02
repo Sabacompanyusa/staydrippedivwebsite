@@ -96,23 +96,32 @@ class App {
     // Global error handler
     window.addEventListener("error", (event) => {
       if (this.isDebug) {
-        console.error("Global error:", event.error);
+        console.error("Global error:", {
+          message: event.message || "Unknown error",
+          filename: event.filename || "Unknown file",
+          lineno: event.lineno || "Unknown line",
+          error: event.error,
+        });
       }
 
       // Track errors in analytics
       if (window.analyticsManager) {
         window.analyticsManager.trackEvent("error", "javascript", {
-          message: event.message,
-          filename: event.filename,
-          lineno: event.lineno,
+          message: event.message || "Unknown error",
+          filename: event.filename || "Unknown file",
+          lineno: event.lineno || 0,
         });
       }
     });
 
     // Unhandled promise rejection handler
     window.addEventListener("unhandledrejection", (event) => {
+      event.preventDefault(); // Prevent default browser handling
+
       if (this.isDebug) {
-        console.error("Unhandled promise rejection:", event.reason);
+        console.error("Unhandled promise rejection:", {
+          reason: event.reason?.toString() || "Unknown promise rejection",
+        });
       }
 
       if (window.analyticsManager) {
