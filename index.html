@@ -1408,8 +1408,41 @@
 
     <!-- Optimized Scripts -->
     <script>
+      // Global error handler to prevent script errors
+      window.addEventListener("error", function (event) {
+        console.warn("Script error caught and handled:", event.error);
+        // Prevent the error from propagating
+        return true;
+      });
+
+      // Handle unhandled promise rejections
+      window.addEventListener("unhandledrejection", function (event) {
+        console.warn("Unhandled promise rejection caught:", event.reason);
+        event.preventDefault();
+      });
+
+      // Safe DOM query function
+      function safeQuery(selector) {
+        try {
+          return document.querySelector(selector);
+        } catch (e) {
+          console.warn("Query selector error:", e);
+          return null;
+        }
+      }
+
+      // Safe DOM query all function
+      function safeQueryAll(selector) {
+        try {
+          return document.querySelectorAll(selector);
+        } catch (e) {
+          console.warn("Query selector all error:", e);
+          return [];
+        }
+      }
+
       // Mobile menu toggle
-      const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+      const mobileMenuToggle = safeQuery(".mobile-menu-toggle");
       if (mobileMenuToggle) {
         mobileMenuToggle.addEventListener("click", function () {
           const navLinks = document.querySelector(".nav-links");
