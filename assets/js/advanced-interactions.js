@@ -462,9 +462,13 @@ class AdvancedInteractions {
   }
 }
 
-// Initialize when DOM is loaded
+// Initialize when DOM is loaded safely
 document.addEventListener("DOMContentLoaded", () => {
-  new AdvancedInteractions();
+  try {
+    new AdvancedInteractions();
+  } catch (error) {
+    console.warn("AdvancedInteractions initialization error:", error);
+  }
 });
 
 // Export for potential module use
