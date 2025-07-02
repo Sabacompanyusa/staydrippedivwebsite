@@ -1,190 +1,453 @@
-// Main JavaScript file for Stay Dripped Mobile IV
-(function() {
-  'use strict';
+/**
+ * Stay Dripped Mobile IV - Main JavaScript
+ * Comprehensive functionality for the website
+ */
 
-  // Initialize the application
-  window.initializeApp = function() {
-    initScrollIndicator();
-    initSmoothScrolling();
-    initLazyLoading();
-    initAccessibility();
-    initAnalytics();
-  };
+class StayDrippedApp {
+  constructor() {
+    this.init();
+  }
 
-  // Scroll Progress Indicator
-  function initScrollIndicator() {
-    const scrollIndicator = document.getElementById('scrollIndicator');
-    
-    if (scrollIndicator) {
-      window.addEventListener('scroll', () => {
-        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrolled = (winScroll / height) * 100;
-        scrollIndicator.style.width = scrolled + '%';
+  init() {
+    this.setupEventListeners();
+    this.initializeComponents();
+    this.setupAnalytics();
+    this.setupAccessibility();
+  }
+
+  setupEventListeners() {
+    // DOM Content Loaded
+    document.addEventListener("DOMContentLoaded", () => {
+      this.initializeOnLoad();
+    });
+
+    // Window Load
+    window.addEventListener("load", () => {
+      this.optimizePerformance();
+    });
+
+    // Scroll Events
+    let ticking = false;
+    window.addEventListener("scroll", () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          this.handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+
+    // Resize Events
+    window.addEventListener(
+      "resize",
+      this.debounce(() => {
+        this.handleResize();
+      }, 250),
+    );
+  }
+
+  initializeOnLoad() {
+    this.setupFAQ();
+    this.setupSmoothScrolling();
+    this.setupBackToTop();
+    this.setupDarkMode();
+    this.setupMobileMenu();
+    this.setupFormHandling();
+    this.setupIntersectionObserver();
+  }
+
+  setupFAQ() {
+    const faqButtons = document.querySelectorAll(".faq-question");
+
+    faqButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const answer = button.nextElementSibling;
+        const expanded = button.getAttribute("aria-expanded") === "true";
+        const icon = button.querySelector("span");
+
+        // Close all other answers
+        document.querySelectorAll(".faq-answer").forEach((el) => {
+          if (el !== answer) {
+            el.style.display = "none";
+            el.previousElementSibling.setAttribute("aria-expanded", "false");
+            el.previousElementSibling.querySelector("span").textContent = "+";
+          }
+        });
+
+        // Toggle current answer
+        button.setAttribute("aria-expanded", !expanded);
+        answer.style.display = expanded ? "none" : "block";
+        icon.textContent = expanded ? "+" : "−";
+
+        // Track analytics
+        this.trackEvent(
+          "FAQ",
+          expanded ? "close" : "open",
+          button.textContent.trim(),
+        );
+      });
+    });
+  }
+
+  setupSmoothScrolling() {
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", (e) => {
+        e.preventDefault();
+        const target = document.querySelector(anchor.getAttribute("href"));
+
+        if (target) {
+          const headerHeight =
+            document.querySelector(".site-header").offsetHeight;
+          const targetPosition = target.offsetTop - headerHeight - 20;
+
+          window.scrollTo({
+            top: targetPosition,
+            behavior: "smooth",
+          });
+
+          // Track analytics
+          this.trackEvent(
+            "Navigation",
+            "scroll_to_section",
+            anchor.getAttribute("href"),
+          );
+        }
+      });
+    });
+  }
+
+  setupBackToTop() {
+    const backToTop = document.getElementById("back-to-top");
+
+    if (backToTop) {
+      backToTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        this.trackEvent("Navigation", "back_to_top");
       });
     }
   }
 
-  // Smooth Scrolling for all anchor links
-  function initSmoothScrolling() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        
-        // Skip if it's just "#"
-        if (href === '#') return;
-        
+  setupDarkMode() {
+    const toggle = document.getElementById("dark-mode-toggle");
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
+    const savedMode = localStorage.getItem("darkMode");
+
+    // Initialize dark mode
+    if (savedMode === "true" || (savedMode === null && prefersDark)) {
+      document.documentElement.classList.add("dark-mode");
+      if (toggle) toggle.textContent = "🌙";
+    }
+
+    if (toggle) {
+      toggle.addEventListener("click", () => {
+        const isDark = document.documentElement.classList.toggle("dark-mode");
+        toggle.textContent = isDark ? "🌙" : "☀️";
+        localStorage.setItem("darkMode", isDark);
+
+        this.trackEvent(
+          "UI",
+          "dark_mode_toggle",
+          isDark ? "enabled" : "disabled",
+        );
+      });
+    }
+  }
+
+  setupMobileMenu() {
+    const toggle = document.querySelector(".mobile-menu-toggle");
+    const nav = document.querySelector(".main-nav");
+
+    if (toggle && nav) {
+      toggle.addEventListener("click", () => {
+        const isOpen = toggle.classList.toggle("active");
+        nav.classList.toggle("active");
+        document.body.style.overflow = isOpen ? "hidden" : "";
+
+        this.trackEvent("UI", "mobile_menu_toggle", isOpen ? "open" : "close");
+      });
+
+      // Close menu when clicking nav links
+      nav.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          toggle.classList.remove("active");
+          nav.classList.remove("active");
+          document.body.style.overflow = "";
+        });
+      });
+    }
+  }
+
+  setupFormHandling() {
+    // Email capture forms
+    document.querySelectorAll('form[data-capture="email"]').forEach((form) => {
+      form.addEventListener("submit", (e) => {
         e.preventDefault();
-        const targetId = href.substring(1);
-        const targetElement = document.getElementById(targetId);
-        
-        if (targetElement) {
-          const headerHeight = document.querySelector('.header')?.offsetHeight || 0;
-          const targetPosition = targetElement.offsetTop - headerHeight - 20;
-          
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-          });
-          
+        const email = form.querySelector('input[type="email"]').value;
+
+        if (this.validateEmail(email)) {
+          this.handleEmailCapture(email);
+          this.trackEvent("Lead", "email_capture", "success");
+        } else {
+          this.showNotification("Please enter a valid email address", "error");
+          this.trackEvent("Lead", "email_capture", "validation_error");
         }
       });
     });
 
-    // Clear location hash when user scrolls away from the target
-    window.addEventListener('scroll', debounce(() => {
-      if (window.location.hash) {
-        const target = document.querySelector(window.location.hash);
-        if (target) {
-          const headerHeight = document.querySelector('.header')?.offsetHeight || 0;
-          const offset = target.getBoundingClientRect().top - headerHeight;
-          if (Math.abs(offset) > 200) {
-            history.replaceState(null, '', window.location.pathname + window.location.search);
-          }
-        }
-      }
-    }, 200));
+    // Phone number clicks
+    document.querySelectorAll('a[href^="tel:"]').forEach((link) => {
+      link.addEventListener("click", () => {
+        this.trackEvent("Contact", "phone_click", link.getAttribute("href"));
+      });
+    });
+
+    // Email clicks
+    document.querySelectorAll('a[href^="mailto:"]').forEach((link) => {
+      link.addEventListener("click", () => {
+        this.trackEvent("Contact", "email_click", link.getAttribute("href"));
+      });
+    });
   }
 
-  // Lazy Loading for images
-  function initLazyLoading() {
-    const lazyImages = document.querySelectorAll('img[data-src]');
-    
-    if ('IntersectionObserver' in window) {
-      const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
+  setupIntersectionObserver() {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px",
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate-fadeInUp");
+          this.trackEvent(
+            "Engagement",
+            "section_view",
+            entry.target.id || entry.target.className,
+          );
+        }
+      });
+    }, observerOptions);
+
+    // Observe sections
+    document.querySelectorAll("section, .card").forEach((el) => {
+      observer.observe(el);
+    });
+  }
+
+  handleScroll() {
+    const scrollY = window.scrollY;
+    const backToTop = document.getElementById("back-to-top");
+    const header = document.querySelector(".site-header");
+
+    // Back to top button
+    if (backToTop) {
+      backToTop.style.display = scrollY > 300 ? "block" : "none";
+    }
+
+    // Header scroll effect
+    if (header) {
+      header.classList.toggle("scrolled", scrollY > 100);
+    }
+
+    // Floating review buttons visibility
+    const floatingBtns = document.querySelectorAll(".floating-review-btn");
+    floatingBtns.forEach((btn) => {
+      btn.style.opacity = scrollY > 200 ? "1" : "0.7";
+    });
+  }
+
+  handleResize() {
+    // Close mobile menu on resize to desktop
+    if (window.innerWidth >= 1024) {
+      const toggle = document.querySelector(".mobile-menu-toggle");
+      const nav = document.querySelector(".main-nav");
+
+      if (toggle && nav) {
+        toggle.classList.remove("active");
+        nav.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+    }
+  }
+
+  optimizePerformance() {
+    // Lazy load images
+    if ("IntersectionObserver" in window) {
+      const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const img = entry.target;
             img.src = img.dataset.src;
-            img.removeAttribute('data-src');
-            img.classList.add('loaded');
-            observer.unobserve(img);
+            img.classList.remove("lazy");
+            imageObserver.unobserve(img);
           }
         });
       });
-      
-      lazyImages.forEach(img => imageObserver.observe(img));
-    } else {
-      // Fallback for older browsers
-      lazyImages.forEach(img => {
-        img.src = img.dataset.src;
-        img.removeAttribute('data-src');
+
+      document.querySelectorAll("img[data-src]").forEach((img) => {
+        imageObserver.observe(img);
       });
     }
+
+    // Preload critical resources
+    this.preloadResources();
   }
 
-  // Accessibility improvements
-  function initAccessibility() {
-    // Skip to main content
-    const skipLink = document.querySelector('.skip-link');
+  preloadResources() {
+    const criticalResources = [
+      "https://staydripped.intakeq.com/booking",
+      "https://static.elfsight.com/platform/platform.js",
+    ];
+
+    criticalResources.forEach((url) => {
+      const link = document.createElement("link");
+      link.rel = "preload";
+      link.href = url;
+      link.as = "script";
+      document.head.appendChild(link);
+    });
+  }
+
+  setupAnalytics() {
+    // Initialize analytics if available
+    if (typeof gtag === "function") {
+      this.analytics = gtag;
+    } else if (typeof fbq === "function") {
+      this.analytics = fbq;
+    }
+
+    // Track page view
+    this.trackEvent("Page", "view", window.location.pathname);
+  }
+
+  setupAccessibility() {
+    // Skip link functionality
+    const skipLink = document.querySelector(".skip-link");
     if (skipLink) {
-      skipLink.addEventListener('click', function(e) {
+      skipLink.addEventListener("click", (e) => {
         e.preventDefault();
-        const mainContent = document.getElementById('main-content');
-        if (mainContent) {
-          mainContent.focus();
-          mainContent.scrollIntoView();
+        const target = document.querySelector(skipLink.getAttribute("href"));
+        if (target) {
+          target.focus();
+          target.scrollIntoView();
         }
       });
     }
-    
-    // Manage focus for modals
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        // Close any open modals
-        const activeModals = document.querySelectorAll('.modal.active, .exam-modal-overlay.active');
-        activeModals.forEach(modal => {
-          if (modal.id === 'examModal' && typeof closeExamModal === 'function') {
-            closeExamModal();
-          }
-          // Add handlers for other modals as needed
+
+    // Keyboard navigation
+    document.addEventListener("keydown", (e) => {
+      // Escape key closes modals/menus
+      if (e.key === "Escape") {
+        const activeMenu = document.querySelector(".mobile-menu-toggle.active");
+        if (activeMenu) {
+          activeMenu.click();
+        }
+      }
+    });
+
+    // Focus management
+    document.addEventListener("focusin", (e) => {
+      if (e.target.matches(".btn, a, input, textarea, select")) {
+        e.target.classList.add("focus-visible");
+      }
+    });
+
+    document.addEventListener("focusout", (e) => {
+      e.target.classList.remove("focus-visible");
+    });
+  }
+
+  // Utility Functions
+  validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  }
+
+  handleEmailCapture(email) {
+    // Store email for booking
+    sessionStorage.setItem("userEmail", email);
+
+    // Show success message
+    this.showNotification("Thanks! We'll be in touch soon.", "success");
+
+    // Optionally redirect to booking with email pre-filled
+    setTimeout(() => {
+      window.open(
+        `https://staydripped.intakeq.com/booking?email=${encodeURIComponent(email)}`,
+        "_blank",
+      );
+    }, 1000);
+  }
+
+  showNotification(message, type = "info") {
+    const notification = document.createElement("div");
+    notification.className = `notification notification--${type}`;
+    notification.innerHTML = `
+      <span>${message}</span>
+      <button onclick="this.parentElement.remove()" aria-label="Close">×</button>
+    `;
+
+    notification.style.cssText = `
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: ${type === "success" ? "var(--accent)" : type === "error" ? "#dc3545" : "var(--primary)"};
+      color: white;
+      padding: 1rem 1.5rem;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      max-width: 400px;
+      animation: slideInRight 0.3s ease-out;
+    `;
+
+    document.body.appendChild(notification);
+
+    // Auto remove after 5 seconds
+    setTimeout(() => {
+      if (notification.parentElement) {
+        notification.style.animation = "slideOutRight 0.3s ease-out";
+        setTimeout(() => notification.remove(), 300);
+      }
+    }, 5000);
+  }
+
+  trackEvent(category, action, label = "") {
+    // Track with multiple analytics providers
+    try {
+      // Google Analytics 4
+      if (typeof gtag === "function") {
+        gtag("event", action, {
+          event_category: category,
+          event_label: label,
         });
       }
-    });
-    
-    // Ensure all interactive elements are keyboard accessible
-    const interactiveElements = document.querySelectorAll('button, a, input, select, textarea');
-    interactiveElements.forEach(element => {
-      if (!element.hasAttribute('tabindex') && element.tagName !== 'A' && element.tagName !== 'BUTTON') {
-        element.setAttribute('tabindex', '0');
+
+      // Facebook Pixel
+      if (typeof fbq === "function") {
+        fbq("track", "CustomEvent", {
+          category,
+          action,
+          label,
+        });
       }
-    });
-  }
 
-  // Initialize Analytics
-  function initAnalytics() {
-    // Page view tracking
-    if (typeof gtag !== 'undefined') {
-      gtag('event', 'page_view', {
-        page_title: document.title,
-        page_location: window.location.href,
-        page_path: window.location.pathname
-      });
+      // Console log for debugging
+      if (process.env.NODE_ENV === "development") {
+        console.log("Analytics Event:", { category, action, label });
+      }
+    } catch (error) {
+      console.warn("Analytics tracking error:", error);
     }
-    
-    // Track CTA clicks
-    document.querySelectorAll('.cta, .cta-button').forEach(button => {
-      button.addEventListener('click', function() {
-        const label = this.textContent.trim();
-        if (typeof gtag !== 'undefined') {
-          gtag('event', 'click', {
-            event_category: 'cta',
-            event_label: label,
-            value: 1
-          });
-        }
-      });
-    });
-    
-    // Track phone number clicks
-    document.querySelectorAll('a[href^="tel:"]').forEach(link => {
-      link.addEventListener('click', function() {
-        if (typeof gtag !== 'undefined') {
-          gtag('event', 'click', {
-            event_category: 'contact',
-            event_label: 'phone_number',
-            value: 1
-          });
-        }
-      });
-    });
-    
-    // Track email clicks
-    document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
-      link.addEventListener('click', function() {
-        if (typeof gtag !== 'undefined') {
-          gtag('event', 'click', {
-            event_category: 'contact',
-            event_label: 'email',
-            value: 1
-          });
-        }
-      });
-    });
   }
 
-  // Utility functions
-  window.debounce = function(func, wait) {
+  debounce(func, wait) {
     let timeout;
     return function executedFunction(...args) {
       const later = () => {
@@ -194,89 +457,39 @@
       clearTimeout(timeout);
       timeout = setTimeout(later, wait);
     };
+  }
+}
+
+// Global booking function for membership buttons
+window.forwardToBooking = function (form) {
+  const email = form.email?.value || "";
+  const plan = form.plan?.value || "";
+
+  const serviceMap = {
+    Premium: "PREMIUM_MEMBERSHIP_2025",
+    Essential: "ESSENTIAL_MEMBERSHIP_2025",
+    Shot: "SHOTPASS_MEMBERSHIP_2025",
   };
 
-  window.throttle = function(func, limit) {
-    let inThrottle;
-    return function(...args) {
-      if (!inThrottle) {
-        func.apply(this, args);
-        inThrottle = true;
-        setTimeout(() => inThrottle = false, limit);
-      }
-    };
-  };
+  const serviceId = serviceMap[plan] || "";
+  const url = serviceId
+    ? `https://staydripped.intakeq.com/booking?serviceId=${serviceId}&email=${encodeURIComponent(email)}`
+    : "https://staydripped.intakeq.com/booking";
 
-  // Form validation
-  window.validateEmail = function(email) {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-  };
+  window.open(url, "_blank", "noopener");
 
-  window.validatePhone = function(phone) {
-    const re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{4,6}$/;
-    return re.test(phone);
-  };
-
-  // Animation on scroll
-  function initScrollAnimations() {
-    const animatedElements = document.querySelectorAll('.fade-in, .fade-in-up, .slide-in');
-    
-    if ('IntersectionObserver' in window) {
-      const animationObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animated');
-          }
-        });
-      }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      });
-      
-      animatedElements.forEach(element => {
-        animationObserver.observe(element);
-      });
-    } else {
-      // Fallback: show all elements
-      animatedElements.forEach(element => {
-        element.classList.add('animated');
-      });
-    }
+  // Track conversion
+  if (window.stayDrippedApp) {
+    window.stayDrippedApp.trackEvent("Conversion", "membership_signup", plan);
   }
 
-  // Initialize animations when DOM is ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initScrollAnimations);
-  } else {
-    initScrollAnimations();
-  }
+  return false;
+};
 
-  // Performance monitoring
-  if ('performance' in window) {
-    window.addEventListener('load', () => {
-      const perfData = window.performance.timing;
-      const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
-      
-      if (typeof gtag !== 'undefined' && pageLoadTime > 0) {
-        gtag('event', 'timing_complete', {
-          name: 'load',
-          value: pageLoadTime,
-          event_category: 'performance'
-        });
-      }
-    });
-  }
+// Initialize the application
+window.stayDrippedApp = new StayDrippedApp();
 
-  // Service Worker registration (for PWA support)
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/sw.js').then(registration => {
-        console.log('ServiceWorker registration successful');
-      }).catch(err => {
-        console.log('ServiceWorker registration failed: ', err);
-      });
-    });
-  }
-
-})();
+// Export for module usage
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = StayDrippedApp;
+}
