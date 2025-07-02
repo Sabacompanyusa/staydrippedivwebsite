@@ -5,18 +5,34 @@
 
 class AdvancedInteractions {
   constructor() {
-    this.init();
+    try {
+      this.init();
+    } catch (error) {
+      console.warn("AdvancedInteractions initialization error:", error);
+    }
   }
 
   init() {
-    this.setupAdvancedScrollEffects();
-    this.setupMagneticButtons();
-    this.setupTextAnimations();
-    this.setupParticleBackground();
-    this.setupSmoothReveal();
-    this.setupAdvancedFAQ();
-    this.setupPerformanceOptimization();
-    this.setupAccessibilityEnhancements();
+    const methods = [
+      "setupAdvancedScrollEffects",
+      "setupMagneticButtons",
+      "setupTextAnimations",
+      "setupParticleBackground",
+      "setupSmoothReveal",
+      "setupAdvancedFAQ",
+      "setupPerformanceOptimization",
+      "setupAccessibilityEnhancements",
+    ];
+
+    methods.forEach((methodName) => {
+      try {
+        if (typeof this[methodName] === "function") {
+          this[methodName]();
+        }
+      } catch (error) {
+        console.warn(`Error in ${methodName}:`, error);
+      }
+    });
   }
 
   // Advanced Scroll Effects
@@ -88,7 +104,7 @@ class AdvancedInteractions {
       .revealed .animate-slide-up {
         animation: advancedSlideUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
       }
-      
+
       @keyframes advancedSlideUp {
         from {
           opacity: 0;
@@ -101,7 +117,7 @@ class AdvancedInteractions {
           filter: blur(0);
         }
       }
-      
+
       section {
         transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       }
@@ -135,8 +151,8 @@ class AdvancedInteractions {
         const gradientY = ((e.clientY - rect.top) / rect.height) * 100;
 
         button.style.background = `
-          radial-gradient(circle at ${gradientX}% ${gradientY}%, 
-            rgba(255,255,255,0.2) 0%, 
+          radial-gradient(circle at ${gradientX}% ${gradientY}%,
+            rgba(255,255,255,0.2) 0%,
             transparent 50%),
           var(--gradient-primary)
         `;
@@ -368,7 +384,7 @@ class AdvancedInteractions {
       .animate-pulse-glow:not(.in-viewport) {
         animation-play-state: paused;
       }
-      
+
       .in-viewport.animate-float,
       .in-viewport.animate-pulse-glow {
         animation-play-state: running;
