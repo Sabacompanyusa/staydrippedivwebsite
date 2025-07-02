@@ -73,7 +73,7 @@
 .nav-link.active {
   background: var(--secondary);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 188, 212, 0.3);
+  box-shadow: 0 4px 12px rgb(0 188 212 / 30%);
 }
 
 .mobile-menu-toggle {
@@ -117,6 +117,7 @@
   100% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
@@ -200,7 +201,7 @@
 }
 
 .section-dark .section-subtitle {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgb(255 255 255 / 80%);
 }
 
 /* Menu Grid Styles */
@@ -420,7 +421,7 @@
 .nav-link:focus-visible,
 .btn:focus-visible,
 .mobile-menu-toggle:focus-visible {
-  outline: 3px solid rgba(0, 188, 212, 0.5);
+  outline: 3px solid rgb(0 188 212 / 50%);
   outline-offset: 2px;
 }
 
