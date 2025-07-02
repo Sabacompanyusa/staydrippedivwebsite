@@ -291,8 +291,10 @@
 /* Back Button Container */
 .back-button-container {
   padding: 1.5rem 2rem 1rem;
-  position: sticky;
+  position: fixed;
   top: 80px;
+  left: 0;
+  right: 0;
   z-index: 999;
   margin-bottom: 1.5rem;
   display: flex;
