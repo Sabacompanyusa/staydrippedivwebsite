@@ -226,7 +226,7 @@ class PremiumInteractions {
         const href = this.getAttribute("href");
 
         // Skip if href is just '#' or empty
-        if (!href || href === '#' || href.length <= 1) {
+        if (!href || href === "#" || href.length <= 1) {
           return;
         }
 
@@ -246,16 +246,19 @@ class PremiumInteractions {
 
             window.scrollTo({
               top: targetPosition,
-            behavior: "smooth",
-          });
+              behavior: "smooth",
+            });
 
-          // Add visual feedback
-          target.style.transform = "scale(1.02)";
-          target.style.transition = "transform 0.3s ease";
+            // Add visual feedback
+            target.style.transform = "scale(1.02)";
+            target.style.transition = "transform 0.3s ease";
 
-          setTimeout(() => {
-            target.style.transform = "scale(1)";
-          }, 300);
+            setTimeout(() => {
+              target.style.transform = "scale(1)";
+            }, 300);
+          }
+        } catch (error) {
+          console.warn("Error in smooth scrolling:", error);
         }
       });
     });
