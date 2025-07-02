@@ -1,13 +1,13 @@
 !function(e, n, t, o, a, i) {
-    var r, c, s, l, u, d = this, p = Math.floor(1e4 * Math.random()), f = Function.prototype, h = /^((http.?:)\/\/([^:\/\s]+)(:\d+)*)/, m = /[\-\w]+\/\.\.\//, g = /([^:])\/\//g, v = "", y = {}, w = e.easyXDM, k = "easyXDM_", b = !1;
+    let r, c, s, l, u, d = this, p = Math.floor(1e4 * Math.random()), f = Function.prototype, h = /^((http.?:)\/\/([^:\/\s]+)(:\d+)*)/, m = /[\-\w]+\/\.\.\//, g = /([^:])\/\//g, v = "", y = {}, w = e.easyXDM, k = "easyXDM_", b = !1;
     function x(e, n) {
-        var t = typeof e[n];
+        const t = typeof e[n];
         return "function" == t || !("object" != t || !e[n]) || "unknown" == t
     }
     function O() {
-        var e, n = "Shockwave Flash", t = "application/x-shockwave-flash";
+        let e, n = "Shockwave Flash", t = "application/x-shockwave-flash";
         if (!I(navigator.plugins) && "object" == typeof navigator.plugins[n]) {
-            var o = navigator.plugins[n].description;
+            const o = navigator.plugins[n].description;
             o && !I(navigator.mimeTypes) && navigator.mimeTypes[t] && navigator.mimeTypes[t].enabledPlugin && (c = o.match(/\d+/g))
         }
         if (!c)
@@ -18,7 +18,7 @@
             } catch (e) {}
         if (!c)
             return !1;
-        var a = parseInt(c[0], 10)
+        const a = parseInt(c[0], 10)
           , i = parseInt(c[1], 10);
         return s = a > 9 && i > 0,
         !0
@@ -43,11 +43,11 @@
             e.detachEvent("on" + n, t)
         }
     }
-    var _, M = !1, T = [];
+    let _, M = !1, T = [];
     function E() {
         if (!M) {
             M = !0;
-            for (var e = 0; e < T.length; e++)
+            for (let e = 0; e < T.length; e++)
                 T[e]();
             T.length = 0
         }
@@ -62,7 +62,7 @@
         }
         )),
         n.documentElement.doScroll && e === top) {
-            var S = function() {
+            const S = function() {
                 if (!M) {
                     try {
                         n.documentElement.doScroll("left")
@@ -87,10 +87,10 @@
     }
     function P(n) {
         -1 === n.indexOf("http") && (n = e.parent.location.href);
-        var t = n.toLowerCase().match(h);
+        const t = n.toLowerCase().match(h);
         if (!t)
             return "";
-        var o = t[2]
+        let o = t[2]
           , a = t[3]
           , i = t[4] || "";
         return ("http:" == o && ":80" == i || "https:" == o && ":443" == i) && (i = ""),
@@ -98,7 +98,7 @@
     }
     function R(e) {
         if (!(e = e.replace(g, "$1/")).match(/^(http||https):\/\//)) {
-            var n = "/" === e.substring(0, 1) ? "" : t.pathname;
+            let n = "/" === e.substring(0, 1) ? "" : t.pathname;
             "/" !== n.substring(n.length - 1) && (n = n.substring(0, n.lastIndexOf("/") + 1)),
             e = t.protocol + "//" + t.host + n + e
         }
@@ -107,16 +107,16 @@
         return e
     }
     function q(e, n) {
-        var t = ""
+        let t = ""
           , o = e.indexOf("#");
         -1 !== o && (t = e.substring(o),
         e = e.substring(0, o));
-        var a = [];
-        for (var r in n)
+        const a = [];
+        for (const r in n)
             n.hasOwnProperty(r) && a.push(r + "=" + i(n[r]));
         return e + (b ? "#" : -1 == e.indexOf("?") ? "?" : "&") + a.join("&") + t
     }
-    var F = function(e) {
+    const F = function(e) {
         for (var n, t = {}, o = (e = e.substring(1).split("&")).length; o--; )
             t[(n = e[o].split("="))[0]] = a(n[1]);
         return t
@@ -124,8 +124,8 @@
     function I(e) {
         return void 0 === e
     }
-    var B, H = function() {
-        var e = {}
+    let B, H = function() {
+        let e = {}
           , n = {
             a: [1, 2, 3]
         }
@@ -142,15 +142,15 @@
         e) : null)
     };
     function D(e, n, t) {
-        var o;
-        for (var a in n)
+        let o;
+        for (const a in n)
             n.hasOwnProperty(a) && (a in e ? "object" == typeof (o = n[a]) ? D(e[a], o, t) : t || (e[a] = n[a]) : e[a] = n[a]);
         return e
     }
     function L(e) {
-        var t;
+        let t;
         I(r) && function() {
-            var e = n.body.appendChild(n.createElement("form"))
+            const e = n.body.appendChild(n.createElement("form"))
               , t = e.appendChild(n.createElement("input"));
             t.name = k + "TEST" + p,
             r = t !== e.elements[t.name],
@@ -166,7 +166,7 @@
             left: "0px"
         }),
         e.container = n.body);
-        var o = e.props.src;
+        const o = e.props.src;
         if (e.props.src = "javascript:false",
         D(t, e.props),
         t.border = t.frameBorder = 0,
@@ -174,12 +174,12 @@
         e.container.appendChild(t),
         e.onLoad && l(t, "load", e.onLoad),
         e.usePost) {
-            var a, i = e.container.appendChild(n.createElement("form"));
+            let a, i = e.container.appendChild(n.createElement("form"));
             if (i.target = t.name,
             i.action = o,
             i.method = "POST",
             "object" == typeof e.usePost)
-                for (var c in e.usePost)
+                for (const c in e.usePost)
                     e.usePost.hasOwnProperty(c) && (r ? a = n.createElement('<input name="' + c + '"/>') : (a = n.createElement("INPUT")).name = c,
                     a.value = e.usePost[c],
                     i.appendChild(a));
@@ -191,7 +191,7 @@
         t
     }
     function j(o) {
-        var a, i = o.protocol;
+        let a, i = o.protocol;
         switch (o.isHost = o.isHost || I(F.xdm_p),
         b = o.hash || !1,
         o.props || (o.props = {}),
@@ -221,7 +221,7 @@
                         }
                     o.local || (o.local = e)
                 }
-                var d = {
+                const d = {
                     xdm_c: o.channel,
                     xdm_p: 0
                 };
@@ -314,7 +314,7 @@
         on: l,
         un: u,
         requiresJSON: function(t) {
-            var o;
+            let o;
             "object" == typeof (o = e)["JSON"] && o.JSON || n.write('<script type="text/javascript" src="' + t + '"><\/script>')
         }
     },
@@ -325,14 +325,14 @@
         },
         get: function(e, n) {
             if (B.hasOwnProperty(e)) {
-                var t = B[e];
+                const t = B[e];
                 return n && delete B[e],
                 t
             }
         }
     },
     y.Socket = function(e) {
-        var n = J(j(e).concat([{
+        const n = J(j(e).concat([{
             incoming: function(n, t) {
                 e.onMessage(n, t)
             },
@@ -355,14 +355,14 @@
     ,
     y.Rpc = function(e, n) {
         if (n.local)
-            for (var t in n.local)
+            for (const t in n.local)
                 if (n.local.hasOwnProperty(t)) {
-                    var o = n.local[t];
+                    const o = n.local[t];
                     "function" == typeof o && (n.local[t] = {
                         method: o
                     })
                 }
-        var a = J(j(e).concat([new y.stack.RpcBehavior(this,n), {
+        const a = J(j(e).concat([new y.stack.RpcBehavior(this,n), {
             callback: function(n) {
                 e.onReady && e.onReady(n)
             }
@@ -377,7 +377,7 @@
     }
     ,
     y.stack.SameOriginTransport = function(e) {
-        var n, a, i, r;
+        let n, a, i, r;
         return n = {
             outgoing: function(e, n, t) {
                 i(e),
@@ -409,9 +409,9 @@
                     }
                 }
                 ))) : (i = function() {
-                    var e = parent;
+                    let e = parent;
                     if ("" !== v)
-                        for (var n = 0, t = v.split("."); n < t.length; n++)
+                        for (let n = 0, t = v.split("."); n < t.length; n++)
                             e = e[t[n]];
                     return e.easyXDM
                 }().Fn.get(e.channel, !0)((function(e) {
@@ -430,7 +430,7 @@
     }
     ,
     y.stack.FlashTransport = function(e) {
-        var a, r, c, l, u;
+        let a, r, c, l, u;
         function p(e, n) {
             o((function() {
                 a.up.incoming(e, c)
@@ -495,7 +495,7 @@
                 )),
                 y.Fn.set("flash_" + e.channel + "_onMessage", p),
                 e.swf = R(e.swf);
-                var n = N(e.swf)
+                const n = N(e.swf)
                   , i = function() {
                     y.stack.FlashTransport[n].init = !0,
                     (l = y.stack.FlashTransport[n].swf).createChannel(e.channel, e.secret, P(e.remote), e.isHost),
@@ -529,10 +529,10 @@
     }
     ,
     y.stack.PostMessageTransport = function(n) {
-        var a, i, r, c;
+        let a, i, r, c;
         function s(e) {
             if ("string" == typeof e.data) {
-                var o = function(e) {
+                const o = function(e) {
                     if (e.origin)
                         return P(e.origin);
                     if (e.uri)
@@ -590,7 +590,7 @@
     }
     ,
     y.stack.FrameElementTransport = function(a) {
-        var i, r, c, s;
+        let i, r, c, s;
         return i = {
             outgoing: function(e, n, t) {
                 c.call(this, e),
@@ -635,9 +635,9 @@
     }
     ,
     y.stack.NameTransport = function(e) {
-        var n, t, a, i, r, c, s, l;
+        let n, t, a, i, r, c, s, l;
         function d(n) {
-            var o = e.remoteHelper + (t ? "#_3" : "#_2") + e.channel;
+            const o = e.remoteHelper + (t ? "#_3" : "#_2") + e.channel;
             a.contentWindow.sendMessage(n, o)
         }
         function p() {
@@ -685,8 +685,8 @@
                 }),
                 i = L(e)) : (e.remoteHelper = e.remote,
                 y.Fn.set(e.channel, f));
-                var n = function() {
-                    var t = a || this;
+                const n = function() {
+                    const t = a || this;
                     u(t, "load", n),
                     y.Fn.set(e.channel + "_load", h),
                     function e() {
@@ -707,10 +707,10 @@
     }
     ,
     y.stack.HashTransport = function(n) {
-        var t, a, i, r, c, s, l, u, d;
+        let t, a, i, r, c, s, l, u, d;
         function p() {
             if (s) {
-                var e = s.location.href
+                let e = s.location.href
                   , n = ""
                   , o = e.indexOf("#");
                 -1 != o && (n = e.substring(o)),
@@ -751,7 +751,7 @@
                         }
                         ;
                     else {
-                        var i = 0
+                        let i = 0
                           , p = n.delay / 50;
                         !function e() {
                             if (++i > p)
@@ -786,10 +786,10 @@
     }
     ,
     y.stack.ReliableBehavior = function(e) {
-        var n, t, o = 0, a = 0, i = "";
+        let n, t, o = 0, a = 0, i = "";
         return n = {
             incoming: function(e, r) {
-                var c = e.indexOf("_")
+                const c = e.indexOf("_")
                   , s = e.substring(0, c).split(",");
                 e = e.substring(c + 1),
                 s[0] == o && (i = "",
@@ -807,16 +807,16 @@
     }
     ,
     y.stack.QueueBehavior = function(e) {
-        var n, t, r = [], c = !0, s = "", l = 0, u = !1, d = !1;
+        let n, t, r = [], c = !0, s = "", l = 0, u = !1, d = !1;
         function p() {
             if (e.remove && 0 === r.length)
                 return (a = n).up.down = a.down,
                 a.down.up = a.up,
                 void (a.up = a.down = null);
-            var a;
+            let a;
             if (!c && 0 !== r.length && !t) {
                 c = !0;
-                var i = r.shift();
+                const i = r.shift();
                 n.down.outgoing(i.data, i.origin, (function(e) {
                     c = !1,
                     i.callback && o((function() {
@@ -837,13 +837,13 @@
             },
             callback: function(e) {
                 c = !1;
-                var t = n.up;
+                const t = n.up;
                 p(),
                 t.callback(e)
             },
             incoming: function(t, o) {
                 if (d) {
-                    var i = t.indexOf("_")
+                    const i = t.indexOf("_")
                       , r = parseInt(t.substring(0, i), 10);
                     s += t.substring(i + 1),
                     0 === r && (e.encode && (s = a(s)),
@@ -854,7 +854,7 @@
             },
             outgoing: function(t, o, a) {
                 e.encode && (t = i(t));
-                var c, s = [];
+                let c, s = [];
                 if (d) {
                     for (; 0 !== t.length; )
                         c = t.substring(0, l),
@@ -882,14 +882,14 @@
     }
     ,
     y.stack.VerifyBehavior = function(e) {
-        var n, t, o;
+        let n, t, o;
         function a() {
             t = Math.random().toString(16).substring(2),
             n.down.outgoing(t)
         }
         return n = {
             incoming: function(i, r) {
-                var c = i.indexOf("_");
+                const c = i.indexOf("_");
                 -1 === c ? i === t ? n.up.callback(!0) : o || (o = i,
                 e.initiate || a(),
                 n.down.outgoing(i)) : i.substring(0, c) === o && n.up.incoming(i.substring(c + 1), r)
@@ -904,15 +904,15 @@
     }
     ,
     y.stack.RpcBehavior = function(e, n) {
-        var t, o = n.serializer || H(), a = 0, i = {};
+        let t, o = n.serializer || H(), a = 0, i = {};
         function r(e) {
             e.jsonrpc = "2.0",
             t.down.outgoing(o.stringify(e))
         }
         function c(e, n) {
-            var t = Array.prototype.slice;
+            const t = Array.prototype.slice;
             return function() {
-                var o, c = arguments.length, s = {
+                let o, c = arguments.length, s = {
                     method: n
                 };
                 c > 0 && "function" == typeof arguments[c - 1] ? (c > 1 && "function" == typeof arguments[c - 2] ? (o = {
@@ -931,7 +931,7 @@
         }
         function s(n, t, o, a) {
             if (o) {
-                var i, c, s;
+                let i, c, s;
                 t ? (i = function(e) {
                     i = f,
                     r({
@@ -942,7 +942,7 @@
                 ,
                 c = function(e, n) {
                     c = f;
-                    var o = {
+                    const o = {
                         id: t,
                         error: {
                             code: -32099,
@@ -956,7 +956,7 @@
                 s = a,
                 "[object Array]" !== Object.prototype.toString.call(s) && (a = [a]);
                 try {
-                    var l = e.context || o.scope
+                    const l = e.context || o.scope
                       , u = o.method.apply(l, a.concat([i, c]));
                     I(u) || i(u)
                 } catch (e) {
@@ -973,23 +973,23 @@
         }
         return t = {
             incoming: function(e, t) {
-                var a = o.parse(e);
+                const a = o.parse(e);
                 if (a.method)
                     n.handle ? n.handle(a, r) : s(a.method, a.id, n.local[a.method], a.params);
                 else {
-                    var c = i[a.id];
+                    const c = i[a.id];
                     a.error ? c.error && c.error(a.error) : c.success && c.success(a.result),
                     delete i[a.id]
                 }
             },
             init: function() {
                 if (n.remote)
-                    for (var o in n.remote)
+                    for (const o in n.remote)
                         n.remote.hasOwnProperty(o) && (e[o] = c(n.remote[o], o));
                 t.down.init()
             },
             destroy: function() {
-                for (var o in n.remote)
+                for (const o in n.remote)
                     n.remote.hasOwnProperty(o) && e.hasOwnProperty(o) && delete e[o];
                 t.down.destroy()
             }
@@ -999,12 +999,12 @@
     d.easyXDM = y
 }(window, document, location, window.setTimeout, decodeURIComponent, encodeURIComponent),
 function() {
-    var e = window.intakeq
+    const e = window.intakeq
       , n = document.getElementById("intakeq");
     if (n) {
-        var t = window.intakeqHost || "intakeq.com";
+        const t = window.intakeqHost || "intakeq.com";
         n.style.position = "relative";
-        var o = document.createElement("span");
+        const o = document.createElement("span");
         o.innerHTML = "Loading...",
         o.style.color = "#888",
         o.style.fontSize = "15px",
@@ -1015,7 +1015,7 @@ function() {
         o.style.textAlign = "center",
         n.appendChild(o);
         var a, i, r = function(e, n) {
-            var t = null;
+            let t = null;
             try {
                 t = new CustomEvent(e,{
                     detail: n
