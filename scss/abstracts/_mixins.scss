@@ -277,14 +277,16 @@
   }
 }
 
-// Dark mode support
+// Dark mode support mixin - works both inside and outside selectors
 @mixin dark-mode {
-  @media (prefers-color-scheme: dark) {
-    @content;
-  }
+  @at-root {
+    @media (prefers-color-scheme: dark) {
+      @content;
+    }
 
-  .dark {
-    @content;
+    .dark & {
+      @content;
+    }
   }
 }
 
