@@ -1,6 +1,6 @@
-let disclosureModalContainer = document.createElement("div");
+const disclosureModalContainer = document.createElement("div");
 disclosureModalContainer.id = "disclosure-modal-container";
-let innerModel = document.createElement("div");
+const innerModel = document.createElement("div");
 
 function updateModelSize(e) {
   e.matches
@@ -14,12 +14,12 @@ function updateModelSize(e) {
   (disclosureModalContainer.style.display = "none"),
   document.body.appendChild(disclosureModalContainer);
 
-var x = window.matchMedia("(max-width: 1024px)");
+const x = window.matchMedia("(max-width: 1024px)");
 updateModelSize(x),
   x.addEventListener("change", function () {
     updateModelSize(x);
   });
-let disclosureModelContainer = document.getElementById(
+const disclosureModelContainer = document.getElementById(
   "disclosure-modal-container"
 );
 
@@ -77,17 +77,17 @@ function checkButtonAvailability(e, t) {
 }
 
 function loadForm() {
-  var e = document.createElement("div");
+  const e = document.createElement("div");
   (e.id = "modal-container"),
     (e.style.cssText =
       "position: fixed; top: 0; left: 0; width: 100%; height:100vh; z-index: 9999; display: flex; justify-content: center; align-items: center;");
-  var t = document.createElement("div");
+  const t = document.createElement("div");
 
   function n() {
-    let e = document
+    const e = document
       .getElementById("qualiphy-script")
       .getAttribute("data-formsrc");
-    var n = window.innerWidth,
+    const n = window.innerWidth,
       o = window.innerHeight;
 
     n <= 768 ? Math.min(0.9 * n, 90) : Math.min(0.5 * n, 90),
@@ -108,7 +108,7 @@ function loadForm() {
     window.removeEventListener("resize", n);
   });
 
-  var iframeContainer = document.createElement("div");
+  const iframeContainer = document.createElement("div");
   iframeContainer.appendChild(t);
   iframeContainer.appendChild(closeButton);
 
@@ -122,7 +122,7 @@ function loadForm() {
     }),
     e.appendChild(t),
     document.body.appendChild(e);
-  let o = document.getElementById("disclosure-modal-container");
+  const o = document.getElementById("disclosure-modal-container");
   // o && o.parentNode && document.body.removeChild(o)
   const el = document.getElementById("disclosure-modal-container");
   if (el) {
@@ -143,7 +143,7 @@ function loadForm() {
       e.preventDefault(), window.open("https://qualiphy.me", "_blank");
     }),
   document.addEventListener("DOMContentLoaded", function () {
-    var e = document.getElementById("qualiphy-script");
+    const e = document.getElementById("qualiphy-script");
     checkButtonAvailability(
       e.getAttribute("data-timezone"),
       e.getAttribute("data-examhours")
