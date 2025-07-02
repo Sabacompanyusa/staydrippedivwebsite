@@ -920,13 +920,12 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="https://qualiphy.com/api/integration/loader.js"></script>
     <script src="../assets/js/gfe-utility.js"></script>
     <script src="../assets/js/premium-interactions.js" defer></script>
     <script src="../assets/js/advanced-interactions.js" defer></script>
 
     <script>
-      // Initialize Qualiphy widget
+      // Initialize Qualiphy widget with error handling
       const qualiphyConfig = {
         clinicId: "3454",
         examIds:
@@ -936,6 +935,28 @@
         availabilityEndTime: "23:59",
         availabilityDays: "1,2,3,4,5,6,7",
       };
+
+      // Load Qualiphy script safely
+      function loadQualiphy() {
+        try {
+          const script = document.createElement("script");
+          script.src = "https://qualiphy.com/api/integration/loader.js";
+          script.async = true;
+          script.onerror = function () {
+            console.log("Qualiphy script failed to load, using fallback");
+          };
+          document.head.appendChild(script);
+        } catch (error) {
+          console.log("Error loading Qualiphy script:", error);
+        }
+      }
+
+      // Load Qualiphy after page is ready
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", loadQualiphy);
+      } else {
+        loadQualiphy();
+      }
 
       // Universal page functionality
       document.addEventListener("DOMContentLoaded", function () {
