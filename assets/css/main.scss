@@ -1,51 +1,8 @@
 // ==============================================
-// STAY DRIPPED MOBILE IV - COMPREHENSIVE STYLESHEET
+// STAY DRIPPED MOBILE IV - CLEAN STYLESHEET
 // Professional Mobile IV Therapy Website
 // ==============================================
 
-// 1. Import Variables and Mixins First
-@import "abstracts/variables.css";
-@import "abstracts/mixins.css";
-
-// 2. Import Base Styles
-@import "elements/base/reset.css";
-@import "elements/base/typography.css";
-@import "elements/base/utilities.css";
-
-// 3. Import Professional Theme and Fonts
-@import "professional-theme.css";
-@import "fonts/caveat.css";
-@import "fonts/rubik.css";
-
-// 4. Import Core Styles
-@import "style.css";
-
-// 5. Import Component Styles
-@import "../../components/css/header.css";
-@import "../../components/css/hero.css";
-@import "../../components/css/buttons.css";
-@import "../../components/css/cards.css";
-@import "../../components/css/service-cards.css";
-@import "../../components/css/membership.css";
-@import "../../components/css/footer.css";
-
-// 6. Import Enhanced Sections
-@import "enhanced-sections.css";
-@import "enhanced-footer.css";
-@import "universal-navigation.css";
-
-// 7. Import Responsive and Animations
-@import "responsive.css";
-@import "premium-responsive.css";
-@import "animations.css";
-@import "premium-animations.css";
-
-// 8. Import Additional Styles
-@import "qualiphy-style.css";
-@import "widget-loop-common-min.css";
-@import "widget-loop-grid.css";
-
-// 9. Custom Modern Overrides and Enhancements
 // Modern CSS Variables
 :root {
   // Brand Colors - Cyan/Aqua Theme
@@ -112,6 +69,82 @@
   // Transitions
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-fast: all 0.15s ease;
+}
+
+// CSS Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    sans-serif;
+  line-height: 1.6;
+  color: var(--neutral-800);
+  background: var(--white);
+  overflow-x: hidden;
+}
+
+// Typography
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--space-md);
+  color: var(--neutral-900);
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.75rem;
+}
+h4 {
+  font-size: 1.5rem;
+}
+h5 {
+  font-size: 1.25rem;
+}
+h6 {
+  font-size: 1rem;
+}
+
+p {
+  margin-bottom: var(--space-md);
+  color: var(--neutral-600);
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition);
+
+  &:hover {
+    color: var(--primary-dark);
+  }
 }
 
 // Modern Container System
@@ -314,6 +347,22 @@
   margin-bottom: var(--space-lg);
 }
 
+.card__icon {
+  display: block;
+  text-align: center;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+  margin-bottom: var(--space-md);
+}
+
+.card__price {
+  margin-top: auto;
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--neutral-200);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
 // Modern Grid System
 .grid {
   display: grid;
@@ -351,6 +400,62 @@
   }
 }
 
+.hero__content {
+  text-align: center;
+
+  @media (min-width: 1024px) {
+    text-align: left;
+  }
+}
+
+.hero__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-2xl);
+
+  @media (min-width: 640px) {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  @media (min-width: 1024px) {
+    justify-content: flex-start;
+  }
+}
+
+.hero__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-xl);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero__stat {
+  text-align: center;
+
+  @media (min-width: 1024px) {
+    text-align: left;
+  }
+}
+
+.hero__stat-number {
+  display: block;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.hero__stat-label {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: var(--space-xs);
+  display: block;
+}
+
 // Header Enhancements
 .site-header {
   background: rgba(255, 255, 255, 0.95);
@@ -369,9 +474,18 @@
   }
 }
 
-.site-logo img {
-  height: 48px;
-  width: auto;
+.site-logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+
+  img {
+    height: 48px;
+    width: auto;
+  }
 }
 
 .main-nav {
@@ -465,6 +579,32 @@
   }
 }
 
+.hamburger {
+  width: 20px;
+  height: 14px;
+  position: relative;
+
+  span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: currentColor;
+    border-radius: 1px;
+    position: absolute;
+    transition: var(--transition);
+
+    &:nth-child(1) {
+      top: 0;
+    }
+    &:nth-child(2) {
+      top: 6px;
+    }
+    &:nth-child(3) {
+      top: 12px;
+    }
+  }
+}
+
 // Dark Mode Toggle
 .dark-mode-toggle {
   width: 44px;
@@ -537,11 +677,9 @@
 .text-center {
   text-align: center !important;
 }
-
 .text-left {
   text-align: left !important;
 }
-
 .text-right {
   text-align: right !important;
 }
@@ -549,15 +687,12 @@
 .d-none {
   display: none !important;
 }
-
 .d-block {
   display: block !important;
 }
-
 .d-flex {
   display: flex !important;
 }
-
 .d-grid {
   display: grid !important;
 }
@@ -565,7 +700,6 @@
 .w-100 {
   width: 100% !important;
 }
-
 .h-100 {
   height: 100% !important;
 }
@@ -642,52 +776,6 @@
   .lg\:flex {
     display: flex !important;
   }
-}
-
-// Hero Stats Enhancement
-.hero__stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-lg);
-  margin-top: var(--space-2xl);
-  padding-top: var(--space-xl);
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.hero__stat {
-  text-align: center;
-
-  @media (min-width: 1024px) {
-    text-align: left;
-  }
-}
-
-.hero__stat-number {
-  display: block;
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  font-weight: 800;
-  color: var(--accent);
-  line-height: 1;
-}
-
-.hero__stat-label {
-  font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.8);
-  margin-top: var(--space-xs);
-  display: block;
-}
-
-// Service Icons Enhancement
-.card__icon {
-  display: block;
-  text-align: center;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
-}
-
-.card__price {
-  margin-top: auto;
-  padding-top: var(--space-md);
-  border-top: 1px solid var(--neutral-200);
 }
 
 // Print Styles
