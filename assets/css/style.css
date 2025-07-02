@@ -392,6 +392,10 @@
 
 /* Responsive Back Button */
 @media (max-width: 768px) {
+  body.has-back-button {
+    padding-top: 140px;
+  }
+
   .back-button-container {
     padding: 1rem 1rem 0.75rem;
     top: 70px;
