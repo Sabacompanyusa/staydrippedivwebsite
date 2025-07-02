@@ -432,7 +432,7 @@
             <!-- Hormone Optimization Panel -->
             <div class="testing-panel premium-card">
               <div class="panel-header">
-                <h3>⚖�� Hormone Optimization Panel</h3>
+                <h3>⚖️ Hormone Optimization Panel</h3>
                 <div class="panel-price">$299</div>
               </div>
               <div class="panel-content">
@@ -773,6 +773,28 @@
         availabilityEndTime: "23:59",
         availabilityDays: "1,2,3,4,5,6,7",
       };
+
+      // Load Qualiphy script safely
+      function loadQualiphy() {
+        try {
+          const script = document.createElement("script");
+          script.src = "https://qualiphy.com/api/integration/loader.js";
+          script.async = true;
+          script.onerror = function () {
+            console.log("Qualiphy script failed to load, using fallback");
+          };
+          document.head.appendChild(script);
+        } catch (error) {
+          console.log("Error loading Qualiphy script:", error);
+        }
+      }
+
+      // Load Qualiphy after page is ready
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", loadQualiphy);
+      } else {
+        loadQualiphy();
+      }
 
       // Universal page functionality
       document.addEventListener("DOMContentLoaded", function () {
