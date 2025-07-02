@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Standard Meta Tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
@@ -9,34 +10,55 @@
     </title>
     <meta
       name="description"
-      content="Experience revolutionary NAD+ therapy for anti-aging, cellular repair, cognitive enhancement, and longevity optimization. Professional mobile IV therapy delivered to your location in Scottsdale & Phoenix."
+      content="Experience revolutionary NAD+ therapy for anti-aging, cellular repair, cognitive enhancement, and longevity optimization delivered to your location in Scottsdale & Phoenix."
     />
     <meta
       name="keywords"
       content="NAD+ therapy, anti-aging treatment, cellular repair, cognitive enhancement, longevity therapy, mobile IV therapy, Scottsdale NAD+, Phoenix NAD+"
     />
+    <meta name="robots" content="index, follow" />
+    <link
+      rel="canonical"
+      href="https://staydripped.com/pages/nad-therapy.html"
+    />
 
     <!-- Open Graph Meta Tags -->
-    <meta
-      property="og:title"
-      content="NAD+ Therapy - Revolutionary Anti-Aging Treatment | Stay Dripped Mobile IV"
-    />
-    <meta
-      property="og:description"
-      content="Experience revolutionary NAD+ therapy for anti-aging, cellular repair, and cognitive enhancement delivered to your location."
-    />
     <meta property="og:type" content="website" />
     <meta
       property="og:url"
       content="https://staydripped.com/pages/nad-therapy.html"
     />
     <meta
+      property="og:title"
+      content="NAD+ Therapy - Revolutionary Anti-Aging & Cellular Repair | Stay Dripped Mobile IV"
+    />
+    <meta
+      property="og:description"
+      content="Experience revolutionary NAD+ therapy for anti-aging, cellular repair, cognitive enhancement, and longevity optimization delivered to your location in Scottsdale & Phoenix."
+    />
+    <meta
       property="og:image"
-      content="https://staydripped.com/assets/images/nad-therapy-hero.jpg"
+      content="https://staydripped.com/assets/images/logo.png"
+    />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:title"
+      content="NAD+ Therapy - Revolutionary Anti-Aging & Cellular Repair | Stay Dripped Mobile IV"
+    />
+    <meta
+      property="twitter:description"
+      content="Experience revolutionary NAD+ therapy for anti-aging, cellular repair, cognitive enhancement, and longevity optimization delivered to your location in Scottsdale & Phoenix."
     />
 
     <!-- Favicons -->
-    <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png" />
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../assets/images/apple-touch-icon.png"
+    />
     <link
       rel="icon"
       type="image/png"
@@ -50,7 +72,12 @@
       href="../assets/images/favicon-16x16.png"
     />
 
-    <!-- Preload Critical Assets -->
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://intakeq.com" />
+
+    <!-- Preload critical assets -->
     <link rel="preload" href="../assets/images/logo.png" as="image" />
     <link
       rel="preload"
@@ -58,1081 +85,150 @@
       as="style"
     />
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="../assets/css/style.css" />
-    <link rel="stylesheet" href="../assets/css/responsive.css" />
-    <link rel="stylesheet" href="../assets/css/animations.css" />
+    <!-- Critical CSS -->
+    <style>
+      :root {
+        --primary: #0a2a43;
+        --secondary: #00bcd4;
+        --accent: #4fc3f7;
+        --gold: #ffd700;
+        --success: #4caf50;
+        --text-dark: #1a1a1a;
+        --text-light: #666;
+        --text-white: #fff;
+        --bg-light: #f1fbff;
+        --white: #fff;
+        --shadow: 0 4px 12px rgb(0 0 0 / 10%);
+        --shadow-hover: 0 8px 25px rgb(0 0 0 / 15%);
+        --shadow-lg: 0 10px 40px rgb(0 0 0 / 10%);
+        --br: 12px;
+        --br-lg: 16px;
+        --br-xl: 24px;
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        --gradient-primary: linear-gradient(
+          135deg,
+          var(--secondary),
+          var(--accent)
+        );
+        --gradient-hero: linear-gradient(
+          135deg,
+          rgb(10 42 67 / 90%),
+          rgb(0 188 212 / 70%)
+        );
+      }
 
-    <!-- Google Fonts -->
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family:
+          Inter,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        line-height: 1.7;
+        color: var(--text-dark);
+        background: #fafafa;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      body.has-back-button {
+        padding-top: 120px;
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+    </style>
+
+    <!-- External CSS (deferred) -->
     <link
+      rel="preload"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    /></noscript>
+
+    <link
+      rel="preload"
+      href="../assets/css/professional-theme.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <link
+      rel="preload"
+      href="../assets/css/enhanced-sections.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <link
+      rel="preload"
+      href="../assets/css/enhanced-footer.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <link
+      rel="preload"
+      href="../assets/css/universal-navigation.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
 
-    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-
-    <!-- Custom NAD+ Page Styles -->
-    <style>
-      /* Enhanced NAD+ Page Specific Styles */
-
-      /* Hero Section */
-      .nad-hero {
-        background:
-          linear-gradient(
-            145deg,
-            rgb(26 26 26 / 95%) 0%,
-            rgb(45 55 72 / 90%) 50%,
-            rgb(113 128 150 / 85%) 100%
-          ),
-          url("../assets/images/nad-cellular-bg.jpg");
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        padding: 8rem 0 6rem;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .nad-hero::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background:
-          radial-gradient(
-            circle at 30% 20%,
-            rgb(59 130 246 / 10%) 0%,
-            transparent 50%
-          ),
-          radial-gradient(
-            circle at 70% 80%,
-            rgb(147 51 234 / 10%) 0%,
-            transparent 50%
-          );
-        pointer-events: none;
-      }
-
-      .hero-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 2rem;
-        position: relative;
-        z-index: 2;
-      }
-
-      .hero-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-        align-items: center;
-      }
-
-      .hero-text h1 {
-        font-size: clamp(3rem, 5vw, 4.5rem);
-        font-weight: 900;
-        color: var(--text-white);
-        margin-bottom: 1.5rem;
-        line-height: 1.1;
-        text-shadow: 0 4px 8px rgb(0 0 0 / 30%);
-        background: linear-gradient(145deg, #fff, #cbd5e1);
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-
-      .hero-subtitle {
-        font-size: 1.5rem;
-        color: var(--text-chrome);
-        margin-bottom: 2rem;
-        font-weight: 500;
-        line-height: 1.4;
-        text-shadow: 0 2px 4px rgb(0 0 0 / 20%);
-      }
-
-      .hero-features {
-        display: flex;
-        gap: 2rem;
-        margin-bottom: 3rem;
-        flex-wrap: wrap;
-      }
-
-      .hero-feature {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        color: var(--text-chrome);
-        font-weight: 600;
-        font-size: 1.1rem;
-      }
-
-      .hero-feature-icon {
-        width: 48px;
-        height: 48px;
-        background: var(--gradient-steel);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.5rem;
-        color: var(--text-chrome);
-        box-shadow: var(--shadow-metal);
-      }
-
-      .hero-visual {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .hero-image-container {
-        position: relative;
-        width: 100%;
-        max-width: 500px;
-        aspect-ratio: 1;
-        background: var(--gradient-chrome);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow:
-          0 20px 60px rgb(0 0 0 / 30%),
-          inset 0 2px 4px rgb(255 255 255 / 10%);
-        animation: float 6s ease-in-out infinite;
-      }
-
-      .hero-image-container::before {
-        content: "";
-        position: absolute;
-        inset: -20px;
-        background: conic-gradient(
-          from 0deg,
-          #3b82f6,
-          #8b5cf6,
-          #ec4899,
-          #10b981,
-          #3b82f6
-        );
-        border-radius: 50%;
-        animation: spin 10s linear infinite;
-        z-index: -1;
-        filter: blur(10px);
-        opacity: 0.7;
-      }
-
-      .hero-molecule {
-        font-size: 12rem;
-        color: var(--primary);
-        opacity: 0.8;
-        text-shadow: 0 4px 8px rgb(0 0 0 / 20%);
-      }
-
-      /* CTA Buttons */
-      .hero-cta {
-        display: flex;
-        gap: 1.5rem;
-        flex-wrap: wrap;
-      }
-
-      .btn-hero-primary {
-        background: linear-gradient(145deg, #3b82f6, #1e40af);
-        color: white;
-        padding: 1.25rem 2.5rem;
-        font-size: 1.2rem;
-        font-weight: 700;
-        border: none;
-        border-radius: 12px;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.75rem;
-        transition: all 0.3s ease;
-        box-shadow:
-          0 8px 25px rgb(59 130 246 / 40%),
-          inset 0 1px 0 rgb(255 255 255 / 20%);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .btn-hero-primary::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgb(255 255 255 / 20%),
-          transparent
-        );
-        transition: left 0.6s ease;
-      }
-
-      .btn-hero-primary:hover::before {
-        left: 100%;
-      }
-
-      .btn-hero-primary:hover {
-        background: linear-gradient(145deg, #4f46e5, #1e3a8a);
-        transform: translateY(-3px);
-        box-shadow:
-          0 12px 35px rgb(59 130 246 / 50%),
-          inset 0 1px 0 rgb(255 255 255 / 30%);
-      }
-
-      .btn-hero-secondary {
-        background: transparent;
-        color: var(--text-chrome);
-        padding: 1.25rem 2.5rem;
-        font-size: 1.2rem;
-        font-weight: 600;
-        border: 2px solid var(--text-chrome);
-        border-radius: 12px;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.75rem;
-        transition: all 0.3s ease;
-        backdrop-filter: blur(10px);
-      }
-
-      .btn-hero-secondary:hover {
-        background: var(--text-chrome);
-        color: var(--primary);
-        transform: translateY(-3px);
-        box-shadow: 0 8px 25px rgb(255 255 255 / 30%);
-      }
-
-      /* What is NAD+ Section */
-      .nad-science {
-        padding: 8rem 0;
-        background: var(--gradient-chrome);
-        position: relative;
-      }
-
-      .science-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 6rem;
-        align-items: center;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 2rem;
-      }
-
-      .science-content h2 {
-        font-size: 3rem;
-        font-weight: 800;
-        color: var(--text-dark);
-        margin-bottom: 2rem;
-        background: var(--gradient-steel);
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-
-      .science-description {
-        font-size: 1.2rem;
-        color: var(--text-medium);
-        line-height: 1.6;
-        margin-bottom: 3rem;
-      }
-
-      .nad-functions {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-      }
-
-      .function-card {
-        background: white;
-        padding: 2rem;
-        border-radius: 16px;
-        box-shadow:
-          0 10px 30px rgb(0 0 0 / 10%),
-          inset 0 1px 0 rgb(255 255 255 / 90%);
-        border: 1px solid rgb(255 255 255 / 50%);
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .function-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: var(--gradient-steel);
-      }
-
-      .function-card:hover {
-        transform: translateY(-8px);
-        box-shadow:
-          0 20px 40px rgb(0 0 0 / 15%),
-          inset 0 1px 0 rgb(255 255 255 / 100%);
-      }
-
-      .function-icon {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-        display: block;
-      }
-
-      .function-card h4 {
-        font-size: 1.3rem;
-        font-weight: 700;
-        color: var(--text-dark);
-        margin-bottom: 0.75rem;
-      }
-
-      .function-card p {
-        color: var(--text-medium);
-        line-height: 1.5;
-      }
-
-      .science-visual {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .nad-molecule-large {
-        width: 100%;
-        max-width: 400px;
-        height: 400px;
-        background: var(--gradient-steel);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 8rem;
-        color: var(--text-chrome);
-        box-shadow:
-          0 20px 60px rgb(0 0 0 / 20%),
-          inset 0 4px 8px rgb(255 255 255 / 10%);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .nad-molecule-large::before {
-        content: "";
-        position: absolute;
-        inset: 20px;
-        border: 2px dashed rgb(255 255 255 / 30%);
-        border-radius: 50%;
-        animation: spin 20s linear infinite reverse;
-      }
-
-      /* Benefits Section */
-      .nad-benefits {
-        padding: 8rem 0;
-        background: var(--bg-dark);
-        color: var(--text-chrome);
-        position: relative;
-      }
-
-      .nad-benefits::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background:
-          radial-gradient(
-            circle at 20% 30%,
-            rgb(59 130 246 / 10%) 0%,
-            transparent 50%
-          ),
-          radial-gradient(
-            circle at 80% 70%,
-            rgb(147 51 234 / 10%) 0%,
-            transparent 50%
-          );
-        pointer-events: none;
-      }
-
-      .benefits-header {
-        text-align: center;
-        margin-bottom: 6rem;
-        position: relative;
-        z-index: 2;
-      }
-
-      .benefits-header h2 {
-        font-size: 3.5rem;
-        font-weight: 900;
-        color: var(--text-white);
-        margin-bottom: 1.5rem;
-        background: linear-gradient(145deg, #fff, #cbd5e1);
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-
-      .benefits-subtitle {
-        font-size: 1.3rem;
-        color: var(--text-chrome);
-        max-width: 600px;
-        margin: 0 auto;
-      }
-
-      .benefits-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 3rem;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 2rem;
-        position: relative;
-        z-index: 2;
-      }
-
-      .benefit-category {
-        background: linear-gradient(
-          145deg,
-          rgb(255 255 255 / 10%),
-          rgb(255 255 255 / 5%)
-        );
-        backdrop-filter: blur(20px);
-        border: 1px solid rgb(255 255 255 / 10%);
-        border-radius: 20px;
-        padding: 3rem 2.5rem;
-        transition: all 0.4s ease;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .benefit-category::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899, #10b981);
-        border-radius: 20px 20px 0 0;
-      }
-
-      .benefit-category:hover {
-        transform: translateY(-10px) scale(1.02);
-        background: linear-gradient(
-          145deg,
-          rgb(255 255 255 / 15%),
-          rgb(255 255 255 / 8%)
-        );
-        box-shadow:
-          0 25px 50px rgb(0 0 0 / 30%),
-          inset 0 1px 0 rgb(255 255 255 / 20%);
-      }
-
-      .benefit-category h3 {
-        font-size: 1.8rem;
-        font-weight: 700;
-        color: var(--text-white);
-        margin-bottom: 2rem;
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-      }
-
-      .benefit-category ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-
-      .benefit-category li {
-        padding: 0.75rem 0;
-        border-bottom: 1px solid rgb(255 255 255 / 10%);
-        color: var(--text-chrome);
-        font-size: 1.1rem;
-        position: relative;
-        padding-left: 2rem;
-      }
-
-      .benefit-category li:last-child {
-        border-bottom: none;
-      }
-
-      .benefit-category li::before {
-        content: "✦";
-        position: absolute;
-        left: 0;
-        color: #3b82f6;
-        font-weight: bold;
-      }
-
-      /* Treatment Options Section */
-      .nad-treatments {
-        padding: 8rem 0;
-        background: var(--gradient-chrome);
-        position: relative;
-      }
-
-      .treatments-header {
-        text-align: center;
-        margin-bottom: 6rem;
-      }
-
-      .treatments-header h2 {
-        font-size: 3.5rem;
-        font-weight: 900;
-        color: var(--text-dark);
-        margin-bottom: 1.5rem;
-        background: var(--gradient-steel);
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-
-      .treatments-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 3rem;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 2rem;
-      }
-
-      .treatment-card {
-        background: white;
-        border-radius: 20px;
-        padding: 3rem 2.5rem;
-        box-shadow:
-          0 15px 40px rgb(0 0 0 / 10%),
-          inset 0 1px 0 rgb(255 255 255 / 90%);
-        border: 1px solid rgb(255 255 255 / 50%);
-        transition: all 0.4s ease;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .treatment-card.featured {
-        transform: scale(1.05);
-        background: linear-gradient(145deg, #fff, #f8fafc);
-        box-shadow:
-          0 25px 60px rgb(0 0 0 / 15%),
-          inset 0 1px 0 rgb(255 255 255 / 100%);
-      }
-
-      .treatment-card.featured::before {
-        content: "MOST POPULAR";
-        position: absolute;
-        top: 2rem;
-        right: -2rem;
-        background: linear-gradient(145deg, #3b82f6, #1e40af);
-        color: white;
-        padding: 0.5rem 3rem;
-        font-size: 0.9rem;
-        font-weight: 700;
-        transform: rotate(45deg);
-        letter-spacing: 1px;
-      }
-
-      .treatment-card:hover {
-        transform: translateY(-15px);
-        box-shadow:
-          0 30px 70px rgb(0 0 0 / 20%),
-          inset 0 1px 0 rgb(255 255 255 / 100%);
-      }
-
-      .treatment-card.featured:hover {
-        transform: translateY(-15px) scale(1.05);
-      }
-
-      .treatment-header {
-        text-align: center;
-        margin-bottom: 2.5rem;
-      }
-
-      .treatment-name {
-        font-size: 2rem;
-        font-weight: 800;
-        color: var(--text-dark);
-        margin-bottom: 1rem;
-      }
-
-      .treatment-dose {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: #3b82f6;
-        margin-bottom: 0.5rem;
-      }
-
-      .treatment-duration {
-        font-size: 1.1rem;
-        color: var(--text-medium);
-        font-weight: 500;
-      }
-
-      .treatment-benefits {
-        margin: 2.5rem 0;
-      }
-
-      .treatment-benefits h4 {
-        font-size: 1.2rem;
-        font-weight: 700;
-        color: var(--text-dark);
-        margin-bottom: 1.5rem;
-      }
-
-      .treatment-benefits ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-
-      .treatment-benefits li {
-        padding: 0.75rem 0;
-        color: var(--text-medium);
-        font-size: 1rem;
-        position: relative;
-        padding-left: 2rem;
-        line-height: 1.5;
-      }
-
-      .treatment-benefits li::before {
-        content: "⚡";
-        position: absolute;
-        left: 0;
-        color: #10b981;
-        font-weight: bold;
-      }
-
-      .treatment-ideal {
-        background: linear-gradient(145deg, #f0f9ff, #e0f2fe);
-        padding: 1.5rem;
-        border-radius: 12px;
-        margin: 2rem 0;
-        border-left: 4px solid #3b82f6;
-      }
-
-      .treatment-ideal strong {
-        color: var(--text-dark);
-        font-weight: 700;
-      }
-
-      .treatment-price {
-        font-size: 2.5rem;
-        font-weight: 900;
-        color: #3b82f6;
-        text-align: center;
-        margin: 2rem 0;
-      }
-
-      .treatment-btn {
-        width: 100%;
-        padding: 1.25rem 2rem;
-        font-size: 1.1rem;
-        font-weight: 700;
-        border: none;
-        border-radius: 12px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-      }
-
-      .btn-treatment-primary {
-        background: linear-gradient(145deg, #3b82f6, #1e40af);
-        color: white;
-        box-shadow:
-          0 8px 25px rgb(59 130 246 / 40%),
-          inset 0 1px 0 rgb(255 255 255 / 20%);
-      }
-
-      .btn-treatment-primary:hover {
-        background: linear-gradient(145deg, #4f46e5, #1e3a8a);
-        transform: translateY(-3px);
-        box-shadow:
-          0 12px 35px rgb(59 130 246 / 50%),
-          inset 0 1px 0 rgb(255 255 255 / 30%);
-      }
-
-      .btn-treatment-secondary {
-        background: transparent;
-        color: var(--text-dark);
-        border: 2px solid var(--text-medium);
-      }
-
-      .btn-treatment-secondary:hover {
-        background: var(--text-dark);
-        color: white;
-        transform: translateY(-3px);
-        box-shadow: 0 8px 25px rgb(45 55 72 / 30%);
-      }
-
-      /* Research Section */
-      .nad-research {
-        padding: 8rem 0;
-        background: var(--bg-dark);
-        color: var(--text-chrome);
-        position: relative;
-      }
-
-      .research-header {
-        text-align: center;
-        margin-bottom: 6rem;
-      }
-
-      .research-header h2 {
-        font-size: 3.5rem;
-        font-weight: 900;
-        color: var(--text-white);
-        margin-bottom: 1.5rem;
-        background: linear-gradient(145deg, #fff, #cbd5e1);
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-
-      .research-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 3rem;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 2rem;
-      }
-
-      .research-card {
-        background: linear-gradient(
-          145deg,
-          rgb(255 255 255 / 10%),
-          rgb(255 255 255 / 5%)
-        );
-        backdrop-filter: blur(20px);
-        border: 1px solid rgb(255 255 255 / 10%);
-        border-radius: 20px;
-        padding: 3rem 2.5rem;
-        transition: all 0.4s ease;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .research-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: linear-gradient(90deg, #10b981, #3b82f6);
-        border-radius: 20px 20px 0 0;
-      }
-
-      .research-card:hover {
-        transform: translateY(-10px);
-        background: linear-gradient(
-          145deg,
-          rgb(255 255 255 / 15%),
-          rgb(255 255 255 / 8%)
-        );
-        box-shadow:
-          0 25px 50px rgb(0 0 0 / 30%),
-          inset 0 1px 0 rgb(255 255 255 / 20%);
-      }
-
-      .research-card h3 {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: var(--text-white);
-        margin-bottom: 1.5rem;
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-      }
-
-      .research-card p {
-        color: var(--text-chrome);
-        line-height: 1.6;
-        margin-bottom: 1.5rem;
-      }
-
-      .research-source {
-        font-size: 0.9rem;
-        color: #3b82f6;
-        font-weight: 600;
-        font-style: italic;
-      }
-
-      /* FAQ Section */
-      .nad-faq {
-        padding: 8rem 0;
-        background: var(--gradient-chrome);
-      }
-
-      .faq-header {
-        text-align: center;
-        margin-bottom: 6rem;
-      }
-
-      .faq-header h2 {
-        font-size: 3.5rem;
-        font-weight: 900;
-        color: var(--text-dark);
-        margin-bottom: 1.5rem;
-        background: var(--gradient-steel);
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-
-      .faq-container {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 0 2rem;
-      }
-
-      .faq-item {
-        background: white;
-        border-radius: 16px;
-        margin-bottom: 1.5rem;
-        box-shadow:
-          0 8px 20px rgb(0 0 0 / 10%),
-          inset 0 1px 0 rgb(255 255 255 / 90%);
-        border: 1px solid rgb(255 255 255 / 50%);
-        overflow: hidden;
-        transition: all 0.3s ease;
-      }
-
-      .faq-item:hover {
-        transform: translateY(-3px);
-        box-shadow:
-          0 12px 30px rgb(0 0 0 / 15%),
-          inset 0 1px 0 rgb(255 255 255 / 100%);
-      }
-
-      .faq-question {
-        padding: 2rem 2.5rem;
-        font-size: 1.2rem;
-        font-weight: 700;
-        color: var(--text-dark);
-        cursor: pointer;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        transition: all 0.3s ease;
-      }
-
-      .faq-question:hover {
-        color: #3b82f6;
-      }
-
-      .faq-question::after {
-        content: "+";
-        font-size: 1.5rem;
-        font-weight: 300;
-        transition: transform 0.3s ease;
-      }
-
-      .faq-item.active .faq-question::after {
-        transform: rotate(45deg);
-      }
-
-      .faq-answer {
-        padding: 0 2.5rem 2rem;
-        color: var(--text-medium);
-        line-height: 1.6;
-        font-size: 1.1rem;
-        max-height: 0;
-        overflow: hidden;
-        transition: all 0.3s ease;
-      }
-
-      .faq-item.active .faq-answer {
-        max-height: 500px;
-        padding: 0 2.5rem 2rem;
-      }
-
-      /* CTA Section */
-      .nad-cta {
-        padding: 8rem 0;
-        background: linear-gradient(
-          145deg,
-          rgb(26 26 26 / 95%) 0%,
-          rgb(45 55 72 / 90%) 50%,
-          rgb(113 128 150 / 85%) 100%
-        );
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .nad-cta::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background:
-          radial-gradient(
-            circle at 30% 20%,
-            rgb(59 130 246 / 10%) 0%,
-            transparent 50%
-          ),
-          radial-gradient(
-            circle at 70% 80%,
-            rgb(147 51 234 / 10%) 0%,
-            transparent 50%
-          );
-        pointer-events: none;
-      }
-
-      .cta-content {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 0 2rem;
-        position: relative;
-        z-index: 2;
-      }
-
-      .cta-content h2 {
-        font-size: 3.5rem;
-        font-weight: 900;
-        color: var(--text-white);
-        margin-bottom: 1.5rem;
-        background: linear-gradient(145deg, #fff, #cbd5e1);
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-
-      .cta-content p {
-        font-size: 1.3rem;
-        color: var(--text-chrome);
-        margin-bottom: 3rem;
-        line-height: 1.6;
-      }
-
-      .cta-buttons {
-        display: flex;
-        gap: 2rem;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin-bottom: 2rem;
-      }
-
-      .cta-note {
-        font-size: 1rem;
-        color: var(--text-chrome);
-        font-style: italic;
-        opacity: 0.8;
-      }
-
-      /* Responsive Design */
-      @media (width <= 768px) {
-        .hero-grid,
-        .science-grid {
-          grid-template-columns: 1fr;
-          gap: 3rem;
-          text-align: center;
-        }
-
-        .hero-content {
-          padding: 0 1rem;
-        }
-
-        .hero-text h1 {
-          font-size: 2.5rem;
-        }
-
-        .hero-subtitle {
-          font-size: 1.2rem;
-        }
-
-        .hero-features {
-          justify-content: center;
-        }
-
-        .hero-cta {
-          justify-content: center;
-        }
-
-        .benefits-grid,
-        .treatments-grid,
-        .research-grid {
-          grid-template-columns: 1fr;
-          gap: 2rem;
-        }
-
-        .nad-functions {
-          grid-template-columns: 1fr;
-        }
-
-        .treatment-card.featured {
-          transform: none;
-        }
-
-        .treatment-card.featured:hover {
-          transform: translateY(-15px);
-        }
-
-        .benefits-header h2,
-        .treatments-header h2,
-        .research-header h2,
-        .faq-header h2,
-        .cta-content h2 {
-          font-size: 2.5rem;
-        }
-
-        .science-content h2 {
-          font-size: 2.2rem;
-        }
-
-        .cta-buttons {
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .btn-hero-primary,
-        .btn-hero-secondary {
-          width: 100%;
-          max-width: 300px;
-          justify-content: center;
-        }
-      }
-
-      /* Animation Classes */
-      .fade-in-up {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.6s ease;
-      }
-
-      .fade-in-up.animated {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      .fade-in {
-        opacity: 0;
-        transition: opacity 0.6s ease;
-      }
-
-      .fade-in.animated {
-        opacity: 1;
-      }
-
-      /* Scroll indicator */
-      .scroll-indicator {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 4px;
-        background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899, #10b981);
-        z-index: 9999;
-        transform-origin: left;
-        transform: scaleX(0);
-        transition: transform 0.3s ease;
-      }
-    </style>
   </head>
-  <body>
-    <!-- Scroll Progress Indicator -->
-    <div class="scroll-indicator" id="scrollIndicator"></div>
+
+  <body class="has-back-button">
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="nav-container">
+        <div class="logo">
+          <img
+            src="../assets/images/logo.png"
+            alt="Stay Dripped Logo"
+            class="logo-image"
+          />
+          <span class="brand-name">Stay Dripped</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#menu" class="nav-link active">NAD+ Therapy</a></li>
+          <li><a href="membership.html" class="nav-link">Membership</a></li>
+          <li><a href="tel:+16026889825" class="nav-link">Call Now</a></li>
+        </ul>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </nav>
 
     <!-- Back Button -->
     <div class="back-button-container">
-      <a href="../index.html" class="back-button metallic-btn">
+      <a href="../index.html" class="back-button">
         <i class="fas fa-arrow-left"></i>
         <span>Back to Home</span>
       </a>
@@ -1141,772 +237,545 @@
     <!-- Header -->
     <header class="header">
       <div class="header-content">
-        <div class="logo-section">
-          <img src="../assets/images/logo.png" alt="Stay Dripped Mobile IV" />
-          <div class="brand-title">NAD+ Therapy Treatments</div>
-          <div class="brand-subtitle">
-            Revolutionary Anti-Aging & Cellular Repair in Scottsdale, AZ
-          </div>
-        </div>
-
-        <div class="quick-actions">
-          <a href="tel:+16026889825" class="quick-action-btn">
-            <i class="fas fa-phone"></i>
-            Call (602) 688-9825
-          </a>
-          <a
-            href="https://Staydripped.intakeq.com/booking"
-            class="quick-action-btn"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="fas fa-calendar"></i>
-            Book Online Now
-          </a>
-          <div
-            id="loadFormButton"
-            class="exam-btn"
-            onclick="showDisclosureModal()"
-          >
-            <i class="fas fa-clipboard-list exam-btn-icon"></i>
-            <span class="exam-btn-text">Start GFE (Required)</span>
-          </div>
-        </div>
+        <h1>NAD+ Therapy Menu</h1>
+        <p>
+          Revolutionary cellular regeneration and anti-aging treatments
+          delivered directly to your location in the Scottsdale metropolitan
+          area
+        </p>
       </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="nad-hero">
-      <div class="hero-content">
-        <div class="hero-grid">
-          <div class="hero-text fade-in-up">
-            <h1>NAD+ Therapy</h1>
-            <p class="hero-subtitle">
-              Revolutionary cellular regeneration therapy that enhances energy
-              production, cognitive function, and longevity at the molecular
-              level.
-            </p>
-            <div class="hero-features">
-              <div class="hero-feature">
-                <div class="hero-feature-icon">🧬</div>
-                <span>Cellular Repair</span>
-              </div>
-              <div class="hero-feature">
-                <div class="hero-feature-icon">🧠</div>
-                <span>Cognitive Enhancement</span>
-              </div>
-              <div class="hero-feature">
-                <div class="hero-feature-icon">⚡</div>
-                <span>Energy Optimization</span>
-              </div>
-            </div>
-            <div class="hero-cta">
-              <a href="#treatments" class="btn-hero-primary">
-                <i class="fas fa-calendar-check"></i>
-                Book NAD+ Therapy
-              </a>
-              <a href="#science" class="btn-hero-secondary">
-                <i class="fas fa-flask"></i>
-                Learn the Science
-              </a>
-            </div>
-          </div>
-          <div class="hero-visual fade-in">
-            <div class="hero-image-container">
-              <div class="hero-molecule">🧬</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- What is NAD+ Section -->
-    <section id="science" class="nad-science">
-      <div class="science-grid">
-        <div class="science-content fade-in-up">
-          <h2>What is NAD+?</h2>
-          <p class="science-description">
+    <!-- Main Content -->
+    <main id="main-content">
+      <!-- NAD+ Introduction -->
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">What is NAD+ Therapy?</h2>
+          <p class="section-subtitle">
             NAD+ (Nicotinamide Adenine Dinucleotide) is a critical coenzyme
-            found in every cell of your body that plays a fundamental role in
-            energy production, DNA repair, and cellular regeneration. As we age,
-            NAD+ levels naturally decline by up to 50% by age 50, contributing
-            to the aging process and age-related health issues.
+            found in every cell of your body. It plays a vital role in energy
+            production, DNA repair, and cellular regeneration processes that
+            decline with age.
           </p>
-          <div class="nad-functions">
-            <div class="function-card fade-in-up">
-              <span class="function-icon">⚡</span>
-              <h4>Energy Production</h4>
+
+          <div class="menu-grid">
+            <div class="highlight-card">
+              <div class="highlight-icon">🧬</div>
+              <h3>Cellular Energy</h3>
               <p>
-                Essential for cellular energy (ATP) production and mitochondrial
-                function
+                Boosts mitochondrial function for enhanced energy production
               </p>
             </div>
-            <div class="function-card fade-in-up">
-              <span class="function-icon">🔧</span>
-              <h4>DNA Repair</h4>
+            <div class="highlight-card">
+              <div class="highlight-icon">🔄</div>
+              <h3>DNA Repair</h3>
               <p>
-                Activates enzymes that repair damaged DNA and maintain genomic
-                stability
+                Activates enzymes that repair damaged DNA and cellular
+                structures
               </p>
             </div>
-            <div class="function-card fade-in-up">
-              <span class="function-icon">🛡️</span>
-              <h4>Cellular Protection</h4>
-              <p>
-                Protects cells from oxidative stress and environmental damage
-              </p>
+            <div class="highlight-card">
+              <div class="highlight-icon">🧠</div>
+              <h3>Cognitive Enhancement</h3>
+              <p>Improves brain function, memory, and mental clarity</p>
             </div>
-            <div class="function-card fade-in-up">
-              <span class="function-icon">🔄</span>
-              <h4>Metabolism</h4>
-              <p>Regulates metabolic processes and circadian rhythms</p>
+            <div class="highlight-card">
+              <div class="highlight-icon">⏳</div>
+              <h3>Anti-Aging</h3>
+              <p>Slows cellular aging and promotes longevity</p>
             </div>
           </div>
         </div>
-        <div class="science-visual fade-in">
-          <div class="nad-molecule-large">
-            <span>NAD+</span>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Benefits Section -->
-    <section class="nad-benefits">
-      <div class="benefits-header fade-in-up">
-        <h2>Transformative Benefits</h2>
-        <p class="benefits-subtitle">
-          Experience comprehensive health and wellness improvements through NAD+
-          optimization
-        </p>
-      </div>
-      <div class="benefits-grid">
-        <div class="benefit-category fade-in-up">
-          <h3>🧠 Cognitive Enhancement</h3>
-          <ul>
-            <li>Improved mental clarity and focus</li>
-            <li>Enhanced memory and learning capacity</li>
-            <li>Better decision-making abilities</li>
-            <li>Reduced brain fog and mental fatigue</li>
-            <li>Neuroprotective effects against aging</li>
-            <li>Increased neuroplasticity</li>
-          </ul>
-        </div>
-        <div class="benefit-category fade-in-up">
-          <h3>⚡ Energy & Vitality</h3>
-          <ul>
-            <li>Increased cellular energy production</li>
-            <li>Enhanced physical stamina and endurance</li>
-            <li>Reduced fatigue and exhaustion</li>
-            <li>Improved exercise performance</li>
-            <li>Better recovery from physical activities</li>
-            <li>Optimized metabolic function</li>
-          </ul>
-        </div>
-        <div class="benefit-category fade-in-up">
-          <h3>⏰ Anti-Aging Effects</h3>
-          <ul>
-            <li>Cellular regeneration and repair</li>
-            <li>Improved skin health and appearance</li>
-            <li>Enhanced muscle tone and strength</li>
-            <li>Better sleep quality and duration</li>
-            <li>Increased longevity markers</li>
-            <li>Reduced inflammation throughout the body</li>
-          </ul>
-        </div>
-        <div class="benefit-category fade-in-up">
-          <h3>🏥 Health Optimization</h3>
-          <ul>
-            <li>Enhanced immune system function</li>
-            <li>Improved metabolic health</li>
-            <li>Better stress resilience and adaptation</li>
-            <li>Cardiovascular system support</li>
-            <li>Mood stabilization and mental wellness</li>
-            <li>Addiction recovery support</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Treatment Options Section -->
-    <section id="treatments" class="nad-treatments">
-      <div class="treatments-header fade-in-up">
-        <h2>NAD+ Treatment Options</h2>
-        <p>
-          Choose the NAD+ therapy protocol that aligns with your wellness goals
-        </p>
-      </div>
-      <div class="treatments-grid">
-        <div class="treatment-card fade-in-up">
-          <div class="treatment-header">
-            <h3 class="treatment-name">NAD+ Basic</h3>
-            <div class="treatment-dose">250mg</div>
-            <div class="treatment-duration">2-3 hours</div>
-          </div>
-          <div class="treatment-benefits">
-            <h4>Benefits Include:</h4>
-            <ul>
-              <li>Noticeable energy boost</li>
-              <li>Enhanced mental clarity</li>
-              <li>Basic cellular repair activation</li>
-              <li>Mild anti-aging effects</li>
-              <li>Improved mood and focus</li>
-            </ul>
-          </div>
-          <div class="treatment-ideal">
-            <strong>Ideal for:</strong> First-time NAD+ users, general wellness
-            maintenance, and those new to cellular optimization therapy
-          </div>
-          <div class="treatment-price">$300</div>
-          <button
-            class="treatment-btn btn-treatment-secondary"
-            onclick="openBookingModal()"
-          >
-            Book Basic Treatment
-          </button>
-        </div>
-
-        <div class="treatment-card featured fade-in-up">
-          <div class="treatment-header">
-            <h3 class="treatment-name">NAD+ Premium</h3>
-            <div class="treatment-dose">500mg</div>
-            <div class="treatment-duration">4-5 hours</div>
-          </div>
-          <div class="treatment-benefits">
-            <h4>Benefits Include:</h4>
-            <ul>
-              <li>Significant energy increase</li>
-              <li>Enhanced cognitive function</li>
-              <li>Advanced cellular repair</li>
-              <li>Noticeable anti-aging effects</li>
-              <li>Improved mood and mental clarity</li>
-              <li>Better sleep quality</li>
-            </ul>
-          </div>
-          <div class="treatment-ideal">
-            <strong>Ideal for:</strong> Regular users seeking comprehensive
-            benefits, professionals requiring peak cognitive performance
-          </div>
-          <div class="treatment-price">$500</div>
-          <button
-            class="treatment-btn btn-treatment-primary"
-            onclick="openBookingModal()"
-          >
-            Book Premium Treatment
-          </button>
-        </div>
-
-        <div class="treatment-card fade-in-up">
-          <div class="treatment-header">
-            <h3 class="treatment-name">NAD+ Elite</h3>
-            <div class="treatment-dose">750mg</div>
-            <div class="treatment-duration">6-7 hours</div>
-          </div>
-          <div class="treatment-benefits">
-            <h4>Benefits Include:</h4>
-            <ul>
-              <li>Maximum energy optimization</li>
-              <li>Peak cognitive enhancement</li>
-              <li>Maximum cellular regeneration</li>
-              <li>Profound anti-aging effects</li>
-              <li>Optimal mood and mental clarity</li>
-              <li>Enhanced physical performance</li>
-              <li>Superior stress resilience</li>
-            </ul>
-          </div>
-          <div class="treatment-ideal">
-            <strong>Ideal for:</strong> Maximum results seekers, intensive
-            therapy protocols, athletes and high-performers
-          </div>
-          <div class="treatment-price">$750</div>
-          <button
-            class="treatment-btn btn-treatment-secondary"
-            onclick="openBookingModal()"
-          >
-            Book Elite Treatment
-          </button>
-        </div>
-      </div>
-      <div
-        class="treatment-note fade-in-up"
-        style="
-          text-align: center;
-          margin-top: 4rem;
-          max-width: 800px;
-          margin-left: auto;
-          margin-right: auto;
-        "
-      >
-        <p
-          style="font-size: 1.1rem; color: var(--text-medium); font-weight: 500"
-        >
-          <strong>Note:</strong> Treatment duration and dosage are customized
-          based on individual tolerance, health status, and wellness goals. Our
-          medical team will work with you to determine the optimal NAD+ protocol
-          for your specific needs.
-        </p>
-      </div>
-    </section>
-
-    <!-- Scientific Research Section -->
-    <section class="nad-research">
-      <div class="research-header fade-in-up">
-        <h2>Scientific Research</h2>
-        <p
-          style="
-            font-size: 1.3rem;
-            color: var(--text-chrome);
-            max-width: 600px;
-            margin: 0 auto;
-          "
-        >
-          Backed by extensive research and clinical studies from leading
-          institutions
-        </p>
-      </div>
-      <div class="research-grid">
-        <div class="research-card fade-in-up">
-          <h3>��� Harvard Medical School</h3>
-          <p>
-            Groundbreaking research demonstrates that NAD+ therapy can reverse
-            age-related cellular decline and significantly improve mitochondrial
-            function, leading to enhanced energy production and longevity.
+      <!-- NAD+ Menu -->
+      <section id="menu" class="section section-light">
+        <div class="container">
+          <h2 class="section-title">NAD+ Therapy Menu</h2>
+          <p class="section-subtitle">
+            Professional NAD+ treatments for cellular regeneration and
+            anti-aging
           </p>
-          <div class="research-source">Published in Cell Metabolism</div>
-        </div>
-        <div class="research-card fade-in-up">
-          <h3>🧬 Washington University</h3>
-          <p>
-            Clinical trials show significant improvements in cognitive function,
-            memory, and energy levels with NAD+ supplementation, with effects
-            lasting weeks after treatment completion.
-          </p>
-          <div class="research-source">Published in Nature Communications</div>
-        </div>
-        <div class="research-card fade-in-up">
-          <h3>🏥 Mayo Clinic</h3>
-          <p>
-            Comprehensive studies confirm NAD+ therapy's crucial role in DNA
-            repair mechanisms, cellular regeneration, and longevity enhancement,
-            with measurable biomarker improvements.
-          </p>
-          <div class="research-source">
-            Published in Journal of Clinical Investigation
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- FAQ Section -->
-    <section class="nad-faq">
-      <div class="faq-header fade-in-up">
-        <h2>Frequently Asked Questions</h2>
-        <p
-          style="
-            font-size: 1.2rem;
-            color: var(--text-medium);
-            max-width: 600px;
-            margin: 0 auto;
-          "
-        >
-          Everything you need to know about NAD+ therapy
-        </p>
-      </div>
-      <div class="faq-container">
-        <div class="faq-item fade-in-up">
-          <div class="faq-question">How long do NAD+ therapy results last?</div>
-          <div class="faq-answer">
-            NAD+ therapy results typically last 2-4 weeks, with cumulative
-            benefits building over multiple sessions. Many patients report
-            sustained improvements in energy, mental clarity, and overall
-            well-being. Regular maintenance treatments help sustain optimal NAD+
-            levels for long-term benefits.
-          </div>
-        </div>
-        <div class="faq-item fade-in-up">
-          <div class="faq-question">
-            Are there any side effects with NAD+ therapy?
-          </div>
-          <div class="faq-answer">
-            NAD+ therapy is generally very well-tolerated. Some patients may
-            experience mild nausea, cramping, or flushing during treatment,
-            which typically subsides as the infusion rate is adjusted. Our
-            medical team continuously monitors your comfort and can modify the
-            treatment as needed.
-          </div>
-        </div>
-        <div class="faq-item fade-in-up">
-          <div class="faq-question">
-            Who is a good candidate for NAD+ therapy?
-          </div>
-          <div class="faq-answer">
-            Adults seeking cognitive enhancement, anti-aging benefits, energy
-            optimization, or cellular repair are excellent candidates. Those
-            dealing with chronic fatigue, brain fog, or age-related concerns
-            often see significant benefits. A comprehensive medical consultation
-            determines individual suitability and optimal protocols.
-          </div>
-        </div>
-        <div class="faq-item fade-in-up">
-          <div class="faq-question">
-            How often should I receive NAD+ treatments?
-          </div>
-          <div class="faq-answer">
-            Treatment frequency depends on your specific goals and response.
-            Initial protocols often include weekly sessions for 4-6 weeks,
-            followed by monthly maintenance treatments. Our medical team will
-            design a personalized schedule based on your individual needs and
-            desired outcomes.
-          </div>
-        </div>
-        <div class="faq-item fade-in-up">
-          <div class="faq-question">
-            Can NAD+ be combined with other treatments?
-          </div>
-          <div class="faq-answer">
-            Yes, NAD+ therapy synergizes excellently with other wellness
-            treatments including IV vitamin therapy, hormone optimization,
-            peptide therapy, and lifestyle interventions. Our medical team can
-            design comprehensive treatment protocols for maximum benefits.
-          </div>
-        </div>
-        <div class="faq-item fade-in-up">
-          <div class="faq-question">
-            When will I notice results from NAD+ therapy?
-          </div>
-          <div class="faq-answer">
-            Many patients report increased energy and mental clarity within
-            hours to days after their first treatment. Cumulative benefits
-            including improved sleep, enhanced cognitive function, and
-            anti-aging effects develop over subsequent treatments and can last
-            for weeks.
-          </div>
-        </div>
-      </div>
-    </section>
+          <div class="menu-grid">
+            <!-- NAD+ Basic -->
+            <div class="menu-card">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F8b73c477407048d0945425bdc93ba34d%2Ff5958fd15db54ea28489076f16976d01?format=webp&width=800"
+                alt="Basic NAD+ Therapy"
+                class="menu-card-image"
+              />
+              <div class="menu-card-content">
+                <h3>
+                  <i class="fas fa-battery-half"></i> Basic NAD+ Treatment
+                </h3>
+                <div class="price">$350</div>
+                <div class="description">
+                  Introduction to NAD+ therapy with 250mg dose for energy and
+                  cognitive enhancement.
+                </div>
+                <ul class="benefits">
+                  <li>250mg NAD+ infusion</li>
+                  <li>2-3 hour treatment</li>
+                  <li>Enhanced energy levels</li>
+                  <li>Improved mental clarity</li>
+                  <li>Better sleep quality</li>
+                </ul>
+                <div class="action-buttons">
+                  <a href="tel:+16026889825" class="btn btn-primary">
+                    <i class="fas fa-phone"></i>
+                    Call to Book
+                  </a>
+                  <a
+                    href="https://Staydripped.intakeq.com/booking"
+                    class="btn btn-outline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="fas fa-calendar"></i>
+                    Book Online
+                  </a>
+                </div>
+              </div>
+            </div>
 
-    <!-- CTA Section -->
-    <section class="nad-cta">
-      <div class="cta-content fade-in-up">
-        <h2>Experience the Future of Anti-Aging</h2>
-        <p>
-          Discover how NAD+ therapy can transform your energy, cognition, and
-          longevity at the cellular level. Join thousands who have experienced
-          the revolutionary benefits of cellular optimization.
-        </p>
-        <div class="cta-buttons">
-          <a
-            href="https://Staydripped.intakeq.com/booking"
-            class="btn-hero-primary"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="fas fa-calendar-check"></i>
-            Book NAD+ Therapy Now
-          </a>
-          <a href="../membership.html" class="btn-hero-secondary">
-            <i class="fas fa-star"></i>
-            View Member Pricing
-          </a>
+            <!-- NAD+ Standard -->
+            <div class="menu-card">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F8b73c477407048d0945425bdc93ba34d%2F53b96c765a114d0682a9902ab397efc0?format=webp&width=800"
+                alt="Standard NAD+ Therapy"
+                class="menu-card-image"
+              />
+              <div class="menu-card-content">
+                <h3>
+                  <i class="fas fa-battery-three-quarters"></i> Standard NAD+
+                  Treatment
+                </h3>
+                <div class="price">$450</div>
+                <div class="description">
+                  Comprehensive NAD+ therapy with 500mg dose for optimal
+                  cellular regeneration.
+                </div>
+                <ul class="benefits">
+                  <li>500mg NAD+ infusion</li>
+                  <li>3-4 hour treatment</li>
+                  <li>Significant energy boost</li>
+                  <li>Enhanced cognitive function</li>
+                  <li>Improved cellular repair</li>
+                  <li>Anti-aging benefits</li>
+                </ul>
+                <div class="action-buttons">
+                  <a href="tel:+16026889825" class="btn btn-primary">
+                    <i class="fas fa-phone"></i>
+                    Call to Book
+                  </a>
+                  <a
+                    href="https://Staydripped.intakeq.com/booking"
+                    class="btn btn-outline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="fas fa-calendar"></i>
+                    Book Online
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- NAD+ Premium -->
+            <div class="menu-card">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F8b73c477407048d0945425bdc93ba34d%2Fdcf67a4833054b048c22676c6830729f?format=webp&width=800"
+                alt="Premium NAD+ Therapy"
+                class="menu-card-image"
+              />
+              <div class="menu-card-content">
+                <h3>
+                  <i class="fas fa-battery-full"></i> Premium NAD+ Treatment
+                </h3>
+                <div class="price">$650</div>
+                <div class="description">
+                  Maximum NAD+ therapy with 750mg dose for intensive cellular
+                  regeneration and anti-aging.
+                </div>
+                <ul class="benefits">
+                  <li>750mg NAD+ infusion</li>
+                  <li>4-5 hour treatment</li>
+                  <li>Maximum energy enhancement</li>
+                  <li>Peak cognitive performance</li>
+                  <li>Intensive cellular repair</li>
+                  <li>Advanced anti-aging effects</li>
+                  <li>Longevity optimization</li>
+                </ul>
+                <div class="action-buttons">
+                  <a href="tel:+16026889825" class="btn btn-primary">
+                    <i class="fas fa-phone"></i>
+                    Call to Book
+                  </a>
+                  <a
+                    href="https://Staydripped.intakeq.com/booking"
+                    class="btn btn-outline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="fas fa-calendar"></i>
+                    Book Online
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- NAD+ Series -->
+            <div class="menu-card">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F8b73c477407048d0945425bdc93ba34d%2Ff5958fd15db54ea28489076f16976d01?format=webp&width=800"
+                alt="NAD+ Treatment Series"
+                class="menu-card-image"
+              />
+              <div class="menu-card-content">
+                <h3>
+                  <i class="fas fa-calendar-week"></i> NAD+ Treatment Series
+                </h3>
+                <div class="price">$1,800</div>
+                <div class="description">
+                  5-session NAD+ series for comprehensive cellular regeneration
+                  and long-term anti-aging benefits.
+                </div>
+                <ul class="benefits">
+                  <li>5 NAD+ treatments (500mg each)</li>
+                  <li>Scheduled over 4-6 weeks</li>
+                  <li>Progressive cellular repair</li>
+                  <li>Sustained energy improvement</li>
+                  <li>Long-term anti-aging effects</li>
+                  <li>Comprehensive wellness support</li>
+                  <li>Best value package</li>
+                </ul>
+                <div class="action-buttons">
+                  <a href="tel:+16026889825" class="btn btn-primary">
+                    <i class="fas fa-phone"></i>
+                    Call to Book
+                  </a>
+                  <a
+                    href="https://Staydripped.intakeq.com/booking"
+                    class="btn btn-outline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="fas fa-calendar"></i>
+                    Book Online
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <p class="cta-note">
-          Medical consultation required for first-time NAD+ therapy patients
-        </p>
-      </div>
-    </section>
+      </section>
+    </main>
 
     <!-- Footer -->
-    <footer
-      id="footer"
-      style="
-        background: var(--bg-dark);
-        color: var(--text-chrome);
-        padding: 4rem 0 2rem;
-      "
-    >
-      <div
-        class="container"
-        style="max-width: 1200px; margin: 0 auto; padding: 0 2rem"
-      >
-        <div
-          style="
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
-          "
-        >
-          <div>
-            <div style="margin-bottom: 1.5rem">
-              <img
-                src="../assets/images/logo.png"
-                alt="Stay Dripped Mobile IV"
-                style="height: 50px"
-              />
+    <footer class="professional-footer">
+      <div class="footer-pattern"></div>
+      <div class="container">
+        <div class="footer-main">
+          <div class="footer-grid">
+            <div class="footer-brand">
+              <div class="footer-logo">
+                <img
+                  src="../assets/images/logo.png"
+                  alt="Stay Dripped Mobile IV"
+                  style="height: 40px; width: auto"
+                />
+              </div>
+              <h3 class="footer-brand-title">Stay Dripped®</h3>
+              <p class="footer-brand-description">
+                Premium mobile IV therapy and wellness services delivered to
+                your location in Scottsdale and Phoenix. Experience the future
+                of personalized healthcare.
+              </p>
+              <div class="footer-social">
+                <a href="#" class="social-link" aria-label="Instagram">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 2H7C4.24 2 2 4.24 2 7V17C2 19.76 4.24 22 7 22H17C19.76 22 22 19.76 22 17V7C22 4.24 19.76 2 17 2Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M16 11.37C16.12 12.25 15.95 13.15 15.52 13.91C15.09 14.67 14.42 15.24 13.64 15.52C12.86 15.8 12.01 15.78 11.24 15.46C10.47 15.14 9.83 14.54 9.42 13.77C9.01 13 8.85 12.1 8.97 11.22C9.09 10.34 9.48 9.53 10.08 8.93C10.68 8.33 11.45 7.97 12.27 7.9C13.09 7.83 13.91 8.05 14.59 8.53"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M17.5 6.5H17.51"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+                <a href="#" class="social-link" aria-label="Facebook">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M18 2H15C13.67 2 12.4 2.53 11.46 3.46C10.53 4.4 10 5.67 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73 14.11 6.48 14.29 6.29C14.48 6.11 14.73 6 15 6H18V2Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+                <a href="#" class="social-link" aria-label="Twitter">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23 3C22.0424 3.67548 20.9821 4.19211 19.86 4.53C19.2577 3.83751 18.4573 3.34669 17.567 3.12393C16.6767 2.90116 15.7395 2.95718 14.8821 3.28445C14.0247 3.61171 13.2884 4.19445 12.773 4.95371C12.2575 5.71297 11.9877 6.61435 12 7.53V8.53C10.2426 8.57557 8.50127 8.18581 6.93101 7.39624C5.36074 6.60667 4.01032 5.43666 3 4V4C3 4 -1 13 8 17C5.94053 18.398 3.48716 19.099 1 19C10 24 21 19 21 7.5C20.9991 7.22145 20.9723 6.94359 20.92 6.67C21.9406 5.66349 22.6608 4.39271 23 3V3Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+                <a href="#" class="social-link" aria-label="LinkedIn">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16 8C17.59 8 19.1 8.63 20.21 9.79C21.32 10.95 21.92 12.53 21.92 14.17V21H18.25V14.17C18.25 13.45 17.96 12.76 17.44 12.24C16.92 11.72 16.23 11.43 15.51 11.43C14.79 11.43 14.1 11.72 13.58 12.24C13.06 12.76 12.77 13.45 12.77 14.17V21H9.1V14.17C9.1 12.53 9.7 10.95 10.81 9.79C11.92 8.63 13.43 8 15.02 8H16Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <rect
+                      x="2"
+                      y="9"
+                      width="4"
+                      height="12"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <circle
+                      cx="4"
+                      cy="4"
+                      r="2"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+              </div>
             </div>
-            <p style="color: var(--text-chrome); line-height: 1.6">
-              Premium mobile IV therapy and wellness services delivered to your
-              location in Scottsdale & Phoenix. Experience the future of
-              personalized healthcare.
-            </p>
-          </div>
-          <div>
-            <h4
-              style="
-                color: var(--text-white);
-                margin-bottom: 1.5rem;
-                font-size: 1.2rem;
-                font-weight: 700;
-              "
-            >
-              Services
-            </h4>
-            <ul style="list-style: none; padding: 0; margin: 0">
-              <li style="margin-bottom: 0.75rem">
-                <a
-                  href="iv-therapy.html"
-                  style="
-                    color: var(--text-chrome);
-                    text-decoration: none;
-                    transition: color 0.3s ease;
-                  "
-                  >IV Therapy</a
-                >
-              </li>
-              <li style="margin-bottom: 0.75rem">
-                <a
-                  href="nad-therapy.html"
-                  style="
-                    color: var(--text-chrome);
-                    text-decoration: none;
-                    transition: color 0.3s ease;
-                  "
-                  >NAD+ Therapy</a
-                >
-              </li>
-              <li style="margin-bottom: 0.75rem">
-                <a
-                  href="peptide-therapy.html"
-                  style="
-                    color: var(--text-chrome);
-                    text-decoration: none;
-                    transition: color 0.3s ease;
-                  "
+
+            <div class="footer-section">
+              <h4 class="footer-section-title">Services</h4>
+              <div class="footer-links">
+                <a href="iv-therapy.html" class="footer-link">IV Therapy</a>
+                <a href="nad-therapy.html" class="footer-link">NAD+ Therapy</a>
+                <a href="peptide-therapy.html" class="footer-link"
                   >Peptide Therapy</a
                 >
-              </li>
-              <li style="margin-bottom: 0.75rem">
-                <a
-                  href="hormone-replacement.html"
-                  style="
-                    color: var(--text-chrome);
-                    text-decoration: none;
-                    transition: color 0.3s ease;
-                  "
-                  >Hormone Replacement</a
+                <a href="aesthetic.html" class="footer-link"
+                  >Aesthetic Treatments</a
                 >
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h4
-              style="
-                color: var(--text-white);
-                margin-bottom: 1.5rem;
-                font-size: 1.2rem;
-                font-weight: 700;
-              "
-            >
-              Company
-            </h4>
-            <ul style="list-style: none; padding: 0; margin: 0">
-              <li style="margin-bottom: 0.75rem">
-                <a
-                  href="../membership.html"
-                  style="
-                    color: var(--text-chrome);
-                    text-decoration: none;
-                    transition: color 0.3s ease;
-                  "
-                  >Membership</a
-                >
-              </li>
-              <li style="margin-bottom: 0.75rem">
-                <a
-                  href="../corporate-events.html"
-                  style="
-                    color: var(--text-chrome);
-                    text-decoration: none;
-                    transition: color 0.3s ease;
-                  "
+                <a href="membership.html" class="footer-link">Memberships</a>
+                <a href="corporate-events.html" class="footer-link"
                   >Corporate Events</a
                 >
-              </li>
-              <li style="margin-bottom: 0.75rem">
-                <a
-                  href="../franchise.html"
-                  style="
-                    color: var(--text-chrome);
-                    text-decoration: none;
-                    transition: color 0.3s ease;
-                  "
-                  >Franchise</a
+              </div>
+            </div>
+
+            <div class="footer-section">
+              <h4 class="footer-section-title">Company</h4>
+              <div class="footer-links">
+                <a href="#about" class="footer-link">About Us</a>
+                <a href="#how-it-works" class="footer-link">How It Works</a>
+                <a href="#testimonials" class="footer-link">Testimonials</a>
+                <a href="#faq" class="footer-link">FAQ</a>
+                <a href="franchise.html" class="footer-link">Franchise</a>
+                <a href="partnerships.html" class="footer-link">Partnerships</a>
+              </div>
+            </div>
+
+            <div class="footer-section">
+              <h4 class="footer-section-title">Contact</h4>
+              <div class="contact-item">
+                <svg
+                  class="contact-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-              </li>
-              <li style="margin-bottom: 0.75rem">
-                <a
-                  href="../partnerships.html"
-                  style="
-                    color: var(--text-chrome);
-                    text-decoration: none;
-                    transition: color 0.3s ease;
-                  "
-                  >Partnerships</a
+                  <path
+                    d="M22 16.92V19.92C22.0011 20.1985 21.9441 20.4742 21.8325 20.7293C21.7209 20.9845 21.5573 21.2136 21.3521 21.4019C21.1468 21.5901 20.9046 21.7335 20.6407 21.8227C20.3769 21.9119 20.0974 21.9451 19.82 21.92C16.7428 21.5856 13.787 20.5341 11.19 18.85C8.77382 17.3147 6.72533 15.2662 5.18999 12.85C3.49997 10.2412 2.44824 7.27099 2.11999 4.18C2.095 3.90347 2.12787 3.62476 2.21649 3.36162C2.30512 3.09849 2.44756 2.85669 2.63476 2.65162C2.82196 2.44655 3.0498 2.28271 3.30379 2.17052C3.55777 2.05833 3.83233 2.00026 4.10999 2H7.10999C7.59531 1.99522 8.06579 2.16708 8.43376 2.48353C8.80173 2.79999 9.04207 3.23945 9.10999 3.72C9.23662 4.68007 9.47144 5.62273 9.80999 6.53C9.94454 6.88792 9.97366 7.27691 9.8939 7.65088C9.81415 8.02485 9.62886 8.36811 9.35999 8.64L8.08999 9.91C9.51355 12.4135 11.5865 14.4864 14.09 15.91L15.36 14.64C15.6319 14.3711 15.9751 14.1858 16.3491 14.1061C16.7231 14.0263 17.1121 14.0555 17.47 14.19C18.3773 14.5286 19.3199 14.7634 20.28 14.89C20.7658 14.9585 21.2094 15.2032 21.5265 15.5775C21.8437 15.9518 22.0122 16.4296 21.0 16.92H22Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <div class="contact-text">
+                  <a href="tel:+16026889825" class="contact-link"
+                    >(602) 688-9825</a
+                  >
+                </div>
+              </div>
+              <div class="contact-item">
+                <svg
+                  class="contact-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h4
-              style="
-                color: var(--text-white);
-                margin-bottom: 1.5rem;
-                font-size: 1.2rem;
-                font-weight: 700;
-              "
-            >
-              Contact
-            </h4>
-            <div style="margin-bottom: 1rem">
-              <a
-                href="tel:+16026889825"
-                style="
-                  color: var(--text-chrome);
-                  text-decoration: none;
-                  display: flex;
-                  align-items: center;
-                  gap: 0.5rem;
-                  margin-bottom: 0.75rem;
-                "
-              >
-                <i class="fas fa-phone"></i>
-                (602) 688-9825
-              </a>
-              <a
-                href="mailto:info@staydripped.com"
-                style="
-                  color: var(--text-chrome);
-                  text-decoration: none;
-                  display: flex;
-                  align-items: center;
-                  gap: 0.5rem;
-                  margin-bottom: 0.75rem;
-                "
-              >
-                <i class="fas fa-envelope"></i>
-                info@staydripped.com
-              </a>
-              <p style="color: var(--text-chrome); margin: 0">
-                Available 7 days a week
-              </p>
+                  <path
+                    d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <polyline
+                    points="22,6 12,13 2,6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <div class="contact-text">
+                  <a href="mailto:info@staydripped.com" class="contact-link"
+                    >info@staydripped.com</a
+                  >
+                </div>
+              </div>
+              <div class="contact-item">
+                <svg
+                  class="contact-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <polyline
+                    points="12,6 12,12 16,14"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <div class="contact-text">Available 7 days a week</div>
+              </div>
             </div>
           </div>
         </div>
-        <div
-          style="
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgb(255 255 255 / 10%);
-            color: rgb(255 255 255 / 60%);
-          "
-        >
-          <p>
-            &copy; 2025 Stay Dripped Mobile IV LLC. All rights reserved. | NAD+
-            Therapy Specialists
-          </p>
+
+        <div class="footer-bottom">
+          <div class="footer-bottom-content">
+            <div class="footer-copyright">
+              <p>
+                &copy; 2024 Stay Dripped Mobile IV LLC. All rights reserved.
+              </p>
+            </div>
+            <div class="footer-legal">
+              <a href="../privacy-policy.html" class="footer-legal-link"
+                >Privacy Policy</a
+              >
+              <a href="../terms-of-service.html" class="footer-legal-link"
+                >Terms of Service</a
+              >
+              <a href="../medical-disclaimer.html" class="footer-legal-link"
+                >Medical Disclaimer</a
+              >
+            </div>
+          </div>
         </div>
       </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="../assets/js/main.js"></script>
+    <!-- Scripts -->
+    <script src="https://qualiphy.com/api/integration/loader.js"></script>
+    <script src="../assets/js/gfe-utility.js"></script>
+    <script src="../assets/js/premium-interactions.js" defer></script>
+    <script src="../assets/js/advanced-interactions.js" defer></script>
+
     <script>
-      // Enhanced scroll progress indicator
-      window.addEventListener("scroll", function () {
-        const winScroll =
-          document.body.scrollTop || document.documentElement.scrollTop;
-        const height =
-          document.documentElement.scrollHeight -
-          document.documentElement.clientHeight;
-        const scrolled = (winScroll / height) * 100;
-        document.getElementById("scrollIndicator").style.transform =
-          `scaleX(${scrolled / 100})`;
-      });
-
-      // Smooth scrolling for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute("href"));
-          if (target) {
-            target.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            });
-          }
-        });
-      });
-
-      // FAQ functionality
-      document.querySelectorAll(".faq-question").forEach((question) => {
-        question.addEventListener("click", function () {
-          const faqItem = this.parentElement;
-          const isActive = faqItem.classList.contains("active");
-
-          // Close all FAQ items
-          document.querySelectorAll(".faq-item").forEach((item) => {
-            item.classList.remove("active");
-          });
-
-          // Toggle current item
-          if (!isActive) {
-            faqItem.classList.add("active");
-          }
-        });
-      });
-
-      // Intersection Observer for animations
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px",
+      // Initialize Qualiphy widget
+      const qualiphyConfig = {
+        clinicId: "3454",
+        examIds:
+          "918,2095,2097,2246,2316,2120,2315,2129,1620,2130,1623,2248,1148,1693,2122,1287,1694,2207",
+        timezone: "-6",
+        availabilityStartTime: "00:00",
+        availabilityEndTime: "23:59",
+        availabilityDays: "1,2,3,4,5,6,7",
       };
 
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animated");
-          }
+      // Universal page functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+        const navLinks = document.querySelector(".nav-links");
+
+        if (mobileMenuToggle) {
+          mobileMenuToggle.addEventListener("click", function () {
+            navLinks.classList.toggle("active");
+          });
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+              target.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          });
         });
-      }, observerOptions);
 
-      // Observe all elements with animation classes
-      document.querySelectorAll(".fade-in-up, .fade-in").forEach((el) => {
-        observer.observe(el);
+        console.log("Stay Dripped: NAD+ Therapy page loaded");
       });
-
-      // Booking modal function
-      function openBookingModal() {
-        window.open(
-          "https://Staydripped.intakeq.com/booking",
-          "_blank",
-          "noopener,noreferrer",
-        );
-      }
-
-      // Initialize app
-      if (typeof window.initializeApp === "function") {
-        window.initializeApp();
-      }
 
       // Global fallback function for showDisclosureModal
       if (typeof window.showDisclosureModal === "undefined") {
@@ -1914,21 +783,42 @@
           console.log(
             "Good Faith Exam modal function not yet loaded. Please try again in a moment.",
           );
-          // Try to redirect to booking as fallback
-          openBookingModal();
+          window.open("https://Staydripped.intakeq.com/booking", "_blank");
         };
       }
     </script>
 
-    <!-- Qualiphy GFE Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-    <script
-      id="qualiphy-script"
-      type="text/javascript"
-      src="https://www.app.qualiphy.me/scripts/quidget_disclosure.js"
-      data-formsrc="https://www.app.qualiphy.me/qualiphy-widget?clinic=Stay Dripped Mobile IV LLC&clinicId=3454&first_name=&last_name=&email=&phone_number=&gender=&exams=918,2095,2097,2246,2316,2120,2315,2129,1620,2130,1623,2248,1148,1693,2122,1287,1694,2207&tele_state_required=true&token=25f1c2618e146d725e934313417e918418a5068e"
-      data-timezone="-6"
-      data-examhours='[{"SUN":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"MON":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"TUE":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"WED":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"THU":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"FRI":{"FROM":"00:00","TO":"23:59","isDaySelected":true}},{"SAT":{"FROM":"00:00","TO":"23:59","isDaySelected":true}}]'
-    ></script>
+    <style>
+      .highlight-card {
+        background: white;
+        padding: 2rem;
+        border-radius: var(--br-lg);
+        text-align: center;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+      }
+
+      .highlight-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .highlight-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        display: block;
+      }
+
+      .highlight-card h3 {
+        color: var(--primary);
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+      }
+
+      .highlight-card p {
+        color: var(--text-light);
+        line-height: 1.6;
+      }
+    </style>
   </body>
 </html>
