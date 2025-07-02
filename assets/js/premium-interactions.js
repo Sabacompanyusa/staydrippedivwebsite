@@ -5,19 +5,35 @@
 
 class PremiumInteractions {
   constructor() {
-    this.init();
+    try {
+      this.init();
+    } catch (error) {
+      console.warn("PremiumInteractions initialization error:", error);
+    }
   }
 
   init() {
-    this.createScrollIndicator();
-    this.setupParallaxEffects();
-    this.setupIntersectionObserver();
-    this.setupSmoothScrolling();
-    this.setupButtonRippleEffect();
-    this.setupImageLazyLoading();
-    this.setupPreloadAnimations();
-    this.setupFloatingElements();
-    this.setupMouseTracker();
+    const methods = [
+      "createScrollIndicator",
+      "setupParallaxEffects",
+      "setupIntersectionObserver",
+      "setupSmoothScrolling",
+      "setupButtonRippleEffect",
+      "setupImageLazyLoading",
+      "setupPreloadAnimations",
+      "setupFloatingElements",
+      "setupMouseTracker",
+    ];
+
+    methods.forEach((methodName) => {
+      try {
+        if (typeof this[methodName] === "function") {
+          this[methodName]();
+        }
+      } catch (error) {
+        console.warn(`Error in ${methodName}:`, error);
+      }
+    });
   }
 
   // Scroll Progress Indicator
@@ -41,7 +57,7 @@ class PremiumInteractions {
         background: rgba(15, 23, 42, 0.1);
         backdrop-filter: blur(10px);
       }
-      
+
       .scroll-progress-bar {
         height: 100%;
         background: var(--gradient-cyan);
@@ -50,7 +66,7 @@ class PremiumInteractions {
         position: relative;
         box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
       }
-      
+
       .scroll-progress-glow {
         position: absolute;
         top: -2px;
@@ -62,7 +78,7 @@ class PremiumInteractions {
         opacity: 0;
         transition: opacity 0.3s ease;
       }
-      
+
       .scroll-progress-indicator.visible .scroll-progress-glow {
         opacity: 1;
       }
@@ -179,7 +195,7 @@ class PremiumInteractions {
         animation: slideInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards,
                    glow 0.8s ease-out 0.3s forwards;
       }
-      
+
       @keyframes slideInUp {
         from {
           opacity: 0;
@@ -190,7 +206,7 @@ class PremiumInteractions {
           transform: translateY(0) scale(1);
         }
       }
-      
+
       @keyframes glow {
         from {
           box-shadow: var(--shadow);
@@ -207,30 +223,42 @@ class PremiumInteractions {
   setupSmoothScrolling() {
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       anchor.addEventListener("click", function (e) {
+        const href = this.getAttribute("href");
+
+        // Skip if href is just '#' or empty
+        if (!href || href === "#" || href.length <= 1) {
+          return;
+        }
+
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute("href"));
 
-        if (target) {
-          const headerHeight =
-            document.querySelector("header")?.offsetHeight || 0;
-          const targetPosition =
-            target.getBoundingClientRect().top +
-            window.pageYOffset -
-            headerHeight -
-            20;
+        try {
+          const target = document.querySelector(href);
 
-          window.scrollTo({
-            top: targetPosition,
-            behavior: "smooth",
-          });
+          if (target) {
+            const headerHeight =
+              document.querySelector("header")?.offsetHeight || 0;
+            const targetPosition =
+              target.getBoundingClientRect().top +
+              window.pageYOffset -
+              headerHeight -
+              20;
 
-          // Add visual feedback
-          target.style.transform = "scale(1.02)";
-          target.style.transition = "transform 0.3s ease";
+            window.scrollTo({
+              top: targetPosition,
+              behavior: "smooth",
+            });
 
-          setTimeout(() => {
-            target.style.transform = "scale(1)";
-          }, 300);
+            // Add visual feedback
+            target.style.transform = "scale(1.02)";
+            target.style.transition = "transform 0.3s ease";
+
+            setTimeout(() => {
+              target.style.transform = "scale(1)";
+            }, 300);
+          }
+        } catch (error) {
+          console.warn("Error in smooth scrolling:", error);
         }
       });
     });
@@ -314,12 +342,12 @@ class PremiumInteractions {
         background-size: 200% 100%;
         animation: loading 1.5s infinite;
       }
-      
+
       img.loaded {
         opacity: 1;
         animation: none;
       }
-      
+
       @keyframes loading {
         0% { background-position: 200% 0; }
         100% { background-position: -200% 0; }
@@ -480,5 +508,18 @@ class PerformanceOptimizer {
   }
 }
 
-// Initialize performance optimizations
-new PerformanceOptimizer();
+// Initialize performance optimizations safely
+try {
+  new PerformanceOptimizer();
+} catch (error) {
+  console.warn("PerformanceOptimizer initialization error:", error);
+}
+
+// Initialize PremiumInteractions safely
+document.addEventListener("DOMContentLoaded", function () {
+  try {
+    new PremiumInteractions();
+  } catch (error) {
+    console.warn("PremiumInteractions initialization error:", error);
+  }
+});

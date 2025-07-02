@@ -3,89 +3,108 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Stay Dripped® Mobile IV - Premium Mobile IV Therapy & Wellness Services
-    </title>
+    <title>Stay Dripped Mobile IV - Premium Wellness Services</title>
     <meta
       name="description"
-      content="Stay Dripped® Mobile IV offers premium on-demand hydration, NAD+, peptides and wellness services delivered right to your door. Recharge. Rejuvenate. Repeat."
+      content="Arizona's premier mobile IV therapy service. Professional, convenient, and effective wellness treatments delivered to your location."
     />
     <meta
       name="keywords"
-      content="IV therapy, mobile hydration, NAD treatment, peptide therapy, wellness Scottsdale, on-demand IV, mobile wellness, vitamin therapy, hangover cure"
+      content="mobile IV therapy, IV drip, wellness, hydration, vitamins, Arizona, Scottsdale, Phoenix"
     />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://staydripped.com" />
 
-    <!-- Open Graph -->
+    <!-- Open Graph Meta Tags -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://staydripped.com" />
     <meta
       property="og:title"
-      content="Stay Dripped® Mobile IV - Premium Mobile IV Therapy"
+      content="Stay Dripped Mobile IV - Premium Wellness Services"
     />
     <meta
       property="og:description"
-      content="Professional mobile IV therapy and wellness services delivered to your location in Scottsdale and Phoenix."
+      content="Arizona's premier mobile IV therapy service. Professional, convenient, and effective wellness treatments delivered to your location."
     />
     <meta
       property="og:image"
       content="https://staydripped.com/assets/images/logo.png"
     />
 
-    <!-- Twitter -->
+    <!-- Twitter Card Meta Tags -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta
       property="twitter:title"
-      content="Stay Dripped® Mobile IV - Premium Mobile IV Therapy"
+      content="Stay Dripped Mobile IV - Premium Wellness Services"
     />
     <meta
       property="twitter:description"
-      content="Professional mobile IV therapy and wellness services delivered to your location."
+      content="Arizona's premier mobile IV therapy service. Professional, convenient, and effective wellness treatments delivered to your location."
     />
 
-    <!-- Favicon -->
+    <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
       href="assets/images/apple-touch-icon.png"
     />
-
-    <!-- IntakeQ Configuration -->
-    <meta name="intakeq-widget-id" content="68460f36bc104b6aa9da43e0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon-16x16.png"
+    />
 
     <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://qualiphy.com" />
+    <link rel="preconnect" href="https://intakeq.com" />
 
     <!-- Preload critical assets -->
     <link rel="preload" href="assets/images/logo.png" as="image" />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      as="style"
+    />
+
+    <!-- External fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 
     <!-- Critical CSS (inline for performance) -->
     <style>
       :root {
-        --primary-color: #0ea5e9;
-        --primary-dark: #0284c7;
-        --secondary-color: #06b6d4;
-        --accent-color: #10b981;
-        --accent-purple: #8b5cf6;
-        --accent-pink: #ec4899;
-        --text-primary: #0f172a;
-        --text-secondary: #475569;
-        --text-light: #64748b;
-        --bg-light: #f8fafc;
-        --bg-white: #fff;
-        --bg-gradient: linear-gradient(
-          135deg,
-          #0ea5e9 0%,
-          #06b6d4 50%,
-          #10b981 100%
-        );
-        --bg-soft: linear-gradient(145deg, #f1f5f9, #e2e8f0);
-        --shadow: 0 1px 3px 0 rgb(14 165 233 / 10%);
-        --shadow-lg: 0 10px 15px -3px rgb(14 165 233 / 15%);
-        --shadow-colored: 0 8px 25px rgb(14 165 233 / 20%);
+        /* Color Variables */
+        --primary: #0a2a43;
+        --secondary: #00bcd4;
+        --accent: #4fc3f7;
+        --primary-cyan: #00e5ff;
+        --gradient-primary: linear-gradient(135deg, #00e5ff 0%, #00acc1 50%, #006064 100%);
+        --white: #ffffff;
+        --text-primary: #0a2a43;
+        --text-secondary: #666;
+        --bg-light: #f1fbff;
+        --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+        --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.1);
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        --br: 12px;
+        --br-lg: 16px;
       }
 
       * {
@@ -94,359 +113,285 @@
         box-sizing: border-box;
       }
 
+      html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+      }
+
       body {
-        font-family:
-          Inter,
-          -apple-system,
-          BlinkMacSystemFont,
-          "Segoe UI",
-          sans-serif;
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         line-height: 1.6;
         color: var(--text-primary);
-        background: linear-gradient(145deg, #fafafa, #f5f5f5);
-        min-height: 100vh;
+        background: #fafafa;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
       }
 
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-
-      /* Skip Link */
-      .skip-link {
-        position: absolute;
-        top: -40px;
+      /* Header Navigation */
+      .header {
+        position: fixed;
+        top: 0;
         left: 0;
-        background: var(--primary-color);
-        color: white;
-        padding: 8px;
-        text-decoration: none;
-        z-index: 100;
+        right: 0;
+        z-index: 1000;
+        background: rgba(10, 42, 67, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: var(--shadow);
+        transition: var(--transition);
       }
 
-      .skip-link:focus {
-        top: 0;
-      }
-
-      /* Header */
-      header {
-        background: linear-gradient(145deg, #fff, #f8fafc);
-        box-shadow:
-          0 8px 32px rgb(0 0 0 / 12%),
-          0 4px 16px rgb(0 0 0 / 8%),
-          inset 0 1px 0 rgb(255 255 255 / 90%),
-          inset 0 -1px 0 rgb(0 0 0 / 5%);
-        position: sticky;
-        top: 0;
-        z-index: 50;
-        backdrop-filter: blur(20px);
-        border-bottom: 1px solid rgb(255 255 255 / 30%);
-      }
-
-      nav {
+      .nav {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 1.25rem 0;
-        position: relative;
       }
 
       .logo {
-        display: inline-block;
-        line-height: 0;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: white;
+        font-weight: 800;
+        transition: var(--transition);
+        text-decoration: none;
+      }
+
+      .logo:hover {
+        transform: scale(1.05);
       }
 
       .logo img {
         height: 40px;
         width: auto;
-        display: block;
       }
 
-      .nav-links {
-        display: flex;
-        gap: 2rem;
-        list-style: none;
-      }
-
-      .nav-links a {
-        text-decoration: none;
-        color: var(--text-primary);
-        font-weight: 500;
-        transition: all 0.3s ease;
-        padding: 0.5rem 1rem;
-        border-radius: 8px;
-        position: relative;
-        text-shadow: 0 1px 2px rgb(255 255 255 / 80%);
-      }
-
-      .nav-links a:hover {
-        color: var(--primary-color);
-        background: linear-gradient(
-          145deg,
-          rgb(59 130 246 / 10%),
-          rgb(30 64 175 / 5%)
-        );
-        box-shadow:
-          0 4px 8px rgb(59 130 246 / 20%),
-          inset 0 1px 0 rgb(255 255 255 / 50%),
-          inset 0 -1px 0 rgb(0 0 0 / 5%);
-        transform: translateY(-1px);
-      }
-
-      .nav-links a:active {
-        transform: translateY(0);
-        box-shadow:
-          0 2px 4px rgb(59 130 246 / 20%),
-          inset 0 2px 4px rgb(0 0 0 / 10%);
-      }
-
-      .btn {
-        display: inline-block;
-        padding: 1rem 2rem;
-        background: linear-gradient(145deg, #3b82f6, #1e40af);
-        color: white;
-        text-decoration: none;
-        border-radius: 12px;
-        font-weight: 600;
-        transition: all 0.2s ease;
-        border: none;
-        cursor: pointer;
-        box-shadow:
-          0 8px 15px rgb(37 99 235 / 30%),
-          0 4px 6px rgb(0 0 0 / 10%),
-          inset 0 1px 0 rgb(255 255 255 / 20%),
-          inset 0 -1px 0 rgb(0 0 0 / 10%);
-        text-align: center;
-        text-shadow: 0 1px 2px rgb(0 0 0 / 20%);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .btn::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgb(255 255 255 / 20%),
-          transparent
-        );
-        transition: left 0.5s;
-      }
-
-      .btn:hover::before {
-        left: 100%;
-      }
-
-      .btn:hover {
-        background: linear-gradient(145deg, #4f46e5, #1e3a8a);
-        transform: translateY(-3px);
-        box-shadow:
-          0 12px 25px rgb(37 99 235 / 40%),
-          0 8px 15px rgb(0 0 0 / 15%),
-          inset 0 1px 0 rgb(255 255 255 / 30%),
-          inset 0 -1px 0 rgb(0 0 0 / 10%);
-      }
-
-      .btn:active {
-        transform: translateY(-1px);
-        box-shadow:
-          0 6px 12px rgb(37 99 235 / 30%),
-          0 2px 4px rgb(0 0 0 / 10%),
-          inset 0 2px 4px rgb(0 0 0 / 10%);
-      }
-
-      .btn-secondary {
-        background: linear-gradient(145deg, #f8fafc, #e2e8f0);
-        color: var(--primary-color);
-        border: 2px solid var(--primary-color);
-        box-shadow:
-          0 8px 15px rgb(37 99 235 / 15%),
-          0 4px 6px rgb(0 0 0 / 5%),
-          inset 0 1px 0 rgb(255 255 255 / 80%),
-          inset 0 -1px 0 rgb(0 0 0 / 5%);
-        text-shadow: none;
-      }
-
-      .btn-secondary:hover {
-        background: linear-gradient(145deg, #3b82f6, #1e40af);
-        color: white;
-        transform: translateY(-3px);
-        box-shadow:
-          0 12px 25px rgb(37 99 235 / 40%),
-          0 8px 15px rgb(0 0 0 / 15%),
-          inset 0 1px 0 rgb(255 255 255 / 30%);
-        text-shadow: 0 1px 2px rgb(0 0 0 / 20%);
-      }
-
-      .btn-secondary:active {
-        transform: translateY(-1px);
-        box-shadow:
-          0 6px 12px rgb(37 99 235 / 30%),
-          0 2px 4px rgb(0 0 0 / 10%),
-          inset 0 2px 4px rgb(0 0 0 / 10%);
-      }
-
-      /* Hero Section */
-      .hero {
-        padding: 6rem 0;
-        background: linear-gradient(
-          145deg,
-          #f8fafc 0%,
-          #e2e8f0 50%,
-          #f1f5f9 100%
-        );
-        text-align: center;
-        position: relative;
-        box-shadow:
-          inset 0 1px 0 rgb(255 255 255 / 80%),
-          inset 0 -1px 0 rgb(0 0 0 / 10%);
-      }
-
-      .hero::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background:
-          radial-gradient(
-            circle at 30% 20%,
-            rgb(59 130 246 / 5%) 0%,
-            transparent 50%
-          ),
-          radial-gradient(
-            circle at 70% 80%,
-            rgb(147 51 234 / 5%) 0%,
-            transparent 50%
-          );
-        pointer-events: none;
-      }
-
-      .hero-content {
-        max-width: 800px;
-        margin: 0 auto;
-        position: relative;
-        z-index: 1;
-        background: linear-gradient(
-          145deg,
-          rgb(255 255 255 / 90%),
-          rgb(248 250 252 / 80%)
-        );
-        padding: 3rem 2rem;
-        border-radius: 20px;
-        box-shadow:
-          0 20px 40px rgb(0 0 0 / 10%),
-          0 15px 12px rgb(0 0 0 / 5%),
-          inset 0 1px 0 rgb(255 255 255 / 90%),
-          inset 0 -1px 0 rgb(0 0 0 / 5%);
-        border: 1px solid rgb(255 255 255 / 60%);
-      }
-
-      .hero h1 {
-        font-size: 3.5rem;
-        line-height: 1.2;
-        margin-bottom: 1.5rem;
-        color: var(--text-primary);
-        font-weight: 700;
-        text-shadow:
-          0 2px 4px rgb(0 0 0 / 10%),
-          0 1px 2px rgb(255 255 255 / 80%);
-        background: linear-gradient(145deg, #1f2937, #374151);
+      .logo span {
+        font-size: 1.4rem;
+        font-weight: 800;
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
       }
 
-      .hero p {
-        font-size: 1.25rem;
-        color: var(--text-secondary);
-        margin-bottom: 2.5rem;
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
-        text-shadow: 0 1px 2px rgb(255 255 255 / 80%);
-      }
-
-      /* Services */
-      .services {
-        padding: 4rem 0;
-        background: linear-gradient(145deg, #fafafa, #f0f0f0);
-        position: relative;
-        box-shadow:
-          inset 0 1px 0 rgb(255 255 255 / 80%),
-          inset 0 -1px 0 rgb(0 0 0 / 5%);
-      }
-
-      .services::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background:
-          radial-gradient(
-            circle at 20% 10%,
-            rgb(59 130 246 / 3%) 0%,
-            transparent 50%
-          ),
-          radial-gradient(
-            circle at 80% 90%,
-            rgb(147 51 234 / 3%) 0%,
-            transparent 50%
-          );
-        pointer-events: none;
-      }
-
-      .services h2 {
-        text-align: center;
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-      }
-
-      .section-subtitle {
-        text-align: center;
-        font-size: 1.1rem;
-        color: var(--text-secondary);
-        max-width: 800px;
-        margin: 0 auto 3rem;
-      }
-
-      .service-cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 2rem;
-      }
-
-      .card {
-        background: linear-gradient(145deg, #fff, #f1f5f9);
-        padding: 2rem;
-        border-radius: 16px;
-        text-align: center;
-        transition: all 0.3s ease;
+      .nav-links {
         display: flex;
-        flex-direction: column;
-        box-shadow:
-          0 10px 20px rgb(0 0 0 / 10%),
-          0 6px 6px rgb(0 0 0 / 5%),
-          inset 0 1px 0 rgb(255 255 255 / 90%),
-          inset 0 -1px 0 rgb(0 0 0 / 5%);
-        border: 1px solid rgb(255 255 255 / 50%);
+        align-items: center;
+        gap: 2rem;
+        list-style: none;
+      }
+
+      .nav-link {
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: var(--br);
+        transition: var(--transition);
+        font-weight: 500;
+        text-decoration: none;
+        position: relative;
+      }
+
+      .nav-link:hover,
+      .nav-link.active {
+        background: var(--secondary);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 188, 212, 0.3);
+      }
+
+      .mobile-menu-toggle {
+        display: none;
+        color: white;
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .mobile-menu-toggle:hover {
+        color: var(--secondary);
+        transform: scale(1.1);
+      }
+
+      /* Main Content */
+      .main-content {
+        margin-top: 80px;
+        min-height: calc(100vh - 80px);
+      }
+
+      /* Container */
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      @media (width >= 768px) {
+        .container {
+          padding: 0 3rem;
+        }
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(135deg, rgba(10, 42, 67, 0.9), rgba(0, 188, 212, 0.7)), url('assets/images/hero-bg.jpg') center/cover;
+        color: white;
+        padding: 8rem 0 6rem;
+        text-align: center;
         position: relative;
         overflow: hidden;
       }
 
-      .card::before {
-        content: "";
+      .hero::before {
+        content: '';
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 1px;
+        inset: 0;
+        background: var(--gradient-primary);
+        opacity: 0.1;
+        z-index: 1;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(135deg, #fff, var(--accent));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        line-height: 1.1;
+      }
+
+      .hero p {
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+        line-height: 1.6;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1rem 2rem;
+        border-radius: var(--br-lg);
+        font-weight: 600;
+        text-decoration: none;
+        transition: var(--transition);
+        cursor: pointer;
+        border: none;
+        font-size: 1rem;
+        font-family: inherit;
+      }
+
+      .btn-primary {
+        background: var(--secondary);
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background: var(--primary);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 188, 212, 0.4);
+      }
+
+      .btn-outline {
+        background: transparent;
+        color: white;
+        border: 2px solid white;
+      }
+
+      .btn-outline:hover {
+        background: white;
+        color: var(--primary);
+        transform: translateY(-2px);
+      }
+
+      /* Services Grid */
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .card {
+        background: white;
+        border-radius: var(--br-lg);
+        padding: 2rem;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid transparent;
+        background-clip: padding-box;
+      }
+
+      .card::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        padding: 1px;
         background: linear-gradient(
-          90deg,
-          transparent,
-          rgb(255 255 255 / 80%),
+          145deg,
+          rgba(255, 255, 255, 0.1),
+          rgba(255, 255, 255, 0.05),
+          transparent
+        );
+        border-radius: inherit;
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask-composite: xor;
+        -webkit-mask-composite: xor;
+        pointer-events: none;
+      }
+
+      .card::after {
+        content: '';
+        position: absolute;
+        inset: 2px;
+        background: linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.8),
+          rgba(255, 255, 255, 0.4),
+          transparent
+        );
+        border-radius: calc(var(--br-lg) - 2px);
+        opacity: 0;
+        transition: var(--transition);
+        pointer-events: none;
+      }
+
+      .card:hover::after {
+        opacity: 0.1;
+      }
+
+      .card::before {
+        background: linear-gradient(
+          145deg,
+          rgba(0, 188, 212, 0.1),
+          rgba(79, 195, 247, 0.05),
           transparent
         );
       }
@@ -500,13 +445,8 @@
         left: -100%;
         width: 100%;
         height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgb(255 255 255 / 20%),
-          transparent
-        );
-        transition: left 0.5s;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        transition: left 0.6s ease;
       }
 
       .service-btn:hover::before {
@@ -514,101 +454,48 @@
       }
 
       .service-btn:hover {
-        background: linear-gradient(145deg, #4f46e5, #1e3a8a);
-        transform: translateY(-2px);
+        transform: translateY(-3px) scale(1.02);
         box-shadow:
           0 10px 20px rgb(37 99 235 / 40%),
-          0 6px 10px rgb(0 0 0 / 15%),
-          inset 0 1px 0 rgb(255 255 255 / 30%);
+          0 6px 12px rgb(0 0 0 / 15%),
+          inset 0 1px 0 rgb(255 255 255 / 30%),
+          inset 0 -1px 0 rgb(0 0 0 / 20%);
       }
 
       .service-btn:active {
-        transform: translateY(-1px);
+        transform: translateY(-1px) scale(1.01);
         box-shadow:
           0 4px 8px rgb(37 99 235 / 30%),
           0 2px 4px rgb(0 0 0 / 10%),
-          inset 0 2px 4px rgb(0 0 0 / 10%);
-      }
-
-      /* Footer */
-      footer {
-        background: var(--text-primary);
-        color: white;
-        padding: 3rem 0 1rem;
-        margin-top: 4rem;
-      }
-
-      /* Animations */
-      .fade-in {
-        opacity: 1;
-        animation: fadeIn 0.6s ease-in;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .footer-content {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-        margin-bottom: 2rem;
-      }
-
-      .footer-section h3 {
-        margin-bottom: 1rem;
-      }
-
-      .footer-section a {
-        color: #e5e7eb;
-        text-decoration: none;
-        display: block;
-        padding: 0.25rem 0;
-      }
-
-      .footer-section a:hover {
-        color: white;
-      }
-
-      /* Mobile Menu */
-      .mobile-menu-toggle {
-        display: none;
-        background: linear-gradient(145deg, #f8fafc, #e2e8f0);
-        border: none;
-        font-size: 1.5rem;
-        cursor: pointer;
-        padding: 0.5rem;
-        border-radius: 8px;
-        box-shadow:
-          0 4px 8px rgb(0 0 0 / 10%),
-          inset 0 1px 0 rgb(255 255 255 / 80%),
+          inset 0 1px 0 rgb(255 255 255 / 10%),
           inset 0 -1px 0 rgb(0 0 0 / 10%);
-        transition: all 0.2s ease;
       }
 
-      .mobile-menu-toggle:hover {
-        background: linear-gradient(145deg, #e2e8f0, #cbd5e1);
-        transform: translateY(-1px);
-        box-shadow:
-          0 6px 12px rgb(0 0 0 / 15%),
-          inset 0 1px 0 rgb(255 255 255 / 90%);
+      /* Loading States */
+      .loading {
+        opacity: 0.7;
+        pointer-events: none;
       }
 
-      .mobile-menu-toggle:active {
-        transform: translateY(0);
-        box-shadow:
-          0 2px 4px rgb(0 0 0 / 10%),
-          inset 0 2px 4px rgb(0 0 0 / 10%);
+      .loading::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 20px;
+        height: 20px;
+        margin: -10px 0 0 -10px;
+        border: 2px solid var(--secondary);
+        border-top: 2px solid transparent;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
       }
 
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+
+      /* Responsive Design */
       @media (width <= 768px) {
         .nav-links {
           display: none;
@@ -616,11 +503,11 @@
           top: 100%;
           left: 0;
           right: 0;
-          background: var(--bg-white);
+          background: var(--primary);
           flex-direction: column;
-          padding: 1rem;
+          padding: 2rem;
+          gap: 1rem;
           box-shadow: var(--shadow-lg);
-          z-index: 100;
         }
 
         .nav-links.active {
@@ -632,61 +519,57 @@
         }
 
         .hero {
-          padding: 4rem 0;
+          padding: 6rem 0 4rem;
         }
 
         .hero h1 {
-          font-size: 2.5rem;
+          font-size: clamp(2rem, 8vw, 3rem);
         }
 
         .hero p {
           font-size: 1.1rem;
-          margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+          flex-direction: column;
+          align-items: center;
         }
 
         .btn {
-          padding: 0.875rem 1.25rem;
-          font-size: 0.9rem;
+          width: 100%;
+          max-width: 300px;
+          justify-content: center;
+        }
+
+        .services-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
         }
       }
+
+      @media (width <= 480px) {
+        .nav {
+          padding: 0.75rem 1rem;
+        }
+
+        .logo img {
+          height: 32px;
+        }
+
+        .logo span {
+          font-size: 1.1rem;
+        }
+
+        .container {
+          padding: 0 1rem;
+        }
+
+        .hero {
+          padding: 5rem 0 3rem;
+        }
     </style>
 
-    <!-- External CSS (deferred) -->
-    <link
-      rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript
-      ><link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-    /></noscript>
-
-    <!-- Premium Animations (deferred) -->
-    <link
-      rel="preload"
-      href="assets/css/premium-animations.css"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript
-      ><link rel="stylesheet" href="assets/css/premium-animations.css"
-    /></noscript>
-
-    <!-- Premium Responsive (deferred) -->
-    <link
-      rel="preload"
-      href="assets/css/premium-responsive.css"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript
-      ><link rel="stylesheet" href="assets/css/premium-responsive.css"
-    /></noscript>
-
-    <!-- Professional Theme -->
+    <!-- Professional Theme CSS -->
     <link
       rel="preload"
       href="assets/css/professional-theme.css"
@@ -697,7 +580,7 @@
       ><link rel="stylesheet" href="assets/css/professional-theme.css"
     /></noscript>
 
-    <!-- Enhanced Sections -->
+    <!-- Enhanced Sections CSS -->
     <link
       rel="preload"
       href="assets/css/enhanced-sections.css"
@@ -708,7 +591,7 @@
       ><link rel="stylesheet" href="assets/css/enhanced-sections.css"
     /></noscript>
 
-    <!-- Enhanced Footer -->
+    <!-- Enhanced Footer CSS -->
     <link
       rel="preload"
       href="assets/css/enhanced-footer.css"
@@ -718,424 +601,554 @@
     <noscript
       ><link rel="stylesheet" href="assets/css/enhanced-footer.css"
     /></noscript>
-  </head>
-  <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- Header -->
-    <header>
-      <nav class="container">
-        <a href="/" class="logo">
+    <!-- Premium Animations CSS -->
+    <link
+      rel="preload"
+      href="assets/css/premium-animations.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link rel="stylesheet" href="assets/css/premium-animations.css"
+    /></noscript>
+
+    <!-- Premium Responsive CSS -->
+    <link
+      rel="preload"
+      href="assets/css/premium-responsive.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link rel="stylesheet" href="assets/css/premium-responsive.css"
+    /></noscript>
+
+    <!-- Legacy CSS for compatibility -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="stylesheet" href="assets/css/animations.css" />
+
+    <!-- Enhanced Error Handling and Debugging -->
+    <script>
+      (function () {
+        "use strict";
+
+        // Enhanced global error handling
+        window.addEventListener("error", function (e) {
+          console.error("Script Error Details:", {
+            message: e.message,
+            filename: e.filename,
+            lineno: e.lineno,
+            colno: e.colno,
+            error: e.error,
+            stack: e.error ? e.error.stack : null,
+            timestamp: new Date().toISOString(),
+          });
+
+          // Suppress generic "Script error." messages
+          if (e.message === "Script error.") {
+            console.warn(
+              "Generic script error suppressed. Enable CORS for detailed error reporting.",
+            );
+            e.preventDefault();
+            return true;
+          }
+        });
+
+        // Enhanced promise rejection handling
+        window.addEventListener("unhandledrejection", function (e) {
+          console.error("Unhandled Promise Rejection:", {
+            reason: e.reason,
+            promise: e.promise,
+            timestamp: new Date().toISOString(),
+          });
+
+          // Don't prevent default for debugging
+          if (
+            typeof e.reason === "string" &&
+            e.reason.includes("Script error")
+          ) {
+            e.preventDefault();
+          }
+        });
+
+        // Safe DOM query functions
+        window.safeQuery = function (selector) {
+          try {
+            if (!selector || selector === "#" || selector.length <= 1) {
+              return null;
+            }
+            return document.querySelector(selector);
+          } catch (error) {
+            console.warn("Invalid selector:", selector, error);
+            return null;
+          }
+        };
+
+        window.safeQueryAll = function (selector) {
+          try {
+            if (!selector || selector === "#" || selector.length <= 1) {
+              return [];
+            }
+            return document.querySelectorAll(selector);
+          } catch (error) {
+            console.warn("Invalid selector:", selector, error);
+            return [];
+          }
+        };
+
+        // Safe script loading function
+        window.loadScript = function (src, callback) {
+          try {
+            const script = document.createElement("script");
+            script.async = true;
+            script.defer = true;
+
+            script.onload = function () {
+              console.log("Script loaded successfully:", src);
+              if (callback) callback(null);
+            };
+
+            script.onerror = function (error) {
+              console.warn("Script failed to load:", src, error);
+              if (callback) callback(error);
+            };
+
+            script.src = src;
+            document.head.appendChild(script);
+          } catch (error) {
+            console.error("Error loading script:", src, error);
+            if (callback) callback(error);
+          }
+        };
+
+        // Enhanced Qualiphy loader with better error handling
+        window.loadQualiphy = function () {
+          if (
+            window.Qualiphy ||
+            document.querySelector('script[src*="qualiphy.com"]')
+          ) {
+            console.log("Qualiphy already loaded or loading");
+            return;
+          }
+
+          console.log("Loading Qualiphy script...");
+
+          const script = document.createElement("script");
+          script.async = true;
+          script.defer = true;
+          script.src = "https://qualiphy.com/api/integration/loader.js";
+
+          script.onload = function () {
+            console.log("Qualiphy script loaded successfully");
+            try {
+              if (
+                window.Qualiphy &&
+                typeof window.Qualiphy.init === "function"
+              ) {
+                window.Qualiphy.init({
+                  clinicId: "3454",
+                  examIds:
+                    "918,2095,2097,2246,2316,2120,2315,2129,1620,2130,1623,2248,1148,1693,2122,1287,1694,2207",
+                  timezone: "-6",
+                  availabilityStartTime: "00:00",
+                  availabilityEndTime: "23:59",
+                  availabilityDays: "1,2,3,4,5,6,7",
+                });
+              }
+            } catch (error) {
+              console.warn("Qualiphy initialization error:", error);
+            }
+          };
+
+          script.onerror = function (error) {
+            console.warn("Qualiphy script failed to load:", error);
+            // Fallback to IntakeQ
+            window.open("https://Staydripped.intakeq.com/booking", "_blank");
+          };
+
+          document.head.appendChild(script);
+        };
+
+        // Initialize error-safe app
+        document.addEventListener("DOMContentLoaded", function () {
+          try {
+            console.log("DOM loaded, initializing app...");
+
+            // Initialize mobile menu with error handling
+            const mobileMenuToggle = safeQuery(".mobile-menu-toggle");
+            const navLinks = safeQuery(".nav-links");
+
+            if (mobileMenuToggle && navLinks) {
+              mobileMenuToggle.addEventListener("click", function () {
+                try {
+                  navLinks.classList.toggle("active");
+                } catch (error) {
+                  console.warn("Mobile menu toggle error:", error);
+                }
+              });
+            }
+
+            // Initialize smooth scrolling with error handling
+            safeQueryAll('a[href^="#"]').forEach(function (anchor) {
+              anchor.addEventListener("click", function (e) {
+                try {
+                  const href = this.getAttribute("href");
+
+                  if (!href || href === "#" || href.length <= 1) {
+                    return;
+                  }
+
+                  e.preventDefault();
+                  const target = safeQuery(href);
+
+                  if (target) {
+                    target.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
+                  }
+                } catch (error) {
+                  console.warn("Smooth scroll error:", error);
+                }
+              });
+            });
+
+            // Initialize app if function exists
+            if (typeof window.initializeApp === "function") {
+              window.initializeApp();
+            }
+
+            // Load Qualiphy after a short delay
+            setTimeout(window.loadQualiphy, 2000);
+
+            console.log("App initialization complete");
+          } catch (error) {
+            console.error("App initialization error:", error);
+          }
+        });
+
+        // Global fallback function for booking
+        window.showDisclosureModal = function () {
+          console.log("Disclosure modal requested");
+          try {
+            if (
+              window.Qualiphy &&
+              typeof window.Qualiphy.showModal === "function"
+            ) {
+              window.Qualiphy.showModal();
+            } else {
+              console.log("Qualiphy not available, opening IntakeQ");
+              window.open("https://Staydripped.intakeq.com/booking", "_blank");
+            }
+          } catch (error) {
+            console.warn("Booking modal error:", error);
+            window.open("https://Staydripped.intakeq.com/booking", "_blank");
+          }
+        };
+
+        console.log("Enhanced error handling initialized");
+      })();
+    </script>
+  </head>
+
+  <body>
+    <!-- Progress Bar -->
+    <div
+      id="scrollIndicator"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background: var(--secondary);
+        z-index: 9999;
+        transition: width 0.3s ease;
+      "
+    ></div>
+
+    <!-- Header Navigation -->
+    <header class="header">
+      <nav class="nav">
+        <a href="#" class="logo">
           <img
             src="assets/images/logo.png"
-            alt="Stay Dripped Mobile IV"
-            class="logo-height"
+            alt="Stay Dripped Logo"
+            loading="lazy"
           />
+          <span>Stay Dripped</span>
         </a>
         <ul class="nav-links">
-          <li><a href="#services">Services</a></li>
-          <li><a href="#how-it-works">How It Works</a></li>
-          <li><a href="pages/membership.html">Memberships</a></li>
-          <li><a href="#testimonials">Reviews</a></li>
-          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+          <li><a href="tel:+16026889825" class="nav-link">Call Now</a></li>
         </ul>
-        <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
-        <a href="#book" class="btn">Book Now</a>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
+        </button>
       </nav>
     </header>
 
     <!-- Main Content -->
-    <main id="main-content">
+    <main class="main-content">
       <!-- Hero Section -->
-      <section class="hero">
+      <section id="home" class="hero">
         <div class="container">
           <div class="hero-content">
-            <div>
-              <h1>Premium Mobile IV Therapy Delivered to You</h1>
-              <p>
-                Professional hydration, NAD+, and wellness services in
-                Scottsdale & Phoenix. Recharge. Rejuvenate. Repeat.
-              </p>
-              <div class="hero-buttons-container">
-                <a href="#book" class="btn">Book Treatment</a>
-                <a href="#services" class="btn btn-secondary">View Services</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Services Section -->
-      <section
-        id="services"
-        class="services fade-in stagger-children"
-        aria-labelledby="services-heading"
-        class="services-section"
-      >
-        <div class="container">
-          <h2 id="services-heading" class="animate-premium-fade-in">
-            Our Premium Services
-          </h2>
-          <p class="section-subtitle animate-premium-fade-in">
-            Comprehensive wellness treatments designed to optimize your health,
-            energy, and performance through cutting-edge therapies.
-          </p>
-          <div class="service-cards">
-            <div
-              class="card service-card hover-lift-rotate animate-float-gentle"
-            >
-              <h3>IV Therapy Treatments</h3>
-              <p>
-                Fast, effective hydration and vitamin replenishment for
-                immediate wellness boost and recovery.
-              </p>
-              <a href="pages/iv-therapy.html" class="service-btn premium-btn"
-                >View Options</a
-              >
-            </div>
-
-            <div
-              class="card service-card hover-lift-rotate animate-float-gentle"
-            >
-              <h3>NAD⁺ Therapy Treatments</h3>
-              <p>
-                Revolutionary cellular regeneration therapy to boost cognitive
-                function, energy, and anti-aging benefits.
-              </p>
-              <a href="pages/nad-therapy.html" class="service-btn premium-btn"
-                >View Options</a
-              >
-            </div>
-
-            <div
-              class="card service-card hover-lift-rotate animate-float-gentle"
-            >
-              <h3>Peptide Therapy Treatments</h3>
-              <p>
-                Advanced peptide protocols to promote healing, optimize
-                hormones, and enhance overall performance.
-              </p>
-              <a
-                href="pages/peptide-therapy.html"
-                class="service-btn premium-btn"
-                >View Options</a
-              >
-            </div>
-
-            <div
-              class="card service-card hover-lift-rotate animate-float-gentle"
-            >
-              <h3>Micronutrient Treatments</h3>
-              <p>
-                Targeted vitamins, minerals, amino acids, and antioxidants
-                precisely tailored to your body's unique needs.
-              </p>
-              <a href="pages/micronutrient.html" class="service-btn premium-btn"
-                >View Options</a
-              >
-            </div>
-
-            <div
-              class="card service-card hover-lift-rotate animate-float-gentle"
-            >
-              <h3>Vitamin Injection Shots</h3>
-              <p>
-                Fast-acting intramuscular shots for energy enhancement, immune
-                support, fat burning, and more.
-              </p>
-              <a
-                href="pages/injection-shots.html"
-                class="service-btn premium-btn"
-                >View Options</a
-              >
-            </div>
-
-            <div
-              class="card service-card hover-lift-rotate animate-float-gentle"
-            >
-              <h3>Weight Management Therapy</h3>
-              <p>
-                Custom peptide and IV-based protocols for sustained, healthy
-                weight loss and metabolic optimization.
-              </p>
-              <a
-                href="pages/weight-management.html"
-                class="service-btn premium-btn"
-                >View Options</a
-              >
-            </div>
-
-            <div
-              class="card service-card hover-lift-rotate animate-float-gentle"
-            >
-              <h3>Aesthetic Treatments</h3>
-              <p>
-                Skin rejuvenation, anti-aging, Botox, Fillers and injection
-                therapies for radiant wellness.
-              </p>
-              <a href="pages/aesthetic.html" class="service-btn premium-btn"
-                >View Options</a
-              >
-            </div>
-
-            <div
-              class="card service-card hover-lift-rotate animate-float-gentle"
-            >
-              <h3>Mobile Cold Plunge Services</h3>
-              <p>
-                Mobile cold plunge services straight to your door or for your
-                events! Helps to reduce inflammation, improve recovery, and
-                enhance mental clarity.
-              </p>
-              <a
-                href="pages/mobile-cold-plunge.html"
-                class="service-btn premium-btn"
-                >View Options</a
-              >
-            </div>
-
-            <div
-              class="card service-card hover-lift-rotate animate-float-gentle"
-            >
-              <h3>Hormone Replacement Therapy</h3>
-              <p>
-                BHRT for men and women to restore energy, libido, and hormonal
-                balance for optimal vitality.
-              </p>
-              <a
-                href="pages/hormone-replacement.html"
-                class="service-btn premium-btn"
-                >View Options</a
-              >
-            </div>
-
-            <div
-              class="card service-card hover-lift-rotate animate-float-gentle"
-            >
-              <h3>Partnerships & Sponsorships</h3>
-              <p>
-                Collaborate with our wellness brand at events, media campaigns,
-                and sponsorship & promotional opportunities.
-              </p>
-              <a href="pages/partnerships.html" class="service-btn premium-btn"
-                >Learn More</a
-              >
-            </div>
-
-            <div
-              class="card service-card hover-lift-rotate animate-float-gentle"
-            >
-              <h3>Private Group & Corporate Events</h3>
-              <p>
-                Host wellness experiences on-site with full IV therapy and
-                recovery stations for your team.
-              </p>
-              <a
-                href="pages/corporate-events.html"
-                class="service-btn premium-btn"
-                >Learn More</a
-              >
-            </div>
-
-            <div
-              class="card service-card hover-lift-rotate animate-float-gentle"
-            >
-              <h3>Individual & Family Memberships</h3>
-              <p>
-                Save on treatments with monthly wellness plans designed for
-                singles, couples, and families.
-              </p>
-              <a href="pages/membership.html" class="service-btn premium-btn"
-                >View Plans</a
-              >
-            </div>
-
-            <div
-              class="card service-card hover-lift-rotate animate-float-gentle"
-            >
-              <h3>At Home Blood Testing Kits & Consultations</h3>
-              <p>
-                Convenient blood testing kits delivered to your home with expert
-                consultation on results.
-              </p>
-              <a href="pages/blood-testing.html" class="service-btn premium-btn"
-                >Learn More</a
-              >
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- How It Works -->
-      <section id="how-it-works" class="how-it-works">
-        <div class="container">
-          <div class="how-it-works-header">
-            <h2 class="how-it-works-title">How It Works</h2>
-            <p class="how-it-works-subtitle">
-              Experience premium mobile IV therapy in three simple steps. Our
-              professional process ensures you receive the highest quality care
-              in the comfort of your chosen location.
+            <h1>Premium Mobile IV Therapy</h1>
+            <p>
+              Professional wellness treatments delivered directly to your
+              location in Arizona. Experience the convenience of concierge-level
+              healthcare.
             </p>
-          </div>
-          <div class="how-it-works-grid">
-            <div class="how-it-works-step animate-slide-up">
-              <div class="step-number">1</div>
-              <h3 class="step-title">Book Online</h3>
-              <p class="step-description">
-                Choose your treatment and schedule a time that works for you
-                through our seamless booking system.
-              </p>
-            </div>
-            <div class="how-it-works-step animate-slide-up">
-              <div class="step-number">2</div>
-              <h3 class="step-title">We Come to You</h3>
-              <p class="step-description">
-                Our certified professionals arrive at your location with all
-                necessary equipment and premium-grade IV therapies.
-              </p>
-            </div>
-            <div class="how-it-works-step animate-slide-up">
-              <div class="step-number">3</div>
-              <h3 class="step-title">Relax & Recharge</h3>
-              <p class="step-description">
-                Sit back and enjoy your treatment while our experts ensure your
-                comfort and safety throughout the process.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Booking Section -->
-      <section id="book" class="booking-section">
-        <div class="container">
-          <div class="booking-header">
-            <h2 class="booking-title">Ready to Feel Better?</h2>
-            <p class="booking-subtitle">
-              Book your mobile IV therapy session today and experience the Stay
-              Dripped difference. Professional care delivered to your location.
-            </p>
-          </div>
-          <div class="booking-cta">
-            <div id="booking-widget">
-              <!-- IntakeQ widget will be inserted here -->
+            <div class="cta-buttons">
               <a
                 href="#"
-                class="booking-btn"
-                onclick="openBookingWidget(); return false;"
+                class="btn btn-primary"
+                onclick="showDisclosureModal()"
               >
-                <span>Book Your Treatment Now</span>
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5 12H19M19 12L12 5M19 12L12 19"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
+                <i class="fas fa-calendar-check"></i>
+                Book Now
+              </a>
+              <a href="#services" class="btn btn-outline">
+                <i class="fas fa-info-circle"></i>
+                Learn More
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Testimonials -->
-      <section id="testimonials" class="testimonials-section">
+      <!-- Services Section -->
+      <section id="services" class="section section-light">
         <div class="container">
-          <div class="testimonials-header">
-            <h2 class="testimonials-title">What Our Clients Say</h2>
-            <p class="testimonials-subtitle">
-              Discover why thousands of clients trust Stay Dripped for their
-              wellness journey. Real experiences from real people.
+          <div class="section-header">
+            <h2 class="section-title">Our Premium Services</h2>
+            <p class="section-subtitle">
+              Choose from our comprehensive range of wellness treatments
             </p>
           </div>
-          <div class="testimonials-widget">
-            <div
-              class="elfsight-app-d433d327-22a0-44e1-b166-f607a4df45d8"
-              data-elfsight-app-lazy
-            ></div>
+          <div class="services-grid">
+            <div class="card">
+              <h3><i class="fas fa-tint"></i> IV Therapy</h3>
+              <p>
+                Customized IV treatments for hydration, energy, and wellness
+                optimization.
+              </p>
+              <a href="pages/iv-therapy.html" class="service-btn"
+                >Explore IV Therapy</a
+              >
+            </div>
+            <div class="card">
+              <h3><i class="fas fa-dna"></i> NAD+ Therapy</h3>
+              <p>Advanced anti-aging and cellular regeneration treatments.</p>
+              <a href="pages/nad-therapy.html" class="service-btn"
+                >Learn About NAD+</a
+              >
+            </div>
+            <div class="card">
+              <h3><i class="fas fa-syringe"></i> Peptide Therapy</h3>
+              <p>
+                Targeted peptide treatments for specific health and wellness
+                goals.
+              </p>
+              <a href="pages/peptide-therapy.html" class="service-btn"
+                >Discover Peptides</a
+              >
+            </div>
+            <div class="card">
+              <h3><i class="fas fa-heartbeat"></i> Hormone Replacement</h3>
+              <p>Comprehensive hormone optimization and replacement therapy.</p>
+              <a href="pages/hormone-replacement.html" class="service-btn"
+                >View HRT Options</a
+              >
+            </div>
+            <div class="card">
+              <h3><i class="fas fa-spa"></i> Aesthetic Treatments</h3>
+              <p>Premium aesthetic and beauty enhancement services.</p>
+              <a href="pages/aesthetic.html" class="service-btn"
+                >Aesthetic Services</a
+              >
+            </div>
+            <div class="card">
+              <h3><i class="fas fa-star"></i> Memberships</h3>
+              <p>
+                Exclusive membership programs with significant savings and
+                benefits.
+              </p>
+              <a href="pages/membership.html" class="service-btn">Join Now</a>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- FAQ -->
-      <section id="faq" class="faq-section">
+      <!-- About Section -->
+      <section id="about" class="section">
         <div class="container">
-          <div class="faq-header">
-            <h2 class="faq-title">Frequently Asked Questions</h2>
-            <p class="faq-subtitle">
-              Get answers to common questions about our mobile IV therapy
-              services, safety protocols, and booking process.
+          <div class="section-header">
+            <h2 class="section-title">Why Choose Stay Dripped?</h2>
+            <p class="section-subtitle">
+              Experience the difference of premium mobile wellness
             </p>
           </div>
-          <div class="faq-container">
-            <details class="faq-item">
-              <summary class="faq-summary">What is mobile IV therapy?</summary>
-              <p class="faq-answer">
-                Mobile IV therapy brings professional intravenous treatments
-                directly to your location. Our certified nurses administer IV
-                drips containing vitamins, minerals, and hydration in the
-                comfort of your home, office, or hotel. This convenient service
-                eliminates travel time and provides personalized care in your
-                preferred environment.
+          <div class="features-grid">
+            <div class="feature">
+              <i class="fas fa-home feature-icon"></i>
+              <h3>Convenient Location</h3>
+              <p>
+                Professional treatments delivered to your home, office, or
+                preferred location.
               </p>
-            </details>
-            <details class="faq-item">
-              <summary class="faq-summary">
-                How long does a treatment take?
-              </summary>
-              <p class="faq-answer">
-                Most IV therapy sessions take 30-60 minutes, depending on the
-                type of treatment and your individual needs. Our nurses will
-                discuss the expected duration during your consultation and
-                ensure you're comfortable throughout the entire process.
+            </div>
+            <div class="feature">
+              <i class="fas fa-user-md feature-icon"></i>
+              <h3>Licensed Professionals</h3>
+              <p>
+                Treatments administered by licensed medical professionals with
+                extensive experience.
               </p>
-            </details>
-            <details class="faq-item">
-              <summary class="faq-summary">Is IV therapy safe?</summary>
-              <p class="faq-answer">
-                Yes, when administered by qualified healthcare professionals.
-                All our nurses are licensed, experienced, and follow strict
-                safety protocols. We use sterile equipment, pharmaceutical-grade
-                ingredients, and conduct thorough health screenings before each
-                treatment.
+            </div>
+            <div class="feature">
+              <i class="fas fa-shield-alt feature-icon"></i>
+              <h3>Premium Quality</h3>
+              <p>
+                FDA-approved medications and highest quality ingredients for
+                optimal results.
               </p>
-            </details>
-            <details class="faq-item">
-              <summary class="faq-summary">Do you accept insurance?</summary>
-              <p class="faq-answer">
-                We accept HSA and FSA payments for eligible treatments. While
-                most insurance doesn't cover elective IV therapy, we can provide
-                detailed receipts and documentation for potential reimbursement
-                requests. Contact your insurance provider to verify coverage.
+            </div>
+            <div class="feature">
+              <i class="fas fa-clock feature-icon"></i>
+              <h3>Flexible Scheduling</h3>
+              <p>
+                Book appointments that fit your schedule, including evenings and
+                weekends.
               </p>
-            </details>
-            <details class="faq-item">
-              <summary class="faq-summary">What areas do you serve?</summary>
-              <p class="faq-answer">
-                We proudly serve Scottsdale, Phoenix, and surrounding areas in
-                Arizona. Our mobile service brings premium IV therapy directly
-                to your home, office, hotel, or event location within our
-                service area.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How It Works Section -->
+      <section id="how-it-works" class="section section-dark">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-subtitle">Simple, fast, and professional</p>
+          </div>
+          <div class="steps-grid">
+            <div class="step">
+              <div class="step-number">1</div>
+              <h3>Book Online</h3>
+              <p>
+                Schedule your appointment through our secure booking system.
               </p>
-            </details>
-            <details class="faq-item">
-              <summary class="faq-summary">
-                How do I prepare for my appointment?
-              </summary>
-              <p class="faq-answer">
-                Stay hydrated before your appointment and eat a light meal. Wear
-                comfortable clothing with easy access to your arm. Our nurses
-                will bring all necessary equipment and will guide you through
-                any specific preparation based on your chosen treatment.
+            </div>
+            <div class="step">
+              <div class="step-number">2</div>
+              <h3>We Come to You</h3>
+              <p>
+                Our licensed professionals arrive at your preferred location.
               </p>
-            </details>
+            </div>
+            <div class="step">
+              <div class="step-number">3</div>
+              <h3>Enjoy Your Treatment</h3>
+              <p>Relax while receiving your customized wellness treatment.</p>
+            </div>
+            <div class="step">
+              <div class="step-number">4</div>
+              <h3>Feel Amazing</h3>
+              <p>
+                Experience the immediate benefits of professional IV therapy.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section id="testimonials" class="section section-light">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <p class="section-subtitle">
+              Real experiences from satisfied customers
+            </p>
+          </div>
+          <div class="testimonials-grid">
+            <div class="testimonial">
+              <div class="stars">★★★★★</div>
+              <p>
+                "Incredible service! The convenience of having IV therapy at
+                home is unmatched. The staff is professional and knowledgeable."
+              </p>
+              <div class="author">- Sarah M., Scottsdale</div>
+            </div>
+            <div class="testimonial">
+              <div class="stars">★★★★★</div>
+              <p>
+                "Game-changer for my recovery routine. The NAD+ therapy has made
+                a noticeable difference in my energy levels."
+              </p>
+              <div class="author">- Michael R., Phoenix</div>
+            </div>
+            <div class="testimonial">
+              <div class="stars">★★★★★</div>
+              <p>
+                "Professional, clean, and effective. The membership program
+                offers great value for regular treatments."
+              </p>
+              <div class="author">- Jennifer L., Tempe</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Ready to Get Started?</h2>
+            <p class="section-subtitle">Book your appointment today</p>
+          </div>
+          <div class="contact-content">
+            <div class="contact-info">
+              <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <div>
+                  <h4>Call Us</h4>
+                  <a href="tel:+16026889825">(602) 688-9825</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                  <h4>Email Us</h4>
+                  <a href="mailto:info@staydripped.com">info@staydripped.com</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                  <h4>Service Area</h4>
+                  <p>Phoenix & Scottsdale Metro Area</p>
+                </div>
+              </div>
+            </div>
+            <div class="cta-section">
+              <a
+                href="#"
+                class="btn btn-primary btn-large"
+                onclick="showDisclosureModal()"
+              >
+                <i class="fas fa-calendar-check"></i>
+                Book Your Appointment
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -1322,8 +1335,8 @@
                   />
                 </svg>
                 <div class="contact-text">
-                  <a href="tel:+1234567890" class="contact-link"
-                    >Call: (123) 456-7890</a
+                  <a href="tel:+16026889825" class="contact-link"
+                    >(602) 688-9825</a
                   >
                 </div>
               </div>
@@ -1406,13 +1419,52 @@
       </div>
     </footer>
 
+<<<<<<< HEAD
+    <!-- Scripts -->
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/globals.js" defer></script>
+    <script src="assets/js/booking.js" defer></script>
+=======
     <!-- Optimized Scripts -->
     <script>
+      // Global error handler to prevent script errors
+      window.addEventListener("error", function (event) {
+        console.warn("Script error caught and handled:", event.error);
+        // Prevent the error from propagating
+        return true;
+      });
+
+      // Handle unhandled promise rejections
+      window.addEventListener("unhandledrejection", function (event) {
+        console.warn("Unhandled promise rejection caught:", event.reason);
+        event.preventDefault();
+      });
+
+      // Safe DOM query function
+      function safeQuery(selector) {
+        try {
+          return document.querySelector(selector);
+        } catch (e) {
+          console.warn("Query selector error:", e);
+          return null;
+        }
+      }
+
+      // Safe DOM query all function
+      function safeQueryAll(selector) {
+        try {
+          return document.querySelectorAll(selector);
+        } catch (e) {
+          console.warn("Query selector all error:", e);
+          return [];
+        }
+      }
+
       // Mobile menu toggle
-      const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+      const mobileMenuToggle = safeQuery(".mobile-menu-toggle");
       if (mobileMenuToggle) {
         mobileMenuToggle.addEventListener("click", function () {
-          const navLinks = document.querySelector(".nav-links");
+          const navLinks = safeQuery(".nav-links");
           if (navLinks) {
             navLinks.classList.toggle("active");
           }
@@ -1420,10 +1472,10 @@
       }
 
       // Smooth scrolling
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      safeQueryAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
           e.preventDefault();
-          const target = document.querySelector(this.getAttribute("href"));
+          const target = safeQuery(this.getAttribute("href"));
           if (target) {
             target.scrollIntoView({ behavior: "smooth" });
           }
@@ -1432,63 +1484,71 @@
 
       // IntakeQ booking function
       function openBookingWidget() {
-        if (window.IntakeQ) {
-          window.IntakeQ.open();
-        } else {
-          // Fallback if widget not loaded
-          const widgetIdMeta = document.querySelector(
-            'meta[name="intakeq-widget-id"]',
-          );
-          if (widgetIdMeta && widgetIdMeta.content) {
-            const widgetId = widgetIdMeta.content;
-            window.open(`https://intakeq.com/booking/${widgetId}`, "_blank");
+        try {
+          if (window.IntakeQ) {
+            window.IntakeQ.open();
           } else {
-            console.error("IntakeQ widget ID not found");
+            // Fallback if widget not loaded
+            const widgetIdMeta = safeQuery('meta[name="intakeq-widget-id"]');
+            if (widgetIdMeta && widgetIdMeta.content) {
+              const widgetId = widgetIdMeta.content;
+              window.open(`https://intakeq.com/booking/${widgetId}`, "_blank");
+            } else {
+              console.warn("IntakeQ widget ID not found");
+            }
           }
+        } catch (error) {
+          console.warn("Error opening booking widget:", error);
         }
       }
 
       // Lazy load IntakeQ widget
       window.addEventListener("load", function () {
-        if (!window.IntakeQ) {
-          const widgetIdMeta = document.querySelector(
-            'meta[name="intakeq-widget-id"]',
-          );
-          if (widgetIdMeta && widgetIdMeta.content) {
-            const widgetId = widgetIdMeta.content;
-            window.intakeq = widgetId;
-            const script = document.createElement("script");
-            script.src = "https://intakeq.com/js/widget.min.js?1";
-            script.async = true;
-            script.onerror = function () {
-              console.error("Failed to load IntakeQ widget script");
-            };
-            document.body.appendChild(script);
-          } else {
-            console.error("IntakeQ widget ID meta tag not found");
+        try {
+          if (!window.IntakeQ) {
+            const widgetIdMeta = safeQuery('meta[name="intakeq-widget-id"]');
+            if (widgetIdMeta && widgetIdMeta.content) {
+              const widgetId = widgetIdMeta.content;
+              window.intakeq = widgetId;
+              const script = document.createElement("script");
+              script.src = "https://intakeq.com/js/widget.min.js?1";
+              script.async = true;
+              script.onerror = function () {
+                console.warn("Failed to load IntakeQ widget script");
+              };
+              document.body.appendChild(script);
+            } else {
+              console.warn("IntakeQ widget ID meta tag not found");
+            }
           }
+        } catch (error) {
+          console.warn("Error loading IntakeQ widget:", error);
         }
       });
 
       // Lazy load Elfsight
-      const testimonialObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const script = document.createElement("script");
-            script.src = "https://static.elfsight.com/platform/platform.js";
-            script.async = true;
-            script.onerror = function () {
-              console.error("Failed to load Elfsight testimonials script");
-            };
-            document.body.appendChild(script);
-            testimonialObserver.disconnect();
-          }
+      try {
+        const testimonialObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const script = document.createElement("script");
+              script.src = "https://static.elfsight.com/platform/platform.js";
+              script.async = true;
+              script.onerror = function () {
+                console.warn("Failed to load Elfsight testimonials script");
+              };
+              document.body.appendChild(script);
+              testimonialObserver.disconnect();
+            }
+          });
         });
-      });
 
-      const testimonialSection = document.querySelector("#testimonials");
-      if (testimonialSection) {
-        testimonialObserver.observe(testimonialSection);
+        const testimonialSection = safeQuery("#testimonials");
+        if (testimonialSection) {
+          testimonialObserver.observe(testimonialSection);
+        }
+      } catch (error) {
+        console.warn("Error setting up testimonial observer:", error);
       }
 
       // Global fallback function for showDisclosureModal
@@ -1530,9 +1590,8 @@
     </script>
 
     <!-- Premium Interactions Script -->
+>>>>>>> bc372f225aba5bdef2e1596d7563497e9aa79ec2
     <script src="assets/js/premium-interactions.js" defer></script>
-
-    <!-- Advanced Interactions Script -->
     <script src="assets/js/advanced-interactions.js" defer></script>
 
     <!-- Structured Data -->
@@ -1543,7 +1602,7 @@
         "name": "Stay Dripped Mobile IV",
         "description": "Premium mobile IV therapy and wellness services in Scottsdale and Phoenix",
         "url": "https://staydripped.com",
-        "telephone": "+1234567890",
+        "telephone": "+16026889825",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Scottsdale",

@@ -291,8 +291,10 @@
 /* Back Button Container */
 .back-button-container {
   padding: 1.5rem 2rem 1rem;
-  position: sticky;
+  position: fixed;
   top: 80px;
+  left: 0;
+  right: 0;
   z-index: 999;
   margin-bottom: 1.5rem;
   display: flex;
@@ -390,10 +392,14 @@
 
 /* Responsive Back Button */
 @media (max-width: 768px) {
+  body.has-back-button {
+    padding-top: 140px;
+  }
+
   .back-button-container {
     padding: 1rem 1rem 0.75rem;
     top: 70px;
-    position: relative;
+    position: fixed;
     margin-bottom: 1rem;
   }
 
@@ -415,6 +421,10 @@
 }
 
 @media (max-width: 480px) {
+  body.has-back-button {
+    padding-top: 130px;
+  }
+
   .back-button-container {
     padding: 0.75rem 1rem 0.5rem;
   }
