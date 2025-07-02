@@ -16,6 +16,8 @@
     "no-var": "error"
   },
   "globals": {
-    "process": "readonly"
+    "process": "readonly",
+    "gtag": "readonly",
+    "dataLayer": "readonly"
   }
 }
