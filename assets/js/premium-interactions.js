@@ -496,5 +496,18 @@ class PerformanceOptimizer {
   }
 }
 
-// Initialize performance optimizations
-new PerformanceOptimizer();
+// Initialize performance optimizations safely
+try {
+  new PerformanceOptimizer();
+} catch (error) {
+  console.warn("PerformanceOptimizer initialization error:", error);
+}
+
+// Initialize PremiumInteractions safely
+document.addEventListener("DOMContentLoaded", function () {
+  try {
+    new PremiumInteractions();
+  } catch (error) {
+    console.warn("PremiumInteractions initialization error:", error);
+  }
+});
