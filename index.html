@@ -1419,10 +1419,178 @@
       </div>
     </footer>
 
+<<<<<<< HEAD
     <!-- Scripts -->
     <script src="assets/js/main.js" defer></script>
     <script src="assets/js/globals.js" defer></script>
     <script src="assets/js/booking.js" defer></script>
+=======
+    <!-- Optimized Scripts -->
+    <script>
+      // Global error handler to prevent script errors
+      window.addEventListener("error", function (event) {
+        console.warn("Script error caught and handled:", event.error);
+        // Prevent the error from propagating
+        return true;
+      });
+
+      // Handle unhandled promise rejections
+      window.addEventListener("unhandledrejection", function (event) {
+        console.warn("Unhandled promise rejection caught:", event.reason);
+        event.preventDefault();
+      });
+
+      // Safe DOM query function
+      function safeQuery(selector) {
+        try {
+          return document.querySelector(selector);
+        } catch (e) {
+          console.warn("Query selector error:", e);
+          return null;
+        }
+      }
+
+      // Safe DOM query all function
+      function safeQueryAll(selector) {
+        try {
+          return document.querySelectorAll(selector);
+        } catch (e) {
+          console.warn("Query selector all error:", e);
+          return [];
+        }
+      }
+
+      // Mobile menu toggle
+      const mobileMenuToggle = safeQuery(".mobile-menu-toggle");
+      if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener("click", function () {
+          const navLinks = safeQuery(".nav-links");
+          if (navLinks) {
+            navLinks.classList.toggle("active");
+          }
+        });
+      }
+
+      // Smooth scrolling
+      safeQueryAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = safeQuery(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      });
+
+      // IntakeQ booking function
+      function openBookingWidget() {
+        try {
+          if (window.IntakeQ) {
+            window.IntakeQ.open();
+          } else {
+            // Fallback if widget not loaded
+            const widgetIdMeta = safeQuery('meta[name="intakeq-widget-id"]');
+            if (widgetIdMeta && widgetIdMeta.content) {
+              const widgetId = widgetIdMeta.content;
+              window.open(`https://intakeq.com/booking/${widgetId}`, "_blank");
+            } else {
+              console.warn("IntakeQ widget ID not found");
+            }
+          }
+        } catch (error) {
+          console.warn("Error opening booking widget:", error);
+        }
+      }
+
+      // Lazy load IntakeQ widget
+      window.addEventListener("load", function () {
+        try {
+          if (!window.IntakeQ) {
+            const widgetIdMeta = safeQuery('meta[name="intakeq-widget-id"]');
+            if (widgetIdMeta && widgetIdMeta.content) {
+              const widgetId = widgetIdMeta.content;
+              window.intakeq = widgetId;
+              const script = document.createElement("script");
+              script.src = "https://intakeq.com/js/widget.min.js?1";
+              script.async = true;
+              script.onerror = function () {
+                console.warn("Failed to load IntakeQ widget script");
+              };
+              document.body.appendChild(script);
+            } else {
+              console.warn("IntakeQ widget ID meta tag not found");
+            }
+          }
+        } catch (error) {
+          console.warn("Error loading IntakeQ widget:", error);
+        }
+      });
+
+      // Lazy load Elfsight
+      try {
+        const testimonialObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const script = document.createElement("script");
+              script.src = "https://static.elfsight.com/platform/platform.js";
+              script.async = true;
+              script.onerror = function () {
+                console.warn("Failed to load Elfsight testimonials script");
+              };
+              document.body.appendChild(script);
+              testimonialObserver.disconnect();
+            }
+          });
+        });
+
+        const testimonialSection = safeQuery("#testimonials");
+        if (testimonialSection) {
+          testimonialObserver.observe(testimonialSection);
+        }
+      } catch (error) {
+        console.warn("Error setting up testimonial observer:", error);
+      }
+
+      // Global fallback function for showDisclosureModal
+      if (typeof window.showDisclosureModal === "undefined") {
+        window.showDisclosureModal = function () {
+          console.log(
+            "Good Faith Exam modal function not yet loaded. Please try again in a moment.",
+          );
+          // Try to redirect to booking as fallback
+          if (typeof openBookingWidget === "function") {
+            openBookingWidget();
+          } else {
+            window.open("https://Staydripped.intakeq.com/booking", "_blank");
+          }
+        };
+      }
+
+      // Global error handling for unhandled promise rejections
+      window.addEventListener("unhandledrejection", function (event) {
+        console.error("Unhandled promise rejection:", event.reason);
+        event.preventDefault(); // Prevent default browser error handling
+      });
+
+      // Global error handling for script errors
+      window.addEventListener("error", function (event) {
+        if (event.message === "Script error.") {
+          console.error(
+            "Cross-origin script error detected. This is usually due to external scripts.",
+          );
+        } else {
+          console.error(
+            "JavaScript error:",
+            event.message,
+            "at",
+            event.filename + ":" + event.lineno,
+          );
+        }
+      });
+    </script>
+
+    <!-- Premium Interactions Script -->
+>>>>>>> bc372f225aba5bdef2e1596d7563497e9aa79ec2
     <script src="assets/js/premium-interactions.js" defer></script>
     <script src="assets/js/advanced-interactions.js" defer></script>
 
