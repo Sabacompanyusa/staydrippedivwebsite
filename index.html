@@ -1445,7 +1445,7 @@
       const mobileMenuToggle = safeQuery(".mobile-menu-toggle");
       if (mobileMenuToggle) {
         mobileMenuToggle.addEventListener("click", function () {
-          const navLinks = document.querySelector(".nav-links");
+          const navLinks = safeQuery(".nav-links");
           if (navLinks) {
             navLinks.classList.toggle("active");
           }
@@ -1453,10 +1453,10 @@
       }
 
       // Smooth scrolling
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      safeQueryAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
           e.preventDefault();
-          const target = document.querySelector(this.getAttribute("href"));
+          const target = safeQuery(this.getAttribute("href"));
           if (target) {
             target.scrollIntoView({ behavior: "smooth" });
           }
