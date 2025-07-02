@@ -1508,24 +1508,28 @@
       });
 
       // Lazy load Elfsight
-      const testimonialObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const script = document.createElement("script");
-            script.src = "https://static.elfsight.com/platform/platform.js";
-            script.async = true;
-            script.onerror = function () {
-              console.error("Failed to load Elfsight testimonials script");
-            };
-            document.body.appendChild(script);
-            testimonialObserver.disconnect();
-          }
+      try {
+        const testimonialObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const script = document.createElement("script");
+              script.src = "https://static.elfsight.com/platform/platform.js";
+              script.async = true;
+              script.onerror = function () {
+                console.warn("Failed to load Elfsight testimonials script");
+              };
+              document.body.appendChild(script);
+              testimonialObserver.disconnect();
+            }
+          });
         });
-      });
 
-      const testimonialSection = document.querySelector("#testimonials");
-      if (testimonialSection) {
-        testimonialObserver.observe(testimonialSection);
+        const testimonialSection = safeQuery("#testimonials");
+        if (testimonialSection) {
+          testimonialObserver.observe(testimonialSection);
+        }
+      } catch (error) {
+        console.warn("Error setting up testimonial observer:", error);
       }
 
       // Global fallback function for showDisclosureModal
