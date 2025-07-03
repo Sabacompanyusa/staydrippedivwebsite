@@ -1,4 +1,4 @@
-;(function ($) {
+(function ($) {
 	
 	$(document).ready(ready);
 	
@@ -16,7 +16,7 @@
 		$(window).on('click', hideSearchResults);
 		
 		function searchFieldInputChange() {
-			let inputVal = searchFieldInput.val();
+			const inputVal = searchFieldInput.val();
 			
 			if (timeOut) clearTimeout(timeOut);
 			

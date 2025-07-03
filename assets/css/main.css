@@ -1,22 +1,22 @@
-// Main SCSS entry point for Stay Dripped Mobile IV
+// Main CSS entry point for Stay Dripped Mobile IV
 
 // 1. Abstracts
-@import "abstracts/variables";
-@import "abstracts/mixins";
+@import "assets/css/abstracts/variables.css";
+@import "assets/css/abstracts/mixins.css";
 
 // 2. Base
-@import "base/reset";
-@import "base/typography";
-@import "base/utilities";
+@import "assets/css/elemetns/base/reset.css";
+@import "assets/css/elemetns/base/typography.css";
+@import "assets/css/elemetns/base/utilities.css";
 
 // 3. Components
-@import "components/buttons";
-@import "components/cards";
-@import "components/header";
-@import "components/hero";
-@import "components/footer";
-@import "components/service-cards";
-@import "components/membership";
+@import "components/css/buttons.css";
+@import "components/css/cards.css";
+@import "components/css/header.css";
+@import "components/css/hero.css";
+@import "components/css/footer.css";
+@import "components/css/service-cards.css";
+@import "components/css/membership.css";
 
 // 4. Layout (responsive containers and grids)
 .container {

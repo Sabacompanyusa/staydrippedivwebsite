@@ -8,14 +8,14 @@ const IMAGE_CACHE = "images-v1.0.0";
 // Files to precache
 const STATIC_FILES = [
   "/",
-  "/css/main.css",
+  "assets/css/main.css",
   "/js/main.js",
-  "/manifest.json",
+  "json/manifest.json",
   "/assets/icons/favicon-32x32.png",
   "/assets/icons/apple-touch-icon.png",
-  "/components/header.html",
-  "/components/footer.html",
-  "/components/hero.html",
+  "/components/html/header.html",
+  "/components/html/footer.html",
+  "/components/html/hero.html",
   "/offline.html", // Offline fallback page
 ];
 

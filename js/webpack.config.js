@@ -14,7 +14,7 @@ module.exports = (env) => {
     mode: isProduction ? "production" : "development",
     entry: {
       main: "./js/index.js",
-      styles: "./scss/main.scss",
+      styles: ".assets/css/main.scss",
     },
     output: {
       filename: isProduction ? "js/[name].[contenthash].js" : "js/[name].js",

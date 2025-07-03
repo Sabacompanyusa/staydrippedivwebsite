@@ -68,14 +68,14 @@ function copyStaticFiles() {
 function generateSitemap() {
   const pages = [
     { url: "/", priority: "1.0", changefreq: "weekly" },
-    { url: "/services", priority: "0.9", changefreq: "weekly" },
-    { url: "/iv-therapy", priority: "0.8", changefreq: "monthly" },
-    { url: "/nad-therapy", priority: "0.8", changefreq: "monthly" },
-    { url: "/how-it-works", priority: "0.7", changefreq: "monthly" },
-    { url: "/memberships", priority: "0.7", changefreq: "monthly" },
-    { url: "/testimonials", priority: "0.6", changefreq: "weekly" },
-    { url: "/faq", priority: "0.6", changefreq: "monthly" },
-    { url: "/booking", priority: "0.9", changefreq: "daily" },
+    { url: "/services.html", priority: "0.9", changefreq: "weekly" },
+    { url: "/iv-therapy.html", priority: "0.8", changefreq: "monthly" },
+    { url: "/nad-therapy.html", priority: "0.8", changefreq: "monthly" },
+    { url: "components/html/how-it-works.html", priority: "0.7", changefreq: "monthly" },
+    { url: "components/html/memberships.html", priority: "0.7", changefreq: "monthly" },
+    { url: "components/html/testimonials.html", priority: "0.6", changefreq: "weekly" },
+    { url: "components/html/faq.html", priority: "0.6", changefreq: "monthly" },
+    { url: "components/html/booking.html", priority: "0.9", changefreq: "daily" },
   ];
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
