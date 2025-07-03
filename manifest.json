@@ -1,0 +1,83 @@
+{
+  "name": "Stay Dripped Mobile IV",
+  "short_name": "Stay Dripped",
+  "description": "Premium mobile IV therapy delivered to you. Professional hydration, NAD+, and wellness services in Scottsdale & Phoenix.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1a2a47",
+  "orientation": "portrait-primary",
+  "categories": ["health", "medical", "wellness"],
+  "lang": "en-US",
+  "icons": [
+    {
+      "src": "/assets/icons/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/icons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Book Treatment",
+      "short_name": "Book",
+      "description": "Book your mobile IV therapy treatment",
+      "url": "/booking",
+      "icons": [
+        {
+          "src": "/assets/icons/shortcut-book.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Services",
+      "short_name": "Services",
+      "description": "View our IV therapy services",
+      "url": "/services",
+      "icons": [
+        {
+          "src": "/assets/icons/shortcut-services.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/assets/screenshots/mobile-1.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Mobile view of homepage"
+    },
+    {
+      "src": "/assets/screenshots/desktop-1.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Desktop view of homepage"
+    }
+  ]
+}
