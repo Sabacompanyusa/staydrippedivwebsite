@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Mobile Cold Plunge Therapy - Recovery & Wellness | Stay Dripped Mobile IV
+    </title>
+    <meta
+      name="description"
+      content="Professional mobile cold plunge therapy for enhanced recovery, inflammation reduction, and mental clarity delivered to your location in Scottsdale & Phoenix."
+    />
+    <meta
+      name="keywords"
+      content="mobile cold plunge, cold therapy, cryotherapy, recovery therapy, inflammation reduction, Scottsdale cold therapy, Phoenix mobile wellness"
+    />
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../assets/images/favicon-16x16.png"
+    />
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/main.scss" />
+    <link rel="stylesheet" href="../assets/css/professional-theme.css" />
+    <link rel="stylesheet" href="../assets/css/enhanced-sections.css" />
+
+    <style>
+      .back-button {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.9);
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .back-button:hover {
+        background: white;
+        transform: scale(1.1);
+      }
+
+      .service-hero {
+        background: linear-gradient(135deg, #87ceeb 0%, #4682b4 100%);
+        color: white;
+        padding: 120px 0 80px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .service-hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(135, 206, 235, 0.8) 0%,
+          rgba(70, 130, 180, 0.9) 100%
+        );
+        z-index: 1;
+      }
+
+      .service-hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .cold-benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .cold-benefit-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+
+      .cold-benefit-card:hover {
+        transform: translateY(-8px);
+      }
+
+      .cold-benefit-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: #4682b4;
+      }
+
+      .process-section {
+        background: #f8fafc;
+        padding: 80px 0;
+      }
+
+      .process-steps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .process-step {
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        text-align: center;
+        position: relative;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      }
+
+      .step-number {
+        position: absolute;
+        top: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #4682b4;
+        color: white;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+      }
+
+      .booking-section {
+        background: linear-gradient(135deg, #4682b4 0%, #87ceeb 100%);
+        color: white;
+        padding: 80px 0;
+        text-align: center;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background: white;
+        color: #4682b4;
+        padding: 16px 32px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        margin-top: 2rem;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        color: #4682b4;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Back Button -->
+    <button
+      class="back-button"
+      onclick="window.history.back()"
+      aria-label="Go back"
+    >
+      <i class="fas fa-arrow-left"></i>
+    </button>
+
+    <!-- Hero Section -->
+    <section class="service-hero">
+      <div class="service-hero-content">
+        <div class="container">
+          <h1 class="display-1 mb-4">Mobile Cold Plunge Therapy</h1>
+          <p class="lead mb-0">
+            Revolutionary cold therapy delivered to your location for enhanced
+            recovery, reduced inflammation, and mental clarity
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-4 mb-4">The Science of Cold Therapy</h2>
+          <p class="lead text-muted">
+            Experience the powerful benefits of controlled cold exposure in the
+            comfort of your own space
+          </p>
+        </div>
+
+        <div class="cold-benefits-grid">
+          <div class="cold-benefit-card">
+            <div class="cold-benefit-icon">❄️</div>
+            <h3 class="h4 mb-3">Inflammation Reduction</h3>
+            <p>
+              Cold therapy significantly reduces inflammation markers and
+              promotes faster recovery from workouts and injuries.
+            </p>
+          </div>
+
+          <div class="cold-benefit-card">
+            <div class="cold-benefit-icon">🧠</div>
+            <h3 class="h4 mb-3">Mental Clarity</h3>
+            <p>
+              Cold exposure triggers the release of norepinephrine, enhancing
+              focus, alertness, and mental performance.
+            </p>
+          </div>
+
+          <div class="cold-benefit-card">
+            <div class="cold-benefit-icon">💪</div>
+            <h3 class="h4 mb-3">Enhanced Recovery</h3>
+            <p>
+              Accelerate muscle recovery, reduce soreness, and improve athletic
+              performance with regular cold therapy.
+            </p>
+          </div>
+
+          <div class="cold-benefit-card">
+            <div class="cold-benefit-icon">🔥</div>
+            <h3 class="h4 mb-3">Metabolic Boost</h3>
+            <p>
+              Cold exposure activates brown fat, increases metabolism, and may
+              support healthy weight management.
+            </p>
+          </div>
+
+          <div class="cold-benefit-card">
+            <div class="cold-benefit-icon">😌</div>
+            <h3 class="h4 mb-3">Stress Resilience</h3>
+            <p>
+              Build mental resilience and improve stress response through
+              controlled exposure to beneficial stressors.
+            </p>
+          </div>
+
+          <div class="cold-benefit-card">
+            <div class="cold-benefit-icon">💤</div>
+            <h3 class="h4 mb-3">Better Sleep</h3>
+            <p>
+              Cold therapy can improve sleep quality and help regulate circadian
+              rhythms for better rest.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-4 mb-4">Our Mobile Cold Plunge Process</h2>
+          <p class="lead text-muted">
+            Professional setup and guidance for your cold therapy session
+          </p>
+        </div>
+
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-number">1</div>
+            <h3 class="h5 mb-3">Professional Setup</h3>
+            <p>
+              Our team arrives with professional-grade portable cold plunge
+              equipment and sets up at your location.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">2</div>
+            <h3 class="h5 mb-3">Safety Briefing</h3>
+            <p>
+              Comprehensive safety orientation and personalized guidance based
+              on your experience level.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">3</div>
+            <h3 class="h5 mb-3">Supervised Session</h3>
+            <p>
+              Professionally supervised cold therapy session with monitoring and
+              support throughout.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">4</div>
+            <h3 class="h5 mb-3">Recovery Protocol</h3>
+            <p>
+              Guided warming protocol and post-session care recommendations for
+              optimal benefits.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing & Packages -->
+    <section class="section py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-4 mb-4">Cold Plunge Packages</h2>
+          <p class="lead text-muted">
+            Choose the package that fits your wellness goals
+          </p>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-md-4 mb-4">
+            <div class="cold-benefit-card">
+              <h3 class="h4 mb-3">Single Session</h3>
+              <div class="display-6 text-primary mb-3">$150</div>
+              <ul class="list-unstyled">
+                <li>✓ 45-minute session</li>
+                <li>✓ Professional setup</li>
+                <li>✓ Safety supervision</li>
+                <li>✓ Recovery guidance</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="cold-benefit-card">
+              <h3 class="h4 mb-3">Weekly Package</h3>
+              <div class="display-6 text-primary mb-3">$500</div>
+              <div class="text-muted mb-3">4 sessions</div>
+              <ul class="list-unstyled">
+                <li>✓ 4 weekly sessions</li>
+                <li>✓ Progress tracking</li>
+                <li>✓ Personalized protocols</li>
+                <li>✓ 15% savings</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="cold-benefit-card">
+              <h3 class="h4 mb-3">Monthly Program</h3>
+              <div class="display-6 text-primary mb-3">$1,800</div>
+              <div class="text-muted mb-3">16 sessions</div>
+              <ul class="list-unstyled">
+                <li>✓ 16 monthly sessions</li>
+                <li>✓ Comprehensive wellness plan</li>
+                <li>✓ Performance monitoring</li>
+                <li>✓ 25% savings</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking-section">
+      <div class="container">
+        <h2 class="display-4 mb-4">Ready to Experience Cold Therapy?</h2>
+        <p class="lead mb-4">
+          Book your mobile cold plunge session and discover the powerful
+          benefits of controlled cold exposure
+        </p>
+
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <a
+              href="https://staydripped.intakeq.com/booking"
+              target="_blank"
+              rel="noopener"
+              class="cta-button"
+            >
+              <i class="fas fa-calendar-plus me-2"></i>
+              Book Your Cold Plunge Session
+            </a>
+          </div>
+        </div>
+
+        <div class="mt-5">
+          <p class="mb-2">
+            <strong>Service Areas:</strong> Phoenix, Scottsdale, Tempe, Mesa,
+            Chandler, Gilbert, Glendale, Peoria
+          </p>
+          <p class="mb-0">
+            <strong>Contact:</strong> (602) 688-9825 |
+            info@staydrippedmobileiv.com
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="../assets/js/main.js"></script>
+    <script>
+      // Track page view
+      if (typeof gtag !== "undefined") {
+        gtag("event", "page_view", {
+          page_title: "Mobile Cold Plunge Therapy",
+          page_location: window.location.href,
+        });
+      }
+    </script>
+  </body>
+</html>

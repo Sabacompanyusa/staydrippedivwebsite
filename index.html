@@ -5,8 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Premium mobile IV therapy delivered to you. Professional hydration, NAD+, and wellness services in Scottsdale & Phoenix."
+      content="Premium mobile IV therapy delivered to you. Professional hydration, NAD+, peptide therapy, and wellness services in Scottsdale & Phoenix. Book now for same-day service."
     />
+    <meta
+      name="keywords"
+      content="mobile IV therapy, NAD therapy, peptide therapy, IV hydration, wellness, Scottsdale, Phoenix, vitamin injections, hormone therapy, aesthetics"
+    />
+    <meta name="author" content="Stay Dripped Mobile IV" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta
+      property="og:title"
+      content="Stay Dripped Mobile IV - Premium Mobile IV Therapy"
+    />
+    <meta
+      property="og:description"
+      content="Professional IV therapy, NAD+, peptide treatments delivered to your location in Phoenix Valley. Licensed medical professionals, same-day service."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://staydrippedmobileiv.com" />
+    <meta property="og:image" content="/assets/images/og-image.jpg" />
 
     <!-- Favicon and manifest -->
     <link
@@ -26,10 +44,70 @@
       sizes="16x16"
       href="/assets/icons/favicon-16x16.png"
     />
+
     <link rel="manifest" href="kk/json/manifest.json" />
     <meta name="theme-color" content="#1a2a47" />
+=======
+    <link rel="manifest" href="/json/manifest.json" />
+    <meta name="theme-color" content="#00e5ff" />
 
-    <title>Stay Dripped Mobile IV - Premium Mobile IV Therapy</title>
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "MedicalBusiness",
+        "name": "Stay Dripped Mobile IV",
+        "description": "Premium mobile IV therapy and wellness services",
+        "url": "https://staydrippedmobileiv.com",
+        "telephone": "+1-602-688-9825",
+        "email": "info@staydrippedmobileiv.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Scottsdale",
+          "addressRegion": "AZ",
+          "addressCountry": "US"
+        },
+        "areaServed": [
+          "Phoenix",
+          "Scottsdale",
+          "Tempe",
+          "Mesa",
+          "Chandler",
+          "Gilbert",
+          "Glendale",
+          "Peoria"
+        ],
+        "medicalSpecialty": [
+          "IV Therapy",
+          "Wellness Medicine",
+          "Aesthetic Medicine"
+        ],
+        "priceRange": "$$$"
+      }
+    </script>
+
+    <title>
+      Stay Dripped Mobile IV - Premium Mobile IV Therapy & Wellness Services
+    </title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="assets/css/main.scss" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Bootstrap CSS (if needed) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
     <!-- Skip Link for Accessibility -->
@@ -43,25 +121,45 @@
             src="/assets/images/logo.png"
             alt="Stay Dripped Mobile IV"
             width="200"
-            height="40"
+            height="48"
+            onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=&quot;font-size:1.5rem;font-weight:700;color:var(--primary);&quot;>Stay Dripped Mobile IV</span>'"
           />
         </a>
 
-        <nav class="main-nav">
+        <nav class="main-nav" role="navigation" aria-label="Main navigation">
           <ul class="main-nav__list">
-            <li><a href="/services" class="main-nav__link">Services</a></li>
             <li>
-              <a href="/how-it-works" class="main-nav__link">How It Works</a>
+              <a href="services.html" class="main-nav__link">All Services</a>
             </li>
             <li>
-              <a href="/memberships" class="main-nav__link">Memberships</a>
+              <a href="#how-it-works" class="main-nav__link">How It Works</a>
             </li>
-            <li><a href="/testimonials" class="main-nav__link">Reviews</a></li>
-            <li><a href="/faq" class="main-nav__link">FAQ</a></li>
+            <li>
+              <a href="#memberships" class="main-nav__link">Memberships</a>
+            </li>
+            <li>
+              <a href="pages/testimonials.html" class="main-nav__link"
+                >Reviews</a
+              >
+            </li>
+            <li><a href="#faq" class="main-nav__link">FAQ</a></li>
+            <li>
+              <a href="tel:+16026889825" class="main-nav__link"
+                >Call: (602) 688-9825</a
+              >
+            </li>
           </ul>
         </nav>
 
         <div class="header-actions">
+          <button
+            id="dark-mode-toggle"
+            class="dark-mode-toggle"
+            aria-label="Toggle dark mode"
+          >
+            ☀️
+          </button>
+          <button class="mobile-menu-toggle lg:hidden" aria-label="Toggle menu"
           <button id="dark-mode-toggle" class="dark-mode-toggle">☀️</button>
           <a href="/booking" class="btn btn--primary">Book Now</a>
           <button
@@ -70,12 +168,7 @@
             aria-expanded="false"
             aria-controls="mobile-menu"
           >
-            <div class="hamburger">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </button>
+main
         </div>
       </div>
     </header>
@@ -125,16 +218,1134 @@
     <!-- Main Content -->
     <main id="main-content" role="main">
       <!-- Hero Section -->
-      <section class="hero">
+      <section class="hero section--hero">
         <div class="container">
-          <h1>Premium Mobile IV Therapy Delivered to You</h1>
-          <p class="lead">
-            Recharge, rejuvenate, and repeat with our professional healthcare
-            services.
-          </p>
-          <a href="/booking" class="btn btn--primary btn--lg"
-            >Book Treatment Now</a
+          <div class="hero__content">
+            <div class="hero__text animate-fadeInUp">
+              <h1 class="display-1">
+                Premium Mobile IV Therapy Delivered to You
+              </h1>
+              <p class="lead">
+                Recharge, rejuvenate, and repeat with our professional
+                healthcare services. Experience the convenience of premium IV
+                therapy, NAD+, peptide treatments, and wellness services in the
+                comfort of your home or office.
+              </p>
+              <div class="hero__actions">
+                <a href="booking.html" class="btn btn--primary btn--lg"
+                  >Book Treatment Now</a
+                >
+                <a href="#services" class="btn btn--secondary btn--lg"
+                  >View Services</a
+                >
+                <a href="tel:+16026889825" class="btn btn--secondary btn--lg"
+                  >Call: (602) 688-9825</a
+                >
+              </div>
+
+              <div class="hero__stats">
+                <div class="hero__stat">
+                  <span class="hero__stat-number">5000+</span>
+                  <span class="hero__stat-label">Treatments Delivered</span>
+                </div>
+                <div class="hero__stat">
+                  <span class="hero__stat-number">4.9★</span>
+                  <span class="hero__stat-label">Average Rating</span>
+                </div>
+                <div class="hero__stat">
+                  <span class="hero__stat-number">24/7</span>
+                  <span class="hero__stat-label">Availability</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section id="services" class="section">
+        <div class="container">
+          <div class="text-center" style="margin-bottom: var(--space-3xl)">
+            <h2 class="display-2">Our Premium Services</h2>
+            <p class="lead" style="color: var(--neutral-600)">
+              Comprehensive wellness treatments designed to optimize your
+              health, energy, and performance through cutting-edge therapies.
+            </p>
+          </div>
+
+          <div class="grid grid--3">
+            <div class="card card--featured">
+              <div class="card__icon">💧</div>
+              <h3 class="card__title">IV Therapy Treatments</h3>
+              <p class="card__text">
+                Fast, effective hydration and vitamin replenishment for
+                immediate wellness boost and recovery.
+              </p>
+              <div class="card__price">Starting at $150</div>
+              <a href="pages/iv-therapy.html" class="btn btn--primary"
+                >View Options</a
+              >
+            </div>
+
+            <div class="card">
+              <div class="card__icon">🧬</div>
+              <h3 class="card__title">NAD+ Therapy</h3>
+              <p class="card__text">
+                Revolutionary cellular regeneration therapy to boost cognitive
+                function, energy, and anti-aging benefits.
+              </p>
+              <div class="card__price">Starting at $300</div>
+              <a href="pages/nad-therapy.html" class="btn btn--primary"
+                >View Options</a
+              >
+            </div>
+
+            <div class="card">
+              <div class="card__icon">🔬</div>
+              <h3 class="card__title">Peptide Therapy</h3>
+              <p class="card__text">
+                Advanced peptide protocols to promote healing, optimize
+                hormones, and enhance overall performance.
+              </p>
+              <div class="card__price">Starting at $250</div>
+              <a href="pages/peptide-therapy.html" class="btn btn--primary"
+                >View Options</a
+              >
+            </div>
+
+            <div class="card">
+              <div class="card__icon">💊</div>
+              <h3 class="card__title">Vitamin Injection Shots</h3>
+              <p class="card__text">
+                Fast-acting intramuscular shots for energy enhancement, immune
+                support, fat burning, and more.
+              </p>
+              <div class="card__price">Starting at $50</div>
+              <a href="pages/injection-shots.html" class="btn btn--primary"
+                >View Options</a
+              >
+            </div>
+
+            <div class="card">
+              <div class="card__icon">⚖️</div>
+              <h3 class="card__title">Weight Management</h3>
+              <p class="card__text">
+                Custom peptide and IV-based protocols for sustained, healthy
+                weight loss and metabolic optimization.
+              </p>
+              <div class="card__price">Starting at $200</div>
+              <a href="pages/weight-management.html" class="btn btn--primary"
+                >View Options</a
+              >
+            </div>
+
+            <div class="card">
+              <div class="card__icon">✨</div>
+              <h3 class="card__title">Aesthetic Treatments</h3>
+              <p class="card__text">
+                Skin rejuvenation, anti-aging, Botox, Fillers and injection
+                therapies for radiant wellness.
+              </p>
+              <div class="card__price">Starting at $300</div>
+              <a href="pages/aesthetic.html" class="btn btn--primary"
+                >View Options</a
+              >
+            </div>
+
+            <div class="card">
+              <div class="card__icon">🧊</div>
+              <h3 class="card__title">Mobile Cold Plunge</h3>
+              <p class="card__text">
+                Mobile cold plunge services delivered to your door! Reduce
+                inflammation and enhance recovery.
+              </p>
+              <div class="card__price">Starting at $400</div>
+              <a href="pages/mobile-cold-plunge.html" class="btn btn--primary"
+                >View Options</a
+              >
+            </div>
+
+            <div class="card">
+              <div class="card__icon">🏥</div>
+              <h3 class="card__title">Hormone Replacement</h3>
+              <p class="card__text">
+                BHRT for men and women to restore energy, libido, and hormonal
+                balance for optimal vitality.
+              </p>
+              <div class="card__price">Starting at $350</div>
+              <a href="pages/hormone-replacement.html" class="btn btn--primary"
+                >View Options</a
+              >
+            </div>
+
+            <div class="card">
+              <div class="card__icon">🩸</div>
+              <h3 class="card__title">At-Home Blood Testing</h3>
+              <p class="card__text">
+                Convenient blood testing kits delivered to your home with expert
+                consultation on results.
+              </p>
+              <div class="card__price">Starting at $199</div>
+              <a href="pages/blood-testing.html" class="btn btn--primary"
+                >Learn More</a
+              >
+            </div>
+          </div>
+
+          <div class="text-center" style="margin-top: var(--space-3xl)">
+            <a href="services.html" class="btn btn--secondary btn--lg"
+              >View All Services</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- How It Works Section -->
+      <section id="how-it-works" class="section section--light">
+        <div class="container">
+          <div class="text-center" style="margin-bottom: var(--space-3xl)">
+            <h2 class="display-2">How It Works</h2>
+            <p class="lead" style="color: var(--neutral-600)">
+              Simple, professional, and convenient - get premium IV therapy
+              delivered to your location in just a few easy steps.
+            </p>
+          </div>
+
+          <div class="grid grid--4">
+            <div class="card text-center">
+              <div
+                style="
+                  width: 60px;
+                  height: 60px;
+                  background: var(--primary);
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin: 0 auto var(--space-md);
+                  color: white;
+                  font-weight: 700;
+                  font-size: 1.5rem;
+                "
+              >
+                1
+              </div>
+              <h3 class="card__title">Book Online</h3>
+              <p class="card__text">
+                Choose your treatment and schedule a convenient time through our
+                secure booking system. Available 24/7 across the Phoenix Valley.
+              </p>
+            </div>
+
+            <div class="card text-center">
+              <div
+                style="
+                  width: 60px;
+                  height: 60px;
+                  background: var(--primary);
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin: 0 auto var(--space-md);
+                  color: white;
+                  font-weight: 700;
+                  font-size: 1.5rem;
+                "
+              >
+                2
+              </div>
+              <h3 class="card__title">Licensed Professional Arrives</h3>
+              <p class="card__text">
+                A certified nurse or medical professional comes to your location
+                with all necessary equipment and premium-grade nutrients.
+              </p>
+            </div>
+
+            <div class="card text-center">
+              <div
+                style="
+                  width: 60px;
+                  height: 60px;
+                  background: var(--primary);
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin: 0 auto var(--space-md);
+                  color: white;
+                  font-weight: 700;
+                  font-size: 1.5rem;
+                "
+              >
+                3
+              </div>
+              <h3 class="card__title">Relax & Rejuvenate</h3>
+              <p class="card__text">
+                Enjoy your 30-60 minute treatment in the comfort of your home,
+                office, or chosen location while our professional monitors your
+                care.
+              </p>
+            </div>
+
+            <div class="card text-center">
+              <div
+                style="
+                  width: 60px;
+                  height: 60px;
+                  background: var(--primary);
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin: 0 auto var(--space-md);
+                  color: white;
+                  font-weight: 700;
+                  font-size: 1.5rem;
+                "
+              >
+                4
+              </div>
+              <h3 class="card__title">Feel Amazing</h3>
+              <p class="card__text">
+                Experience immediate hydration, energy boost, and wellness
+                benefits. Most clients feel results within 15-30 minutes.
+              </p>
+            </div>
+          </div>
+
+          <div class="grid grid--4" style="margin-top: var(--space-3xl)">
+            <div class="card">
+              <div class="card__icon">🛡️</div>
+              <h4 class="card__title">Safety First</h4>
+              <p class="card__text">
+                All treatments administered by licensed medical professionals
+                with strict safety protocols.
+              </p>
+            </div>
+
+            <div class="card">
+              <div class="card__icon">⏰</div>
+              <h4 class="card__title">Flexible Scheduling</h4>
+              <p class="card__text">
+                Same-day bookings available. We work around your schedule, not
+                the other way around.
+              </p>
+            </div>
+
+            <div class="card">
+              <div class="card__icon">🏠</div>
+              <h4 class="card__title">Anywhere Service</h4>
+              <p class="card__text">
+                Home, office, hotel, event venue - we bring the clinic to you
+                for ultimate convenience.
+              </p>
+            </div>
+
+            <div class="card">
+              <div class="card__icon">⭐</div>
+              <h4 class="card__title">Premium Quality</h4>
+              <p class="card__text">
+                Pharmaceutical-grade nutrients, sterile equipment, and
+                medical-grade IV solutions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Memberships Section -->
+      <section id="memberships" class="section">
+        <div class="container">
+          <div class="text-center" style="margin-bottom: var(--space-3xl)">
+            <h2 class="display-2">Membership Plans</h2>
+            <p class="lead" style="color: var(--neutral-600)">
+              Save money and prioritize your wellness with our exclusive
+              membership programs designed for regular IV therapy users.
+            </p>
+          </div>
+
+          <div class="grid grid--3">
+            <!-- Essential Membership -->
+            <div class="card">
+              <h3 class="card__title">Essential</h3>
+              <div
+                style="
+                  font-size: 2rem;
+                  font-weight: 800;
+                  color: var(--primary);
+                  margin-bottom: var(--space-sm);
+                "
+              >
+                $149<span style="font-size: 1rem; font-weight: 500"
+                  >/month</span
+                >
+              </div>
+              <p style="margin-bottom: var(--space-lg); font-style: italic">
+                Perfect for monthly wellness maintenance
+              </p>
+
+              <div style="margin-bottom: var(--space-lg)">
+                <ul style="list-style: none; padding: 0">
+                  <li style="padding: var(--space-xs) 0">
+                    ✅ 1 IV treatment per month
+                  </li>
+                  <li style="padding: var(--space-xs) 0">
+                    ✅ 15% off additional treatments
+                  </li>
+                  <li style="padding: var(--space-xs) 0">
+                    ✅ Priority booking
+                  </li>
+                  <li style="padding: var(--space-xs) 0">
+                    ✅ Free wellness consultation
+                  </li>
+                  <li style="padding: var(--space-xs) 0">
+                    ✅ Member-only wellness tips
+                  </li>
+                </ul>
+              </div>
+
+              <div
+                style="
+                  background: var(--accent);
+                  color: white;
+                  padding: var(--space-sm);
+                  border-radius: var(--radius-md);
+                  margin-bottom: var(--space-md);
+                  text-align: center;
+                  font-weight: 600;
+                "
+              >
+                Save $50+ per month
+              </div>
+
+              <button
+                class="btn btn--primary w-100"
+                onclick="forwardToBooking({email: {value: ''}, plan: {value: 'Essential'}})"
+              >
+                Choose Essential
+              </button>
+            </div>
+
+            <!-- Premium Membership -->
+            <div class="card card--featured" style="position: relative">
+              <div
+                style="
+                  position: absolute;
+                  top: -10px;
+                  left: 50%;
+                  transform: translateX(-50%);
+                  background: var(--accent);
+                  color: white;
+                  padding: var(--space-xs) var(--space-md);
+                  border-radius: var(--radius-full);
+                  font-size: 0.875rem;
+                  font-weight: 600;
+                "
+              >
+                Most Popular
+              </div>
+
+              <h3 class="card__title">Premium</h3>
+              <div
+                style="
+                  font-size: 2rem;
+                  font-weight: 800;
+                  color: white;
+                  margin-bottom: var(--space-sm);
+                "
+              >
+                $199<span style="font-size: 1rem; font-weight: 500"
+                  >/month</span
+                >
+              </div>
+              <p style="margin-bottom: var(--space-lg); font-style: italic">
+                Comprehensive wellness program
+              </p>
+
+              <div style="margin-bottom: var(--space-lg)">
+                <ul style="list-style: none; padding: 0">
+                  <li style="padding: var(--space-xs) 0">
+                    ✅ 2 IV treatments per month
+                  </li>
+                  <li style="padding: var(--space-xs) 0">
+                    ✅ 25% off additional treatments
+                  </li>
+                  <li style="padding: var(--space-xs) 0">
+                    ✅ Priority booking & scheduling
+                  </li>
+                  <li style="padding: var(--space-xs) 0">
+                    ✅ Free add-on shots (B12, etc.)
+                  </li>
+                  <li style="padding: var(--space-xs) 0">
+                    ✅ Quarterly wellness assessment
+                  </li>
+                  <li style="padding: var(--space-xs) 0">
+                    ✅ 24/7 nurse consultation line
+                  </li>
+                  <li style="padding: var(--space-xs) 0">
+                    ✅ Exclusive premium treatments
+                  </li>
+                </ul>
+              </div>
+
+              <div
+                style="
+                  background: var(--accent);
+                  color: white;
+                  padding: var(--space-sm);
+                  border-radius: var(--radius-md);
+                  margin-bottom: var(--space-md);
+                  text-align: center;
+                  font-weight: 600;
+                "
+              >
+                Save $150+ per month
+              </div>
+
+              <button
+                class="btn btn--secondary w-100"
+                onclick="forwardToBooking({email: {value: ''}, plan: {value: 'Premium'}})"
+              >
+                Choose Premium
+              </button>
+            </div>
+
+            <!-- Vitamin Injection Pass -->
+            <div class="card">
+              <h3 class="card__title">Vitamin Injection Pass</h3>
+              <div
+                style="
+                  font-size: 2rem;
+                  font-weight: 800;
+                  color: var(--primary);
+                  margin-bottom: var(--space-sm);
+                "
+              >
+                $99<span style="font-size: 1rem; font-weight: 500">/month</span>
+              </div>
+              <p style="margin-bottom: var(--space-lg); font-style: italic">
+                Quick boosts for busy lifestyles
+              </p>
+
+              <div style="margin-bottom: var(--space-lg)">
+                <ul style="list-style: none; padding: 0">
+                  <li style="padding: var(--space-xs) 0">
+                    ✅ 4 injection shots per month
+                  </li>
+                  <li style="padding: var(--space-xs) 0">
+                    ✅ Choose from B12, Fat Burn, Immune
+                  </li>
+                  <li style="padding: var(--space-xs) 0">
+                    ✅ 20% off IV treatments
+                  </li>
+                  <li style="padding: var(--space-xs) 0">
+                    ✅ Flexible scheduling
+                  </li>
+                  <li style="padding: var(--space-xs) 0">
+                    ✅ No commitment required
+                  </li>
+                </ul>
+              </div>
+
+              <div
+                style="
+                  background: var(--accent);
+                  color: white;
+                  padding: var(--space-sm);
+                  border-radius: var(--radius-md);
+                  margin-bottom: var(--space-md);
+                  text-align: center;
+                  font-weight: 600;
+                "
+              >
+                Save $80+ per month
+              </div>
+
+              <button
+                class="btn btn--primary w-100"
+                onclick="forwardToBooking({email: {value: ''}, plan: {value: 'Shot'}})"
+              >
+                Choose Injection Pass
+              </button>
+            </div>
+          </div>
+
+          <div class="text-center" style="margin-top: var(--space-3xl)">
+            <p
+              style="color: var(--neutral-600); margin-bottom: var(--space-md)"
+            >
+              <strong>All Members Enjoy:</strong> Priority booking, exclusive
+              discounts, member perks, and VIP support
+            </p>
+            <p style="font-size: 0.875rem; color: var(--neutral-500)">
+              🛡️ 30-day satisfaction guarantee - Love it or get your money back
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section id="testimonials" class="section section--light">
+        <div class="container">
+          <div class="text-center" style="margin-bottom: var(--space-3xl)">
+            <h2 class="display-2">What Our Patients Are Saying</h2>
+            <p class="lead" style="color: var(--neutral-600)">
+              Real transformations from real people who chose Stay Dripped
+              Mobile IV for their wellness journey
+            </p>
+          </div>
+
+          <!-- Google Reviews Widget -->
+          <div
+            style="
+              max-width: 1000px;
+              margin: 0 auto;
+              background: var(--white);
+              border-radius: var(--radius-xl);
+              padding: var(--space-3xl) var(--space-xl);
+              box-shadow: var(--shadow-lg);
+              border-top: 5px solid var(--primary);
+            "
           >
+            <script
+              src="https://static.elfsight.com/platform/platform.js"
+              async
+            ></script>
+            <div
+              class="elfsight-app-d433d327-22a0-44e1-b166-f607a4df45d8"
+              data-elfsight-app-lazy
+            ></div>
+          </div>
+
+          <!-- Quick Review Links -->
+          <div class="text-center" style="margin-top: var(--space-2xl)">
+            <p
+              style="margin-bottom: var(--space-md); color: var(--neutral-600)"
+            >
+              Leave us a review:
+            </p>
+            <div
+              style="
+                display: flex;
+                gap: var(--space-md);
+                justify-content: center;
+                flex-wrap: wrap;
+              "
+            >
+              <a
+                href="https://g.co/kgs/ySTNw64"
+                target="_blank"
+                rel="noopener"
+                class="btn btn--primary btn--sm"
+              >
+                ★ Google Review
+              </a>
+              <a
+                href="https://www.yelp.com/biz/stay-dripped-mobile-iv-scottsdale-2"
+                target="_blank"
+                rel="noopener"
+                class="btn btn--primary btn--sm"
+              >
+                ★ Yelp Review
+              </a>
+              <a
+                href="https://www.facebook.com/Staydrippediv/"
+                target="_blank"
+                rel="noopener"
+                class="btn btn--primary btn--sm"
+              >
+                ★ Facebook Review
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section id="faq" class="section">
+        <div class="container">
+          <div class="text-center" style="margin-bottom: var(--space-3xl)">
+            <h2 class="display-2">Frequently Asked Questions</h2>
+            <p class="lead" style="color: var(--neutral-600)">
+              Get answers to common questions about our mobile IV therapy
+              services
+            </p>
+          </div>
+
+          <div style="max-width: 800px; margin: 0 auto">
+            <div
+              class="faq-item"
+              style="
+                border-bottom: 1px solid var(--neutral-200);
+                padding: var(--space-lg) 0;
+              "
+            >
+              <button
+                class="faq-question"
+                style="
+                  width: 100%;
+                  text-align: left;
+                  background: none;
+                  border: none;
+                  font-size: 1.25rem;
+                  font-weight: 600;
+                  color: var(--neutral-800);
+                  cursor: pointer;
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                "
+                aria-expanded="false"
+              >
+                What is mobile IV therapy?
+                <span style="font-size: 1rem">+</span>
+              </button>
+              <div
+                class="faq-answer"
+                style="
+                  display: none;
+                  padding-top: var(--space-md);
+                  color: var(--neutral-600);
+                "
+              >
+                Mobile IV therapy brings professional intravenous treatments
+                directly to your location. Our licensed medical professionals
+                administer IV fluids, vitamins, minerals, and medications in the
+                comfort of your home, office, or chosen venue.
+              </div>
+            </div>
+
+            <div
+              class="faq-item"
+              style="
+                border-bottom: 1px solid var(--neutral-200);
+                padding: var(--space-lg) 0;
+              "
+            >
+              <button
+                class="faq-question"
+                style="
+                  width: 100%;
+                  text-align: left;
+                  background: none;
+                  border: none;
+                  font-size: 1.25rem;
+                  font-weight: 600;
+                  color: var(--neutral-800);
+                  cursor: pointer;
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                "
+                aria-expanded="false"
+              >
+                How long does a treatment take?
+                <span style="font-size: 1rem">+</span>
+              </button>
+              <div
+                class="faq-answer"
+                style="
+                  display: none;
+                  padding-top: var(--space-md);
+                  color: var(--neutral-600);
+                "
+              >
+                Most IV treatments take 30-60 minutes, depending on the specific
+                therapy and your individual needs. NAD+ treatments may take
+                longer (2-4 hours) due to the nature of the therapy.
+              </div>
+            </div>
+
+            <div
+              class="faq-item"
+              style="
+                border-bottom: 1px solid var(--neutral-200);
+                padding: var(--space-lg) 0;
+              "
+            >
+              <button
+                class="faq-question"
+                style="
+                  width: 100%;
+                  text-align: left;
+                  background: none;
+                  border: none;
+                  font-size: 1.25rem;
+                  font-weight: 600;
+                  color: var(--neutral-800);
+                  cursor: pointer;
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                "
+                aria-expanded="false"
+              >
+                Are your treatments safe?
+                <span style="font-size: 1rem">+</span>
+              </button>
+              <div
+                class="faq-answer"
+                style="
+                  display: none;
+                  padding-top: var(--space-md);
+                  color: var(--neutral-600);
+                "
+              >
+                Yes, all treatments are administered by licensed medical
+                professionals (RNs, NPs, or MDs) using pharmaceutical-grade
+                ingredients and sterile equipment. We follow strict safety
+                protocols and conduct health assessments before each treatment.
+              </div>
+            </div>
+
+            <div
+              class="faq-item"
+              style="
+                border-bottom: 1px solid var(--neutral-200);
+                padding: var(--space-lg) 0;
+              "
+            >
+              <button
+                class="faq-question"
+                style="
+                  width: 100%;
+                  text-align: left;
+                  background: none;
+                  border: none;
+                  font-size: 1.25rem;
+                  font-weight: 600;
+                  color: var(--neutral-800);
+                  cursor: pointer;
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                "
+                aria-expanded="false"
+              >
+                What areas do you serve?
+                <span style="font-size: 1rem">+</span>
+              </button>
+              <div
+                class="faq-answer"
+                style="
+                  display: none;
+                  padding-top: var(--space-md);
+                  color: var(--neutral-600);
+                "
+              >
+                We serve the entire Phoenix Valley including Scottsdale,
+                Phoenix, Tempe, Mesa, Chandler, Gilbert, Glendale, Peoria, and
+                surrounding areas. Same-day service is available in most
+                locations.
+              </div>
+            </div>
+
+            <div
+              class="faq-item"
+              style="
+                border-bottom: 1px solid var(--neutral-200);
+                padding: var(--space-lg) 0;
+              "
+            >
+              <button
+                class="faq-question"
+                style="
+                  width: 100%;
+                  text-align: left;
+                  background: none;
+                  border: none;
+                  font-size: 1.25rem;
+                  font-weight: 600;
+                  color: var(--neutral-800);
+                  cursor: pointer;
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                "
+                aria-expanded="false"
+              >
+                How much do treatments cost?
+                <span style="font-size: 1rem">+</span>
+              </button>
+              <div
+                class="faq-answer"
+                style="
+                  display: none;
+                  padding-top: var(--space-md);
+                  color: var(--neutral-600);
+                "
+              >
+                Treatment costs vary by service: IV hydration starts at $150,
+                NAD+ therapy starts at $300, peptide therapy starts at $250, and
+                vitamin injections start at $50. Membership plans offer
+                significant savings for regular users.
+              </div>
+            </div>
+
+            <div class="faq-item" style="padding: var(--space-lg) 0">
+              <button
+                class="faq-question"
+                style="
+                  width: 100%;
+                  text-align: left;
+                  background: none;
+                  border: none;
+                  font-size: 1.25rem;
+                  font-weight: 600;
+                  color: var(--neutral-800);
+                  cursor: pointer;
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                "
+                aria-expanded="false"
+              >
+                Do you accept insurance?
+                <span style="font-size: 1rem">+</span>
+              </button>
+              <div
+                class="faq-answer"
+                style="
+                  display: none;
+                  padding-top: var(--space-md);
+                  color: var(--neutral-600);
+                "
+              >
+                Most IV wellness treatments are not covered by insurance as they
+                are considered elective/cosmetic. However, we provide detailed
+                receipts that you can submit to your HSA/FSA or insurance for
+                potential reimbursement.
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center" style="margin-top: var(--space-3xl)">
+            <h3 style="margin-bottom: var(--space-md)">
+              Still Have Questions?
+            </h3>
+            <p
+              style="color: var(--neutral-600); margin-bottom: var(--space-lg)"
+            >
+              Our medical team is here to help you understand how IV therapy can
+              support your wellness goals.
+            </p>
+
+            <div
+              style="
+                display: flex;
+                gap: var(--space-md);
+                justify-content: center;
+                flex-wrap: wrap;
+              "
+            >
+              <a href="tel:+16026889825" class="btn btn--primary">
+                📞 Call: (602) 688-9825
+              </a>
+              <a
+                href="mailto:info@staydrippedmobileiv.com"
+                class="btn btn--secondary"
+              >
+                ✉️ Email Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Booking Section -->
+      <section id="booking" class="section section--dark text-center">
+        <div class="container">
+          <h2 class="display-2" style="margin-bottom: var(--space-lg)">
+            Ready to Feel Your Best?
+          </h2>
+          <p class="lead" style="margin-bottom: var(--space-2xl)">
+            Join thousands of satisfied clients who have experienced the
+            benefits of mobile IV therapy.
+          </p>
+
+          <!-- IntakeQ Booking Widget -->
+          <div
+            style="
+              background: rgba(255, 255, 255, 0.1);
+              backdrop-filter: blur(20px);
+              border-radius: var(--radius-xl);
+              padding: var(--space-2xl);
+              margin-bottom: var(--space-xl);
+            "
+          >
+            <h3 style="color: var(--white); margin-bottom: var(--space-lg)">
+              Book Your Treatment Online
+            </h3>
+            <script>
+              (function (c) {
+                window.intakeq = "68460f36bc104b6aa9da43e0";
+                window.intakeqClientArea = false;
+                var i = c.createElement("script");
+                i.type = "text/javascript";
+                i.async = true;
+                i.src = "https://intakeq.com/js/widget.min.js?1";
+                document.head.appendChild(i);
+              })(document);
+            </script>
+            <div
+              id="intakeq"
+              style="max-width: 720px; width: 100%; margin: 0 auto"
+            ></div>
+          </div>
+
+          <!-- Alternative Booking Methods -->
+          <div class="grid grid--3">
+            <div class="card card--glass">
+              <h4 style="color: var(--white); margin-bottom: var(--space-md)">
+                📞 Call to Book
+              </h4>
+              <p
+                style="
+                  color: rgba(255, 255, 255, 0.8);
+                  margin-bottom: var(--space-md);
+                "
+              >
+                Speak directly with our team
+              </p>
+              <a href="tel:+16026889825" class="btn btn--secondary"
+                >Call: (602) 688-9825</a
+              >
+            </div>
+
+            <div class="card card--glass">
+              <h4 style="color: var(--white); margin-bottom: var(--space-md)">
+                📧 Email Booking
+              </h4>
+              <p
+                style="
+                  color: rgba(255, 255, 255, 0.8);
+                  margin-bottom: var(--space-md);
+                "
+              >
+                Send us your preferences
+              </p>
+              <a
+                href="mailto:info@staydrippedmobileiv.com"
+                class="btn btn--secondary"
+                >Email Us</a
+              >
+            </div>
+
+            <div class="card card--glass">
+              <h4 style="color: var(--white); margin-bottom: var(--space-md)">
+                🎯 Membership Signup
+              </h4>
+              <p
+                style="
+                  color: rgba(255, 255, 255, 0.8);
+                  margin-bottom: var(--space-md);
+                "
+              >
+                Join & save on treatments
+              </p>
+              <a href="#memberships" class="btn btn--secondary">View Plans</a>
+            </div>
+          </div>
+
+          <div
+            style="
+              margin-top: var(--space-2xl);
+              padding: var(--space-lg);
+              background: rgba(0, 229, 255, 0.1);
+              border-radius: var(--radius-lg);
+            "
+          >
+            <p style="color: rgba(255, 255, 255, 0.9); margin: 0">
+              🛡️ <strong>HIPAA-compliant booking</strong> • Same-day
+              appointments available • Licensed medical professionals only
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact & Service Areas -->
+      <section class="section section--light">
+        <div class="container">
+          <div class="grid grid--2">
+            <div>
+              <h3 class="display-2" style="margin-bottom: var(--space-lg)">
+                Contact Information
+              </h3>
+              <div style="margin-bottom: var(--space-md)">
+                <strong>Phone:</strong>
+                <a href="tel:+16026889825">(602) 688-9825</a>
+              </div>
+              <div style="margin-bottom: var(--space-md)">
+                <strong>Email:</strong>
+                <a href="mailto:info@staydrippedmobileiv.com"
+                  >info@staydrippedmobileiv.com</a
+                >
+              </div>
+              <div style="margin-bottom: var(--space-md)">
+                <strong>Hours:</strong> Available 24/7 for bookings and
+                emergencies
+              </div>
+              <div style="margin-bottom: var(--space-lg)">
+                <strong>Service Areas:</strong> Phoenix Valley & surrounding
+                areas
+              </div>
+
+              <div style="display: flex; gap: var(--space-md); flex-wrap: wrap">
+                <a
+                  href="https://www.facebook.com/Staydrippediv/"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn--primary btn--sm"
+                  >Facebook</a
+                >
+                <a
+                  href="https://www.instagram.com/staydrippedmobileiv/"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn--primary btn--sm"
+                  >Instagram</a
+                >
+                <a
+                  href="https://g.co/kgs/ySTNw64"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn--primary btn--sm"
+                  >Google</a
+                >
+                <a
+                  href="https://www.yelp.com/biz/stay-dripped-mobile-iv-scottsdale-2"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn--primary btn--sm"
+                  >Yelp</a
+                >
+              </div>
+            </div>
+
+            <div>
+              <h3 style="margin-bottom: var(--space-lg)">Service Areas</h3>
+              <div class="grid grid--2" style="gap: var(--space-sm)">
+                <div>✅ Scottsdale</div>
+                <div>✅ Phoenix</div>
+                <div>✅ Tempe</div>
+                <div>✅ Mesa</div>
+                <div>✅ Chandler</div>
+                <div>✅ Gilbert</div>
+                <div>✅ Glendale</div>
+                <div>✅ Peoria</div>
+                <div>✅ Paradise Valley</div>
+                <div>✅ Fountain Hills</div>
+                <div>✅ Cave Creek</div>
+                <div>✅ Carefree</div>
+              </div>
+
+              <p style="margin-top: var(--space-lg); color: var(--neutral-600)">
+                <strong>Additional areas available.</strong> Contact us to
+                confirm service to your location.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -142,11 +1353,427 @@
     <!-- Footer -->
     <footer class="site-footer">
       <div class="container">
-        <p>&copy; 2024 Stay Dripped Mobile IV. All rights reserved.</p>
+        <div class="grid grid--4" style="margin-bottom: var(--space-2xl)">
+          <div>
+            <h4 style="color: var(--white); margin-bottom: var(--space-md)">
+              Services
+            </h4>
+            <ul style="list-style: none; padding: 0">
+              <li style="margin-bottom: var(--space-xs)">
+                <a
+                  href="pages/iv-therapy.html"
+                  style="color: rgba(255, 255, 255, 0.8)"
+                  >IV Therapy</a
+                >
+              </li>
+              <li style="margin-bottom: var(--space-xs)">
+                <a
+                  href="pages/nad-therapy.html"
+                  style="color: rgba(255, 255, 255, 0.8)"
+                  >NAD+ Therapy</a
+                >
+              </li>
+              <li style="margin-bottom: var(--space-xs)">
+                <a
+                  href="pages/peptide-therapy.html"
+                  style="color: rgba(255, 255, 255, 0.8)"
+                  >Peptide Therapy</a
+                >
+              </li>
+              <li style="margin-bottom: var(--space-xs)">
+                <a
+                  href="pages/injection-shots.html"
+                  style="color: rgba(255, 255, 255, 0.8)"
+                  >Vitamin Injections</a
+                >
+              </li>
+              <li style="margin-bottom: var(--space-xs)">
+                <a
+                  href="pages/aesthetic.html"
+                  style="color: rgba(255, 255, 255, 0.8)"
+                  >Aesthetic Treatments</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 style="color: var(--white); margin-bottom: var(--space-md)">
+              Company
+            </h4>
+            <ul style="list-style: none; padding: 0">
+              <li style="margin-bottom: var(--space-xs)">
+                <a href="#about" style="color: rgba(255, 255, 255, 0.8)"
+                  >About Us</a
+                >
+              </li>
+              <li style="margin-bottom: var(--space-xs)">
+                <a
+                  href="pages/corporate-events.html"
+                  style="color: rgba(255, 255, 255, 0.8)"
+                  >Corporate Events</a
+                >
+              </li>
+              <li style="margin-bottom: var(--space-xs)">
+                <a
+                  href="pages/partnerships.html"
+                  style="color: rgba(255, 255, 255, 0.8)"
+                  >Partnerships</a
+                >
+              </li>
+              <li style="margin-bottom: var(--space-xs)">
+                <a
+                  href="pages/franchise.html"
+                  style="color: rgba(255, 255, 255, 0.8)"
+                  >Franchise</a
+                >
+              </li>
+              <li style="margin-bottom: var(--space-xs)">
+                <a
+                  href="pages/testimonials.html"
+                  style="color: rgba(255, 255, 255, 0.8)"
+                  >Testimonials</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 style="color: var(--white); margin-bottom: var(--space-md)">
+              Support
+            </h4>
+            <ul style="list-style: none; padding: 0">
+              <li style="margin-bottom: var(--space-xs)">
+                <a href="#faq" style="color: rgba(255, 255, 255, 0.8)">FAQ</a>
+              </li>
+              <li style="margin-bottom: var(--space-xs)">
+                <a
+                  href="tel:+16026889825"
+                  style="color: rgba(255, 255, 255, 0.8)"
+                  >Contact</a
+                >
+              </li>
+              <li style="margin-bottom: var(--space-xs)">
+                <a href="#booking" style="color: rgba(255, 255, 255, 0.8)"
+                  >Book Now</a
+                >
+              </li>
+              <li style="margin-bottom: var(--space-xs)">
+                <a
+                  href="privacy-policy.html"
+                  style="color: rgba(255, 255, 255, 0.8)"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li style="margin-bottom: var(--space-xs)">
+                <a
+                  href="terms-of-service.html"
+                  style="color: rgba(255, 255, 255, 0.8)"
+                  >Terms of Service</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 style="color: var(--white); margin-bottom: var(--space-md)">
+              Contact
+            </h4>
+            <p
+              style="
+                color: rgba(255, 255, 255, 0.8);
+                margin-bottom: var(--space-sm);
+              "
+            >
+              <strong>Phone:</strong><br />
+              <a href="tel:+16026889825" style="color: var(--primary)"
+                >(602) 688-9825</a
+              >
+            </p>
+            <p
+              style="
+                color: rgba(255, 255, 255, 0.8);
+                margin-bottom: var(--space-sm);
+              "
+            >
+              <strong>Email:</strong><br />
+              <a
+                href="mailto:info@staydrippedmobileiv.com"
+                style="color: var(--primary)"
+                >info@staydrippedmobileiv.com</a
+              >
+            </p>
+            <p style="color: rgba(255, 255, 255, 0.8)">
+              <strong>Service Area:</strong><br />
+              Phoenix Valley & Surrounding Areas
+            </p>
+          </div>
+        </div>
+
+        <div
+          style="
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: var(--space-xl);
+            text-align: center;
+          "
+        >
+          <p style="color: rgba(255, 255, 255, 0.8); margin: 0">
+            &copy; 2024 Stay Dripped Mobile IV. All rights reserved. |
+            <a href="medical-disclaimer.html" style="color: var(--primary)"
+              >Medical Disclaimer</a
+            >
+          </p>
+        </div>
       </div>
     </footer>
 
-    <!-- Back to Top -->
-    <button id="back-to-top" class="fab" style="display: none">↑</button>
+    <!-- Back to Top Button -->
+    <button
+      id="back-to-top"
+      class="fab"
+      style="display: none"
+      aria-label="Back to top"
+    >
+      ↑
+    </button>
+
+    <!-- Floating Review Buttons -->
+    <div
+      style="
+        position: fixed;
+        right: 20px;
+        bottom: 80px;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      "
+    >
+      <a
+        href="https://g.co/kgs/ySTNw64"
+        target="_blank"
+        rel="noopener"
+        style="
+          background: #4285f4;
+          color: white;
+          padding: 8px 12px;
+          border-radius: 20px;
+          text-decoration: none;
+          font-size: 0.875rem;
+          font-weight: 600;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+          transition: transform 0.2s;
+        "
+        onmouseover="this.style.transform='scale(1.05)'"
+        onmouseout="this.style.transform='scale(1)'"
+      >
+        ★ Google
+      </a>
+      <a
+        href="https://www.yelp.com/biz/stay-dripped-mobile-iv-scottsdale-2"
+        target="_blank"
+        rel="noopener"
+        style="
+          background: #af0606;
+          color: white;
+          padding: 8px 12px;
+          border-radius: 20px;
+          text-decoration: none;
+          font-size: 0.875rem;
+          font-weight: 600;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+          transition: transform 0.2s;
+        "
+        onmouseover="this.style.transform='scale(1.05)'"
+        onmouseout="this.style.transform='scale(1)'"
+      >
+        ★ Yelp
+      </a>
+      <a
+        href="https://www.facebook.com/Staydrippediv/"
+        target="_blank"
+        rel="noopener"
+        style="
+          background: #3b5998;
+          color: white;
+          padding: 8px 12px;
+          border-radius: 20px;
+          text-decoration: none;
+          font-size: 0.875rem;
+          font-weight: 600;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+          transition: transform 0.2s;
+        "
+        onmouseover="this.style.transform='scale(1.05)'"
+        onmouseout="this.style.transform='scale(1)'"
+      >
+        ★ Facebook
+      </a>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+      // FAQ Functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const faqButtons = document.querySelectorAll(".faq-question");
+
+        faqButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const answer = this.nextElementSibling;
+            const expanded = this.getAttribute("aria-expanded") === "true";
+            const icon = this.querySelector("span");
+
+            // Close all other open answers
+            document.querySelectorAll(".faq-answer").forEach((el) => {
+              if (el !== answer) {
+                el.style.display = "none";
+                el.previousElementSibling.setAttribute(
+                  "aria-expanded",
+                  "false",
+                );
+                el.previousElementSibling.querySelector("span").textContent =
+                  "+";
+              }
+            });
+
+            // Toggle current one
+            this.setAttribute("aria-expanded", !expanded);
+            answer.style.display = expanded ? "none" : "block";
+            icon.textContent = expanded ? "+" : "−";
+          });
+        });
+      });
+
+      // Booking forwarding function
+      function forwardToBooking(form) {
+        const email = form.email?.value || "";
+        const plan = form.plan?.value || "";
+
+        const serviceMap = {
+          Premium: "PREMIUM_MEMBERSHIP_2025",
+          Essential: "ESSENTIAL_MEMBERSHIP_2025",
+          Shot: "SHOTPASS_MEMBERSHIP_2025",
+        };
+
+        const serviceId = serviceMap[plan] || "";
+        const url = serviceId
+          ? `https://staydripped.intakeq.com/booking?serviceId=${serviceId}&email=${encodeURIComponent(email)}`
+          : "https://staydripped.intakeq.com/booking";
+
+        window.open(url, "_blank", "noopener");
+        return false;
+      }
+
+      // Back to top functionality
+      window.addEventListener("scroll", function () {
+        const backToTop = document.getElementById("back-to-top");
+        if (window.scrollY > 300) {
+          backToTop.style.display = "block";
+        } else {
+          backToTop.style.display = "none";
+        }
+      });
+
+      document
+        .getElementById("back-to-top")
+        .addEventListener("click", function () {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Dark mode toggle (basic implementation)
+      document
+        .getElementById("dark-mode-toggle")
+        .addEventListener("click", function () {
+          document.documentElement.classList.toggle("dark-mode");
+          this.textContent = document.documentElement.classList.contains(
+            "dark-mode",
+          )
+            ? "🌙"
+            : "☀️";
+        });
+
+      // Mobile menu toggle
+      document
+        .querySelector(".mobile-menu-toggle")
+        .addEventListener("click", function () {
+          this.classList.toggle("active");
+          // Add mobile menu functionality here if needed
+        });
+    </script>
+
+    <!-- External JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/moment.js"></script>
+    <script src="assets/js/hooks.min.js"></script>
+    <script src="assets/js/i18n.min.js"></script>
+    <script src="assets/js/liquid-gdpr.min.js"></script>
+    <script src="assets/js/sourcebuster.min.js"></script>
+
+    <!-- Application JavaScript -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/booking.js"></script>
+    <script src="assets/js/analytics.js"></script>
+    <script src="assets/js/intakeq-manager.js"></script>
+    <script src="assets/js/advanced-interactions.js"></script>
+    <script src="assets/js/premium-interactions.js"></script>
+    <script src="assets/js/gfe-utility.js"></script>
+    <script src="assets/js/globals.js"></script>
+    <script src="assets/js/quidget-disclosure.js"></script>
+    <script src="assets/js/update-booking-widgets.js"></script>
+
+    <!-- Service Worker for PWA -->
+    <script src="js/sw.js"></script>
+
+    <!-- IntakeQ Widget Script -->
+    <script src="https://intakeq.com/js/widget.min.js?1" async></script>
+
+    <!-- Initialize IntakeQ -->
+    <script>
+      window.intakeq = "68460f36bc104b6aa9da43e0";
+
+      // Global booking function for membership forms
+      function forwardToBooking(form) {
+        const email = form.email?.value || "";
+        const plan = form.plan?.value || "";
+        if (!email) return false;
+
+        const serviceMap = {
+          Premium: "PREMIUM_MEMBERSHIP_2025",
+          Essential: "ESSENTIAL_MEMBERSHIP_2025",
+          Shot: "SHOTPASS_MEMBERSHIP_2025",
+        };
+        const serviceId = serviceMap[plan] || "";
+        const url = `https://staydripped.intakeq.com/booking?serviceId=${serviceId}&email=${encodeURIComponent(email)}`;
+        window.open(url, "_blank", "noopener");
+        return false;
+      }
+
+      // Initialize Google Analytics if available
+      if (typeof gtag !== "undefined") {
+        gtag("config", "GA_MEASUREMENT_ID", {
+          page_title: "Stay Dripped Mobile IV - Homepage",
+          page_location: window.location.href,
+        });
+      }
+    </script>
   </body>
 </html>

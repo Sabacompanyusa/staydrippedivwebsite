@@ -61,11 +61,15 @@ class App {
   }
 
   initServiceWorker() {
-    if ("serviceWorker" in navigator && window.location.protocol === "https:") {
+    if (
+      "serviceWorker" in navigator &&
+      window.location.protocol === "https:" &&
+      !this.isDebug
+    ) {
       window.addEventListener("load", async () => {
         try {
           const registration =
-            await navigator.serviceWorker.register("/service-worker.js");
+            await navigator.serviceWorker.register("/js/sw.js");
 
           if (this.isDebug) {
             console.log("SW registered: ", registration);
@@ -96,23 +100,32 @@ class App {
     // Global error handler
     window.addEventListener("error", (event) => {
       if (this.isDebug) {
-        console.error("Global error:", event.error);
+        console.error("Global error:", {
+          message: event.message || "Unknown error",
+          filename: event.filename || "Unknown file",
+          lineno: event.lineno || "Unknown line",
+          error: event.error,
+        });
       }
 
       // Track errors in analytics
       if (window.analyticsManager) {
         window.analyticsManager.trackEvent("error", "javascript", {
-          message: event.message,
-          filename: event.filename,
-          lineno: event.lineno,
+          message: event.message || "Unknown error",
+          filename: event.filename || "Unknown file",
+          lineno: event.lineno || 0,
         });
       }
     });
 
     // Unhandled promise rejection handler
     window.addEventListener("unhandledrejection", (event) => {
+      event.preventDefault(); // Prevent default browser handling
+
       if (this.isDebug) {
-        console.error("Unhandled promise rejection:", event.reason);
+        console.error("Unhandled promise rejection:", {
+          reason: event.reason?.toString() || "Unknown promise rejection",
+        });
       }
 
       if (window.analyticsManager) {

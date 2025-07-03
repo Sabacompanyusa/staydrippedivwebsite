@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Services - Stay Dripped Mobile IV</title>
+    <meta
+      name="description"
+      content="Comprehensive mobile wellness services including IV therapy, NAD+ therapy, peptide treatments, aesthetic services, and more delivered to your location."
+    />
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon-16x16.png"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.scss" />
+    <link rel="stylesheet" href="assets/css/professional-theme.css" />
+    <link rel="stylesheet" href="assets/css/enhanced-sections.css" />
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      .back-button {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.9);
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .back-button:hover {
+        background: white;
+        transform: scale(1.1);
+      }
+
+      .services-hero {
+        background: linear-gradient(135deg, #00e5ff 0%, #0099cc 100%);
+        color: white;
+        padding: 120px 0 80px;
+        text-align: center;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .service-card {
+        background: white;
+        border-radius: 16px;
+        padding: 2rem;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        border: 1px solid rgba(0, 229, 255, 0.1);
+      }
+
+      .service-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 16px 48px rgba(0, 229, 255, 0.2);
+        border-color: rgba(0, 229, 255, 0.3);
+      }
+
+      .service-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        background: linear-gradient(135deg, #00e5ff, #0099cc);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .service-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--neutral-800);
+      }
+
+      .service-description {
+        color: var(--neutral-600);
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+      }
+
+      .service-price {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #00e5ff;
+        margin-bottom: 1.5rem;
+      }
+
+      .service-features {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 1.5rem;
+      }
+
+      .service-features li {
+        padding: 0.5rem 0;
+        color: var(--neutral-600);
+      }
+
+      .service-features li:before {
+        content: "✓";
+        color: #4caf50;
+        font-weight: bold;
+        margin-right: 0.5rem;
+      }
+
+      .service-button {
+        width: 100%;
+        padding: 12px 24px;
+        background: linear-gradient(135deg, #00e5ff, #0099cc);
+        color: white;
+        border: none;
+        border-radius: 30px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+      }
+
+      .service-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 229, 255, 0.3);
+        color: white;
+        text-decoration: none;
+      }
+
+      .category-section {
+        margin-bottom: 4rem;
+      }
+
+      .category-title {
+        font-size: 2.5rem;
+        font-weight: 800;
+        text-align: center;
+        margin-bottom: 1rem;
+        color: var(--neutral-800);
+      }
+
+      .category-description {
+        text-align: center;
+        color: var(--neutral-600);
+        font-size: 1.1rem;
+        margin-bottom: 3rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Back Button -->
+    <button
+      class="back-button"
+      onclick="window.location.href='/'"
+      aria-label="Go back to homepage"
+    >
+      <i class="fas fa-home"></i>
+    </button>
+
+    <!-- Hero Section -->
+    <section class="services-hero">
+      <div class="container">
+        <h1 class="display-1 mb-4">Our Complete Services</h1>
+        <p class="lead">
+          Comprehensive mobile wellness services delivered to your location in
+          the Phoenix Valley
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Services Section -->
+    <section class="section py-5">
+      <div class="container">
+        <!-- IV Therapy Category -->
+        <div class="category-section">
+          <h2 class="category-title">IV Therapy Services</h2>
+          <p class="category-description">
+            Premium intravenous therapy treatments for hydration, wellness, and
+            recovery
+          </p>
+
+          <div class="services-grid">
+            <div class="service-card">
+              <div class="service-icon">💧</div>
+              <h3 class="service-title">IV Hydration Therapy</h3>
+              <p class="service-description">
+                Comprehensive IV hydration with vitamins, minerals, and
+                electrolytes for optimal wellness and energy.
+              </p>
+              <div class="service-price">Starting at $150</div>
+              <ul class="service-features">
+                <li>Myers Cocktail blends available</li>
+                <li>Customizable vitamin combinations</li>
+                <li>Rapid hydration and energy boost</li>
+                <li>Licensed medical professional administration</li>
+              </ul>
+              <a href="pages/iv-therapy.html" class="service-button"
+                >Learn More & Book</a
+              >
+            </div>
+
+            <div class="service-card">
+              <div class="service-icon">🧬</div>
+              <h3 class="service-title">NAD+ Therapy</h3>
+              <p class="service-description">
+                Revolutionary cellular repair and anti-aging therapy for
+                enhanced mental clarity and longevity.
+              </p>
+              <div class="service-price">Starting at $300</div>
+              <ul class="service-features">
+                <li>Cellular regeneration and repair</li>
+                <li>Enhanced cognitive function</li>
+                <li>Anti-aging benefits</li>
+                <li>Addiction recovery support</li>
+              </ul>
+              <a href="pages/nad-therapy.html" class="service-button"
+                >Learn More & Book</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Advanced Therapies Category -->
+        <div class="category-section">
+          <h2 class="category-title">Advanced Therapies</h2>
+          <p class="category-description">
+            Cutting-edge treatments for performance, recovery, and optimization
+          </p>
+
+          <div class="services-grid">
+            <div class="service-card">
+              <div class="service-icon">🔬</div>
+              <h3 class="service-title">Peptide Therapy</h3>
+              <p class="service-description">
+                Advanced peptide treatments for enhanced recovery, performance,
+                and anti-aging benefits.
+              </p>
+              <div class="service-price">Starting at $250</div>
+              <ul class="service-features">
+                <li>Custom peptide protocols</li>
+                <li>Enhanced muscle recovery</li>
+                <li>Improved sleep quality</li>
+                <li>Anti-aging benefits</li>
+              </ul>
+              <a href="pages/peptide-therapy.html" class="service-button"
+                >Learn More & Book</a
+              >
+            </div>
+
+            <div class="service-card">
+              <div class="service-icon">❄️</div>
+              <h3 class="service-title">Mobile Cold Plunge</h3>
+              <p class="service-description">
+                Professional cold therapy sessions for enhanced recovery, mental
+                clarity, and wellness optimization.
+              </p>
+              <div class="service-price">Starting at $400</div>
+              <ul class="service-features">
+                <li>Professional portable setup</li>
+                <li>Supervised sessions</li>
+                <li>Inflammation reduction</li>
+                <li>Enhanced mental resilience</li>
+              </ul>
+              <a href="pages/mobile-cold-plunge.html" class="service-button"
+                >Learn More & Book</a
+              >
+            </div>
+
+            <div class="service-card">
+              <div class="service-icon">⚡</div>
+              <h3 class="service-title">Hormone Replacement Therapy</h3>
+              <p class="service-description">
+                Comprehensive hormone optimization for enhanced vitality,
+                energy, and overall wellness.
+              </p>
+              <div class="service-price">Starting at $350</div>
+              <ul class="service-features">
+                <li>Comprehensive hormone testing</li>
+                <li>Personalized protocols</li>
+                <li>Regular monitoring</li>
+                <li>Enhanced vitality and energy</li>
+              </ul>
+              <a href="pages/hormone-replacement.html" class="service-button"
+                >Learn More & Book</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Treatments Category -->
+        <div class="category-section">
+          <h2 class="category-title">Quick Treatments</h2>
+          <p class="category-description">
+            Fast and effective treatments for energy, weight management, and
+            beauty
+          </p>
+
+          <div class="services-grid">
+            <div class="service-card">
+              <div class="service-icon">💉</div>
+              <h3 class="service-title">Vitamin Injections</h3>
+              <p class="service-description">
+                Quick vitamin shots including B12, Lipo, Vitamin D, and custom
+                blends for energy and wellness.
+              </p>
+              <div class="service-price">Starting at $50</div>
+              <ul class="service-features">
+                <li>B12 energy shots</li>
+                <li>Lipotropic fat burning injections</li>
+                <li>Vitamin D immune support</li>
+                <li>Custom vitamin combinations</li>
+              </ul>
+              <a href="pages/injection-shots.html" class="service-button"
+                >Learn More & Book</a
+              >
+            </div>
+
+            <div class="service-card">
+              <div class="service-icon">⚖️</div>
+              <h3 class="service-title">Weight Management</h3>
+              <p class="service-description">
+                Comprehensive weight management solutions including Semaglutide,
+                B12, and lipotropic treatments.
+              </p>
+              <div class="service-price">Starting at $200</div>
+              <ul class="service-features">
+                <li>Semaglutide weight loss therapy</li>
+                <li>Lipotropic fat burning shots</li>
+                <li>Metabolism boosting treatments</li>
+                <li>Personalized protocols</li>
+              </ul>
+              <a href="pages/weight-management.html" class="service-button"
+                >Learn More & Book</a
+              >
+            </div>
+
+            <div class="service-card">
+              <div class="service-icon">✨</div>
+              <h3 class="service-title">Aesthetic Treatments</h3>
+              <p class="service-description">
+                Beauty and anti-aging treatments including Botox, dermal
+                fillers, and skin rejuvenation.
+              </p>
+              <div class="service-price">Starting at $300</div>
+              <ul class="service-features">
+                <li>Botox and neuromodulators</li>
+                <li>Dermal filler treatments</li>
+                <li>Skin rejuvenation therapy</li>
+                <li>Anti-aging protocols</li>
+              </ul>
+              <a href="pages/aesthetic.html" class="service-button"
+                >Learn More & Book</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Testing & Diagnostics Category -->
+        <div class="category-section">
+          <h2 class="category-title">Testing & Diagnostics</h2>
+          <p class="category-description">
+            Comprehensive health testing and analysis for optimal wellness
+            planning
+          </p>
+
+          <div class="services-grid">
+            <div class="service-card">
+              <div class="service-icon">🩸</div>
+              <h3 class="service-title">Blood Testing & Analysis</h3>
+              <p class="service-description">
+                Comprehensive blood testing including micronutrient analysis,
+                hormone panels, and wellness markers.
+              </p>
+              <div class="service-price">Starting at $199</div>
+              <ul class="service-features">
+                <li>Comprehensive blood panels</li>
+                <li>Micronutrient analysis</li>
+                <li>Hormone level testing</li>
+                <li>Personalized recommendations</li>
+              </ul>
+              <a href="pages/blood-testing.html" class="service-button"
+                >Learn More & Book</a
+              >
+            </div>
+
+            <div class="service-card">
+              <div class="service-icon">🧪</div>
+              <h3 class="service-title">Micronutrient Testing</h3>
+              <p class="service-description">
+                Detailed analysis of vitamin and mineral levels to optimize your
+                wellness protocols.
+              </p>
+              <div class="service-price">Starting at $299</div>
+              <ul class="service-features">
+                <li>35+ vitamin and mineral analysis</li>
+                <li>Cellular absorption testing</li>
+                <li>Personalized supplementation plan</li>
+                <li>Follow-up consultations</li>
+              </ul>
+              <a href="pages/micronutrient.html" class="service-button"
+                >Learn More & Book</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section
+      class="section py-5"
+      style="
+        background: linear-gradient(135deg, #00e5ff 0%, #0099cc 100%);
+        color: white;
+      "
+    >
+      <div class="container text-center">
+        <h2 class="display-4 mb-4">Ready to Start Your Wellness Journey?</h2>
+        <p class="lead mb-4">
+          Contact us to discuss your needs and create a personalized treatment
+          plan
+        </p>
+
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <a href="tel:+16026889825" class="btn btn-light btn-lg me-3 mb-3">
+              <i class="fas fa-phone me-2"></i>(602) 688-9825
+            </a>
+            <a
+              href="https://staydripped.intakeq.com/booking"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-outline-light btn-lg mb-3"
+            >
+              <i class="fas fa-calendar-plus me-2"></i>Book Online
+            </a>
+          </div>
+        </div>
+
+        <div class="mt-4">
+          <p>
+            <strong>Service Areas:</strong> Phoenix, Scottsdale, Tempe, Mesa,
+            Chandler, Gilbert, Glendale, Peoria
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/booking.js"></script>
+  </body>
+</html>

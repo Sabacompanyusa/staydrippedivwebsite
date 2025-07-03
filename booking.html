@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Your Treatment - Stay Dripped Mobile IV</title>
+    <meta
+      name="description"
+      content="Book your mobile IV therapy, NAD+ therapy, peptide treatments, and wellness services. Same-day availability in Phoenix Valley."
+    />
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon-16x16.png"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.scss" />
+    <link rel="stylesheet" href="assets/css/professional-theme.css" />
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      .booking-hero {
+        background: linear-gradient(135deg, #00e5ff 0%, #0099cc 100%);
+        color: white;
+        padding: 120px 0 80px;
+        text-align: center;
+      }
+
+      .booking-options {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .booking-card {
+        background: white;
+        border-radius: 16px;
+        padding: 2rem;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+      }
+
+      .booking-card:hover {
+        transform: translateY(-8px);
+        border-color: #00e5ff;
+        box-shadow: 0 16px 48px rgba(0, 229, 255, 0.2);
+      }
+
+      .booking-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: #00e5ff;
+      }
+
+      .booking-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: #333;
+      }
+
+      .booking-description {
+        color: #666;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+      }
+
+      .booking-button {
+        width: 100%;
+        padding: 16px 24px;
+        background: linear-gradient(135deg, #00e5ff, #0099cc);
+        color: white;
+        border: none;
+        border-radius: 30px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .booking-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 229, 255, 0.3);
+        color: white;
+        text-decoration: none;
+      }
+
+      .contact-section {
+        background: #f8fafc;
+        padding: 80px 0;
+      }
+
+      .contact-methods {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .contact-card {
+        background: white;
+        border-radius: 12px;
+        padding: 2rem;
+        text-align: center;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      }
+
+      .contact-icon {
+        font-size: 2rem;
+        color: #00e5ff;
+        margin-bottom: 1rem;
+      }
+
+      .back-button {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.9);
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .back-button:hover {
+        background: white;
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Back Button -->
+    <button
+      class="back-button"
+      onclick="window.location.href='/'"
+      aria-label="Go back to homepage"
+    >
+      <i class="fas fa-home"></i>
+    </button>
+
+    <!-- Hero Section -->
+    <section class="booking-hero">
+      <div class="container">
+        <h1 class="display-1 mb-4">Book Your Treatment</h1>
+        <p class="lead">
+          Choose your preferred booking method and get started with premium
+          mobile wellness services
+        </p>
+      </div>
+    </section>
+
+    <!-- Booking Options -->
+    <section class="section py-5">
+      <div class="container">
+        <div class="booking-options">
+          <!-- Online Booking -->
+          <div class="booking-card">
+            <div class="booking-icon">
+              <i class="fas fa-calendar-plus"></i>
+            </div>
+            <h3 class="booking-title">Book Online</h3>
+            <p class="booking-description">
+              Schedule your appointment instantly with our online booking
+              system. Choose your service, time, and location.
+            </p>
+            <a
+              href="https://staydripped.intakeq.com/booking"
+              target="_blank"
+              rel="noopener"
+              class="booking-button"
+            >
+              Book Online Now
+            </a>
+          </div>
+
+          <!-- Phone Booking -->
+          <div class="booking-card">
+            <div class="booking-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <h3 class="booking-title">Call to Book</h3>
+            <p class="booking-description">
+              Speak with our team to customize your treatment and schedule your
+              appointment. Available 7 days a week.
+            </p>
+            <a href="tel:+16026889825" class="booking-button">
+              Call (602) 688-9825
+            </a>
+          </div>
+
+          <!-- Membership Booking -->
+          <div class="booking-card">
+            <div class="booking-icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <h3 class="booking-title">Join Membership</h3>
+            <p class="booking-description">
+              Sign up for monthly membership plans with exclusive pricing and
+              priority booking for regular treatments.
+            </p>
+            <a href="#memberships" class="booking-button"> View Memberships </a>
+          </div>
+
+          <!-- Emergency/Same Day -->
+          <div class="booking-card">
+            <div class="booking-icon">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <h3 class="booking-title">Same-Day Service</h3>
+            <p class="booking-description">
+              Need treatment today? Call us for same-day availability and
+              emergency wellness services.
+            </p>
+            <a href="tel:+16026889825" class="booking-button">
+              Call for Same-Day
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Categories -->
+    <section class="section py-5" style="background: #f8fafc">
+      <div class="container">
+        <h2
+          class="text-center mb-5"
+          style="font-size: 2.5rem; font-weight: 700"
+        >
+          Popular Services
+        </h2>
+
+        <div class="booking-options">
+          <div class="booking-card">
+            <div class="booking-icon">💧</div>
+            <h3 class="booking-title">IV Therapy</h3>
+            <p class="booking-description">
+              Myers Cocktail, hydration, and custom vitamin infusions
+            </p>
+            <a href="pages/iv-therapy.html" class="booking-button"
+              >Book IV Therapy</a
+            >
+          </div>
+
+          <div class="booking-card">
+            <div class="booking-icon">🧬</div>
+            <h3 class="booking-title">NAD+ Therapy</h3>
+            <p class="booking-description">
+              Anti-aging and cellular repair treatments
+            </p>
+            <a href="pages/nad-therapy.html" class="booking-button"
+              >Book NAD+ Therapy</a
+            >
+          </div>
+
+          <div class="booking-card">
+            <div class="booking-icon">💉</div>
+            <h3 class="booking-title">Vitamin Shots</h3>
+            <p class="booking-description">
+              B12, Lipo, and custom vitamin injections
+            </p>
+            <a href="pages/injection-shots.html" class="booking-button"
+              >Book Vitamin Shots</a
+            >
+          </div>
+
+          <div class="booking-card">
+            <div class="booking-icon">✨</div>
+            <h3 class="booking-title">Aesthetic Services</h3>
+            <p class="booking-description">
+              Botox, fillers, and beauty treatments
+            </p>
+            <a href="pages/aesthetic.html" class="booking-button"
+              >Book Aesthetic</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+      <div class="container">
+        <h2
+          class="text-center mb-4"
+          style="font-size: 2.5rem; font-weight: 700"
+        >
+          Contact Information
+        </h2>
+        <p class="text-center text-muted mb-5">
+          Multiple ways to reach us for your convenience
+        </p>
+
+        <div class="contact-methods">
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <h4>Phone</h4>
+            <p>(602) 688-9825</p>
+            <p class="text-muted">Available 7 days a week</p>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <h4>Email</h4>
+            <p>info@staydrippedmobileiv.com</p>
+            <p class="text-muted">24-hour response</p>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <h4>Service Areas</h4>
+            <p>Phoenix Valley</p>
+            <p class="text-muted">
+              Scottsdale, Phoenix, Tempe, Mesa, Chandler, Gilbert, Glendale,
+              Peoria
+            </p>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <h4>Hours</h4>
+            <p>7 AM - 9 PM</p>
+            <p class="text-muted">7 days a week</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/booking.js"></script>
+    <script>
+      // Track booking page visits
+      if (typeof gtag !== "undefined") {
+        gtag("event", "page_view", {
+          page_title: "Booking Page",
+          page_location: window.location.href,
+        });
+      }
+    </script>
+  </body>
+</html>
