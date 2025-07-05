@@ -69,33 +69,39 @@ class App {
       window.location.protocol === "https:" &&
       !this.isDebug
     ) {
-      window.addEventListener("load", async () => {
-        try {
-          const registration =
-            await navigator.serviceWorker.register("/js/sw.js");
+      window.addEventListener(
+        "load",
+        async () => {
+          try {
+            const registration =
+              await navigator.serviceWorker.register("/js/sw.js");
 
-          if (this.isDebug) {
-            console.log("SW registered: ", registration);
-          }
+            if (this.isDebug) {
+              console.log("SW registered: ", registration);
+            }
 
-          // Listen for updates
-          registration.addEventListener("updatefound", () => {
-            const newWorker = registration.installing;
-            newWorker.addEventListener("statechange", () => {
-              if (
-                newWorker.state === "installed" &&
-                navigator.serviceWorker.controller
-              ) {
-                this.showUpdateAvailable();
+            // Listen for updates
+            registration.addEventListener("updatefound", () => {
+              const newWorker = registration.installing;
+              if (newWorker) {
+                newWorker.addEventListener("statechange", () => {
+                  if (
+                    newWorker.state === "installed" &&
+                    navigator.serviceWorker.controller
+                  ) {
+                    this.showUpdateAvailable();
+                  }
+                });
               }
             });
-          });
-        } catch (registrationError) {
-          if (this.isDebug) {
-            console.log("SW registration failed: ", registrationError);
+          } catch (registrationError) {
+            if (this.isDebug) {
+              console.log("SW registration failed: ", registrationError);
+            }
           }
-        }
-      });
+        },
+        { once: true },
+      );
     }
   }
 
