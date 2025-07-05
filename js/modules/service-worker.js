@@ -138,10 +138,10 @@ class ServiceWorkerManager {
   dismissUpdate() {
     const notification = document.querySelector(".sw-update-notification");
     if (notification) {
-      notification.style.animation = "slideOutToRight 0.3s ease-in forwards";
+      notification.style.animation = `slideOutToRight ${this.ANIMATION_DURATION}ms ease-in forwards`;
       setTimeout(() => {
         notification.remove();
-      }, 300);
+      }, this.ANIMATION_DURATION);
     }
   }
 
