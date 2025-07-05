@@ -145,6 +145,7 @@
   background: rgba($color-secondary, 0.1);
   border-radius: map-get($border-radius, lg);
   backdrop-filter: blur(10px);
+
   @include transition(transform);
 
   &:hover {
@@ -238,6 +239,7 @@
   padding: map-get($spacing, 6);
   text-align: center;
   box-shadow: map-get($shadow, lg);
+
   @include transition(all);
 
   &:hover {
@@ -319,6 +321,7 @@
   gap: map-get($spacing, 2);
   color: $color-secondary;
   text-decoration: none;
+
   @include transition(all);
 
   &:hover {
@@ -348,16 +351,18 @@
   100% {
     transform: translateY(0);
   }
+
   40% {
     transform: translateY(-6px);
   }
+
   60% {
     transform: translateY(-3px);
   }
 }
 
 // Mobile optimizations
-@media (max-width: 480px) {
+@media (width <= 480px) {
   .hero {
     min-height: 100vh;
     text-align: center;

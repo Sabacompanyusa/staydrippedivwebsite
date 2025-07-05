@@ -7,6 +7,7 @@
   background: rgba($color-secondary, 0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba($color-primary, 0.1);
+
   @include transition(background-color, border-color, backdrop-filter);
 
   &--transparent {
@@ -53,6 +54,7 @@
   display: flex;
   align-items: center;
   text-decoration: none;
+
   @include transition(transform);
 
   &:hover {
@@ -137,6 +139,7 @@
     font-size: map-get($fs-scale, base);
     text-decoration: none;
     border-radius: map-get($border-radius, base);
+
     @include transition(color, background-color);
 
     &:hover,
@@ -192,6 +195,7 @@
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
+
     @include transition(opacity, visibility, transform);
     z-index: map-get($z-index, dropdown);
 
@@ -212,6 +216,7 @@
     text-decoration: none;
     border-radius: map-get($border-radius, base);
     font-size: map-get($fs-scale, sm);
+
     @include transition(background-color, color);
 
     &:hover,
@@ -265,6 +270,7 @@
   border-radius: map-get($border-radius, base);
   color: $color-primary;
   cursor: pointer;
+
   @include transition(all);
 
   @include respond-to(lg) {
@@ -295,9 +301,10 @@
       display: block;
       width: 100%;
       height: 2px;
-      background: currentColor;
+      background: currentcolor;
       border-radius: 1px;
       position: absolute;
+
       @include transition(all);
 
       &:nth-child(1) {
@@ -358,6 +365,7 @@
   z-index: map-get($z-index, modal);
   opacity: 0;
   visibility: hidden;
+
   @include transition(opacity, visibility);
 
   &.active {
@@ -387,6 +395,7 @@
     font-size: map-get($fs-scale, xl);
     cursor: pointer;
     border-radius: map-get($border-radius, base);
+
     @include transition(transform, background-color);
 
     &:hover {
@@ -418,6 +427,7 @@
     padding: map-get($spacing, 3);
     text-decoration: none;
     border-radius: map-get($border-radius, lg);
+
     @include transition(color, background-color);
 
     &:hover,
@@ -461,6 +471,7 @@
       justify-content: center;
       color: $color-secondary;
       text-decoration: none;
+
       @include transition(background-color, transform);
 
       &:hover {
@@ -484,6 +495,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
   @include transition(all);
 
   &:hover {
@@ -519,6 +531,7 @@
     background: $color-secondary;
     color: $color-text-dark;
     font-size: map-get($fs-scale, sm);
+
     @include transition(border-color, box-shadow);
 
     &:focus {
@@ -555,6 +568,7 @@
     cursor: pointer;
     border-radius: 0 map-get($border-radius, full) map-get($border-radius, full)
       0;
+
     @include transition(color);
 
     &:hover {
