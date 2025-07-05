@@ -12,7 +12,10 @@ import "./modules/back-to-top.js";
 class App {
   constructor() {
     this.version = "1.0.0";
-    this.isDebug = process.env.NODE_ENV === "development";
+    this.isDebug =
+      typeof process !== "undefined" &&
+      process.env &&
+      process.env.NODE_ENV === "development";
     this.init();
   }
 
