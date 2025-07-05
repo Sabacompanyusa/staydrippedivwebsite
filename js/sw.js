@@ -385,13 +385,23 @@ async function syncContactForm() {
 
 // IndexedDB helpers for offline form storage
 async function getStoredBookingData() {
-  // Implementation for retrieving stored booking data
-  return [];
+  try {
+    // Return empty array if no IndexedDB implementation yet
+    return [];
+  } catch (error) {
+    console.error("Error retrieving booking data:", error);
+    return [];
+  }
 }
 
 async function getStoredContactData() {
-  // Implementation for retrieving stored contact data
-  return [];
+  try {
+    // Return empty array if no IndexedDB implementation yet
+    return [];
+  } catch (error) {
+    console.error("Error retrieving contact data:", error);
+    return [];
+  }
 }
 
 async function submitBooking(bookingData) {
