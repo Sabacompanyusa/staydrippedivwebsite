@@ -5,6 +5,13 @@ class ServiceWorkerManager {
   constructor() {
     this.registration = null;
     this.isUpdateAvailable = false;
+
+    // Configuration constants
+    this.UPDATE_CHECK_INTERVAL = 60000; // 1 minute
+    this.AUTO_DISMISS_DELAY = 10000; // 10 seconds
+    this.ANIMATION_DURATION = 300; // 0.3 seconds
+    this.STATUS_DISPLAY_DURATION = 3000; // 3 seconds
+
     this.init();
   }
 
