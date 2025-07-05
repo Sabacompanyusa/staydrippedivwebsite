@@ -441,13 +441,16 @@ class App {
     document.body.appendChild(toast);
 
     // Animate in
-    setTimeout(() => toast.classList.add("toast--visible"), 100);
+    setTimeout(
+      () => toast.classList.add("toast--visible"),
+      this.TOAST_ANIMATION_DELAY,
+    );
 
     // Remove after delay
     setTimeout(() => {
       toast.classList.remove("toast--visible");
       setTimeout(() => toast.remove(), 300);
-    }, 3000);
+    }, this.TOAST_DISPLAY_DURATION);
   }
 
   announcePageReady() {
