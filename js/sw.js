@@ -496,16 +496,27 @@ self.addEventListener("notificationclick", (event) => {
 
 // Message handling for cache updates
 self.addEventListener("message", (event) => {
+  // Validate message data
+  if (!event.data || typeof event.data !== "object" || !event.data.type) {
+    return;
+  }
+
   console.log(
     "Stay Dripped Mobile IV Service Worker: Message received",
-    event.data,
+    event.data.type,
   );
 
-  if (event.data && event.data.type === "SKIP_WAITING") {
+  // Only handle expected message types
+  const allowedTypes = ["SKIP_WAITING", "UPDATE_CACHE"];
+  if (!allowedTypes.includes(event.data.type)) {
+    return;
+  }
+
+  if (event.data.type === "SKIP_WAITING") {
     self.skipWaiting();
   }
 
-  if (event.data && event.data.type === "UPDATE_CACHE") {
+  if (event.data.type === "UPDATE_CACHE") {
     event.waitUntil(updateCache());
   }
 });
