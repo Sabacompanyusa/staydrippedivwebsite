@@ -39,6 +39,10 @@ const DYNAMIC_CACHE_NAME = `stay-dripped-dynamic-v${VERSION}`;
 const API_CACHE_NAME = `stay-dripped-api-v${VERSION}`;
 const IMAGES_CACHE_NAME = `stay-dripped-images-v${VERSION}`;
 
+// Configuration constants
+const UPDATE_CHECK_INTERVAL = 60000; // 1 minute
+const OFFLINE_FALLBACK_TIMEOUT = 5000; // 5 seconds
+
 // Critical assets for Stay Dripped Mobile IV
 const STATIC_ASSETS = [
   "/",
