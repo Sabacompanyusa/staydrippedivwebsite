@@ -314,12 +314,29 @@ class App {
   handleFormSubmission(e) {
     e.preventDefault();
     const form = e.target;
+
+    // Validate form exists and is a form element
+    if (!form || form.nodeName !== "FORM") {
+      return;
+    }
+
     const submitButton = form.querySelector('button[type="submit"]');
 
     // Add loading state
     if (submitButton) {
       submitButton.classList.add("btn--loading");
       submitButton.disabled = true;
+    }
+
+    // Validate form data before processing
+    const formData = new FormData(form);
+    if (!this.validateFormData(formData)) {
+      if (submitButton) {
+        submitButton.classList.remove("btn--loading");
+        submitButton.disabled = false;
+      }
+      this.showToast("Please check your form data", "error");
+      return;
     }
 
     // Simulate form processing (replace with actual form handling)
@@ -330,6 +347,22 @@ class App {
       }
       this.showToast("Form submitted successfully!", "success");
     }, 2000);
+  }
+
+  validateFormData(formData) {
+    // Basic validation to prevent malicious input
+    for (let [key, value] of formData.entries()) {
+      // Prevent prototype pollution
+      if (key === "__proto__" || key === "constructor" || key === "prototype") {
+        return false;
+      }
+
+      // Basic XSS prevention for text fields
+      if (typeof value === "string" && value.includes("<script>")) {
+        return false;
+      }
+    }
+    return true;
   }
 
   initImageOptimization() {
