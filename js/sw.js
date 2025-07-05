@@ -186,76 +186,77 @@ self.addEventListener("fetch", (event) => {
 
 // Request handling logic
 async function handleRequest(request) {
-  const url = new URL(request.url);
-
   try {
-    // Strategy 1: Cache First for Static Assets
-    if (isStaticAsset(request)) {
-      return await cacheFirst(request, STATIC_CACHE_NAME);
-    }
-
-    // Strategy 2: Network First for Pages
-    if (isPageRequest(request)) {
-      return await networkFirst(request, DYNAMIC_CACHE_NAME);
-    }
-
-    // Strategy 3: Cache First for Images
-    if (isImageRequest(request)) {
-      return await cacheFirst(request, IMAGES_CACHE_NAME);
-    }
-
-    // Strategy 4: Network First for API endpoints
-    if (isApiRequest(request)) {
-      return await networkFirst(request, API_CACHE_NAME);
-    }
-
-    // Default: Network First
-    return await networkFirst(request, DYNAMIC_CACHE_NAME);
+    return await routeRequest(request);
   } catch (error) {
     console.error(
       "⚠️ Stay Dripped Mobile IV: Request failed for",
       request.url,
       error,
     );
-
-    // Fallback to offline page for navigation requests
-    if (request.mode === "navigate") {
-      console.log("📱 Stay Dripped Mobile IV: Serving offline fallback");
-      return (
-        (await caches.match("/404.html")) ||
-        (await caches.match("/index.html")) ||
-        new Response(
-          `
-                       <!DOCTYPE html>
-                       <html>
-                       <head>
-                           <title>Stay Dripped Mobile IV - Offline</title>
-                           <meta name="viewport" content="width=device-width, initial-scale=1">
-                           <style>
-                               body { font-family: Inter, sans-serif; text-align: center; padding: 50px; }
-                               .offline { color: #1a2a47; }
-                               .logo { font-size: 2rem; font-weight: 800; margin-bottom: 1rem; }
-                           </style>
-                       </head>
-                       <body>
-                           <div class="offline">
-                               <div class="logo">💧 Stay Dripped Mobile IV</div>
-                               <h1>You're Offline</h1>
-                               <p>Please check your internet connection and try again.</p>
-                               <p><strong>Call (602) 688-9825</strong> for immediate assistance</p>
-                           </div>
-                       </body>
-                       </html>
-                   `,
-          {
-            headers: { "Content-Type": "text/html" },
-          },
-        )
-      );
-    }
-
-    throw error;
+    return await handleRequestError(request, error);
   }
+}
+
+// Route request to appropriate strategy
+async function routeRequest(request) {
+  if (isStaticAsset(request)) {
+    return await cacheFirst(request, STATIC_CACHE_NAME);
+  }
+  if (isPageRequest(request)) {
+    return await networkFirst(request, DYNAMIC_CACHE_NAME);
+  }
+  if (isImageRequest(request)) {
+    return await cacheFirst(request, IMAGES_CACHE_NAME);
+  }
+  if (isApiRequest(request)) {
+    return await networkFirst(request, API_CACHE_NAME);
+  }
+  return await networkFirst(request, DYNAMIC_CACHE_NAME);
+}
+
+// Handle request errors with fallbacks
+async function handleRequestError(request, error) {
+  if (request.mode === "navigate") {
+    console.log("📱 Stay Dripped Mobile IV: Serving offline fallback");
+    return await getOfflineFallback();
+  }
+  throw error;
+}
+
+// Create offline fallback response
+async function getOfflineFallback() {
+  const cachedFallback =
+    (await caches.match("/404.html")) || (await caches.match("/index.html"));
+  if (cachedFallback) return cachedFallback;
+
+  return new Response(createOfflineHTML(), {
+    headers: { "Content-Type": "text/html" },
+  });
+}
+
+// Generate offline HTML content
+function createOfflineHTML() {
+  return `<!DOCTYPE html>
+<html>
+<head>
+    <title>Stay Dripped Mobile IV - Offline</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: Inter, sans-serif; text-align: center; padding: 50px; }
+        .offline { color: #1a2a47; }
+        .logo { font-size: 2rem; font-weight: 800; margin-bottom: 1rem; }
+    </style>
+</head>
+<body>
+    <div class="offline">
+        <div class="logo">💧 Stay Dripped Mobile IV</div>
+        <h1>You're Offline</h1>
+        <p>Please check your internet connection and try again.</p>
+        <p><strong>Call (602) 688-9825</strong> for immediate assistance</p>
+    </div>
+</body>
+</html>`;
 }
 
 // Cache First Strategy
