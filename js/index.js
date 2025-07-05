@@ -20,21 +20,23 @@ class App {
   }
 
   init() {
-    // Log app initialization
     if (this.isDebug) {
       console.log(`Stay Dripped Mobile IV - v${this.version} initialized`);
     }
 
-    // Initialize core functionality
+    this.initCore();
+    this.setupDOMReady();
+  }
+
+  initCore() {
     this.initServiceWorker();
     this.initErrorHandling();
     this.initPerformanceMonitoring();
     this.initAccessibilityEnhancements();
-
-    // Custom events for module communication
     this.setupCustomEvents();
+  }
 
-    // Initialize when DOM is ready
+  setupDOMReady() {
     if (document.readyState === "loading") {
       document.addEventListener("DOMContentLoaded", () => this.onDOMReady());
     } else {
