@@ -381,13 +381,23 @@ class ServiceWorkerManager {
     if (headerActions && !document.querySelector(".pwa-install-btn")) {
       const installBtn = document.createElement("button");
       installBtn.className = "pwa-install-btn btn btn--ghost btn--sm";
-      installBtn.innerHTML = `
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M19 13H13V19H11V13H5L12 6L19 13Z"/>
-                </svg>
-                Install App
-            `;
       installBtn.title = "Install Stay Dripped Mobile IV App";
+
+      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      svg.setAttribute("width", "16");
+      svg.setAttribute("height", "16");
+      svg.setAttribute("viewBox", "0 0 24 24");
+      svg.setAttribute("fill", "currentColor");
+
+      const path = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "path",
+      );
+      path.setAttribute("d", "M19 13H13V19H11V13H5L12 6L19 13Z");
+
+      svg.appendChild(path);
+      installBtn.appendChild(svg);
+      installBtn.appendChild(document.createTextNode("Install App"));
 
       headerActions.insertBefore(installBtn, headerActions.firstChild);
     }
