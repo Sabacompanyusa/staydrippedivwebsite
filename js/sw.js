@@ -2,29 +2,29 @@
 // Professional Mobile IV Therapy Website
 // Personalized for Premium Mobile IV Services
 
+// Simplified babel helper for async/await compatibility
 self.babelHelpers = {
-  asyncToGenerator: function (e) {
+  asyncToGenerator: function (fn) {
     return function () {
-      var t = e.apply(this, arguments);
-      return new Promise(function (e, r) {
-        return (function n(o, i) {
+      const gen = fn.apply(this, arguments);
+      return new Promise(function (resolve, reject) {
+        function step(key, arg) {
           try {
-            var c = t[o](i),
-              l = c.value;
-          } catch (e) {
-            return void r(e);
+            const info = gen[key](arg);
+            const value = info.value;
+            if (info.done) {
+              resolve(value);
+            } else {
+              Promise.resolve(value).then(
+                (result) => step("next", result),
+                (error) => step("throw", error),
+              );
+            }
+          } catch (error) {
+            reject(error);
           }
-          if (!c.done)
-            return Promise.resolve(l).then(
-              function (e) {
-                n("next", e);
-              },
-              function (e) {
-                n("throw", e);
-              },
-            );
-          e(l);
-        })("next");
+        }
+        step("next");
       });
     };
   },
