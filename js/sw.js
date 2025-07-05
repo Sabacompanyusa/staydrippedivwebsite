@@ -1,48 +1,95 @@
-// Enhanced Service Worker for Stay Dripped Mobile IV
+// Stay Dripped Mobile IV - Service Worker
+// Professional Mobile IV Therapy Website
 
-const CACHE_NAME = "stay-dripped-v1.0.0";
-const STATIC_CACHE = "static-v1.0.0";
-const DYNAMIC_CACHE = "dynamic-v1.0.0";
-const IMAGE_CACHE = "images-v1.0.0";
+self.babelHelpers = {
+  asyncToGenerator: function (e) {
+    return function () {
+      var t = e.apply(this, arguments);
+      return new Promise(function (e, r) {
+        return (function n(o, i) {
+          try {
+            var c = t[o](i),
+              l = c.value;
+          } catch (e) {
+            return void r(e);
+          }
+          if (!c.done)
+            return Promise.resolve(l).then(
+              function (e) {
+                n("next", e);
+              },
+              function (e) {
+                n("throw", e);
+              },
+            );
+          e(l);
+        })("next");
+      });
+    };
+  },
+};
 
-// Files to precache
-const STATIC_FILES = [
+// Service Worker Configuration for Stay Dripped Mobile IV
+const CACHE_NAME = "stay-dripped-mobile-iv-v1";
+const STATIC_CACHE_NAME = "stay-dripped-static-v1";
+const DYNAMIC_CACHE_NAME = "stay-dripped-dynamic-v1";
+
+// Assets to cache immediately
+const STATIC_ASSETS = [
   "/",
-  "assets/css/main.css",
-  "/js/main.js",
-  "json/manifest.json",
-  "/assets/icons/favicon-32x32.png",
-  "/assets/icons/apple-touch-icon.png",
-  "/components/html/header.html",
-  "/components/html/footer.html",
-  "/components/html/hero.html",
-  "/offline.html", // Offline fallback page
+  "/index.html",
+  "/assets/css/main.css",
+  "/assets/css/style.css",
+  "/js/index.js",
+  "/js/modules/analytics.js",
+  "/js/modules/back-to-top.js",
+  "/js/modules/mobile-menu.js",
+  "/js/modules/smooth-scroll.js",
+  "/manifest.json",
+  // Add your critical assets here
 ];
 
-// Install event - precache static files
+// Cache strategies for different resource types
+const CACHE_STRATEGIES = {
+  // Cache first for static assets
+  static: [/\.(?:css|js|woff|woff2|ttf|eot)$/, /\/assets\//, /\/components\//],
+  // Network first for HTML pages
+  pages: [/\.html$/, /\/$/, /\/pages\//],
+  // Cache first for images
+  images: [/\.(?:png|jpg|jpeg|svg|gif|webp|ico)$/, /\/images\//],
+};
+
+// Service Worker Installation
 self.addEventListener("install", (event) => {
-  console.log("Service Worker: Installing...");
+  console.log("Stay Dripped Mobile IV Service Worker: Installing...");
 
   event.waitUntil(
     caches
-      .open(STATIC_CACHE)
+      .open(STATIC_CACHE_NAME)
       .then((cache) => {
-        console.log("Service Worker: Precaching static files");
-        return cache.addAll(STATIC_FILES);
+        console.log(
+          "Stay Dripped Mobile IV Service Worker: Caching static assets",
+        );
+        return cache.addAll(STATIC_ASSETS);
       })
       .then(() => {
-        console.log("Service Worker: Skip waiting");
+        console.log(
+          "Stay Dripped Mobile IV Service Worker: Installation complete",
+        );
         return self.skipWaiting();
       })
       .catch((error) => {
-        console.error("Service Worker: Precaching failed", error);
+        console.error(
+          "Stay Dripped Mobile IV Service Worker: Installation failed",
+          error,
+        );
       }),
   );
 });
 
-// Activate event - clean up old caches
+// Service Worker Activation
 self.addEventListener("activate", (event) => {
-  console.log("Service Worker: Activating...");
+  console.log("Stay Dripped Mobile IV Service Worker: Activating...");
 
   event.waitUntil(
     caches
@@ -50,73 +97,109 @@ self.addEventListener("activate", (event) => {
       .then((cacheNames) => {
         return Promise.all(
           cacheNames.map((cacheName) => {
+            // Delete old caches
             if (
-              cacheName !== STATIC_CACHE &&
-              cacheName !== DYNAMIC_CACHE &&
-              cacheName !== IMAGE_CACHE
+              cacheName !== STATIC_CACHE_NAME &&
+              cacheName !== DYNAMIC_CACHE_NAME &&
+              cacheName.startsWith("stay-dripped-")
             ) {
-              console.log("Service Worker: Deleting old cache", cacheName);
+              console.log(
+                "Stay Dripped Mobile IV Service Worker: Deleting old cache:",
+                cacheName,
+              );
               return caches.delete(cacheName);
             }
           }),
         );
       })
       .then(() => {
-        console.log("Service Worker: Claiming clients");
+        console.log(
+          "Stay Dripped Mobile IV Service Worker: Activation complete",
+        );
         return self.clients.claim();
       }),
   );
 });
 
-// Fetch event - serve from cache with network fallback
+// Fetch Event Handler
 self.addEventListener("fetch", (event) => {
-  const { request } = event;
+  const request = event.request;
   const url = new URL(request.url);
 
-  // Skip non-GET requests
-  if (request.method !== "GET") {
+  // Skip non-HTTP requests
+  if (!url.protocol.startsWith("http")) {
     return;
   }
 
-  // Skip cross-origin requests (unless specifically needed)
-  if (url.origin !== location.origin) {
+  // Skip analytics and tracking requests
+  if (
+    url.hostname.includes("google-analytics.com") ||
+    url.hostname.includes("googletagmanager.com") ||
+    url.hostname.includes("facebook.com") ||
+    url.hostname.includes("doubleclick.net")
+  ) {
     return;
   }
 
   event.respondWith(handleRequest(request));
 });
 
+// Request handling logic
 async function handleRequest(request) {
   const url = new URL(request.url);
 
   try {
-    // Different strategies based on request type
-    if (isStaticAsset(url.pathname)) {
-      return await cacheFirst(request, STATIC_CACHE);
-    } else if (isImage(url.pathname)) {
-      return await cacheFirst(request, IMAGE_CACHE);
-    } else if (isHTMLPage(request)) {
-      return await networkFirst(request, DYNAMIC_CACHE);
-    } else {
-      return await networkFirst(request, DYNAMIC_CACHE);
+    // Strategy 1: Cache First for Static Assets
+    if (isStaticAsset(request)) {
+      return await cacheFirst(request, STATIC_CACHE_NAME);
     }
+
+    // Strategy 2: Network First for Pages
+    if (isPageRequest(request)) {
+      return await networkFirst(request, DYNAMIC_CACHE_NAME);
+    }
+
+    // Strategy 3: Cache First for Images
+    if (isImageRequest(request)) {
+      return await cacheFirst(request, DYNAMIC_CACHE_NAME);
+    }
+
+    // Default: Network First
+    return await networkFirst(request, DYNAMIC_CACHE_NAME);
   } catch (error) {
-    console.error("Service Worker: Request failed", error);
-    return await getOfflineFallback(request);
+    console.error(
+      "Stay Dripped Mobile IV Service Worker: Request failed",
+      error,
+    );
+
+    // Fallback to offline page for navigation requests
+    if (request.mode === "navigate") {
+      return (
+        (await caches.match("/404.html")) || (await caches.match("/index.html"))
+      );
+    }
+
+    throw error;
   }
 }
 
-// Cache first strategy - good for static assets
+// Cache First Strategy
 async function cacheFirst(request, cacheName) {
   const cache = await caches.open(cacheName);
   const cachedResponse = await cache.match(request);
 
   if (cachedResponse) {
-    // Update cache in background
-    updateCacheInBackground(request, cache);
+    console.log(
+      "Stay Dripped Mobile IV Service Worker: Cache hit for",
+      request.url,
+    );
     return cachedResponse;
   }
 
+  console.log(
+    "Stay Dripped Mobile IV Service Worker: Cache miss, fetching",
+    request.url,
+  );
   const networkResponse = await fetch(request);
 
   if (networkResponse.ok) {
@@ -126,19 +209,27 @@ async function cacheFirst(request, cacheName) {
   return networkResponse;
 }
 
-// Network first strategy - good for HTML pages
+// Network First Strategy
 async function networkFirst(request, cacheName) {
-  const cache = await caches.open(cacheName);
-
   try {
+    console.log(
+      "Stay Dripped Mobile IV Service Worker: Network first for",
+      request.url,
+    );
     const networkResponse = await fetch(request);
 
     if (networkResponse.ok) {
+      const cache = await caches.open(cacheName);
       cache.put(request, networkResponse.clone());
     }
 
     return networkResponse;
   } catch (error) {
+    console.log(
+      "Stay Dripped Mobile IV Service Worker: Network failed, trying cache for",
+      request.url,
+    );
+    const cache = await caches.open(cacheName);
     const cachedResponse = await cache.match(request);
 
     if (cachedResponse) {
@@ -149,169 +240,227 @@ async function networkFirst(request, cacheName) {
   }
 }
 
-// Stale while revalidate - update cache in background
-async function updateCacheInBackground(request, cache) {
-  try {
-    const networkResponse = await fetch(request);
-
-    if (networkResponse.ok) {
-      cache.put(request, networkResponse.clone());
-    }
-  } catch (error) {
-    // Fail silently for background updates
-    console.log("Service Worker: Background update failed", error);
-  }
+// Request type detection helpers
+function isStaticAsset(request) {
+  return CACHE_STRATEGIES.static.some((pattern) => pattern.test(request.url));
 }
 
-// Get offline fallback
-async function getOfflineFallback(request) {
-  const cache = await caches.open(STATIC_CACHE);
-
-  if (isHTMLPage(request)) {
-    const offlinePage = await cache.match("/offline.html");
-    if (offlinePage) {
-      return offlinePage;
-    }
-  }
-
-  if (isImage(request.url)) {
-    const offlineImage = await cache.match("/assets/icons/offline-image.png");
-    if (offlineImage) {
-      return offlineImage;
-    }
-  }
-
-  // Return a basic response for other types
-  return new Response("Offline", {
-    status: 503,
-    statusText: "Service Unavailable",
-  });
+function isPageRequest(request) {
+  return (
+    request.mode === "navigate" ||
+    CACHE_STRATEGIES.pages.some((pattern) => pattern.test(request.url))
+  );
 }
 
-// Helper functions
-function isStaticAsset(pathname) {
-  return pathname.match(/\.(css|js|woff|woff2|ttf|eot|ico|svg)$/);
+function isImageRequest(request) {
+  return CACHE_STRATEGIES.images.some((pattern) => pattern.test(request.url));
 }
 
-function isImage(pathname) {
-  return pathname.match(/\.(png|jpg|jpeg|gif|webp|svg)$/);
-}
-
-function isHTMLPage(request) {
-  return request.headers.get("accept")?.includes("text/html");
-}
-
-// Background sync for form submissions
+// Background Sync for offline form submissions
 self.addEventListener("sync", (event) => {
-  console.log("Service Worker: Background sync", event.tag);
+  console.log(
+    "Stay Dripped Mobile IV Service Worker: Background sync triggered",
+  );
 
   if (event.tag === "booking-form") {
     event.waitUntil(syncBookingForm());
   }
+
+  if (event.tag === "contact-form") {
+    event.waitUntil(syncContactForm());
+  }
 });
 
+// Sync booking form submissions
 async function syncBookingForm() {
   try {
-    // Get pending form data from IndexedDB
-    const pendingData = await getPendingFormData();
-
-    if (pendingData.length > 0) {
-      for (const data of pendingData) {
-        await submitFormData(data);
-        await removePendingFormData(data.id);
+    const bookingData = await getStoredBookingData();
+    if (bookingData.length > 0) {
+      for (const booking of bookingData) {
+        await submitBooking(booking);
+        await removeStoredBooking(booking.id);
       }
+      console.log(
+        "Stay Dripped Mobile IV Service Worker: Booking forms synced",
+      );
     }
   } catch (error) {
-    console.error("Service Worker: Form sync failed", error);
+    console.error(
+      "Stay Dripped Mobile IV Service Worker: Booking sync failed",
+      error,
+    );
   }
+}
+
+// Sync contact form submissions
+async function syncContactForm() {
+  try {
+    const contactData = await getStoredContactData();
+    if (contactData.length > 0) {
+      for (const contact of contactData) {
+        await submitContact(contact);
+        await removeStoredContact(contact.id);
+      }
+      console.log(
+        "Stay Dripped Mobile IV Service Worker: Contact forms synced",
+      );
+    }
+  } catch (error) {
+    console.error(
+      "Stay Dripped Mobile IV Service Worker: Contact sync failed",
+      error,
+    );
+  }
+}
+
+// IndexedDB helpers for offline form storage
+async function getStoredBookingData() {
+  // Implementation for retrieving stored booking data
+  return [];
+}
+
+async function getStoredContactData() {
+  // Implementation for retrieving stored contact data
+  return [];
+}
+
+async function submitBooking(bookingData) {
+  // Implementation for submitting booking data
+  return fetch("/api/booking", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(bookingData),
+  });
+}
+
+async function submitContact(contactData) {
+  // Implementation for submitting contact data
+  return fetch("/api/contact", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(contactData),
+  });
+}
+
+async function removeStoredBooking(id) {
+  // Implementation for removing stored booking data
+}
+
+async function removeStoredContact(id) {
+  // Implementation for removing stored contact data
 }
 
 // Push notification handling
 self.addEventListener("push", (event) => {
-  console.log("Service Worker: Push received");
-
-  if (!event.data) {
-    return;
-  }
-
-  const data = event.data.json();
+  console.log(
+    "Stay Dripped Mobile IV Service Worker: Push notification received",
+  );
 
   const options = {
-    body: data.body,
-    icon: "/assets/icons/apple-touch-icon.png",
-    badge: "/assets/icons/badge-icon.png",
-    vibrate: [200, 100, 200],
-    data: data.data,
+    body: "Thank you for choosing Stay Dripped Mobile IV",
+    icon: "/assets/icons/icon-192x192.png",
+    badge: "/assets/icons/badge-72x72.png",
+    data: {
+      url: "/",
+    },
     actions: [
       {
-        action: "view",
-        title: "View",
+        action: "open",
+        title: "View Details",
         icon: "/assets/icons/view-icon.png",
       },
       {
-        action: "dismiss",
-        title: "Dismiss",
-        icon: "/assets/icons/dismiss-icon.png",
+        action: "close",
+        title: "Close",
+        icon: "/assets/icons/close-icon.png",
       },
     ],
   };
 
-  event.waitUntil(self.registration.showNotification(data.title, options));
+  if (event.data) {
+    const payload = event.data.json();
+    options.body = payload.body || options.body;
+    options.data.url = payload.url || options.data.url;
+  }
+
+  event.waitUntil(
+    self.registration.showNotification("Stay Dripped Mobile IV", options),
+  );
 });
 
 // Notification click handling
 self.addEventListener("notificationclick", (event) => {
-  console.log("Service Worker: Notification clicked", event.action);
+  console.log("Stay Dripped Mobile IV Service Worker: Notification clicked");
 
   event.notification.close();
 
-  if (event.action === "view") {
-    event.waitUntil(clients.openWindow(event.notification.data.url || "/"));
+  if (event.action === "open") {
+    event.waitUntil(clients.openWindow(event.notification.data.url));
   }
 });
 
 // Message handling for cache updates
 self.addEventListener("message", (event) => {
-  console.log("Service Worker: Message received", event.data);
+  console.log(
+    "Stay Dripped Mobile IV Service Worker: Message received",
+    event.data,
+  );
 
-  if (event.data.type === "SKIP_WAITING") {
+  if (event.data && event.data.type === "SKIP_WAITING") {
     self.skipWaiting();
   }
 
-  if (event.data.type === "CACHE_URLS") {
-    event.waitUntil(cacheUrls(event.data.urls));
+  if (event.data && event.data.type === "UPDATE_CACHE") {
+    event.waitUntil(updateCache());
   }
 });
 
-async function cacheUrls(urls) {
-  const cache = await caches.open(DYNAMIC_CACHE);
-
-  for (const url of urls) {
-    try {
-      const response = await fetch(url);
-      if (response.ok) {
-        await cache.put(url, response);
-      }
-    } catch (error) {
-      console.error("Service Worker: Failed to cache URL", url, error);
-    }
+// Update cache manually
+async function updateCache() {
+  try {
+    const cache = await caches.open(STATIC_CACHE_NAME);
+    await cache.addAll(STATIC_ASSETS);
+    console.log("Stay Dripped Mobile IV Service Worker: Cache updated");
+  } catch (error) {
+    console.error(
+      "Stay Dripped Mobile IV Service Worker: Cache update failed",
+      error,
+    );
   }
 }
 
-// Placeholder functions for IndexedDB operations
-async function getPendingFormData() {
-  // Implementation would use IndexedDB to retrieve pending form submissions
-  return [];
+// Cleanup old caches periodically
+async function cleanupCaches() {
+  const cacheNames = await caches.keys();
+  const oldCaches = cacheNames.filter(
+    (name) =>
+      name.startsWith("stay-dripped-") &&
+      name !== STATIC_CACHE_NAME &&
+      name !== DYNAMIC_CACHE_NAME,
+  );
+
+  return Promise.all(oldCaches.map((name) => caches.delete(name)));
 }
 
-async function submitFormData(data) {
-  // Implementation would submit form data to server
-  console.log("Service Worker: Submitting form data", data);
-}
+// Performance monitoring
+self.addEventListener("fetch", (event) => {
+  if (event.request.url.includes("/api/")) {
+    const start = performance.now();
 
-async function removePendingFormData(id) {
-  // Implementation would remove data from IndexedDB
-  console.log("Service Worker: Removing pending form data", id);
-}
+    event.respondWith(
+      fetch(event.request).then((response) => {
+        const end = performance.now();
+        console.log(
+          `Stay Dripped Mobile IV API: ${event.request.url} took ${end - start}ms`,
+        );
+        return response;
+      }),
+    );
+  }
+});
 
-console.log("Service Worker: Loaded and ready");
+console.log("Stay Dripped Mobile IV Service Worker: Loaded successfully");
