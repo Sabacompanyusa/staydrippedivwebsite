@@ -267,7 +267,12 @@ class ServiceWorkerManager {
   setupUpdateNotifications() {
     // Listen for messages from the service worker
     navigator.serviceWorker.addEventListener("message", (event) => {
-      if (event.data && event.data.type === "CACHE_UPDATED") {
+      // Validate message origin and structure
+      if (!event.data || typeof event.data !== "object") {
+        return;
+      }
+
+      if (event.data.type === "CACHE_UPDATED") {
         console.log("Stay Dripped Mobile IV: Cache updated");
       }
     });
