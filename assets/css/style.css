@@ -3109,7 +3109,7 @@ button:focus,
 }
 
 .fade-in-up {
-  animation: fadeInUp 0.8s ease-out;
+  animation: fade-in-up 0.8s ease-out;
 }
 
 .loading {
@@ -3123,7 +3123,7 @@ button:focus,
 }
 
 /* Enhanced Animations */
-@keyframes fadeInUp {
+@keyframes fade-in-up {
   from {
     opacity: 0;
     transform: translateY(40px);

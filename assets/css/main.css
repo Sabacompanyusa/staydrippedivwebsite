@@ -326,6 +326,13 @@ a {
     border: 1px solid rgb(255 255 255 / 20%);
   }
 
+.card__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+  color: var(--neutral-800);
+}
+
   &--featured {
     background: var(--gradient-primary);
     color: var(--white);
@@ -334,13 +341,6 @@ a {
       color: var(--white);
     }
   }
-}
-
-.card__title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: var(--space-md);
-  color: var(--neutral-800);
 }
 
 .card__text {
@@ -581,33 +581,6 @@ a {
   }
 }
 
-.hamburger {
-  width: 20px;
-  height: 14px;
-  position: relative;
-
-  span {
-    display: block;
-    width: 100%;
-    height: 2px;
-    background: currentcolor;
-    border-radius: 1px;
-    position: absolute;
-    transition: var(--transition);
-
-    &:nth-child(1) {
-      top: 0;
-    }
-
-    &:nth-child(2) {
-      top: 6px;
-    }
-
-    &:nth-child(3) {
-      top: 12px;
-    }
-  }
-}
 
 // Dark Mode Toggle
 .dark-mode-toggle {
@@ -648,7 +621,7 @@ a {
 }
 
 // Animations
-@keyframes fadeInUp {
+@keyframes fade-in-up {
   from {
     opacity: 0;
     transform: translateY(30px);
@@ -671,8 +644,8 @@ a {
   }
 }
 
-.animate-fadeInUp {
-  animation: fadeInUp 0.6s ease-out;
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out;
 }
 
 .animate-pulse {
@@ -938,7 +911,7 @@ a {
 }
 
 // Enhanced Animations
-@keyframes slideInLeft {
+@keyframes slide-in-left {
   from {
     opacity: 0;
     transform: translateX(-30px);
@@ -950,7 +923,7 @@ a {
   }
 }
 
-@keyframes slideInRight {
+@keyframes slide-in-right {
   from {
     opacity: 0;
     transform: translateX(30px);
@@ -962,12 +935,12 @@ a {
   }
 }
 
-.animate-slideInLeft {
-  animation: slideInLeft 0.6s ease-out;
+.animate-slide-in-left {
+  animation: slide-in-left 0.6s ease-out;
 }
 
-.animate-slideInRight {
-  animation: slideInRight 0.6s ease-out;
+.animate-slide-in-right {
+  animation: slide-in-right 0.6s ease-out;
 }
 
 // Mobile Enhancements
