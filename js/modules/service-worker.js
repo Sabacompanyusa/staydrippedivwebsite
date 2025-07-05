@@ -129,9 +129,18 @@ class ServiceWorkerManager {
     if (this.registration && this.registration.waiting) {
       this.registration.waiting.postMessage({ type: "SKIP_WAITING" });
 
-      navigator.serviceWorker.addEventListener("controllerchange", () => {
+      const handleControllerChange = () => {
+        navigator.serviceWorker.removeEventListener(
+          "controllerchange",
+          handleControllerChange,
+        );
         window.location.reload();
-      });
+      };
+
+      navigator.serviceWorker.addEventListener(
+        "controllerchange",
+        handleControllerChange,
+      );
     }
   }
 
