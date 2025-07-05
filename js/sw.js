@@ -1,5 +1,6 @@
 // Stay Dripped Mobile IV - Service Worker
 // Professional Mobile IV Therapy Website
+// Personalized for Premium Mobile IV Services
 
 self.babelHelpers = {
   asyncToGenerator: function (e) {
@@ -30,23 +31,52 @@ self.babelHelpers = {
 };
 
 // Service Worker Configuration for Stay Dripped Mobile IV
-const CACHE_NAME = "stay-dripped-mobile-iv-v1";
-const STATIC_CACHE_NAME = "stay-dripped-static-v1";
-const DYNAMIC_CACHE_NAME = "stay-dripped-dynamic-v1";
+// Professional Mobile IV Therapy - Premium Experience
+const VERSION = "2.0.0";
+const CACHE_NAME = `stay-dripped-mobile-iv-v${VERSION}`;
+const STATIC_CACHE_NAME = `stay-dripped-static-v${VERSION}`;
+const DYNAMIC_CACHE_NAME = `stay-dripped-dynamic-v${VERSION}`;
+const API_CACHE_NAME = `stay-dripped-api-v${VERSION}`;
+const IMAGES_CACHE_NAME = `stay-dripped-images-v${VERSION}`;
 
-// Assets to cache immediately
+// Critical assets for Stay Dripped Mobile IV
 const STATIC_ASSETS = [
   "/",
   "/index.html",
+  "/booking.html",
+  "/services.html",
   "/assets/css/main.css",
+  "/assets/css/main.scss",
   "/assets/css/style.css",
   "/js/index.js",
   "/js/modules/analytics.js",
   "/js/modules/back-to-top.js",
   "/js/modules/mobile-menu.js",
   "/js/modules/smooth-scroll.js",
+  "/js/modules/service-worker.js",
   "/manifest.json",
-  // Add your critical assets here
+  "/pages/iv-therapy.html",
+  "/pages/nad-therapy.html",
+  "/pages/peptide-therapy.html",
+  "/pages/injection-shots.html",
+  "/pages/weight-management.html",
+  "/pages/aesthetic.html",
+  "/pages/hormone-replacement.html",
+  "/pages/blood-testing.html",
+  "/components/css/buttons.css",
+  "/components/css/cards.css",
+  "/components/css/header.css",
+  "/components/css/hero.css",
+  "/components/css/footer.css",
+];
+
+// API endpoints for Stay Dripped Mobile IV
+const API_ENDPOINTS = [
+  "/api/booking",
+  "/api/contact",
+  "/api/services",
+  "/api/pricing",
+  "/api/availability",
 ];
 
 // Cache strategies for different resource types
@@ -59,37 +89,49 @@ const CACHE_STRATEGIES = {
   images: [/\.(?:png|jpg|jpeg|svg|gif|webp|ico)$/, /\/images\//],
 };
 
-// Service Worker Installation
+// Service Worker Installation - Stay Dripped Mobile IV
 self.addEventListener("install", (event) => {
-  console.log("Stay Dripped Mobile IV Service Worker: Installing...");
+  console.log("🩺 Stay Dripped Mobile IV: Service Worker Installing...");
+  console.log("💧 Premium Mobile IV Therapy - PWA Ready");
 
   event.waitUntil(
-    caches
-      .open(STATIC_CACHE_NAME)
-      .then((cache) => {
-        console.log(
-          "Stay Dripped Mobile IV Service Worker: Caching static assets",
-        );
+    Promise.all([
+      caches.open(STATIC_CACHE_NAME).then((cache) => {
+        console.log("📱 Stay Dripped Mobile IV: Caching static assets");
         return cache.addAll(STATIC_ASSETS);
-      })
+      }),
+      caches.open(API_CACHE_NAME).then((cache) => {
+        console.log("🔗 Stay Dripped Mobile IV: Preparing API cache");
+        return Promise.resolve();
+      }),
+      caches.open(IMAGES_CACHE_NAME).then((cache) => {
+        console.log("🖼️ Stay Dripped Mobile IV: Preparing image cache");
+        return Promise.resolve();
+      }),
+    ])
       .then(() => {
         console.log(
-          "Stay Dripped Mobile IV Service Worker: Installation complete",
+          "✅ Stay Dripped Mobile IV: Service Worker Installation Complete",
         );
+        console.log("🚀 Ready to serve premium mobile IV therapy experience");
         return self.skipWaiting();
       })
       .catch((error) => {
-        console.error(
-          "Stay Dripped Mobile IV Service Worker: Installation failed",
-          error,
-        );
+        console.error("❌ Stay Dripped Mobile IV: Installation failed", error);
       }),
   );
 });
 
-// Service Worker Activation
+// Service Worker Activation - Stay Dripped Mobile IV
 self.addEventListener("activate", (event) => {
-  console.log("Stay Dripped Mobile IV Service Worker: Activating...");
+  console.log("🔄 Stay Dripped Mobile IV: Service Worker Activating...");
+
+  const currentCaches = [
+    STATIC_CACHE_NAME,
+    DYNAMIC_CACHE_NAME,
+    API_CACHE_NAME,
+    IMAGES_CACHE_NAME,
+  ];
 
   event.waitUntil(
     caches
@@ -97,14 +139,13 @@ self.addEventListener("activate", (event) => {
       .then((cacheNames) => {
         return Promise.all(
           cacheNames.map((cacheName) => {
-            // Delete old caches
+            // Delete old Stay Dripped caches
             if (
-              cacheName !== STATIC_CACHE_NAME &&
-              cacheName !== DYNAMIC_CACHE_NAME &&
+              !currentCaches.includes(cacheName) &&
               cacheName.startsWith("stay-dripped-")
             ) {
               console.log(
-                "Stay Dripped Mobile IV Service Worker: Deleting old cache:",
+                "🗑️ Stay Dripped Mobile IV: Removing outdated cache:",
                 cacheName,
               );
               return caches.delete(cacheName);
@@ -113,9 +154,8 @@ self.addEventListener("activate", (event) => {
         );
       })
       .then(() => {
-        console.log(
-          "Stay Dripped Mobile IV Service Worker: Activation complete",
-        );
+        console.log("✅ Stay Dripped Mobile IV: Activation Complete");
+        console.log("💉 Premium Mobile IV Therapy Service Active");
         return self.clients.claim();
       }),
   );
@@ -161,21 +201,56 @@ async function handleRequest(request) {
 
     // Strategy 3: Cache First for Images
     if (isImageRequest(request)) {
-      return await cacheFirst(request, DYNAMIC_CACHE_NAME);
+      return await cacheFirst(request, IMAGES_CACHE_NAME);
+    }
+
+    // Strategy 4: Network First for API endpoints
+    if (isApiRequest(request)) {
+      return await networkFirst(request, API_CACHE_NAME);
     }
 
     // Default: Network First
     return await networkFirst(request, DYNAMIC_CACHE_NAME);
   } catch (error) {
     console.error(
-      "Stay Dripped Mobile IV Service Worker: Request failed",
+      "⚠️ Stay Dripped Mobile IV: Request failed for",
+      request.url,
       error,
     );
 
     // Fallback to offline page for navigation requests
     if (request.mode === "navigate") {
+      console.log("📱 Stay Dripped Mobile IV: Serving offline fallback");
       return (
-        (await caches.match("/404.html")) || (await caches.match("/index.html"))
+        (await caches.match("/404.html")) ||
+        (await caches.match("/index.html")) ||
+        new Response(
+          `
+                       <!DOCTYPE html>
+                       <html>
+                       <head>
+                           <title>Stay Dripped Mobile IV - Offline</title>
+                           <meta name="viewport" content="width=device-width, initial-scale=1">
+                           <style>
+                               body { font-family: Inter, sans-serif; text-align: center; padding: 50px; }
+                               .offline { color: #1a2a47; }
+                               .logo { font-size: 2rem; font-weight: 800; margin-bottom: 1rem; }
+                           </style>
+                       </head>
+                       <body>
+                           <div class="offline">
+                               <div class="logo">💧 Stay Dripped Mobile IV</div>
+                               <h1>You're Offline</h1>
+                               <p>Please check your internet connection and try again.</p>
+                               <p><strong>Call (602) 688-9825</strong> for immediate assistance</p>
+                           </div>
+                       </body>
+                       </html>
+                   `,
+          {
+            headers: { "Content-Type": "text/html" },
+          },
+        )
       );
     }
 
@@ -189,17 +264,11 @@ async function cacheFirst(request, cacheName) {
   const cachedResponse = await cache.match(request);
 
   if (cachedResponse) {
-    console.log(
-      "Stay Dripped Mobile IV Service Worker: Cache hit for",
-      request.url,
-    );
+    console.log("⚡ Stay Dripped Mobile IV: Cache hit for", request.url);
     return cachedResponse;
   }
 
-  console.log(
-    "Stay Dripped Mobile IV Service Worker: Cache miss, fetching",
-    request.url,
-  );
+  console.log("🌐 Stay Dripped Mobile IV: Cache miss, fetching", request.url);
   const networkResponse = await fetch(request);
 
   if (networkResponse.ok) {
@@ -212,10 +281,7 @@ async function cacheFirst(request, cacheName) {
 // Network First Strategy
 async function networkFirst(request, cacheName) {
   try {
-    console.log(
-      "Stay Dripped Mobile IV Service Worker: Network first for",
-      request.url,
-    );
+    console.log("🌐 Stay Dripped Mobile IV: Network first for", request.url);
     const networkResponse = await fetch(request);
 
     if (networkResponse.ok) {
@@ -226,7 +292,7 @@ async function networkFirst(request, cacheName) {
     return networkResponse;
   } catch (error) {
     console.log(
-      "Stay Dripped Mobile IV Service Worker: Network failed, trying cache for",
+      "📱 Stay Dripped Mobile IV: Network failed, serving from cache for",
       request.url,
     );
     const cache = await caches.open(cacheName);
@@ -256,17 +322,21 @@ function isImageRequest(request) {
   return CACHE_STRATEGIES.images.some((pattern) => pattern.test(request.url));
 }
 
+function isApiRequest(request) {
+  return API_ENDPOINTS.some((endpoint) => request.url.includes(endpoint));
+}
+
 // Background Sync for offline form submissions
 self.addEventListener("sync", (event) => {
-  console.log(
-    "Stay Dripped Mobile IV Service Worker: Background sync triggered",
-  );
+  console.log("🔄 Stay Dripped Mobile IV: Background sync triggered");
 
   if (event.tag === "booking-form") {
+    console.log("📅 Stay Dripped Mobile IV: Syncing booking forms");
     event.waitUntil(syncBookingForm());
   }
 
   if (event.tag === "contact-form") {
+    console.log("📧 Stay Dripped Mobile IV: Syncing contact forms");
     event.waitUntil(syncContactForm());
   }
 });
@@ -463,4 +533,7 @@ self.addEventListener("fetch", (event) => {
   }
 });
 
-console.log("Stay Dripped Mobile IV Service Worker: Loaded successfully");
+console.log("🩺 Stay Dripped Mobile IV Service Worker: Loaded Successfully");
+console.log("💧 Premium Mobile IV Therapy - PWA Ready");
+console.log("📱 Professional Healthcare Experience Enabled");
+console.log("🚀 Visit staydrippedmobileiv.com | Call (602) 688-9825");
