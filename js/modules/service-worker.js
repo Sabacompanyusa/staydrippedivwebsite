@@ -75,23 +75,39 @@ class ServiceWorkerManager {
     // Create a subtle update notification
     const notification = document.createElement("div");
     notification.className = "sw-update-notification";
-    notification.innerHTML = `
-            <div class="sw-update-content">
-                <div class="sw-update-text">
-                    <strong>Stay Dripped Mobile IV</strong> has been updated!
-                    <br>
-                    <small>Refresh to get the latest features</small>
-                </div>
-                <div class="sw-update-actions">
-                    <button class="sw-update-btn sw-update-btn--primary" onclick="window.serviceWorkerManager.activateUpdate()">
-                        Update Now
-                    </button>
-                    <button class="sw-update-btn sw-update-btn--secondary" onclick="window.serviceWorkerManager.dismissUpdate()">
-                        Later
-                    </button>
-                </div>
-            </div>
-        `;
+
+    const content = document.createElement("div");
+    content.className = "sw-update-content";
+
+    const text = document.createElement("div");
+    text.className = "sw-update-text";
+    const strong = document.createElement("strong");
+    strong.textContent = "Stay Dripped Mobile IV";
+    text.appendChild(strong);
+    text.appendChild(document.createTextNode(" has been updated!"));
+    text.appendChild(document.createElement("br"));
+    const small = document.createElement("small");
+    small.textContent = "Refresh to get the latest features";
+    text.appendChild(small);
+
+    const actions = document.createElement("div");
+    actions.className = "sw-update-actions";
+
+    const updateBtn = document.createElement("button");
+    updateBtn.className = "sw-update-btn sw-update-btn--primary";
+    updateBtn.textContent = "Update Now";
+    updateBtn.addEventListener("click", () => this.activateUpdate());
+
+    const laterBtn = document.createElement("button");
+    laterBtn.className = "sw-update-btn sw-update-btn--secondary";
+    laterBtn.textContent = "Later";
+    laterBtn.addEventListener("click", () => this.dismissUpdate());
+
+    actions.appendChild(updateBtn);
+    actions.appendChild(laterBtn);
+    content.appendChild(text);
+    content.appendChild(actions);
+    notification.appendChild(content);
 
     // Add styles
     const style = document.createElement("style");
@@ -110,25 +126,25 @@ class ServiceWorkerManager {
                 font-family: 'Inter', sans-serif;
                 animation: slideInFromRight 0.3s ease-out;
             }
-            
+
             .sw-update-content {
                 display: flex;
                 align-items: center;
                 gap: 16px;
             }
-            
+
             .sw-update-text {
                 flex: 1;
                 font-size: 14px;
                 line-height: 1.4;
             }
-            
+
             .sw-update-actions {
                 display: flex;
                 flex-direction: column;
                 gap: 8px;
             }
-            
+
             .sw-update-btn {
                 padding: 6px 12px;
                 border: none;
@@ -138,27 +154,27 @@ class ServiceWorkerManager {
                 cursor: pointer;
                 transition: all 0.2s ease;
             }
-            
+
             .sw-update-btn--primary {
                 background: white;
                 color: var(--primary);
             }
-            
+
             .sw-update-btn--primary:hover {
                 background: #f8f9fa;
                 transform: translateY(-1px);
             }
-            
+
             .sw-update-btn--secondary {
                 background: transparent;
                 color: white;
                 border: 1px solid rgba(255,255,255,0.3);
             }
-            
+
             .sw-update-btn--secondary:hover {
                 background: rgba(255,255,255,0.1);
             }
-            
+
             @keyframes slideInFromRight {
                 from {
                     transform: translateX(100%);
@@ -169,7 +185,7 @@ class ServiceWorkerManager {
                     opacity: 1;
                 }
             }
-            
+
             @media (max-width: 768px) {
                 .sw-update-notification {
                     top: 10px;
@@ -177,13 +193,13 @@ class ServiceWorkerManager {
                     left: 10px;
                     min-width: auto;
                 }
-                
+
                 .sw-update-content {
                     flex-direction: column;
                     align-items: stretch;
                     text-align: center;
                 }
-                
+
                 .sw-update-actions {
                     flex-direction: row;
                     justify-content: center;
@@ -255,19 +271,19 @@ class ServiceWorkerManager {
                 z-index: 10001;
                 animation: slideUpFromBottom 0.3s ease-out;
             }
-            
+
             .sw-status-bar--success {
                 background: linear-gradient(135deg, #10b981 0%, #059669 100%);
             }
-            
+
             .sw-status-bar--warning {
                 background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
             }
-            
+
             .sw-status-bar--info {
                 background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
             }
-            
+
             @keyframes slideUpFromBottom {
                 from {
                     transform: translateX(-50%) translateY(100%);
@@ -401,7 +417,7 @@ additionalStyles.textContent = `
             opacity: 0;
         }
     }
-    
+
     @keyframes slideDownToBottom {
         from {
             transform: translateX(-50%) translateY(0);
