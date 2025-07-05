@@ -119,10 +119,10 @@ class ServiceWorkerManager {
     this.addUpdateNotificationStyles();
     document.body.appendChild(notification);
 
-    // Auto-dismiss after 10 seconds
+    // Auto-dismiss after configured delay
     setTimeout(() => {
       this.dismissUpdate();
-    }, 10000);
+    }, this.AUTO_DISMISS_DELAY);
   }
 
   activateUpdate() {
