@@ -277,6 +277,12 @@ class App {
   }
 
   async copyToClipboard(text) {
+    // Validate input
+    if (typeof text !== "string" || text.length > 1000) {
+      this.showToast("Invalid content to copy", "error");
+      return;
+    }
+
     try {
       await navigator.clipboard.writeText(text);
       this.showToast("Copied to clipboard!");
