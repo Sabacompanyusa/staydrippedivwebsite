@@ -182,26 +182,47 @@ class App {
   }
 
   observeFID() {
-    new PerformanceObserver((entryList) => {
-      entryList.getEntries().forEach((entry) => {
-        this.trackPerformanceMetric(
-          "fid",
-          Math.round(entry.processingStart - entry.startTime),
-        );
-      });
-    }).observe({ entryTypes: ["first-input"] });
+    try {
+      new PerformanceObserver((entryList) => {
+        try {
+          entryList.getEntries().forEach((entry) => {
+            if (entry.processingStart && entry.startTime) {
+              this.trackPerformanceMetric(
+                "fid",
+                Math.round(entry.processingStart - entry.startTime),
+              );
+            }
+          });
+        } catch (error) {
+          console.error("FID observation error:", error);
+        }
+      }).observe({ entryTypes: ["first-input"] });
+    } catch (error) {
+      console.error("Failed to setup FID observer:", error);
+    }
   }
 
   observeCLS() {
-    let clsValue = 0;
-    new PerformanceObserver((entryList) => {
-      entryList.getEntries().forEach((entry) => {
-        if (!entry.hadRecentInput) {
-          clsValue += entry.value;
+    try {
+      let clsValue = 0;
+      new PerformanceObserver((entryList) => {
+        try {
+          entryList.getEntries().forEach((entry) => {
+            if (!entry.hadRecentInput && typeof entry.value === "number") {
+              clsValue += entry.value;
+            }
+          });
+          this.trackPerformanceMetric(
+            "cls",
+            Math.round(clsValue * 1000) / 1000,
+          );
+        } catch (error) {
+          console.error("CLS observation error:", error);
         }
-      });
-      this.trackPerformanceMetric("cls", Math.round(clsValue * 1000) / 1000);
-    }).observe({ entryTypes: ["layout-shift"] });
+      }).observe({ entryTypes: ["layout-shift"] });
+    } catch (error) {
+      console.error("Failed to setup CLS observer:", error);
+    }
   }
 
   trackPerformanceMetric(type, value) {
