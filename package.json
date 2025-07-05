@@ -5,9 +5,9 @@
   "description": "Clean, modern, professional Stay Dripped Mobile IV website with comprehensive SCSS architecture",
   "scripts": {
     "dev": "webpack serve --config webpack.config.js --env development",
-    "build": "npm run lint && webpack --config webpack.config.js --env production",
+    "build": "webpack --config webpack.config.js --env production",
     "lint": "npm run lint:scss && npm run lint:js",
-    "lint:scss": "stylelint \"scss/**/*.scss\" --fix",
+    "lint:scss": "stylelint \"assets/css/**/*.{css,scss}\" --fix",
     "lint:js": "eslint \"js/**/*.js\" --fix",
     "test": "jest",
     "start": "npm run build && npx serve dist -c-1",

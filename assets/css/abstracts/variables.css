@@ -2,9 +2,9 @@
 
 // Brand Colors - Professional Healthcare Palette
 $color-primary: #1a2a47; // Deep navy - trust and professionalism
-$color-secondary: #ffffff; // Pure white - cleanliness and clarity
+$color-secondary: #fff; // Pure white - cleanliness and clarity
 $color-accent: #f5f5f5; // Light gray - modern minimalism
-$color-charcoal: #333333; // Dark charcoal - contrast and readability
+$color-charcoal: #333; // Dark charcoal - contrast and readability
 $color-success: #28a745; // Medical green - health and vitality
 $color-warning: #ffc107; // Attention yellow - important information
 $color-error: #dc3545; // Medical red - alerts and errors
@@ -15,28 +15,26 @@ $color-light-bg: #f8fafc; // Light background
 $color-dark-bg: #1e293b; // Dark mode background
 $color-text-light: #64748b; // Light text
 $color-text-dark: #0f172a; // Dark text
-$color-border: rgba(255, 255, 255, 0.2); // Border color
+$color-border: rgb(255 255 255 / 20%); // Border color
 
 // Typography System
-$font-base:
-  "Inter",
+$font-base: "Inter",
   -apple-system,
-  BlinkMacSystemFont,
+  blinkmacsystemfont,
   "Segoe UI",
-  Roboto,
-  Oxygen,
-  Ubuntu,
-  Cantarell,
+  roboto,
+  oxygen,
+  ubuntu,
+  cantarell,
   sans-serif;
-$font-heading:
-  "Inter",
+$font-heading: "Inter",
   -apple-system,
-  BlinkMacSystemFont,
+  blinkmacsystemfont,
   "Segoe UI",
-  Roboto,
-  Oxygen,
-  Ubuntu,
-  Cantarell,
+  roboto,
+  oxygen,
+  ubuntu,
+  cantarell,
   sans-serif;
 
 // Typography Scale - Perfect Fourth (1.333)
@@ -171,7 +169,6 @@ $transition-duration: (
   700: 700ms,
   1000: 1000ms,
 );
-
 $transition-timing: (
   linear: linear,
   in: cubic-bezier(0.4, 0, 1, 1),

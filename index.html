@@ -45,11 +45,8 @@
       href="/assets/icons/favicon-16x16.png"
     />
 
-    <link rel="manifest" href="kk/json/manifest.json" />
-    <meta name="theme-color" content="#1a2a47" />
-=======
     <link rel="manifest" href="/json/manifest.json" />
-    <meta name="theme-color" content="#00e5ff" />
+    <meta name="theme-color" content="#1a2a47" />
 
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
@@ -90,8 +87,7 @@
       Stay Dripped Mobile IV - Premium Mobile IV Therapy & Wellness Services
     </title>
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="assets/css/main.scss" />
+    <!-- CSS will be injected by webpack -->
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
@@ -159,8 +155,6 @@
           >
             ☀️
           </button>
-          <button class="mobile-menu-toggle lg:hidden" aria-label="Toggle menu"
-          <button id="dark-mode-toggle" class="dark-mode-toggle">☀️</button>
           <a href="/booking" class="btn btn--primary">Book Now</a>
           <button
             class="mobile-menu-toggle"
@@ -168,7 +162,8 @@
             aria-expanded="false"
             aria-controls="mobile-menu"
           >
-main
+            <span class="hamburger"></span>
+          </button>
         </div>
       </div>
     </header>
