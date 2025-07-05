@@ -9,24 +9,15 @@
 </head>
 <body>
   <div class="scroll-indicator" id="scrollIndicator"></div>
-  <div id="header-container"></div>
+  <div id="header-container" data-component="/components/html/header.html"></div>
   <main class="static-page">
     <div class="container">
       <h1>NAD⁺ Therapy Treatments</h1>
       <p>Learn about our NAD⁺ protocols for cellular regeneration.</p>
     </div>
   </main>
-  <div id="footer-container"></div>
+  <div id="footer-container" data-component="/components/html/footer.html"></div>
   <script src="assets/js/main.js"></script>
-  <script>
-    async function loadComponent(id, path) {
-      const resp = await fetch(path);
-      document.getElementById(id).innerHTML = await resp.text();
-    }
-    document.addEventListener('DOMContentLoaded', () => {
-      loadComponent('header-container', 'components/header.html');
-      loadComponent('footer-container', 'components/footer.html');
-    });
-  </script>
+  <script src="assets/js/component-loader.js"></script>
 </body>
 </html>

@@ -178,7 +178,7 @@
 </head>
 <body>
     <!-- Header -->
-    <div id="header-container"></div>
+    <div id="header-container" data-component="/components/html/header.html"></div>
     
     <!-- 404 Content -->
     <main class="error-page">
@@ -222,28 +222,10 @@
     </main>
     
     <!-- Footer -->
-    <div id="footer-container"></div>
+    <div id="footer-container" data-component="/components/html/footer.html"></div>
     
     <!-- Scripts -->
     <script src="assets/js/main.js" defer></script>
-    <script>
-        // Load header and footer components
-        async function loadComponent(id, path) {
-            try {
-                const response = await fetch(path);
-                if (response.ok) {
-                    const content = await response.text();
-                    document.getElementById(id).innerHTML = content;
-                }
-            } catch (error) {
-                console.error(`Error loading ${path}:`, error);
-            }
-        }
-        
-        document.addEventListener('DOMContentLoaded', () => {
-            loadComponent('header-container', '/components/header.html');
-            loadComponent('footer-container', '/components/footer.html');
-        });
-    </script>
+    <script src="assets/js/component-loader.js" defer></script>
 </body>
 </html>
