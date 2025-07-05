@@ -164,11 +164,21 @@ class App {
   }
 
   observeLCP() {
-    new PerformanceObserver((entryList) => {
-      const entries = entryList.getEntries();
-      const lastEntry = entries[entries.length - 1];
-      this.trackPerformanceMetric("lcp", Math.round(lastEntry.startTime));
-    }).observe({ entryTypes: ["largest-contentful-paint"] });
+    try {
+      new PerformanceObserver((entryList) => {
+        try {
+          const entries = entryList.getEntries();
+          if (entries.length > 0) {
+            const lastEntry = entries[entries.length - 1];
+            this.trackPerformanceMetric("lcp", Math.round(lastEntry.startTime));
+          }
+        } catch (error) {
+          console.error("LCP observation error:", error);
+        }
+      }).observe({ entryTypes: ["largest-contentful-paint"] });
+    } catch (error) {
+      console.error("Failed to setup LCP observer:", error);
+    }
   }
 
   observeFID() {
