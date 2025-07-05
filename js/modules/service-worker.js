@@ -52,7 +52,7 @@ class ServiceWorkerManager {
       // Check for updates periodically
       setInterval(() => {
         this.registration.update();
-      }, 60000); // Check every minute
+      }, this.UPDATE_CHECK_INTERVAL);
     } catch (error) {
       console.error(
         "Stay Dripped Mobile IV: Service Worker registration failed",
