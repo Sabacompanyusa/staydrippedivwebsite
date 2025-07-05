@@ -414,10 +414,21 @@ class App {
   }
 
   showToast(message, type = "info") {
+    // Sanitize inputs
+    if (typeof message !== "string") {
+      message = "Invalid message";
+    }
+
+    const allowedTypes = ["info", "success", "error", "warning"];
+    if (!allowedTypes.includes(type)) {
+      type = "info";
+    }
+
     const toast = document.createElement("div");
     toast.className = `toast toast--${type}`;
-    toast.textContent = message;
+    toast.textContent = message; // Using textContent prevents XSS
     toast.setAttribute("role", "alert");
+    toast.setAttribute("aria-live", "polite");
 
     document.body.appendChild(toast);
 
