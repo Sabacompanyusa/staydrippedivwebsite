@@ -516,22 +516,7 @@ async function cleanupCaches() {
   return Promise.all(oldCaches.map((name) => caches.delete(name)));
 }
 
-// Performance monitoring
-self.addEventListener("fetch", (event) => {
-  if (event.request.url.includes("/api/")) {
-    const start = performance.now();
-
-    event.respondWith(
-      fetch(event.request).then((response) => {
-        const end = performance.now();
-        console.log(
-          `Stay Dripped Mobile IV API: ${event.request.url} took ${end - start}ms`,
-        );
-        return response;
-      }),
-    );
-  }
-});
+// Performance monitoring is handled in the main fetch event listener above
 
 console.log("🩺 Stay Dripped Mobile IV Service Worker: Loaded Successfully");
 console.log("💧 Premium Mobile IV Therapy - PWA Ready");
