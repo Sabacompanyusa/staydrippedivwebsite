@@ -16,6 +16,14 @@ class App {
       typeof process !== "undefined" &&
       process.env &&
       process.env.NODE_ENV === "development";
+
+    // Configuration constants
+    this.FORM_SUBMISSION_DELAY = 2000;
+    this.TOAST_DISPLAY_DURATION = 3000;
+    this.TOAST_ANIMATION_DELAY = 100;
+    this.RIPPLE_ANIMATION_DURATION = 400;
+    this.MAX_CLIPBOARD_LENGTH = 1000;
+
     this.init();
   }
 
