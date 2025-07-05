@@ -221,7 +221,7 @@ class StayDrippedApp {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("animate-fadeInUp");
+          entry.target.classList.add("animate-fade-in-up");
           this.trackEvent(
             "Engagement",
             "section_view",
@@ -404,7 +404,7 @@ class StayDrippedApp {
       align-items: center;
       gap: 1rem;
       max-width: 400px;
-      animation: slideInRight 0.3s ease-out;
+      animation: slide-in-right 0.3s ease-out;
     `;
 
     document.body.appendChild(notification);

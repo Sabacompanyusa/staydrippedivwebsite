@@ -341,6 +341,15 @@
         border: 1px solid #f0f0f0;
         position: relative;
         overflow: hidden;
+        animation: fade-in-up 0.6s ease forwards;
+      }
+
+      .menu-card:nth-child(even) {
+        animation-delay: 0.1s;
+      }
+
+      .menu-card:nth-child(3n) {
+        animation-delay: 0.2s;
       }
 
       .menu-card-image {
@@ -522,7 +531,7 @@
       }
 
       /* Animations */
-      @keyframes fadeInUp {
+      @keyframes fade-in-up {
         from {
           opacity: 0;
           transform: translateY(30px);
@@ -532,18 +541,6 @@
           opacity: 1;
           transform: translateY(0);
         }
-      }
-
-      .menu-card {
-        animation: fadeInUp 0.6s ease forwards;
-      }
-
-      .menu-card:nth-child(even) {
-        animation-delay: 0.1s;
-      }
-
-      .menu-card:nth-child(3n) {
-        animation-delay: 0.2s;
       }
 
       /* Mobile Responsiveness */
