@@ -146,46 +146,47 @@ class App {
   }
 
   initPerformanceMonitoring() {
-    // Monitor Core Web Vitals
     if ("PerformanceObserver" in window) {
-      // Largest Contentful Paint
-      new PerformanceObserver((entryList) => {
-        const entries = entryList.getEntries();
-        const lastEntry = entries[entries.length - 1];
+      this.observeLCP();
+      this.observeFID();
+      this.observeCLS();
+    }
+  }
 
-        if (window.analyticsManager) {
-          window.analyticsManager.trackEvent("performance", "lcp", {
-            value: Math.round(lastEntry.startTime),
-          });
+  observeLCP() {
+    new PerformanceObserver((entryList) => {
+      const entries = entryList.getEntries();
+      const lastEntry = entries[entries.length - 1];
+      this.trackPerformanceMetric("lcp", Math.round(lastEntry.startTime));
+    }).observe({ entryTypes: ["largest-contentful-paint"] });
+  }
+
+  observeFID() {
+    new PerformanceObserver((entryList) => {
+      entryList.getEntries().forEach((entry) => {
+        this.trackPerformanceMetric(
+          "fid",
+          Math.round(entry.processingStart - entry.startTime),
+        );
+      });
+    }).observe({ entryTypes: ["first-input"] });
+  }
+
+  observeCLS() {
+    let clsValue = 0;
+    new PerformanceObserver((entryList) => {
+      entryList.getEntries().forEach((entry) => {
+        if (!entry.hadRecentInput) {
+          clsValue += entry.value;
         }
-      }).observe({ entryTypes: ["largest-contentful-paint"] });
+      });
+      this.trackPerformanceMetric("cls", Math.round(clsValue * 1000) / 1000);
+    }).observe({ entryTypes: ["layout-shift"] });
+  }
 
-      // First Input Delay
-      new PerformanceObserver((entryList) => {
-        entryList.getEntries().forEach((entry) => {
-          if (window.analyticsManager) {
-            window.analyticsManager.trackEvent("performance", "fid", {
-              value: Math.round(entry.processingStart - entry.startTime),
-            });
-          }
-        });
-      }).observe({ entryTypes: ["first-input"] });
-
-      // Cumulative Layout Shift
-      let clsValue = 0;
-      new PerformanceObserver((entryList) => {
-        entryList.getEntries().forEach((entry) => {
-          if (!entry.hadRecentInput) {
-            clsValue += entry.value;
-          }
-        });
-
-        if (window.analyticsManager) {
-          window.analyticsManager.trackEvent("performance", "cls", {
-            value: Math.round(clsValue * 1000) / 1000,
-          });
-        }
-      }).observe({ entryTypes: ["layout-shift"] });
+  trackPerformanceMetric(type, value) {
+    if (window.analyticsManager) {
+      window.analyticsManager.trackEvent("performance", type, { value });
     }
   }
 
