@@ -68,6 +68,7 @@
   cursor: pointer;
   text-decoration: none;
   outline: none;
+
   @include transition(all);
 
   &:focus {
@@ -164,6 +165,7 @@
   background: $color-secondary;
   border-radius: map-get($border-radius, lg);
   overflow: hidden;
+
   @include transition(transform, box-shadow);
 
   @if $elevated {

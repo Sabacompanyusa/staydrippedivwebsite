@@ -113,6 +113,7 @@ p {
 // Links
 a {
   color: $color-primary;
+
   @include transition(color);
 
   &:hover,
@@ -276,12 +277,15 @@ pre {
 .text-left {
   text-align: left;
 }
+
 .text-center {
   text-align: center;
 }
+
 .text-right {
   text-align: right;
 }
+
 .text-justify {
   text-align: justify;
 }
@@ -290,24 +294,31 @@ pre {
 .font-thin {
   font-weight: 100;
 }
+
 .font-light {
   font-weight: 300;
 }
+
 .font-normal {
   font-weight: 400;
 }
+
 .font-medium {
   font-weight: 500;
 }
+
 .font-semibold {
   font-weight: 600;
 }
+
 .font-bold {
   font-weight: 700;
 }
+
 .font-extrabold {
   font-weight: 800;
 }
+
 .font-black {
   font-weight: 900;
 }
@@ -316,18 +327,23 @@ pre {
 .text-primary {
   color: $color-primary;
 }
+
 .text-secondary {
   color: $color-text-light;
 }
+
 .text-success {
   color: $color-success;
 }
+
 .text-warning {
   color: $color-warning;
 }
+
 .text-error {
   color: $color-error;
 }
+
 .text-info {
   color: $color-info;
 }
@@ -336,12 +352,15 @@ pre {
 .uppercase {
   text-transform: uppercase;
 }
+
 .lowercase {
   text-transform: lowercase;
 }
+
 .capitalize {
   text-transform: capitalize;
 }
+
 .normal-case {
   text-transform: none;
 }
@@ -350,9 +369,11 @@ pre {
 .underline {
   text-decoration: underline;
 }
+
 .line-through {
   text-decoration: line-through;
 }
+
 .no-underline {
   text-decoration: none;
 }
@@ -361,15 +382,19 @@ pre {
 .tracking-tight {
   letter-spacing: -0.025em;
 }
+
 .tracking-normal {
   letter-spacing: 0;
 }
+
 .tracking-wide {
   letter-spacing: 0.025em;
 }
+
 .tracking-wider {
   letter-spacing: 0.05em;
 }
+
 .tracking-widest {
   letter-spacing: 0.1em;
 }
@@ -378,18 +403,23 @@ pre {
 .leading-none {
   line-height: 1;
 }
+
 .leading-tight {
   line-height: 1.25;
 }
+
 .leading-snug {
   line-height: 1.375;
 }
+
 .leading-normal {
   line-height: 1.5;
 }
+
 .leading-relaxed {
   line-height: 1.625;
 }
+
 .leading-loose {
   line-height: 2;
 }
@@ -411,18 +441,23 @@ pre {
   .sm\:text-sm {
     font-size: map-get($fs-scale, sm) !important;
   }
+
   .sm\:text-base {
     font-size: map-get($fs-scale, base) !important;
   }
+
   .sm\:text-lg {
     font-size: map-get($fs-scale, lg) !important;
   }
+
   .sm\:text-xl {
     font-size: map-get($fs-scale, xl) !important;
   }
+
   .sm\:text-2xl {
     font-size: map-get($fs-scale, 2xl) !important;
   }
+
   .sm\:text-3xl {
     font-size: map-get($fs-scale, 3xl) !important;
   }
@@ -432,24 +467,31 @@ pre {
   .md\:text-sm {
     font-size: map-get($fs-scale, sm) !important;
   }
+
   .md\:text-base {
     font-size: map-get($fs-scale, base) !important;
   }
+
   .md\:text-lg {
     font-size: map-get($fs-scale, lg) !important;
   }
+
   .md\:text-xl {
     font-size: map-get($fs-scale, xl) !important;
   }
+
   .md\:text-2xl {
     font-size: map-get($fs-scale, 2xl) !important;
   }
+
   .md\:text-3xl {
     font-size: map-get($fs-scale, 3xl) !important;
   }
+
   .md\:text-4xl {
     font-size: map-get($fs-scale, 4xl) !important;
   }
+
   .md\:text-5xl {
     font-size: map-get($fs-scale, 5xl) !important;
   }
@@ -459,21 +501,27 @@ pre {
   .lg\:text-lg {
     font-size: map-get($fs-scale, lg) !important;
   }
+
   .lg\:text-xl {
     font-size: map-get($fs-scale, xl) !important;
   }
+
   .lg\:text-2xl {
     font-size: map-get($fs-scale, 2xl) !important;
   }
+
   .lg\:text-3xl {
     font-size: map-get($fs-scale, 3xl) !important;
   }
+
   .lg\:text-4xl {
     font-size: map-get($fs-scale, 4xl) !important;
   }
+
   .lg\:text-5xl {
     font-size: map-get($fs-scale, 5xl) !important;
   }
+
   .lg\:text-6xl {
     font-size: map-get($fs-scale, 6xl) !important;
   }

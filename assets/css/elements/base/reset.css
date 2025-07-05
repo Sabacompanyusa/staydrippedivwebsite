@@ -29,7 +29,7 @@ body {
   background-color: $color-light-bg;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeSpeed;
+  text-rendering: optimizespeed;
   font-feature-settings: "kern" 1;
   font-kerning: normal;
 }
@@ -136,6 +136,7 @@ select {
     text-decoration: none;
     font-weight: 600;
     box-shadow: map-get($shadow, lg);
+
     @include transition(all);
   }
 }
@@ -155,9 +156,9 @@ select {
 // High contrast mode support
 @media (prefers-contrast: high) {
   :root {
-    --color-primary: #000000;
-    --color-secondary: #ffffff;
-    --color-accent: #ffffff;
+    --color-primary: #000;
+    --color-secondary: #fff;
+    --color-accent: #fff;
   }
 }
 
