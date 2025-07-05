@@ -12,7 +12,7 @@
     .icon {
       width: 1.25em;
       height: 1.25em;
-      fill: currentColor;
+      fill: currentcolor;
       flex-shrink: 0;
     }
   }
@@ -123,7 +123,7 @@
       height: 1rem;
       margin: -0.5rem 0 0 -0.5rem;
       border: 2px solid transparent;
-      border-top-color: currentColor;
+      border-top-color: currentcolor;
       border-radius: 50%;
       animation: spin 1s linear infinite;
     }
@@ -230,7 +230,7 @@
   .icon {
     width: 24px;
     height: 24px;
-    fill: currentColor;
+    fill: currentcolor;
   }
 
   // Mini variant
@@ -273,7 +273,7 @@
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(255, 255, 255, 0.2),
+      rgb(255 255 255 / 20%),
       transparent
     );
     transition: left 0.5s;

@@ -30,6 +30,7 @@
 
   &--interactive {
     cursor: pointer;
+
     @include transition(transform, box-shadow, border-color);
 
     &:hover {

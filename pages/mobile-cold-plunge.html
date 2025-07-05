@@ -49,7 +49,7 @@
         top: 20px;
         left: 20px;
         z-index: 1000;
-        background: rgba(255, 255, 255, 0.9);
+        background: rgb(255 255 255 / 90%);
         border: none;
         border-radius: 50%;
         width: 50px;
@@ -57,7 +57,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
         cursor: pointer;
         transition: all 0.3s ease;
       }
@@ -79,14 +79,11 @@
       .service-hero::before {
         content: "";
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
+        inset: 0;
         background: linear-gradient(
           135deg,
-          rgba(135, 206, 235, 0.8) 0%,
-          rgba(70, 130, 180, 0.9) 100%
+          rgb(135 206 235 / 80%) 0%,
+          rgb(70 130 180 / 90%) 100%
         );
         z-index: 1;
       }
@@ -107,7 +104,7 @@
         background: white;
         padding: 2rem;
         border-radius: 16px;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 8px 32px rgb(0 0 0 / 10%);
         text-align: center;
         transition: transform 0.3s ease;
       }
@@ -140,7 +137,7 @@
         border-radius: 12px;
         text-align: center;
         position: relative;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 4px 16px rgb(0 0 0 / 8%);
       }
 
       .step-number {
@@ -181,7 +178,7 @@
 
       .cta-button:hover {
         transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 8px 25px rgb(0 0 0 / 15%);
         color: #4682b4;
       }
     </style>
