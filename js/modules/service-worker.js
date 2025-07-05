@@ -50,8 +50,10 @@ class ServiceWorkerManager {
       });
 
       // Check for updates periodically
-      setInterval(() => {
-        this.registration.update();
+      this.updateInterval = setInterval(() => {
+        if (this.registration) {
+          this.registration.update();
+        }
       }, this.UPDATE_CHECK_INTERVAL);
     } catch (error) {
       console.error(
