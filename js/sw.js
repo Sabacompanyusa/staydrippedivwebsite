@@ -427,11 +427,21 @@ async function submitContact(contactData) {
 }
 
 async function removeStoredBooking(id) {
-  // Implementation for removing stored booking data
+  try {
+    // No-op until IndexedDB implementation
+    console.log("Booking removal requested for ID:", id);
+  } catch (error) {
+    console.error("Error removing booking:", error);
+  }
 }
 
 async function removeStoredContact(id) {
-  // Implementation for removing stored contact data
+  try {
+    // No-op until IndexedDB implementation
+    console.log("Contact removal requested for ID:", id);
+  } catch (error) {
+    console.error("Error removing contact:", error);
+  }
 }
 
 // Push notification handling
