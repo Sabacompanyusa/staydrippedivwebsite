@@ -286,7 +286,7 @@ class App {
 
   async copyToClipboard(text) {
     // Validate input
-    if (typeof text !== "string" || text.length > 1000) {
+    if (typeof text !== "string" || text.length > this.MAX_CLIPBOARD_LENGTH) {
       this.showToast("Invalid content to copy", "error");
       return;
     }
