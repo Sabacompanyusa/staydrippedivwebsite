@@ -281,7 +281,7 @@ class App {
     button.appendChild(ripple);
 
     // Remove ripple after animation
-    setTimeout(() => ripple.remove(), 400);
+    setTimeout(() => ripple.remove(), this.RIPPLE_ANIMATION_DURATION);
   }
 
   async copyToClipboard(text) {
